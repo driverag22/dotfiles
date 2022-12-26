@@ -1,0 +1,7 @@
+require "basic_config"
+require "plugins"
+require "keybindings"
+require "treesitter"
+require "statusline"
+require "colors"
+require "lsp"
