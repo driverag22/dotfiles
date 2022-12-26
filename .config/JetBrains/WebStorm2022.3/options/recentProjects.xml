@@ -1,0 +1,35 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/src/jointwaterproof/waterproof">
+          <value>
+            <RecentProjectMetaInfo frameTitle="waterproof [~/src/jointwaterproof/waterproof] – CodeExecution.vue" projectWorkspaceId="2IdKzoD8evrslI7hv1F3zErS66y">
+              <option name="activationTimestamp" value="1671187738498" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="WS-222.4345.14" />
+              <option name="buildTimestamp" value="1664946074213" />
+              <frame x="-10" y="0" width="1940" height="1063" extendedState="6" />
+              <option name="productionCode" value="WS" />
+              <option name="projectOpenTimestamp" value="1671187673066" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/src/waterproof">
+          <value>
+            <RecentProjectMetaInfo frameTitle="waterproof – SerapiProcessor.js" opened="true" projectWorkspaceId="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
+              <option name="activationTimestamp" value="1671880598075" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="WS-223.8214.51" />
+              <option name="buildTimestamp" value="1671535310580" />
+              <frame x="0" y="23" width="1920" height="1057" extendedState="6" />
+              <option name="productionCode" value="WS" />
+              <option name="projectOpenTimestamp" value="1671880556159" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/src/waterproof" />
+  </component>
+</application>
