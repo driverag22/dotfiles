@@ -20,6 +20,8 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_pink, col_gray3,  col_white},
 	/* [SchemeNorm] = { col_white, col_black,  col_black }, */
 	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
+	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
+	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
 };
 
 /* tagging */
