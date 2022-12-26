@@ -10,14 +10,17 @@ static const char *fonts[]          = { "JetBrains Mono:size=12", "JoyPixels:pix
 static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#262626";
+static const char col_black[]       = "#000000";
 static const char col_white[]       = "#eeeeee";
 static const char col_whitegray[]   = "#68686d";
-static const char col_teal[]        = "#169378";
+static const char col_teal[]        = "#ff69b4";
 /* static const char col_teal[]        = "#38aa6f"; */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray2,  col_gray2 },
-	[SchemeSel]  = { col_white, col_teal,  col_white },
+	/* [SchemeNorm] = { col_white, col_black,  col_black }, */
+	/* [SchemeSel]  = { col_teal, col_black,  col_whitegray }, */
+	[SchemeNorm] = { col_white, col_black,  col_black },
+	[SchemeSel]  = { col_teal, col_white,  col_whitegray },
 };
 
 /* tagging */
