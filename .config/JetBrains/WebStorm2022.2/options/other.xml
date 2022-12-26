@@ -1,0 +1,106 @@
+<application>
+  <component name="DynamicPluginEnabler">
+    <trackers>
+      <map>
+        <entry key="2FYg79pZg1J3gsVky0dDWr8YMWz">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2FdRvF5bxWsWkkHZt8vUEG1NFfp">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2GB2m3UeJORPKVkuxZh5jc9UbbH">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2GuuX28a85cUIJBYzLPGPGh3p9m">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2H2SlDyk0dy7hjrTHq1WzRdqCHF">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2HsXuIA2xqgdC0R34fDrMJL7KRv">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2IdKzoD8evrslI7hv1F3zErS66y">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="15.0" />
+  </component>
+  <component name="PropertyService">{
+  &quot;keyToString&quot;: {
+    &quot;CWM_LOGGING_VERSION&quot;: &quot;1&quot;,
+    &quot;ExpandBeforeRunStepsPanel&quot;: &quot;true&quot;,
+    &quot;GeneralSettings.initiallyConfigured&quot;: &quot;true&quot;,
+    &quot;KEYMAP&quot;: &quot;terminal\nzoom in\nzoom&quot;,
+    &quot;MarketplacePluginsSearchHistory&quot;: &quot;vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark&quot;,
+    &quot;NextRunPlatformUpdateBuild&quot;: &quot;WS-222.4459.24/2022.2.4&quot;,
+    &quot;NextRunPlatformUpdateVersion&quot;: &quot;2022.2.4&quot;,
+    &quot;NonModalCommitCustomization.IsApplied&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.se.text.search&quot;: &quot;true&quot;,
+    &quot;SettingsSearchHistory&quot;: &quot;shortcut\nzoom&quot;,
+    &quot;appcds.runOnSecondStart&quot;: &quot;WS-222.4345.14-37ffec36f877fa0394d0f82e42f563721481f6f29354a604e973fc3a74dd4d83&quot;,
+    &quot;ask.about.ctrl.y.shortcut.v2&quot;: &quot;true&quot;,
+    &quot;bundled.plugins.list.saved.version&quot;: &quot;WS-222.4345.14&quot;,
+    &quot;evlsprt3.222&quot;: &quot;24&quot;,
+    &quot;file.gist.reindex.count&quot;: &quot;4&quot;,
+    &quot;fileTypeChangedCounter&quot;: &quot;1&quot;,
+    &quot;find.popup.splitter&quot;: &quot;0.31343284&quot;,
+    &quot;fontSizeToResetConsole&quot;: &quot;12.0&quot;,
+    &quot;fontSizeToResetEditor&quot;: &quot;12.0&quot;,
+    &quot;got.it.tooltip.reader.mode.got.it&quot;: &quot;1&quot;,
+    &quot;got.it.tooltip.terminal.smart_command_execution&quot;: &quot;1&quot;,
+    &quot;ide.memory.adjusted&quot;: &quot;true&quot;,
+    &quot;ideavim.statistics.timestamp&quot;: &quot;1671710147231&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diego/src/waterproof&quot;,
+    &quot;previousColorScheme&quot;: &quot;_@user_Dracula&quot;,
+    &quot;registry.to.advanced.settings.migration.build&quot;: &quot;WS-222.4345.14&quot;,
+    &quot;tasks.pass.word.conversion.enforced&quot;: &quot;true&quot;,
+    &quot;ts.lib.d.ts.version&quot;: &quot;4.7.4&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;file.chooser.recent.files&quot;: [
+      &quot;/home/diego/src/jointwaterproof/waterproof&quot;,
+      &quot;/home/diego/src/waterproof&quot;,
+      &quot;/home/diego/.nvm/versions/node/v12.22.12/bin/npm&quot;,
+      &quot;/home/diego/.nvm/versions&quot;
+    ],
+    &quot;fileTypeDetectors&quot;: [
+      &quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&quot;,
+      &quot;com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector&quot;,
+      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector&quot;,
+      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector&quot;,
+      &quot;com.intellij.docker.dockerFile.DockerFileTypeDetector&quot;,
+      &quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&quot;
+    ]
+  }
+}</component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="waterproof-history1" project-path="$USER_HOME$/src/waterproof" last-access-time="1671837557177" />
+      <command-history-file filename="waterproof-history" project-path="$USER_HOME$/src/jointwaterproof/waterproof" last-access-time="1671187673360" />
+    </command-history-files>
+  </component>
+</application>

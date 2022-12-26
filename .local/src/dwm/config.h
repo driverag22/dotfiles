@@ -6,16 +6,20 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:size=12", "JoyPixels:pixelsize=12:antialias=true:autohint=true"};
-static const char dmenufont[]       = "JetBrains Mono:size=12";
+static const char *fonts[]          = { "JetBrains Mono:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true"};
+static const char dmenufont[]       = "JetBrains Mono:size=13";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#262626";
+static const char col_black[]       = "#000000";
 static const char col_white[]       = "#eeeeee";
 static const char col_whitegray[]   = "#68686d";
-static const char col_teal[]        = "#169378";
-/* static const char col_teal[]        = "#38aa6f"; */
+static const char col_pink[]        = "#ff69b4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
+	[SchemeNorm] = { col_white, col_gray3,  col_black},
+	[SchemeSel]  = { col_pink, col_gray3,  col_white},
+	/* [SchemeNorm] = { col_white, col_black,  col_black }, */
+	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
 	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
 };
@@ -59,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray2, "-nf", col_white, "-sb", col_teal, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray3, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
@@ -71,9 +75,9 @@ static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
+	/* { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu */
 	/* { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } }, //alacritty */
-	/* { CTRLKEY,                      XK_space,  spawn,          {.v = dmenucmd } }, //dmenu */ 
+	{ CTRLKEY,                      XK_space,  spawn,          {.v = dmenucmd } }, //dmenu 
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 

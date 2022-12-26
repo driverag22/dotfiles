@@ -1,0 +1,5 @@
+<keymap version="1" name="XWin copy" parent="Default for XWin">
+  <action id="ZoomCurrentWindow">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+</keymap>
