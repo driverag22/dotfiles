@@ -16,8 +16,8 @@ static const char col_teal[]        = "#169378";
 /* static const char col_teal[]        = "#38aa6f"; */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray2,  col_gray2 },
-	[SchemeSel]  = { col_white, col_teal,  col_white },
+	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
+	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
 };
 
 /* tagging */
