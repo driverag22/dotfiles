@@ -4,6 +4,6 @@ setxkbmap us -variant intl
 /home/diego/.local/.macros/automatic/fehbg.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 
-xcompmgr -f -D 3 &
+xcompmgr &
 exec dwm
 # exec startxfce4 
