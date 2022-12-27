@@ -1,2 +1,2 @@
-#!/bin/bash
-light -A 5
+#!/bin/zsh
+light -A 10
