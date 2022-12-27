@@ -1,3 +1,5 @@
+import:
+  - ~/.alacritty-colorscheme/themes/{scheme_name}.yaml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Any items in the `env` entry below will be added as
@@ -272,7 +274,7 @@ schemes:
       focused_match:
         foreground: '#44475a'
         background: '#ffb86c'
-      bar:
+      footer_bar:
         background: '#282a36'
         foreground: '#f8f8f2'
     line_indicator:
@@ -285,7 +287,8 @@ schemes:
       black:   '#000000'
       red:     '#ff5555'
       green:   '#50fa7b'
-      yellow:  '#f1fa8c'
+      # yellow:  '#f1fa8c'
+      yellow:    '#bd93f9'
       blue:    '#bd93f9'
       magenta: '#ff79c6'
       cyan:    '#8be9fd'
@@ -578,7 +581,8 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *MonokaiPro
+colors: *Dracula
+# colors: *Palenight
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

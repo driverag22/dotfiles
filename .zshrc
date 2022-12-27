@@ -8,6 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="sunrise"
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -17,7 +18,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -101,10 +102,14 @@ source /usr/share/nvm/init-nvm.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
 pfetch
 
 # opam configuration
 [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+autoload -Uz compinit promptinit
+compinit
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 wmname "LG3D"
