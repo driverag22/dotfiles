@@ -15,7 +15,7 @@ static const char col_white[]       = "#eeeeee";
 /* static const char col_whitegray[]   = "#68686d"; */
 static const char col_pink[]        = "#ff69b4";
 static const char col_darkBlue[]    = "#003049";
-/* static const char col_teal[]        = "#169378"; */
+static const char col_teal[]        = "#169378";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray3,  col_black},
@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", ">_", " ", " ", " ", " ", " ", "¿?" };
+static const char *tags[] = { " ", ">_", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -47,9 +47,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { " ",      tile },
-	{ " ",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+    { "||   ",      tile },
+	{ "||   ",      NULL },    /* no layout function means floating behavior */
+	{ "||  [M]",      monocle },
 };
 /* key definitions */
 #define MODKEY Mod1Mask
@@ -75,12 +75,14 @@ static const char *brightnessUp[] = {"/home/diego/.local/.macros/keyBindings/lig
 static const char *brightnessDown[] = {"/home/diego/.local/.macros/keyBindings/lightDown.sh", NULL};
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
+static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL};
+static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	/* { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu */
+	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
 	/* { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } }, //alacritty */
-	{ CTRLKEY,                      XK_space,  spawn,          {.v = dmenucmd } }, //dmenu 
+	/* { CTRLKEY,                      XK_space,  spawn,          {.v = dmenucmd } }, //dmenu */ 
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 
@@ -94,6 +96,8 @@ static const Key keys[] = {
 
     { 0,                            XF86XK_MonBrightnessUp,      spawn,    {.v=brightnessUp }},
     { 0,                            XF86XK_MonBrightnessDown,    spawn, {.v=brightnessDown }},
+	{ MODKEY,                       XK_p,      spawn,          {.v = play } },
+	{ MODKEY,                       XK_o,      spawn,          {.v = stop } },
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
