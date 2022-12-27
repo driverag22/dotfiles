@@ -2,6 +2,7 @@
 
 # A dwm_bar function that shows the current artist, track, duration, and status from Spotify using playerctl
 # Joe Standring <git@joestandring.com>
+# Edited by: Diego Rivera <git@driverag22.com>
 # GNU GPLv3
 
 # Dependencies: spotify/spotifyd, playerctl
@@ -27,25 +28,25 @@ if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
 
     if [ "$IDENTIFIER" = "unicode" ]; then
         if [ "$STATUS" = "Playing" ]; then
-            STATUS="▶"
+            STATUS=""
         else
-            STATUS="⏸"
+            STATUS=""
         fi
         
         if [ "$SHUFFLE" = "On" ]; then
-            SHUFFLE=" 🔀"
+            SHUFFLE=" 咽"
         else
             SHUFFLE=""
         fi
     else
         if [ "$STATUS" = "Playing" ]; then
-            STATUS="▶"
+            STATUS=""
         else
-            STATUS="⏸"
+            STATUS=""
         fi
         
         if [ "$SHUFFLE" = "On" ]; then
-            SHUFFLE=" 🔀"
+            SHUFFLE=" 咽"
         else
             SHUFFLE=""
         fi
@@ -56,7 +57,7 @@ if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
             echo "bad"
         else
             # printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
-            printf "%s - %s " "$ARTIST" "$TRACK"
+            printf "%s%s - %s %s" "$STATUS" "$ARTIST" "$TRACK" 
             # printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
             printf "%s\n" "$SEP2"
         fi
