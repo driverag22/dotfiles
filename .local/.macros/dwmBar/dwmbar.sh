@@ -8,7 +8,7 @@ while true; do
 
         date '+  %a. %d %b. ]   [   %R' > /tmp/CurTime.tmp
 
-        sleep 60s
+        sleep 30s
 done &
 
 while true; do
