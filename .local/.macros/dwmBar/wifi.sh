@@ -1,7 +1,6 @@
 #!/bin/sh
 
 
-for battery in /sys/class/power_supply/BAT?*; do
     wifiRate=$(nmcli -f ACTIVE,RATE dev wifi list | awk '$1=="yes" {print $2 "Mbit/s"}')
 
 	wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk '$1=="yes" {print $2}')
@@ -16,4 +15,3 @@ for battery in /sys/class/power_supply/BAT?*; do
 	    printf "%s%s" " $wifiBars" " $wifiRate";
     fi
 
-done && printf "\\n"
