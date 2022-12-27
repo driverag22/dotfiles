@@ -95,7 +95,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JavaScript">
-      <summary usageCount="113" lastUsed="1671880555502" />
+      <summary usageCount="118" lastUsed="1672177001707" />
     </fileType>
     <fileType name="Markdown">
       <summary usageCount="1" lastUsed="1669675491186" />
@@ -191,7 +191,7 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="JavaScript">
-      <summary usageCount="113" lastUsage="1671880555502" />
+      <summary usageCount="118" lastUsage="1672177001707" />
     </language>
     <language id="Markdown">
       <summary usageCount="1" lastUsage="1669675491188" />
@@ -297,7 +297,7 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33648000" />
+    <option name="totallyTimeSpent" value="33657000" />
   </component>
   <component name="ToolWindowManager">
     <layout>
@@ -318,7 +318,7 @@
       <window_info anchor="bottom" id="TODO" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Problems View" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32213813" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32210624" />
       <window_info anchor="bottom" id="Services" order="8" />
       <window_info anchor="right" id="documentation.v2" side_tool="true" />
       <window_info anchor="right" id="Notifications" order="0" weight="0.25" />
