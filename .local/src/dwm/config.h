@@ -2,7 +2,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -74,6 +74,7 @@ static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powe
 static const char *brightnessUp[] = {"/home/diego/.local/.macros/keyBindings/lightUp.sh", NULL};
 static const char *brightnessDown[] = {"/home/diego/.local/.macros/keyBindings/lightDown.sh", NULL};
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
+static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -85,13 +86,14 @@ static const Key keys[] = {
 
 	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //home
+	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //home
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
 
 
-    { 0,            XF86XK_MonBrightnessUp,      spawn,    {.v=brightnessUp }},
-    { 0,            XF86XK_MonBrightnessUp,      spawn, {.v=brightnessDown }},
+    { 0,                            XF86XK_MonBrightnessUp,      spawn,    {.v=brightnessUp }},
+    { 0,                            XF86XK_MonBrightnessDown,    spawn, {.v=brightnessDown }},
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
