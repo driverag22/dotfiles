@@ -1,5 +1,3 @@
-import:
-  - ~/.alacritty-colorscheme/themes/{scheme_name}.yaml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Any items in the `env` entry below will be added as
@@ -292,7 +290,7 @@ schemes:
       blue:    '#bd93f9'
       magenta: '#ff79c6'
       cyan:    '#8be9fd'
-      white:   '#bfbfbf'
+      white:   '#eeeeee'
     bright:
       black:   '#4d4d4d'
       red:     '#ff6e67'
