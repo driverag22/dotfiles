@@ -4,14 +4,6 @@ setxkbmap us -variant intl
 /home/diego/.local/.macros/automatic/fehbg.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 
-# config config status.showUntrackedFiles no
-
-# alias config='/usr/bin/git --git-dir=/home/diego/.dotfiles/ --work-tree=/home/diego' 
-
-# export PATH = /home/diego/.local/bin:/home/diego/.opam/4.11.1/bin:/home/diego/.nvm/versions/node/v12.22.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
-
-wmname "LG3D"
-
 xcompmgr -f -D 3 &
 exec dwm
 # exec startxfce4 
