@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray3,  col_black},
 	[SchemeSel]  = { col_pink, col_gray3,  col_white},
-	/* [SchemeNorm] = { col_white, col_black,  col_black }, */
+	/* [SchemeNorm] = { col_white, col_gray3,  col_black }, */
 	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
 	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
@@ -47,9 +47,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { "||   ",      tile },
-	{ "||   ",      NULL },    /* no layout function means floating behavior */
-	{ "||  [M]",      monocle },
+    { " ",      tile },
+	{ " ",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",      monocle },
 };
 /* key definitions */
 #define MODKEY Mod1Mask
