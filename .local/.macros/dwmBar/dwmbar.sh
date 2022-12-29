@@ -6,6 +6,7 @@
 while true; do
         # values=$(/home/diego/.local/.macros/dwmBar/values.sh)
         values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
+        # values=$(/home/diego/.local/.macros/dwmBar/minimalistValues.sh)
         xsetroot -name "$values"
         sleep 0.5s
 done &
