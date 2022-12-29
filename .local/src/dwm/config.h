@@ -2,7 +2,9 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
+static const char selbordercolor[]  = "#ff69b4";
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 2;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -76,8 +78,8 @@ static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh
 static const char *lockscreen[]  = { "betterlockscreen", "-l" };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
 
-static const char *brightnessUp[] = { "light", "-A", "10", NULL};
-static const char *brightnessDown[] = {"light", "-U", "10", NULL};
+static const char *brightnessUp[] = { "light", "-A", "5", NULL};
+static const char *brightnessDown[] = {"light", "-U", "5", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play", NULL};
