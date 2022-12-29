@@ -67,16 +67,24 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray3, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
-static const char *lockscreen[]  = { "betterlockscreen", "-l" };
-static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
-static const char *brightnessUp[] = {"/home/diego/.local/.macros/keyBindings/lightUp.sh", NULL};
-static const char *brightnessDown[] = {"/home/diego/.local/.macros/keyBindings/lightDown.sh", NULL};
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
-static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL};
-static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL};
+
+static const char *lockscreen[]  = { "betterlockscreen", "-l" };
+static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
+
+static const char *brightnessUp[] = { "light", "-A", "10", NULL};
+static const char *brightnessDown[] = {"light", "-U", "10", NULL};
+/* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
+/* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
+static const char *play[] = {"playerctl", "play", NULL};
+static const char *stop[] = {"playerctl", "pause", NULL};
+static const char *soundUp[] = {"amixer", "set", "Master",  "5%+", NULL};
+static const char *soundDown[] = {"amixer", "set", "Master", "5%-", NULL};
+static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,10 +102,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
 
 
-    { 0,                            XF86XK_MonBrightnessUp,      spawn,    {.v=brightnessUp }},
-    { 0,                            XF86XK_MonBrightnessDown,    spawn, {.v=brightnessDown }},
+    { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }},
+    { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
 	{ MODKEY,                       XK_p,      spawn,          {.v = play } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = stop } },
+    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v=soundUp}},
+    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v=soundDown}},
+    { 0,                            XF86XK_AudioMute,          spawn, {.v=soundToggle}},
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

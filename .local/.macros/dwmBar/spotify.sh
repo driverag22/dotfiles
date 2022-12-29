@@ -26,46 +26,41 @@ if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
     SHUFFLE=$(playerctl shuffle)
 
 
-    if [ "$IDENTIFIER" = "unicode" ]; then
-        if [ "$STATUS" = "Playing" ]; then
-            STATUS=""
-        else
-            STATUS=""
-        fi
-        
-        if [ "$SHUFFLE" = "On" ]; then
-            SHUFFLE=" 咽"
-        else
-            SHUFFLE=""
-        fi
+    if [ "$STATUS" = "Playing" ]; then
+        STATUS=" "
     else
-        if [ "$STATUS" = "Playing" ]; then
-            STATUS=""
-        else
-            STATUS=""
-        fi
-        
-        if [ "$SHUFFLE" = "On" ]; then
-            SHUFFLE=" 咽"
-        else
-            SHUFFLE=""
-        fi
+        STATUS=" "
     fi
     
-    if [ "$PLAYER" = "spotify" ]; then
-        if [ "$STATUS" == "No players found " ]; then
-            echo "bad"
-        else
-            # printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
-            printf "%s%s - %s %s" "$STATUS " "$ARTIST" "$TRACK" 
-            # printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
-            printf "%s\n" "$SEP2"
-        fi
+    # if [ "$SHUFFLE" = "On" ]; then
+    #     SHUFFLE=" 咽"
+    # else
+    #     SHUFFLE=""
+    # fi
+    
+    if [ "$STATUS" == "No players found " ]; then
+        echo "bad"
     else
-        printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
-        printf "%0d:%02d/" $((POSITION%3600/60)) $((POSITION%60))
-        printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
-        printf "%s%s\n" "$SHUFFLE" "$SEP2"
+        # printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
+        printf "%s%s - %s " "$STATUS " "$ARTIST" "$TRACK" 
+        # printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
+        printf "%s\n" "$SEP2"
     fi
+
+    # if [ "$PLAYER" = "spotify" ]; then
+    #     if [ "$STATUS" == "No players found " ]; then
+    #         echo "bad"
+    #     else
+    #         # printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
+    #         printf "%s%s - %s %s" "$STATUS " "$ARTIST" "$TRACK" 
+    #         # printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
+    #         printf "%s\n" "$SEP2"
+    #     fi
+    # else
+    #     printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
+    #     printf "%0d:%02d/" $((POSITION%3600/60)) $((POSITION%60))
+    #     printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
+    #     printf "%s%s\n" "$SHUFFLE" "$SEP2"
+    # fi
 fi
 

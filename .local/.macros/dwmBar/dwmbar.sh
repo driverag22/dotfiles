@@ -4,8 +4,8 @@
 # remodified by driverag22
 
 while true; do
-        values=$(/home/diego/.local/.macros/dwmBar/values.sh)
-        # values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
+        # values=$(/home/diego/.local/.macros/dwmBar/values.sh)
+        values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
         xsetroot -name "$values"
-        sleep 2s
+        sleep 0.5s
 done &

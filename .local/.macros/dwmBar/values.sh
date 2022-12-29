@@ -6,7 +6,7 @@
 
 LOCALTIME=$(date '+  %a. %d %b.    %R')
 DB=$(dropbox-cli status)
-# VOL=$(pamixer --get-volume-human)
+VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
 MEM=$(free -h --kilo | awk '/^Mem:/ {print $3 " / " $2}')
 # CPU=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}' )
 # CPU=$(/home/diego/.local/.macros/dwmBar/cpu.sh)
@@ -23,10 +23,10 @@ BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
 if [ -z "$SPOTIFY" ] 
 then
     # printf "[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$BATTERY" "$WIFI" "$LOCALTIME"
-    printf "[  %s    %s ]   [  %s    %s   %s ]   [ %s ]   [ %s ]   [ %s ]" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$WIFI" "$BATTERY" "$LOCALTIME"
+    printf "[ %s ]   [  %s    %s ]   [  %s    %s   %s ]   [ %s ]   [ %s ]   [ %s ]" "$VOL" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$WIFI" "$BATTERY" "$LOCALTIME"
     # printf "[  %s ]   [   %s ]   [  %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]" "$DISK" "$DB" "$MEM" "$TEMP" "$BATTERY" "$WIFI" "$LOCALTIME"
 else 
     # printf "[  %s ]   [  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]" "$SPOTIFY" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$BATTERY" "$WIFI" "$LOCALTIME"
-    printf "[ %s ]   [  %s    %s ]   [  %s    %s   %s ]   [ %s ]   [ %s ]   [ %s ] " "$SPOTIFY" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$WIFI" "$BATTERY" "$LOCALTIME"
+    printf "[ %s %s ]   [  %s    %s ]   [  %s    %s   %s ]   [ %s ]   [ %s ]   [ %s ] " "$SPOTIFY" "$VOL" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$WIFI" "$BATTERY" "$LOCALTIME"
     # printf "[ %s ]   [  %s ]   [   %s ]   [  %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]" "$SPOTIFY" "$DISK" "$DB" "$MEM" "$TEMP" "$BATTERY" "$WIFI" "$LOCALTIME"
 fi
