@@ -3,6 +3,7 @@
 setxkbmap us -variant intl
 /home/diego/.local/.macros/automatic/fehbg.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
+amixer set Master mute
 
 xcompmgr &
 exec dwm
