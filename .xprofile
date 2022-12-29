@@ -5,6 +5,8 @@ setxkbmap us -variant intl
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 amixer set Master mute
 
-xcompmgr &
+# xcompmgr &
+picom &
+
 exec dwm
 # exec startxfce4 
