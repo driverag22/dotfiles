@@ -2,7 +2,7 @@ local set = vim.opt
 
 
 ---- Keymaps:
-vim.keymap.set('n', '<C-f>', ':TZFocus<CR>', {noremap = true}) -- Focus mode
+-- vim.keymap.set('n', '<C-f>', ':TZFocus<CR>', {noremap = true}) -- Focus mode
 vim.keymap.set('n', '<C-g>', ':TZAtaraxis<CR>', {noremap = true}) -- Centered mode
 vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true}) -- Toggle file tree
 vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>', {noremap = true}) -- Toggle tagbar
