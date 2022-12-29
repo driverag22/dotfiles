@@ -284,6 +284,7 @@ schemes:
     normal:
       black:   '#000000'
       red:     '#ff5555'
+      # green:    '#caa9fa'
       green:   '#50fa7b'
       # yellow:  '#f1fa8c'
       yellow:    '#bd93f9'
@@ -292,7 +293,8 @@ schemes:
       cyan:    '#8be9fd'
       white:   '#eeeeee'
     bright:
-      black:   '#4d4d4d'
+      black:   '#eeeeee' #changed to white
+      # black:   '#4d4d4d'
       red:     '#ff6e67'
       green:   '#5af78e'
       yellow:  '#f4f99d'
