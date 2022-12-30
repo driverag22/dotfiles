@@ -19,7 +19,7 @@ else
     icon=" "
     # printf "%s%s%s" "$icon" " $wifiBars" " $wifiRate";
     # printf "%s%s" " $wifiBars" " $wifiSignal";
-    printf " %sMB  %sMB  %s%s" " $upStream" "$downStream" "$icon" " $wifiSignal";
+    printf " %sMB  %sMB  %s%s" " $upStream" "$downStream" "$icon " " $wifiSignal";
     # printf "%s%s%s" "$icon" " $wifiSignal";
 fi
 
