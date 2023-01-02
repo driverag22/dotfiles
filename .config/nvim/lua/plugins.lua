@@ -41,7 +41,6 @@ Plug 'navarasu/onedark.nvim' -- colorscheme
 Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
 Plug('xiyaowong/nvim-transparent') -- make background transparent
 
-Plug 'Mofiqul/dracula.nvim' -- dracula colortheme
 -- Plug 'gorbit99/codewindow.nvim' -- code minimap
 
 vim.call('plug#end')
