@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", ">_", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -54,7 +54,9 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 };
 /* key definitions */
-#define MODKEY Mod1Mask
+/* #define MODKEY Mod1Mask */
+#define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define CTRLKEY ControlMask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -106,8 +108,8 @@ static const Key keys[] = {
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }},
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
-	{ MODKEY,                       XK_p,      spawn,          {.v = play } },
-	{ MODKEY,                       XK_o,      spawn,          {.v = stop } },
+	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } },
+	{ CTRLKEY,                      XK_o,                      spawn, {.v = stop } },
     { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v=soundUp}},
     { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v=soundDown}},
     { 0,                            XF86XK_AudioMute,          spawn, {.v=soundToggle}},
@@ -138,6 +140,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+	{ ALTKEY,                       XK_k,      viewnexttag,        {0} },
+	{ ALTKEY|ShiftMask,             XK_k,      tagnext,            {0} }, 
+
+	{ ALTKEY,                       XK_j,      viewprevtag,        {0} },
+	{ ALTKEY|ShiftMask,             XK_j,      tagprev,            {0} }, 
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)

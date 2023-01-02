@@ -208,6 +208,8 @@ static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
+static void tagnext(const Arg *arg);
+static void tagprev(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *m);
 static void togglebar(const Arg *arg);
@@ -228,6 +230,8 @@ static void updatetitle(Client *c);
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
+static void viewnexttag(const Arg *arg);
+static void viewprevtag(const Arg *arg);
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
 static int xerror(Display *dpy, XErrorEvent *ee);
@@ -1257,6 +1261,35 @@ propertynotify(XEvent *e)
 }
 
 void
+viewnexttag(const Arg *arg) {
+    unsigned int nTag;
+    nTag = selmon->tagset[selmon->seltags];
+    nTag = nTag << 1;
+	selmon->seltags ^= 1; /* toggle sel tagset */
+	if (nTag & TAGMASK) {
+		selmon->tagset[selmon->seltags] = (nTag & TAGMASK);
+    } else { /* at rightmost tag*/
+		selmon->tagset[selmon->seltags] = (1 & TAGMASK);
+    }
+	focus(NULL);
+	arrange(selmon);
+}
+
+void
+viewprevtag(const Arg *arg) {
+    unsigned int nTag;
+    nTag = selmon->tagset[selmon->seltags];
+    nTag = nTag >> 1;
+	selmon->seltags ^= 1; /* toggle sel tagset */
+	if (nTag & TAGMASK) {
+		selmon->tagset[selmon->seltags] = (nTag & TAGMASK);
+    } else { /* at rightmost tag*/
+		selmon->tagset[selmon->seltags] = ( (1 << (LENGTH(tags) - 1)) & TAGMASK);
+    }
+	focus(NULL);
+	arrange(selmon);
+}
+void
 quit(const Arg *arg)
 {
 	running = 0;
@@ -1670,6 +1703,41 @@ tag(const Arg *arg)
 	}
 }
 
+void
+tagnext(const Arg *arg)
+{
+    unsigned int nTag;
+    nTag = selmon->tagset[selmon->seltags];
+    nTag = nTag << 1;
+    if (!(nTag & TAGMASK)) {
+        nTag = 1;
+    }
+	selmon->seltags ^= 1; /* toggle sel tagset */
+	if (selmon->sel && nTag) {
+		selmon->sel->tags = nTag & TAGMASK;
+		selmon->tagset[selmon->seltags] = (nTag & TAGMASK);
+		focus(NULL);
+		arrange(selmon);
+	}
+}
+
+void
+tagprev(const Arg *arg)
+{
+    unsigned int nTag;
+    nTag = selmon->tagset[selmon->seltags];
+    nTag = nTag >> 1;
+    if (!(nTag & TAGMASK)) {
+        nTag = (1 << (LENGTH(tags) - 1));
+    }
+	selmon->seltags ^= 1; /* toggle sel tagset */
+	if (selmon->sel && nTag) {
+		selmon->sel->tags = nTag & TAGMASK;
+		selmon->tagset[selmon->seltags] = (nTag & TAGMASK);
+		focus(NULL);
+		arrange(selmon);
+	}
+}
 void
 tagmon(const Arg *arg)
 {
