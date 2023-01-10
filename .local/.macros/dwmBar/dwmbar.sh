@@ -4,10 +4,15 @@
 # remodified by driverag22
 
 while true; do
-        # values=$(/home/diego/.local/.macros/dwmBar/values.sh)
-        # values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
-        values=$(/home/diego/.local/.macros/dwmBar/cleanValues.sh)
-        # values=$(/home/diego/.local/.macros/dwmBar/minimalistValues.sh)
+        ## Choices:
+        # values.sh -- everything
+        # simpleValues.sh 
+        # cleanValues.sh
+        # miniValues.sh
+        # minimalistValues.sh
+        
+        values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
+
         xsetroot -name "$values"
-        sleep 2s
+        sleep 1s ## refresh rate
 done &
