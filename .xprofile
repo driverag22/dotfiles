@@ -1,12 +1,16 @@
 #!/bin/sh
 
 setxkbmap us -variant intl
-/home/diego/.local/.macros/automatic/fehbg.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
+# /home/diego/.local/.macros/automatic/screensNetherlands.sh
+/home/diego/.local/.macros/automatic/fehbg.sh #sets screens and background
 amixer set Master mute
+# export _JAVA_AWT_WM_NONREPARENTING=1
+wmname "LG3D"
+
 
 # xcompmgr &
-picom &
+picom --experimental-backends &
 
 exec dwm
 # exec startxfce4 
