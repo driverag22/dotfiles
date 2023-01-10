@@ -1,6 +1,6 @@
 <application>
   <component name="DimensionService">
-    <location key="find.popup.0.0.1920.1080" x="942" y="160" />
+    <location key="find.popup.0.0.1920.1080" x="942" y="164" />
     <location key="find.popup.0.0.2560.1440" x="910" y="173" />
     <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2514" height="305" />
     <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2514" height="305" />
@@ -22,11 +22,11 @@
     <size key="GridCell.Tab.3.center.0.0.1920.1080" width="1874" height="389" />
     <size key="GridCell.Tab.3.right.0.0.1920.1080" width="1874" height="389" />
     <size key="GridCell.Tab.3.bottom.0.0.1920.1080" width="1874" height="389" />
-    <size key="find.popup.0.0.1920.1080" width="978" height="893" />
+    <size key="find.popup.0.0.1920.1080" width="978" height="916" />
     <size key="find.popup.0.0.2560.1440" width="646" height="544" />
   </component>
   <component name="WindowManager">
-    <frame x="0" y="22" width="1916" height="1054" extendedState="6" />
+    <frame x="0" y="27" width="1916" height="1049" extendedState="6" />
   </component>
   <component name="WindowStateApplicationService">
     <state x="1277" y="344" width="478" height="367" key="FileChooserDialogImpl" timestamp="1669074985051">

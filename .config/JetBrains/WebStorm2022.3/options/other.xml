@@ -49,59 +49,58 @@
     <option name="fontScale" value="1.0" />
     <option name="fontSize" value="15.0" />
   </component>
-  <component name="PropertyService">{
-  &quot;keyToString&quot;: {
-    &quot;CWM_LOGGING_VERSION&quot;: &quot;1&quot;,
-    &quot;ExpandBeforeRunStepsPanel&quot;: &quot;true&quot;,
-    &quot;GeneralSettings.initiallyConfigured&quot;: &quot;true&quot;,
-    &quot;KEYMAP&quot;: &quot;terminal\nzoom in\nzoom&quot;,
-    &quot;MarketplacePluginsSearchHistory&quot;: &quot;vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark&quot;,
-    &quot;NextRunPlatformUpdateBuild&quot;: &quot;WS-222.4459.24/2022.2.4&quot;,
-    &quot;NextRunPlatformUpdateVersion&quot;: &quot;2022.2.4&quot;,
-    &quot;NonModalCommitCustomization.IsApplied&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.se.text.search&quot;: &quot;true&quot;,
-    &quot;SettingsSearchHistory&quot;: &quot;shortcut\nzoom&quot;,
-    &quot;appcds.runOnSecondStart&quot;: &quot;WS-223.8214.51-3978341e914f9506724fd79d7d28508c9952bde434391cb0c174ed4f2f536f8b&quot;,
-    &quot;ask.about.ctrl.y.shortcut.v2&quot;: &quot;true&quot;,
-    &quot;bundled.plugins.list.saved.version&quot;: &quot;WS-223.8214.51&quot;,
-    &quot;evlsprt3.222&quot;: &quot;24&quot;,
-    &quot;evlsprt3.223&quot;: &quot;25&quot;,
-    &quot;file.gist.reindex.count&quot;: &quot;4&quot;,
-    &quot;fileTypeChangedCounter&quot;: &quot;2&quot;,
-    &quot;find.popup.splitter&quot;: &quot;0.31343284&quot;,
-    &quot;fontSizeToResetConsole&quot;: &quot;12.0&quot;,
-    &quot;fontSizeToResetEditor&quot;: &quot;12.0&quot;,
-    &quot;got.it.tooltip.reader.mode.got.it&quot;: &quot;1&quot;,
-    &quot;got.it.tooltip.terminal.smart_command_execution&quot;: &quot;1&quot;,
-    &quot;ide.memory.adjusted&quot;: &quot;true&quot;,
-    &quot;ide.updates.old.dirs.scan.scheduled&quot;: &quot;1672444237844&quot;,
-    &quot;ideavim.statistics.timestamp&quot;: &quot;1671710147231&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/diego/src/waterproof&quot;,
-    &quot;previousColorScheme&quot;: &quot;_@user_Dracula&quot;,
-    &quot;registry.to.advanced.settings.migration.build&quot;: &quot;WS-223.8214.51&quot;,
-    &quot;tasks.pass.word.conversion.enforced&quot;: &quot;true&quot;,
-    &quot;ts.lib.d.ts.version&quot;: &quot;4.8.4&quot;
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "CWM_LOGGING_VERSION": "1",
+    "ExpandBeforeRunStepsPanel": "true",
+    "GeneralSettings.initiallyConfigured": "true",
+    "KEYMAP": "terminal\nzoom in\nzoom",
+    "MarketplacePluginsSearchHistory": "vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark",
+    "NextRunPlatformUpdateBuild": "WS-222.4459.24/2022.2.4",
+    "NextRunPlatformUpdateVersion": "2022.2.4",
+    "NonModalCommitCustomization.IsApplied": "true",
+    "RunOnceActivity.se.text.search": "true",
+    "SettingsSearchHistory": "shortcut\nzoom",
+    "appcds.runOnSecondStart": "WS-223.8214.51-5499b3f8cad1d6bd6576715e9b4689b9ba905d87f32533ccb15d03bdbc47063e",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "bundled.plugins.list.saved.version": "WS-223.8214.51",
+    "evlsprt3.222": "24",
+    "evlsprt3.223": "25",
+    "file.gist.reindex.count": "4",
+    "fileTypeChangedCounter": "2",
+    "find.popup.splitter": "0.31343284",
+    "fontSizeToResetConsole": "12.0",
+    "fontSizeToResetEditor": "12.0",
+    "got.it.tooltip.reader.mode.got.it": "1",
+    "got.it.tooltip.terminal.smart_command_execution": "1",
+    "ide.memory.adjusted": "true",
+    "ideavim.statistics.timestamp": "1672691446258",
+    "last_opened_file_path": "/home/diego/src/waterproof",
+    "previousColorScheme": "_@user_Dracula",
+    "registry.to.advanced.settings.migration.build": "WS-223.8214.51",
+    "tasks.pass.word.conversion.enforced": "true",
+    "ts.lib.d.ts.version": "4.8.4"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;file.chooser.recent.files&quot;: [
-      &quot;/home/diego/src/jointwaterproof/waterproof&quot;,
-      &quot;/home/diego/src/waterproof&quot;,
-      &quot;/home/diego/.nvm/versions/node/v12.22.12/bin/npm&quot;,
-      &quot;/home/diego/.nvm/versions&quot;
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/diego/src/jointwaterproof/waterproof",
+      "/home/diego/src/waterproof",
+      "/home/diego/.nvm/versions/node/v12.22.12/bin/npm",
+      "/home/diego/.nvm/versions"
     ],
-    &quot;fileTypeDetectors&quot;: [
-      &quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&quot;,
-      &quot;com.intellij.docker.dockerFile.DockerFileTypeDetector&quot;,
-      &quot;com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector&quot;,
-      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector&quot;,
-      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector&quot;,
-      &quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&quot;
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
     ]
   }
-}</component>
+}]]></component>
   <component name="TerminalCommandHistoryManager">
     <command-history-files>
-      <command-history-file filename="waterproof-history" project-path="$USER_HOME$/src/waterproof" last-access-time="1672357332543" />
+      <command-history-file filename="waterproof-history" project-path="$USER_HOME$/src/waterproof" last-access-time="1672690655011" />
     </command-history-files>
   </component>
 </application>

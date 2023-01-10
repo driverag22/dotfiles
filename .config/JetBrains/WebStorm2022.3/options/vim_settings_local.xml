@@ -2,14 +2,6 @@
   <component name="VimHistorySettings">
     <history>
       <history-search>
-        <entry encoding="base64">aW5Gb2N1cw==</entry>
-        <entry encoding="base64">Y29uc29sZS5sb2c=</entry>
-        <entry encoding="base64">Y29ucw==</entry>
-        <entry encoding="base64">Y29uc29sZS5sbw==</entry>
-        <entry encoding="base64">dHlwZSB5b3Vy</entry>
-        <entry encoding="base64">cXVlcnk=</entry>
-        <entry encoding="base64">ZXJyb3JTdHJpbmc=</entry>
-        <entry encoding="base64">aWxsZWdhbA==</entry>
         <entry encoding="base64">c2lkZQ==</entry>
         <entry encoding="base64">UWVkLg==</entry>
         <entry encoding="base64">Q2hlY2s=</entry>
@@ -47,17 +39,24 @@
         <entry encoding="base64">ZXhlY3V0ZWQ=</entry>
         <entry encoding="base64">ZXhlY3V0ZWRMaW5l</entry>
         <entry encoding="base64">Y29uc29sZS4=</entry>
-        <entry encoding="base64">Y29uc29sZQ==</entry>
         <entry encoding="base64">cmV0dXJu</entry>
         <entry encoding="base64">Y3JlYXRl</entry>
         <entry encoding="base64">c3RhdGUuaWQ=</entry>
+        <entry encoding="base64">Y29uc29sZS5sb2c=</entry>
+        <entry encoding="base64">cmVzdWx0</entry>
+        <entry encoding="base64">c3NpZA==</entry>
+        <entry encoding="base64">c2lk</entry>
+        <entry encoding="base64">Y3JlYXRlQVNU</entry>
+        <entry encoding="base64">aWRPZlNlbg==</entry>
+        <entry encoding="base64">bGFzdFVu</entry>
         <entry encoding="base64">c2VudGVuY2VJZA==</entry>
+        <entry encoding="base64">Y29uc29sZQ==</entry>
+        <entry encoding="base64">UXVlcnlWZXJuYWM=</entry>
       </history-search>
       <history-cmd>
         <entry encoding="base64">MTc1</entry>
         <entry encoding="base64">MTgw</entry>
         <entry encoding="base64">c2Nyb2xsSW4=</entry>
-        <entry encoding="base64">d3E=</entry>
         <entry encoding="base64">JzwsJz53</entry>
         <entry encoding="base64">MTQw</entry>
         <entry encoding="base64">MjY=</entry>
@@ -72,6 +71,8 @@
         <entry encoding="base64">Vw==</entry>
         <entry encoding="base64">NA==</entry>
         <entry encoding="base64" />
+        <entry encoding="base64">d3E=</entry>
+        <entry encoding="base64">MjIw</entry>
         <entry encoding="base64">dw==</entry>
       </history-cmd>
       <history-expr />
@@ -81,10 +82,10 @@
   <component name="VimMarksSettings">
     <globalmarks />
     <filemarks>
-      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" timestamp="1671717106931">
-        <mark key="'" line="321" column="11" />
-        <mark key="[" line="343" column="0" />
-        <mark key="]" line="343" column="0" />
+      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" timestamp="1672691594703">
+        <mark key="'" line="141" column="52" />
+        <mark key="[" line="140" column="0" />
+        <mark key="]" line="140" column="52" />
         <mark key="." line="343" column="0" />
       </file>
       <file name="$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js" timestamp="1671716450480">
@@ -98,12 +99,11 @@
         <mark key="]" line="15" column="0" />
         <mark key="." line="15" column="0" />
       </file>
-      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" timestamp="1671717592724">
-        <mark key="'" line="23" column="8" />
-        <mark key="[" line="86" column="22" />
-        <mark key="]" line="86" column="22" />
-        <mark key="." line="86" column="23" />
-        <mark key="^" line="86" column="25" />
+      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" timestamp="1672691927037">
+        <mark key="'" line="40" column="6" />
+        <mark key="[" line="86" column="0" />
+        <mark key="]" line="86" column="0" />
+        <mark key="." line="86" column="0" />
       </file>
       <file name="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiState.js" timestamp="1671715785370">
         <mark key="'" line="105" column="11" />
@@ -114,18 +114,19 @@
         <mark key="]" line="5" column="0" />
         <mark key="." line="5" column="0" />
       </file>
-      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" timestamp="1671716958833">
-        <mark key="[" line="219" column="18" />
-        <mark key="]" line="219" column="21" />
-        <mark key="." line="219" column="20" />
-        <mark key="^" line="219" column="21" />
+      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" timestamp="1673174507057">
+        <mark key="'" line="3" column="22" />
+        <mark key="[" line="222" column="21" />
+        <mark key="]" line="222" column="31" />
+        <mark key="." line="222" column="30" />
+        <mark key="^" line="222" column="31" />
       </file>
-      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" timestamp="1671715996673">
-        <mark key="'" line="76" column="32" />
-        <mark key="[" line="80" column="36" />
-        <mark key="]" line="80" column="40" />
-        <mark key="." line="80" column="39" />
-        <mark key="^" line="80" column="40" />
+      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" timestamp="1672702028729">
+        <mark key="'" line="95" column="15" />
+        <mark key="[" line="74" column="11" />
+        <mark key="]" line="74" column="18" />
+        <mark key="^" line="74" column="18" />
+        <mark key="." line="74" column="17" />
       </file>
       <file name="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" timestamp="1671711062685">
         <mark key="'" line="15" column="6" />
@@ -181,53 +182,11 @@
       <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/CoqSerapiProcessors.js" timestamp="1671108649415">
         <mark key="'" line="131" column="17" />
       </file>
-      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" timestamp="1671715899150">
-        <mark key="'" line="24" column="35" />
+      <file name="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" timestamp="1672691496895">
+        <mark key="'" line="1" column="8" />
       </file>
     </filemarks>
     <jumps>
-      <jump line="191" column="8" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="282" column="51" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="369" column="14" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="354" column="5" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="370" column="51" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="380" column="24" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="439" column="4" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="435" column="54" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="440" column="4" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="17" column="9" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue" />
-      <jump line="14" column="21" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue" />
-      <jump line="368" column="14" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="362" column="40" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="5" column="15" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue" />
-      <jump line="371" column="51" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="381" column="24" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="432" column="36" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="431" column="4" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="441" column="11" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="21" column="23" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue" />
-      <jump line="26" column="46" filename="$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue" />
-      <jump line="599" column="38" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="189" column="10" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="262" column="12" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="265" column="8" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="434" column="30" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="450" column="44" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="145" column="16" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" />
-      <jump line="148" column="13" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" />
-      <jump line="149" column="13" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" />
-      <jump line="287" column="13" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="289" column="13" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="18" column="39" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="6" column="23" filename="$USER_HOME$/src/waterproof/src/editpage/components/assistance/AssistanceBar.vue" />
-      <jump line="107" column="34" filename="$USER_HOME$/src/waterproof/src/editpage/components/assistance/AssistanceBar.vue" />
-      <jump line="121" column="18" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" />
-      <jump line="14" column="29" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="38" column="37" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="52" column="8" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="256" column="14" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
-      <jump line="150" column="13" filename="$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue" />
-      <jump line="104" column="18" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" />
       <jump line="217" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" />
       <jump line="98" column="12" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" />
       <jump line="291" column="11" filename="$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue" />
@@ -273,64 +232,106 @@
       <jump line="105" column="11" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiState.js" />
       <jump line="50" column="43" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
       <jump line="47" column="17" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
-      <jump line="7" column="39" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
       <jump line="36" column="33" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
-      <jump line="24" column="35" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
-      <jump line="76" column="32" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
       <jump line="289" column="17" filename="$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js" />
       <jump line="295" column="0" filename="$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js" />
       <jump line="296" column="4" filename="$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js" />
       <jump line="286" column="41" filename="$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js" />
       <jump line="321" column="11" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
-      <jump line="84" column="16" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
       <jump line="97" column="20" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
-      <jump line="85" column="21" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
-      <jump line="23" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="219" column="37" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" />
+      <jump line="32" column="33" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="45" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="67" column="43" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="70" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="73" column="14" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="78" column="17" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="84" column="25" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="85" column="43" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="87" column="40" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="5" column="44" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="23" column="6" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="74" column="1" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="82" column="19" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="52" column="31" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="80" column="27" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="81" column="30" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="24" column="18" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
+      <jump line="7" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
+      <jump line="48" column="28" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
+      <jump line="1" column="8" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js" />
+      <jump line="21" column="53" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
+      <jump line="77" column="42" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
+      <jump line="125" column="49" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
+      <jump line="140" column="30" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
+      <jump line="141" column="52" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js" />
+      <jump line="3" column="22" filename="$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js" />
+      <jump line="48" column="30" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="53" column="19" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="57" column="33" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="58" column="30" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="73" column="20" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="76" column="57" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="77" column="25" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="22" column="19" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="25" column="37" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="26" column="18" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="31" column="19" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="37" column="30" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="38" column="25" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="43" column="19" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="47" column="34" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="79" column="16" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="86" column="4" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="40" column="6" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js" />
+      <jump line="78" column="0" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="86" column="15" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <jump line="95" column="15" filename="$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js" />
     </jumps>
   </component>
   <component name="VimRegisterSettings">
     <registers>
       <register name="&quot;" type="4">
-        <text encoding="base64">dHlwZQ==</text>
+        <text encoding="base64">dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQ=</text>
       </register>
       <register name="-" type="4">
-        <text encoding="base64">dHlwZQ==</text>
+        <text encoding="base64">dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQ=</text>
       </register>
       <register name="." type="4">
-        <text encoding="base64">dHlwZU9mKA==</text>
+        <text encoding="base64">c2VudGVuY2VJRA==</text>
       </register>
       <register name="/" type="4">
-        <text encoding="base64">c2VudGVuY2VJZA==</text>
+        <text encoding="base64">UXVlcnlWZXJuYWM=</text>
       </register>
-      <register name="0" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdCk7Cg==</text>
+      <register name="0" type="4">
+        <text encoding="base64">dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQp</text>
       </register>
       <register name="1" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdC0gMV0pOwo=</text>
+        <text encoding="base64">ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdCk7CiAgICAgIC8vIGNvbnNvbGUubG9nKHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQuc2xpY2UoLTEpKTsK</text>
       </register>
       <register name="2" type="2">
-        <text encoding="base64">ICAgIH0K</text>
+        <text encoding="base64">ICAvLyByZXR1cm4gYChRdWVyeSAoKSAoVmVybmFjICIke3Nhbml0aXNlKGNvbW1hbmQpfSIpKWA7Cg==</text>
       </register>
       <register name="3" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdFsKICAgICAgICAgIHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQubGVuZ3RoXSk7Cg==</text>
+        <text encoding="base64">ICogQHBhcmFtIHtJbnRlZ2VyfSBzZW50ZW5jZUlkIGluZGV4IHdoZXJlIHRoZSB2ZXJuYWMgY29tbWFuZCBzaG91bGQgZXhlY3V0ZQo=</text>
       </register>
       <register name="4" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2coJ3NpZCA9ICcgKyBzZW50ZW5jZS5zZW50ZW5jZUlkKTsK</text>
+        <text encoding="base64">ICBjb25zdCBzZW50ID0gY29tbWFuZDsKICBzZW50LnJlcGxhY2UoL1xcL2csICdcXFxcJykKICAgICAgLnJlcGxhY2UoLyIvZywgJ1xcIicpOwogIGNvbnN0IHRvU2VuZCA9IAogIGNvbnNvbGUubG9nKHRvU2VuZCk7Cg==</text>
       </register>
       <register name="5" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2cocGFydGlhbCk7Cg==</text>
+        <text encoding="base64">ICAgIGNvbnN0IHNlbnRlbmNlSWQgPSAK</text>
       </register>
       <register name="6" type="2">
-        <text encoding="base64">ICAgICAgY29uc29sZS5sb2cocGFydGlhbCk7Cg==</text>
+        <text encoding="base64">ICAgIGNvbnN0IGxhc3RVbmNoYW5nZWRTZW50ZW5jZSA9IAo=</text>
       </register>
       <register name="7" type="2">
-        <text encoding="base64">ICAgIGZvcihpbnQgaSA9IDApCg==</text>
+        <text encoding="base64">ICAgIGNvbnNvbGUubG9nKCdzaWQgPSAnICsgc2VudGVuY2VJZCk7Cg==</text>
       </register>
       <register name="8" type="2">
-        <text encoding="base64">aW1wb3J0IFNlcmFwaUFTVFByb2Nlc3NvciBmcm9tICcuL1NlcmFwaUFTVFByb2Nlc3Nvcic7Cg==</text>
+        <text encoding="base64">ICAgIGNvbnNvbGUubG9nKCdhJyArIHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQpOwo=</text>
       </register>
       <register name="9" type="2">
-        <text encoding="base64">aW1wb3J0IHNlcmFwaUFTVFByb2Nlc3NvciBmcm9tICcuL1NlcmFwaUFTVFByb2Nlc3Nvcic7Cg==</text>
+        <text encoding="base64">ICogQHBhcmFtIHtJbnRlZ2VyfSBzZW50ZW5jZUlkIGluZGV4IHdoZXJlIHRoZSB2ZXJuYWMgY29tbWFuZCBzaG91bGQgZXhlY3V0ZQo=</text>
       </register>
       <register name=":" type="4">
         <text encoding="base64">dw==</text>
@@ -339,8 +340,8 @@
   </component>
   <component name="VimSearchSettings">
     <search>
-      <last-search encoding="base64">c2VudGVuY2VJZA==</last-search>
-      <last-pattern encoding="base64">c2VudGVuY2VJZA==</last-pattern>
+      <last-search encoding="base64">UXVlcnlWZXJuYWM=</last-search>
+      <last-pattern encoding="base64">UXVlcnlWZXJuYWM=</last-pattern>
       <last-dir encoding="base64">MQ==</last-dir>
       <show-last encoding="base64">ZmFsc2U=</show-last>
     </search>
