@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -84,8 +84,7 @@ static const char *brightnessUp[] = { "light", "-A", "5", NULL};
 static const char *brightnessDown[] = {"light", "-U", "5", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
-static const char *play[] = {"playerctl", "play", NULL};
-static const char *stop[] = {"playerctl", "pause", NULL};
+static const char *play[] = {"playerctl", "play-pause", NULL};
 static const char *soundUp[] = {"amixer", "set", "Master",  "5%+", NULL};
 static const char *soundDown[] = {"amixer", "set", "Master", "5%-", NULL};
 static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
@@ -108,11 +107,10 @@ static const Key keys[] = {
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }},
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
-	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } },
-	{ CTRLKEY,                      XK_o,                      spawn, {.v = stop } },
-    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v=soundUp}},
-    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v=soundDown}},
-    { 0,                            XF86XK_AudioMute,          spawn, {.v=soundToggle}},
+	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
+    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}},
+    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
+    { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
