@@ -56,12 +56,14 @@ for battery in /sys/class/power_supply/BAT?*; do
     fi
 	   
 	case "$(cat "$battery/status" 2>&1)" in
-		"Discharging") status=$notChargingIcon ;;
-		"Charging") status=$chargingIcon ;;
-		"Not charging") status= "" ;;
-		"Unknown") status="♻️" ;;
-		*) exit 1 ;;
+		"Discharging") status="$notChargingIcon";;
+		"Charging") status="$chargingIcon";;
+		"Not charging") status="";;
+		"Unknown") status="♻️ ";;
+		*) status="" ;;
 	esac
+
+    #status=$chargingIcon
 
 	# Will make a warn variable if discharging and low
     # [ "$capacity" -le 25 ] && warn="❗"

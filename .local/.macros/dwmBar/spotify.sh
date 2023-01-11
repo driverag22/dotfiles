@@ -10,14 +10,16 @@
 # NOTE: The official spotify client does not provide the track position or shuffle status through playerctl. This does work through spotifyd however.
 
 
-if ps -C spotify > /dev/null; then
-    PLAYER="spotify"
-elif ps -C spotifyd > /dev/null; then
-    PLAYER="spotifyd"
-fi
+# if ps -C spotify > /dev/null; then
+#     PLAYER="spotify"
+# elif ps -C spotifyd > /dev/null; then
+#     PLAYER="spotifyd"
+# fi
 
+TRACK=$(playerctl metadata title)
 
-if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
+# if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
+if [ ! -z "$TRACK" ]; then
     ARTIST=$(playerctl metadata artist)
     TRACK=$(playerctl metadata title)
     POSITION=$(playerctl position | sed 's/..\{6\}$//')
@@ -42,7 +44,7 @@ if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
         echo "bad"
     else
         # printf "%s%s %s - %s " "$SEP1" "$STATUS" "$ARTIST" "$TRACK"
-        printf "%s%s - %s " "$STATUS " "$ARTIST" "$TRACK" 
+        printf "%s%s - %s " "$STATUS " "$TRACK" "$ARTIST" 
         # printf "%0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
         printf "%s\n" "$SEP2"
     fi

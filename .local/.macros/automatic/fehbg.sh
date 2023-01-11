@@ -7,6 +7,7 @@ num_screens=$(xrandr | grep -o -c ' connected') #count num. of connected screens
 if [ $num_screens -eq 1 ]
 then
     feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
+    # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/evaCatpuchin.png'
 else
     /home/diego/.local/.macros/automatic/screensNetherlands.sh
     # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/undefined - Imgur(1).jpg' --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
