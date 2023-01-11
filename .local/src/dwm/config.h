@@ -4,7 +4,7 @@
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 8;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true"};
@@ -18,14 +18,13 @@ static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
 static const char col_darkBlue[]    = "#003049";
 static const char col_teal[]        = "#169378";
-static const char col_purple[]      = "#caa9fa";
+static const char col_purple[]      = "#bd93f9";
 static const char col_border[]      = "#f6e1dc";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray3,  col_gray2},
-	/* [SchemeSel]  = { col_pink, col_gray3,  col_purple}, */
-	[SchemeSel]  = { col_pink, col_gray3,  col_border},
+	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
+	[SchemeSel]  = { col_pink, col_gray4,  col_pink},
 	/* [SchemeNorm] = { col_white, col_gray3,  col_black }, */
 	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
@@ -73,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray3, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
@@ -157,6 +156,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      5)
 	TAGKEYS(                        XK_9,                      6)
 	TAGKEYS(                        XK_0,                      7)
+    { MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
