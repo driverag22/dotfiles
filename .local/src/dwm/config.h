@@ -2,25 +2,30 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int gappx     = 8;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true"};
 static const char dmenufont[]       = "JetBrains Mono:size=13";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#262626";
+static const char col_gray4[]       = "#282a36";
 static const char col_black[]       = "#000000";
 static const char col_white[]       = "#eeeeee";
 /* static const char col_whitegray[]   = "#68686d"; */
 static const char col_pink[]        = "#ff69b4";
 static const char col_darkBlue[]    = "#003049";
 static const char col_teal[]        = "#169378";
+static const char col_purple[]      = "#caa9fa";
+static const char col_border[]      = "#f6e1dc";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray3,  col_black},
-	[SchemeSel]  = { col_pink, col_gray3,  col_white},
+	[SchemeNorm] = { col_white, col_gray3,  col_gray2},
+	/* [SchemeSel]  = { col_pink, col_gray3,  col_purple}, */
+	[SchemeSel]  = { col_pink, col_gray3,  col_border},
 	/* [SchemeNorm] = { col_white, col_gray3,  col_black }, */
 	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
