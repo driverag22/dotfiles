@@ -32,7 +32,7 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 
 Plug "SmiteshP/nvim-gps"
 Plug 'Pocco81/true-zen.nvim'
-Plug 'https://github.com/ap/vim-css-color' -- CSS Color Preview
+Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
 Plug 'feline-nvim/feline.nvim' -- bar 
 Plug 'https://github.com/nanozuki/tabby.nvim' -- to have tabs
@@ -69,3 +69,4 @@ require("transparent").setup({
   },
   exclude = {}, -- table: groups you don't want to clear
 })
+require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
