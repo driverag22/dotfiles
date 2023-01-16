@@ -74,7 +74,7 @@ CASE_SENSITIVE="false"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 # User configuration
 
@@ -101,15 +101,12 @@ source /usr/share/nvm/init-nvm.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-
 pfetch
 
 # opam configuration
-[[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # autoload -Uz compinit promptinit
 # compinit
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-wmname "LG3D"
