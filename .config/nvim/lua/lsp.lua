@@ -6,6 +6,7 @@ local on_attach = function(client, bufnr) end
 require('lspconfig').clangd.setup {on_attach = on_attach}
 require('lspconfig').sumneko_lua.setup {on_attach = on_attach}
 require('lspconfig').pyright.setup {on_attach = on_attach}
+require('lspconfig').jdtls.setup {on_attach = on_attach}
 
 
 local lsp_installer = require("nvim-lsp-installer")
