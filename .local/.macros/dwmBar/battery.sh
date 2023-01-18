@@ -71,4 +71,5 @@ for battery in /sys/class/power_supply/BAT?*; do
 	# [ "$status"="" ] && [ "$capacity" -le 25 ] && warn="❗"
 	# Prints the info
 	printf "%s %s%d%%" "$warn" "$status " " $capacity"; unset warn
+	# printf "%s%d%%" "$status " " $capacity"
 done && printf "\\n"

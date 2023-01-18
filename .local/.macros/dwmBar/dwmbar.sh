@@ -14,5 +14,5 @@ while true; do
         values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
 
         xsetroot -name "$values"
-        sleep 1s ## refresh rate
+        sleep 3s ## refresh rate
 done &
