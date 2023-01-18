@@ -36,23 +36,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+            <state relative-caret-position="430">
+              <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="218" column="31" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="31" />
+            <state>
+              <caret line="219" column="60" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="87" column="31" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -61,7 +70,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JavaScript">
-      <summary usageCount="174" lastUsed="1673276901045" />
+      <summary usageCount="189" lastUsed="1674048248512" />
     </fileType>
     <fileType name="Markdown">
       <summary usageCount="1" lastUsed="1669675491186" />
@@ -151,8 +160,8 @@
       <option value="$PROJECT_DIR$/src/editpage/components/EditWindow.vue" />
       <option value="$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js" />
       <option value="$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js" />
-      <option value="$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js" />
       <option value="$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js" />
+      <option value="$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -164,7 +173,7 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="JavaScript">
-      <summary usageCount="174" lastUsage="1673276901045" />
+      <summary usageCount="189" lastUsage="1674048248512" />
     </language>
     <language id="Markdown">
       <summary usageCount="1" lastUsage="1669675491188" />
@@ -270,15 +279,16 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36395000" />
+    <option name="totallyTimeSpent" value="37496000" />
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info id="Space Code Reviews" />
       <window_info id="Pull Requests" />
       <window_info id="Commit" />
       <window_info id="Bookmarks" order="0" side_tool="true" weight="0.19024009" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.19024009" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15447369" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Internal Method Tracing" />
@@ -298,9 +308,9 @@
       <window_info anchor="right" id="Notifications" order="0" weight="0.25" />
     </layout>
     <recentWindows>
+      <value>Project</value>
       <value>Bookmarks</value>
       <value>Run</value>
-      <value>Project</value>
       <value>Find</value>
       <value>Terminal</value>
     </recentWindows>
@@ -310,10 +320,11 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="433" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1671716416415" />
-    <state x="726" y="289" width="643" height="484" key="FileChooserDialogImpl" timestamp="1671187672136">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="726" y="296" width="643" height="484" key="FileChooserDialogImpl" timestamp="1674048294965">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="726" y="289" width="643" height="484" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1671187672136" />
+    <state x="726" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1674048294965" />
     <state width="782" height="722" key="SwitcherDM" timestamp="1670166508761">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -532,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editpage/components/mixins/CoqInteraction.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -595,18 +599,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+        <state relative-caret-position="430">
+          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="218" column="31" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="31" />
+        <state>
+          <caret line="219" column="60" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="32" />
         </state>
       </provider>
     </entry>

@@ -17,19 +17,32 @@
         </entry>
         <entry key="$USER_HOME$/src/waterproof">
           <value>
-            <RecentProjectMetaInfo frameTitle="waterproof – SerapiSearchProcessor.js" opened="true" projectWorkspaceId="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
-              <option name="activationTimestamp" value="1673276937077" />
+            <RecentProjectMetaInfo frameTitle="waterproof – SerapiCommandFactory.js" projectWorkspaceId="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
+              <option name="activationTimestamp" value="1674048296568" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="WS-223.8214.51" />
-              <option name="buildTimestamp" value="1671535277199" />
-              <frame x="0" y="27" width="1916" height="1049" extendedState="6" />
+              <option name="buildTimestamp" value="1671535264517" />
+              <frame x="6" y="33" width="1900" height="1033" extendedState="6" />
               <option name="productionCode" value="WS" />
-              <option name="projectOpenTimestamp" value="1673276901163" />
+              <option name="projectOpenTimestamp" value="1674048249003" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/src/jointwaterproof">
+          <value>
+            <RecentProjectMetaInfo frameTitle="jointwaterproof – Gutter.vue" opened="true" projectWorkspaceId="2KV8GndCd7cBhTVd9BTXhzHx3OH">
+              <option name="activationTimestamp" value="1674051913631" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="WS-223.8214.51" />
+              <option name="buildTimestamp" value="1671535264517" />
+              <frame x="6" y="33" width="1900" height="1033" extendedState="6" />
+              <option name="productionCode" value="WS" />
+              <option name="projectOpenTimestamp" value="1674048296900" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="lastOpenedProject" value="$USER_HOME$/src/waterproof" />
+    <option name="lastOpenedProject" value="$USER_HOME$/src/jointwaterproof" />
   </component>
 </application>

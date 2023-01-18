@@ -61,7 +61,7 @@
     "NonModalCommitCustomization.IsApplied": "true",
     "RunOnceActivity.se.text.search": "true",
     "SettingsSearchHistory": "shortcut\nzoom",
-    "appcds.runOnSecondStart": "WS-223.8214.51-5499b3f8cad1d6bd6576715e9b4689b9ba905d87f32533ccb15d03bdbc47063e",
+    "appcds.runOnSecondStart": "WS-223.8214.51-e1ae585f274fec5a909862bca6a4817812d7d5272b1a90cc40e142cf4cf1aab2",
     "ask.about.ctrl.y.shortcut.v2": "true",
     "bundled.plugins.list.saved.version": "WS-223.8214.51",
     "evlsprt3.222": "24",
@@ -74,7 +74,7 @@
     "got.it.tooltip.reader.mode.got.it": "1",
     "got.it.tooltip.terminal.smart_command_execution": "1",
     "ide.memory.adjusted": "true",
-    "ideavim.statistics.timestamp": "1672691446258",
+    "ideavim.statistics.timestamp": "1674048304821",
     "last_opened_file_path": "/home/diego/src/waterproof",
     "previousColorScheme": "_@user_Dracula",
     "registry.to.advanced.settings.migration.build": "WS-223.8214.51",
@@ -83,6 +83,7 @@
   },
   "keyToStringList": {
     "file.chooser.recent.files": [
+      "/home/diego/src/jointwaterproof",
       "/home/diego/src/jointwaterproof/waterproof",
       "/home/diego/src/waterproof",
       "/home/diego/.nvm/versions/node/v12.22.12/bin/npm",
