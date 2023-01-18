@@ -7,12 +7,13 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true"};
-static const char dmenufont[]       = "JetBrains Mono:size=13";
+static const char *fonts[]          = { "JetBrains Mono:size=14"};
+static const char dmenufont[]       = { "JetBrains Mono:size=14"};
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#262626";
-static const char col_gray4[]       = "#282a36";
-static const char col_black[]       = "#000000";
+/* static const char col_gray4[]       = "#282a36"; */
+static const char col_gray4[]       = "#31333f";
+/* static const char col_gray4[]       = "#3c3e4c"; */
 static const char col_white[]       = "#eeeeee";
 /* static const char col_whitegray[]   = "#68686d"; */
 static const char col_pink[]        = "#ff69b4";
@@ -23,16 +24,17 @@ static const char col_border[]      = "#f6e1dc";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
+	/* [SchemeNorm] = { col_white, col_gray4,  col_gray4}, */
+	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
-	[SchemeSel]  = { col_pink, col_gray4,  col_pink},
-	/* [SchemeNorm] = { col_white, col_gray3,  col_black }, */
-	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
+	[SchemeSel]  = { col_white, col_pink,  col_pink},
+	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
 	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -52,9 +54,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { " ",      tile },
-	{ " ",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+    { "  ",      tile },
+	{ "  ",      NULL },    /* no layout function means floating behavior */
+	{ " [M]",      monocle },
 };
 /* key definitions */
 /* #define MODKEY Mod1Mask */
@@ -85,6 +87,7 @@ static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powe
 
 static const char *brightnessUp[] = { "light", "-A", "5", NULL};
 static const char *brightnessDown[] = {"light", "-U", "5", NULL};
+static const char *screenshot[] = {"gscreenshot", "-s", "-c", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play-pause", NULL};
@@ -95,23 +98,22 @@ static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
-	/* { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } }, //alacritty */
-	/* { CTRLKEY,                      XK_space,  spawn,          {.v = dmenucmd } }, //dmenu */ 
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
+	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
 
 	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
-	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //home
-	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //home
+	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
 
 
-    { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }},
+    { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
+	{ 0,                            XK_Print,      spawn,          {.v = screenshot} }, //screenshotter
 	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
-    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}},
+    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up/down/mute
     { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
     { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
 
