@@ -2,6 +2,7 @@
   <component name="Trusted.Paths">
     <option name="TRUSTED_PROJECT_PATHS">
       <map>
+        <entry key="$USER_HOME$/src/jointwaterproof" value="true" />
         <entry key="$USER_HOME$/src/jointwaterproof/waterproof" value="true" />
         <entry key="$USER_HOME$/src/waterproof" value="true" />
       </map>

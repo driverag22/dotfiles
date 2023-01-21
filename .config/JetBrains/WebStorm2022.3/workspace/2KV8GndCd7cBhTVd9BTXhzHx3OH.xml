@@ -7,11 +7,11 @@
     </option>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/waterproof/src/editpage/components/Gutter.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="420">
               <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
             </state>
           </provider>
@@ -33,7 +33,7 @@
       <summary usageCount="3" lastUsed="1674051464977" />
     </fileType>
     <fileType name="Vue.js">
-      <summary usageCount="7" lastUsed="1674050938752" />
+      <summary usageCount="8" lastUsed="1674130695500" />
     </fileType>
   </component>
   <component name="FindInProjectRecents">
@@ -84,7 +84,7 @@
       <summary usageCount="3" lastUsage="1674051464977" />
     </language>
     <language id="Vue">
-      <summary usageCount="7" lastUsage="1674050938752" />
+      <summary usageCount="8" lastUsage="1674130695502" />
     </language>
   </component>
   <component name="ProjectView">
@@ -131,22 +131,22 @@
     </panes>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3615000" />
+    <option name="totallyTimeSpent" value="4218000" />
   </component>
   <component name="ToolWindowManager">
     <layout>
       <window_info id="Bookmarks" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25026315" />
-      <window_info id="Structure" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25026315" />
+      <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Problems View" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Problems View" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Services" order="8" />
       <window_info anchor="right" id="Notifications" order="0" weight="0.25" />
     </layout>
     <recentWindows>
@@ -251,7 +251,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/waterproof/src/editpage/components/Gutter.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="420">
           <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
