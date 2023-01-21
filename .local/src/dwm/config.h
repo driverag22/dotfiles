@@ -80,6 +80,7 @@ static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
+static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOs.wiki", NULL};
 
 static const char *lockscreen[]  = { "betterlockscreen", "-l" };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
@@ -100,6 +101,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
+	{ CTRLKEY,                      XK_t,      spawn,          {.v = todos} }, //notion
 
 	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
