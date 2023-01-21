@@ -1,0 +1,4 @@
+In computational geometry problems, geometric duality could be used to design efficient data structures to solve geometric problems.
+
+For example, in range searching problems, the duality between points and lines can be used to design efficient data structures such as kd-trees and range trees. 
+These data structures allow us to solve geometric problems in a more efficient way than traditional methods.

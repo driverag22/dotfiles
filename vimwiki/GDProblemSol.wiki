@@ -1,0 +1,27 @@
+Many problems in competitive programming can be formulated as geometric problems and solved using geometric duality. For example, problems involving visibility, 
+shortest paths, or network flows can be formulated as geometric problems and solved using techniques from projective geometry or topology.
+
+
+=== Art gallery problem  === 
+(https://en.wikipedia.org/wiki/Art_gallery_problem):
+* In an art gallery, what is the minimum number of guards who together can observe the whole gallery?
+* Well studied visibility problem in computational geomtry.
+* By transforming the problem into its dual form, we can find a solution that is much more efficient than the traditional method of solving the problem.
+ 
+"This is a problem in computational geometry that asks for the minimum number of guards that need to be placed in an art gallery such that every point in the 
+gallery is visible from at least one guard. This problem can be solved using the duality between points and lines in projective geometry."
+
+=== Visibility polygons ===
+"Given a set of obstacles in the plane, the visibility polygon of a point is the region of the plane that is visible from that point. The problem of computing 
+visibility polygons can be solved using the duality between points and lines in projective geometry."
+
+=== Point of Visibility === 
+Given a set of obstacles in the plane, the point of visibility of a point is the point from which the given point is visible. The problem of computing the point of 
+visibility can be solved using the duality between points and lines in projective geometry.
+
+=== Visibility graphs ===
+Given a set of obstacles in the plane, the visibility graph of the obstacles is a graph whose vertices correspond to the obstacles and whose edges correspond to pairs of obstacles that can see each other. The problem of computing visibility graphs can be solved using the duality between points and lines in projective geometry.
+
+=== Watchman route ===
+Given a set of obstacle in the plane, the problem of finding a route for a watchman to cover all the points in the plane while avoiding the obstacles. This problem 
+can be solved using the duality between points and lines in projective geometry.

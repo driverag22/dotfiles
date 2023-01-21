@@ -1,0 +1,12 @@
+= Geometric duality honors presentation =
+
+" Geometric duality is a correspondence between certain types of geometric objects, where the properties of one object are transformed into the properties of another 
+object. For example, in projective geometry, the points and lines in a projective space are dual to each other, in the sense that the properties of a point and the 
+properties of a line that are dual to each other are transformed into each other under a projective transformation. In topology, Poincaré duality is a relationship 
+between homology and cohomology groups of a space. In algebraic geometry, the notion of a variety is self-dual in the sense that the variety and its dual variety have
+the same underlying set, but different topologies and different algebraic structures. " 
+-- The wise Chat GPT
+
+
+
+[[GDExamples|Example of its uses]]

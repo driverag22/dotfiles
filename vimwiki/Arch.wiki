@@ -1,0 +1,10 @@
+[[bar]]
+
+
+== TODO s==
+- [ ] Fix bluetooth
+    * Sound works, bluetooth works for already added devices.
+    * Installing blueberry => pulseaudio install as dependency and audio breaks, but bluetooth starts working.
+        
+
+[[Notes]] 

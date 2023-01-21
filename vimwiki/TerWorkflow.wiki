@@ -1,0 +1,2 @@
+* ctrl+z (background current process, e.g. vim)
+    * ctrl+z (thanks to fancy-ctrl-z plugin on zsh) or fg (bring back process, i.e., foreground)

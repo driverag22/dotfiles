@@ -1,0 +1,5 @@
+Use the following commands:
+
+* sudo cryptsetup -v luksOpen /dev/nvme(ssd_here) cryptDrive
+* sudo mount /dev/mapper/cryptDrive /mnt 
+* sudo chroot /mnt

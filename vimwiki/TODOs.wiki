@@ -1,0 +1,13 @@
+[TODO]
+- [ ] Exam : 2018 / 5b
+- [ ] Slack data structures
+- [ ] G2 (check what, if anything, needs to be done)
+- [ ] Geomtric duality
+- [ ] Waterproof
+    - [ ] Isolated coq commands
+        - [ ] Look into failing tests
+    - [ ] Double code block
+        - [ ] Look into directly fixing ball
+        - [ ] Look into coloring inside coq-mirror
+- [ ] Call lightcity-housing / check for email
+
