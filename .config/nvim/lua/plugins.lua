@@ -12,6 +12,8 @@ Plug 'lewis6991/gitsigns.nvim' -- git integration
 -- Plug 'https://github.com/terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
 Plug 'https://github.com/preservim/tagbar' -- Tagbar for code navigation
 
+Plug 'vimwiki/vimwiki' -- vim wiki
+
 --================================================================
 Plug 'https://github.com/neovim/nvim-lspconfig' -- Lsp
 Plug 'https://github.com/williamboman/nvim-lsp-installer' -- Lsp installers
