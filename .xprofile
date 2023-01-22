@@ -6,6 +6,7 @@ setxkbmap us -variant intl
 # /home/diego/.local/.macros/automatic/screensNetherlands.sh
 /home/diego/.local/.macros/automatic/fehbg.sh #sets screens and background
 export _JAVA_AWT_WM_NONREPARENTING=1
+bluetoothctl power off
 wmname "LG3D"
 
 # xcompmgr &
