@@ -101,7 +101,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
-	{ CTRLKEY,                      XK_t,      spawn,          {.v = todos} }, //notion
+	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
 
 	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
