@@ -1,7 +1,7 @@
 [[GDProblemSol|Problem solving]]
 
 
-[[Optimization]]
+[[GDOptimization|Optimization]]
 
 
 [[GDAlgDesign|Algorithm design]]

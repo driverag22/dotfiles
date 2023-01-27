@@ -1,16 +1,15 @@
-                                                                    === The vim-wiki === 
-                                                                     == The vim-wiki ==  
                                                                       = The vim-wiki =
-
+                                                                     == The vim-wiki ==  
+                                                                    === The vim-wiki === 
                                                                         * [[TODOs]] 
                                                                         
-                                                                        * [[GDMain|Geometric duality]]
+                                                                        * [[GD/GDMain|Geometric duality]]
                                                                          
-                                                                        * [[Keybindings]]
+                                                                        * [[computer/Keybindings|Keybindings]]
                                                                     
-                                                                        * [[Arch]]
+                                                                        * [[computer/Arch|Arch]]
                                                                          
-                                                                        * [[Vim]]
+                                                                        * [[computer/Vim|Vim]]
                                                                         
                                                                         *  
-     
+
