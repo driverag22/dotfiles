@@ -6,30 +6,18 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:size=14"};
-static const char dmenufont[]       = { "JetBrains Mono:size=14"};
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#262626";
-/* static const char col_gray4[]       = "#282a36"; */
+static const char *fonts[]          = { "JetBrains Mono:size=13"};
+static const char dmenufont[]       = { "JetBrains Mono:size=13"};
 static const char col_gray4[]       = "#31333f";
-/* static const char col_gray4[]       = "#3c3e4c"; */
 static const char col_white[]       = "#eeeeee";
-/* static const char col_whitegray[]   = "#68686d"; */
 static const char col_pink[]        = "#ff69b4";
-static const char col_darkBlue[]    = "#003049";
-static const char col_teal[]        = "#169378";
-static const char col_purple[]      = "#bd93f9";
-static const char col_border[]      = "#f6e1dc";
+static const char col_viogray[]     = "#9f92a7";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	/* [SchemeNorm] = { col_white, col_gray4,  col_gray4}, */
-	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
 	[SchemeSel]  = { col_white, col_pink,  col_pink},
 	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
-	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
-	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
 };
 
 /* tagging */
@@ -87,12 +75,12 @@ static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powe
 
 static const char *brightnessUp[] = { "light", "-A", "5", NULL};
 static const char *brightnessDown[] = {"light", "-U", "5", NULL};
-static const char *screenshot[] = {"gscreenshot", "-s", "-c", NULL};
+static const char *screenshot[] = {"gscreenshot", "-s", "-c", "-o", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play-pause", NULL};
-static const char *soundUp[] = {"amixer", "set", "Master",  "5%+", NULL};
-static const char *soundDown[] = {"amixer", "set", "Master", "5%-", NULL};
+static const char *soundUp[] = {"amixer", "set", "Master",  "2%+", NULL};
+static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
 static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 
 static const Key keys[] = {
