@@ -14,9 +14,9 @@ dir="$HOME/.config/rofi/powermenu/type-1"
 theme='style-5'
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
+uptime=" `uptime -p | sed -e 's/up //g'`"
 # host='dwm'
-host=" `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3 " / " $2'}`"
+host=" `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3" / "$2'}`"
 
 # Options
 shutdown=' Shutdown'
@@ -30,11 +30,11 @@ no=' No'
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "$host" \
-		-mesg "Uptime: $uptime" \
+		-mesg " $uptime  |  $host" \
 		-theme ${dir}/${theme}.rasi
 }
 
+		# -p "$host" \
 # Confirmation CMD
 confirm_cmd() {
 	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
@@ -55,7 +55,6 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	# echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 	echo -e "$shutdown\n$suspend\n$reboot" | rofi_cmd
 }
 
