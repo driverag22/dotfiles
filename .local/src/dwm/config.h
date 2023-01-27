@@ -70,7 +70,7 @@ static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1
 static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
 static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOs.wiki", NULL};
 
-static const char *lockscreen[]  = { "betterlockscreen", "-l" };
+static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "5", NULL};
