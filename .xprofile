@@ -9,9 +9,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 bluetoothctl power off
 wmname "LG3D"
 
-# xcompmgr &
-picom --experimental-backends &
-# picom &
+# picom --experimental-backends &
+picom &
 # picom -b 
 amixer set Master mute
 
