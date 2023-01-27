@@ -15,7 +15,8 @@ theme='style-5'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+# host='dwm'
+host=" `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3 " / " $2'}`"
 
 # Options
 shutdown=' Shutdown'
@@ -54,7 +55,8 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	# echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$shutdown\n$suspend\n$reboot" | rofi_cmd
 }
 
 # Execute Command

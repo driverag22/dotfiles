@@ -23,7 +23,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       605px;
+    /* width:                       605px; */
+    width:                       400px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -72,7 +73,8 @@ dummy {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    /* str:                         ""; */
+    str:                         "";
     padding:                     10px 14px;
     border-radius:               4px;
     background-color:            @urgent;
@@ -118,7 +120,8 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    /* columns:                     5; */
+    columns:                     3;
     lines:                       1;
     cycle:                       true;
     dynamic:                     true;
