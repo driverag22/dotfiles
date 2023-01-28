@@ -7,7 +7,7 @@ static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 25;
-static const char *fonts[]          = { "JetBrains Mono:size=13"};
+static const char *fonts[]          = { "JetBrains Mono:size=14"};
 static const char dmenufont[]       = { "JetBrains Mono:size=13"};
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
