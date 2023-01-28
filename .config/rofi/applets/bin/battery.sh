@@ -13,7 +13,11 @@ theme="$type/$style"
 battery="`acpi -b | cut -d',' -f1 | cut -d':' -f1`"
 status="`acpi -b | cut -d',' -f1 | cut -d':' -f2 | tr -d ' '`"
 percentage="`acpi -b | cut -d',' -f2 | tr -d ' ',\%`"
-time="`acpi -b | cut -d',' -f3`"
+time="`acpi -b | awk '{print $5}' `"
+temp="`acpi -t | cut -d',' -f2`"
+voltage="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'voltage' | awk {'print $2'}` V"
+energy="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'energy:' | awk {'print $2'}`"
+energytot="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'energy-full:' | awk {'print $2'}`"
 
 if [[ -z "$time" ]]; then
 	time=' Fully Charged'
@@ -21,11 +25,11 @@ fi
 
 # Theme Elements
 prompt="$status"
-mesg="${battery}: ${percentage}%,${time}"
+
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
-	list_row='4'
+	list_row='2'
 	win_width='400px'
 elif [[ "$theme" == *'type-3'* ]]; then
 	list_col='1'
@@ -45,14 +49,14 @@ fi
 active=""
 urgent=""
 if [[ $status = *"Charging"* ]]; then
-    active="-a 1"
+    # active="-a 1"
     ICON_CHRG=""
 elif [[ $status = *"Full"* ]]; then
-    active="-u 1"
+    # active="-u 1"
     ICON_CHRG=""
 else
-    urgent="-u 1"
-    ICON_CHRG=""
+    # urgent="-u 1"
+    ICON_CHRG=""
 fi
 
 # Discharging
@@ -71,25 +75,25 @@ fi
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Remaining ${percentage}%"
-	option_2=" $status"
-	option_3=" Power Manager"
-	option_4=" Diagnose"
+	option_1="$ICON_CHRG $ICON_DISCHRG ${percentage}%"
+	option_2=" $time"
+    option_3=" $temp"
+    option_4=" $voltage"
+    option_5="$energy / $energytot Wh"
 else
 	option_1="$ICON_DISCHRG"
 	option_2="$ICON_CHRG"
 	option_3=""
-	option_4=""
+	# option_4=""
 fi
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -theme-str "window {width: $win_width;}" \
-		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
 		-theme-str "textbox-prompt-colon {str: \"$ICON_DISCHRG\";}" \
 		-dmenu \
+        -mesg "Battery Status" \
 		-p "$prompt" \
-		-mesg "$mesg" \
 		${active} ${urgent} \
 		-markup-rows \
 		-theme ${theme}
@@ -97,7 +101,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
 # Execute Command
@@ -108,9 +112,11 @@ run_cmd() {
 	elif [[ "$1" == '--opt2' ]]; then
 		notify-send -u low "$ICON_CHRG Status : $status"
 	elif [[ "$1" == '--opt3' ]]; then
-		xfce4-power-manager-settings
+		notify-send -u low "$ICON_CHRG Status : $status"
 	elif [[ "$1" == '--opt4' ]]; then
-		${polkit_cmd} alacritty -e powertop
+		notify-send -u low "$ICON_CHRG Status : $status"
+	elif [[ "$1" == '--opt5' ]]; then
+		notify-send -u low "$ICON_CHRG Status : $status"
 	fi
 }
 
@@ -128,6 +134,9 @@ case ${chosen} in
         ;;
     $option_4)
 		run_cmd --opt4
+        ;;
+    $option_5)
+		run_cmd --opt5
         ;;
 esac
 
