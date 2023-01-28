@@ -18,12 +18,12 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
 	[SchemeSel]  = { col_white, col_pink,  col_pink},
-	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
 	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
+	[SchemeSpecial2]  = { col_pink, col_gray4,  col_pink},
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " };
 
 static const Rule rules[] = {
 	/* xprop(1):
