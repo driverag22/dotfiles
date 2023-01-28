@@ -722,7 +722,14 @@ drawbar(Monitor *m)
 	drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
 	/* draw status first so it can be overdrawn by tags later */
 	/* if (m == selmon) { /1* status is only drawn on selected monitor *1/ */
-	/* } */
+	/*     drw_setscheme(drw, scheme[SchemeSpecial]); */
+	/*     tw = TEXTW(stext) - lrpad + 2; /1* 2px right padding *1/ */
+	/*     drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0); */
+	/* } else { */
+	/*     drw_setscheme(drw, scheme[SchemeNorm]); */
+	/*     tw = TEXTW(stext) - lrpad + 2; /1* 2px right padding *1/ */
+	/*     drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0); */
+    /* } */
 
 	for (c = m->clients; c; c = c->next) {
 		occ |= c->tags;

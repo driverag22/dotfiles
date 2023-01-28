@@ -6,39 +6,24 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh            = 25;
 static const char *fonts[]          = { "JetBrains Mono:size=13"};
 static const char dmenufont[]       = { "JetBrains Mono:size=13"};
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#262626";
-/* static const char col_gray4[]       = "#282a36"; */
 static const char col_gray4[]       = "#31333f";
-/* static const char col_gray4[]       = "#3c3e4c"; */
 static const char col_white[]       = "#eeeeee";
-/* static const char col_whitegray[]   = "#68686d"; */
 static const char col_pink[]        = "#ff69b4";
-static const char col_softviolet[]  = "#DBB4EF";
-static const char col_darkviolet[]  = "#6c688a";
-static const char col_darkBlue[]    = "#003049";
-static const char col_teal[]        = "#169378";
-static const char col_purple[]      = "#bd93f9";
-static const char col_violet[]      = "#e090df";
-static const char col_border[]      = "#f6e1dc";
+static const char col_viogray[]     = "#9f92a7";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	/* [SchemeNorm] = { col_white, col_gray4,  col_gray4}, */
-	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
-	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
-	/* [SchemeSpecial]  = { col_pink, col_gray4,  col_pink}, */
-	[SchemeSel]  = { col_white, col_softviolet,  col_softviolet},
-	[SchemeSpecial]  = { col_softviolet, col_gray4,  col_softviolet},
-	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
-	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
+	[SchemeSel]  = { col_white, col_pink,  col_pink},
+	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
+	[SchemeSpecial2]  = { col_pink, col_gray4,  col_pink},
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -87,11 +72,12 @@ static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1
 static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
 static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOs.wiki", NULL};
 
-static const char *lockscreen[]  = { "betterlockscreen", "-l" };
+static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
+static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
 
-static const char *brightnessUp[] = { "light", "-A", "5", NULL};
-static const char *brightnessDown[] = {"light", "-U", "5", NULL};
+static const char *brightnessUp[] = { "light", "-A", "2", NULL};
+static const char *brightnessDown[] = {"light", "-U", "2", NULL};
 static const char *screenshot[] = {"gscreenshot", "-s", "-c", "-o", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
@@ -113,6 +99,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //powermenu
 
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
