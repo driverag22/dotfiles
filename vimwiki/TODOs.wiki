@@ -1,11 +1,13 @@
 = TODO(s) =
-- [ ] [[GD/GDMain|Geometric duality]]
-- [ ] Prepare for tutor training on Tuesday 31st 9:00-12:00, canvas thing
-- [ ] Kick-off meeting MF 15, Thu 02/02/2023 from 17:00-18:00
-- [ ] pywall - https://github.com/brenns10/pywall 
-- [ ] battery menu
+- [ ] [[PrgMethodsExamPrep|Programming methods]]
 
-- [ ] Make schedule - Data structures : Monday 7+8, Wednesday 1+2
+- [ ] [[TutorTraining|Tutor training]]
+- [ ] Prepare for tutor training on Tuesday 31st 9:00-12:00, canvas thing
+
+- [ ] Kick-off meeting MF 15, Thursday 02/02/2023 from 17:00-18:00
+
+- [ ] firefox slow startup
+
 - [ ] *Waterproof*
     - [ ] Isolated coq commands
         - [ ] Look into failing tests
@@ -16,3 +18,4 @@
 - [ ] Call lightcity-housing / check for email
 - [ ] Kenny beats thing
 
+- [ ] [[GD/GDMain|Geometric duality]]
