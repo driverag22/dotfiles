@@ -18,6 +18,7 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
 	[SchemeSel]  = { col_white, col_pink,  col_pink},
+	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
 	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
 };
 
@@ -73,6 +74,7 @@ static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/v
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
+static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "5", NULL};
 static const char *brightnessDown[] = {"light", "-U", "5", NULL};
@@ -97,6 +99,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //powermenu
 
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
