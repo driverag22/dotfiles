@@ -52,12 +52,15 @@ mainbox {
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     6px;
     border:                      1px solid;
     border-radius:               10px;
-    border-color:                @selected;
-    background-color:            @foreground;
-    text-color:                  @background-alt;
+    /* border-color:                @selected; */
+    /* background-color:            @foreground; */
+    /* text-color:                  @background-alt; */
+    border-color:                @background;
+    background-color:            @background;
+    text-color:                  @selected;
 }
 textbox {
     background-color:            inherit;
@@ -84,8 +87,9 @@ listview {
 element {
     enabled:                     true;
     padding:                     10px;
-    border:                      1px solid;
-    border-radius:               60%;
+    /* border:                      1px solid; */
+    border:                      1px 1px 1px 1px;
+    border-radius:               1%;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -103,6 +107,7 @@ element normal.normal,
 element alternate.normal {
     background-color:            var(background);
     text-color:                  var(foreground);
+    /* text-color:                  var(white); */
 }
 element normal.urgent,
 element alternate.urgent,
@@ -119,4 +124,5 @@ element selected.urgent {
 element selected.normal {
     background-color:            var(background);
     text-color:                  var(foreground);
+    /* text-color:                  var(white); */
 }
