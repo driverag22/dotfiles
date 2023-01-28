@@ -11,6 +11,7 @@
     /* background-alt: #6c688a; */
     background-alt: #31333f;
     /* foreground:     #eeeeee; */
+    white :         #eeeeee;
     foreground:     #ff69b4;
     selected:       #ff69b4;
     active:         #ff69b4;

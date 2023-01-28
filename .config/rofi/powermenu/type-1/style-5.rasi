@@ -56,12 +56,14 @@ mainbox {
 message {
     enabled:                     false;
     margin:                      0px;
-    padding:                     10px;
-    border:                      1px solid;
-    border-radius:               15px;
+    padding:                     9px;
+    border:                      0px solid;
+    border-radius:               10px;
     border-color:                @selected;
+    /* border-color:                @background-alt; */
     background-color:            @background-alt;
     text-color:                  @foreground;
+    /* text-color:                  @white; */
 }
 textbox {
     background-color:            inherit;
@@ -84,7 +86,6 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    /* columns:                     5; */
     columns:                     3;
     lines:                       1;
     cycle:                       true;
@@ -113,10 +114,11 @@ element {
     margin:                      0px;
     padding:                     10px;
     border:                      1px solid;
-    border-radius:               15px;
+    border-radius:               1%;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
+    /* text-color:                  @white; */
     cursor:                      pointer;
 }
 element-text {
@@ -127,8 +129,9 @@ element-text {
     horizontal-align:            0.5;
 }
 element selected.normal {
-    border:                      0px 2px 0px 2px;
-    border-radius:               15px;
+    border:                      1px 1px 1px 1px;
+    border-radius:               1%;
     background-color:            var(selected);
     text-color:                  var(background);
+    /* text-color:                  var(white); */
 }
