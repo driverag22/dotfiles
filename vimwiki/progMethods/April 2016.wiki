@@ -1,0 +1,48 @@
+1. 
+{{{java 
+/**
+ * Increment all array elements whose index occurs in a set.
+ *
+ * @param a   integer array whose elements are going to be increased
+ * @param s   set 
+ * @pre {@code a != null && s != null && (\forall i; s.contains(i); a.has(i))}
+ * @modifies {@code a}
+ * @post {@code (\forall i; s.contains(i); a[i] = \old(a[i]) + 1)}
+ * @throws NullPointerException if {@code a == null || b == null}
+ * @throws IllegalArgumentException if {@code (\exists i; s.contains(i); !a.has(i))}
+ *
+ */
+void incSelection(int[] a, Set<Integer> s) throws NullPointerException, IllegalArgumentException {
+    /****/
+}
+}}}
+
+1. 
+   a) Benefits of implementing test cases before implementing software:
+       - Allows you to completely focus on test cases when implementing them, and on software development when doing software development, instead of them interrupting each other.
+       - It helps stabalize interfaces and contracts before implementing them.
+       - It encourages analysis of interfaces and contracts before implementing them.
+   b) Steps:
+       i) Call the method in the test in a try statement.
+       ii) If no exception is caught, the code continues to the next statement and fails.
+       iii) If an exception is caught, check that it is the correct exception. If it is, pass the test, otherwise, fail the test.
+
+2. 
+   a) concrete class _C_ depends on class _D_ means that the class _C_ cannot be compiled without having class _D_ as well.
+   b) increases coupling between different classes of the code ( _C_ and _D_).
+       i) Hinders testing/verifiability: _C_ being dependent on _D_ makes it harder to test, since to test it class _D_ has to be initalized as well.
+       ii) Hindres maintainability: when the implementation of _D_ changes, the implementation of _C_ must then change as well.
+       iii) Hinders reuse: when reusing class _C_, class _D_ has to be reused as well.
+
+3. 
+   a) An ADT is an abstract representation of values together with the operations that can be performed on that values. Its implementation is encapsulated and not directly accessible by client code, so the client code does not depend on the implementation at all.
+   b) They are useful because they allow different implementations to be created for the same solution (allowing different implementations based on the need, like time or memory limits). Moreover, the implementation can be changed without affecting the correctness 
+      of the client code since the client code solely depends on the abstract definition, not the implementation itself (as long as the implementation is correct, or course).
+   c) *CODE*: a data representation (in terms of concrete types of other ADTs), implementation of all operations.
+      *DOCUMENTATIOON*: representation invariant (stating the condition under which the data representation is valid, i.e., when it represents an abstract value), and the abstraction function, mapping a valid data representation to the corresponding abstract value.
+
+5. 
+   a) Factoy design method.
+   b) Polymorphism: subtypes of car are created (such as Tesla), which can replace one another throughout the code without affecting correctness.
+      Inheritance: subtypes inherit from the main abstract class.
+

@@ -1,0 +1,14 @@
+= Command Design Pattern =
+
+The Command Design Pattern encapsulates a request as an object and decouples the requests from clients invoking the request. Encapsulating a request as an object allows executable code to be passed around and treated like any other object. A command object can be referenced from multiple locations,  queued for batch processing, and saved to persistent storage. The command pattern also provides a convenient framework for implementing  undoable operations.
+
+The four main components of the Command Design Pattern are:
+
+- *Receiver*: represents existing functionality. The CDP encapsulates a request, which is tipically compromised of one or more operations being invoked on one or more
+existing receiver objects.
+- *Concrete command*: it calls operations on receiver objects in order to carry out the encapsulated request. For simple actions, ConcreteCommand may implement the 
+action directly without the need for the Receiver object.
+- *Command*: abstract interface. It allows concrete commands to be loosely coupled to clients.
+- *Invoker*: initiates requests encapsulated in commands. Command objects are responsible for performing requests and invoker objects are responsible for initiating them
+
+In the counter example, the concrete commands can be increase, decrease, reset, the receiver is the Counter (class keeping track of the counter variable), and the invoker can be the window menu displaying the current counter and holding the buttons which activate each command.

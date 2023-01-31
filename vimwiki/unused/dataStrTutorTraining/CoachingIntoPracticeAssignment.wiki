@@ -1,0 +1,27 @@
+=Description=
+A student has a very hard time understand a specific type of problem (related to Data Structures), such as proving a loop invariant. The student might even feel unmotivated because of the struggles they are having with this specific type of question.
+
+==Describe how you would approach helping the student.==
+Firstly, I would try to pinpoint exactly where the problem is, i.e., through (category 2) questions, determine what the student does not understand.
+
+If there is a general step, I would focus on that specific step, making sure to guide the student towards the solution, starting with more support, and giving less support over time.
+
+If the student does not understand the problem in general, I would try to work through the whole problem as a whole, with a similar strategy of starting off with more support, and slowly giving the student more freedom and independence.
+
+==Write down what questions you could ask the student.==
+
+To pin-point where the student is having a problem, I would first ask questions along the lines of "What part is unclear to you?"/"What part of the problem do you get stuck on?".
+
+From there, once the student starts understanding the problem a bit more I would ask questions about the material to make the student think about different aspects (this can be questions about facts, for example).
+
+==Based on the possible responses to these questions, write down what feedback you could give.==
+
+As stated earlier, the questions would pinpoint what part of the problem the student is having a hard time understanding. Based on the answer, I would focus on 
+specific parts of the problem if the student is stuck on a more specific thing, and I would focus on the problem as a whole if the student is having a hard time 
+understanding it in general.
+ 
+==Write down what clues you could give the student.==
+
+More general clues could be about, for example, the steps that should be followed when proving the loop invariant, or what the loop invariant should be.
+
+More specific clues could be about specific sections of the loop invariant, such as how the termination of the loop invariant should look like.

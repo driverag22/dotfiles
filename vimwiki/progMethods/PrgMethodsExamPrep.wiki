@@ -1,0 +1,56 @@
+= Past exams =
+== Final exams ==
+=== With solutions === 
+- [X] August 2022 (Ans)
+- [X] [[./exams/Jan2020|January 2020]] Re-do question 7
+- [ ] [[April 2016]] Question 5
+- [ ] March 2016
+- [ ] April 2014
+=== Without solutions ===
+- [ ] July 2018
+- [ ] April 2018
+- [ ] April 2017
+- [ ] August 2016
+- [ ] July 2015
+- [ ] April 2015
+
+== Midterm exams ==
+=== With solutions === 
+- [X] Interim test I (Ans)
+- [X] Interim test II (Ans)
+- [X] Interim test III (Ans)
+
+= General course material=
+
+[[JavaContract|Example contract]]
+
+== Methods ==
+Look over UML diagrams for each!
+- [ ] [[IntroDesPatterns|Intro. to design patterns]]
+- [ ] Section 5 of the TDD handout?
+- [ ] [[SingletonPattern|Singleton design pattern]] 
+- [ ] [[StrategyDesgPatter|Strategy design pattern]] 
+- [ ] [[IteratorPattern|Iterator design pattern]]
+- [ ] [[TemplateMethodPattern|Template method design pattern]]
+- [ ] [[FactorDesignPattern|Factory method design pattern]]
+- [ ] [[ObserverPattern|Observer design pattern]]
+- [ ] [[AdapterPattern|Adapter design pattern]]
+- [ ] [[DecoratorPattern|Decorator design pattern]]
+- [ ] [[CompositePattern|Composite design pattern]]
+- [ ] [[FacadePattern|Facade design pattern]]
+- [ ] [[CallbacksToDesignPatterns|Handout "From Callbacks to Design Patterns"]]
+- [ ] [[StateDesPattern|State design pattern]]
+- [ ] [[ComandPattern|Command design pattern]]
+      
+== Other stuff ==
+- [ ] [[Principles]]
+- [ ] [[KeyWords]]
+- [ ] [[Robustness]]
+- [ ] [[StrategyAsTM|Strategy Design Pattern as alternative to Template Method]]
+- [ ] [[SwingWorker]]
+- [ ] [[ADTs]]
+- [ ] For any class U that is a subclass (possibly transitively) of a class T, U is not a subtype of T. A subclass that is not a subtype violates the Liskov 
+      substitution principle (cannot be interchanged without affecting correctness of program)
+- [ ] Regression testing is not only done after new methods are added to the program, it can also be done after fixing defects, for example.
+- [ ] Testability benefits from functional decomposition.
+- [ ] 

@@ -1,0 +1,20 @@
+= Composite Design Pattern =
+
+The *Composite* design pattern organizes objects intro a tree data structure where leaf nodes represent individual objects and interior nodes represent compositions ofindividual objects and/or other compositions.
+
+- This is different from a standard tree data structure because objects and compositions share the same interface.
+
+The four main components of the Composite pattern are:
+
+- *Component:* defines the interface common to individual objects and compositions.
+- *LeafNode*: leaf nodes represent primitive elements in the composition. There are one or more leaf node types. For example, if used to manage the layout of a UI 
+component, the leaf nodes would be primitive UI components like Buttons or TextFields.
+- *Composite:* defines behavior for a collection of components. It implements the operations defined in the Component interface. The standard implementation for an 
+operation is to forward the request to all child components.
+- *Client:* clients interact with components in the Composite design pattern through the component interace. They are unaware if they are dealing with primitive 
+components or a composition of components.
+
+
+_Example:_ A parcel is either an individual item such as clothing or jewelry or a package of parcels. Since packages can be treated as parcels, it’s possible to have packages within packages.
+
+{{file:composite1.png}}

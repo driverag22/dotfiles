@@ -1,0 +1,39 @@
+void multLength(int[] a, String[] b) that given two non-null arrays of equal length, replaces each element of integer array a by the result of the multiplication of 
+that element with the length of the element of string array b at the same index. 
+
+{{{java
+/**
+ * Replaces each integer in array a but the result of the product of that element with the length of the sting at the respective index of array b. 
+ * 
+ * @param a array of integers
+ * @param b array of strings
+ * @pre {@code a != null && b != null && a.length = b.length && (\forall i; b.has(i); b[i] != null)}
+ * @modifies {@code a}
+ * @post {@code (\forall i; a.has(i); a[i] == \old(a[i]) * b[i].length)}
+ * @throws NullPointerException if {@code a == null || b == null}
+ * @throws IllegalArgumentException if {@code a.length != b.length}
+ * 
+ */
+void multLength(int[] a, String[] b) throws NullPointerException, IllegalArgumentException {
+    /* ... */ 
+}
+}}}
+
+int findDecPair(int[] a) that finds a "decreasing neighbor pair". This means that, given a non-null integer array a with a length of at least two where the first 
+element is greater than the last element, the method findDecPair returns an index in the array such that the value at that index is less than the preceding value.
+{{{java
+/**
+ * Finds a "decreasing neighbor pair" in a given array.
+ * 
+ * @param a  input array to search in
+ * @return  index of a decreasing neighbor pair
+ * @pre {@code a != null && 2 <= a.length && a[0] > a[a.length - 1]}
+ * @post {@code 0 < \result < a.length && a[\result - 1] > a[\result]}
+ * @throws NullPointerException  if {@code a == null}
+ * @throws IllegalArgumentException if {@code a.length < 2 || a[0] <= a[a.length - 1]}
+ *
+ */
+int findDecPair(int[] a) throws NullPointerException, IllegalArgumentException { 
+    /* ... */ 
+}
+}}}

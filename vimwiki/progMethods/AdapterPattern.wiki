@@ -1,0 +1,65 @@
+= ADAPTER =
+
+- A software consists of various modules connected via interfaces. Sometimes a service is needed but offered through an interface incompatible with the code. 
+The adapter design pattern can be used here by making the available interface look and act like the needed interface.
+- Adapter design pattern can be used to adapt an interface which cannot be used to one that can be used.
+- It is useful in situations where an existing class provides a needed service but there is a mismatch between the interface offered and the interface that the client expects.
+ 
+ 
+- Two different ways of implementing the adapter design pattern, using composition and using inheritance.
+ 
+- *Composition:* the adapter class implements the interface that the client expects. At runtime the adapter object is initialized with a reference to the service 
+available, and the client calls operations on this adapter object who then forwards them to the service. Note that even through the spirit of the Adapter pattern is 
+to simply pass operations to the adaptee, the adapter might take responsibility for some or all of an operation.
+ 
+- *Inheritance:* the adapter class implements the interface the client expects, and inherits from the class representing the available service. The client class 
+operations on the adapter object, and the adapter object forwards these calls as necessary to the inherited operations of the available service.
+    - Implementation of the adapter pattern by inheritance requires less code when methods in the expected interface are already implemented in the adaptee. However, 
+    since inheritance exposes the protected interface of a parent class to subclasses, inheritance creates the potential for tighter coupling between the adapter and      the adaptee.
+ 
+- Since higher coupling is typically more harmful than a few extra lines of simple delegate code, _composition_ is usually a better option than _inheritance_.
+- The adapter design pattern can help upgrade interdependent system components at different rates. 
+_Example:_ class A ↔ class B can become class A (version 1.0) ↔ class B (version 1.0) ← adapter → class B (version 1.1).
+
+- Similar in structure and interaction to the Bridge, Proxy and Facade patterns, but distinguished by intent and purpose.
+
+Both the Decorator and Adapter design patterns delegate to a wrapped object. The principle difference between the two patterns is Decorator adds new behavior without 
+changing the interface whereas Adapter keeps the same basic behavior but changes the interface.
+
+_Example_: 
+ * Because the class needs to adapt a given object, it must use composition rather than inheritance.
+ * Because the methods in the new interface do not all have the wafer as parameter, the adapter must store it locally upon loading the wafer.
+
+{{{java
+/** Adapts legacy wafer processor to Next Generation interface. */
+public class WaferProcessorAdapter implements IWaferProcessorNG {    
+    /** Wafer processor being adapted. */    
+    IWaferProcessor adaptee;    
+    /** Loaded wafer. */    
+    Wafer wafer;    
+    
+    /** Constructs an adapted wafer processor for adaptee. */    
+    WaferProcessorAdapter(IWaferProcessor adaptee) {        
+        this.adaptee = adaptee;    
+    }    
+    
+    @Override    
+    public void loadWafer(Wafer wafer) {        
+        this.wafer = wafer;        
+        adaptee.conditionWafer(wafer);    
+    }    
+    
+    @Override    
+    public void measureWafer() {        
+        adaptee.measureWafer(wafer);
+    }    
+    
+    @Override    
+    public Wafer exposeWafer() {        
+        adaptee.exposeWafer(wafer);        
+        Wafer result = wafer;        
+        wafer = null; // not required        
+        return result;    
+    }
+}
+}}}  

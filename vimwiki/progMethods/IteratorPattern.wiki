@@ -1,0 +1,69 @@
+= Iterator Design Pattern =
+
+The iterator design pattern is a behavioral design pattern that allows traversing elements of a collection without exposing its underlying representation. 
+The iterator pattern provides a way to access the elements of an aggregate object (such as a list or a tree) sequentially without exposing its internal structure.
+
+The pattern has four components:
+  1. *Collection* - defines the interface for collecton types. Included in the interface is _createIterator()_, a factory method for the collection. Optionally, 
+     methods for managing elements of the collection (adding, removing,...) may also be included.
+  2. *Iterator* - defines the interface for traversing the elements of a collection. There is no standard set of methods for iteration.
+  3. *ConcreteCollection* - a class that implements the _Collection_ interface.
+  4. *ConcreteIterator* - a class that implements the _Iterator_ interface. A concrete iterator needs access to the internal data structure of the collecton it 
+     traverses. A collecton might grant its iteartor privileged access to its internals or pass a reference/copy of its internal data structure.
+
+The main idea behind the iterator pattern is to abstract the logic of traversing a collection away from the collection itself and into an iterator object. This allows 
+multiple iterators to be used simultaneously on the same collection, and it also allows the collection's internal structure to change without affecting the code that 
+uses the iterator.
+
+An Iterable does not maintain the state of an iteration of the elements of a collection, it simply provides a way to access the elements one-by-one.
+
+_Example:_ 
+{{{java
+interface Iterator {
+    boolean hasNext();
+    Object next();
+}
+
+interface Container {
+    Iterator getIterator();
+}
+
+class NameRepository implements Container {
+    public String names[] = {"Robert", "John", "Julie", "Lora"};
+
+    @Override
+    public Iterator getIterator() {
+        return new NameIterator();
+    }
+
+    private class NameIterator implements Iterator {
+        int index;
+
+        @Override
+        public boolean hasNext() {
+            return index < names.length;
+        }
+
+        @Override
+        public Object next() {
+            if (this.hasNext()) {
+                return names[index++];
+            }
+            return null;
+        }
+    }
+}
+}}}
+
+
+_Client code:_ 
+
+{{{java
+NameRepository namesRepository = new NameRepository();
+
+for (Iterator iter = namesRepository.getIterator(); iter.hasNext();) {
+    String name = (String) iter.next();
+    System.out.println("Name : " + name);
+}
+}}}
+

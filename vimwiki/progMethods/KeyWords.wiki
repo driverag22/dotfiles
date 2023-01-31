@@ -1,0 +1,16 @@
+- [ ] *Polymorphism*: fundamental concept in object-oriented programming that allows objects of different types to be treated as objects of a common type. 
+      Example: animal class, with subclasses Dog and Cat (w/ makeSound method). makeSound can be called both on dog and cat and will work, although each will have
+      a different implementation.
+- [ ] *Overriding*: overriding methods
+
+=== Composition vs. Inheritance ===
+- [ ] *Composition*: create complex objects combining simple objects, uses _implements_ in Java. We take a base class, and implement it into our new class.
+      _Example_: We make tires, then a car which implements these tires (composition).
+- [ ] *Inheritance*: objects inherit properties of a parent object and "extends" them, uses _extends_ in Java.
+      _Example_: We make a person class, and then can have (sub)classes Employee and Student which inherit (and extend) Person.
+
+The *benefits* of using composition over inheritance (though there are also disadvantages):
+   - dynamic ( runtime/late) binding instead of static (compile time/early) binding gives more flexibility: hook methods can be varied at runtime (e.g. based on input)
+   - easier to test the concrete hook methods, since they need not be bound into a subclass of
+   - the template method class, which makes it harder to access them in isolation;
+   - easier to reuse concrete hook methods in other contexts

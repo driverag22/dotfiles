@@ -1,0 +1,104 @@
+= State Design Pattern =
+
+_Intent_:
+- Objects have state and behavior. Objects change their state based on internal and external events. If an object goes through clearly identifiable states, and the object’s behavior is essentially dependent on its state, it is a good candidate for the State design pattern.
+
+_Solution_:
+- The solution is to encapsulate state-specific behavior into separate objects and have the context (the object that goes through identifiable states) delegate 
+state-specific requests to these objects.
+    - In the case of the Amphicar, the states are car and boat. There are some state-independent requests, like turn (done in the same way for both) and some 
+    state-dependent requests, like decelerate (one applies brakes, other one turns propeller in opposite direction). There are also methods to transition to a new 
+    state (by doing state = new Boat() or state = new Car()).
+
+Consists of:
+  - A state interface that defines the behavior of the object in different states
+  - Concrete state classes that implement the state interface and provide the behavior of the object in different states
+  - A context class that maintains the current state of the object and delegates the behavior to the state classes
+    
+When applying the State design pattern, an issue to consider is whether to make the context or individual state objects responsible  for state transitions.
+
+- If the criterion for transitioning between states is not a function of state, the most logical choice is to make the context responsible for state transitions (e.g. for the Amphicar, the context is responsible for the state transitions because the state transitions are state independent).
+- In the cell phone, the individual state objects are responsible for the state transitions. Putting state transition logic in state objects is reasonable in this case because state transitions occur as a consequence of receiving certain events while in certain states, i.e., the state transitions are state dependent.
+
+Allowing state objects to take responsibility for state transitions increases coupling between state objects (predecessor state must know about successor state) but generally results in code that is easier to understand and maintain.
+
+*Related patterns:*
+- *State* and *strategy* have the same static structure (class diagrams) but differ in intent. The difference between the two patterns does, however, show up in their prototypical runtime behavior.
+- With *State*, clients have little (or no knowledge) of concrete state objects. The context typically decides the initial state and associated concrete state object. 
+The context together with the state objects are responsible for transitions between states.
+- With *Strategy*, clients are usually aware of different strategy objects and take responsibility for initializing the context with a specific strategy.
+- The *Singleton design pattern* can be used to create and manage state objects. If state classes are made Singleton classes, you don’t have to create a new state 
+object during every transition.
+
+_Example:_ 
+
+{{{java
+interface State {
+    void doAction(Context context);
+}
+
+class StartState implements State {
+    @Override
+    public void doAction(Context context) {
+        System.out.println("Player is in start state");
+        context.setState(this);
+    }
+
+    public String toString(){
+        return "Start State";
+    }
+}
+
+class StopState implements State {
+    @Override
+    public void doAction(Context context) {
+        System.out.println("Player is in stop state");
+        context.setState(this);
+    }
+
+    public String toString(){
+        return "Stop State";
+    }
+}
+
+class Context {
+    private State state;
+
+    public Context(){
+        state = null;
+    }
+
+    public void setState(State state){
+        this.state = state;
+    }
+
+    public State getState(){
+        return state;
+    }
+}
+}}}
+
+_Client code_
+
+{{{java
+Context context = new Context();
+
+StartState startState = new StartState();
+startState.doAction(context);
+
+System.out.println(context.getState().toString());
+
+StopState stopState = new StopState();
+stopState.doAction(context);
+
+System.out.println(context.getState().toString());
+}}}
+
+From OOP, it uses:
+  - *Inheritance*: the concrete state classes inherit from the base class which implements the state interface.
+  - *Polymorphism*: the SDP makes use of polymorphism by defining a state interface that defines the behavior of the object in different states, and having concrete
+    state classes that implement the interface and provide behavior of the object in different states.
+   
+  - Encapsulation: the SDP uses encapsulation by hiding the implementation details of the state classes and the current state of the object within the context class.
+  - Abstraction: abstraction is used by separating the behavior of the object from its implementation details.
+    

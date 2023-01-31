@@ -1,0 +1,80 @@
+= Observer =
+
+With the Observer design pattern, a subject object keeps a list of observers. When the state of the subject changes, observers are notified and given a chance to 
+synchronize with the subject.
+
+- [ ] The subject always notifies its Observers about its state having changed.
+- [ ] Each Observer object does not have to necessarily register itself with the Subject.
+- [ ] The Subject's notification to the Observers *may* include the Subject's new state.
+
+The Observer design pattern defines a one-to-many relationship between a subject object and any number of observer objects such that when the subject object changes, 
+observer objects are notified and given a change to react to changes in the subject.
+
+The three main components are *Subject, Observer*, and, *ConcreteObserver.*
+
+The *subject* is responsible for:
+- Attaching and detaching observers
+- Notifying attached observers when the state of the subject changes
+- Application-specific state and logic
+
+A subject is loosely coupled to its observers because the subject only knows about its observers through the abstract interface Observer.
+
+*ConcreteObserver* implements the abstract interface *Observer*. It may keep a reference to the *subject* it is observing (the other option is to pass a reference to
+the subject on the update() method). This reference to the subject is used to query the subject for more details when notified of a change in the state of the subject.
+
+1. During the setup phase, observers are registered with the subject. Observers may attach themselves or be added to the subject via a third party. 
+2. A change in the state of a subject may be initiated from a third party or one of the views.
+3. After a change in the state of a subject, the subject will notify registered observers. 
+4. When notified of a change in the subject, observers may query the subject for the details of what has changed (the pull method). Another option is for subjects to 
+forward information about the change to observers through the update method (the push method). The push method is probably more efficient, but it increases coupling 
+from subject to observers making it harder to reuse observers in other contexts.
+
+From 1 to multiple observers:
+ - [ ] a different interface.
+ - [ ] handling them externally via a composite observer.
+ - [ ] combining multiple observable puzzle states, each with their own observer.
+
+Example: you have a stock class which can go up and down in value. StockView and StockTrader are two classes which keep track of the stocks value and sell if the stock value goes over some point (respectively). The structure is then:
+{{file:observer2.png}}
+
+Java also contains its own library for this, with Observer (interface) and Observable: 
+{{file:observer1.png}}
+
+_Example code_:
+{{{java
+public interface PuzzleState {
+    int getCell(int index);
+    void resetCell(int index);
+    void incCell(int index);
+}
+public interface PuzzleStateObserver {
+    void notify(PuzzleState subject, int index);
+}
+public class ObservablePuzzleState implements PuzzleState {
+    // Puzzle being observed
+    private puzzleState puzzleState;
+
+    // Observer 
+    private PuzzleStateObserver observer;
+    
+    public ObservablePuzzleState (final PuzzleState puzzleState, final PuzzleStateObserver observer) {
+        this.puzzleState = puzzleState;
+        this.observer = observer;
+    }
+    
+    @Override
+    public int getCell(int index) {
+        return puzzleState.getCell(index);
+    }
+    @Override
+    public void resetCell(int index) {
+        puzzleState.resetCell(index);
+        observer.notify(this, index);
+    }
+    @Override
+    public void incCell(int index) {
+        puzzleState.incCell(index);
+        observer.notify(this, index);
+    }
+}
+}}}

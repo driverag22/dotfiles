@@ -1,0 +1,17 @@
+== MAIN STEPS ==
+ * Consider each step, i.e. hook, a Strategy (cf. Strategy pattern), and introduce an abstract class or interface for each.
+ * Give alternative template method class a (polymorphic) instance variable for each step, with abstract step as type.
+ * Give alternative template method class a constructor (or appropriate setters) from parameters with abstract step strategies as type, to initialize (set) the 
+   instance variables.
+ * Client code injects concrete steps into an instance of the alternative template method class, via the constructor (or appropriate setter(s)
+
+Each hook/step is a separate strategy, i.e. it has an abstract class/interace. Give each step a (polymorphic) instance variable w/ abstract step as type, and give the template method a constructor (or some type of setter) from parameters with abstract step strategies as tpe to initialize the set of hooks that will be used.
+Client code then _injects_ concrete steps into an instance of the alt. template method class via this constructor (or used setter).
+
+
+=== Notes: ===
+ - Multiple, or even all, steps could be combined in a single strategy, but this is not preferred (see 8b).
+ - Instance variables can be avoided by passing the concrete methods as parameters (whose types are the abstract steps) of the template method itself, but this is 
+   usually not preferred (template method call becomes 'heavy').
+ - If hook methods need to access instance variables of other methods of the template method class, then these could be injected as additional parameters of the 
+   strategy.

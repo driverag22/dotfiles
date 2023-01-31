@@ -1,0 +1,15 @@
+= Introduction to Design Patterns=
+
+== Benefits == 
+ - Facilitate reuse.
+ - Make design easier.
+ - Capture expertise and facilitate its dissemination.
+ - Define shared vocabulary for discussing design and architecture.
+ - Move software development closer to a well-established engineering discipline.
+ - Studying them improves your ability to do original designs.
+ - Knowing popular designs makes it easier to learn class libraries which use design patterns.
+
+== Intent matters ==
+ - Two different design patterns might have the same class diagrams.
+ - What makes a design pattern unique is its intent.
+ - What distinguishes two patterns is the problem solved.

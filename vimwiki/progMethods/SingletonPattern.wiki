@@ -1,0 +1,21 @@
+= Singleton Design Pattern =
+The singleton design pattern is a design pattern in which a class can only have one instance at any given time, and it provides a global point of access to that 
+instance. This is useful for cases where only a single instance of a class should control the action throughout the execution.
+
+
+You create a single instance of that class which you always pass. In particular, it looks like this:
+
+{{{java
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+}}}

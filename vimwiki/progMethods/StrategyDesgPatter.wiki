@@ -1,0 +1,61 @@
+= Strategy Design Pattern =
+
+The strategy design pattern is a behavioral design pattern that allows an algorithm's behavior to be selected at runtime. It encapsulates a family of algorithms, 
+encapsulates each one as an object, and makes them interchangeable. The strategy pattern allows the algorithm to vary independently from clients that use it.
+
+The pattern consists of:
+ - an *interface* that defines the algorithm
+ - a family of *concrete implementations* of the algorithm
+ - a *context class* that uses the interface to call the algorithm
+
+The main idea behind the strategy pattern is to encapsulate an algorithm inside a class and make it interchangeable with other algorithm. This allows the algorithm to 
+be changed at runtime. It's particularly useful in cases where a class needs to use different algorithms at different times or in different situations.
+
+In the Strategy Design Pattern, _Overriding_, _Inheritance_ and _Polymorphism_ play a role.
+
+*DIP is satisfied:*
+When using Strategy, client code depends on an abstract interface for an algorithm, without implementation. Concrete implementations of this interface are selectable 
+at runtime. (The non-inverted dependency i.e. anti-pattern is to let client code depend directly on concrete implementations of an algorithm. This observation is not needed to score this point.)
+
+_Example:_ 
+{{{java
+interface Strategy {
+    int execute(int a, int b);
+}
+
+class Addition implements Strategy {
+    public int execute(int a, int b) {
+        return a + b;
+    }
+}
+
+class Subtraction implements Strategy {
+    public int execute(int a, int b) {
+        return a - b;
+    }
+}
+
+class Context {
+    private Strategy strategy;
+
+    public Context(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public int executeStrategy(int a, int b) {
+        return strategy.execute(a, b);
+    }
+}
+}}}
+
+
+_Client code:_
+{{{java
+public static void main(String[] args) {
+    Context context = new Context(new Addition());
+    System.out.println("10 + 5 = " + context.executeStrategy(10, 5));
+
+    context = new Context(new Subtraction());
+    System.out.println("10 - 5 = " + context.executeStrategy(10, 5));
+}
+}}}

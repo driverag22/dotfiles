@@ -1,0 +1,12 @@
+= SwingWorker =
+Its purpose is to avoid running of time consuming computations in the main GUI thread, and instead run them in a separate (background) thread.
+
+=== Main steps for client code to use the SwingWorker class ===
+ 1. (Static aspect: declaration) By subclassing SwingWorker and overriding the doInBackground() _(implement background task here)_ 
+    and done() _(implement finalization)_ methods.
+ 2. (Dynamic aspect: execution) The resulting SwingWorker subclass must be instantiated for each run. The background thread is activated by calling execute().
+
+
+=== Design patterns used in SwingWorker ===
+ * Facade: SwingWorker acts as a facade for the Java _Threads_ facilities.
+ * Template: Methods execute(), publish(), and get() are template methods, holding the _"commmon"_ code.

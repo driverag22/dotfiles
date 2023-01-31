@@ -1,0 +1,12 @@
+= ADTs =
+
+ADTs are usefull because they provide a way to specify the behaviour of a data type without specifying its implementation details (separation of concerns). 
+ - [ ] Implementation code can change without affecting correctness of client code, limiting the consequences of making changes to implementations.
+ - [ ] Facilitates multiple implementations of the same ADT.
+ - [ ] An abstract data type makes available, for use in programs, a set of abstract values together with operations on those values. Its implementation 
+       is encapsulated and not directly accessible by client code, so that client code does not depend on the implementation.
+
+
+For ADTs we differentiate between:
+ - [ ] *Specification*: contracts for indiv. operations and zero or more public invariants
+ - [ ] *Implementation*: represenation invariant and abstraction function

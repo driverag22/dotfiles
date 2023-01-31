@@ -1,0 +1,96 @@
+== Video ==
+Biggest issue is how much of it is recieved. When feedback is given to whole class, students always think "it's not for me".
+We want to worry about what feedback is recieved by a student. It is important to understand how the student interprets the feedback.
+As you are giving feedback, stop and listen to how it is being interpreted.
+
+== Giving effective feedback ==
+=== What makes feedback effective? ===
+It needs to have these qualities:
+ - It is (mostly) *specific* and *purpose driven*
+     - _Only_ saying "Well done" or "wrong!" is insufficient.
+     - Describe the action/task you are giving feedback on, e.g.: "You have looked up methods that you were unfamiliar with so that you could fully answer the 
+       question. That is such a good approach to take!"
+     - Telling a student who has just performed well: "Good job!" does have a positive impact on the learning climate, so don't stop giving simple positive feedback.
+     - The ratio between specific to non-specific feedback should be 2/3 to 1/3.
+ - It is *not too long*.
+ - The *ratio* between *positive* and *negative* feedback is *3:1*
+     - Too much negative feedback has a big impact on students' self-esteem, often causing them to shut down all together.
+     - Too much negative feedback also reduces investigative behavior and increases the fear of making mistakes.
+     - Don't just say three positive things to get to the negative or just a _feedback sandwich_ approach, this comes accross as insincere.
+
+== Types of feedback ==
+There are two types of feedback which have a positive impact on learning and on motivation.
+
+=== Discrepancy feedback === 
+Present -> Future
+
+*BENEFITS FOR STUDENTS*
+  - Lets the student know what they know and can do right now
+  - Makes the goal clear
+  - Makes it clear what the student still needs to do to reach the goal
+
+Answers *_all three_* questions:
+  - Where am I now? (curr. situation)
+  - Where am I going? (desired situation)
+  - What do I need to do to get there? (how to close the gap)
+
+=== Progress feedback ===
+Past -> Present
+
+*BENEFITS FOR STUDENTS*
+  - Gives confidence
+  - Shows effort is paying off
+  - Shows teacher is paying attention to their individual effort and achievement
+
+Answers the questions:
+  - What have I achieved already?
+  - What am I doing better than I was before?
+
+
+== Levels of feedback ==
+=== Task, content and product level ===
+*Purpose:* To describe how well tasks have been understood and performed.
+
+*Characteristics*
+  - Subject-specific
+  - Indicates correct/incorrect
+  - Builds task knowledge
+
+_Examples_
+  - "Yes, 3145 is the correct answer."
+
+=== Progress and strategy level ===
+*Purpose:* To describe the main process needed to understand/perform tasks.
+
+*Characteristics*
+  - Provides connections between ideas.
+  - Provides clues about different strategies.
+  - Employs task strategies for identifying errors.
+
+_Examples_
+  - "I see that you are using method X to solve this problem, that is a good choice!"
+
+=== Self-regulation and metacognition level ===
+*Purpose:* Helps students self-monitor, direct and regulate their actions.
+
+*Characteristics*
+  - Helps students indentify feedback themselves.
+  - Provides opportunities and awareness of deliberate practice/effort.
+  - Develops confidence to pursue learning.
+
+_Examples_
+  - "You prevented making mistakes by carefully reading the questions."
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+= PRINCIPLES = 
+== SOLID OO Design Principles ==
+=== Single Responsibility Principle (SRP) ===
+Each function should solve a single well-defined problem.
+
+=== Open Closed Principle (OCP) ===
+Modules should be *open for extension* (via inheritance). 
+
+Inheritance allows reuse of implementation:
+  - representation (instance variables)
+  - operation definitions (method bodies)
+Can add instance variables/methods, and override methods without modifying the superclass
+
+Modules should be *closed for modification* (by clients). 
+  - _private_ or _protected_ instance variables
+  - do not modify code to add or adapt functionality
+
+=== Liskov Substitution Principle (LSP) ===
+Type _U_ is a subtype of type _T_ if in each place where an obj. of type _T_ can be used, you can substitute an object of type _U_ without affecting 
+the correctness of the program.
+
+_U_, a subclass of _T_, is not necessarily a subtype!
+
+=== Interface Segregation Principle (ISP) ===
+Instead of 
+  - loading the class with all methods that the clients need and 
+  - making each client depend on the complete interface
+instead 
+  - create specific interfaces for each kind of client 
+  - make each client depend only on 'its' interface
+  - implement all interfaces in the class
+
+=== Dependency Inversion Principle (DIP) ===
+High-level modules should not depend upon low-level modules, instead both should depende on abstractions.
+Moreover, abstractions should not depende on the details, instead the details should depende on abstractions.
+
+== OTHERS ==
+=== Encapsulate what varies ===
+
+=== Don't repeat yourself (DRY) ===
+
+=== Dependency inversion ===
+Invoker depends only on interface, not on the concrete classes.
+
+=== Dependency injection? ===
+
