@@ -1,6 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
+static int user_bh = 25;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
 
 static const char col_gray4[] = "#31333f";
 static const char col_white[] = "#eeeeee";
