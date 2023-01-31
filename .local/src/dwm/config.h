@@ -24,6 +24,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
+/* static const char *tags[] = { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,7 +44,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { "  ",      tile },
+        { "  ",      tile },
 	{ "  ",      NULL },    /* no layout function means floating behavior */
 	{ " [M]",      monocle },
 };
@@ -63,7 +64,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
+/* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL }; */
+static const char *dmenucmd[] = { "dmenu_run"};
+/* static const char *dmenucmd[] = { "/home/diego/.local/.macros/keyBindings/rofi.sh", NULL }; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
@@ -94,7 +97,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
 
-	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
+	{ ALTKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
