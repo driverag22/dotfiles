@@ -62,8 +62,8 @@ message {
     border-color:                @selected;
     /* border-color:                @background-alt; */
     background-color:            @background-alt;
-    text-color:                  @foreground;
-    /* text-color:                  @white; */
+    /* text-color:                  @foreground; */
+    text-color:                  @white;
 }
 textbox {
     background-color:            inherit;
@@ -113,13 +113,14 @@ element {
     spacing:                     0px;
     margin:                      0px;
     padding:                     10px;
-    border:                      1px solid;
-    border-radius:               1%;
-    border-color:                @selected;
+    border:                      0px solid;
+    border-radius:               10px;
+    /* border-color:                @selected; */
+    border-color:                @white;
     background-color:            @background-alt;
     text-color:                  @foreground;
-    /* text-color:                  @white; */
-    cursor:                      pointer;
+    text-color:                  @white;
+    /* cursor:                      pointer; */
 }
 element-text {
     background-color:            transparent;
@@ -130,8 +131,9 @@ element-text {
 }
 element selected.normal {
     border:                      1px 1px 1px 1px;
-    border-radius:               1%;
+    border-radius:               10px;
+    border-color:                @selected;
     background-color:            var(selected);
-    text-color:                  var(background);
-    /* text-color:                  var(white); */
+    /* text-color:                  var(background); */
+    text-color:                  var(white);
 }
