@@ -8,7 +8,6 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 25;
 static const char *fonts[]          = { "JetBrains Mono:size=14"};
-static const char dmenufont[]       = { "JetBrains Mono:size=13"};
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
@@ -92,6 +91,7 @@ static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
+	{ MODKEY,                       XK_Return, spawn,          {.v = dmenucmd } }, // dmenu
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
