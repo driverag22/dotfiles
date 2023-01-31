@@ -55,12 +55,13 @@ message {
     padding:                     6px;
     border:                      1px solid;
     border-radius:               10px;
-    /* border-color:                @selected; */
-    /* background-color:            @foreground; */
+    border-color:                @selected;
+    background-color:            @foreground;
     /* text-color:                  @background-alt; */
-    border-color:                @background;
-    background-color:            @background;
-    text-color:                  @selected;
+    text-color:                  @white;
+    /* border-color:                @background; */
+    /* background-color:            @background; */
+    /* text-color:                  @selected; */
 }
 textbox {
     background-color:            inherit;
@@ -73,7 +74,7 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       5;
+    lines:                       6;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
@@ -87,9 +88,9 @@ listview {
 element {
     enabled:                     true;
     padding:                     10px;
-    /* border:                      1px solid; */
+    /* border:                      0px solid; */
     border:                      1px 1px 1px 1px;
-    border-radius:               1%;
+    border-radius:               20px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -106,8 +107,8 @@ element-text {
 element normal.normal,
 element alternate.normal {
     background-color:            var(background);
-    text-color:                  var(foreground);
-    /* text-color:                  var(white); */
+    /* text-color:                  var(foreground); */
+    text-color:                  var(white);
 }
 element normal.urgent,
 element alternate.urgent,
@@ -123,6 +124,6 @@ element selected.urgent {
 }
 element selected.normal {
     background-color:            var(background);
-    text-color:                  var(foreground);
-    /* text-color:                  var(white); */
+    /* text-color:                  var(foreground); */
+    text-color:                  var(white);
 }

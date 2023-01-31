@@ -93,6 +93,7 @@ case "$status" in
 esac
 
 option_1="$statIcon $percentage%"
+option_6="$status"
 option_2=" $time"
 option_3=" $temp"
 option_4=" $voltage"
@@ -112,7 +113,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1 \n $option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
+	echo -e "$option_1\n$option_6\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
 # Execute Command
