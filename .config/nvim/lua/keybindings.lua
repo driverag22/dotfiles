@@ -2,15 +2,19 @@ local set = vim.opt
 
 
 ---- Keymaps:
+
+-- fzy search
+vim.keymap.set('n', '<C-s>', ':NV<CR>', {noremap = true}) -- Centered mode
+
 -- vim.keymap.set('n', '<C-f>', ':TZFocus<CR>', {noremap = true}) -- Focus mode
 vim.keymap.set('n', '<C-g>', ':TZAtaraxis<CR>', {noremap = true}) -- Centered mode
 vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true}) -- Toggle file tree
 vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>', {noremap = true}) -- Toggle tagbar
 
-vim.keymap.set('n', '<C-p>', ':tabnew<CR>', {noremap = true}) -- new tab
-vim.keymap.set('n', '<C-o>', ':tabclose<CR>', {noremap = true}) --close tab
-vim.keymap.set('n', '<M-f>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
-vim.keymap.set('n', '<M-b>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
+-- vim.keymap.set('n', '<C-p>', ':tabnew<CR>', {noremap = true}) -- new tab
+-- vim.keymap.set('n', '<C-o>', ':tabclose<CR>', {noremap = true}) --close tab
+-- vim.keymap.set('n', '<M-f>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
+-- vim.keymap.set('n', '<M-b>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
 
 
 --move wrapped lines like normal lines
@@ -46,24 +50,7 @@ nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>') -- rename
 -- vim.keymap.set('n', 'mm', codewindow.toggle_minimap())
 
 vim.cmd ([[
-"    		inoremap <silent><expr> <TAB>
-"		  \ coc#pum#visible() ? coc#pum#next(1) :
-"		  \ CheckBackspace() ? "\<Tab>" :
-"		  \ coc#refresh()
-"		inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-" map < { + Enter > to automatically add second "}"
-inoremap {<Enter> {<Enter>}<Esc>O
-
-
-" map tab to complete for CoC
-"		function! CheckBackspace() abort
-"		  let col = col('.') - 1
-"		  return !col || getline('.')[col - 1]  =~# '\s'
-"		endfunction
-		" Make <CR> to accept selected completion item or notify coc.nvim to format
-		" <C-g>u breaks current undo, please make your own choice.
-"		inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"								  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    " map < { + Enter > to automatically add second "}"
+    inoremap {<Enter> {<Enter>}<Esc>O
 ]])
 

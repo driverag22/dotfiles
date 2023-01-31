@@ -18,4 +18,7 @@ vim.cmd ([[
 		let g:NERDTreeDirArrowCollapsible="~"
 
 ]])
-
+        -- let wiki = {}
+        -- let wiki.path = "~/vimwiki/' 
+        -- let wiki.nested_syntaxes = {'python':'python', 'java':'java', 'c++':'cpp'}
+        -- let g:vimwiki_list = [wiki]

@@ -28,20 +28,26 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 --=========
 
-Plug 'mhinz/vim-startify' -- startup screen // dashboard
+-- Plug 'mhinz/vim-startify' -- startup screen // dashboard
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 
-Plug "SmiteshP/nvim-gps"
-Plug 'Pocco81/true-zen.nvim'
+-- Plug "SmiteshP/nvim-gps"
+-- Plug 'Pocco81/true-zen.nvim'
 Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
 Plug 'feline-nvim/feline.nvim' -- bar 
-Plug 'https://github.com/nanozuki/tabby.nvim' -- to have tabs
-Plug 'nvim-lua/plenary.nvim'
+-- Plug 'https://github.com/nanozuki/tabby.nvim' -- to have tabs
+-- Plug 'nvim-lua/plenary.nvim'
 Plug 'navarasu/onedark.nvim' -- colorscheme
 Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
 Plug('xiyaowong/nvim-transparent') -- make background transparent
+
+--- Search for files:
+vim.cmd ([[ 
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+]])
+Plug 'https://github.com/alok/notational-fzf-vim' 
 
 -- Plug 'gorbit99/codewindow.nvim' -- code minimap
 
@@ -49,10 +55,10 @@ vim.call('plug#end')
 
 require('gitsigns').setup()
 require("toggleterm").setup()
-require("nvim-gps").setup()
-require("tabby").setup({
-	tabline = require("tabby.presets").tab_only
-})
+-- require("nvim-gps").setup()
+-- require("tabby").setup({
+-- 	tabline = require("tabby.presets").tab_only
+-- })
 require('onedark').setup {
     style = 'deep'
 }
@@ -72,3 +78,8 @@ require("transparent").setup({
   exclude = {}, -- table: groups you don't want to clear
 })
 require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
+
+--fzy finder 
+vim.cmd ([[ 
+    let g:nv_search_paths = ['~/src', '~/vimwiki']
+]])
