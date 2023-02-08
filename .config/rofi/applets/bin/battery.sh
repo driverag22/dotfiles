@@ -19,9 +19,9 @@ voltage="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'voltage
 energy="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'energy:' | awk {'print $2'}`"
 energytot="`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'energy-full:' | awk {'print $2'}`"
 
-if [[ -z "$time" ]]; then
-	time=' Fully Charged'
-fi
+# if [[ -z "$time" ]]; then
+#     time="`acpi -b | grep "Battery 0" | awk '{print $5 " " $6 " " $7}' `"
+# fi
 
 # Theme Elements
 prompt="$status"
