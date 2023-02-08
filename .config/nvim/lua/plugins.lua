@@ -51,6 +51,10 @@ Plug 'https://github.com/alok/notational-fzf-vim'
 
 -- Plug 'gorbit99/codewindow.nvim' -- code minimap
 
+Plug 'tools-life/taskwiki' -- task-wiki
+Plug 'powerman/vim-plugin-AnsiEsc' -- color support for charts
+Plug 'farseer90718/vim-taskwarrior'  --grid view
+
 vim.call('plug#end')
 
 require('gitsigns').setup()

@@ -29,6 +29,8 @@ vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]]) -- the
 vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]]) -- terminals
 
 
+--tasks
+vim.keymap.set('n', 'td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
 
 local function nkeymap(key, map)
 	vim.keymap.set('n', key, map, {noremap = true})
