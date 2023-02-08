@@ -10,6 +10,7 @@ then
     # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/evaCatpuchin.png'
 else
     /home/diego/.local/.macros/automatic/screensNetherlands.sh
-    # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/undefined - Imgur(1).jpg' --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
+    # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/1145263.jpg' --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
+    # feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/evaCatpuchin.png' --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
     feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/evaCatpuchin.png' --bg-fill '/home/diego/Pictures/wallpaper-master/neon.jpg'
 fi
