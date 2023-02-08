@@ -4,7 +4,7 @@ The factory method design pattern is a creational design pattern that provides a
 type of objects that will be created.
 
 The pattern consists of:
-   - An abstract factory class that defines a factory method for creating objects
+   - An abstract factory (creator) class that defines a factory method for creating objects
    - Concrete factory classes that extend the abstract factory class and provide an implementation for the factory method
    - An abstract product class that defines the interface for the objects that will be created 
    - Concrete product classes that extend the abstract product class and provide an implementation for the product interface 

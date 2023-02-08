@@ -1,10 +1,19 @@
 = Decorator =
+==Adds behavior without changing the interface.==
+
+The Decorator design pattern is a structural design pattern that provides a way to add new behaviors and responsibilities to existing objects dynamically, without 
+affecting their original behavior. It does this by wrapping objects in a decorator object, which adds the new behavior.
+
+
+The Decorator pattern is used to extend the functionality of an object dynamically, at runtime, by adding additional responsibilities to the object in the form of 
+"decorators." Each decorator is a separate class that implements the same interface as the original object, but adds its own behavior to the original behavior. 
+The decorators are applied to the original object in a chain, so that each decorator adds its own behavior to the behavior of the previous decorator in the chain.
 
 - Uses object decomposition and delegation to extend the behavior of existing classes in a way that is both lightweight and flexible. Provides a way of attaching 
 additional responsibilities to an object dynamically.
 
 - Open-close principle: classes should be open for extension, but closed for modification.
-- Decorator design pattern offers an alternative to class inheritance for extending the behavior of existing classes .Adding new features through subclasses complies 
+- Decorator design pattern offers an alternative to class inheritance for extending the behavior of existing classes. Adding new features through subclasses complies 
 with the open-closed principle, but the protected interface of the base class is exposed to the subclasses, inheritance tends to weaken the encapsulation barrier 
 around the base class (known as fragile superclass problem). Moreover, if different combinations of features are valid it becomes messy (e.g.: subclass with feature A,subclass with feature B, subclass with feature A & B). Also creates a compile-time structural relationship between the features being added and the classes being 
 extended.
@@ -14,7 +23,15 @@ extended.
 - Two main groups of classes, *concrete components* and *concrete decorators*. *Concrete components* contain the base functionality that is extended or decorated with features defined in the *concrete decorators*.
 
 - To add a feature to a component, you create an instance of the component and pass this instance to the constructor for the decorator that defines the feature you 
-want to add to the component.
+want to add to the component, i.e.,
+{{{Java
+ConcreteComponent cc = new ConcreteComponent();
+ConcreteDecoratorA cd1 = new ConcreteDecoratorA(cc);
+ConcreteDecoratorB cd2 = new ConcreteDecoratorB(dc1);
+cd2.operation();
+}}}
+Operation will run _operation()_ of concrete decorator B, then of concrete operation A, and lastly of concrete component.
+
 - To a concrete component you can add (theoretically infinitely many) concrete decorators.
 - Java I/O library based on decorator design pattern.
 

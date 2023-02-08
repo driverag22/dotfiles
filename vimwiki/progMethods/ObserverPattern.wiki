@@ -10,7 +10,12 @@ synchronize with the subject.
 The Observer design pattern defines a one-to-many relationship between a subject object and any number of observer objects such that when the subject object changes, 
 observer objects are notified and given a change to react to changes in the subject.
 
-The three main components are *Subject, Observer*, and, *ConcreteObserver.*
+The three main components are 
+  i) *Subject* 
+  ii) *Observer* 
+  iii) *ConcreteObserver*
+with [Subject] ---0..*-> [Observer] <|-- [ConcreteObserver], and [Subject]<---[ConcreteObserver]
+Can also have [ConcreteSubject] --|> [Subject]
 
 The *subject* is responsible for:
 - Attaching and detaching observers
@@ -18,6 +23,8 @@ The *subject* is responsible for:
 - Application-specific state and logic
 
 A subject is loosely coupled to its observers because the subject only knows about its observers through the abstract interface Observer.
+
+Java provides a framework in its std. library with _Observable_ and <<interface>> _Observer_.
 
 *ConcreteObserver* implements the abstract interface *Observer*. It may keep a reference to the *subject* it is observing (the other option is to pass a reference to
 the subject on the update() method). This reference to the subject is used to query the subject for more details when notified of a change in the state of the subject.

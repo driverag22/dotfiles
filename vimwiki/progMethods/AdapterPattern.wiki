@@ -3,9 +3,15 @@
 - A software consists of various modules connected via interfaces. Sometimes a service is needed but offered through an interface incompatible with the code. 
 The adapter design pattern can be used here by making the available interface look and act like the needed interface.
 - Adapter design pattern can be used to adapt an interface which cannot be used to one that can be used.
-- It is useful in situations where an existing class provides a needed service but there is a mismatch between the interface offered and the interface that the client expects.
+- It is useful in situations where an existing class provides a needed service but there is a mismatch between the interface offered and the interface that the client 
+expects.
  
- 
+COMPONENTS:
+ i) InterfaceClientExpects
+ ii) Adapter
+ iii) ServiceAvailable
+[InterfaceClientExpects] <|---[Adapter]--->[ServiceAvailable]
+
 - Two different ways of implementing the adapter design pattern, using composition and using inheritance.
  
 - *Composition:* the adapter class implements the interface that the client expects. At runtime the adapter object is initialized with a reference to the service 
@@ -31,7 +37,7 @@ _Example_:
  * Because the methods in the new interface do not all have the wafer as parameter, the adapter must store it locally upon loading the wafer.
 
 {{{java
-/** Adapts legacy wafer processor to Next Generation interface. */
+/** Adapts legacy wafer processor to Next Generation interface through COMPOSITION. */
 public class WaferProcessorAdapter implements IWaferProcessorNG {    
     /** Wafer processor being adapted. */    
     IWaferProcessor adaptee;    

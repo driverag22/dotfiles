@@ -18,6 +18,8 @@ The pattern consists of:
 The template method defines the overall structure of the algorithm and uses the concrete methods, which are implemented by the subclasses. These methods are called 
 "hooks" because they can be overridden by the subclasses but don't have to be. The abstract class can have 0, 1, or many hooks.
 
+{{file:template1.png}}
+
 _Example:_ 
 {{{java
 abstract class Game {

@@ -1,5 +1,5 @@
 == MAIN STEPS ==
- * Consider each step, i.e. hook, a Strategy (cf. Strategy pattern), and introduce an abstract class or interface for each.
+ * Consider each step, i.e. hook, a Strategy (cf. Strategy pattern), and introduce an abstract class or interface for each step.
  * Give alternative template method class a (polymorphic) instance variable for each step, with abstract step as type.
  * Give alternative template method class a constructor (or appropriate setters) from parameters with abstract step strategies as type, to initialize (set) the 
    instance variables.

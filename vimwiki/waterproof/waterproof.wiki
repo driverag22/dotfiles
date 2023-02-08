@@ -1,5 +1,5 @@
-- [ ] Isolated coq commands
-    - [ ] TODO failing tests
-- [ ] Double code block
-    - [ ] TODO directly fixing ball
-    - [ ] TODO coloring inside coq-mirror
+
+= TODOS |+waterproof=
+* [ ] [isoCoqComm] Test pass, but maybe not the best way to do that. Using try-catch to try to get a last run line sid  #22baf035
+* [ ] [isoCoqComm] failing tests  #78774142
+* [ ] [doubleCodeBlock] coloring inside coq-mirror  #20db20b4

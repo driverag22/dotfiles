@@ -1,17 +1,39 @@
-= TODO(s) =
-- [ ] [[progMethods/PrgMethodsExamPrep|Programming methods]]
+==============
+= Main Courses
+= [[DBL]]
+= [[ODEs]]
+= [[Discrete]]
+= [[USE]] 
+==============
+= Courses |tags:dbl or tags:ode or tags:disc or tags:use=
+* [ ] Kick-off DBL Wed. !!! (2023-02-08 13:30)  #e99b6308
+* [ ] Scum Theory Training Wed. !!! (2023-02-08 14:45)  #7016543a
+* [ ] Register poster presentation !!! (2023-02-10 12:00)  #bd31e1b5
+* [ ] Exercise 1 and 9 [disc] !!! (2023-02-14 09:00)  #972faaea
+* [ ] Online test [disc] !!! (2023-02-17 09:00)  #ed4f2e1c
+* [ ] Initial PLOs !!! (2023-02-17 18:00)  #be9d07bb
 
-- [ ] Kick-off meeting MF 15, Thursday 02/02/2023 from 17:00-18:00
-- [ ] Tutor: Leo(nie) Ryvkin (l.ryvkin@tue.nl)
+==============
+= Honors, waterproof, honors, misc 
+= [[DataStr]]    
+= [[waterproof/waterproof|Waterproof]] 
+= [[Honors]]     
+= [[Arch]]       
+= [[Others]]     
+==============
+= Extras |tags:honors or tags:datastr or tags:waterproof=
+* [ ] [[GD/GDMain|Seminar]]  #95084181
+* [ ] [isoCoqComm] Test pass, but maybe not the best way to do that. Using try-catch to try to get a last run line sid  #22baf035
+* [ ] [doublCodeBlock] coloring inside coq-mirror  #20db20b4
+* [ ] Send (recommended) exercises for monday (ex. 5, 6, 7, 8)  #5330c56f
+* [ ] Add ppl to group of 8+2  #a9ab108b
+* [ ] check that people join whatsapp group  #0790668e
 
-- [ ] Check battery (grep Battery 0 or Battery 1)?
-- [ ] Emacs org-mode, follow tag on return broken
-- [ ] firefox slow startup
-- [ ] Look at dmenu formatting
-
-- [ ] [[waterproof/waterproof|Waterproof]]
- 
-- [ ] Call lightcity-housing / check for email
-- [ ] Kenny beats thing
-
-- [ ] [[GD/GDMain|Geometric duality]]
+= Others |tags:arch or tags:others=
+* [ ] Kenny beats  #a004d292
+* [ ] Call lightcity-housing && check email  #dbff653a
+* [ ] firefox slow startup  #3cfcec07
+* [ ] Emacs org-mode, follow tag on return broken  #f5cd541a
+* [ ] Battery 1 vs Battery 0, test fixup  #754202d4
+* [ ] Dentist  #7e3f7d18
+* [ ] TaskWiki keybindigs for delete and so on  #4ec247a4

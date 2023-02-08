@@ -2,8 +2,9 @@
 == SOLID OO Design Principles ==
 === Single Responsibility Principle (SRP) ===
 Each function should solve a single well-defined problem.
-
 === Open Closed Principle (OCP) ===
+Open for extension, closed for modification.
+
 Modules should be *open for extension* (via inheritance). 
 
 Inheritance allows reuse of implementation:
@@ -25,7 +26,7 @@ _U_, a subclass of _T_, is not necessarily a subtype!
 Instead of 
   - loading the class with all methods that the clients need and 
   - making each client depend on the complete interface
-instead 
+you should
   - create specific interfaces for each kind of client 
   - make each client depend only on 'its' interface
   - implement all interfaces in the class
@@ -36,11 +37,20 @@ Moreover, abstractions should not depende on the details, instead the details sh
 
 == OTHERS ==
 === Encapsulate what varies ===
+You can write
+{{{java
+if (pet.type() == dog) {
+    pet.bark();
+} else if (pet.type() == cat) {
+    pet.meow();
+}
+}}}
+or
+{{{java
+pet.speak();
+}}}
 
 === Don't repeat yourself (DRY) ===
+don't repeat yourself
 
-=== Dependency inversion ===
-Invoker depends only on interface, not on the concrete classes.
-
-=== Dependency injection? ===
 

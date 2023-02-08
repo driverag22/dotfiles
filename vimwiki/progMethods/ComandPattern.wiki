@@ -9,6 +9,7 @@ existing receiver objects.
 - *Concrete command*: it calls operations on receiver objects in order to carry out the encapsulated request. For simple actions, ConcreteCommand may implement the 
 action directly without the need for the Receiver object.
 - *Command*: abstract interface. It allows concrete commands to be loosely coupled to clients.
-- *Invoker*: initiates requests encapsulated in commands. Command objects are responsible for performing requests and invoker objects are responsible for initiating them
+- *Invoker*: initiates requests encapsulated in commands. Command objects are responsible for performing requests and invoker objects are responsible for initiating 
+them.
 
 In the counter example, the concrete commands can be increase, decrease, reset, the receiver is the Counter (class keeping track of the counter variable), and the invoker can be the window menu displaying the current counter and holding the buttons which activate each command.

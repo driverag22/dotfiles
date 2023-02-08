@@ -1,0 +1,12 @@
+== TODS|project:todos==
+* [ ] Call lightcity-housing / check for email  #645cb952
+* [ ] [[GD/GDMain|Geometric duality]]  #a2d83a62
+* [ ] Kenny beats thing  #c9ac6aad
+* [ ] Tutor: Leo(nie) Ryvkin (l.ryvkin@tue.nl)  #2b6064b3
+* [ ] [[progMethods/PrgMethodsExamPrep|Programming methods]]  #3bb575ee
+* [ ] Look at dmenu formatting  #5c5b82b7
+* [ ] firefox slow startup  #2a6d7a59
+* [ ] Kick-off meeting MF 15, Thursday 02/02/2023 from 17:00-18:00  #ebdd721c
+* [ ] [[waterproof/waterproof|Waterproof]]  #71f6af94
+* [ ] Check battery (grep Battery 0 or Battery 1)?  #13387da4
+* [ ] Emacs org-mode, follow tag on return broken  #8f71c994

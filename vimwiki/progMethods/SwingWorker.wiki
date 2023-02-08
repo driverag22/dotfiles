@@ -9,4 +9,6 @@ Its purpose is to avoid running of time consuming computations in the main GUI t
 
 === Design patterns used in SwingWorker ===
  * Facade: SwingWorker acts as a facade for the Java _Threads_ facilities.
- * Template: Methods execute(), publish(), and get() are template methods, holding the _"commmon"_ code.
+     process(), and done() serve as hook methods, in which the client code provides the details for the steps.
+ * Template: Methods execute(), publish(), and get() are template methods, holding the _"commmon"_ code. The overridable methods doInBackground(), process(), and 
+   done() serve as hook methods, in which the client code provides the details for the steps.

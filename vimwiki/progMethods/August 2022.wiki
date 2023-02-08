@@ -1,0 +1,111 @@
+2. (Javadoc contract)
+
+{{{java 
+/**
+ * Finds a "decreasing neighbor pair" in an array.
+ *
+ * @param a  input array to search in
+ * @returns index of a decreasing neighbor pair.
+ * @pre {@code a != null && a.length >= 2 && a[0] > a[a.length-1] }
+ * @post {@code 0 < \result <= a.length-1 && a[\result-1] > a[\result]}
+ * @throws NullPointerException if {@code a == null}
+ * @throws IllegalArgumentException if {@code a.length < 2 || a[0] <= a[a.length-1]}
+ *
+ */
+int findDecPair(int[] a) throws NullPointerException, IllegalArgumentException {
+     /*****/
+}
+}}}
+
+
+4. 
+
+{{{java 
+public interface PuzzleStateObserver { 
+    void notify(PuzzleState subject, int index);
+}
+
+public class ObservablePuzzleState implements PuzzleState {
+    private PuzzleState pz;
+    private PuzzleStateObserver observer;
+    
+    public ObservablePuzzleState(final PuzzleState pz, final PuzzleStateObserver observer) {
+        this.pz = pz;
+        this.observer = observer;
+    }
+
+    @Override
+    int getCell(int index) {
+        return pz.getCell(index);
+    }
+
+    @Override 
+    void resetCell(int index) {
+        pz.resetCell(index);
+        observer.notify(this, index);
+    }
+    
+    @Override 
+    void incCell(int index) {
+        pz.incCell(index);
+        observer.notify(this, index);
+    }
+}
+}}}
+
+For more observers, you could either have a composite observer containing multiple observers, a different interface, or combining multiple observable puzzle states, each with their own observer, _example_ with 2 observers:
+{{{java 
+new ObservablePuzzleState(new ObservablePuzzleState(puzzleState, observer1), observer2);
+}}}
+
+5. 
+  a) Adapter changes the interface but keeps same behavior, while the decorator keeps the same interface but adds new behavior.
+  b)  
+{{{java 
+class WaferProcessorAdapter implements IWaferProcessorNG {
+    IWaferProcessor adaptee;
+    Wafer wafer;
+    
+    public WaferProcessorAdapter(IWaferProcessor adaptee) {
+        this.adaptee = adaptee;
+    }
+    
+    @Override
+    void loadWafer(Wafer wafer) { 
+        this.wafer = wafer;
+        adaptee.conditionWafer(wafer);
+    }
+    
+    @Override
+    void measureWafer() {
+        adaptee.measureWafer(wafer);
+    }
+    
+    @Override
+    Wafer exposerWafer() {
+        adaptee.exposerWafer(wafer);
+        Wafer result = wafer;
+        return result;
+    }
+}
+
+}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

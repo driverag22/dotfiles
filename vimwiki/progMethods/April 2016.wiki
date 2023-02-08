@@ -17,7 +17,7 @@ void incSelection(int[] a, Set<Integer> s) throws NullPointerException, IllegalA
 }
 }}}
 
-1. 
+2. 
    a) Benefits of implementing test cases before implementing software:
        - Allows you to completely focus on test cases when implementing them, and on software development when doing software development, instead of them interrupting each other.
        - It helps stabalize interfaces and contracts before implementing them.
@@ -27,14 +27,14 @@ void incSelection(int[] a, Set<Integer> s) throws NullPointerException, IllegalA
        ii) If no exception is caught, the code continues to the next statement and fails.
        iii) If an exception is caught, check that it is the correct exception. If it is, pass the test, otherwise, fail the test.
 
-2. 
+3. 
    a) concrete class _C_ depends on class _D_ means that the class _C_ cannot be compiled without having class _D_ as well.
    b) increases coupling between different classes of the code ( _C_ and _D_).
        i) Hinders testing/verifiability: _C_ being dependent on _D_ makes it harder to test, since to test it class _D_ has to be initalized as well.
        ii) Hindres maintainability: when the implementation of _D_ changes, the implementation of _C_ must then change as well.
        iii) Hinders reuse: when reusing class _C_, class _D_ has to be reused as well.
 
-3. 
+4. 
    a) An ADT is an abstract representation of values together with the operations that can be performed on that values. Its implementation is encapsulated and not directly accessible by client code, so the client code does not depend on the implementation at all.
    b) They are useful because they allow different implementations to be created for the same solution (allowing different implementations based on the need, like time or memory limits). Moreover, the implementation can be changed without affecting the correctness 
       of the client code since the client code solely depends on the abstract definition, not the implementation itself (as long as the implementation is correct, or course).
@@ -44,5 +44,95 @@ void incSelection(int[] a, Set<Integer> s) throws NullPointerException, IllegalA
 5. 
    a) Factoy design method.
    b) Polymorphism: subtypes of car are created (such as Tesla), which can replace one another throughout the code without affecting correctness.
-      Inheritance: subtypes inherit from the main abstract class.
+      Inheritance: subtypes inherit from the main abstract class, with the example in the code being the Tesla3 subclass inheriting (extending) the Car class.
+      Method overriding: the constructor method of abstract class _Facility_ is overriden at line 16 to create/return a concrete car, _Tesla3_, instead of the 
+      abstract class _Car_.
+      Dynamic dispatch: the constructor call _Facility()_ on line 15, eventually, leads to execution of the assignment on line 7, which in turn calls _createCar()_.
+      Although _createCar_ is abstract (not implemented) in _Facility_, it will dispatch the implementation defined on lines 17-19 (because of the polymorphism).
+   c) That would be bad because it would make the abstract class _Facility_ dependent on a concrete implementation of _Car_ instead of on the abstract class _Car_. 
+      (See exercise 3 as to why this would be bad).
+   d) This might be better in this case. _Facility_ would become a concrete class (drop the _abstract_), and the inside of the constructor of _Facility_ would change
+      to be _this.c = c_ instead. This would make the client code simple since they would just have to call _Facility f = new Facility(new Tesla3())_ rather than 
+      overriding _createCar()_.
 
+6. 
+   a) 
+{{{java 
+for (int m : new Table(7)) { System.out.println(m); }
+}}}
+  b) An anonymous (local/inner) class.
+  c) 
+{{{java 
+class TableIterator implements Iterator<Integer> {
+    private int i = 1;
+    private final Table t;
+    
+    public TableIterator(final Table t) { this.t = t; }
+    
+    @Override
+    public boolean hasNext() { return i <= 10; }
+
+    @Override
+    public Integer next() { return i++ * t.getN(); }
+}
+}}}
+where we added to the Table class a getter method:
+{{{java 
+public int getN() { return n; }
+}}}
+
+7. 
+  a) _QuotedTextProcessor_ inherits (and is therefore dependent on) from _TextProcessor1_. This means that _QuotedTextProcessor_ cannot be used to quote text for
+     any other text processor that implements _TPI_ (other than _TextProcessor1_). 
+  b) _QuotedTextProcessor_ from inheriting to using composition.
+{{{java
+class TextQuoter implements TPI {
+    private TPI tp;
+    
+    public TextQuoter(final TPI tp) {
+        this.tp = tp;
+    }
+    
+    @Override 
+    public void process (String text) {
+        tp.process('"' + text + '"');
+    }
+}
+}}}
+  c) To get double-quoted text:
+{{{java
+tp1 = new TextProcessor1;
+tp2 = new TextQuoter(new TextQuoter(tp1));
+
+tp2.process("Hi");
+}}}
+  d) Decorator design pattern
+
+8. 
+  a) There are ( _client_ ) classes that only _create_ commands, _invoker_ classes that _invoke_ the commands. You can also have classes that _store_ or _communicate_ commands. Sometimes, two or more of these roles are combined into a single class.
+  b) The _operation()_ method of _Receiver_ is changed by adding a String parameter to it, i.e., _operation(String s)_.
+     The _Command_ class gets a private variable _String s_ added to it, and the constructor gets an extra parameter _String s_ with the body of the constructor 
+     having the extra line _this.s = s_. Lastly, the _execute()_ method body is changed to _receiver.operation(s);_.
+  c) In Receiver, we change _operation()_ to _public String operation();_. 
+     In Command, we declare _public String execute()_ and in its body _return receiver.operation()_.
+  d) Drawn in notebook. 
+
+9. 
+  a) The _State_ design pattern aims to allow the methods of a program to act differently depending on the *state* of the program. Objects have state and behavior. 
+     Objects change their state based on internal and external events. If an object goes through clearly identifiable states, and the object’s behavior is especially 
+     dependent on its state, it is a good candidate for the State design.
+  b) A possible solution is to encapsulate state-specific behavior into separate objects and have the context (the object that goes through different identifiable 
+     states) delegate state-specific requests to these objects.
+     A separate concrete state class is created for each identifiable state of the context. State-specific behavior is then encapsulated in these classes. 
+     The context defines the interface of interest to clients. It keeps a reference to the state object for the current state of the context. 
+     State-dependent requests from clients are forwarded to the current state object, while state-independent requests from clients are handled locally by the context.
+     Either the context or the concrete state objects are responsible for transitioning from one state to another.
+  c) Drawn in notebook. [Client] -> [Context] -(state)-> [Abs.State] <| -- [Conc. states]
+
+10. 
+  a) It is used to run time consumin/heavy computations in background threads instead of the main GUI thread.
+  b) (Static aspect/declaration) We subclass _SwingWorker_ and override _doInBackground()_ (background task here) and _done()_ (finalization here). 
+     (Dynamic aspect/execution) Then we instantiate the _SwingWorker_ subclass for every run, and activate the background thread by calling method _execute()_.
+  c) Template method design pattern: methods execute(), publish() and get() are template methods holding the "common" code. The overridable methods doInBackground(),
+     process(), and done() serve as hook methods, in which the client code provides the details for the steps.
+     Facade design pattern: SwingWorker acts as a facade (provides an interface) for the Java _Threads_ facilities.

@@ -1,0 +1,5 @@
+
+
+= TODOS |+disc =
+* [ ] Exercise 1 and 9 [disc] !!! (2023-02-14 09:00)  #972faaea
+* [ ] Online test [disc] !!! (2023-02-17 09:00)  #ed4f2e1c

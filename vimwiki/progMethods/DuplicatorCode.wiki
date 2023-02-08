@@ -1,0 +1,36 @@
+{{{java
+
+import java.util.Iterator;
+
+public class Duplicator<T> implements Iterator<T> {
+    
+    public final Iterator<T> iter;
+    public final int n;
+    
+    private T item;
+    private int k;
+    
+    public Duplicator<T> (Iterator<T> iter, int n) {
+        this.iter = iter;
+        this.n = n;
+        k = 0;
+    }
+    
+    public boolean hasNext() {
+        return (iter.hasNext() || k != 0);
+    }
+    
+    public T next() {
+        if (hasNext()) {
+            if (k == 0) {
+                item = iter.next();
+                k = n;
+            }
+            k--;
+            return iter;
+        }
+    }
+}
+
+
+}}}

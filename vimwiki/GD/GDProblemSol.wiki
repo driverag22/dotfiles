@@ -3,7 +3,7 @@ shortest paths, or network flows can be formulated as geometric problems and sol
 
 
 === Art gallery problem  === 
-(https://en.wikipedia.org/wiki/Art_gallery_problem):
+(https://en.wikipedia.org/wiki/Art_gallery_problem )
 * In an art gallery, what is the minimum number of guards who together can observe the whole gallery?
 * Well studied visibility problem in computational geomtry.
 * By transforming the problem into its dual form, we can find a solution that is much more efficient than the traditional method of solving the problem.

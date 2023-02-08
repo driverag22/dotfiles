@@ -37,7 +37,7 @@ class NameRepository implements Container {
     }
 
     private class NameIterator implements Iterator {
-        int index;
+        private int index = 0;
 
         @Override
         public boolean hasNext() {
@@ -52,6 +52,29 @@ class NameRepository implements Container {
             return null;
         }
     }
+    
+    // OR
+    
+    @Override
+    public Iterator getIterator() {
+        return new Iterator() {
+            private int index = 0;
+            
+            @Override
+            public boolean hasNext() {
+                return index < names.length;
+            }
+
+            @Override
+            public Object next() {
+                if (this.hasNext()) {
+                    return names[index++];
+                }
+                return null;
+            }
+        }
+    }
+    
 }
 }}}
 
