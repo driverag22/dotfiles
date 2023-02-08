@@ -1,5 +1,8 @@
-=TODOS|+arch=
-* [ ] TaskWiki keybindigs for delete and so on  #4ec247a4
-* [ ] Battery 1 vs Battery 0, test fixup  #754202d4
-* [ ] Emacs org-mode, follow tag on return broken  #f5cd541a
+= TODOS |+arch and +PENDING=
 * [ ] firefox slow startup  #3cfcec07
+* [ ] Emacs org-mode, follow tag on return broken  #f5cd541a
+* [ ] Battery 1 vs Battery 0, test fixup  #754202d4
+* [ ] TaskWiki keybindigs for delete and so on  #4ec247a4
+
+
+= DONE |tags:arch and +COMPLETED=

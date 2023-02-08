@@ -2,15 +2,9 @@
 * Tutor: Leo(nie) Ryvkin (l.ryvkin@tue.nl)
 
 
-- [ ] Prerequisite knowledge, course assumes you have taken one of the discretes (or blah blah computing)
-    - [ ] No extra help for this
-    - [ ] Can still complete the course regardless
-- [ ] Summations, induction, contradiction
-- [ ] How did it go? Any questions? Did the material on loop invariant help?
-- [ ] If ppl have done 3, go over it first.
-- [ ] Then 4, 5, 6, see how far we get.
-
-
-=TODOS|+datastr=
-* [ ] Send (recommended) exercises for monday (ex. 5, 6, 7, 8)  #5330c56f
+= TODOS |+datastr and +PENDING=
 * [ ] check that people join whatsapp group  #0790668e
+* [ ] Add ppl to group of 8+2  #a9ab108b
+* [ ] Send (recommended) exercises for monday (ex. 5, 6, 7, 8)  #5330c56f
+
+= DONE |tags:datastr and +COMPLETED=

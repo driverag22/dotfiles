@@ -1,10 +1,13 @@
 [[GD/GDMain|Geometric duality]]
 
-= Problems = 
-* [ ] Extreme shopping - still not working :(  #6a27b00b
-* [ ] Flying safely - run error, why?  #2093f04e
-* [ ] Labyrinth - run error, why?  #d90ffe7a
-* [ ] Try lucky light (geometry)  #b0f15346
 
-= TODOS |+honors=
+= Problems |+prob and +PENDING = 
+* [ ] Extreme shopping - still not working :(  #d90581e7
+* [ ] Flying safely - run error, why?  #72ab4fec
+* [ ] Labyrinth - run error, why?  #4db8afd7
+* [ ] Try lucky light (geometry)  #80873792
+
+= TODOS |+honors and +PENDING=
 * [ ] [[GD/GDMain|Seminar]]  #95084181
+
+= DONE |tags:honors and +COMPLETED or tags:prob and +COMPLETED=

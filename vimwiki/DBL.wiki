@@ -1,9 +1,9 @@
 
 
-
-=TODOS|+dbl=
+= TODOS |+dbl and +PENDING=
 * [ ] Kick-off DBL Wed. !!! (2023-02-08 13:30)  #e99b6308
 * [ ] Scum Theory Training Wed. !!! (2023-02-08 14:45)  #7016543a
 * [ ] Register poster presentation !!! (2023-02-10 12:00)  #bd31e1b5
 
+= DONE |tags:dbl and +COMPLETED =
 

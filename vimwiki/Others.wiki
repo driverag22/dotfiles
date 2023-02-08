@@ -1,4 +1,7 @@
-=Others|+others=
+=Others|+others and +PENDING=
 * [ ] Call lightcity-housing && check email  #dbff653a
 * [ ] Kenny beats  #a004d292
 * [ ] Dentist  #7e3f7d18
+
+
+= DONE |tags:others and +COMPLETED =

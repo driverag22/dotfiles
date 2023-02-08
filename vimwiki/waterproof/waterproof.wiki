@@ -1,5 +1,8 @@
 
 = TODOS |+waterproof=
+* [ ] [doublCodeBlock] coloring inside coq-mirror  #20db20b4
 * [ ] [isoCoqComm] Test pass, but maybe not the best way to do that. Using try-catch to try to get a last run line sid  #22baf035
-* [ ] [isoCoqComm] failing tests  #78774142
-* [ ] [doubleCodeBlock] coloring inside coq-mirror  #20db20b4
+
+
+
+= DONE |tags:waterproof and +COMPLETED=
