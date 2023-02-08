@@ -36,20 +36,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+            <state relative-caret-position="472">
+              <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="219" column="60" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
+            <state relative-caret-position="379">
+              <caret line="235" column="12" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="12" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -58,10 +58,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-398">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="87" column="31" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="32" />
+            <state relative-caret-position="295">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/serapi/processors/SerapiQueryProcessorTest.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4">
+              <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -70,7 +88,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JavaScript">
-      <summary usageCount="189" lastUsed="1674048248512" />
+      <summary usageCount="194" lastUsed="1675775795505" />
     </fileType>
     <fileType name="Markdown">
       <summary usageCount="1" lastUsed="1669675491186" />
@@ -160,8 +178,8 @@
       <option value="$PROJECT_DIR$/src/editpage/components/EditWindow.vue" />
       <option value="$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js" />
       <option value="$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js" />
-      <option value="$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js" />
       <option value="$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js" />
+      <option value="$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -173,7 +191,7 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="JavaScript">
-      <summary usageCount="189" lastUsage="1674048248512" />
+      <summary usageCount="194" lastUsage="1675775795505" />
     </language>
     <language id="Markdown">
       <summary usageCount="1" lastUsage="1669675491188" />
@@ -203,68 +221,28 @@
             <path>
               <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
               <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coq" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
               <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coq" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
               <item name="serapi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
               <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coq" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
               <item name="serapi" type="462c0819:PsiDirectoryNode" />
               <item name="processors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coq" type="462c0819:PsiDirectoryNode" />
-              <item name="serapi" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="editpage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="editpage" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="editpage" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="assistance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="editpage" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="menubars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="editpage" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="mixins" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -279,10 +257,9 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37496000" />
+    <option name="totallyTimeSpent" value="39544000" />
   </component>
   <component name="ToolWindowManager">
-    <editor active="true" />
     <layout>
       <window_info id="Space Code Reviews" />
       <window_info id="Pull Requests" />
@@ -359,13 +336,6 @@
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/serapi/processors/SerapiQueryProcessorTest.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="76" column="29" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -583,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-635">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editpage/components/assistance/AssistanceBar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -597,27 +560,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+        <state relative-caret-position="472">
+          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/serapi/processors/SerapiQueryProcessorTest.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="219" column="60" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
+        <state relative-caret-position="379">
+          <caret line="235" column="12" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="12" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coq/serapi/util/SerapiState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="32" />
         </state>
       </provider>
     </entry>

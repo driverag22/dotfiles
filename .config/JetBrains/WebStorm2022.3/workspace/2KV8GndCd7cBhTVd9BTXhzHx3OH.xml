@@ -33,7 +33,7 @@
       <summary usageCount="3" lastUsed="1674051464977" />
     </fileType>
     <fileType name="Vue.js">
-      <summary usageCount="8" lastUsed="1674130695500" />
+      <summary usageCount="9" lastUsed="1675774976713" />
     </fileType>
   </component>
   <component name="FindInProjectRecents">
@@ -84,7 +84,7 @@
       <summary usageCount="3" lastUsage="1674051464977" />
     </language>
     <language id="Vue">
-      <summary usageCount="8" lastUsage="1674130695502" />
+      <summary usageCount="9" lastUsage="1675774976715" />
     </language>
   </component>
   <component name="ProjectView">
@@ -131,9 +131,10 @@
     </panes>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4218000" />
+    <option name="totallyTimeSpent" value="4231000" />
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info id="Bookmarks" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25026315" />
@@ -154,6 +155,10 @@
     </recentWindows>
   </component>
   <component name="WindowStateProjectService">
+    <state x="739" y="306" width="424" height="454" key="FileChooserDialogImpl" timestamp="1675774988591">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="739" y="306" width="424" height="454" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1675774988591" />
     <state x="694" y="272" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1674050651871">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
