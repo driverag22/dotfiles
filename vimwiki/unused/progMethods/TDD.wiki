@@ -1,8 +1,0 @@
-= Test Driven Development = 
-
-=== Benefits of implementing test cases _before_ software ===
-
-  1. It helps *stabilize interface and contracts* _before_ implementing them. 
-  2. It *encourages analysis of interfaces and contracts* _before_ implementing them.
-  3. It allows you to *focus on implementing the module and getting it to work* without being interupted by test case development.
-     
