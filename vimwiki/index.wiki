@@ -2,6 +2,7 @@
                                                                      == The vim-wiki ==  
                                                                     === The vim-wiki === 
                                                                         * [[TODOs]] 
+                                                                        * 
                                                                         
                                                                         * [[GD/GDMain|Geometric duality]]
                                                                          
