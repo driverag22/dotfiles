@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias wiki='/usr/bin/git --git-dir=$HOME/.vimwiki/ --work-tree=$HOME/vimwiki'
 alias nw='/usr/bin/nvim /home/diego/vimwiki/index.wiki'
 pfetch
 
