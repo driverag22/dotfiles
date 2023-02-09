@@ -31,6 +31,7 @@ vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]]) -- terminals
 
 --tasks
 vim.keymap.set('n', 'td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
+vim.keymap.set('n', 'tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- open taskwiki calendar
 
 local function nkeymap(key, map)
 	vim.keymap.set('n', key, map, {noremap = true})
