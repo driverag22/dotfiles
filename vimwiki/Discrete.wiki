@@ -1,11 +1,11 @@
 
 
 = TODOS |+disc and +PENDING =
-* [o] HW1 [disc] !!! (2023-02-14 09:00)  #972faaea
-    * [ ] ex 9  #4a4e5fdb
+* [ ] HW1 [disc] !!! (2023-02-14 09:00)  #972faaea
+    * [ ] ex 1 - re-do (b)  #4710566f
+    * [ ] ex 9 - fix (c)  #4a4e5fdb
 * [ ] Online test [disc] !!! (2023-02-17 09:00)  #ed4f2e1c
 
 = DONE |tags:disc and +COMPLETED =
-* [X] ex 1  #4710566f
 
 

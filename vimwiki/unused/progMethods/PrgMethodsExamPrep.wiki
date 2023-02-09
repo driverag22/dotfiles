@@ -1,11 +1,11 @@
 = Past exams =
 == Final exams ==
 === With solutions === 
-* [X] [[August 2022]] (Ans) - Adapter, Observer
-* [X] [[./exams/Jan2020|January 2020]]  - Strategy alternative to Template
-* [X] [[April 2016]] - Command + State UMLs, Iterator 
-* [X] [[March 2016]] - Composite
-* [X] [[April 2014]] kind of boring, lacks answers
+* [X] [[August 2022]] (Ans) - Adapter, Observer  #a8444ac0
+* [X] [[./exams/Jan2020|January 2020]]  - Strategy alternative to Template  #56bff061
+* [X] [[April 2016]] - Command + State UMLs, Iterator  #75921ceb
+* [X] [[March 2016]] - Composite  #7a336121
+* [X] [[April 2014]] kind of boring, lacks answers  #9faf66b2
 === Without solutions ===
 - [ ] July 2018
 - [X] [[April 2018]] - nice theory questions but no sols.

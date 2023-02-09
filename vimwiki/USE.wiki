@@ -1,5 +1,6 @@
 
 = TODOS |+use and +PENDING=
+* [ ] Do Trello and add it to action list !!! (2023-02-10 18:00)  #28f34bb2
 * [ ] Initial PLOs !!! (2023-02-17 18:00)  #be9d07bb
 * [ ] Organization thing on trello/asana/notion  #6ebaf90f
 

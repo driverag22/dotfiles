@@ -1,6 +1,7 @@
 
 = TODOS |+ode and +PENDING=
-
+* [ ] Read lecture notes / rewatch lecture  #7e69371f
+* [ ] Do exercises  #4dc91aec
 
 
 = DONE |tags:ode and +COMPLETED =
