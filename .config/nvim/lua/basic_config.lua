@@ -11,13 +11,16 @@ vim.opt.tabstop = 4	-- 4 space tab
 vim.opt.shiftwidth = 4 -- indents will have a width 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true    
+vim.opt.foldlevelstart = 1
 
 vim.cmd ([[
 
 		let g:NERDTreeDirArrowExpandable="+"
-		let g:NERDTreeDirArrowCollapsible="~"
+	 	let g:NERDTreeDirArrowCollapsible="~"
+        let g:taskwiki_dont_fold="yes"
 
 ]])
+
         -- let wiki = {}
         -- let wiki.path = "~/vimwiki/' 
         -- let wiki.nested_syntaxes = {'python':'python', 'java':'java', 'c++':'cpp'}
