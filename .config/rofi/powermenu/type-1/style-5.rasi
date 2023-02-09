@@ -57,7 +57,7 @@ message {
     enabled:                     false;
     margin:                      0px;
     padding:                     9px;
-    border:                      0px solid;
+    border:                      1px solid;
     border-radius:               10px;
     border-color:                @selected;
     /* border-color:                @background-alt; */
@@ -113,10 +113,10 @@ element {
     spacing:                     0px;
     margin:                      0px;
     padding:                     10px;
-    border:                      0px solid;
+    border:                      1px solid;
     border-radius:               10px;
     /* border-color:                @selected; */
-    border-color:                @white;
+    border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
     text-color:                  @white;
