@@ -20,7 +20,7 @@
 * [ ] Do exercises  #4dc91aec
 
 ==============
-= Honors, waterproof, honors, misc 
+= Honors, waterproof, honors, misc (arch/others)
 = [[DataStr]]    
 = [[waterproof/waterproof|Waterproof]] 
 = [[Honors]]     
