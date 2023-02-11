@@ -10,9 +10,8 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes' -- Retro Scheme
 Plug 'https://github.com/ryanoasis/vim-devicons' -- Developer Icons
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 -- Plug 'https://github.com/terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
-Plug 'https://github.com/preservim/tagbar' -- Tagbar for code navigation
+-- Plug 'https://github.com/preservim/tagbar' -- Tagbar for code navigation
 
-Plug 'vimwiki/vimwiki' -- vim wiki
 
 --================================================================
 Plug 'https://github.com/neovim/nvim-lspconfig' -- Lsp
@@ -40,7 +39,7 @@ Plug 'feline-nvim/feline.nvim' -- bar
 -- Plug 'https://github.com/nanozuki/tabby.nvim' -- to have tabs
 -- Plug 'nvim-lua/plenary.nvim'
 Plug 'navarasu/onedark.nvim' -- colorscheme
-Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
+-- Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
 Plug('xiyaowong/nvim-transparent') -- make background transparent
 
 --- Search for files:
@@ -51,18 +50,16 @@ Plug 'https://github.com/alok/notational-fzf-vim'
 
 -- Plug 'gorbit99/codewindow.nvim' -- code minimap
 
+Plug 'vimwiki/vimwiki' -- vim wiki
 Plug 'tools-life/taskwiki' -- task-wiki
 Plug 'powerman/vim-plugin-AnsiEsc' -- color support for charts
 Plug 'farseer90718/vim-taskwarrior'  --grid view
 
+Plug 'lervag/vimtex' -- vimtex
+
 vim.call('plug#end')
 
 require('gitsigns').setup()
-require("toggleterm").setup()
--- require("nvim-gps").setup()
--- require("tabby").setup({
--- 	tabline = require("tabby.presets").tab_only
--- })
 require('onedark').setup {
     style = 'deep'
 }
@@ -82,8 +79,24 @@ require("transparent").setup({
   exclude = {}, -- table: groups you don't want to clear
 })
 require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
+-- require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
+require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
+require("luasnip").config.set_config({ -- Setting LuaSnip config
+
+  -- Enable autotriggered snippets
+  enable_autosnippets = true,
+
+  -- Use Tab (or some other key if you prefer) to trigger visual selection
+  store_selection_keys = "<Tab>",
+})
 
 --fzy finder 
 vim.cmd ([[ 
     let g:nv_search_paths = ['~/src', '~/vimwiki']
 ]])
+
+-- require("toggleterm").setup()
+-- require("nvim-gps").setup()
+-- require("tabby").setup({
+-- 	tabline = require("tabby.presets").tab_only
+-- })
