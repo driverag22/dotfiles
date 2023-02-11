@@ -1,12 +1,15 @@
--- local servers = { 'clangd', 'jdtls', 'ltex', 'sumneko_lua', 'quick_lint_js', 'cssls', 'html', 'pyright' }
-
 
 local on_attach = function(client, bufnr) end
 
-require('lspconfig').clangd.setup {on_attach = on_attach}
+require('lspconfig').cssls.setup {on_attach = on_attach}
+require('lspconfig').texlab.setup {on_attach = on_attach}
 require('lspconfig').sumneko_lua.setup {on_attach = on_attach}
-require('lspconfig').pyright.setup {on_attach = on_attach}
+require('lspconfig').clangd.setup {on_attach = on_attach}
+require('lspconfig').html.setup {on_attach = on_attach}
 require('lspconfig').jdtls.setup {on_attach = on_attach}
+require('lspconfig').pyright.setup {on_attach = on_attach}
+require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
+require('lspconfig').zk.setup {on_attach = on_attach}
 
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -106,9 +109,8 @@ require('lspconfig')['sumneko_lua'].setup {
     capabilities = capabilities
 }
 
-require('lspconfig')['pyright'].setup {
+require('lspconfig')['texlab'].setup {
     capabilities = capabilities
 }
-
 
 
