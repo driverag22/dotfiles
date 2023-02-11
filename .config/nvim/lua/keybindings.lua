@@ -13,8 +13,8 @@ vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>', {noremap = true}) -- Toggle tag
 
 -- vim.keymap.set('n', '<C-p>', ':tabnew<CR>', {noremap = true}) -- new tab
 -- vim.keymap.set('n', '<C-o>', ':tabclose<CR>', {noremap = true}) --close tab
--- vim.keymap.set('n', '<M-f>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
--- vim.keymap.set('n', '<M-b>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
+vim.keymap.set('n', '<M-m>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
+vim.keymap.set('n', '<M-n>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
 
 
 --move wrapped lines like normal lines
