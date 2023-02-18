@@ -1,19 +1,24 @@
 #!/bin/sh
 source /usr/share/nvm/init-nvm.sh
 
+#set keyboard so spanish letters (ñ,á,...) can be used
 setxkbmap us -variant intl
+
+#sets dwmBar running to display values
 /home/diego/.local/.macros/dwmBar/runClean.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
-# /home/diego/.local/.macros/automatic/screensNetherlands.sh
-/home/diego/.local/.macros/automatic/fehbg.sh #sets screens and background
+
+#sets screens and background
+/home/diego/.local/.macros/automatic/fehbg.sh 
+
+#fix broken java displays on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
-bluetoothctl power off
 wmname "LG3D"
 
-# picom --experimental-backends &
-picom &
-# picom -b 
+#turn off bluetooth and mute speakers
+bluetoothctl power off
 amixer set Master mute
 
+#start wm and compositor
+picom &
 exec dwm
-# exec startxfce4 
