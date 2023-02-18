@@ -1,4 +1,5 @@
-/* See LICENSE file for copyright and license details. */ #include <X11/XF86keysym.h>
+/* See LICENSE file for copyright and license details. */ 
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
@@ -91,7 +92,6 @@ static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
-	{ MODKEY,                       XK_Return, spawn,          {.v = dmenucmd } }, // dmenu
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion

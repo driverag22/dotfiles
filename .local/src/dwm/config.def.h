@@ -1,4 +1,5 @@
-/* See LICENSE file for copyright and license details. */ #include <X11/XF86keysym.h>
+/* See LICENSE file for copyright and license details. */ 
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
@@ -8,7 +9,6 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 25;
 static const char *fonts[]          = { "JetBrains Mono:size=14"};
-static const char dmenufont[]       = { "JetBrains Mono:size=13"};
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
@@ -44,7 +44,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { "  ",      tile },
+        { "  ",      tile },
 	{ "  ",      NULL },    /* no layout function means floating behavior */
 	{ " [M]",      monocle },
 };
@@ -64,7 +64,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL };
+/* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL }; */
+static const char *dmenucmd[] = { "dmenu_run"};
+/* static const char *dmenucmd[] = { "/home/diego/.local/.macros/keyBindings/rofi.sh", NULL }; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
@@ -95,7 +97,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
 
-	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
+	{ ALTKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
