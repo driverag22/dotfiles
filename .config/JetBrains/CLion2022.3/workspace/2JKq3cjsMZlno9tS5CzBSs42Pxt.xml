@@ -49,12 +49,12 @@
     </panes>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114000" />
+    <option name="totallyTimeSpent" value="127000" />
   </component>
   <component name="ToolWindowManager">
     <layout>
       <window_info id="Bookmarks" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25026095" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25026315" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -62,7 +62,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Python Packages" order="4" />
       <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="CMake" order="6" visible="true" weight="0.32969642" />
+      <window_info anchor="bottom" id="CMake" order="6" visible="true" weight="0.3299517" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Problems View" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -81,5 +81,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="433" y="201" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1671880434024" />
+    <state x="0" y="0" width="1920" height="1080" key="FileChooserDialogImpl" timestamp="1676553305931">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="1920" height="1080" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1676553305931" />
   </component>
 </project>

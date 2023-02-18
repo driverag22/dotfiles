@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="237" column="29" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+            <state relative-caret-position="304">
+              <caret line="238" column="29" selection-start-line="238" selection-start-column="29" selection-end-line="238" selection-end-column="29" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -88,7 +88,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JavaScript">
-      <summary usageCount="199" lastUsed="1676021450962" />
+      <summary usageCount="209" lastUsed="1676309092161" />
     </fileType>
     <fileType name="Markdown">
       <summary usageCount="1" lastUsed="1669675491186" />
@@ -191,7 +191,7 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="JavaScript">
-      <summary usageCount="199" lastUsage="1676021450962" />
+      <summary usageCount="209" lastUsage="1676309092161" />
     </language>
     <language id="Markdown">
       <summary usageCount="1" lastUsage="1669675491188" />
@@ -257,9 +257,10 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39553000" />
+    <option name="totallyTimeSpent" value="39819000" />
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info id="Space Code Reviews" />
       <window_info id="Pull Requests" />
@@ -297,11 +298,11 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="433" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1671716416415" />
-    <state x="726" y="296" width="643" height="484" key="FileChooserDialogImpl" timestamp="1674048294965">
+    <state x="726" y="296" width="424" height="454" key="FileChooserDialogImpl" timestamp="1676309101388">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="726" y="289" width="643" height="484" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1671187672136" />
-    <state x="726" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1674048294965" />
+    <state x="726" y="296" width="424" height="454" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1676309101388" />
     <state width="782" height="722" key="SwitcherDM" timestamp="1670166508761">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -590,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="237" column="29" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+        <state relative-caret-position="304">
+          <caret line="238" column="29" selection-start-line="238" selection-start-column="29" selection-end-line="238" selection-end-column="29" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>

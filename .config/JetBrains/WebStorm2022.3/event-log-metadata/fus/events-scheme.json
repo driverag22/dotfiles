@@ -303,6 +303,18 @@
     "rules" : {
       "event_id" : [ "{enum:finished}" ],
       "event_data" : {
+        "additional.full_line.added" : [ "{enum#boolean}" ],
+        "additional.full_line.enabled" : [ "{enum#boolean}" ],
+        "additional.full_line.finished" : [ "{enum#boolean}" ],
+        "additional.full_line.items_generated" : [ "{regexp#integer}" ],
+        "additional.full_line.items_proposed" : [ "{regexp#integer}" ],
+        "additional.full_line.selected" : [ "{enum#boolean}" ],
+        "additional.full_line.selected_score" : [ "{regexp#float}" ],
+        "additional.full_line.started" : [ "{enum#boolean}" ],
+        "additional.full_line.tracked" : [ "{enum#boolean}" ],
+        "additional.full_line.version" : [ "{regexp#version}" ],
+        "additional.iren_model_type" : [ "{enum:default|both|ngram|dobf}" ],
+        "additional.iren_probability" : [ "{regexp#float}" ],
         "additional.ml_used" : [ "{enum#boolean}" ],
         "additional.r_context_type" : [ "{enum#__r_context_type}" ],
         "additional.r_lookup_element_origin" : [ "{enum:ORIGINAL|ML_COMPLETION|MERGED}" ],
@@ -311,7 +323,7 @@
         "additional.r_ml_n_proposed_variants" : [ "{regexp#integer}" ],
         "additional.r_ml_response_received" : [ "{enum#boolean}" ],
         "additional.r_ml_time_ms" : [ "{regexp#integer}" ],
-        "additional.ruby_lookup_usage_location" : [ "{enum#__ruby_lookup_usage_location}" ],
+        "additional.ruby_lookup_usage_location" : [ "{enum#__ruby_lookup_usage_location}", "{enum:PRY|UNKNOWN}" ],
         "additional.spellchecker" : [ "{enum#boolean}" ],
         "additional.total_ml_time" : [ "{regexp#integer}" ],
         "additional.version" : [ "{regexp#version}" ],
@@ -330,6 +342,7 @@
         "ml_used" : [ "{enum#boolean}" ],
         "plugin" : [ "{util#plugin}" ],
         "plugin_type" : [ "{util#plugin_type}" ],
+        "plugin_version" : [ "{util#plugin_version}" ],
         "query_length" : [ "{regexp#integer}" ],
         "r_context_type" : [ "{enum#__r_context_type}" ],
         "r_lookup_element_origin" : [ "{enum:ORIGINAL|ML_COMPLETION|MERGED}" ],
@@ -4091,7 +4104,7 @@
       "event_id" : [ "{enum#_}", "{enum:enabled.color.scheme}" ],
       "event_data" : {
         "is_dark" : [ "{enum#boolean}" ],
-        "scheme" : [ "{enum#__scheme}" ],
+        "scheme" : [ "{enum#__scheme}", "{enum:New Dark|Light|Dark|Monokai}" ],
         "value" : [ "{enum#boolean}" ]
       },
       "enums" : {
@@ -4847,6 +4860,18 @@
       }
     }
   }, {
+    "id" : "welcome.screen",
+    "builds" : [ ],
+    "versions" : [ {
+      "from" : "1"
+    } ],
+    "rules" : {
+      "event_id" : [ "{enum:projects.tab.created}" ],
+      "event_data" : {
+        "recent_paths_count" : [ "{regexp#integer}" ]
+      }
+    }
+  }, {
     "id" : "welcome_screen.clone",
     "builds" : [ ],
     "versions" : [ {
@@ -4933,5 +4958,5 @@
       "version" : "Unknown|unknown.format|unknown|UNKNOWN|((\\d+\\.?)*\\d+)"
     }
   },
-  "version" : "2978"
+  "version" : "2987"
 }

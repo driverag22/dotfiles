@@ -2,19 +2,6 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/src/jointwaterproof/waterproof">
-          <value>
-            <RecentProjectMetaInfo frameTitle="waterproof [~/src/jointwaterproof/waterproof] – CodeExecution.vue" projectWorkspaceId="2IdKzoD8evrslI7hv1F3zErS66y">
-              <option name="activationTimestamp" value="1671187738498" />
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="WS-222.4345.14" />
-              <option name="buildTimestamp" value="1664946074213" />
-              <frame x="-10" y="0" width="1940" height="1063" extendedState="6" />
-              <option name="productionCode" value="WS" />
-              <option name="projectOpenTimestamp" value="1671187673066" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/src/jointwaterproof">
           <value>
             <RecentProjectMetaInfo frameTitle="jointwaterproof – Gutter.vue" projectWorkspaceId="2KV8GndCd7cBhTVd9BTXhzHx3OH">
@@ -30,19 +17,32 @@
         </entry>
         <entry key="$USER_HOME$/src/waterproof">
           <value>
-            <RecentProjectMetaInfo frameTitle="waterproof – SerapiSearchProcessor.js" opened="true" projectWorkspaceId="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
-              <option name="activationTimestamp" value="1676021461494" />
+            <RecentProjectMetaInfo frameTitle="waterproof – SerapiSearchProcessor.js" projectWorkspaceId="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
+              <option name="activationTimestamp" value="1676309104191" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="WS-223.8617.44" />
-              <option name="buildTimestamp" value="1674553486530" />
+              <option name="buildTimestamp" value="1674553488351" />
               <frame x="6" y="31" width="1900" height="1035" />
               <option name="productionCode" value="WS" />
-              <option name="projectOpenTimestamp" value="1676021451448" />
+              <option name="projectOpenTimestamp" value="1676309092928" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/src/jointwaterproof/waterproof">
+          <value>
+            <RecentProjectMetaInfo frameTitle="waterproof" opened="true" projectWorkspaceId="2IdKzoD8evrslI7hv1F3zErS66y">
+              <option name="activationTimestamp" value="1676317700952" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="WS-223.8617.44" />
+              <option name="buildTimestamp" value="1674553473959" />
+              <frame x="6" y="31" width="1900" height="1035" />
+              <option name="productionCode" value="WS" />
+              <option name="projectOpenTimestamp" value="1676310457691" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="lastOpenedProject" value="$USER_HOME$/src/waterproof" />
+    <option name="lastOpenedProject" value="$USER_HOME$/src/jointwaterproof/waterproof" />
   </component>
 </application>

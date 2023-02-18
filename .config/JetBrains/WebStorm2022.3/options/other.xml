@@ -55,11 +55,11 @@
     "ExpandBeforeRunStepsPanel": "true",
     "GeneralSettings.initiallyConfigured": "true",
     "KEYMAP": "terminal\nzoom in\nzoom",
-    "MarketplacePluginsSearchHistory": "vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark",
+    "MarketplacePluginsSearchHistory": "monok\nvim\ndrac\n/tag:Keymap\n/tag:theme",
     "NonModalCommitCustomization.IsApplied": "true",
     "RunOnceActivity.se.text.search": "true",
     "SettingsSearchHistory": "shortcut\nzoom",
-    "appcds.runOnSecondStart": "WS-223.8617.44-e7183babbd1c9144c6033ff3aa1346cb592248fd4610c5a7b77fb783c86360fa",
+    "appcds.runOnSecondStart": "WS-223.8617.44-4dd139cdb73523307c2eeb243b73585b1b5559357cc59230e581fd34c805dfe3",
     "ask.about.ctrl.y.shortcut.v2": "true",
     "bundled.plugins.list.saved.version": "WS-223.8617.44",
     "evlsprt3.222": "24",
@@ -67,12 +67,12 @@
     "file.gist.reindex.count": "4",
     "fileTypeChangedCounter": "2",
     "find.popup.splitter": "0.31343284",
-    "fontSizeToResetConsole": "12.0",
-    "fontSizeToResetEditor": "12.0",
+    "fontSizeToResetConsole": "19.0",
+    "fontSizeToResetEditor": "19.0",
     "got.it.tooltip.reader.mode.got.it": "1",
     "got.it.tooltip.terminal.smart_command_execution": "1",
     "ide.memory.adjusted": "true",
-    "ideavim.statistics.timestamp": "1675774990238",
+    "ideavim.statistics.timestamp": "1676309104679",
     "last_opened_file_path": "/home/diego/src/waterproof",
     "previousColorScheme": "_@user_Dracula",
     "registry.to.advanced.settings.migration.build": "WS-223.8617.44",
@@ -81,9 +81,9 @@
   },
   "keyToStringList": {
     "file.chooser.recent.files": [
+      "/home/diego/src/jointwaterproof/waterproof",
       "/home/diego/src/waterproof",
       "/home/diego/src/jointwaterproof",
-      "/home/diego/src/jointwaterproof/waterproof",
       "/home/diego/.nvm/versions/node/v12.22.12/bin/npm",
       "/home/diego/.nvm/versions"
     ],
@@ -97,9 +97,4 @@
     ]
   }
 }]]></component>
-  <component name="TerminalCommandHistoryManager">
-    <command-history-files>
-      <command-history-file filename="waterproof-history" project-path="$USER_HOME$/src/waterproof" last-access-time="1672690655011" />
-    </command-history-files>
-  </component>
 </application>
