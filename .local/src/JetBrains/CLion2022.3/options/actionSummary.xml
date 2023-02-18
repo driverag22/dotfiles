@@ -1,0 +1,196 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$Copy">
+      <i c="4" l="1669482983924" />
+    </e>
+    <e n="$Delete">
+      <i c="2" l="1668110601156" />
+    </e>
+    <e n="$Paste">
+      <i c="5" l="1669482985839" />
+    </e>
+    <e n="AutoIndentLines">
+      <i c="50" l="1669483038591" />
+    </e>
+    <e n="BraceOrQuoteOut">
+      <i c="1" l="1666345317591" />
+    </e>
+    <e n="CMake.ClearCacheAndReload">
+      <i c="3" l="1669481813745" />
+    </e>
+    <e n="CMake.CreateLists">
+      <i c="4" l="1669481820472" />
+    </e>
+    <e n="CMake.ReloadCMakeProject">
+      <i c="10" l="1669481806606" />
+    </e>
+    <e n="CMake.ToggleCMakeAutoReload">
+      <i c="3" l="1669830049766" />
+    </e>
+    <e n="CMake.UnloadCMakeProject">
+      <i c="4" l="1669481818622" />
+    </e>
+    <e n="CPP.NewCppFile">
+      <i c="3" l="1666343727740" />
+    </e>
+    <e n="CollapseRegion">
+      <i c="10" l="1669481766566" />
+    </e>
+    <e n="CommentByLineComment">
+      <i c="7" l="1669830074475" />
+    </e>
+    <e n="Coverage">
+      <i c="1" l="1665855719490" />
+    </e>
+    <e n="Debug">
+      <i c="3" l="1665855868161" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="1320" l="1669566906314" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="28" l="1669566778361" />
+    </e>
+    <e n="EditorChooseLookupItemReplace">
+      <i c="10" l="1669483014557" />
+    </e>
+    <e n="EditorDelete">
+      <i c="201" l="1668110792191" />
+    </e>
+    <e n="EditorDown">
+      <i c="14" l="1669481941937" />
+    </e>
+    <e n="EditorEnter">
+      <i c="257" l="1669566770549" />
+    </e>
+    <e n="EditorEscape">
+      <i c="3" l="1668111480765" />
+    </e>
+    <e n="EditorLeft">
+      <i c="2" l="1667988223839" />
+    </e>
+    <e n="EditorPaste">
+      <i c="1" l="1665855485254" />
+    </e>
+    <e n="EditorPasteFromX11">
+      <i c="1" l="1667988666685" />
+    </e>
+    <e n="EditorRight">
+      <i c="10" l="1667988224600" />
+    </e>
+    <e n="EditorTab">
+      <i c="8" l="1669566377387" />
+    </e>
+    <e n="EditorUp">
+      <i c="10" l="1669566203877" />
+    </e>
+    <e n="ExpandRegion">
+      <i c="43" l="1669481766253" />
+    </e>
+    <e n="NewDir">
+      <i c="5" l="1669482967172" />
+    </e>
+    <e n="NewFile">
+      <i c="1" l="1665855231308" />
+    </e>
+    <e n="OpenFile">
+      <i c="3" l="1668025019991" />
+    </e>
+    <e n="Resume">
+      <i c="8" l="1671880434735" />
+    </e>
+    <e n="Run">
+      <i c="112" l="1669844378527" />
+    </e>
+    <e n="SaveAll">
+      <i c="125" l="1669566909086" />
+    </e>
+    <e n="ShowSettings">
+      <i c="12" l="1669481835104" />
+    </e>
+    <e n="SingleFileExecutionAction">
+      <i c="9" l="1669830041967" />
+    </e>
+    <e n="Stop">
+      <i c="4" l="1669566363279" />
+    </e>
+    <e n="ToggleLineBreakpoint">
+      <i c="5" l="1665855718218" />
+    </e>
+    <e n="WelcomeScreen.OpenDirectoryProject">
+      <i c="1" l="1664896519661" />
+    </e>
+    <e n="com.intellij.execution.actions.RunConfigurationsComboBoxAction$SelectConfigAction">
+      <i c="11" l="1669844377672" />
+    </e>
+    <e n="com.intellij.execution.actions.RunConfigurationsComboBoxAction$SelectTargetAction">
+      <i c="2" l="1668027109715" />
+    </e>
+    <e n="com.intellij.execution.impl.ConsoleViewImpl$DeleteBackspaceHandler">
+      <i c="110" l="1669830060052" />
+    </e>
+    <e n="com.intellij.execution.impl.ConsoleViewImpl$EnterHandler">
+      <i c="337" l="1669844382571" />
+    </e>
+    <e n="com.intellij.execution.impl.ConsoleViewImpl$PasteHandler">
+      <i c="46" l="1669830060325" />
+    </e>
+    <e n="com.intellij.execution.impl.ConsoleViewImpl$TabHandler">
+      <i c="1" l="1666346115902" />
+    </e>
+    <e n="com.intellij.ide.plugins.newui.TabbedPaneHeaderComponent$3">
+      <i c="2" l="1664673074268" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="1" l="1665326722879" />
+    </e>
+    <e n="com.intellij.openapi.actionSystem.DefaultActionGroup">
+      <i c="1" l="1666006510331" />
+    </e>
+    <e n="com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction">
+      <i c="2679" l="1669566916419" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="35" l="1669843411442" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$AddKeyboardShortcutAction">
+      <i c="2" l="1669481759734" />
+    </e>
+    <e n="com.intellij.openapi.ui.DialogWrapper$4">
+      <i c="29" l="1676553310866" />
+    </e>
+    <e n="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
+      <i c="1" l="1671880434020" />
+    </e>
+    <e n="com.intellij.openapi.vcs.changes.ignore.actions.IgnoreFileAction">
+      <i c="2" l="1669075080283" />
+    </e>
+    <e n="com.intellij.toolWindow.ToolWindowHeader$ShowOptionsAction">
+      <i c="1" l="1665855242232" />
+    </e>
+    <e n="com.intellij.ui.AnActionButton$AnActionButtonWrapper">
+      <i c="1" l="1665328933088" />
+    </e>
+    <e n="com.intellij.ui.CommonActionsPanel$AddButton">
+      <i c="5" l="1665851412689" />
+    </e>
+    <e n="com.intellij.ui.CommonActionsPanel$RemoveButton">
+      <i c="5" l="1665329266666" />
+    </e>
+    <e n="com.intellij.xdebugger.impl.breakpoints.RemoveBreakpointGutterIconAction">
+      <i c="4" l="1665855891636" />
+    </e>
+    <e n="com.jetbrains.cidr.cpp.toolchains.CPPToolchainsPanel$AddToolchainAction">
+      <i c="2" l="1665851414451" />
+    </e>
+    <e n="com.jetbrains.cidr.cpp.toolchains.ui.ToolchainPanel$showEnvironmentOptions$action$1">
+      <i c="1" l="1665329187027" />
+    </e>
+    <e n="com.maddyhome.idea.vim.ui.ex.ExShortcutKeyAction">
+      <i c="151" l="1669566909083" />
+    </e>
+    <e n="editRunConfigurations">
+      <i c="7" l="1669481798439" />
+    </e>
+  </component>
+</application>

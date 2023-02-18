@@ -1,0 +1,153 @@
+<project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="CompProg" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/in_process/SecretSanta/secretSanta.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary">
+    <fileType name="ObjectiveC">
+      <summary usageCount="1" lastUsed="1669844374910" />
+    </fileType>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="ObjectiveC">
+      <summary usageCount="1" lastUsage="1669844374911" />
+    </language>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CompProg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompProg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CompProg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompProg" type="462c0819:PsiDirectoryNode" />
+              <item name="in_process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CompProg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompProg" type="462c0819:PsiDirectoryNode" />
+              <item name="in_process" type="462c0819:PsiDirectoryNode" />
+              <item name="SecretSanta" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="RunConfigurationStartHistory">
+    <history>
+      <element setting="CMake Application.secretSanta" executorId="Run" />
+    </history>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="23000" />
+  </component>
+  <component name="ToolWindowManager">
+    <layout>
+      <window_info id="Bookmarks" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25019532" />
+      <window_info id="Structure" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" show_stripe_button="false" weight="0.32965076" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Python Packages" order="4" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32965076" />
+      <window_info anchor="bottom" id="CMake" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Problems View" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="make" order="0" show_stripe_button="false" side_tool="true" />
+    </layout>
+    <recentWindows>
+      <value>Run</value>
+      <value>Messages</value>
+      <value>Project</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2514" height="434" key="GridCell.Tab.0.bottom" timestamp="1669844384967">
+      <screen x="0" y="0" width="2560" height="1413" />
+    </state>
+    <state width="2514" height="434" key="GridCell.Tab.0.bottom/0.0.2560.1413/2560.360.1920.1080@0.0.2560.1413" timestamp="1669844384967" />
+    <state width="2514" height="434" key="GridCell.Tab.0.center" timestamp="1669844384965">
+      <screen x="0" y="0" width="2560" height="1413" />
+    </state>
+    <state width="2514" height="434" key="GridCell.Tab.0.center/0.0.2560.1413/2560.360.1920.1080@0.0.2560.1413" timestamp="1669844384965" />
+    <state width="2514" height="434" key="GridCell.Tab.0.left" timestamp="1669844384943">
+      <screen x="0" y="0" width="2560" height="1413" />
+    </state>
+    <state width="2514" height="434" key="GridCell.Tab.0.left/0.0.2560.1413/2560.360.1920.1080@0.0.2560.1413" timestamp="1669844384943" />
+    <state width="2514" height="434" key="GridCell.Tab.0.right" timestamp="1669844384966">
+      <screen x="0" y="0" width="2560" height="1413" />
+    </state>
+    <state width="2514" height="434" key="GridCell.Tab.0.right/0.0.2560.1413/2560.360.1920.1080@0.0.2560.1413" timestamp="1669844384966" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/in_process/SecretSanta/secretSanta.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

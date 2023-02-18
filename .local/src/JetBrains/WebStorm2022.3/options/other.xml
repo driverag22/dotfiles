@@ -1,0 +1,100 @@
+<application>
+  <component name="DynamicPluginEnabler">
+    <trackers>
+      <map>
+        <entry key="2FYg79pZg1J3gsVky0dDWr8YMWz">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2FdRvF5bxWsWkkHZt8vUEG1NFfp">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2GB2m3UeJORPKVkuxZh5jc9UbbH">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2GuuX28a85cUIJBYzLPGPGh3p9m">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2H2SlDyk0dy7hjrTHq1WzRdqCHF">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2HsXuIA2xqgdC0R34fDrMJL7KRv">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2ICB3dBe1oV5Gq3qwKSkHasmRcS">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2IdKzoD8evrslI7hv1F3zErS66y">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="15.0" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "CWM_LOGGING_VERSION": "1",
+    "ExpandBeforeRunStepsPanel": "true",
+    "GeneralSettings.initiallyConfigured": "true",
+    "KEYMAP": "terminal\nzoom in\nzoom",
+    "MarketplacePluginsSearchHistory": "monok\nvim\ndrac\n/tag:Keymap\n/tag:theme",
+    "NonModalCommitCustomization.IsApplied": "true",
+    "RunOnceActivity.se.text.search": "true",
+    "SettingsSearchHistory": "shortcut\nzoom",
+    "appcds.runOnSecondStart": "WS-223.8617.44-0f68e1144f42b5f400b0ce4f66ee72e143255b7d6a05a2c389d2e8b35848a0bf",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "bundled.plugins.list.saved.version": "WS-223.8617.44",
+    "evlsprt3.222": "24",
+    "evlsprt3.223": "25",
+    "file.gist.reindex.count": "4",
+    "fileTypeChangedCounter": "2",
+    "find.popup.splitter": "0.31343284",
+    "fontSizeToResetConsole": "19.0",
+    "fontSizeToResetEditor": "19.0",
+    "got.it.tooltip.reader.mode.got.it": "1",
+    "got.it.tooltip.terminal.smart_command_execution": "1",
+    "ide.memory.adjusted": "true",
+    "ideavim.statistics.timestamp": "1676309104679",
+    "last_opened_file_path": "/home/diego/src/waterproof",
+    "previousColorScheme": "_@user_Dracula",
+    "registry.to.advanced.settings.migration.build": "WS-223.8617.44",
+    "tasks.pass.word.conversion.enforced": "true",
+    "ts.lib.d.ts.version": "4.8.4"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/diego/src/jointwaterproof/waterproof",
+      "/home/diego/src/waterproof",
+      "/home/diego/src/jointwaterproof",
+      "/home/diego/.nvm/versions/node/v12.22.12/bin/npm",
+      "/home/diego/.nvm/versions"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+</application>

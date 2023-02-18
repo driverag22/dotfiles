@@ -1,0 +1,220 @@
+AngularJS|JavaScript Frameworks and Tools
+
+Docker|Deployment
+
+Git4Idea|Version Controls
+
+HtmlTools|HTML and XML
+
+JSIntentionPowerPack|JavaScript Frameworks and Tools
+
+JavaScriptDebugger|JavaScript Frameworks and Tools
+
+JavaScript|JavaScript Frameworks and Tools
+
+Karma|JavaScript Frameworks and Tools
+
+NodeJS|JavaScript Frameworks and Tools
+
+PerforceDirectPlugin|Version Controls
+
+PythonCore|null
+
+Remote Development Server|null
+
+Subversion|Version Controls
+
+XPathView|HTML and XML
+
+com.deadlock.scsyntax|null
+
+com.intellij.CloudConfig|IDE Settings
+
+com.intellij.c.performanceTesting|null
+
+com.intellij.cidr.base|null
+
+com.intellij.cidr.compiler.custom|Languages
+
+com.intellij.cidr.completion.ml.ranking|null
+
+com.intellij.cidr.copyright|null
+
+com.intellij.cidr.grazie|null
+
+com.intellij.cidr.lang.clangdBridge|null
+
+com.intellij.cidr.lang.clangd|null
+
+com.intellij.cidr.lang|Languages
+
+com.intellij.cidr.markdown|null
+
+com.intellij.clion-compdb|Build Tools
+
+com.intellij.clion-makefile|Build Tools
+
+com.intellij.clion.embedded|Embedded Development
+
+com.intellij.clion.runFile|null
+
+com.intellij.clion.rust.helper|null
+
+com.intellij.clion|null
+
+com.intellij.completion.ml.ranking|Other Tools
+
+com.intellij.configurationScript|null
+
+com.intellij.copyright|Other Tools
+
+com.intellij.cpp-diagnostics|null
+
+com.intellij.css|Style Sheets
+
+com.intellij.database|Database
+
+com.intellij.dev|null
+
+com.intellij.diagram|Other Tools
+
+com.intellij.nativeDebug|null
+
+com.intellij.platform.images|null
+
+com.intellij.plugins.all_hallows_eve.colorscheme|UI
+
+com.intellij.plugins.blackboard.colorscheme|UI
+
+com.intellij.plugins.cidr.solarized.colorscheme|UI
+
+com.intellij.plugins.cobalt.colorscheme|UI
+
+com.intellij.plugins.dawm.colorscheme|UI
+
+com.intellij.plugins.eclipsekeymap|Keymap
+
+com.intellij.plugins.espresso.colorscheme|UI
+
+com.intellij.plugins.github.colorscheme|UI
+
+com.intellij.plugins.monokai.colorscheme|UI
+
+com.intellij.plugins.netbeanskeymap|Keymap
+
+com.intellij.plugins.qtcreatorkeymap|Keymap
+
+com.intellij.plugins.rails_casts.colorscheme|UI
+
+com.intellij.plugins.resharperkeymap|Keymap
+
+com.intellij.plugins.twilight.colorscheme|UI
+
+com.intellij.plugins.vibrantink.colorscheme|UI
+
+com.intellij.plugins.visualstudiokeymap|Keymap
+
+com.intellij.plugins.warmneon.colorscheme|UI
+
+com.intellij.plugins.webcomponents|JavaScript Frameworks and Tools
+
+com.intellij.plugins.xcode.colorscheme|UI
+
+com.intellij.plugins.xcodekeymap|Keymap
+
+com.intellij.searcheverywhere.ml|null
+
+com.intellij.settingsSync|IDE Settings
+
+com.intellij.tailwindcss|Style Sheets
+
+com.intellij.tasks.timeTracking|Other Tools
+
+com.intellij.tasks|Other Tools
+
+com.intellij|null
+
+com.jetbrains.clion.plugins.webDeployment|Deployment
+
+com.jetbrains.codeWithMe|null
+
+com.jetbrains.gateway.terminal|null
+
+com.jetbrains.gateway|Remote Development
+
+com.jetbrains.linkerscript|null
+
+com.jetbrains.performancePlugin|Other Tools
+
+com.jetbrains.plugins.webDeployment|Deployment
+
+com.jetbrains.projector.libs|null
+
+com.jetbrains.restClient|Other Tools
+
+com.jetbrains.sh|Languages
+
+com.jetbrains.space|null
+
+hg4idea|Version Controls
+
+intellij.grid.core.impl|null
+
+intellij.grid.impl|null
+
+intellij.nextjs|JavaScript Frameworks and Tools
+
+intellij.prettierJS|JavaScript Frameworks and Tools
+
+intellij.vitejs|JavaScript Frameworks and Tools
+
+intellij.webpack|JavaScript Frameworks and Tools
+
+name.kropp.intellij.makefile|Languages
+
+org.intellij.intelliLang|Other Tools
+
+org.intellij.plugins.markdown|Languages
+
+org.jetbrains.plugins.cidr-intelliLang|Other Tools
+
+org.jetbrains.plugins.clangConfig|null
+
+org.jetbrains.plugins.clangFormat|null
+
+org.jetbrains.plugins.clion.ctest|Test Tools
+
+org.jetbrains.plugins.clion.test.boost|Test Tools
+
+org.jetbrains.plugins.clion.test.catch|Test Tools
+
+org.jetbrains.plugins.clion.test.doctest|Test Tools
+
+org.jetbrains.plugins.clion.test.google|Test Tools
+
+org.jetbrains.plugins.emojipicker|Other Tools
+
+org.jetbrains.plugins.github|Version Controls
+
+org.jetbrains.plugins.less|Style Sheets
+
+org.jetbrains.plugins.node-remote-interpreter|JavaScript Frameworks and Tools
+
+org.jetbrains.plugins.remote-run|null
+
+org.jetbrains.plugins.sass|Style Sheets
+
+org.jetbrains.plugins.terminal|Other Tools
+
+org.jetbrains.plugins.textmate|Other Tools
+
+org.jetbrains.plugins.vue|JavaScript Frameworks and Tools
+
+org.jetbrains.plugins.yaml|Languages
+
+org.toml.lang|null
+
+tanvd.grazi|null
+
+tslint|JavaScript Frameworks and Tools
+

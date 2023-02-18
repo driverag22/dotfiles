@@ -1,0 +1,195 @@
+<application>
+  <component name="VimHistorySettings">
+    <history>
+      <history-search>
+        <entry encoding="base64">Y2lu</entry>
+        <entry encoding="base64">cHJpbnRm</entry>
+        <entry encoding="base64">c3RhcnRwb3N4</entry>
+        <entry encoding="base64">eQ==</entry>
+      </history-search>
+      <history-cmd>
+        <entry encoding="base64">JXk=</entry>
+        <entry encoding="base64">MA==</entry>
+        <entry encoding="base64">Onc=</entry>
+        <entry encoding="base64">Vw==</entry>
+        <entry encoding="base64">ZQ==</entry>
+        <entry encoding="base64">JXMvc3RhcnRwb3N4L2luaXRfeA==</entry>
+        <entry encoding="base64">cy95L2luaXRfeQ==</entry>
+        <entry encoding="base64" />
+        <entry encoding="base64">dw==</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <filemarks>
+      <file name="/GDB" timestamp="1665855869413">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Dummy.txt" timestamp="1665329067707">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/solved/serialnumbers/serialnum.cpp" timestamp="1665855296529">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="41" column="1" />
+        <mark key="." line="26" column="3" />
+        <mark key="^" line="26" column="4" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/.gitignore" timestamp="1669075118461">
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="7" />
+        <mark key="." line="2" column="6" />
+        <mark key="^" line="2" column="7" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp_CLION_FRAGMENT_SEPARATOR_fragment.cpp" timestamp="1665855741364">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/bowl_stacking/bowl.cpp" timestamp="1665328900343">
+        <mark key="[" line="17" column="62" />
+        <mark key="]" line="1" column="0" />
+        <mark key="^" line="0" column="9" />
+        <mark key="." line="1" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/labyrinth/old_bad_labyrinth.cpp" timestamp="1668027023861">
+        <mark key="[" line="83" column="20" />
+        <mark key="]" line="83" column="27" />
+        <mark key="^" line="83" column="27" />
+        <mark key="." line="83" column="26" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" timestamp="1668699360614">
+        <mark key="'" line="29" column="0" />
+        <mark key="[" line="26" column="0" />
+        <mark key="]" line="26" column="0" />
+        <mark key="^" line="25" column="4" />
+        <mark key="." line="26" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/CMakeLists.txt" timestamp="1669483015300">
+        <mark key="[" line="9" column="19" />
+        <mark key="]" line="9" column="46" />
+        <mark key="^" line="9" column="46" />
+        <mark key="." line="9" column="45" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/solved/rollingdice/rollingdice.cpp" timestamp="1665855816251">
+        <mark key="'" line="42" column="12" />
+        <mark key="[" line="42" column="0" />
+        <mark key="]" line="43" column="13" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/solved/badwiring/wiring.cpp" timestamp="1665857459560">
+        <mark key="[" line="38" column="0" />
+        <mark key="]" line="49" column="5" />
+      </file>
+      <file name="/oc-debug-editor-when-no-source-position-available.txt" timestamp="1665855869470">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" timestamp="1667988645935">
+        <mark key="'" line="42" column="4" />
+        <mark key="[" line="55" column="0" />
+        <mark key="]" line="55" column="0" />
+        <mark key="." line="55" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/extremeShopping/extremeShopping.cpp" timestamp="1669830067165">
+        <mark key="[" line="16" column="0" />
+        <mark key="]" line="16" column="0" />
+        <mark key="." line="16" column="0" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" timestamp="1668111477364">
+        <mark key="[" line="19" column="34" />
+        <mark key="]" line="19" column="32" />
+        <mark key="." line="19" column="31" />
+        <mark key="^" line="19" column="32" />
+      </file>
+      <file name="$USER_HOME$/src/CompProg/solved/fare_dodging/fare_dodging.cpp" timestamp="1667988536522">
+        <mark key="'" line="65" column="4" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="42" column="12" filename="$USER_HOME$/src/CompProg/solved/rollingdice/rollingdice.cpp" />
+      <jump line="93" column="3" filename="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" />
+      <jump line="11" column="16" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="46" column="0" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="74" column="0" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="55" column="19" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="48" column="12" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="68" column="4" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="43" column="4" filename="$USER_HOME$/src/CompProg/in_process/fare_dodging/fare_dodging.cpp" />
+      <jump line="46" column="24" filename="$USER_HOME$/src/CompProg/solved/fare_dodging/fare_dodging.cpp" />
+      <jump line="65" column="4" filename="$USER_HOME$/src/CompProg/solved/fare_dodging/fare_dodging.cpp" />
+      <jump line="63" column="20" filename="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" />
+      <jump line="74" column="4" filename="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" />
+      <jump line="69" column="4" filename="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" />
+      <jump line="19" column="4" filename="$USER_HOME$/src/CompProg/in_process/labyrinth/labyrinth.cpp" />
+      <jump line="20" column="4" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="0" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="10" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="15" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="17" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="21" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="24" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="36" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="33" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="29" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+      <jump line="26" column="0" filename="$USER_HOME$/src/CompProg/in_process/EasterEggs/easterEggs.cpp" />
+    </jumps>
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="&quot;" type="2">
+        <text encoding="base64">ICAgIC8qIGNvdXQgPDwgInN0YXJ0aW5nIGl0ZXJhdGlvbiIgPDwgZW5kbDsgKi8K</text>
+      </register>
+      <register name="-" type="4">
+        <text encoding="base64">LQ==</text>
+      </register>
+      <register name="." type="4">
+        <text encoding="base64">LT0=</text>
+      </register>
+      <register name="/" type="4">
+        <text encoding="base64">eQ==</text>
+      </register>
+      <register name="0" type="2">
+        <text encoding="base64">ICAgICAgICBpbl9wcm9jZXNzL2xhYnlyaW50aC9vbGRfYmFkX2xhYnlyaW50aC5jcHAK</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">ICAgIC8qIGNvdXQgPDwgInN0YXJ0aW5nIGl0ZXJhdGlvbiIgPDwgZW5kbDsgKi8K</text>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">ICAgICAgICByZXN1bHQgKz0gcG93KC0xLCBpKSAvIGZhY3RvcmlhbChpKTsK</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICAgICAgICBpbnQgZmFjdCA9IGZhY3QK</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAgIGZvciAoaW50IGkgPSAxOykK</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ICAgIH0K</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAgICAgICBvbmVSdW4oKTsK</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">ICAgIHdoaWxlKGNhc2VzLS0gPiAwKXsK</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">ICAgIGNpbiA+PiBjYXNlczsK</text>
+      </register>
+      <register name=":" type="4">
+        <text encoding="base64">dw==</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-search encoding="base64">cHJpbnRm</last-search>
+      <last-substitute encoding="base64">eQ==</last-substitute>
+      <last-replace encoding="base64">aW5pdF95</last-replace>
+      <last-pattern encoding="base64">eQ==</last-pattern>
+      <last-dir encoding="base64">MQ==</last-dir>
+      <show-last encoding="base64">ZmFsc2U=</show-last>
+    </search>
+  </component>
+</application>

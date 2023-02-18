@@ -1,0 +1,190 @@
+<project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="waterproof" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary">
+    <fileType name="Markdown">
+      <summary usageCount="3" lastUsed="1664719021859" />
+    </fileType>
+    <fileType name="Vue.js">
+      <summary usageCount="2" lastUsed="1664719021890" />
+    </fileType>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/README.md" />
+      <option value="$PROJECT_DIR$/src/editpage/components/assistance/SettingsModal.vue" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="Markdown">
+      <summary usageCount="3" lastUsage="1664719021860" />
+    </language>
+    <language id="Vue">
+      <summary usageCount="2" lastUsage="1664719021890" />
+    </language>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editpage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editpage" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="waterproof" type="b2602c69:ProjectViewProjectNode" />
+              <item name="waterproof" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editpage" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assistance" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="RunConfigurationStartHistory">
+    <history>
+      <element setting="npm.electron:serve" executorId="Run" />
+    </history>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="waterproof-history1" />
+    </option>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1192000" />
+  </component>
+  <component name="ToolWindowManager">
+    <layout>
+      <window_info id="Bookmarks" order="0" side_tool="true" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.09316406" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" show_stripe_button="false" weight="0.2430758" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Problems View" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298105" />
+      <window_info anchor="bottom" id="Services" order="8" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.25" />
+    </layout>
+    <recentWindows>
+      <value>Project</value>
+      <value>Run</value>
+      <value>Terminal</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="755" y="358" width="1050" height="703" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1664718895011">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state x="755" y="358" width="1050" height="703" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664718895011" />
+    <state width="2514" height="305" key="GridCell.Tab.0.bottom" timestamp="1664719016743">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state width="2514" height="305" key="GridCell.Tab.0.bottom/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664719016743" />
+    <state width="2514" height="305" key="GridCell.Tab.0.center" timestamp="1664719016742">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state width="2514" height="305" key="GridCell.Tab.0.center/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664719016742" />
+    <state width="2514" height="305" key="GridCell.Tab.0.left" timestamp="1664719016742">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state width="2514" height="305" key="GridCell.Tab.0.left/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664719016742" />
+    <state width="2514" height="305" key="GridCell.Tab.0.right" timestamp="1664719016743">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state width="2514" height="305" key="GridCell.Tab.0.right/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664719016743" />
+    <state x="769" y="333" width="1022" height="732" key="SettingsEditor" timestamp="1664719016726">
+      <screen x="0" y="0" width="2560" height="1396" />
+    </state>
+    <state x="769" y="333" width="1022" height="732" key="SettingsEditor/0.0.2560.1396/2560.360.1920.1080@0.0.2560.1396" timestamp="1664719016726" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/editpage/components/assistance/SettingsModal.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="215" column="3" selection-start-line="215" selection-start-column="3" selection-end-line="215" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
