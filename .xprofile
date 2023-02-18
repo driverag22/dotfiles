@@ -2,6 +2,7 @@
 source /usr/share/nvm/init-nvm.sh
 
 setxkbmap us -variant intl
+/home/diego/.local/.macros/dwmBar/runClean.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 # /home/diego/.local/.macros/automatic/screensNetherlands.sh
 /home/diego/.local/.macros/automatic/fehbg.sh #sets screens and background
