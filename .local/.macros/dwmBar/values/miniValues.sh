@@ -4,17 +4,11 @@
 # remodified by driverag22
 
 
-LOCALTIME=$(date '+  %a. %d %b.    %R')
-VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
-# WIFI=$(/home/diego/.local/.macros/dwmBar/wifi.sh)
-WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
-SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
-BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
-MEM=$(free -h --kilo | awk '/^Mem:/ {print $3 " / " $2}')
-CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
-
-# printf "[  $DISK ]   [   $DB ]   [  $MEM ]   [   $CPU% ]   [  $TEMP ]   [ $BATTERY ]   [ $WIFI ]   [ $LOCALTIME ]"
-# printf "[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]" "$DISK" "$DB" "$MEM" "$CPU" "$TEMP" "$BATTERY" "$WIFI" "$LOCALTIME"
+LOCALTIME=$(cat /tmp/time.txt)
+VOL=$(cat /tmp/vol.txt)
+WIFI=$(cat /tmp/wifi.txt)
+BATTERY=$(cat /tmp/battery.txt)
+SPOTIFY=$(cat /tmp/spotify.txt)
 
 if [ -z "$SPOTIFY" ] 
 then
