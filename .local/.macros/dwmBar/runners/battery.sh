@@ -40,19 +40,9 @@ while true; do
     		*) status="" ;;
     	esac
     
-        #status=$chargingIcon
-    
-    	# Will make a warn variable if discharging and low
-        # [ "$capacity" -le 25 ] && warn="❗"
         [ "$capacity" -le 10 ] && warn=""
-    	# [ "$status"="" ] && [ "$capacity" -le 25 ] && warn="❗"
-    	# Prints the info
-        # printf "%s %s%d%%" "$warn" "$status " " $capacity"; unset warn
     	printf "%s %s%d%%" "$warn" "$status " " $capacity" > '/tmp/battery.txt'
-        # BatResult=$(printf "%s %s%d%%" "$warn" "$status " " $capacity")
-        # echo "$BatResult" > '/home/diego/.local/.macros/dwmBar/readings/battery.txt'
         unset warn
-    # done && printf "\\n"
     done &
     sleep 45s 
 done &
