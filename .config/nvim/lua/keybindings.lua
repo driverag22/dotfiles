@@ -32,6 +32,7 @@ vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]]) -- terminals
 --tasks
 vim.keymap.set('n', 'td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
 vim.keymap.set('n', 'tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- open taskwiki calendar
+vim.keymap.set('n', 'tto', ':TaskWikiToggle<CR>', {noremap = true}) -- open taskwiki calendar
 
 --tex
 vim.keymap.set('n', 'ctx', ':VimtexCompile<CR>', {noremap = true}) -- Toggle tagbar
