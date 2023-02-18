@@ -47,9 +47,10 @@ while true; do
         [ "$capacity" -le 10 ] && warn=""
     	# [ "$status"="" ] && [ "$capacity" -le 25 ] && warn="❗"
     	# Prints the info
-    	# printf "%s %s%d%%" "$warn" "$status " " $capacity"; unset warn
-        BatResult=$(printf "%s %s%d%%" "$warn" "$status " " $capacity")
-        echo "$BatResult" > '/home/diego/.local/.macros/dwmBar/readings/battery.txt'
+        # printf "%s %s%d%%" "$warn" "$status " " $capacity"; unset warn
+    	printf "%s %s%d%%" "$warn" "$status " " $capacity" > '/tmp/battery.txt'
+        # BatResult=$(printf "%s %s%d%%" "$warn" "$status " " $capacity")
+        # echo "$BatResult" > '/home/diego/.local/.macros/dwmBar/readings/battery.txt'
         unset warn
     # done && printf "\\n"
     done &
