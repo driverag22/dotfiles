@@ -2,6 +2,8 @@
 
 Just my ***extremely*** simple dotfiles/setup.
 
+<img src="./screenshot.png" >
+
 The dotfiles include, but are not limited to
 - Neovim - version 0.8.3
 - dwm - version 6.4
