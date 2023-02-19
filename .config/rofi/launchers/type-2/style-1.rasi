@@ -46,7 +46,7 @@ mainbox {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -56,10 +56,10 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      15px 15px 0px 15px;
-    padding:                     10px;
+    margin:                      0px;
+    padding:                     15px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            @selected;
     text-color:                  @white;
@@ -101,10 +101,10 @@ listview {
     fixed-columns:               true;
     
     spacing:                     5px;
-    margin:                      10px 15px 15px 15px;
+    margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -124,7 +124,7 @@ element {
     margin:                      0px;
     padding:                     8px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @white;

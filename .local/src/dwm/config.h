@@ -2,14 +2,12 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 7;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 5;       /* vertical padding of bar */
-static const int sidepad            = 7;       /* horizontal padding of bar */
-static const int user_bh            = 27;
+static const int user_bh            = 25;
 static const char *fonts[]          = { "JetBrains Mono:size=14"};
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
@@ -66,8 +64,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+/* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_white, "-sb", col_pink, "-sf", col_white, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run"};
-static const char *rofi[] = { "/home/diego/.config/rofi/launchers/type-2/launcher.sh"};
+/* static const char *dmenucmd[] = { "/home/diego/.local/.macros/keyBindings/rofi.sh", NULL }; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
@@ -92,8 +91,7 @@ static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	/* { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu */
-	{ MODKEY,                       XK_space,  spawn,          {.v = rofi} }, // dmenu
+	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
