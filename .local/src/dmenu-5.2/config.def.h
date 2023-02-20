@@ -1,7 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
-static int user_bh = 25;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
+static int user_bh = 26;
+static int dmx = 7, dmy = 4; /* put dmenu at this x, y offset */
+static unsigned int dmw = 1605; /* make dmenu this wide */
+static unsigned int border_width = 2; /* Size of the window border */
 
 static const char col_gray4[] = "#31333f";
 static const char col_white[] = "#eeeeee";
