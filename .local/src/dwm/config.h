@@ -66,8 +66,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run"};
-static const char *rofi[] = { "/home/diego/.config/rofi/launchers/type-2/launcher.sh"};
+static const char *dmenucmd[] = { "dmenu_run_history"};
+/* static const char *rofi[] = { "/home/diego/.config/rofi/launchers/type-2/launcher.sh"}; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
@@ -92,8 +92,8 @@ static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	/* { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu */
-	{ MODKEY,                       XK_space,  spawn,          {.v = rofi} }, // dmenu
+	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
+	/* { MODKEY,                       XK_space,  spawn,          {.v = rofi} }, // dmenu */
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
 	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
