@@ -14,7 +14,7 @@ DB=$(cat /tmp/dropbox.txt)
 
 if [ -z "$SPOTIFY" ] 
 then
-    printf "[  %s    %s ]   [ %s ]   [ %s ]   [ %s ]   [ %s ]" "$MEM" "$CPU" "$WIFI" "$VOL" "$BATTERY" "$LOCALTIME"
+    printf "[   %s    %s ]   [ %s ]   [ %s ]   [ %s ]   [ %s ]" "$MEM" "$CPU" "$WIFI" "$VOL" "$BATTERY" "$LOCALTIME"
 else 
     printf "[   %s ]    [  %s    %s ]   [ %s ]   [ %s  %s ]   [ %s ]   [ %s ]" "$DB" "$MEM" "$CPU" "$WIFI" "$SPOTIFY" "$VOL" "$BATTERY" "$LOCALTIME" 
 fi
