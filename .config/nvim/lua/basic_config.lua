@@ -18,6 +18,7 @@ vim.cmd ([[
 		let g:NERDTreeDirArrowExpandable="+"
 	 	let g:NERDTreeDirArrowCollapsible="~"
         let g:taskwiki_dont_fold="yes"
+        autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=manual foldlevelstart=99
 
 ]])
 
