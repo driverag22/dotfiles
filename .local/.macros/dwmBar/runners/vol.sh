@@ -5,8 +5,8 @@ while true; do
     
     if [ "$STATE" = "off" ] 
     then
-        icon=" "
-        printf "$icon" > '/tmp/vol.txt';
+        icon=""
+        printf "%s%s" "$icon " "$VOL" > '/tmp/vol.txt';
     else
         icon=""
         printf "%s%s" "$icon " "$VOL" > '/tmp/vol.txt';
