@@ -6,7 +6,7 @@ while true; do
     wifiSignal=$(nmcli -f ACTIVE,SIGNAL dev wifi list | awk '$1=="yes" {print $2 "%"}')
     if [ -z $wifiSignal ] 
     then
-        icon="睊 "
+        icon="睊"
         printf "$icon" > '/tmp/wifi.txt';
     else
         icon=" "
