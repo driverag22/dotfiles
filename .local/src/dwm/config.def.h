@@ -80,8 +80,8 @@ static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/loc
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
 static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
 
-static const char *brightnessUp[] = { "light", "-A", "2", NULL};
-static const char *brightnessDown[] = {"light", "-U", "2", NULL};
+static const char *brightnessUp[] = { "light", "-A", "3", NULL};
+static const char *brightnessDown[] = {"light", "-U", "3", NULL};
 static const char *screenshot[] = {"gscreenshot", "-s", "-c", "-o", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
