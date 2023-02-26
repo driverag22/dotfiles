@@ -5,7 +5,6 @@ source /usr/share/nvm/init-nvm.sh
 setxkbmap us -variant intl
 
 #sets dwmBar running to display values
-/home/diego/.local/.macros/dwmBar/runClean.sh
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 
 #sets screens and background

@@ -13,7 +13,7 @@ SPOTIFY=$(cat /tmp/spotify.txt)
 
 if [ -z "$SPOTIFY" ] 
 then
-    printf "  %s   %s    %s  %s  %s    %s " "$MEM" "$CPU" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
+    printf "  %s   %s    %s  %s %s    %s " "$MEM" "$CPU" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
 else 
-    printf "  %s   %s  %s %s  %s  %s  %s " "$MEM" "$CPU" "$SPOTIFY" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
+    printf "  %s   %s  %s %s  %s %s  %s " "$MEM" "$CPU" "$SPOTIFY" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
 fi

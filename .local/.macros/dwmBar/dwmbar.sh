@@ -3,6 +3,9 @@
 # modified by ManyRoads
 # remodified by driverag22
 
+# Here we initialize the runners for the cleanValues
+/home/diego/.local/.macros/dwmBar/runClean.sh
+
 while true; do
         ## Choices:
         # values.sh -- everything
