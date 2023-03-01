@@ -73,7 +73,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
-static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL};
+/* static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL}; */
 static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOs.wiki", NULL};
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
@@ -96,7 +96,7 @@ static const Key keys[] = {
 	/* { MODKEY,                       XK_space,  spawn,          {.v = rofi} }, // dmenu */
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
-	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
+	/* { CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion */
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
 
 	{ ALTKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
