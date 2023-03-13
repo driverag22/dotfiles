@@ -10,6 +10,7 @@ while true; do
         ARTIST=$(playerctl metadata artist)
         TRACK=$(playerctl metadata title)
         STATUS=$(playerctl status)
+        PLAYER=$(playerctl metadata | awk 'FNR == 1 {print $1}')
         # POSITION=$(playerctl position | sed 's/..\{6\}$//')
         # DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
         # SHUFFLE=$(playerctl shuffle)
@@ -19,12 +20,18 @@ while true; do
         else
             STATUS=" "
         fi
-    
-        if [ "$STATUS" == "No players found " ]; then
-            echo "bad" > '/tmp/spotify.txt'
-        else
-            printf "%s%s - %s" "$STATUS " "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
+
+        if [ "$PLAYER" == "spotify" ]; then 
+            printf "%s%s - %s" "$STATUS" "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
         fi
+    
+        # if [ "$STATUS"  "No players found " ]; then
+        #     echo "bad" > '/tmp/spotify.txt'
+        # else if [ "$PLAYER" == "spotify" ]; then
+        #     echo "bad" > '/tmp/spotify.txt'
+        # else 
+        #     printf "%s%s - %s" "$STATUS " "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
+        # fi
     else 
         echo "" > '/tmp/spotify.txt'
     fi
