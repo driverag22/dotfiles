@@ -113,4 +113,7 @@ require('lspconfig')['texlab'].setup {
     capabilities = capabilities
 }
 
+require('lspconfig')['pyright'].setup {
+    capabilities = capabilities
+}
 
