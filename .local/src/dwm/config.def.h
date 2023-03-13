@@ -10,7 +10,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 7;       /* horizontal padding of bar */
 static const int user_bh            = 27;
-static const char *fonts[]          = { "JetBrains Mono:size=14"};
+static const char *fonts[]          = { "JetBrains Mono:size=13"};
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
