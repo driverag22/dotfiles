@@ -117,3 +117,7 @@ require('lspconfig')['pyright'].setup {
     capabilities = capabilities
 }
 
+require('lspconfig')['quick_lint_js'].setup {
+    capabilities = capabilities
+}
+
