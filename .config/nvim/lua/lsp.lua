@@ -98,7 +98,8 @@ cmp.setup({
     })
   })
 
-  -- Set up lspconfig.
+
+-- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require('lspconfig')['clangd'].setup {
@@ -120,4 +121,3 @@ require('lspconfig')['pyright'].setup {
 require('lspconfig')['quick_lint_js'].setup {
     capabilities = capabilities
 }
-
