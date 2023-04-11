@@ -112,16 +112,16 @@ pfetch
 
 # autoload -Uz compinit promptinit
 # compinit
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+# fancy-ctrl-z () {
+#   if [[ $#BUFFER -eq 0 ]]; then
+#     BUFFER="fg"
+#     zle accept-line
+#   else
+#     zle push-input
+#     zle clear-screen
+#   fi
+# }
+# zle -N fancy-ctrl-z
+# bindkey '^Z' fancy-ctrl-z
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
