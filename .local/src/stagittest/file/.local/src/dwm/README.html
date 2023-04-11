@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>README - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../"><img src="../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../log.html">Log</a> | <a href="../../../../files.html">Files</a> | <a href="../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> README (1093B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> dwm - dynamic window manager
+<a href="#l2" class="line" id="l2">      2</a> ============================
+<a href="#l3" class="line" id="l3">      3</a> dwm is an extremely fast, small, and dynamic window manager for X.
+<a href="#l4" class="line" id="l4">      4</a> 
+<a href="#l5" class="line" id="l5">      5</a> 
+<a href="#l6" class="line" id="l6">      6</a> Requirements
+<a href="#l7" class="line" id="l7">      7</a> ------------
+<a href="#l8" class="line" id="l8">      8</a> In order to build dwm you need the Xlib header files.
+<a href="#l9" class="line" id="l9">      9</a> 
+<a href="#l10" class="line" id="l10">     10</a> 
+<a href="#l11" class="line" id="l11">     11</a> Installation
+<a href="#l12" class="line" id="l12">     12</a> ------------
+<a href="#l13" class="line" id="l13">     13</a> Edit config.mk to match your local setup (dwm is installed into
+<a href="#l14" class="line" id="l14">     14</a> the /usr/local namespace by default).
+<a href="#l15" class="line" id="l15">     15</a> 
+<a href="#l16" class="line" id="l16">     16</a> Afterwards enter the following command to build and install dwm (if
+<a href="#l17" class="line" id="l17">     17</a> necessary as root):
+<a href="#l18" class="line" id="l18">     18</a> 
+<a href="#l19" class="line" id="l19">     19</a>     make clean install
+<a href="#l20" class="line" id="l20">     20</a> 
+<a href="#l21" class="line" id="l21">     21</a> 
+<a href="#l22" class="line" id="l22">     22</a> Running dwm
+<a href="#l23" class="line" id="l23">     23</a> -----------
+<a href="#l24" class="line" id="l24">     24</a> Add the following line to your .xinitrc to start dwm using startx:
+<a href="#l25" class="line" id="l25">     25</a> 
+<a href="#l26" class="line" id="l26">     26</a>     exec dwm
+<a href="#l27" class="line" id="l27">     27</a> 
+<a href="#l28" class="line" id="l28">     28</a> In order to connect dwm to a specific display, make sure that
+<a href="#l29" class="line" id="l29">     29</a> the DISPLAY environment variable is set correctly, e.g.:
+<a href="#l30" class="line" id="l30">     30</a> 
+<a href="#l31" class="line" id="l31">     31</a>     DISPLAY=foo.bar:1 exec dwm
+<a href="#l32" class="line" id="l32">     32</a> 
+<a href="#l33" class="line" id="l33">     33</a> (This will start dwm on display :1 of the host foo.bar.)
+<a href="#l34" class="line" id="l34">     34</a> 
+<a href="#l35" class="line" id="l35">     35</a> In order to display status info in the bar, you can do something
+<a href="#l36" class="line" id="l36">     36</a> like this in your .xinitrc:
+<a href="#l37" class="line" id="l37">     37</a> 
+<a href="#l38" class="line" id="l38">     38</a>     while xsetroot -name &quot;`date` `uptime | sed &#39;s/.*,//&#39;`&quot;
+<a href="#l39" class="line" id="l39">     39</a>     do
+<a href="#l40" class="line" id="l40">     40</a>     	sleep 1
+<a href="#l41" class="line" id="l41">     41</a>     done &amp;
+<a href="#l42" class="line" id="l42">     42</a>     exec dwm
+<a href="#l43" class="line" id="l43">     43</a> 
+<a href="#l44" class="line" id="l44">     44</a> 
+<a href="#l45" class="line" id="l45">     45</a> Configuration
+<a href="#l46" class="line" id="l46">     46</a> -------------
+<a href="#l47" class="line" id="l47">     47</a> The configuration of dwm is done by creating a custom config.h
+<a href="#l48" class="line" id="l48">     48</a> and (re)compiling the source code.
+</pre>
+</div>
+</body>
+</html>

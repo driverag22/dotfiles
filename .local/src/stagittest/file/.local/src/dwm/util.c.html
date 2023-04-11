@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>util.c - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../"><img src="../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../log.html">Log</a> | <a href="../../../../files.html">Files</a> | <a href="../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> util.c (517B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> /* See LICENSE file for copyright and license details. */
+<a href="#l2" class="line" id="l2">      2</a> #include &lt;stdarg.h&gt;
+<a href="#l3" class="line" id="l3">      3</a> #include &lt;stdio.h&gt;
+<a href="#l4" class="line" id="l4">      4</a> #include &lt;stdlib.h&gt;
+<a href="#l5" class="line" id="l5">      5</a> #include &lt;string.h&gt;
+<a href="#l6" class="line" id="l6">      6</a> 
+<a href="#l7" class="line" id="l7">      7</a> #include &quot;util.h&quot;
+<a href="#l8" class="line" id="l8">      8</a> 
+<a href="#l9" class="line" id="l9">      9</a> void
+<a href="#l10" class="line" id="l10">     10</a> die(const char *fmt, ...)
+<a href="#l11" class="line" id="l11">     11</a> {
+<a href="#l12" class="line" id="l12">     12</a> 	va_list ap;
+<a href="#l13" class="line" id="l13">     13</a> 
+<a href="#l14" class="line" id="l14">     14</a> 	va_start(ap, fmt);
+<a href="#l15" class="line" id="l15">     15</a> 	vfprintf(stderr, fmt, ap);
+<a href="#l16" class="line" id="l16">     16</a> 	va_end(ap);
+<a href="#l17" class="line" id="l17">     17</a> 
+<a href="#l18" class="line" id="l18">     18</a> 	if (fmt[0] &amp;&amp; fmt[strlen(fmt)-1] == &#39;:&#39;) {
+<a href="#l19" class="line" id="l19">     19</a> 		fputc(&#39; &#39;, stderr);
+<a href="#l20" class="line" id="l20">     20</a> 		perror(NULL);
+<a href="#l21" class="line" id="l21">     21</a> 	} else {
+<a href="#l22" class="line" id="l22">     22</a> 		fputc(&#39;\n&#39;, stderr);
+<a href="#l23" class="line" id="l23">     23</a> 	}
+<a href="#l24" class="line" id="l24">     24</a> 
+<a href="#l25" class="line" id="l25">     25</a> 	exit(1);
+<a href="#l26" class="line" id="l26">     26</a> }
+<a href="#l27" class="line" id="l27">     27</a> 
+<a href="#l28" class="line" id="l28">     28</a> void *
+<a href="#l29" class="line" id="l29">     29</a> ecalloc(size_t nmemb, size_t size)
+<a href="#l30" class="line" id="l30">     30</a> {
+<a href="#l31" class="line" id="l31">     31</a> 	void *p;
+<a href="#l32" class="line" id="l32">     32</a> 
+<a href="#l33" class="line" id="l33">     33</a> 	if (!(p = calloc(nmemb, size)))
+<a href="#l34" class="line" id="l34">     34</a> 		die(&quot;calloc:&quot;);
+<a href="#l35" class="line" id="l35">     35</a> 	return p;
+<a href="#l36" class="line" id="l36">     36</a> }
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,1911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>.dotfiles, branch HEAD</title>
+<subtitle>Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</subtitle>
+<entry>
+<id>4d0abceecb8ee729693184cb7131fbe4917415a0</id>
+<published>2023-01-28T01:23:29Z</published>
+<updated>2023-01-28T01:23:29Z</updated>
+<title type="text">bar height independent of font size</title>
+<link rel="alternate" type="text/html" href="commit/4d0abceecb8ee729693184cb7131fbe4917415a0.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 4d0abceecb8ee729693184cb7131fbe4917415a0
+parent a12feb63827058b5ee484c7315086a1ac73b4897
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 28 Jan 2023 02:23:29 +0100
+
+bar height independent of font size
+
+</content>
+</entry>
+<entry>
+<id>a12feb63827058b5ee484c7315086a1ac73b4897</id>
+<published>2023-01-27T17:32:32Z</published>
+<updated>2023-01-27T17:32:53Z</updated>
+<title type="text">fixed lockscreen (shift+mod+XK_l) keybinding</title>
+<link rel="alternate" type="text/html" href="commit/a12feb63827058b5ee484c7315086a1ac73b4897.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit a12feb63827058b5ee484c7315086a1ac73b4897
+parent f6c2749b555c28b49103b57e471606e6e14e2554
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:32:32 +0100
+
+fixed lockscreen (shift+mod+XK_l) keybinding
+
+</content>
+</entry>
+<entry>
+<id>f6c2749b555c28b49103b57e471606e6e14e2554</id>
+<published>2023-01-27T17:28:20Z</published>
+<updated>2023-01-27T17:28:20Z</updated>
+<title type="text">simplified powermenu</title>
+<link rel="alternate" type="text/html" href="commit/f6c2749b555c28b49103b57e471606e6e14e2554.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit f6c2749b555c28b49103b57e471606e6e14e2554
+parent 193cc516944ce03b5791409ef166cb613567069f
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:28:20 +0100
+
+simplified powermenu
+
+</content>
+</entry>
+<entry>
+<id>193cc516944ce03b5791409ef166cb613567069f</id>
+<published>2023-01-27T17:10:27Z</published>
+<updated>2023-01-27T17:10:50Z</updated>
+<title type="text">vimwiki updated</title>
+<link rel="alternate" type="text/html" href="commit/193cc516944ce03b5791409ef166cb613567069f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 193cc516944ce03b5791409ef166cb613567069f
+parent 6b6ea4aaee65141b0f21369bcd877695a8e2e0bb
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:10:27 +0100
+
+vimwiki updated
+
+</content>
+</entry>
+<entry>
+<id>6b6ea4aaee65141b0f21369bcd877695a8e2e0bb</id>
+<published>2023-01-27T17:04:09Z</published>
+<updated>2023-01-27T17:10:50Z</updated>
+<title type="text">removed unnecessary buttons, made powermenu cleaner</title>
+<link rel="alternate" type="text/html" href="commit/6b6ea4aaee65141b0f21369bcd877695a8e2e0bb.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 6b6ea4aaee65141b0f21369bcd877695a8e2e0bb
+parent 7ed838fb4e8de49542a4e82f1031a1dd46b0efe0
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:04:09 +0100
+
+removed unnecessary buttons, made powermenu cleaner
+
+</content>
+</entry>
+<entry>
+<id>7ed838fb4e8de49542a4e82f1031a1dd46b0efe0</id>
+<published>2023-01-27T17:03:49Z</published>
+<updated>2023-01-27T17:10:50Z</updated>
+<title type="text">changed colorscheme</title>
+<link rel="alternate" type="text/html" href="commit/7ed838fb4e8de49542a4e82f1031a1dd46b0efe0.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 7ed838fb4e8de49542a4e82f1031a1dd46b0efe0
+parent 8e611ea8e112008521f6000b0b569a32b99d7a50
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:03:49 +0100
+
+changed colorscheme
+
+</content>
+</entry>
+<entry>
+<id>8e611ea8e112008521f6000b0b569a32b99d7a50</id>
+<published>2023-01-27T17:01:32Z</published>
+<updated>2023-01-27T17:10:47Z</updated>
+<title type="text">removed buggy animations</title>
+<link rel="alternate" type="text/html" href="commit/8e611ea8e112008521f6000b0b569a32b99d7a50.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 8e611ea8e112008521f6000b0b569a32b99d7a50
+parent ffd8cba2085f4a7a58f69948aeb40721ac8cd54a
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:01:32 +0100
+
+removed buggy animations
+
+</content>
+</entry>
+<entry>
+<id>ffd8cba2085f4a7a58f69948aeb40721ac8cd54a</id>
+<published>2023-01-27T17:01:04Z</published>
+<updated>2023-01-27T17:01:04Z</updated>
+<title type="text">cleaned up dwm, Shift+ModKey+XK_l not working</title>
+<link rel="alternate" type="text/html" href="commit/ffd8cba2085f4a7a58f69948aeb40721ac8cd54a.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit ffd8cba2085f4a7a58f69948aeb40721ac8cd54a
+parent 5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 27 Jan 2023 18:01:04 +0100
+
+cleaned up dwm, Shift+ModKey+XK_l not working
+
+</content>
+</entry>
+<entry>
+<id>5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf</id>
+<published>2023-01-22T17:04:44Z</published>
+<updated>2023-01-22T17:04:44Z</updated>
+<title type="text">added auto-power off on bluetooth</title>
+<link rel="alternate" type="text/html" href="commit/5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf
+parent 67f2e0d0601c3e77bb4d754c3c05ae316e31dcad
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sun, 22 Jan 2023 18:04:44 +0100
+
+added auto-power off on bluetooth
+
+</content>
+</entry>
+<entry>
+<id>67f2e0d0601c3e77bb4d754c3c05ae316e31dcad</id>
+<published>2023-01-22T17:04:27Z</published>
+<updated>2023-01-22T17:04:27Z</updated>
+<title type="text">some changes?</title>
+<link rel="alternate" type="text/html" href="commit/67f2e0d0601c3e77bb4d754c3c05ae316e31dcad.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 67f2e0d0601c3e77bb4d754c3c05ae316e31dcad
+parent b5404f2bc36c47042c01ee34d5426b4ba2161742
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sun, 22 Jan 2023 18:04:27 +0100
+
+some changes?
+
+</content>
+</entry>
+<entry>
+<id>b5404f2bc36c47042c01ee34d5426b4ba2161742</id>
+<published>2023-01-21T09:39:00Z</published>
+<updated>2023-01-21T09:39:00Z</updated>
+<title type="text">added keybinding for vimwiki TODOs</title>
+<link rel="alternate" type="text/html" href="commit/b5404f2bc36c47042c01ee34d5426b4ba2161742.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit b5404f2bc36c47042c01ee34d5426b4ba2161742
+parent 96d5ef2f9092c53b225808ff36ea0d83e1544d7e
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:39:00 +0100
+
+added keybinding for vimwiki TODOs
+
+</content>
+</entry>
+<entry>
+<id>96d5ef2f9092c53b225808ff36ea0d83e1544d7e</id>
+<published>2023-01-21T09:29:14Z</published>
+<updated>2023-01-21T09:29:14Z</updated>
+<title type="text">jetbrains commit</title>
+<link rel="alternate" type="text/html" href="commit/96d5ef2f9092c53b225808ff36ea0d83e1544d7e.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 96d5ef2f9092c53b225808ff36ea0d83e1544d7e
+parent 9890ee4f17aea16a8570626f5030c3801c97fcc3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:29:14 +0100
+
+jetbrains commit
+
+</content>
+</entry>
+<entry>
+<id>9890ee4f17aea16a8570626f5030c3801c97fcc3</id>
+<published>2023-01-21T09:29:02Z</published>
+<updated>2023-01-21T09:29:02Z</updated>
+<title type="text">added vimwiki plugin</title>
+<link rel="alternate" type="text/html" href="commit/9890ee4f17aea16a8570626f5030c3801c97fcc3.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 9890ee4f17aea16a8570626f5030c3801c97fcc3
+parent ba629417f206cf745bbe02f4ad2162863c88b3f3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:29:02 +0100
+
+added vimwiki plugin
+
+</content>
+</entry>
+<entry>
+<id>ba629417f206cf745bbe02f4ad2162863c88b3f3</id>
+<published>2023-01-21T09:28:34Z</published>
+<updated>2023-01-21T09:28:34Z</updated>
+<title type="text">changed to jetbrains nf</title>
+<link rel="alternate" type="text/html" href="commit/ba629417f206cf745bbe02f4ad2162863c88b3f3.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit ba629417f206cf745bbe02f4ad2162863c88b3f3
+parent 0e2787fc69cecda401c1d82f848f763f2790f602
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:28:34 +0100
+
+changed to jetbrains nf
+
+</content>
+</entry>
+<entry>
+<id>0e2787fc69cecda401c1d82f848f763f2790f602</id>
+<published>2023-01-21T09:27:58Z</published>
+<updated>2023-01-21T09:27:58Z</updated>
+<title type="text">first vimwiki commit</title>
+<link rel="alternate" type="text/html" href="commit/0e2787fc69cecda401c1d82f848f763f2790f602.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 0e2787fc69cecda401c1d82f848f763f2790f602
+parent dc3d1e68d12dc2d7563eaa642bbccd91cb415c72
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:27:58 +0100
+
+first vimwiki commit
+
+</content>
+</entry>
+<entry>
+<id>dc3d1e68d12dc2d7563eaa642bbccd91cb415c72</id>
+<published>2023-01-21T09:27:47Z</published>
+<updated>2023-01-21T09:27:47Z</updated>
+<title type="text">added alias for vimwiki</title>
+<link rel="alternate" type="text/html" href="commit/dc3d1e68d12dc2d7563eaa642bbccd91cb415c72.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit dc3d1e68d12dc2d7563eaa642bbccd91cb415c72
+parent 15af0f64a2e547994d2e4fa06428eafdb1ae20f4
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:27:47 +0100
+
+added alias for vimwiki
+
+</content>
+</entry>
+<entry>
+<id>15af0f64a2e547994d2e4fa06428eafdb1ae20f4</id>
+<published>2023-01-21T09:27:31Z</published>
+<updated>2023-01-21T09:27:31Z</updated>
+<title type="text">small changes</title>
+<link rel="alternate" type="text/html" href="commit/15af0f64a2e547994d2e4fa06428eafdb1ae20f4.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 15af0f64a2e547994d2e4fa06428eafdb1ae20f4
+parent 0ee127efa4a0a00f1d917ad4708f23391c264d23
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 21 Jan 2023 10:27:31 +0100
+
+small changes
+
+</content>
+</entry>
+<entry>
+<id>0ee127efa4a0a00f1d917ad4708f23391c264d23</id>
+<published>2023-01-19T09:23:34Z</published>
+<updated>2023-01-19T09:23:34Z</updated>
+<title type="text">Merge pull request #5 from driverag22/fullscreen</title>
+<link rel="alternate" type="text/html" href="commit/0ee127efa4a0a00f1d917ad4708f23391c264d23.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit 0ee127efa4a0a00f1d917ad4708f23391c264d23
+parent 815f27743ed1d1f3a863c3b966d03157260c5ce5
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Thu, 19 Jan 2023 10:23:34 +0100
+
+Merge pull request #5 from driverag22/fullscreen
+
+Fullscreen
+</content>
+</entry>
+<entry>
+<id>7d71a2b901100b6f77f2264f6d143399baba8b73</id>
+<published>2023-01-19T09:22:45Z</published>
+<updated>2023-01-19T09:22:45Z</updated>
+<title type="text">fixed spacing of battery</title>
+<link rel="alternate" type="text/html" href="commit/7d71a2b901100b6f77f2264f6d143399baba8b73.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 7d71a2b901100b6f77f2264f6d143399baba8b73
+parent af0e1079be9337bad2f735c163fc8534c39473b3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 19 Jan 2023 10:22:45 +0100
+
+fixed spacing of battery
+
+</content>
+</entry>
+<entry>
+<id>af0e1079be9337bad2f735c163fc8534c39473b3</id>
+<published>2023-01-19T09:22:17Z</published>
+<updated>2023-01-19T09:22:17Z</updated>
+<title type="text">fullscreen mode added to win+M</title>
+<link rel="alternate" type="text/html" href="commit/af0e1079be9337bad2f735c163fc8534c39473b3.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit af0e1079be9337bad2f735c163fc8534c39473b3
+parent 815f27743ed1d1f3a863c3b966d03157260c5ce5
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 19 Jan 2023 10:22:17 +0100
+
+fullscreen mode added to win+M
+
+</content>
+</entry>
+<entry>
+<id>815f27743ed1d1f3a863c3b966d03157260c5ce5</id>
+<published>2023-01-18T19:08:04Z</published>
+<updated>2023-01-18T19:08:16Z</updated>
+<title type="text">changed colorscheme</title>
+<link rel="alternate" type="text/html" href="commit/815f27743ed1d1f3a863c3b966d03157260c5ce5.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 815f27743ed1d1f3a863c3b966d03157260c5ce5
+parent 6ddf77426d5523386ebd18238eff0b11ff2003ca
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:08:04 +0100
+
+changed colorscheme
+
+</content>
+</entry>
+<entry>
+<id>6ddf77426d5523386ebd18238eff0b11ff2003ca</id>
+<published>2023-01-18T19:07:43Z</published>
+<updated>2023-01-18T19:08:16Z</updated>
+<title type="text">jetbrains commit</title>
+<link rel="alternate" type="text/html" href="commit/6ddf77426d5523386ebd18238eff0b11ff2003ca.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 6ddf77426d5523386ebd18238eff0b11ff2003ca
+parent 73cf7d6a5166e6256bd57c1410473bec0c1d961d
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:07:43 +0100
+
+jetbrains commit
+
+</content>
+</entry>
+<entry>
+<id>73cf7d6a5166e6256bd57c1410473bec0c1d961d</id>
+<published>2023-01-18T19:06:08Z</published>
+<updated>2023-01-18T19:08:12Z</updated>
+<title type="text">changed xprofile zshrc, fixed java wmname thing, sped up zsh</title>
+<link rel="alternate" type="text/html" href="commit/73cf7d6a5166e6256bd57c1410473bec0c1d961d.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 73cf7d6a5166e6256bd57c1410473bec0c1d961d
+parent a0856892499417b51437de032bb4bd5f5121ba55
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:06:08 +0100
+
+changed xprofile zshrc, fixed java wmname thing, sped up zsh
+
+</content>
+</entry>
+<entry>
+<id>a0856892499417b51437de032bb4bd5f5121ba55</id>
+<published>2023-01-18T19:05:44Z</published>
+<updated>2023-01-18T19:05:44Z</updated>
+<title type="text">changed picom config a bit</title>
+<link rel="alternate" type="text/html" href="commit/a0856892499417b51437de032bb4bd5f5121ba55.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit a0856892499417b51437de032bb4bd5f5121ba55
+parent 6b04f8b35900ccd0a04935b25f0fb407d186a59b
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:05:44 +0100
+
+changed picom config a bit
+
+</content>
+</entry>
+<entry>
+<id>6b04f8b35900ccd0a04935b25f0fb407d186a59b</id>
+<published>2023-01-18T19:05:25Z</published>
+<updated>2023-01-18T19:05:25Z</updated>
+<title type="text">made personalized colorscheme for dwm</title>
+<link rel="alternate" type="text/html" href="commit/6b04f8b35900ccd0a04935b25f0fb407d186a59b.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 6b04f8b35900ccd0a04935b25f0fb407d186a59b
+parent 311cdd887e803db20d8a22393aeee4941fe13d01
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:05:25 +0100
+
+made personalized colorscheme for dwm
+
+</content>
+</entry>
+<entry>
+<id>311cdd887e803db20d8a22393aeee4941fe13d01</id>
+<published>2023-01-18T19:04:57Z</published>
+<updated>2023-01-18T19:04:57Z</updated>
+<title type="text">changed bar spacing</title>
+<link rel="alternate" type="text/html" href="commit/311cdd887e803db20d8a22393aeee4941fe13d01.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 311cdd887e803db20d8a22393aeee4941fe13d01
+parent 52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 18 Jan 2023 20:04:57 +0100
+
+changed bar spacing
+
+</content>
+</entry>
+<entry>
+<id>52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e</id>
+<published>2023-01-16T22:44:44Z</published>
+<updated>2023-01-16T22:44:44Z</updated>
+<title type="text">added java to lsp</title>
+<link rel="alternate" type="text/html" href="commit/52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e
+parent de483c7eb370b417cf6fa42d0b266099e350bd1f
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 16 Jan 2023 23:44:44 +0100
+
+added java to lsp
+
+</content>
+</entry>
+<entry>
+<id>de483c7eb370b417cf6fa42d0b266099e350bd1f</id>
+<published>2023-01-16T22:44:18Z</published>
+<updated>2023-01-16T22:44:18Z</updated>
+<title type="text">changed zsh for quicker startup</title>
+<link rel="alternate" type="text/html" href="commit/de483c7eb370b417cf6fa42d0b266099e350bd1f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit de483c7eb370b417cf6fa42d0b266099e350bd1f
+parent c3cd28a6acb709f8dd39dd8e3bd0c5d8d89aa1eb
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 16 Jan 2023 23:44:18 +0100
+
+changed zsh for quicker startup
+
+</content>
+</entry>
+<entry>
+<id>c3cd28a6acb709f8dd39dd8e3bd0c5d8d89aa1eb</id>
+<published>2023-01-11T22:58:59Z</published>
+<updated>2023-01-11T22:58:59Z</updated>
+<title type="text">color preview nvim</title>
+<link rel="alternate" type="text/html" href="commit/c3cd28a6acb709f8dd39dd8e3bd0c5d8d89aa1eb.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit c3cd28a6acb709f8dd39dd8e3bd0c5d8d89aa1eb
+parent 242f4cd2735db7c81cf9c49dc2090e0d29c771b3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 23:58:59 +0100
+
+color preview nvim
+
+</content>
+</entry>
+<entry>
+<id>242f4cd2735db7c81cf9c49dc2090e0d29c771b3</id>
+<published>2023-01-11T22:50:52Z</published>
+<updated>2023-01-11T22:50:52Z</updated>
+<title type="text">Merge pull request #4 from driverag22/restart</title>
+<link rel="alternate" type="text/html" href="commit/242f4cd2735db7c81cf9c49dc2090e0d29c771b3.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit 242f4cd2735db7c81cf9c49dc2090e0d29c771b3
+parent cedce6494e71488b7e3ec3fed70776a95b1818d0
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Wed, 11 Jan 2023 23:50:52 +0100
+
+Merge pull request #4 from driverag22/restart
+
+Restart patch for dwm
+</content>
+</entry>
+<entry>
+<id>3317f43538c10a409d2fbc8537b3e238f8e2894f</id>
+<published>2023-01-11T22:49:38Z</published>
+<updated>2023-01-11T22:49:38Z</updated>
+<title type="text">changed some macros</title>
+<link rel="alternate" type="text/html" href="commit/3317f43538c10a409d2fbc8537b3e238f8e2894f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3317f43538c10a409d2fbc8537b3e238f8e2894f
+parent 64cb6f133ccd7b343593bfbfae3651d9692f3193
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 23:49:38 +0100
+
+changed some macros
+
+</content>
+</entry>
+<entry>
+<id>64cb6f133ccd7b343593bfbfae3651d9692f3193</id>
+<published>2023-01-11T22:49:13Z</published>
+<updated>2023-01-11T22:49:13Z</updated>
+<title type="text">changed alacritty colors</title>
+<link rel="alternate" type="text/html" href="commit/64cb6f133ccd7b343593bfbfae3651d9692f3193.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 64cb6f133ccd7b343593bfbfae3651d9692f3193
+parent 727fd8490f111b3ea90bf6cdf28d9d1aec99523e
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 23:49:13 +0100
+
+changed alacritty colors
+
+</content>
+</entry>
+<entry>
+<id>727fd8490f111b3ea90bf6cdf28d9d1aec99523e</id>
+<published>2023-01-11T22:48:50Z</published>
+<updated>2023-01-11T22:48:50Z</updated>
+<title type="text">picom refactor</title>
+<link rel="alternate" type="text/html" href="commit/727fd8490f111b3ea90bf6cdf28d9d1aec99523e.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 727fd8490f111b3ea90bf6cdf28d9d1aec99523e
+parent 400c07e38423c74f8fd55775b1c8c62640eaf1d3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 23:48:50 +0100
+
+picom refactor
+
+</content>
+</entry>
+<entry>
+<id>400c07e38423c74f8fd55775b1c8c62640eaf1d3</id>
+<published>2023-01-11T22:48:17Z</published>
+<updated>2023-01-11T22:48:17Z</updated>
+<title type="text">added quick reload patch</title>
+<link rel="alternate" type="text/html" href="commit/400c07e38423c74f8fd55775b1c8c62640eaf1d3.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 400c07e38423c74f8fd55775b1c8c62640eaf1d3
+parent 27afdf0576574b7f2e71edeef54959fbdc519f3c
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 23:48:17 +0100
+
+added quick reload patch
+
+</content>
+</entry>
+<entry>
+<id>27afdf0576574b7f2e71edeef54959fbdc519f3c</id>
+<published>2023-01-11T00:44:11Z</published>
+<updated>2023-01-11T00:44:11Z</updated>
+<title type="text">fixed broken border</title>
+<link rel="alternate" type="text/html" href="commit/27afdf0576574b7f2e71edeef54959fbdc519f3c.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 27afdf0576574b7f2e71edeef54959fbdc519f3c
+parent cedce6494e71488b7e3ec3fed70776a95b1818d0
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 01:44:11 +0100
+
+fixed broken border
+
+</content>
+</entry>
+<entry>
+<id>cedce6494e71488b7e3ec3fed70776a95b1818d0</id>
+<published>2023-01-10T23:10:56Z</published>
+<updated>2023-01-10T23:10:56Z</updated>
+<title type="text">Merge pull request #3 from driverag22/difGaps</title>
+<link rel="alternate" type="text/html" href="commit/cedce6494e71488b7e3ec3fed70776a95b1818d0.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit cedce6494e71488b7e3ec3fed70776a95b1818d0
+parent a9a748c1054fd0bf9d1913e171e1fa9c140dad6f
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Wed, 11 Jan 2023 00:10:56 +0100
+
+Merge pull request #3 from driverag22/difGaps
+
+added full gaps
+</content>
+</entry>
+<entry>
+<id>4d39ab6786d62a4a6910ae21b3ec8462c8a39d7e</id>
+<published>2023-01-10T23:09:41Z</published>
+<updated>2023-01-10T23:09:41Z</updated>
+<title type="text">added full gaps</title>
+<link rel="alternate" type="text/html" href="commit/4d39ab6786d62a4a6910ae21b3ec8462c8a39d7e.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 4d39ab6786d62a4a6910ae21b3ec8462c8a39d7e
+parent 14bd55ead16da6249565689908265508aed652ba
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 11 Jan 2023 00:09:41 +0100
+
+added full gaps
+
+</content>
+</entry>
+<entry>
+<id>a9a748c1054fd0bf9d1913e171e1fa9c140dad6f</id>
+<published>2023-01-10T22:48:47Z</published>
+<updated>2023-01-10T22:48:47Z</updated>
+<title type="text">Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles</title>
+<link rel="alternate" type="text/html" href="commit/a9a748c1054fd0bf9d1913e171e1fa9c140dad6f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit a9a748c1054fd0bf9d1913e171e1fa9c140dad6f
+parent 3318106aee9748d8afc17b9ac2e9fd037eb2cc6b
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:48:47 +0100
+
+Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles
+
+</content>
+</entry>
+<entry>
+<id>3318106aee9748d8afc17b9ac2e9fd037eb2cc6b</id>
+<published>2023-01-10T22:35:45Z</published>
+<updated>2023-01-10T22:48:30Z</updated>
+<title type="text">small changes in dwm</title>
+<link rel="alternate" type="text/html" href="commit/3318106aee9748d8afc17b9ac2e9fd037eb2cc6b.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3318106aee9748d8afc17b9ac2e9fd037eb2cc6b
+parent 2ed299eced37e336cef8ce320795df15ef0bf573
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:35:45 +0100
+
+small changes in dwm
+
+</content>
+</entry>
+<entry>
+<id>749f91185045d57e38d239340d4e9faa11621bcb</id>
+<published>2023-01-02T23:31:07Z</published>
+<updated>2023-01-10T22:45:59Z</updated>
+<title type="text">added tag left-right cycling and moving clients to left-right tags</title>
+<link rel="alternate" type="text/html" href="commit/749f91185045d57e38d239340d4e9faa11621bcb.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 749f91185045d57e38d239340d4e9faa11621bcb
+parent 8cc00989535ca1c0ca350e6e072b33fd4a58e311
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue,  3 Jan 2023 00:31:07 +0100
+
+added tag left-right cycling and moving clients to left-right tags
+
+</content>
+</entry>
+<entry>
+<id>8cc00989535ca1c0ca350e6e072b33fd4a58e311</id>
+<published>2023-01-10T22:42:57Z</published>
+<updated>2023-01-10T22:42:57Z</updated>
+<title type="text">Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles</title>
+<link rel="alternate" type="text/html" href="commit/8cc00989535ca1c0ca350e6e072b33fd4a58e311.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 8cc00989535ca1c0ca350e6e072b33fd4a58e311
+parent 9340ebf600e354062c8265fbd87f23fc48ce6f50
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:42:57 +0100
+
+Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles
+
+</content>
+</entry>
+<entry>
+<id>9340ebf600e354062c8265fbd87f23fc48ce6f50</id>
+<published>2023-01-10T22:35:45Z</published>
+<updated>2023-01-10T22:42:25Z</updated>
+<title type="text">small changes in dwm</title>
+<link rel="alternate" type="text/html" href="commit/9340ebf600e354062c8265fbd87f23fc48ce6f50.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 9340ebf600e354062c8265fbd87f23fc48ce6f50
+parent 2ed299eced37e336cef8ce320795df15ef0bf573
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:35:45 +0100
+
+small changes in dwm
+
+</content>
+</entry>
+<entry>
+<id>14bd55ead16da6249565689908265508aed652ba</id>
+<published>2023-01-10T22:35:45Z</published>
+<updated>2023-01-10T22:36:00Z</updated>
+<title type="text">small changes in dwm</title>
+<link rel="alternate" type="text/html" href="commit/14bd55ead16da6249565689908265508aed652ba.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 14bd55ead16da6249565689908265508aed652ba
+parent 2ed299eced37e336cef8ce320795df15ef0bf573
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:35:45 +0100
+
+small changes in dwm
+
+</content>
+</entry>
+<entry>
+<id>2ed299eced37e336cef8ce320795df15ef0bf573</id>
+<published>2023-01-10T22:35:30Z</published>
+<updated>2023-01-10T22:36:00Z</updated>
+<title type="text">added setup for second screen</title>
+<link rel="alternate" type="text/html" href="commit/2ed299eced37e336cef8ce320795df15ef0bf573.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 2ed299eced37e336cef8ce320795df15ef0bf573
+parent f71c70b47af36559bdab99d802245692c3d72f14
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:35:30 +0100
+
+added setup for second screen
+
+</content>
+</entry>
+<entry>
+<id>f71c70b47af36559bdab99d802245692c3d72f14</id>
+<published>2023-01-10T22:35:00Z</published>
+<updated>2023-01-10T22:35:57Z</updated>
+<title type="text">dwmbar made cleaner</title>
+<link rel="alternate" type="text/html" href="commit/f71c70b47af36559bdab99d802245692c3d72f14.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit f71c70b47af36559bdab99d802245692c3d72f14
+parent 786ee1929b6dc4a7f185854b5af84b27c1fc5280
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:35:00 +0100
+
+dwmbar made cleaner
+
+</content>
+</entry>
+<entry>
+<id>786ee1929b6dc4a7f185854b5af84b27c1fc5280</id>
+<published>2023-01-10T22:34:25Z</published>
+<updated>2023-01-10T22:34:25Z</updated>
+<title type="text">added LG3D</title>
+<link rel="alternate" type="text/html" href="commit/786ee1929b6dc4a7f185854b5af84b27c1fc5280.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 786ee1929b6dc4a7f185854b5af84b27c1fc5280
+parent f6fc9e81be908732644d8d9d2ff301019f8e3f39
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:34:25 +0100
+
+added LG3D
+
+</content>
+</entry>
+<entry>
+<id>f6fc9e81be908732644d8d9d2ff301019f8e3f39</id>
+<published>2023-01-10T22:34:00Z</published>
+<updated>2023-01-10T22:34:00Z</updated>
+<title type="text">picom jonaburg configured</title>
+<link rel="alternate" type="text/html" href="commit/f6fc9e81be908732644d8d9d2ff301019f8e3f39.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit f6fc9e81be908732644d8d9d2ff301019f8e3f39
+parent 00d99b5778f872cdc69f7541ea0ad73da305e07a
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 10 Jan 2023 23:34:00 +0100
+
+picom jonaburg configured
+
+</content>
+</entry>
+<entry>
+<id>00d99b5778f872cdc69f7541ea0ad73da305e07a</id>
+<published>2023-01-02T23:32:36Z</published>
+<updated>2023-01-02T23:32:36Z</updated>
+<title type="text">started cleaning plugins up</title>
+<link rel="alternate" type="text/html" href="commit/00d99b5778f872cdc69f7541ea0ad73da305e07a.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 00d99b5778f872cdc69f7541ea0ad73da305e07a
+parent 4a4333dca0432a18e601ae268310208a0fd8f43a
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue,  3 Jan 2023 00:32:36 +0100
+
+started cleaning plugins up
+
+</content>
+</entry>
+<entry>
+<id>4a4333dca0432a18e601ae268310208a0fd8f43a</id>
+<published>2023-01-02T23:31:41Z</published>
+<updated>2023-01-02T23:31:41Z</updated>
+<title type="text">fixed automatic wrapper log remover</title>
+<link rel="alternate" type="text/html" href="commit/4a4333dca0432a18e601ae268310208a0fd8f43a.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 4a4333dca0432a18e601ae268310208a0fd8f43a
+parent 8c90dbc22f160449c55ea5bc25e0479058a29612
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue,  3 Jan 2023 00:31:41 +0100
+
+fixed automatic wrapper log remover
+
+</content>
+</entry>
+<entry>
+<id>8c90dbc22f160449c55ea5bc25e0479058a29612</id>
+<published>2023-01-02T23:31:07Z</published>
+<updated>2023-01-02T23:31:07Z</updated>
+<title type="text">added tag left-right cycling and moving clients to left-right tags</title>
+<link rel="alternate" type="text/html" href="commit/8c90dbc22f160449c55ea5bc25e0479058a29612.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 8c90dbc22f160449c55ea5bc25e0479058a29612
+parent 2f3eb06efa67da4a3d08d8b36ac80cfb5b1d0fb9
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue,  3 Jan 2023 00:31:07 +0100
+
+added tag left-right cycling and moving clients to left-right tags
+
+</content>
+</entry>
+<entry>
+<id>2f3eb06efa67da4a3d08d8b36ac80cfb5b1d0fb9</id>
+<published>2022-12-31T18:42:07Z</published>
+<updated>2022-12-31T18:42:07Z</updated>
+<title type="text">removed discord transparency</title>
+<link rel="alternate" type="text/html" href="commit/2f3eb06efa67da4a3d08d8b36ac80cfb5b1d0fb9.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 2f3eb06efa67da4a3d08d8b36ac80cfb5b1d0fb9
+parent 3d0f91194e793cd0e14b2f7af8739a68deb75b23
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Sat, 31 Dec 2022 19:42:07 +0100
+
+removed discord transparency
+
+</content>
+</entry>
+<entry>
+<id>3d0f91194e793cd0e14b2f7af8739a68deb75b23</id>
+<published>2022-12-30T07:10:00Z</published>
+<updated>2022-12-30T07:10:00Z</updated>
+<title type="text">jetbrans commit</title>
+<link rel="alternate" type="text/html" href="commit/3d0f91194e793cd0e14b2f7af8739a68deb75b23.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3d0f91194e793cd0e14b2f7af8739a68deb75b23
+parent bb2ab87df2e8d508b7bf5bb6bb37782f79434597
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 30 Dec 2022 08:10:00 +0100
+
+jetbrans commit
+
+</content>
+</entry>
+<entry>
+<id>bb2ab87df2e8d508b7bf5bb6bb37782f79434597</id>
+<published>2022-12-30T07:08:02Z</published>
+<updated>2022-12-30T07:08:02Z</updated>
+<title type="text">added per-program opacitiy</title>
+<link rel="alternate" type="text/html" href="commit/bb2ab87df2e8d508b7bf5bb6bb37782f79434597.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit bb2ab87df2e8d508b7bf5bb6bb37782f79434597
+parent fc291c538ce0efb09a45b07061a6e2f308bf412c
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 30 Dec 2022 08:08:02 +0100
+
+added per-program opacitiy
+
+</content>
+</entry>
+<entry>
+<id>fc291c538ce0efb09a45b07061a6e2f308bf412c</id>
+<published>2022-12-30T07:07:32Z</published>
+<updated>2022-12-30T07:07:32Z</updated>
+<title type="text">added more looks to dwmbar</title>
+<link rel="alternate" type="text/html" href="commit/fc291c538ce0efb09a45b07061a6e2f308bf412c.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit fc291c538ce0efb09a45b07061a6e2f308bf412c
+parent d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 30 Dec 2022 08:07:32 +0100
+
+added more looks to dwmbar
+
+</content>
+</entry>
+<entry>
+<id>d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba</id>
+<published>2022-12-29T23:14:28Z</published>
+<updated>2022-12-29T23:14:28Z</updated>
+<title type="text">Merge pull request #2 from driverag22/gaps</title>
+<link rel="alternate" type="text/html" href="commit/d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba
+parent 6cdba6b6e3322dccf401b4001ebb3c3a1b845d71
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Fri, 30 Dec 2022 00:14:28 +0100
+
+Merge pull request #2 from driverag22/gaps
+
+Gaps
+</content>
+</entry>
+<entry>
+<id>ede74ac2dcc7e02ec1431a5215e365f41a49b38b</id>
+<published>2022-12-29T23:11:48Z</published>
+<updated>2022-12-29T23:12:09Z</updated>
+<title type="text">patched dwm with gaps</title>
+<link rel="alternate" type="text/html" href="commit/ede74ac2dcc7e02ec1431a5215e365f41a49b38b.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit ede74ac2dcc7e02ec1431a5215e365f41a49b38b
+parent d2fe7edc9bad2fc91a76df3028dc33339526bad6
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 30 Dec 2022 00:11:48 +0100
+
+patched dwm with gaps
+
+</content>
+</entry>
+<entry>
+<id>d2fe7edc9bad2fc91a76df3028dc33339526bad6</id>
+<published>2022-12-29T23:10:49Z</published>
+<updated>2022-12-29T23:12:00Z</updated>
+<title type="text">added and implemented picom</title>
+<link rel="alternate" type="text/html" href="commit/d2fe7edc9bad2fc91a76df3028dc33339526bad6.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit d2fe7edc9bad2fc91a76df3028dc33339526bad6
+parent 0e8d467a9bb7eb01d7e1faa9b48f3f7ce3971049
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Fri, 30 Dec 2022 00:10:49 +0100
+
+added and implemented picom
+
+</content>
+</entry>
+<entry>
+<id>6cdba6b6e3322dccf401b4001ebb3c3a1b845d71</id>
+<published>2022-12-29T22:41:42Z</published>
+<updated>2022-12-29T22:41:42Z</updated>
+<title type="text">change to dwmbar</title>
+<link rel="alternate" type="text/html" href="commit/6cdba6b6e3322dccf401b4001ebb3c3a1b845d71.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 6cdba6b6e3322dccf401b4001ebb3c3a1b845d71
+parent 0e8d467a9bb7eb01d7e1faa9b48f3f7ce3971049
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 23:41:42 +0100
+
+change to dwmbar
+
+</content>
+</entry>
+<entry>
+<id>0e8d467a9bb7eb01d7e1faa9b48f3f7ce3971049</id>
+<published>2022-12-29T00:44:52Z</published>
+<updated>2022-12-29T00:45:12Z</updated>
+<title type="text">volumen keybindings</title>
+<link rel="alternate" type="text/html" href="commit/0e8d467a9bb7eb01d7e1faa9b48f3f7ce3971049.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 0e8d467a9bb7eb01d7e1faa9b48f3f7ce3971049
+parent 48a38025e57d4474a33407c2b781a19876e1191d
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:44:52 +0100
+
+volumen keybindings
+
+</content>
+</entry>
+<entry>
+<id>48a38025e57d4474a33407c2b781a19876e1191d</id>
+<published>2022-12-29T00:44:11Z</published>
+<updated>2022-12-29T00:45:12Z</updated>
+<title type="text">removed overwritting keybinding</title>
+<link rel="alternate" type="text/html" href="commit/48a38025e57d4474a33407c2b781a19876e1191d.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 48a38025e57d4474a33407c2b781a19876e1191d
+parent c48d8609ea3a1e192892de0bc329e207cd4dd6b9
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:44:11 +0100
+
+removed overwritting keybinding
+
+</content>
+</entry>
+<entry>
+<id>c48d8609ea3a1e192892de0bc329e207cd4dd6b9</id>
+<published>2022-12-29T00:43:41Z</published>
+<updated>2022-12-29T00:45:12Z</updated>
+<title type="text">changed colorscheme</title>
+<link rel="alternate" type="text/html" href="commit/c48d8609ea3a1e192892de0bc329e207cd4dd6b9.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit c48d8609ea3a1e192892de0bc329e207cd4dd6b9
+parent 3157fdffdaa46a32db0dff13968676a2b011640e
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:43:41 +0100
+
+changed colorscheme
+
+</content>
+</entry>
+<entry>
+<id>3157fdffdaa46a32db0dff13968676a2b011640e</id>
+<published>2022-12-29T00:43:11Z</published>
+<updated>2022-12-29T00:45:12Z</updated>
+<title type="text">jetbrains stuff</title>
+<link rel="alternate" type="text/html" href="commit/3157fdffdaa46a32db0dff13968676a2b011640e.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3157fdffdaa46a32db0dff13968676a2b011640e
+parent 127a065b159303dd2ac017c4fe2765ed45f84b5a
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:43:11 +0100
+
+jetbrains stuff
+
+</content>
+</entry>
+<entry>
+<id>127a065b159303dd2ac017c4fe2765ed45f84b5a</id>
+<published>2022-12-29T00:42:10Z</published>
+<updated>2022-12-29T00:45:12Z</updated>
+<title type="text">make speakers start up muted</title>
+<link rel="alternate" type="text/html" href="commit/127a065b159303dd2ac017c4fe2765ed45f84b5a.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 127a065b159303dd2ac017c4fe2765ed45f84b5a
+parent 1970a8ea52f40dd46338104902625086a8ef7613
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:42:10 +0100
+
+make speakers start up muted
+
+</content>
+</entry>
+<entry>
+<id>1970a8ea52f40dd46338104902625086a8ef7613</id>
+<published>2022-12-29T00:37:55Z</published>
+<updated>2022-12-29T00:45:06Z</updated>
+<title type="text">added volume change to bar</title>
+<link rel="alternate" type="text/html" href="commit/1970a8ea52f40dd46338104902625086a8ef7613.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 1970a8ea52f40dd46338104902625086a8ef7613
+parent 222c287455f4f4c44f3f94527777b9328ef53472
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Thu, 29 Dec 2022 01:37:55 +0100
+
+added volume change to bar
+
+added volume keybindings
+
+</content>
+</entry>
+<entry>
+<id>222c287455f4f4c44f3f94527777b9328ef53472</id>
+<published>2022-12-28T22:37:04Z</published>
+<updated>2022-12-28T22:37:04Z</updated>
+<title type="text">added up and down stream for wifi, change spotify slightly</title>
+<link rel="alternate" type="text/html" href="commit/222c287455f4f4c44f3f94527777b9328ef53472.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 222c287455f4f4c44f3f94527777b9328ef53472
+parent 5bd5304eea303bfa362c3a070c368c49a5c99c87
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 23:37:04 +0100
+
+added up and down stream for wifi, change spotify slightly
+
+</content>
+</entry>
+<entry>
+<id>5bd5304eea303bfa362c3a070c368c49a5c99c87</id>
+<published>2022-12-28T22:36:35Z</published>
+<updated>2022-12-28T22:36:35Z</updated>
+<title type="text">added simpler status bar</title>
+<link rel="alternate" type="text/html" href="commit/5bd5304eea303bfa362c3a070c368c49a5c99c87.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 5bd5304eea303bfa362c3a070c368c49a5c99c87
+parent 46a7608e31bfd1f005c91cc75c768253b5e347ab
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 23:36:35 +0100
+
+added simpler status bar
+
+</content>
+</entry>
+<entry>
+<id>46a7608e31bfd1f005c91cc75c768253b5e347ab</id>
+<published>2022-12-28T22:36:06Z</published>
+<updated>2022-12-28T22:36:06Z</updated>
+<title type="text">changed colors slightly</title>
+<link rel="alternate" type="text/html" href="commit/46a7608e31bfd1f005c91cc75c768253b5e347ab.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 46a7608e31bfd1f005c91cc75c768253b5e347ab
+parent a340340ca202b9f00589ca06eea861aadd3702f1
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 23:36:06 +0100
+
+changed colors slightly
+
+</content>
+</entry>
+<entry>
+<id>a340340ca202b9f00589ca06eea861aadd3702f1</id>
+<published>2022-12-27T23:29:25Z</published>
+<updated>2022-12-27T23:29:25Z</updated>
+<title type="text">cleane dup .zshrc</title>
+<link rel="alternate" type="text/html" href="commit/a340340ca202b9f00589ca06eea861aadd3702f1.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit a340340ca202b9f00589ca06eea861aadd3702f1
+parent 93a5618a6867499130d1ac4f0fe46d4d236de497
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:29:25 +0100
+
+cleane dup .zshrc
+
+</content>
+</entry>
+<entry>
+<id>93a5618a6867499130d1ac4f0fe46d4d236de497</id>
+<published>2022-12-27T23:28:05Z</published>
+<updated>2022-12-27T23:28:05Z</updated>
+<title type="text">webstorm random changes</title>
+<link rel="alternate" type="text/html" href="commit/93a5618a6867499130d1ac4f0fe46d4d236de497.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 93a5618a6867499130d1ac4f0fe46d4d236de497
+parent 005f34e855b8522c1488e43632b32dcb3e418f0d
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:28:05 +0100
+
+webstorm random changes
+
+</content>
+</entry>
+<entry>
+<id>005f34e855b8522c1488e43632b32dcb3e418f0d</id>
+<published>2022-12-27T23:27:07Z</published>
+<updated>2022-12-27T23:27:07Z</updated>
+<title type="text">changed white of Dracula colorscheme</title>
+<link rel="alternate" type="text/html" href="commit/005f34e855b8522c1488e43632b32dcb3e418f0d.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 005f34e855b8522c1488e43632b32dcb3e418f0d
+parent b78d2e5846debfa02bfb99e3aea4f6f76a0b37d7
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:27:07 +0100
+
+changed white of Dracula colorscheme
+
+</content>
+</entry>
+<entry>
+<id>b78d2e5846debfa02bfb99e3aea4f6f76a0b37d7</id>
+<published>2022-12-27T23:26:44Z</published>
+<updated>2022-12-27T23:26:44Z</updated>
+<title type="text">zshrc slightly touched</title>
+<link rel="alternate" type="text/html" href="commit/b78d2e5846debfa02bfb99e3aea4f6f76a0b37d7.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit b78d2e5846debfa02bfb99e3aea4f6f76a0b37d7
+parent cdb5e57f5102ed689799a8d1f762492c2beaaf68
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:26:44 +0100
+
+zshrc slightly touched
+
+</content>
+</entry>
+<entry>
+<id>cdb5e57f5102ed689799a8d1f762492c2beaaf68</id>
+<published>2022-12-27T23:26:21Z</published>
+<updated>2022-12-27T23:26:21Z</updated>
+<title type="text">cleaned up xprofile</title>
+<link rel="alternate" type="text/html" href="commit/cdb5e57f5102ed689799a8d1f762492c2beaaf68.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit cdb5e57f5102ed689799a8d1f762492c2beaaf68
+parent 80668f3d8a97458e305ba0d5415242a2c9a26af1
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:26:21 +0100
+
+cleaned up xprofile
+
+</content>
+</entry>
+<entry>
+<id>80668f3d8a97458e305ba0d5415242a2c9a26af1</id>
+<published>2022-12-27T23:25:52Z</published>
+<updated>2022-12-27T23:25:52Z</updated>
+<title type="text">added play and pause keybindings</title>
+<link rel="alternate" type="text/html" href="commit/80668f3d8a97458e305ba0d5415242a2c9a26af1.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 80668f3d8a97458e305ba0d5415242a2c9a26af1
+parent db7481e1a269479166930f2a45d1db7270c048c6
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:25:52 +0100
+
+added play and pause keybindings
+
+</content>
+</entry>
+<entry>
+<id>db7481e1a269479166930f2a45d1db7270c048c6</id>
+<published>2022-12-27T23:25:11Z</published>
+<updated>2022-12-27T23:25:11Z</updated>
+<title type="text">changed order</title>
+<link rel="alternate" type="text/html" href="commit/db7481e1a269479166930f2a45d1db7270c048c6.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit db7481e1a269479166930f2a45d1db7270c048c6
+parent 060dbd9eb63873cdfc9c898a997cc724045a6bcf
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:25:11 +0100
+
+changed order
+
+</content>
+</entry>
+<entry>
+<id>060dbd9eb63873cdfc9c898a997cc724045a6bcf</id>
+<published>2022-12-27T23:24:54Z</published>
+<updated>2022-12-27T23:24:54Z</updated>
+<title type="text">added play and pause icons</title>
+<link rel="alternate" type="text/html" href="commit/060dbd9eb63873cdfc9c898a997cc724045a6bcf.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 060dbd9eb63873cdfc9c898a997cc724045a6bcf
+parent 505a3e577a4e7330cb969013262a24d14249faf7
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:24:54 +0100
+
+added play and pause icons
+
+</content>
+</entry>
+<entry>
+<id>505a3e577a4e7330cb969013262a24d14249faf7</id>
+<published>2022-12-27T23:24:39Z</published>
+<updated>2022-12-27T23:24:39Z</updated>
+<title type="text">changed battery appearance slightly</title>
+<link rel="alternate" type="text/html" href="commit/505a3e577a4e7330cb969013262a24d14249faf7.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 505a3e577a4e7330cb969013262a24d14249faf7
+parent 0f9b3c75f1ce3e13c49bf36eaf2786c49c558d42
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Wed, 28 Dec 2022 00:24:39 +0100
+
+changed battery appearance slightly
+
+</content>
+</entry>
+<entry>
+<id>0f9b3c75f1ce3e13c49bf36eaf2786c49c558d42</id>
+<published>2022-12-27T20:25:11Z</published>
+<updated>2022-12-27T20:25:11Z</updated>
+<title type="text">added spotify, changed structure for ease of debugging, small changes</title>
+<link rel="alternate" type="text/html" href="commit/0f9b3c75f1ce3e13c49bf36eaf2786c49c558d42.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 0f9b3c75f1ce3e13c49bf36eaf2786c49c558d42
+parent 8b4ad9924d0d1e0545845cedb9644f1bff8cfff9
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 21:25:11 +0100
+
+added spotify, changed structure for ease of debugging, small changes
+
+</content>
+</entry>
+<entry>
+<id>8b4ad9924d0d1e0545845cedb9644f1bff8cfff9</id>
+<published>2022-12-27T19:18:51Z</published>
+<updated>2022-12-27T19:18:51Z</updated>
+<title type="text">changed wifi in dwmBar</title>
+<link rel="alternate" type="text/html" href="commit/8b4ad9924d0d1e0545845cedb9644f1bff8cfff9.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 8b4ad9924d0d1e0545845cedb9644f1bff8cfff9
+parent aea42a7c7eb5f327514bd84404ec86fb09c38b4f
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 20:18:51 +0100
+
+changed wifi in dwmBar
+
+</content>
+</entry>
+<entry>
+<id>aea42a7c7eb5f327514bd84404ec86fb09c38b4f</id>
+<published>2022-12-27T18:53:51Z</published>
+<updated>2022-12-27T18:53:51Z</updated>
+<title type="text">fixed dwm backlight buttons</title>
+<link rel="alternate" type="text/html" href="commit/aea42a7c7eb5f327514bd84404ec86fb09c38b4f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit aea42a7c7eb5f327514bd84404ec86fb09c38b4f
+parent a6293a1baff5c44fb51dcfbd4a34a7bfedbe273d
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 19:53:51 +0100
+
+fixed dwm backlight buttons
+
+</content>
+</entry>
+<entry>
+<id>a6293a1baff5c44fb51dcfbd4a34a7bfedbe273d</id>
+<published>2022-12-27T18:53:20Z</published>
+<updated>2022-12-27T18:53:20Z</updated>
+<title type="text">fixed light control buttons</title>
+<link rel="alternate" type="text/html" href="commit/a6293a1baff5c44fb51dcfbd4a34a7bfedbe273d.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit a6293a1baff5c44fb51dcfbd4a34a7bfedbe273d
+parent 3250ab4db49d8ac098c9dbf17df6529a2eccecc5
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 19:53:20 +0100
+
+fixed light control buttons
+
+</content>
+</entry>
+<entry>
+<id>3250ab4db49d8ac098c9dbf17df6529a2eccecc5</id>
+<published>2022-12-27T18:53:01Z</published>
+<updated>2022-12-27T18:53:01Z</updated>
+<title type="text">changed dwm bar slightly</title>
+<link rel="alternate" type="text/html" href="commit/3250ab4db49d8ac098c9dbf17df6529a2eccecc5.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3250ab4db49d8ac098c9dbf17df6529a2eccecc5
+parent e3883be21d8c043824e13078c087bd3ec4476bd9
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 19:53:01 +0100
+
+changed dwm bar slightly
+
+</content>
+</entry>
+<entry>
+<id>e3883be21d8c043824e13078c087bd3ec4476bd9</id>
+<published>2022-12-27T18:52:17Z</published>
+<updated>2022-12-27T18:52:17Z</updated>
+<title type="text">cleaned up xprofile</title>
+<link rel="alternate" type="text/html" href="commit/e3883be21d8c043824e13078c087bd3ec4476bd9.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit e3883be21d8c043824e13078c087bd3ec4476bd9
+parent b987d9071d530cb82711b413cd49f0a3b782c674
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 19:52:17 +0100
+
+cleaned up xprofile
+
+</content>
+</entry>
+<entry>
+<id>b987d9071d530cb82711b413cd49f0a3b782c674</id>
+<published>2022-12-27T18:51:33Z</published>
+<updated>2022-12-27T18:51:33Z</updated>
+<title type="text">changed zsh and alacritty themes</title>
+<link rel="alternate" type="text/html" href="commit/b987d9071d530cb82711b413cd49f0a3b782c674.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit b987d9071d530cb82711b413cd49f0a3b782c674
+parent 390690b726f47b48d631b2c7c46984d9b969ae5b
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 19:51:33 +0100
+
+changed zsh and alacritty themes
+
+</content>
+</entry>
+<entry>
+<id>390690b726f47b48d631b2c7c46984d9b969ae5b</id>
+<published>2022-12-27T17:16:03Z</published>
+<updated>2022-12-27T17:16:03Z</updated>
+<title type="text">added config alias and fixed misbehaving JDK programs (IDEs)</title>
+<link rel="alternate" type="text/html" href="commit/390690b726f47b48d631b2c7c46984d9b969ae5b.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 390690b726f47b48d631b2c7c46984d9b969ae5b
+parent 0e8f212ee2693465c429a818a183b2a5765b9ebf
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 18:16:03 +0100
+
+added config alias and fixed misbehaving JDK programs (IDEs)
+
+</content>
+</entry>
+<entry>
+<id>0e8f212ee2693465c429a818a183b2a5765b9ebf</id>
+<published>2022-12-27T16:16:28Z</published>
+<updated>2022-12-27T16:16:28Z</updated>
+<title type="text">Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles Merging to local</title>
+<link rel="alternate" type="text/html" href="commit/0e8f212ee2693465c429a818a183b2a5765b9ebf.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 0e8f212ee2693465c429a818a183b2a5765b9ebf
+parent dc01a6bd55a46cb2014e34d501ea4a5bd015e530
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 17:16:28 +0100
+
+Merge branch &#39;main&#39; of github.com:driverag22/.dotfiles
+Merging to local
+
+</content>
+</entry>
+<entry>
+<id>dc01a6bd55a46cb2014e34d501ea4a5bd015e530</id>
+<published>2022-12-27T16:14:37Z</published>
+<updated>2022-12-27T16:14:37Z</updated>
+<title type="text">small changes to dwm</title>
+<link rel="alternate" type="text/html" href="commit/dc01a6bd55a46cb2014e34d501ea4a5bd015e530.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit dc01a6bd55a46cb2014e34d501ea4a5bd015e530
+parent 0bd3621b045fd911fe934813017fd4695726650c
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 17:14:37 +0100
+
+small changes to dwm
+
+</content>
+</entry>
+<entry>
+<id>b2d2ec3300562375b9b5731ccbc9015acd383a21</id>
+<published>2022-12-27T16:14:06Z</published>
+<updated>2022-12-27T16:14:06Z</updated>
+<title type="text">Delete README.md</title>
+<link rel="alternate" type="text/html" href="commit/b2d2ec3300562375b9b5731ccbc9015acd383a21.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit b2d2ec3300562375b9b5731ccbc9015acd383a21
+parent 0bd3621b045fd911fe934813017fd4695726650c
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Tue, 27 Dec 2022 17:14:06 +0100
+
+Delete README.md
+</content>
+</entry>
+<entry>
+<id>0bd3621b045fd911fe934813017fd4695726650c</id>
+<published>2022-12-27T16:13:31Z</published>
+<updated>2022-12-27T16:13:31Z</updated>
+<title type="text">Create README.md</title>
+<link rel="alternate" type="text/html" href="commit/0bd3621b045fd911fe934813017fd4695726650c.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit 0bd3621b045fd911fe934813017fd4695726650c
+parent 42a754422aaa2bf76d745b50b208181d1d17850c
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Tue, 27 Dec 2022 17:13:31 +0100
+
+Create README.md
+</content>
+</entry>
+<entry>
+<id>42a754422aaa2bf76d745b50b208181d1d17850c</id>
+<published>2022-12-27T16:12:57Z</published>
+<updated>2022-12-27T16:12:57Z</updated>
+<title type="text">xprofile first commit</title>
+<link rel="alternate" type="text/html" href="commit/42a754422aaa2bf76d745b50b208181d1d17850c.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 42a754422aaa2bf76d745b50b208181d1d17850c
+parent 41050646124a958326811e010cc4793be8f7c0b3
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 17:12:57 +0100
+
+xprofile first commit
+
+</content>
+</entry>
+<entry>
+<id>41050646124a958326811e010cc4793be8f7c0b3</id>
+<published>2022-12-27T16:12:20Z</published>
+<updated>2022-12-27T16:12:20Z</updated>
+<title type="text">zsh config file</title>
+<link rel="alternate" type="text/html" href="commit/41050646124a958326811e010cc4793be8f7c0b3.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 41050646124a958326811e010cc4793be8f7c0b3
+parent 2974df679c201b587c92d37edb7fb8601fc1617f
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 17:12:20 +0100
+
+zsh config file
+
+</content>
+</entry>
+<entry>
+<id>2974df679c201b587c92d37edb7fb8601fc1617f</id>
+<published>2022-12-27T16:11:19Z</published>
+<updated>2022-12-27T16:11:19Z</updated>
+<title type="text">alacritty config file</title>
+<link rel="alternate" type="text/html" href="commit/2974df679c201b587c92d37edb7fb8601fc1617f.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 2974df679c201b587c92d37edb7fb8601fc1617f
+parent 3b4c178d186b63009b4f336b71b26297e29a7c38
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Tue, 27 Dec 2022 17:11:19 +0100
+
+alacritty config file
+
+</content>
+</entry>
+<entry>
+<id>3b4c178d186b63009b4f336b71b26297e29a7c38</id>
+<published>2022-12-26T22:08:21Z</published>
+<updated>2022-12-26T22:08:21Z</updated>
+<title type="text">fixed mistype</title>
+<link rel="alternate" type="text/html" href="commit/3b4c178d186b63009b4f336b71b26297e29a7c38.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 3b4c178d186b63009b4f336b71b26297e29a7c38
+parent 3f9e45559e1114c0a67b01ac4f188f7e55f28a5e
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:08:21 +0100
+
+fixed mistype
+
+</content>
+</entry>
+<entry>
+<id>3f9e45559e1114c0a67b01ac4f188f7e55f28a5e</id>
+<published>2022-12-26T22:06:04Z</published>
+<updated>2022-12-26T22:06:04Z</updated>
+<title type="text">Merge pull request #1 from driverag22/pinkTheme</title>
+<link rel="alternate" type="text/html" href="commit/3f9e45559e1114c0a67b01ac4f188f7e55f28a5e.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit 3f9e45559e1114c0a67b01ac4f188f7e55f28a5e
+parent f976bc09ac4339f0b146e23d09034ae0accfe880
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Mon, 26 Dec 2022 23:06:04 +0100
+
+Merge pull request #1 from driverag22/pinkTheme
+
+Pink theme
+</content>
+</entry>
+<entry>
+<id>5c1e9e65f3641ee2fab11c81a42d596e00c8ade7</id>
+<published>2022-12-26T22:05:56Z</published>
+<updated>2022-12-26T22:05:56Z</updated>
+<title type="text">Merge branch &#39;main&#39; into pinkTheme</title>
+<link rel="alternate" type="text/html" href="commit/5c1e9e65f3641ee2fab11c81a42d596e00c8ade7.html" />
+<author>
+<name>Diego Rivera</name>
+<email>87645865+driverag22@users.noreply.github.com</email>
+</author>
+<content type="text">commit 5c1e9e65f3641ee2fab11c81a42d596e00c8ade7
+parent 2f57aa335a5e711f146e0d5cbdaeca35baf632f8
+Author: Diego Rivera &lt;87645865+driverag22@users.noreply.github.com&gt;
+Date:   Mon, 26 Dec 2022 23:05:56 +0100
+
+Merge branch &#39;main&#39; into pinkTheme
+</content>
+</entry>
+<entry>
+<id>f976bc09ac4339f0b146e23d09034ae0accfe880</id>
+<published>2022-12-26T22:04:59Z</published>
+<updated>2022-12-26T22:04:59Z</updated>
+<title type="text">config to inlcude pink theme</title>
+<link rel="alternate" type="text/html" href="commit/f976bc09ac4339f0b146e23d09034ae0accfe880.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit f976bc09ac4339f0b146e23d09034ae0accfe880
+parent 013630d54866e509606c22ece14581c17f9a3fef
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:04:59 +0100
+
+config to inlcude pink theme
+
+</content>
+</entry>
+<entry>
+<id>2f57aa335a5e711f146e0d5cbdaeca35baf632f8</id>
+<published>2022-12-26T22:04:07Z</published>
+<updated>2022-12-26T22:04:07Z</updated>
+<title type="text">wallpapers</title>
+<link rel="alternate" type="text/html" href="commit/2f57aa335a5e711f146e0d5cbdaeca35baf632f8.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 2f57aa335a5e711f146e0d5cbdaeca35baf632f8
+parent 8f6f4a087c05fbe2d8aa29a0a171a1df2641f387
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:04:07 +0100
+
+wallpapers
+
+</content>
+</entry>
+<entry>
+<id>8f6f4a087c05fbe2d8aa29a0a171a1df2641f387</id>
+<published>2022-12-26T22:03:54Z</published>
+<updated>2022-12-26T22:03:54Z</updated>
+<title type="text">new wallpaper</title>
+<link rel="alternate" type="text/html" href="commit/8f6f4a087c05fbe2d8aa29a0a171a1df2641f387.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 8f6f4a087c05fbe2d8aa29a0a171a1df2641f387
+parent d05b009b74614b4c831e3ea8f70b362fdece5c62
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:03:54 +0100
+
+new wallpaper
+
+</content>
+</entry>
+<entry>
+<id>d05b009b74614b4c831e3ea8f70b362fdece5c62</id>
+<published>2022-12-26T22:02:10Z</published>
+<updated>2022-12-26T22:02:10Z</updated>
+<title type="text">nice pink theme</title>
+<link rel="alternate" type="text/html" href="commit/d05b009b74614b4c831e3ea8f70b362fdece5c62.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit d05b009b74614b4c831e3ea8f70b362fdece5c62
+parent 2dc7c6536eb6c13b64ca72782669d6e57ceec257
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:02:10 +0100
+
+nice pink theme
+
+</content>
+</entry>
+<entry>
+<id>2dc7c6536eb6c13b64ca72782669d6e57ceec257</id>
+<published>2022-12-26T22:01:50Z</published>
+<updated>2022-12-26T22:01:50Z</updated>
+<title type="text">rofi and jetbrains config</title>
+<link rel="alternate" type="text/html" href="commit/2dc7c6536eb6c13b64ca72782669d6e57ceec257.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 2dc7c6536eb6c13b64ca72782669d6e57ceec257
+parent 7058375ca31161ba9c904e1a81fdad8c6597b4f8
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 23:01:50 +0100
+
+rofi and jetbrains config
+
+</content>
+</entry>
+<entry>
+<id>7058375ca31161ba9c904e1a81fdad8c6597b4f8</id>
+<published>2022-12-26T20:14:36Z</published>
+<updated>2022-12-26T20:14:36Z</updated>
+<title type="text">pink colorscheme</title>
+<link rel="alternate" type="text/html" href="commit/7058375ca31161ba9c904e1a81fdad8c6597b4f8.html" />
+<author>
+<name>diego</name>
+<email>driverag22@gmail.com</email>
+</author>
+<content type="text">commit 7058375ca31161ba9c904e1a81fdad8c6597b4f8
+parent 013630d54866e509606c22ece14581c17f9a3fef
+Author: diego &lt;driverag22@gmail.com&gt;
+Date:   Mon, 26 Dec 2022 21:14:36 +0100
+
+pink colorscheme
+
+</content>
+</entry>
+</feed>

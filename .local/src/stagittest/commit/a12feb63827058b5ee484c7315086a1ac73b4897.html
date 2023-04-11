@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fixed lockscreen (shift+mod+XK_l) keybinding - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/a12feb63827058b5ee484c7315086a1ac73b4897.html">a12feb63827058b5ee484c7315086a1ac73b4897</a>
+<b>parent</b> <a href="../commit/f6c2749b555c28b49103b57e471606e6e14e2554.html">f6c2749b555c28b49103b57e471606e6e14e2554</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Fri, 27 Jan 2023 18:32:32 +0100
+
+fixed lockscreen (shift+mod+XK_l) keybinding
+
+<b>Diffstat:</b>
+<table><tr><td class="A">A</td><td><a href="#h0">.local/.macros/keyBindings/lock.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/src/dwm/config.h</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/src/dwm/dwm</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.local/src/dwm/dwm.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+</table></pre><pre>4 files changed, 3 insertions(+), 1 deletion(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/keyBindings/lock.sh.html">.local/.macros/keyBindings/lock.sh</a> b/<a href="../file/.local/.macros/keyBindings/lock.sh.html">.local/.macros/keyBindings/lock.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -0,0 +1,2 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="i">+#!/bin/bash
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+betterlockscreen -l
+</a><b>diff --git a/<a id="h1" href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a> b/<a href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -70,7 +70,7 @@ static const char *schoolDropbox[] = {&quot;/home/diego/.local/.macros/keyBindings/q1
+</a> static const char *notion[] = {&quot;/home/diego/.local/.macros/keyBindings/notion.sh&quot;, NULL};
+ static const char *todos[] = {&quot;alacritty&quot;, &quot;-e&quot;, &quot;/usr/bin/nvim&quot;, &quot;/home/diego/vimwiki/TODOs.wiki&quot;, NULL};
+ 
+<a href="#h1-0-3" id="h1-0-3" class="d">-static const char *lockscreen[]  = { &quot;betterlockscreen&quot;, &quot;-l&quot; };
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+static const char *lockscreen[]  = { &quot;/home/diego/.local/.macros/keyBindings/lock.sh&quot;, NULL };
+</a> static const char *powermenu[]  = { &quot;/home/diego/.local/.macros/keyBindings/powermenu.sh&quot;, NULL };
+ 
+ static const char *brightnessUp[] = { &quot;light&quot;, &quot;-A&quot;, &quot;5&quot;, NULL};
+<b>diff --git a/<a id="h2" href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a> b/<a href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h3" href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a> b/<a href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a></b>
+Binary files differ.
+</pre>
+</div>
+</body>
+</html>

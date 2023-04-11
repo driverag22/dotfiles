@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>drw.c - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../"><img src="../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../log.html">Log</a> | <a href="../../../../files.html">Files</a> | <a href="../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> drw.c (11077B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> /* See LICENSE file for copyright and license details. */
+<a href="#l2" class="line" id="l2">      2</a> #include &lt;stdio.h&gt;
+<a href="#l3" class="line" id="l3">      3</a> #include &lt;stdlib.h&gt;
+<a href="#l4" class="line" id="l4">      4</a> #include &lt;string.h&gt;
+<a href="#l5" class="line" id="l5">      5</a> #include &lt;X11/Xlib.h&gt;
+<a href="#l6" class="line" id="l6">      6</a> #include &lt;X11/Xft/Xft.h&gt;
+<a href="#l7" class="line" id="l7">      7</a> 
+<a href="#l8" class="line" id="l8">      8</a> #include &quot;drw.h&quot;
+<a href="#l9" class="line" id="l9">      9</a> #include &quot;util.h&quot;
+<a href="#l10" class="line" id="l10">     10</a> 
+<a href="#l11" class="line" id="l11">     11</a> #define UTF_INVALID 0xFFFD
+<a href="#l12" class="line" id="l12">     12</a> #define UTF_SIZ     4
+<a href="#l13" class="line" id="l13">     13</a> 
+<a href="#l14" class="line" id="l14">     14</a> static const unsigned char utfbyte[UTF_SIZ + 1] = {0x80,    0, 0xC0, 0xE0, 0xF0};
+<a href="#l15" class="line" id="l15">     15</a> static const unsigned char utfmask[UTF_SIZ + 1] = {0xC0, 0x80, 0xE0, 0xF0, 0xF8};
+<a href="#l16" class="line" id="l16">     16</a> static const long utfmin[UTF_SIZ + 1] = {       0,    0,  0x80,  0x800,  0x10000};
+<a href="#l17" class="line" id="l17">     17</a> static const long utfmax[UTF_SIZ + 1] = {0x10FFFF, 0x7F, 0x7FF, 0xFFFF, 0x10FFFF};
+<a href="#l18" class="line" id="l18">     18</a> 
+<a href="#l19" class="line" id="l19">     19</a> static long
+<a href="#l20" class="line" id="l20">     20</a> utf8decodebyte(const char c, size_t *i)
+<a href="#l21" class="line" id="l21">     21</a> {
+<a href="#l22" class="line" id="l22">     22</a> 	for (*i = 0; *i &lt; (UTF_SIZ + 1); ++(*i))
+<a href="#l23" class="line" id="l23">     23</a> 		if (((unsigned char)c &amp; utfmask[*i]) == utfbyte[*i])
+<a href="#l24" class="line" id="l24">     24</a> 			return (unsigned char)c &amp; ~utfmask[*i];
+<a href="#l25" class="line" id="l25">     25</a> 	return 0;
+<a href="#l26" class="line" id="l26">     26</a> }
+<a href="#l27" class="line" id="l27">     27</a> 
+<a href="#l28" class="line" id="l28">     28</a> static size_t
+<a href="#l29" class="line" id="l29">     29</a> utf8validate(long *u, size_t i)
+<a href="#l30" class="line" id="l30">     30</a> {
+<a href="#l31" class="line" id="l31">     31</a> 	if (!BETWEEN(*u, utfmin[i], utfmax[i]) || BETWEEN(*u, 0xD800, 0xDFFF))
+<a href="#l32" class="line" id="l32">     32</a> 		*u = UTF_INVALID;
+<a href="#l33" class="line" id="l33">     33</a> 	for (i = 1; *u &gt; utfmax[i]; ++i)
+<a href="#l34" class="line" id="l34">     34</a> 		;
+<a href="#l35" class="line" id="l35">     35</a> 	return i;
+<a href="#l36" class="line" id="l36">     36</a> }
+<a href="#l37" class="line" id="l37">     37</a> 
+<a href="#l38" class="line" id="l38">     38</a> static size_t
+<a href="#l39" class="line" id="l39">     39</a> utf8decode(const char *c, long *u, size_t clen)
+<a href="#l40" class="line" id="l40">     40</a> {
+<a href="#l41" class="line" id="l41">     41</a> 	size_t i, j, len, type;
+<a href="#l42" class="line" id="l42">     42</a> 	long udecoded;
+<a href="#l43" class="line" id="l43">     43</a> 
+<a href="#l44" class="line" id="l44">     44</a> 	*u = UTF_INVALID;
+<a href="#l45" class="line" id="l45">     45</a> 	if (!clen)
+<a href="#l46" class="line" id="l46">     46</a> 		return 0;
+<a href="#l47" class="line" id="l47">     47</a> 	udecoded = utf8decodebyte(c[0], &amp;len);
+<a href="#l48" class="line" id="l48">     48</a> 	if (!BETWEEN(len, 1, UTF_SIZ))
+<a href="#l49" class="line" id="l49">     49</a> 		return 1;
+<a href="#l50" class="line" id="l50">     50</a> 	for (i = 1, j = 1; i &lt; clen &amp;&amp; j &lt; len; ++i, ++j) {
+<a href="#l51" class="line" id="l51">     51</a> 		udecoded = (udecoded &lt;&lt; 6) | utf8decodebyte(c[i], &amp;type);
+<a href="#l52" class="line" id="l52">     52</a> 		if (type)
+<a href="#l53" class="line" id="l53">     53</a> 			return j;
+<a href="#l54" class="line" id="l54">     54</a> 	}
+<a href="#l55" class="line" id="l55">     55</a> 	if (j &lt; len)
+<a href="#l56" class="line" id="l56">     56</a> 		return 0;
+<a href="#l57" class="line" id="l57">     57</a> 	*u = udecoded;
+<a href="#l58" class="line" id="l58">     58</a> 	utf8validate(u, len);
+<a href="#l59" class="line" id="l59">     59</a> 
+<a href="#l60" class="line" id="l60">     60</a> 	return len;
+<a href="#l61" class="line" id="l61">     61</a> }
+<a href="#l62" class="line" id="l62">     62</a> 
+<a href="#l63" class="line" id="l63">     63</a> Drw *
+<a href="#l64" class="line" id="l64">     64</a> drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)
+<a href="#l65" class="line" id="l65">     65</a> {
+<a href="#l66" class="line" id="l66">     66</a> 	Drw *drw = ecalloc(1, sizeof(Drw));
+<a href="#l67" class="line" id="l67">     67</a> 
+<a href="#l68" class="line" id="l68">     68</a> 	drw-&gt;dpy = dpy;
+<a href="#l69" class="line" id="l69">     69</a> 	drw-&gt;screen = screen;
+<a href="#l70" class="line" id="l70">     70</a> 	drw-&gt;root = root;
+<a href="#l71" class="line" id="l71">     71</a> 	drw-&gt;w = w;
+<a href="#l72" class="line" id="l72">     72</a> 	drw-&gt;h = h;
+<a href="#l73" class="line" id="l73">     73</a> 	drw-&gt;drawable = XCreatePixmap(dpy, root, w, h, DefaultDepth(dpy, screen));
+<a href="#l74" class="line" id="l74">     74</a> 	drw-&gt;gc = XCreateGC(dpy, root, 0, NULL);
+<a href="#l75" class="line" id="l75">     75</a> 	XSetLineAttributes(dpy, drw-&gt;gc, 1, LineSolid, CapButt, JoinMiter);
+<a href="#l76" class="line" id="l76">     76</a> 
+<a href="#l77" class="line" id="l77">     77</a> 	return drw;
+<a href="#l78" class="line" id="l78">     78</a> }
+<a href="#l79" class="line" id="l79">     79</a> 
+<a href="#l80" class="line" id="l80">     80</a> void
+<a href="#l81" class="line" id="l81">     81</a> drw_resize(Drw *drw, unsigned int w, unsigned int h)
+<a href="#l82" class="line" id="l82">     82</a> {
+<a href="#l83" class="line" id="l83">     83</a> 	if (!drw)
+<a href="#l84" class="line" id="l84">     84</a> 		return;
+<a href="#l85" class="line" id="l85">     85</a> 
+<a href="#l86" class="line" id="l86">     86</a> 	drw-&gt;w = w;
+<a href="#l87" class="line" id="l87">     87</a> 	drw-&gt;h = h;
+<a href="#l88" class="line" id="l88">     88</a> 	if (drw-&gt;drawable)
+<a href="#l89" class="line" id="l89">     89</a> 		XFreePixmap(drw-&gt;dpy, drw-&gt;drawable);
+<a href="#l90" class="line" id="l90">     90</a> 	drw-&gt;drawable = XCreatePixmap(drw-&gt;dpy, drw-&gt;root, w, h, DefaultDepth(drw-&gt;dpy, drw-&gt;screen));
+<a href="#l91" class="line" id="l91">     91</a> }
+<a href="#l92" class="line" id="l92">     92</a> 
+<a href="#l93" class="line" id="l93">     93</a> void
+<a href="#l94" class="line" id="l94">     94</a> drw_free(Drw *drw)
+<a href="#l95" class="line" id="l95">     95</a> {
+<a href="#l96" class="line" id="l96">     96</a> 	XFreePixmap(drw-&gt;dpy, drw-&gt;drawable);
+<a href="#l97" class="line" id="l97">     97</a> 	XFreeGC(drw-&gt;dpy, drw-&gt;gc);
+<a href="#l98" class="line" id="l98">     98</a> 	drw_fontset_free(drw-&gt;fonts);
+<a href="#l99" class="line" id="l99">     99</a> 	free(drw);
+<a href="#l100" class="line" id="l100">    100</a> }
+<a href="#l101" class="line" id="l101">    101</a> 
+<a href="#l102" class="line" id="l102">    102</a> /* This function is an implementation detail. Library users should use
+<a href="#l103" class="line" id="l103">    103</a>  * drw_fontset_create instead.
+<a href="#l104" class="line" id="l104">    104</a>  */
+<a href="#l105" class="line" id="l105">    105</a> static Fnt *
+<a href="#l106" class="line" id="l106">    106</a> xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
+<a href="#l107" class="line" id="l107">    107</a> {
+<a href="#l108" class="line" id="l108">    108</a> 	Fnt *font;
+<a href="#l109" class="line" id="l109">    109</a> 	XftFont *xfont = NULL;
+<a href="#l110" class="line" id="l110">    110</a> 	FcPattern *pattern = NULL;
+<a href="#l111" class="line" id="l111">    111</a> 
+<a href="#l112" class="line" id="l112">    112</a> 	if (fontname) {
+<a href="#l113" class="line" id="l113">    113</a> 		/* Using the pattern found at font-&gt;xfont-&gt;pattern does not yield the
+<a href="#l114" class="line" id="l114">    114</a> 		 * same substitution results as using the pattern returned by
+<a href="#l115" class="line" id="l115">    115</a> 		 * FcNameParse; using the latter results in the desired fallback
+<a href="#l116" class="line" id="l116">    116</a> 		 * behaviour whereas the former just results in missing-character
+<a href="#l117" class="line" id="l117">    117</a> 		 * rectangles being drawn, at least with some fonts. */
+<a href="#l118" class="line" id="l118">    118</a> 		if (!(xfont = XftFontOpenName(drw-&gt;dpy, drw-&gt;screen, fontname))) {
+<a href="#l119" class="line" id="l119">    119</a> 			fprintf(stderr, &quot;error, cannot load font from name: &#39;%s&#39;\n&quot;, fontname);
+<a href="#l120" class="line" id="l120">    120</a> 			return NULL;
+<a href="#l121" class="line" id="l121">    121</a> 		}
+<a href="#l122" class="line" id="l122">    122</a> 		if (!(pattern = FcNameParse((FcChar8 *) fontname))) {
+<a href="#l123" class="line" id="l123">    123</a> 			fprintf(stderr, &quot;error, cannot parse font name to pattern: &#39;%s&#39;\n&quot;, fontname);
+<a href="#l124" class="line" id="l124">    124</a> 			XftFontClose(drw-&gt;dpy, xfont);
+<a href="#l125" class="line" id="l125">    125</a> 			return NULL;
+<a href="#l126" class="line" id="l126">    126</a> 		}
+<a href="#l127" class="line" id="l127">    127</a> 	} else if (fontpattern) {
+<a href="#l128" class="line" id="l128">    128</a> 		if (!(xfont = XftFontOpenPattern(drw-&gt;dpy, fontpattern))) {
+<a href="#l129" class="line" id="l129">    129</a> 			fprintf(stderr, &quot;error, cannot load font from pattern.\n&quot;);
+<a href="#l130" class="line" id="l130">    130</a> 			return NULL;
+<a href="#l131" class="line" id="l131">    131</a> 		}
+<a href="#l132" class="line" id="l132">    132</a> 	} else {
+<a href="#l133" class="line" id="l133">    133</a> 		die(&quot;no font specified.&quot;);
+<a href="#l134" class="line" id="l134">    134</a> 	}
+<a href="#l135" class="line" id="l135">    135</a> 
+<a href="#l136" class="line" id="l136">    136</a> 	font = ecalloc(1, sizeof(Fnt));
+<a href="#l137" class="line" id="l137">    137</a> 	font-&gt;xfont = xfont;
+<a href="#l138" class="line" id="l138">    138</a> 	font-&gt;pattern = pattern;
+<a href="#l139" class="line" id="l139">    139</a> 	font-&gt;h = xfont-&gt;ascent + xfont-&gt;descent;
+<a href="#l140" class="line" id="l140">    140</a> 	font-&gt;dpy = drw-&gt;dpy;
+<a href="#l141" class="line" id="l141">    141</a> 
+<a href="#l142" class="line" id="l142">    142</a> 	return font;
+<a href="#l143" class="line" id="l143">    143</a> }
+<a href="#l144" class="line" id="l144">    144</a> 
+<a href="#l145" class="line" id="l145">    145</a> static void
+<a href="#l146" class="line" id="l146">    146</a> xfont_free(Fnt *font)
+<a href="#l147" class="line" id="l147">    147</a> {
+<a href="#l148" class="line" id="l148">    148</a> 	if (!font)
+<a href="#l149" class="line" id="l149">    149</a> 		return;
+<a href="#l150" class="line" id="l150">    150</a> 	if (font-&gt;pattern)
+<a href="#l151" class="line" id="l151">    151</a> 		FcPatternDestroy(font-&gt;pattern);
+<a href="#l152" class="line" id="l152">    152</a> 	XftFontClose(font-&gt;dpy, font-&gt;xfont);
+<a href="#l153" class="line" id="l153">    153</a> 	free(font);
+<a href="#l154" class="line" id="l154">    154</a> }
+<a href="#l155" class="line" id="l155">    155</a> 
+<a href="#l156" class="line" id="l156">    156</a> Fnt*
+<a href="#l157" class="line" id="l157">    157</a> drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount)
+<a href="#l158" class="line" id="l158">    158</a> {
+<a href="#l159" class="line" id="l159">    159</a> 	Fnt *cur, *ret = NULL;
+<a href="#l160" class="line" id="l160">    160</a> 	size_t i;
+<a href="#l161" class="line" id="l161">    161</a> 
+<a href="#l162" class="line" id="l162">    162</a> 	if (!drw || !fonts)
+<a href="#l163" class="line" id="l163">    163</a> 		return NULL;
+<a href="#l164" class="line" id="l164">    164</a> 
+<a href="#l165" class="line" id="l165">    165</a> 	for (i = 1; i &lt;= fontcount; i++) {
+<a href="#l166" class="line" id="l166">    166</a> 		if ((cur = xfont_create(drw, fonts[fontcount - i], NULL))) {
+<a href="#l167" class="line" id="l167">    167</a> 			cur-&gt;next = ret;
+<a href="#l168" class="line" id="l168">    168</a> 			ret = cur;
+<a href="#l169" class="line" id="l169">    169</a> 		}
+<a href="#l170" class="line" id="l170">    170</a> 	}
+<a href="#l171" class="line" id="l171">    171</a> 	return (drw-&gt;fonts = ret);
+<a href="#l172" class="line" id="l172">    172</a> }
+<a href="#l173" class="line" id="l173">    173</a> 
+<a href="#l174" class="line" id="l174">    174</a> void
+<a href="#l175" class="line" id="l175">    175</a> drw_fontset_free(Fnt *font)
+<a href="#l176" class="line" id="l176">    176</a> {
+<a href="#l177" class="line" id="l177">    177</a> 	if (font) {
+<a href="#l178" class="line" id="l178">    178</a> 		drw_fontset_free(font-&gt;next);
+<a href="#l179" class="line" id="l179">    179</a> 		xfont_free(font);
+<a href="#l180" class="line" id="l180">    180</a> 	}
+<a href="#l181" class="line" id="l181">    181</a> }
+<a href="#l182" class="line" id="l182">    182</a> 
+<a href="#l183" class="line" id="l183">    183</a> void
+<a href="#l184" class="line" id="l184">    184</a> drw_clr_create(Drw *drw, Clr *dest, const char *clrname)
+<a href="#l185" class="line" id="l185">    185</a> {
+<a href="#l186" class="line" id="l186">    186</a> 	if (!drw || !dest || !clrname)
+<a href="#l187" class="line" id="l187">    187</a> 		return;
+<a href="#l188" class="line" id="l188">    188</a> 
+<a href="#l189" class="line" id="l189">    189</a> 	if (!XftColorAllocName(drw-&gt;dpy, DefaultVisual(drw-&gt;dpy, drw-&gt;screen),
+<a href="#l190" class="line" id="l190">    190</a> 	                       DefaultColormap(drw-&gt;dpy, drw-&gt;screen),
+<a href="#l191" class="line" id="l191">    191</a> 	                       clrname, dest))
+<a href="#l192" class="line" id="l192">    192</a> 		die(&quot;error, cannot allocate color &#39;%s&#39;&quot;, clrname);
+<a href="#l193" class="line" id="l193">    193</a> 
+<a href="#l194" class="line" id="l194">    194</a>         dest-&gt;pixel |= 0xff &lt;&lt; 24;
+<a href="#l195" class="line" id="l195">    195</a> }
+<a href="#l196" class="line" id="l196">    196</a> 
+<a href="#l197" class="line" id="l197">    197</a> /* Wrapper to create color schemes. The caller has to call free(3) on the
+<a href="#l198" class="line" id="l198">    198</a>  * returned color scheme when done using it. */
+<a href="#l199" class="line" id="l199">    199</a> Clr *
+<a href="#l200" class="line" id="l200">    200</a> drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)
+<a href="#l201" class="line" id="l201">    201</a> {
+<a href="#l202" class="line" id="l202">    202</a> 	size_t i;
+<a href="#l203" class="line" id="l203">    203</a> 	Clr *ret;
+<a href="#l204" class="line" id="l204">    204</a> 
+<a href="#l205" class="line" id="l205">    205</a> 	/* need at least two colors for a scheme */
+<a href="#l206" class="line" id="l206">    206</a> 	if (!drw || !clrnames || clrcount &lt; 2 || !(ret = ecalloc(clrcount, sizeof(XftColor))))
+<a href="#l207" class="line" id="l207">    207</a> 		return NULL;
+<a href="#l208" class="line" id="l208">    208</a> 
+<a href="#l209" class="line" id="l209">    209</a> 	for (i = 0; i &lt; clrcount; i++)
+<a href="#l210" class="line" id="l210">    210</a> 		drw_clr_create(drw, &amp;ret[i], clrnames[i]);
+<a href="#l211" class="line" id="l211">    211</a> 	return ret;
+<a href="#l212" class="line" id="l212">    212</a> }
+<a href="#l213" class="line" id="l213">    213</a> 
+<a href="#l214" class="line" id="l214">    214</a> void
+<a href="#l215" class="line" id="l215">    215</a> drw_setfontset(Drw *drw, Fnt *set)
+<a href="#l216" class="line" id="l216">    216</a> {
+<a href="#l217" class="line" id="l217">    217</a> 	if (drw)
+<a href="#l218" class="line" id="l218">    218</a> 		drw-&gt;fonts = set;
+<a href="#l219" class="line" id="l219">    219</a> }
+<a href="#l220" class="line" id="l220">    220</a> 
+<a href="#l221" class="line" id="l221">    221</a> void
+<a href="#l222" class="line" id="l222">    222</a> drw_setscheme(Drw *drw, Clr *scm)
+<a href="#l223" class="line" id="l223">    223</a> {
+<a href="#l224" class="line" id="l224">    224</a> 	if (drw)
+<a href="#l225" class="line" id="l225">    225</a> 		drw-&gt;scheme = scm;
+<a href="#l226" class="line" id="l226">    226</a> }
+<a href="#l227" class="line" id="l227">    227</a> 
+<a href="#l228" class="line" id="l228">    228</a> void
+<a href="#l229" class="line" id="l229">    229</a> drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert)
+<a href="#l230" class="line" id="l230">    230</a> {
+<a href="#l231" class="line" id="l231">    231</a> 	if (!drw || !drw-&gt;scheme)
+<a href="#l232" class="line" id="l232">    232</a> 		return;
+<a href="#l233" class="line" id="l233">    233</a> 	XSetForeground(drw-&gt;dpy, drw-&gt;gc, invert ? drw-&gt;scheme[ColBg].pixel : drw-&gt;scheme[ColFg].pixel);
+<a href="#l234" class="line" id="l234">    234</a> 	if (filled)
+<a href="#l235" class="line" id="l235">    235</a> 		XFillRectangle(drw-&gt;dpy, drw-&gt;drawable, drw-&gt;gc, x, y, w, h);
+<a href="#l236" class="line" id="l236">    236</a> 	else
+<a href="#l237" class="line" id="l237">    237</a> 		XDrawRectangle(drw-&gt;dpy, drw-&gt;drawable, drw-&gt;gc, x, y, w - 1, h - 1);
+<a href="#l238" class="line" id="l238">    238</a> }
+<a href="#l239" class="line" id="l239">    239</a> 
+<a href="#l240" class="line" id="l240">    240</a> int
+<a href="#l241" class="line" id="l241">    241</a> drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert)
+<a href="#l242" class="line" id="l242">    242</a> {
+<a href="#l243" class="line" id="l243">    243</a> 	int i, ty, ellipsis_x = 0;
+<a href="#l244" class="line" id="l244">    244</a> 	unsigned int tmpw, ew, ellipsis_w = 0, ellipsis_len;
+<a href="#l245" class="line" id="l245">    245</a> 	XftDraw *d = NULL;
+<a href="#l246" class="line" id="l246">    246</a> 	Fnt *usedfont, *curfont, *nextfont;
+<a href="#l247" class="line" id="l247">    247</a> 	int utf8strlen, utf8charlen, render = x || y || w || h;
+<a href="#l248" class="line" id="l248">    248</a> 	long utf8codepoint = 0;
+<a href="#l249" class="line" id="l249">    249</a> 	const char *utf8str;
+<a href="#l250" class="line" id="l250">    250</a> 	FcCharSet *fccharset;
+<a href="#l251" class="line" id="l251">    251</a> 	FcPattern *fcpattern;
+<a href="#l252" class="line" id="l252">    252</a> 	FcPattern *match;
+<a href="#l253" class="line" id="l253">    253</a> 	XftResult result;
+<a href="#l254" class="line" id="l254">    254</a> 	int charexists = 0, overflow = 0;
+<a href="#l255" class="line" id="l255">    255</a> 	/* keep track of a couple codepoints for which we have no match. */
+<a href="#l256" class="line" id="l256">    256</a> 	enum { nomatches_len = 64 };
+<a href="#l257" class="line" id="l257">    257</a> 	static struct { long codepoint[nomatches_len]; unsigned int idx; } nomatches;
+<a href="#l258" class="line" id="l258">    258</a> 	static unsigned int ellipsis_width = 0;
+<a href="#l259" class="line" id="l259">    259</a> 
+<a href="#l260" class="line" id="l260">    260</a> 	if (!drw || (render &amp;&amp; (!drw-&gt;scheme || !w)) || !text || !drw-&gt;fonts)
+<a href="#l261" class="line" id="l261">    261</a> 		return 0;
+<a href="#l262" class="line" id="l262">    262</a> 
+<a href="#l263" class="line" id="l263">    263</a> 	if (!render) {
+<a href="#l264" class="line" id="l264">    264</a> 		w = invert ? invert : ~invert;
+<a href="#l265" class="line" id="l265">    265</a> 	} else {
+<a href="#l266" class="line" id="l266">    266</a> 		XSetForeground(drw-&gt;dpy, drw-&gt;gc, drw-&gt;scheme[invert ? ColFg : ColBg].pixel);
+<a href="#l267" class="line" id="l267">    267</a> 		XFillRectangle(drw-&gt;dpy, drw-&gt;drawable, drw-&gt;gc, x, y, w, h);
+<a href="#l268" class="line" id="l268">    268</a> 		d = XftDrawCreate(drw-&gt;dpy, drw-&gt;drawable,
+<a href="#l269" class="line" id="l269">    269</a> 		                  DefaultVisual(drw-&gt;dpy, drw-&gt;screen),
+<a href="#l270" class="line" id="l270">    270</a> 		                  DefaultColormap(drw-&gt;dpy, drw-&gt;screen));
+<a href="#l271" class="line" id="l271">    271</a> 		x += lpad;
+<a href="#l272" class="line" id="l272">    272</a> 		w -= lpad;
+<a href="#l273" class="line" id="l273">    273</a> 	}
+<a href="#l274" class="line" id="l274">    274</a> 
+<a href="#l275" class="line" id="l275">    275</a> 	usedfont = drw-&gt;fonts;
+<a href="#l276" class="line" id="l276">    276</a> 	if (!ellipsis_width &amp;&amp; render)
+<a href="#l277" class="line" id="l277">    277</a> 		ellipsis_width = drw_fontset_getwidth(drw, &quot;...&quot;);
+<a href="#l278" class="line" id="l278">    278</a> 	while (1) {
+<a href="#l279" class="line" id="l279">    279</a> 		ew = ellipsis_len = utf8strlen = 0;
+<a href="#l280" class="line" id="l280">    280</a> 		utf8str = text;
+<a href="#l281" class="line" id="l281">    281</a> 		nextfont = NULL;
+<a href="#l282" class="line" id="l282">    282</a> 		while (*text) {
+<a href="#l283" class="line" id="l283">    283</a> 			utf8charlen = utf8decode(text, &amp;utf8codepoint, UTF_SIZ);
+<a href="#l284" class="line" id="l284">    284</a> 			for (curfont = drw-&gt;fonts; curfont; curfont = curfont-&gt;next) {
+<a href="#l285" class="line" id="l285">    285</a> 				charexists = charexists || XftCharExists(drw-&gt;dpy, curfont-&gt;xfont, utf8codepoint);
+<a href="#l286" class="line" id="l286">    286</a> 				if (charexists) {
+<a href="#l287" class="line" id="l287">    287</a> 					drw_font_getexts(curfont, text, utf8charlen, &amp;tmpw, NULL);
+<a href="#l288" class="line" id="l288">    288</a> 					if (ew + ellipsis_width &lt;= w) {
+<a href="#l289" class="line" id="l289">    289</a> 						/* keep track where the ellipsis still fits */
+<a href="#l290" class="line" id="l290">    290</a> 						ellipsis_x = x + ew;
+<a href="#l291" class="line" id="l291">    291</a> 						ellipsis_w = w - ew;
+<a href="#l292" class="line" id="l292">    292</a> 						ellipsis_len = utf8strlen;
+<a href="#l293" class="line" id="l293">    293</a> 					}
+<a href="#l294" class="line" id="l294">    294</a> 
+<a href="#l295" class="line" id="l295">    295</a> 					if (ew + tmpw &gt; w) {
+<a href="#l296" class="line" id="l296">    296</a> 						overflow = 1;
+<a href="#l297" class="line" id="l297">    297</a> 						/* called from drw_fontset_getwidth_clamp():
+<a href="#l298" class="line" id="l298">    298</a> 						 * it wants the width AFTER the overflow
+<a href="#l299" class="line" id="l299">    299</a> 						 */
+<a href="#l300" class="line" id="l300">    300</a> 						if (!render)
+<a href="#l301" class="line" id="l301">    301</a> 							x += tmpw;
+<a href="#l302" class="line" id="l302">    302</a> 						else
+<a href="#l303" class="line" id="l303">    303</a> 							utf8strlen = ellipsis_len;
+<a href="#l304" class="line" id="l304">    304</a> 					} else if (curfont == usedfont) {
+<a href="#l305" class="line" id="l305">    305</a> 						utf8strlen += utf8charlen;
+<a href="#l306" class="line" id="l306">    306</a> 						text += utf8charlen;
+<a href="#l307" class="line" id="l307">    307</a> 						ew += tmpw;
+<a href="#l308" class="line" id="l308">    308</a> 					} else {
+<a href="#l309" class="line" id="l309">    309</a> 						nextfont = curfont;
+<a href="#l310" class="line" id="l310">    310</a> 					}
+<a href="#l311" class="line" id="l311">    311</a> 					break;
+<a href="#l312" class="line" id="l312">    312</a> 				}
+<a href="#l313" class="line" id="l313">    313</a> 			}
+<a href="#l314" class="line" id="l314">    314</a> 
+<a href="#l315" class="line" id="l315">    315</a> 			if (overflow || !charexists || nextfont)
+<a href="#l316" class="line" id="l316">    316</a> 				break;
+<a href="#l317" class="line" id="l317">    317</a> 			else
+<a href="#l318" class="line" id="l318">    318</a> 				charexists = 0;
+<a href="#l319" class="line" id="l319">    319</a> 		}
+<a href="#l320" class="line" id="l320">    320</a> 
+<a href="#l321" class="line" id="l321">    321</a> 		if (utf8strlen) {
+<a href="#l322" class="line" id="l322">    322</a> 			if (render) {
+<a href="#l323" class="line" id="l323">    323</a> 				ty = y + (h - usedfont-&gt;h) / 2 + usedfont-&gt;xfont-&gt;ascent;
+<a href="#l324" class="line" id="l324">    324</a> 				XftDrawStringUtf8(d, &amp;drw-&gt;scheme[invert ? ColBg : ColFg],
+<a href="#l325" class="line" id="l325">    325</a> 				                  usedfont-&gt;xfont, x, ty, (XftChar8 *)utf8str, utf8strlen);
+<a href="#l326" class="line" id="l326">    326</a> 			}
+<a href="#l327" class="line" id="l327">    327</a> 			x += ew;
+<a href="#l328" class="line" id="l328">    328</a> 			w -= ew;
+<a href="#l329" class="line" id="l329">    329</a> 		}
+<a href="#l330" class="line" id="l330">    330</a> 		if (render &amp;&amp; overflow)
+<a href="#l331" class="line" id="l331">    331</a> 			drw_text(drw, ellipsis_x, y, ellipsis_w, h, 0, &quot;...&quot;, invert);
+<a href="#l332" class="line" id="l332">    332</a> 
+<a href="#l333" class="line" id="l333">    333</a> 		if (!*text || overflow) {
+<a href="#l334" class="line" id="l334">    334</a> 			break;
+<a href="#l335" class="line" id="l335">    335</a> 		} else if (nextfont) {
+<a href="#l336" class="line" id="l336">    336</a> 			charexists = 0;
+<a href="#l337" class="line" id="l337">    337</a> 			usedfont = nextfont;
+<a href="#l338" class="line" id="l338">    338</a> 		} else {
+<a href="#l339" class="line" id="l339">    339</a> 			/* Regardless of whether or not a fallback font is found, the
+<a href="#l340" class="line" id="l340">    340</a> 			 * character must be drawn. */
+<a href="#l341" class="line" id="l341">    341</a> 			charexists = 1;
+<a href="#l342" class="line" id="l342">    342</a> 
+<a href="#l343" class="line" id="l343">    343</a> 			for (i = 0; i &lt; nomatches_len; ++i) {
+<a href="#l344" class="line" id="l344">    344</a> 				/* avoid calling XftFontMatch if we know we won&#39;t find a match */
+<a href="#l345" class="line" id="l345">    345</a> 				if (utf8codepoint == nomatches.codepoint[i])
+<a href="#l346" class="line" id="l346">    346</a> 					goto no_match;
+<a href="#l347" class="line" id="l347">    347</a> 			}
+<a href="#l348" class="line" id="l348">    348</a> 
+<a href="#l349" class="line" id="l349">    349</a> 			fccharset = FcCharSetCreate();
+<a href="#l350" class="line" id="l350">    350</a> 			FcCharSetAddChar(fccharset, utf8codepoint);
+<a href="#l351" class="line" id="l351">    351</a> 
+<a href="#l352" class="line" id="l352">    352</a> 			if (!drw-&gt;fonts-&gt;pattern) {
+<a href="#l353" class="line" id="l353">    353</a> 				/* Refer to the comment in xfont_create for more information. */
+<a href="#l354" class="line" id="l354">    354</a> 				die(&quot;the first font in the cache must be loaded from a font string.&quot;);
+<a href="#l355" class="line" id="l355">    355</a> 			}
+<a href="#l356" class="line" id="l356">    356</a> 
+<a href="#l357" class="line" id="l357">    357</a> 			fcpattern = FcPatternDuplicate(drw-&gt;fonts-&gt;pattern);
+<a href="#l358" class="line" id="l358">    358</a> 			FcPatternAddCharSet(fcpattern, FC_CHARSET, fccharset);
+<a href="#l359" class="line" id="l359">    359</a> 			FcPatternAddBool(fcpattern, FC_SCALABLE, FcTrue);
+<a href="#l360" class="line" id="l360">    360</a> 
+<a href="#l361" class="line" id="l361">    361</a> 			FcConfigSubstitute(NULL, fcpattern, FcMatchPattern);
+<a href="#l362" class="line" id="l362">    362</a> 			FcDefaultSubstitute(fcpattern);
+<a href="#l363" class="line" id="l363">    363</a> 			match = XftFontMatch(drw-&gt;dpy, drw-&gt;screen, fcpattern, &amp;result);
+<a href="#l364" class="line" id="l364">    364</a> 
+<a href="#l365" class="line" id="l365">    365</a> 			FcCharSetDestroy(fccharset);
+<a href="#l366" class="line" id="l366">    366</a> 			FcPatternDestroy(fcpattern);
+<a href="#l367" class="line" id="l367">    367</a> 
+<a href="#l368" class="line" id="l368">    368</a> 			if (match) {
+<a href="#l369" class="line" id="l369">    369</a> 				usedfont = xfont_create(drw, NULL, match);
+<a href="#l370" class="line" id="l370">    370</a> 				if (usedfont &amp;&amp; XftCharExists(drw-&gt;dpy, usedfont-&gt;xfont, utf8codepoint)) {
+<a href="#l371" class="line" id="l371">    371</a> 					for (curfont = drw-&gt;fonts; curfont-&gt;next; curfont = curfont-&gt;next)
+<a href="#l372" class="line" id="l372">    372</a> 						; /* NOP */
+<a href="#l373" class="line" id="l373">    373</a> 					curfont-&gt;next = usedfont;
+<a href="#l374" class="line" id="l374">    374</a> 				} else {
+<a href="#l375" class="line" id="l375">    375</a> 					xfont_free(usedfont);
+<a href="#l376" class="line" id="l376">    376</a> 					nomatches.codepoint[++nomatches.idx % nomatches_len] = utf8codepoint;
+<a href="#l377" class="line" id="l377">    377</a> no_match:
+<a href="#l378" class="line" id="l378">    378</a> 					usedfont = drw-&gt;fonts;
+<a href="#l379" class="line" id="l379">    379</a> 				}
+<a href="#l380" class="line" id="l380">    380</a> 			}
+<a href="#l381" class="line" id="l381">    381</a> 		}
+<a href="#l382" class="line" id="l382">    382</a> 	}
+<a href="#l383" class="line" id="l383">    383</a> 	if (d)
+<a href="#l384" class="line" id="l384">    384</a> 		XftDrawDestroy(d);
+<a href="#l385" class="line" id="l385">    385</a> 
+<a href="#l386" class="line" id="l386">    386</a> 	return x + (render ? w : 0);
+<a href="#l387" class="line" id="l387">    387</a> }
+<a href="#l388" class="line" id="l388">    388</a> 
+<a href="#l389" class="line" id="l389">    389</a> void
+<a href="#l390" class="line" id="l390">    390</a> drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h)
+<a href="#l391" class="line" id="l391">    391</a> {
+<a href="#l392" class="line" id="l392">    392</a> 	if (!drw)
+<a href="#l393" class="line" id="l393">    393</a> 		return;
+<a href="#l394" class="line" id="l394">    394</a> 
+<a href="#l395" class="line" id="l395">    395</a> 	XCopyArea(drw-&gt;dpy, drw-&gt;drawable, win, drw-&gt;gc, x, y, w, h, x, y);
+<a href="#l396" class="line" id="l396">    396</a> 	XSync(drw-&gt;dpy, False);
+<a href="#l397" class="line" id="l397">    397</a> }
+<a href="#l398" class="line" id="l398">    398</a> 
+<a href="#l399" class="line" id="l399">    399</a> unsigned int
+<a href="#l400" class="line" id="l400">    400</a> drw_fontset_getwidth(Drw *drw, const char *text)
+<a href="#l401" class="line" id="l401">    401</a> {
+<a href="#l402" class="line" id="l402">    402</a> 	if (!drw || !drw-&gt;fonts || !text)
+<a href="#l403" class="line" id="l403">    403</a> 		return 0;
+<a href="#l404" class="line" id="l404">    404</a> 	return drw_text(drw, 0, 0, 0, 0, 0, text, 0);
+<a href="#l405" class="line" id="l405">    405</a> }
+<a href="#l406" class="line" id="l406">    406</a> 
+<a href="#l407" class="line" id="l407">    407</a> unsigned int
+<a href="#l408" class="line" id="l408">    408</a> drw_fontset_getwidth_clamp(Drw *drw, const char *text, unsigned int n)
+<a href="#l409" class="line" id="l409">    409</a> {
+<a href="#l410" class="line" id="l410">    410</a> 	unsigned int tmp = 0;
+<a href="#l411" class="line" id="l411">    411</a> 	if (drw &amp;&amp; drw-&gt;fonts &amp;&amp; text &amp;&amp; n)
+<a href="#l412" class="line" id="l412">    412</a> 		tmp = drw_text(drw, 0, 0, 0, 0, 0, text, n);
+<a href="#l413" class="line" id="l413">    413</a> 	return MIN(n, tmp);
+<a href="#l414" class="line" id="l414">    414</a> }
+<a href="#l415" class="line" id="l415">    415</a> 
+<a href="#l416" class="line" id="l416">    416</a> void
+<a href="#l417" class="line" id="l417">    417</a> drw_font_getexts(Fnt *font, const char *text, unsigned int len, unsigned int *w, unsigned int *h)
+<a href="#l418" class="line" id="l418">    418</a> {
+<a href="#l419" class="line" id="l419">    419</a> 	XGlyphInfo ext;
+<a href="#l420" class="line" id="l420">    420</a> 
+<a href="#l421" class="line" id="l421">    421</a> 	if (!font || !text)
+<a href="#l422" class="line" id="l422">    422</a> 		return;
+<a href="#l423" class="line" id="l423">    423</a> 
+<a href="#l424" class="line" id="l424">    424</a> 	XftTextExtentsUtf8(font-&gt;dpy, font-&gt;xfont, (XftChar8 *)text, len, &amp;ext);
+<a href="#l425" class="line" id="l425">    425</a> 	if (w)
+<a href="#l426" class="line" id="l426">    426</a> 		*w = ext.xOff;
+<a href="#l427" class="line" id="l427">    427</a> 	if (h)
+<a href="#l428" class="line" id="l428">    428</a> 		*h = font-&gt;h;
+<a href="#l429" class="line" id="l429">    429</a> }
+<a href="#l430" class="line" id="l430">    430</a> 
+<a href="#l431" class="line" id="l431">    431</a> Cur *
+<a href="#l432" class="line" id="l432">    432</a> drw_cur_create(Drw *drw, int shape)
+<a href="#l433" class="line" id="l433">    433</a> {
+<a href="#l434" class="line" id="l434">    434</a> 	Cur *cur;
+<a href="#l435" class="line" id="l435">    435</a> 
+<a href="#l436" class="line" id="l436">    436</a> 	if (!drw || !(cur = ecalloc(1, sizeof(Cur))))
+<a href="#l437" class="line" id="l437">    437</a> 		return NULL;
+<a href="#l438" class="line" id="l438">    438</a> 
+<a href="#l439" class="line" id="l439">    439</a> 	cur-&gt;cursor = XCreateFontCursor(drw-&gt;dpy, shape);
+<a href="#l440" class="line" id="l440">    440</a> 
+<a href="#l441" class="line" id="l441">    441</a> 	return cur;
+<a href="#l442" class="line" id="l442">    442</a> }
+<a href="#l443" class="line" id="l443">    443</a> 
+<a href="#l444" class="line" id="l444">    444</a> void
+<a href="#l445" class="line" id="l445">    445</a> drw_cur_free(Drw *drw, Cur *cursor)
+<a href="#l446" class="line" id="l446">    446</a> {
+<a href="#l447" class="line" id="l447">    447</a> 	if (!cursor)
+<a href="#l448" class="line" id="l448">    448</a> 		return;
+<a href="#l449" class="line" id="l449">    449</a> 
+<a href="#l450" class="line" id="l450">    450</a> 	XFreeCursor(drw-&gt;dpy, cursor-&gt;cursor);
+<a href="#l451" class="line" id="l451">    451</a> 	free(cursor);
+<a href="#l452" class="line" id="l452">    452</a> }
+</pre>
+</div>
+</body>
+</html>

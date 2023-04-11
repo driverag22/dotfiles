@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cleaned up dwm, Shift+ModKey+XK_l not working - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/ffd8cba2085f4a7a58f69948aeb40721ac8cd54a.html">ffd8cba2085f4a7a58f69948aeb40721ac8cd54a</a>
+<b>parent</b> <a href="../commit/5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf.html">5782ef4f3a6ac634cfca8f70754b15a7ca7d41bf</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Fri, 27 Jan 2023 18:01:04 +0100
+
+cleaned up dwm, Shift+ModKey+XK_l not working
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/src/dwm/config.def.h</a></td><td> | </td><td class="num">138</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d">--------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/src/dwm/config.h</a></td><td> | </td><td class="num">24</td><td><span class="i">++++++</span><span class="d">------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/src/dwm/drw.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.local/src/dwm/dwm</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h4">.local/src/dwm/dwm.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h5">.local/src/dwm/util.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+</table></pre><pre>6 files changed, 110 insertions(+), 52 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/src/dwm/config.def.h.html">.local/src/dwm/config.def.h</a> b/<a href="../file/.local/src/dwm/config.def.h.html">.local/src/dwm/config.def.h</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -1,25 +1,44 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="d">-/* See LICENSE file for copyright and license details. */
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+/* See LICENSE file for copyright and license details. */ #include &lt;X11/XF86keysym.h&gt;
+</a> 
+ /* appearance */
+<a href="#h0-0-4" id="h0-0-4" class="d">-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+static const unsigned int borderpx  = 4;        /* border pixel of windows */
+</a> static const unsigned int snap      = 32;       /* snap pixel */
+<a href="#h0-0-7" id="h0-0-7" class="i">+static const unsigned int gappx     = 6;        /* gaps between windows */
+</a> static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+<a href="#h0-0-10" id="h0-0-10" class="d">-static const char *fonts[]          = { &quot;monospace:size=10&quot; };
+</a><a href="#h0-0-11" id="h0-0-11" class="d">-static const char dmenufont[]       = &quot;monospace:size=10&quot;;
+</a><a href="#h0-0-12" id="h0-0-12" class="d">-static const char col_gray1[]       = &quot;#222222&quot;;
+</a><a href="#h0-0-13" id="h0-0-13" class="i">+static const char *fonts[]          = { &quot;JetBrains Mono:size=13&quot;};
+</a><a href="#h0-0-14" id="h0-0-14" class="i">+static const char dmenufont[]       = { &quot;JetBrains Mono:size=13&quot;};
+</a> static const char col_gray2[]       = &quot;#444444&quot;;
+<a href="#h0-0-16" id="h0-0-16" class="d">-static const char col_gray3[]       = &quot;#bbbbbb&quot;;
+</a><a href="#h0-0-17" id="h0-0-17" class="d">-static const char col_gray4[]       = &quot;#eeeeee&quot;;
+</a><a href="#h0-0-18" id="h0-0-18" class="d">-static const char col_cyan[]        = &quot;#005577&quot;;
+</a><a href="#h0-0-19" id="h0-0-19" class="i">+static const char col_gray3[]       = &quot;#262626&quot;;
+</a><a href="#h0-0-20" id="h0-0-20" class="i">+/* static const char col_gray4[]       = &quot;#282a36&quot;; */
+</a><a href="#h0-0-21" id="h0-0-21" class="i">+static const char col_gray4[]       = &quot;#31333f&quot;;
+</a><a href="#h0-0-22" id="h0-0-22" class="i">+/* static const char col_gray4[]       = &quot;#3c3e4c&quot;; */
+</a><a href="#h0-0-23" id="h0-0-23" class="i">+static const char col_white[]       = &quot;#eeeeee&quot;;
+</a><a href="#h0-0-24" id="h0-0-24" class="i">+/* static const char col_whitegray[]   = &quot;#68686d&quot;; */
+</a><a href="#h0-0-25" id="h0-0-25" class="i">+static const char col_pink[]        = &quot;#ff69b4&quot;;
+</a><a href="#h0-0-26" id="h0-0-26" class="i">+static const char col_softviolet[]  = &quot;#DBB4EF&quot;;
+</a><a href="#h0-0-27" id="h0-0-27" class="i">+static const char col_darkviolet[]  = &quot;#6c688a&quot;;
+</a><a href="#h0-0-28" id="h0-0-28" class="i">+static const char col_darkBlue[]    = &quot;#003049&quot;;
+</a><a href="#h0-0-29" id="h0-0-29" class="i">+static const char col_teal[]        = &quot;#169378&quot;;
+</a><a href="#h0-0-30" id="h0-0-30" class="i">+static const char col_purple[]      = &quot;#bd93f9&quot;;
+</a><a href="#h0-0-31" id="h0-0-31" class="i">+static const char col_violet[]      = &quot;#e090df&quot;;
+</a><a href="#h0-0-32" id="h0-0-32" class="i">+static const char col_border[]      = &quot;#f6e1dc&quot;;
+</a><a href="#h0-0-33" id="h0-0-33" class="i">+
+</a> static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+<a href="#h0-0-36" id="h0-0-36" class="d">-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+</a><a href="#h0-0-37" id="h0-0-37" class="d">-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+</a><a href="#h0-0-38" id="h0-0-38" class="i">+	/* [SchemeNorm] = { col_white, col_gray4,  col_gray4}, */
+</a><a href="#h0-0-39" id="h0-0-39" class="i">+	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
+</a><a href="#h0-0-40" id="h0-0-40" class="i">+	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
+</a><a href="#h0-0-41" id="h0-0-41" class="i">+	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
+</a><a href="#h0-0-42" id="h0-0-42" class="i">+	/* [SchemeSpecial]  = { col_pink, col_gray4,  col_pink}, */
+</a><a href="#h0-0-43" id="h0-0-43" class="i">+	[SchemeSel]  = { col_white, col_softviolet,  col_softviolet},
+</a><a href="#h0-0-44" id="h0-0-44" class="i">+	[SchemeSpecial]  = { col_softviolet, col_gray4,  col_softviolet},
+</a><a href="#h0-0-45" id="h0-0-45" class="i">+	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
+</a><a href="#h0-0-46" id="h0-0-46" class="i">+	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
+</a> };
+ 
+ /* tagging */
+<a href="#h0-0-50" id="h0-0-50" class="d">-static const char *tags[] = { &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot; };
+</a><a href="#h0-0-51" id="h0-0-51" class="i">+static const char *tags[] = { &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot; };
+</a> 
+ static const Rule rules[] = {
+ 	/* xprop(1):
+<a href="#h0-1" id="h0-1" class="h">@@ -32,20 +51,22 @@ static const Rule rules[] = {
+</a> };
+ 
+ /* layout(s) */
+<a href="#h0-1-3" id="h0-1-3" class="d">-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+</a><a href="#h0-1-4" id="h0-1-4" class="i">+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
+</a> static const int nmaster     = 1;    /* number of clients in master area */
+ static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+ 
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+<a href="#h0-1-11" id="h0-1-11" class="d">-	{ &quot;[]=&quot;,      tile },    /* first entry is default */
+</a><a href="#h0-1-12" id="h0-1-12" class="d">-	{ &quot;&gt;&lt;&gt;&quot;,      NULL },    /* no layout function means floating behavior */
+</a><a href="#h0-1-13" id="h0-1-13" class="d">-	{ &quot;[M]&quot;,      monocle },
+</a><a href="#h0-1-14" id="h0-1-14" class="i">+    { &quot;  &quot;,      tile },
+</a><a href="#h0-1-15" id="h0-1-15" class="i">+	{ &quot;  &quot;,      NULL },    /* no layout function means floating behavior */
+</a><a href="#h0-1-16" id="h0-1-16" class="i">+	{ &quot; [M]&quot;,      monocle },
+</a> };
+<a href="#h0-1-18" id="h0-1-18" class="d">-
+</a> /* key definitions */
+<a href="#h0-1-20" id="h0-1-20" class="d">-#define MODKEY Mod1Mask
+</a><a href="#h0-1-21" id="h0-1-21" class="i">+/* #define MODKEY Mod1Mask */
+</a><a href="#h0-1-22" id="h0-1-22" class="i">+#define MODKEY Mod4Mask
+</a><a href="#h0-1-23" id="h0-1-23" class="i">+#define ALTKEY Mod1Mask
+</a><a href="#h0-1-24" id="h0-1-24" class="i">+#define CTRLKEY ControlMask
+</a> #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 &lt;&lt; TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 &lt;&lt; TAG} }, \
+<a href="#h0-2" id="h0-2" class="h">@@ -57,13 +78,52 @@ static const Layout layouts[] = {
+</a> 
+ /* commands */
+ static char dmenumon[2] = &quot;0&quot;; /* component of dmenucmd, manipulated in spawn() */
+<a href="#h0-2-3" id="h0-2-3" class="d">-static const char *dmenucmd[] = { &quot;dmenu_run&quot;, &quot;-m&quot;, dmenumon, &quot;-fn&quot;, dmenufont, &quot;-nb&quot;, col_gray1, &quot;-nf&quot;, col_gray3, &quot;-sb&quot;, col_cyan, &quot;-sf&quot;, col_gray4, NULL };
+</a><a href="#h0-2-4" id="h0-2-4" class="d">-static const char *termcmd[]  = { &quot;st&quot;, NULL };
+</a><a href="#h0-2-5" id="h0-2-5" class="i">+static const char *dmenucmd[] = { &quot;dmenu_run&quot;, &quot;-m&quot;, dmenumon, &quot;-fn&quot;, dmenufont, &quot;-nb&quot;, col_gray4, &quot;-nf&quot;, col_white, &quot;-sb&quot;, col_pink, &quot;-sf&quot;, col_white, NULL };
+</a><a href="#h0-2-6" id="h0-2-6" class="i">+static const char *termcmd[]  = { &quot;alacritty&quot;, NULL };
+</a><a href="#h0-2-7" id="h0-2-7" class="i">+
+</a><a href="#h0-2-8" id="h0-2-8" class="i">+static const char *browser[]  = { &quot;firefox&quot;, NULL };
+</a><a href="#h0-2-9" id="h0-2-9" class="i">+static const char *filebrowser[]  = { &quot;/home/diego/.local/.macros/keyBindings/home.sh&quot;, NULL };
+</a><a href="#h0-2-10" id="h0-2-10" class="i">+static const char *schoolDropbox[] = {&quot;/home/diego/.local/.macros/keyBindings/q1.sh&quot;, NULL};
+</a><a href="#h0-2-11" id="h0-2-11" class="i">+static const char *notion[] = {&quot;/home/diego/.local/.macros/keyBindings/notion.sh&quot;, NULL};
+</a><a href="#h0-2-12" id="h0-2-12" class="i">+static const char *todos[] = {&quot;alacritty&quot;, &quot;-e&quot;, &quot;/usr/bin/nvim&quot;, &quot;/home/diego/vimwiki/TODOs.wiki&quot;, NULL};
+</a><a href="#h0-2-13" id="h0-2-13" class="i">+
+</a><a href="#h0-2-14" id="h0-2-14" class="i">+static const char *lockscreen[]  = { &quot;betterlockscreen&quot;, &quot;-l&quot; };
+</a><a href="#h0-2-15" id="h0-2-15" class="i">+static const char *powermenu[]  = { &quot;/home/diego/.local/.macros/keyBindings/powermenu.sh&quot;, NULL };
+</a><a href="#h0-2-16" id="h0-2-16" class="i">+
+</a><a href="#h0-2-17" id="h0-2-17" class="i">+static const char *brightnessUp[] = { &quot;light&quot;, &quot;-A&quot;, &quot;5&quot;, NULL};
+</a><a href="#h0-2-18" id="h0-2-18" class="i">+static const char *brightnessDown[] = {&quot;light&quot;, &quot;-U&quot;, &quot;5&quot;, NULL};
+</a><a href="#h0-2-19" id="h0-2-19" class="i">+static const char *screenshot[] = {&quot;gscreenshot&quot;, &quot;-s&quot;, &quot;-c&quot;, &quot;-o&quot;, NULL};
+</a><a href="#h0-2-20" id="h0-2-20" class="i">+/* static const char *play[] = {&quot;/home/diego/.local/.macros/keyBindings/play.sh&quot;, NULL}; */
+</a><a href="#h0-2-21" id="h0-2-21" class="i">+/* static const char *stop[] = {&quot;/home/diego/.local/.macros/keyBindings/pause.sh&quot;, NULL}; */
+</a><a href="#h0-2-22" id="h0-2-22" class="i">+static const char *play[] = {&quot;playerctl&quot;, &quot;play-pause&quot;, NULL};
+</a><a href="#h0-2-23" id="h0-2-23" class="i">+static const char *soundUp[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;,  &quot;2%+&quot;, NULL};
+</a><a href="#h0-2-24" id="h0-2-24" class="i">+static const char *soundDown[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;, &quot;2%-&quot;, NULL};
+</a><a href="#h0-2-25" id="h0-2-25" class="i">+static const char *soundToggle[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;, &quot;toggle&quot;, NULL};
+</a> 
+ static const Key keys[] = {
+ 	/* modifier                     key        function        argument */
+<a href="#h0-2-29" id="h0-2-29" class="d">-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+</a><a href="#h0-2-30" id="h0-2-30" class="d">-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+</a><a href="#h0-2-31" id="h0-2-31" class="i">+	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
+</a><a href="#h0-2-32" id="h0-2-32" class="i">+	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
+</a><a href="#h0-2-33" id="h0-2-33" class="i">+	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
+</a><a href="#h0-2-34" id="h0-2-34" class="i">+	{ CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion
+</a><a href="#h0-2-35" id="h0-2-35" class="i">+	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
+</a><a href="#h0-2-36" id="h0-2-36" class="i">+
+</a><a href="#h0-2-37" id="h0-2-37" class="i">+	{ CTRLKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
+</a><a href="#h0-2-38" id="h0-2-38" class="i">+	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
+</a><a href="#h0-2-39" id="h0-2-39" class="i">+
+</a><a href="#h0-2-40" id="h0-2-40" class="i">+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
+</a><a href="#h0-2-41" id="h0-2-41" class="i">+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
+</a><a href="#h0-2-42" id="h0-2-42" class="i">+
+</a><a href="#h0-2-43" id="h0-2-43" class="i">+
+</a><a href="#h0-2-44" id="h0-2-44" class="i">+    { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
+</a><a href="#h0-2-45" id="h0-2-45" class="i">+    { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
+</a><a href="#h0-2-46" id="h0-2-46" class="i">+	{ 0,                            XK_Print,      spawn,          {.v = screenshot} }, //screenshotter
+</a><a href="#h0-2-47" id="h0-2-47" class="i">+	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
+</a><a href="#h0-2-48" id="h0-2-48" class="i">+    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up/down/mute
+</a><a href="#h0-2-49" id="h0-2-49" class="i">+    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
+</a><a href="#h0-2-50" id="h0-2-50" class="i">+    { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
+</a><a href="#h0-2-51" id="h0-2-51" class="i">+
+</a><a href="#h0-2-52" id="h0-2-52" class="i">+
+</a> 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+ 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+ 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+<a href="#h0-3" id="h0-3" class="h">@@ -73,27 +133,38 @@ static const Key keys[] = {
+</a> 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+ 	{ MODKEY,                       XK_Return, zoom,           {0} },
+ 	{ MODKEY,                       XK_Tab,    view,           {0} },
+<a href="#h0-3-3" id="h0-3-3" class="d">-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+</a><a href="#h0-3-4" id="h0-3-4" class="d">-	{ MODKEY,                       XK_t,      setlayout,      {.v = &amp;layouts[0]} },
+</a><a href="#h0-3-5" id="h0-3-5" class="d">-	{ MODKEY,                       XK_f,      setlayout,      {.v = &amp;layouts[1]} },
+</a><a href="#h0-3-6" id="h0-3-6" class="d">-	{ MODKEY,                       XK_m,      setlayout,      {.v = &amp;layouts[2]} },
+</a><a href="#h0-3-7" id="h0-3-7" class="d">-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+</a><a href="#h0-3-8" id="h0-3-8" class="i">+	{ MODKEY,                       XK_q,      killclient,     {0} },
+</a><a href="#h0-3-9" id="h0-3-9" class="i">+	{ MODKEY,                       XK_w,      setlayout,      {.v = &amp;layouts[0]} },
+</a><a href="#h0-3-10" id="h0-3-10" class="i">+	{ MODKEY,                       XK_e,      setlayout,      {.v = &amp;layouts[1]} },
+</a><a href="#h0-3-11" id="h0-3-11" class="i">+	{ MODKEY,                       XK_r,      setlayout,      {.v = &amp;layouts[2]} },
+</a><a href="#h0-3-12" id="h0-3-12" class="i">+	{ MODKEY,                       XK_m,      togglefullscreen,{0} },
+</a><a href="#h0-3-13" id="h0-3-13" class="i">+
+</a><a href="#h0-3-14" id="h0-3-14" class="i">+
+</a> 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+<a href="#h0-3-16" id="h0-3-16" class="d">-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+</a><a href="#h0-3-17" id="h0-3-17" class="d">-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+</a><a href="#h0-3-18" id="h0-3-18" class="i">+	{ MODKEY,                       XK_a,      view,           {.ui = ~0 } },
+</a><a href="#h0-3-19" id="h0-3-19" class="i">+	{ MODKEY,                       XK_s,      tag,            {.ui = ~0 } },
+</a><a href="#h0-3-20" id="h0-3-20" class="i">+    
+</a><a href="#h0-3-21" id="h0-3-21" class="i">+
+</a> 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+ 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+ 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+ 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+<a href="#h0-3-26" id="h0-3-26" class="i">+
+</a><a href="#h0-3-27" id="h0-3-27" class="i">+	{ ALTKEY,                       XK_k,      viewnexttag,        {0} },
+</a><a href="#h0-3-28" id="h0-3-28" class="i">+	{ ALTKEY|ShiftMask,             XK_k,      tagnext,            {0} }, 
+</a><a href="#h0-3-29" id="h0-3-29" class="i">+
+</a><a href="#h0-3-30" id="h0-3-30" class="i">+	{ ALTKEY,                       XK_j,      viewprevtag,        {0} },
+</a><a href="#h0-3-31" id="h0-3-31" class="i">+	{ ALTKEY|ShiftMask,             XK_j,      tagprev,            {0} }, 
+</a><a href="#h0-3-32" id="h0-3-32" class="i">+
+</a> 	TAGKEYS(                        XK_1,                      0)
+ 	TAGKEYS(                        XK_2,                      1)
+ 	TAGKEYS(                        XK_3,                      2)
+ 	TAGKEYS(                        XK_4,                      3)
+<a href="#h0-3-37" id="h0-3-37" class="d">-	TAGKEYS(                        XK_5,                      4)
+</a><a href="#h0-3-38" id="h0-3-38" class="d">-	TAGKEYS(                        XK_6,                      5)
+</a><a href="#h0-3-39" id="h0-3-39" class="d">-	TAGKEYS(                        XK_7,                      6)
+</a><a href="#h0-3-40" id="h0-3-40" class="d">-	TAGKEYS(                        XK_8,                      7)
+</a><a href="#h0-3-41" id="h0-3-41" class="d">-	TAGKEYS(                        XK_9,                      8)
+</a><a href="#h0-3-42" id="h0-3-42" class="i">+	TAGKEYS(                        XK_7,                      4)
+</a><a href="#h0-3-43" id="h0-3-43" class="i">+	TAGKEYS(                        XK_8,                      5)
+</a><a href="#h0-3-44" id="h0-3-44" class="i">+	TAGKEYS(                        XK_9,                      6)
+</a><a href="#h0-3-45" id="h0-3-45" class="i">+	TAGKEYS(                        XK_0,                      7)
+</a><a href="#h0-3-46" id="h0-3-46" class="i">+    { MODKEY|ShiftMask,             XK_r,      quit,           {1} },
+</a> 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+ };
+ 
+<a href="#h0-4" id="h0-4" class="h">@@ -113,4 +184,3 @@ static const Button buttons[] = {
+</a> 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+ 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+ };
+<a href="#h0-4-3" id="h0-4-3" class="d">-
+</a><b>diff --git a/<a id="h1" href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a> b/<a href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -6,30 +6,18 @@ static const unsigned int snap      = 32;       /* snap pixel */
+</a> static const unsigned int gappx     = 6;        /* gaps between windows */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+<a href="#h1-0-3" id="h1-0-3" class="d">-static const char *fonts[]          = { &quot;JetBrains Mono:size=14&quot;};
+</a><a href="#h1-0-4" id="h1-0-4" class="d">-static const char dmenufont[]       = { &quot;JetBrains Mono:size=14&quot;};
+</a><a href="#h1-0-5" id="h1-0-5" class="d">-static const char col_gray2[]       = &quot;#444444&quot;;
+</a><a href="#h1-0-6" id="h1-0-6" class="d">-static const char col_gray3[]       = &quot;#262626&quot;;
+</a><a href="#h1-0-7" id="h1-0-7" class="d">-/* static const char col_gray4[]       = &quot;#282a36&quot;; */
+</a><a href="#h1-0-8" id="h1-0-8" class="i">+static const char *fonts[]          = { &quot;JetBrains Mono:size=13&quot;};
+</a><a href="#h1-0-9" id="h1-0-9" class="i">+static const char dmenufont[]       = { &quot;JetBrains Mono:size=13&quot;};
+</a> static const char col_gray4[]       = &quot;#31333f&quot;;
+<a href="#h1-0-11" id="h1-0-11" class="d">-/* static const char col_gray4[]       = &quot;#3c3e4c&quot;; */
+</a> static const char col_white[]       = &quot;#eeeeee&quot;;
+<a href="#h1-0-13" id="h1-0-13" class="d">-/* static const char col_whitegray[]   = &quot;#68686d&quot;; */
+</a> static const char col_pink[]        = &quot;#ff69b4&quot;;
+<a href="#h1-0-15" id="h1-0-15" class="d">-static const char col_darkBlue[]    = &quot;#003049&quot;;
+</a><a href="#h1-0-16" id="h1-0-16" class="d">-static const char col_teal[]        = &quot;#169378&quot;;
+</a><a href="#h1-0-17" id="h1-0-17" class="d">-static const char col_purple[]      = &quot;#bd93f9&quot;;
+</a><a href="#h1-0-18" id="h1-0-18" class="d">-static const char col_border[]      = &quot;#f6e1dc&quot;;
+</a><a href="#h1-0-19" id="h1-0-19" class="i">+static const char col_viogray[]     = &quot;#9f92a7&quot;;
+</a> 
+ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+<a href="#h1-0-23" id="h1-0-23" class="d">-	/* [SchemeNorm] = { col_white, col_gray4,  col_gray4}, */
+</a><a href="#h1-0-24" id="h1-0-24" class="d">-	/* [SchemeSel]  = { col_pink, col_gray4,  col_pink}, */
+</a> 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
+ 	[SchemeSel]  = { col_white, col_pink,  col_pink},
+ 	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
+<a href="#h1-0-28" id="h1-0-28" class="d">-	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
+</a><a href="#h1-0-29" id="h1-0-29" class="d">-	/* [SchemeSel]  = { col_white, col_teal,  col_white }, */
+</a> };
+ 
+ /* tagging */
+<a href="#h1-1" id="h1-1" class="h">@@ -87,12 +75,12 @@ static const char *powermenu[]  = { &quot;/home/diego/.local/.macros/keyBindings/powe
+</a> 
+ static const char *brightnessUp[] = { &quot;light&quot;, &quot;-A&quot;, &quot;5&quot;, NULL};
+ static const char *brightnessDown[] = {&quot;light&quot;, &quot;-U&quot;, &quot;5&quot;, NULL};
+<a href="#h1-1-3" id="h1-1-3" class="d">-static const char *screenshot[] = {&quot;gscreenshot&quot;, &quot;-s&quot;, &quot;-c&quot;, NULL};
+</a><a href="#h1-1-4" id="h1-1-4" class="i">+static const char *screenshot[] = {&quot;gscreenshot&quot;, &quot;-s&quot;, &quot;-c&quot;, &quot;-o&quot;, NULL};
+</a> /* static const char *play[] = {&quot;/home/diego/.local/.macros/keyBindings/play.sh&quot;, NULL}; */
+ /* static const char *stop[] = {&quot;/home/diego/.local/.macros/keyBindings/pause.sh&quot;, NULL}; */
+ static const char *play[] = {&quot;playerctl&quot;, &quot;play-pause&quot;, NULL};
+<a href="#h1-1-8" id="h1-1-8" class="d">-static const char *soundUp[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;,  &quot;5%+&quot;, NULL};
+</a><a href="#h1-1-9" id="h1-1-9" class="d">-static const char *soundDown[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;, &quot;5%-&quot;, NULL};
+</a><a href="#h1-1-10" id="h1-1-10" class="i">+static const char *soundUp[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;,  &quot;2%+&quot;, NULL};
+</a><a href="#h1-1-11" id="h1-1-11" class="i">+static const char *soundDown[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;, &quot;2%-&quot;, NULL};
+</a> static const char *soundToggle[] = {&quot;amixer&quot;, &quot;set&quot;, &quot;Master&quot;, &quot;toggle&quot;, NULL};
+ 
+ static const Key keys[] = {
+<b>diff --git a/<a id="h2" href="../file/.local/src/dwm/drw.o.html">.local/src/dwm/drw.o</a> b/<a href="../file/.local/src/dwm/drw.o.html">.local/src/dwm/drw.o</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h3" href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a> b/<a href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h4" href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a> b/<a href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h5" href="../file/.local/src/dwm/util.o.html">.local/src/dwm/util.o</a> b/<a href="../file/.local/src/dwm/util.o.html">.local/src/dwm/util.o</a></b>
+Binary files differ.
+</pre>
+</div>
+</body>
+</html>

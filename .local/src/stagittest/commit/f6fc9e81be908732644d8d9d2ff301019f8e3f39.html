@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>picom jonaburg configured - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/f6fc9e81be908732644d8d9d2ff301019f8e3f39.html">f6fc9e81be908732644d8d9d2ff301019f8e3f39</a>
+<b>parent</b> <a href="../commit/00d99b5778f872cdc69f7541ea0ad73da305e07a.html">00d99b5778f872cdc69f7541ea0ad73da305e07a</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Tue, 10 Jan 2023 23:34:00 +0100
+
+picom jonaburg configured
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.config/JetBrains/WebStorm2022.3/options/actionSummary.xml</a></td><td> | </td><td class="num">60</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++</span><span class="d">---------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.config/JetBrains/WebStorm2022.3/options/features.usage.statistics.xml</a></td><td> | </td><td class="num">34</td><td><span class="i">+++++++++++++++++</span><span class="d">-----------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.config/JetBrains/WebStorm2022.3/options/other.xml</a></td><td> | </td><td class="num">93</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++</span><span class="d">----------------------------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.config/JetBrains/WebStorm2022.3/options/recentProjects.xml</a></td><td> | </td><td class="num">10</td><td><span class="i">+++++</span><span class="d">-----</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h4">.config/JetBrains/WebStorm2022.3/options/updates.xml</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h5">.config/JetBrains/WebStorm2022.3/options/usage.statistics.xml</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h6">.config/JetBrains/WebStorm2022.3/options/vim_settings_local.xml</a></td><td> | </td><td class="num">197</td><td><span class="i">++++++++++++++++++++++++++++++++++++++++</span><span class="d">---------------------------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h7">.config/JetBrains/WebStorm2022.3/options/window.state.xml</a></td><td> | </td><td class="num">6</td><td><span class="i">+++</span><span class="d">---</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h8">.config/JetBrains/WebStorm2022.3/workspace/2ICB3dBe1oV5Gq3qwKSkHasmRcS.xml</a></td><td> | </td><td class="num">225</td><td><span class="i">++++++++++++++++++++++++++++++++</span><span class="d">-----------------------------------------------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h9">.config/picom/picom.conf</a></td><td> | </td><td class="num">25</td><td><span class="i">++++++++++++++++++++</span><span class="d">-----</span></td></tr>
+</table></pre><pre>10 files changed, 321 insertions(+), 333 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/JetBrains/WebStorm2022.3/options/actionSummary.xml.html">.config/JetBrains/WebStorm2022.3/options/actionSummary.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/actionSummary.xml.html">.config/JetBrains/WebStorm2022.3/options/actionSummary.xml</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -15,6 +15,21 @@
+</a>     &lt;e n=&quot;$Undo&quot;&gt;
+       &lt;i c=&quot;17&quot; l=&quot;1670425983500&quot; /&gt;
+     &lt;/e&gt;
+<a href="#h0-0-3" id="h0-0-3" class="i">+    &lt;e n=&quot;ActivateBookmarksToolWindow&quot;&gt;
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+      &lt;i c=&quot;4&quot; l=&quot;1672702005752&quot; /&gt;
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+    &lt;/e&gt;
+</a><a href="#h0-0-6" id="h0-0-6" class="i">+    &lt;e n=&quot;ActivateFindToolWindow&quot;&gt;
+</a><a href="#h0-0-7" id="h0-0-7" class="i">+      &lt;i c=&quot;2&quot; l=&quot;1672701993929&quot; /&gt;
+</a><a href="#h0-0-8" id="h0-0-8" class="i">+    &lt;/e&gt;
+</a><a href="#h0-0-9" id="h0-0-9" class="i">+    &lt;e n=&quot;ActivateProjectToolWindow&quot;&gt;
+</a><a href="#h0-0-10" id="h0-0-10" class="i">+      &lt;i c=&quot;1&quot; l=&quot;1672702005517&quot; /&gt;
+</a><a href="#h0-0-11" id="h0-0-11" class="i">+    &lt;/e&gt;
+</a><a href="#h0-0-12" id="h0-0-12" class="i">+    &lt;e n=&quot;ActivateRunToolWindow&quot;&gt;
+</a><a href="#h0-0-13" id="h0-0-13" class="i">+      &lt;i c=&quot;1&quot; l=&quot;1672702005597&quot; /&gt;
+</a><a href="#h0-0-14" id="h0-0-14" class="i">+    &lt;/e&gt;
+</a><a href="#h0-0-15" id="h0-0-15" class="i">+    &lt;e n=&quot;Annotate&quot;&gt;
+</a><a href="#h0-0-16" id="h0-0-16" class="i">+      &lt;i c=&quot;4&quot; l=&quot;1672690701867&quot; /&gt;
+</a><a href="#h0-0-17" id="h0-0-17" class="i">+    &lt;/e&gt;
+</a>     &lt;e n=&quot;AutoIndentLines&quot;&gt;
+       &lt;i c=&quot;143&quot; l=&quot;1671207956463&quot; /&gt;
+     &lt;/e&gt;
+<a href="#h0-1" id="h0-1" class="h">@@ -31,22 +46,22 @@
+</a>       &lt;i c=&quot;3&quot; l=&quot;1669287084094&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;CommentByLineComment&quot;&gt;
+<a href="#h0-1-3" id="h0-1-3" class="d">-      &lt;i c=&quot;208&quot; l=&quot;1671717552394&quot; /&gt;
+</a><a href="#h0-1-4" id="h0-1-4" class="i">+      &lt;i c=&quot;209&quot; l=&quot;1672691093018&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;Debug&quot;&gt;
+       &lt;i c=&quot;2&quot; l=&quot;1666449134235&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;EditorBackSpace&quot;&gt;
+<a href="#h0-1-10" id="h0-1-10" class="d">-      &lt;i c=&quot;2582&quot; l=&quot;1671717578191&quot; /&gt;
+</a><a href="#h0-1-11" id="h0-1-11" class="i">+      &lt;i c=&quot;2703&quot; l=&quot;1673174487752&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorChooseLookupItem&quot;&gt;
+<a href="#h0-1-14" id="h0-1-14" class="d">-      &lt;i c=&quot;136&quot; l=&quot;1671717544198&quot; /&gt;
+</a><a href="#h0-1-15" id="h0-1-15" class="i">+      &lt;i c=&quot;143&quot; l=&quot;1673174506816&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorChooseLookupItemReplace&quot;&gt;
+<a href="#h0-1-18" id="h0-1-18" class="d">-      &lt;i c=&quot;14&quot; l=&quot;1671036849215&quot; /&gt;
+</a><a href="#h0-1-19" id="h0-1-19" class="i">+      &lt;i c=&quot;19&quot; l=&quot;1672691634734&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorDelete&quot;&gt;
+<a href="#h0-1-22" id="h0-1-22" class="d">-      &lt;i c=&quot;590&quot; l=&quot;1671717524461&quot; /&gt;
+</a><a href="#h0-1-23" id="h0-1-23" class="i">+      &lt;i c=&quot;609&quot; l=&quot;1673174504830&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorDeleteToWordStart&quot;&gt;
+       &lt;i c=&quot;2&quot; l=&quot;1670165690106&quot; /&gt;
+<a href="#h0-2" id="h0-2" class="h">@@ -55,7 +70,7 @@
+</a>       &lt;i c=&quot;21&quot; l=&quot;1671717061986&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;EditorEnter&quot;&gt;
+<a href="#h0-2-3" id="h0-2-3" class="d">-      &lt;i c=&quot;382&quot; l=&quot;1671717357050&quot; /&gt;
+</a><a href="#h0-2-4" id="h0-2-4" class="i">+      &lt;i c=&quot;389&quot; l=&quot;1673174447408&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorEscape&quot;&gt;
+       &lt;i c=&quot;13&quot; l=&quot;1671188480361&quot; /&gt;
+<a href="#h0-3" id="h0-3" class="h">@@ -67,7 +82,7 @@
+</a>       &lt;i c=&quot;4&quot; l=&quot;1669818469144&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;EditorTab&quot;&gt;
+<a href="#h0-3-3" id="h0-3-3" class="d">-      &lt;i c=&quot;67&quot; l=&quot;1671206730723&quot; /&gt;
+</a><a href="#h0-3-4" id="h0-3-4" class="i">+      &lt;i c=&quot;69&quot; l=&quot;1672691356914&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;EditorUp&quot;&gt;
+       &lt;i c=&quot;19&quot; l=&quot;1671040675209&quot; /&gt;
+<a href="#h0-4" id="h0-4" class="h">@@ -79,19 +94,19 @@
+</a>       &lt;i c=&quot;1&quot; l=&quot;1667250218634&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;FindInPath&quot;&gt;
+<a href="#h0-4-3" id="h0-4-3" class="d">-      &lt;i c=&quot;107&quot; l=&quot;1671716369657&quot; /&gt;
+</a><a href="#h0-4-4" id="h0-4-4" class="i">+      &lt;i c=&quot;117&quot; l=&quot;1672692558308&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;Git.Log.Branches.Change.Branch.Filter&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1667250968920&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;GotoDeclaration&quot;&gt;
+<a href="#h0-4-10" id="h0-4-10" class="d">-      &lt;i c=&quot;435&quot; l=&quot;1671716941234&quot; /&gt;
+</a><a href="#h0-4-11" id="h0-4-11" class="i">+      &lt;i c=&quot;437&quot; l=&quot;1672690798592&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;GotoFile&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1670166506190&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;HideAllWindows&quot;&gt;
+<a href="#h0-4-17" id="h0-4-17" class="d">-      &lt;i c=&quot;9&quot; l=&quot;1671716690830&quot; /&gt;
+</a><a href="#h0-4-18" id="h0-4-18" class="i">+      &lt;i c=&quot;10&quot; l=&quot;1672691933089&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;HippieCompletion&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1668340116077&quot; /&gt;
+<a href="#h0-5" id="h0-5" class="h">@@ -115,7 +130,7 @@
+</a>       &lt;i c=&quot;6&quot; l=&quot;1671187667380&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;PasteMultiple&quot;&gt;
+<a href="#h0-5-3" id="h0-5-3" class="d">-      &lt;i c=&quot;33&quot; l=&quot;1671710658919&quot; /&gt;
+</a><a href="#h0-5-4" id="h0-5-4" class="i">+      &lt;i c=&quot;34&quot; l=&quot;1672691029738&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;RecentFiles&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1670166508127&quot; /&gt;
+<a href="#h0-6" id="h0-6" class="h">@@ -124,7 +139,7 @@
+</a>       &lt;i c=&quot;37&quot; l=&quot;1667479633922&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;SaveAll&quot;&gt;
+<a href="#h0-6-3" id="h0-6-3" class="d">-      &lt;i c=&quot;739&quot; l=&quot;1671717594200&quot; /&gt;
+</a><a href="#h0-6-4" id="h0-6-4" class="i">+      &lt;i c=&quot;764&quot; l=&quot;1673174538169&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;SearchEverywhere&quot;&gt;
+       &lt;i c=&quot;8&quot; l=&quot;1671206912928&quot; /&gt;
+<a href="#h0-7" id="h0-7" class="h">@@ -166,11 +181,14 @@
+</a>       &lt;i c=&quot;1&quot; l=&quot;1664979659431&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.find.impl.FindPopupPanel$MyEnterAction&quot;&gt;
+<a href="#h0-7-3" id="h0-7-3" class="d">-      &lt;i c=&quot;69&quot; l=&quot;1671716365628&quot; /&gt;
+</a><a href="#h0-7-4" id="h0-7-4" class="i">+      &lt;i c=&quot;76&quot; l=&quot;1672692561121&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.find.impl.FindPopupPanel$MySelectScopeToggleAction&quot;&gt;
+       &lt;i c=&quot;5&quot; l=&quot;1669845872219&quot; /&gt;
+     &lt;/e&gt;
+<a href="#h0-7-9" id="h0-7-9" class="i">+    &lt;e n=&quot;com.intellij.find.impl.FindUIHelper$1&quot;&gt;
+</a><a href="#h0-7-10" id="h0-7-10" class="i">+      &lt;i c=&quot;2&quot; l=&quot;1672691537264&quot; /&gt;
+</a><a href="#h0-7-11" id="h0-7-11" class="i">+    &lt;/e&gt;
+</a>     &lt;e n=&quot;com.intellij.ide.plugins.newui.TabbedPaneHeaderComponent$3&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1666903792852&quot; /&gt;
+     &lt;/e&gt;
+<a href="#h0-8" id="h0-8" class="h">@@ -187,10 +205,10 @@
+</a>       &lt;i c=&quot;1&quot; l=&quot;1666128871644&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction&quot;&gt;
+<a href="#h0-8-3" id="h0-8-3" class="d">-      &lt;i c=&quot;6024&quot; l=&quot;1671717582319&quot; /&gt;
+</a><a href="#h0-8-4" id="h0-8-4" class="i">+      &lt;i c=&quot;6296&quot; l=&quot;1673174507056&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.fileEditor.impl.tabActions.CloseTab&quot;&gt;
+<a href="#h0-8-7" id="h0-8-7" class="d">-      &lt;i c=&quot;171&quot; l=&quot;1671716794554&quot; /&gt;
+</a><a href="#h0-8-8" id="h0-8-8" class="i">+      &lt;i c=&quot;176&quot; l=&quot;1672702036891&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.keymap.impl.ui.KeymapPanel$AddKeyboardShortcutAction&quot;&gt;
+       &lt;i c=&quot;4&quot; l=&quot;1669287915992&quot; /&gt;
+<a href="#h0-9" id="h0-9" class="h">@@ -199,19 +217,19 @@
+</a>       &lt;i c=&quot;1&quot; l=&quot;1669287955188&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction&quot;&gt;
+<a href="#h0-9-3" id="h0-9-3" class="d">-      &lt;i c=&quot;28&quot; l=&quot;1671716370492&quot; /&gt;
+</a><a href="#h0-9-4" id="h0-9-4" class="i">+      &lt;i c=&quot;29&quot; l=&quot;1672691538294&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.project.LightEditActionFactory$SimpleLightEditCompatibleAction&quot;&gt;
+       &lt;i c=&quot;2&quot; l=&quot;1670166508759&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.ui.DialogWrapper$4&quot;&gt;
+<a href="#h0-9-10" id="h0-9-10" class="d">-      &lt;i c=&quot;75&quot; l=&quot;1672357359931&quot; /&gt;
+</a><a href="#h0-9-11" id="h0-9-11" class="i">+      &lt;i c=&quot;79&quot; l=&quot;1673276936993&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1671716416406&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.toolWindow.ToolWindowHeader$HideAction&quot;&gt;
+<a href="#h0-9-17" id="h0-9-17" class="d">-      &lt;i c=&quot;6&quot; l=&quot;1670259861211&quot; /&gt;
+</a><a href="#h0-9-18" id="h0-9-18" class="i">+      &lt;i c=&quot;13&quot; l=&quot;1673174343998&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.ui.CommonActionsPanel$AddButton&quot;&gt;
+       &lt;i c=&quot;12&quot; l=&quot;1667250198621&quot; /&gt;
+<a href="#h0-10" id="h0-10" class="h">@@ -226,10 +244,10 @@
+</a>       &lt;i c=&quot;9&quot; l=&quot;1671108668410&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.ui.ScrollingUtil$TableMoveDownAction&quot;&gt;
+<a href="#h0-10-3" id="h0-10-3" class="d">-      &lt;i c=&quot;385&quot; l=&quot;1671716378419&quot; /&gt;
+</a><a href="#h0-10-4" id="h0-10-4" class="i">+      &lt;i c=&quot;403&quot; l=&quot;1672692560823&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.ui.ScrollingUtil$TableMoveUpAction&quot;&gt;
+<a href="#h0-10-7" id="h0-10-7" class="d">-      &lt;i c=&quot;175&quot; l=&quot;1671715722949&quot; /&gt;
+</a><a href="#h0-10-8" id="h0-10-8" class="i">+      &lt;i c=&quot;178&quot; l=&quot;1672691507422&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;com.intellij.xdebugger.impl.breakpoints.RemoveBreakpointGutterIconAction&quot;&gt;
+       &lt;i c=&quot;1&quot; l=&quot;1669673581139&quot; /&gt;
+<a href="#h0-11" id="h0-11" class="h">@@ -238,7 +256,7 @@
+</a>       &lt;i c=&quot;1&quot; l=&quot;1669287810146&quot; /&gt;
+     &lt;/e&gt;
+     &lt;e n=&quot;com.maddyhome.idea.vim.ui.ex.ExShortcutKeyAction&quot;&gt;
+<a href="#h0-11-3" id="h0-11-3" class="d">-      &lt;i c=&quot;1069&quot; l=&quot;1671717594193&quot; /&gt;
+</a><a href="#h0-11-4" id="h0-11-4" class="i">+      &lt;i c=&quot;1121&quot; l=&quot;1673174538150&quot; /&gt;
+</a>     &lt;/e&gt;
+     &lt;e n=&quot;editRunConfigurations&quot;&gt;
+       &lt;i c=&quot;20&quot; l=&quot;1671716415257&quot; /&gt;
+<b>diff --git a/<a id="h1" href="../file/.config/JetBrains/WebStorm2022.3/options/features.usage.statistics.xml.html">.config/JetBrains/WebStorm2022.3/options/features.usage.statistics.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/features.usage.statistics.xml.html">.config/JetBrains/WebStorm2022.3/options/features.usage.statistics.xml</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -1,7 +1,7 @@
+</a> &lt;application&gt;
+   &lt;component name=&quot;FeatureUsageStatistics&quot; first-run=&quot;1664673203248&quot; have-been-shown=&quot;false&quot; show-in-other=&quot;true&quot; show-in-compilation=&quot;true&quot;&gt;
+     &lt;feature id=&quot;editing.completion.camelHumps&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-0-3" id="h1-0-3" class="d">-    &lt;feature id=&quot;editing.clipboard.history&quot; count=&quot;33&quot; last-shown=&quot;0&quot; last-used=&quot;1671710658919&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+    &lt;feature id=&quot;editing.clipboard.history&quot; count=&quot;34&quot; last-shown=&quot;0&quot; last-used=&quot;1672691029826&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;editing.compare.editor.with.clipboard&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;codeassists.surroundwith.statement&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;refactoring.rename&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-1" id="h1-1" class="h">@@ -12,7 +12,7 @@
+</a>     &lt;feature id=&quot;navigation.popup.symbol&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;find.recent.search&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;switcher&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-1-3" id="h1-1-3" class="d">-    &lt;feature id=&quot;editing.completion.replace&quot; count=&quot;14&quot; last-shown=&quot;1671036848637&quot; last-used=&quot;1671036849233&quot; shown-count=&quot;1358&quot; /&gt;
+</a><a href="#h1-1-4" id="h1-1-4" class="i">+    &lt;feature id=&quot;editing.completion.replace&quot; count=&quot;19&quot; last-shown=&quot;1672691269777&quot; last-used=&quot;1672691634752&quot; shown-count=&quot;1374&quot; /&gt;
+</a>     &lt;feature id=&quot;codeassists.complete.statement&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;navigation.goto.inspection&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;vcs.show.local.history&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-2" id="h1-2" class="h">@@ -28,13 +28,13 @@
+</a>     &lt;feature id=&quot;codeassists.surroundwith.expression&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;codeassists.generate.code&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;navigation.recent.files&quot; count=&quot;1&quot; last-shown=&quot;0&quot; last-used=&quot;1670166508128&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-2-3" id="h1-2-3" class="d">-    &lt;feature id=&quot;navigation.goto.declaration&quot; count=&quot;435&quot; last-shown=&quot;0&quot; last-used=&quot;1671716941234&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-2-4" id="h1-2-4" class="i">+    &lt;feature id=&quot;navigation.goto.declaration&quot; count=&quot;437&quot; last-shown=&quot;0&quot; last-used=&quot;1672690798599&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;scratch&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;editing.completion.finishByDotEtc&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-2-7" id="h1-2-7" class="d">-    &lt;feature id=&quot;ui.open.project.tool.window&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-2-8" id="h1-2-8" class="i">+    &lt;feature id=&quot;ui.open.project.tool.window&quot; count=&quot;1&quot; last-shown=&quot;0&quot; last-used=&quot;1672702005518&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;editing.join.lines&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;vcs.pull.requests&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-2-11" id="h1-2-11" class="d">-    &lt;feature id=&quot;vcs.annotate&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-2-12" id="h1-2-12" class="i">+    &lt;feature id=&quot;vcs.annotate&quot; count=&quot;4&quot; last-shown=&quot;0&quot; last-used=&quot;1672690701868&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;refactoring.inlineVariable&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;debugger.breakpoint.non.suspending&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;editing.completion.finishByCtrlDot&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-3" id="h1-3" class="h">@@ -44,15 +44,15 @@
+</a>     &lt;feature id=&quot;editing.reformat.code&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;editing.completion.show.liveTemplates&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;editing.copy.line&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-3-3" id="h1-3-3" class="d">-    &lt;feature id=&quot;navigation.find.in.files&quot; count=&quot;107&quot; last-shown=&quot;0&quot; last-used=&quot;1671716369657&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-3-4" id="h1-3-4" class="i">+    &lt;feature id=&quot;navigation.find.in.files&quot; count=&quot;117&quot; last-shown=&quot;0&quot; last-used=&quot;1672692558374&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;ui.tree.speedsearch&quot; count=&quot;3&quot; last-shown=&quot;0&quot; last-used=&quot;1670258392458&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;ui.horizontal.scrolling&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;navigation.replace&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-3-8" id="h1-3-8" class="d">-    &lt;feature id=&quot;ui.hide.tool.window&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-3-9" id="h1-3-9" class="d">-    &lt;feature id=&quot;navigation.find.replace.in.files.toggle&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-3-10" id="h1-3-10" class="i">+    &lt;feature id=&quot;ui.hide.tool.window&quot; count=&quot;7&quot; last-shown=&quot;0&quot; last-used=&quot;1673174344006&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-3-11" id="h1-3-11" class="i">+    &lt;feature id=&quot;navigation.find.replace.in.files.toggle&quot; count=&quot;2&quot; last-shown=&quot;0&quot; last-used=&quot;1672691537295&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;intentions.check.regexp&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;profiler.open.snapshot&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-3-14" id="h1-3-14" class="d">-    &lt;feature id=&quot;codeassists.comment.line&quot; count=&quot;208&quot; last-shown=&quot;0&quot; last-used=&quot;1671717552399&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-3-15" id="h1-3-15" class="i">+    &lt;feature id=&quot;codeassists.comment.line&quot; count=&quot;209&quot; last-shown=&quot;0&quot; last-used=&quot;1672691093047&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;navigation.popup.camelprefix&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;SearchEverywhere&quot; count=&quot;8&quot; last-shown=&quot;0&quot; last-used=&quot;1671206912928&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;navigation.popup.class&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-4" id="h1-4" class="h">@@ -64,7 +64,7 @@
+</a>     &lt;feature id=&quot;navigation.find&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;find.completion&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;codeassists.quickdefinition&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-4-3" id="h1-4-3" class="d">-    &lt;feature id=&quot;editing.completion.basic&quot; count=&quot;151&quot; last-shown=&quot;0&quot; last-used=&quot;1671717544228&quot; shown-count=&quot;0&quot; /&gt;
+</a><a href="#h1-4-4" id="h1-4-4" class="i">+    &lt;feature id=&quot;editing.completion.basic&quot; count=&quot;158&quot; last-shown=&quot;0&quot; last-used=&quot;1673174506854&quot; shown-count=&quot;0&quot; /&gt;
+</a>     &lt;feature id=&quot;tag.name.completion&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;editing.completion.postfix&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;refactoring.introduceVariable.incompleteStatement&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+<a href="#h1-5" id="h1-5" class="h">@@ -94,17 +94,17 @@
+</a>     &lt;feature id=&quot;codeassists.quickdefinition.lookup&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;feature id=&quot;navigation.find.usages&quot; count=&quot;0&quot; last-shown=&quot;0&quot; last-used=&quot;0&quot; shown-count=&quot;0&quot; /&gt;
+     &lt;completionStatsTag&gt;
+<a href="#h1-5-3" id="h1-5-3" class="d">-      &lt;option name=&quot;sparedCharacters&quot; value=&quot;1090&quot; /&gt;
+</a><a href="#h1-5-4" id="h1-5-4" class="d">-      &lt;option name=&quot;invocations&quot; value=&quot;124&quot; /&gt;
+</a><a href="#h1-5-5" id="h1-5-5" class="i">+      &lt;option name=&quot;sparedCharacters&quot; value=&quot;1164&quot; /&gt;
+</a><a href="#h1-5-6" id="h1-5-6" class="i">+      &lt;option name=&quot;invocations&quot; value=&quot;136&quot; /&gt;
+</a>       &lt;option name=&quot;startDate&quot; value=&quot;1665784800000&quot; /&gt;
+<a href="#h1-5-8" id="h1-5-8" class="d">-      &lt;option name=&quot;dayCount&quot; value=&quot;16&quot; /&gt;
+</a><a href="#h1-5-9" id="h1-5-9" class="d">-      &lt;option name=&quot;lastDate&quot; value=&quot;1671663600000&quot; /&gt;
+</a><a href="#h1-5-10" id="h1-5-10" class="i">+      &lt;option name=&quot;dayCount&quot; value=&quot;18&quot; /&gt;
+</a><a href="#h1-5-11" id="h1-5-11" class="i">+      &lt;option name=&quot;lastDate&quot; value=&quot;1673132400000&quot; /&gt;
+</a>     &lt;/completionStatsTag&gt;
+     &lt;fixesStatsTag&gt;
+<a href="#h1-5-14" id="h1-5-14" class="d">-      &lt;option name=&quot;invocations&quot; value=&quot;52&quot; /&gt;
+</a><a href="#h1-5-15" id="h1-5-15" class="i">+      &lt;option name=&quot;invocations&quot; value=&quot;54&quot; /&gt;
+</a>       &lt;option name=&quot;startDate&quot; value=&quot;1666216800000&quot; /&gt;
+<a href="#h1-5-17" id="h1-5-17" class="d">-      &lt;option name=&quot;dayCount&quot; value=&quot;14&quot; /&gt;
+</a><a href="#h1-5-18" id="h1-5-18" class="d">-      &lt;option name=&quot;lastDate&quot; value=&quot;1671663600000&quot; /&gt;
+</a><a href="#h1-5-19" id="h1-5-19" class="i">+      &lt;option name=&quot;dayCount&quot; value=&quot;16&quot; /&gt;
+</a><a href="#h1-5-20" id="h1-5-20" class="i">+      &lt;option name=&quot;lastDate&quot; value=&quot;1673132400000&quot; /&gt;
+</a>     &lt;/fixesStatsTag&gt;
+   &lt;/component&gt;
+ &lt;/application&gt;
+ \ No newline at end of file
+<b>diff --git a/<a id="h2" href="../file/.config/JetBrains/WebStorm2022.3/options/other.xml.html">.config/JetBrains/WebStorm2022.3/options/other.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/other.xml.html">.config/JetBrains/WebStorm2022.3/options/other.xml</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -49,59 +49,58 @@
+</a>     &lt;option name=&quot;fontScale&quot; value=&quot;1.0&quot; /&gt;
+     &lt;option name=&quot;fontSize&quot; value=&quot;15.0&quot; /&gt;
+   &lt;/component&gt;
+<a href="#h2-0-3" id="h2-0-3" class="d">-  &lt;component name=&quot;PropertyService&quot;&gt;{
+</a><a href="#h2-0-4" id="h2-0-4" class="d">-  &amp;quot;keyToString&amp;quot;: {
+</a><a href="#h2-0-5" id="h2-0-5" class="d">-    &amp;quot;CWM_LOGGING_VERSION&amp;quot;: &amp;quot;1&amp;quot;,
+</a><a href="#h2-0-6" id="h2-0-6" class="d">-    &amp;quot;ExpandBeforeRunStepsPanel&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-7" id="h2-0-7" class="d">-    &amp;quot;GeneralSettings.initiallyConfigured&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-8" id="h2-0-8" class="d">-    &amp;quot;KEYMAP&amp;quot;: &amp;quot;terminal\nzoom in\nzoom&amp;quot;,
+</a><a href="#h2-0-9" id="h2-0-9" class="d">-    &amp;quot;MarketplacePluginsSearchHistory&amp;quot;: &amp;quot;vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark&amp;quot;,
+</a><a href="#h2-0-10" id="h2-0-10" class="d">-    &amp;quot;NextRunPlatformUpdateBuild&amp;quot;: &amp;quot;WS-222.4459.24/2022.2.4&amp;quot;,
+</a><a href="#h2-0-11" id="h2-0-11" class="d">-    &amp;quot;NextRunPlatformUpdateVersion&amp;quot;: &amp;quot;2022.2.4&amp;quot;,
+</a><a href="#h2-0-12" id="h2-0-12" class="d">-    &amp;quot;NonModalCommitCustomization.IsApplied&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-13" id="h2-0-13" class="d">-    &amp;quot;RunOnceActivity.se.text.search&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-14" id="h2-0-14" class="d">-    &amp;quot;SettingsSearchHistory&amp;quot;: &amp;quot;shortcut\nzoom&amp;quot;,
+</a><a href="#h2-0-15" id="h2-0-15" class="d">-    &amp;quot;appcds.runOnSecondStart&amp;quot;: &amp;quot;WS-223.8214.51-3978341e914f9506724fd79d7d28508c9952bde434391cb0c174ed4f2f536f8b&amp;quot;,
+</a><a href="#h2-0-16" id="h2-0-16" class="d">-    &amp;quot;ask.about.ctrl.y.shortcut.v2&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-17" id="h2-0-17" class="d">-    &amp;quot;bundled.plugins.list.saved.version&amp;quot;: &amp;quot;WS-223.8214.51&amp;quot;,
+</a><a href="#h2-0-18" id="h2-0-18" class="d">-    &amp;quot;evlsprt3.222&amp;quot;: &amp;quot;24&amp;quot;,
+</a><a href="#h2-0-19" id="h2-0-19" class="d">-    &amp;quot;evlsprt3.223&amp;quot;: &amp;quot;25&amp;quot;,
+</a><a href="#h2-0-20" id="h2-0-20" class="d">-    &amp;quot;file.gist.reindex.count&amp;quot;: &amp;quot;4&amp;quot;,
+</a><a href="#h2-0-21" id="h2-0-21" class="d">-    &amp;quot;fileTypeChangedCounter&amp;quot;: &amp;quot;2&amp;quot;,
+</a><a href="#h2-0-22" id="h2-0-22" class="d">-    &amp;quot;find.popup.splitter&amp;quot;: &amp;quot;0.31343284&amp;quot;,
+</a><a href="#h2-0-23" id="h2-0-23" class="d">-    &amp;quot;fontSizeToResetConsole&amp;quot;: &amp;quot;12.0&amp;quot;,
+</a><a href="#h2-0-24" id="h2-0-24" class="d">-    &amp;quot;fontSizeToResetEditor&amp;quot;: &amp;quot;12.0&amp;quot;,
+</a><a href="#h2-0-25" id="h2-0-25" class="d">-    &amp;quot;got.it.tooltip.reader.mode.got.it&amp;quot;: &amp;quot;1&amp;quot;,
+</a><a href="#h2-0-26" id="h2-0-26" class="d">-    &amp;quot;got.it.tooltip.terminal.smart_command_execution&amp;quot;: &amp;quot;1&amp;quot;,
+</a><a href="#h2-0-27" id="h2-0-27" class="d">-    &amp;quot;ide.memory.adjusted&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-28" id="h2-0-28" class="d">-    &amp;quot;ide.updates.old.dirs.scan.scheduled&amp;quot;: &amp;quot;1672444237844&amp;quot;,
+</a><a href="#h2-0-29" id="h2-0-29" class="d">-    &amp;quot;ideavim.statistics.timestamp&amp;quot;: &amp;quot;1671710147231&amp;quot;,
+</a><a href="#h2-0-30" id="h2-0-30" class="d">-    &amp;quot;last_opened_file_path&amp;quot;: &amp;quot;/home/diego/src/waterproof&amp;quot;,
+</a><a href="#h2-0-31" id="h2-0-31" class="d">-    &amp;quot;previousColorScheme&amp;quot;: &amp;quot;_@user_Dracula&amp;quot;,
+</a><a href="#h2-0-32" id="h2-0-32" class="d">-    &amp;quot;registry.to.advanced.settings.migration.build&amp;quot;: &amp;quot;WS-223.8214.51&amp;quot;,
+</a><a href="#h2-0-33" id="h2-0-33" class="d">-    &amp;quot;tasks.pass.word.conversion.enforced&amp;quot;: &amp;quot;true&amp;quot;,
+</a><a href="#h2-0-34" id="h2-0-34" class="d">-    &amp;quot;ts.lib.d.ts.version&amp;quot;: &amp;quot;4.8.4&amp;quot;
+</a><a href="#h2-0-35" id="h2-0-35" class="i">+  &lt;component name=&quot;PropertyService&quot;&gt;&lt;![CDATA[{
+</a><a href="#h2-0-36" id="h2-0-36" class="i">+  &quot;keyToString&quot;: {
+</a><a href="#h2-0-37" id="h2-0-37" class="i">+    &quot;CWM_LOGGING_VERSION&quot;: &quot;1&quot;,
+</a><a href="#h2-0-38" id="h2-0-38" class="i">+    &quot;ExpandBeforeRunStepsPanel&quot;: &quot;true&quot;,
+</a><a href="#h2-0-39" id="h2-0-39" class="i">+    &quot;GeneralSettings.initiallyConfigured&quot;: &quot;true&quot;,
+</a><a href="#h2-0-40" id="h2-0-40" class="i">+    &quot;KEYMAP&quot;: &quot;terminal\nzoom in\nzoom&quot;,
+</a><a href="#h2-0-41" id="h2-0-41" class="i">+    &quot;MarketplacePluginsSearchHistory&quot;: &quot;vim\ndrac\n/tag:Keymap\n/tag:theme\n/tag:theme atom one dark&quot;,
+</a><a href="#h2-0-42" id="h2-0-42" class="i">+    &quot;NextRunPlatformUpdateBuild&quot;: &quot;WS-222.4459.24/2022.2.4&quot;,
+</a><a href="#h2-0-43" id="h2-0-43" class="i">+    &quot;NextRunPlatformUpdateVersion&quot;: &quot;2022.2.4&quot;,
+</a><a href="#h2-0-44" id="h2-0-44" class="i">+    &quot;NonModalCommitCustomization.IsApplied&quot;: &quot;true&quot;,
+</a><a href="#h2-0-45" id="h2-0-45" class="i">+    &quot;RunOnceActivity.se.text.search&quot;: &quot;true&quot;,
+</a><a href="#h2-0-46" id="h2-0-46" class="i">+    &quot;SettingsSearchHistory&quot;: &quot;shortcut\nzoom&quot;,
+</a><a href="#h2-0-47" id="h2-0-47" class="i">+    &quot;appcds.runOnSecondStart&quot;: &quot;WS-223.8214.51-5499b3f8cad1d6bd6576715e9b4689b9ba905d87f32533ccb15d03bdbc47063e&quot;,
+</a><a href="#h2-0-48" id="h2-0-48" class="i">+    &quot;ask.about.ctrl.y.shortcut.v2&quot;: &quot;true&quot;,
+</a><a href="#h2-0-49" id="h2-0-49" class="i">+    &quot;bundled.plugins.list.saved.version&quot;: &quot;WS-223.8214.51&quot;,
+</a><a href="#h2-0-50" id="h2-0-50" class="i">+    &quot;evlsprt3.222&quot;: &quot;24&quot;,
+</a><a href="#h2-0-51" id="h2-0-51" class="i">+    &quot;evlsprt3.223&quot;: &quot;25&quot;,
+</a><a href="#h2-0-52" id="h2-0-52" class="i">+    &quot;file.gist.reindex.count&quot;: &quot;4&quot;,
+</a><a href="#h2-0-53" id="h2-0-53" class="i">+    &quot;fileTypeChangedCounter&quot;: &quot;2&quot;,
+</a><a href="#h2-0-54" id="h2-0-54" class="i">+    &quot;find.popup.splitter&quot;: &quot;0.31343284&quot;,
+</a><a href="#h2-0-55" id="h2-0-55" class="i">+    &quot;fontSizeToResetConsole&quot;: &quot;12.0&quot;,
+</a><a href="#h2-0-56" id="h2-0-56" class="i">+    &quot;fontSizeToResetEditor&quot;: &quot;12.0&quot;,
+</a><a href="#h2-0-57" id="h2-0-57" class="i">+    &quot;got.it.tooltip.reader.mode.got.it&quot;: &quot;1&quot;,
+</a><a href="#h2-0-58" id="h2-0-58" class="i">+    &quot;got.it.tooltip.terminal.smart_command_execution&quot;: &quot;1&quot;,
+</a><a href="#h2-0-59" id="h2-0-59" class="i">+    &quot;ide.memory.adjusted&quot;: &quot;true&quot;,
+</a><a href="#h2-0-60" id="h2-0-60" class="i">+    &quot;ideavim.statistics.timestamp&quot;: &quot;1672691446258&quot;,
+</a><a href="#h2-0-61" id="h2-0-61" class="i">+    &quot;last_opened_file_path&quot;: &quot;/home/diego/src/waterproof&quot;,
+</a><a href="#h2-0-62" id="h2-0-62" class="i">+    &quot;previousColorScheme&quot;: &quot;_@user_Dracula&quot;,
+</a><a href="#h2-0-63" id="h2-0-63" class="i">+    &quot;registry.to.advanced.settings.migration.build&quot;: &quot;WS-223.8214.51&quot;,
+</a><a href="#h2-0-64" id="h2-0-64" class="i">+    &quot;tasks.pass.word.conversion.enforced&quot;: &quot;true&quot;,
+</a><a href="#h2-0-65" id="h2-0-65" class="i">+    &quot;ts.lib.d.ts.version&quot;: &quot;4.8.4&quot;
+</a>   },
+<a href="#h2-0-67" id="h2-0-67" class="d">-  &amp;quot;keyToStringList&amp;quot;: {
+</a><a href="#h2-0-68" id="h2-0-68" class="d">-    &amp;quot;file.chooser.recent.files&amp;quot;: [
+</a><a href="#h2-0-69" id="h2-0-69" class="d">-      &amp;quot;/home/diego/src/jointwaterproof/waterproof&amp;quot;,
+</a><a href="#h2-0-70" id="h2-0-70" class="d">-      &amp;quot;/home/diego/src/waterproof&amp;quot;,
+</a><a href="#h2-0-71" id="h2-0-71" class="d">-      &amp;quot;/home/diego/.nvm/versions/node/v12.22.12/bin/npm&amp;quot;,
+</a><a href="#h2-0-72" id="h2-0-72" class="d">-      &amp;quot;/home/diego/.nvm/versions&amp;quot;
+</a><a href="#h2-0-73" id="h2-0-73" class="i">+  &quot;keyToStringList&quot;: {
+</a><a href="#h2-0-74" id="h2-0-74" class="i">+    &quot;file.chooser.recent.files&quot;: [
+</a><a href="#h2-0-75" id="h2-0-75" class="i">+      &quot;/home/diego/src/jointwaterproof/waterproof&quot;,
+</a><a href="#h2-0-76" id="h2-0-76" class="i">+      &quot;/home/diego/src/waterproof&quot;,
+</a><a href="#h2-0-77" id="h2-0-77" class="i">+      &quot;/home/diego/.nvm/versions/node/v12.22.12/bin/npm&quot;,
+</a><a href="#h2-0-78" id="h2-0-78" class="i">+      &quot;/home/diego/.nvm/versions&quot;
+</a>     ],
+<a href="#h2-0-80" id="h2-0-80" class="d">-    &amp;quot;fileTypeDetectors&amp;quot;: [
+</a><a href="#h2-0-81" id="h2-0-81" class="d">-      &amp;quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&amp;quot;,
+</a><a href="#h2-0-82" id="h2-0-82" class="d">-      &amp;quot;com.intellij.docker.dockerFile.DockerFileTypeDetector&amp;quot;,
+</a><a href="#h2-0-83" id="h2-0-83" class="d">-      &amp;quot;com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector&amp;quot;,
+</a><a href="#h2-0-84" id="h2-0-84" class="d">-      &amp;quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector&amp;quot;,
+</a><a href="#h2-0-85" id="h2-0-85" class="d">-      &amp;quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector&amp;quot;,
+</a><a href="#h2-0-86" id="h2-0-86" class="d">-      &amp;quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&amp;quot;
+</a><a href="#h2-0-87" id="h2-0-87" class="i">+    &quot;fileTypeDetectors&quot;: [
+</a><a href="#h2-0-88" id="h2-0-88" class="i">+      &quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&quot;,
+</a><a href="#h2-0-89" id="h2-0-89" class="i">+      &quot;com.intellij.docker.dockerFile.DockerFileTypeDetector&quot;,
+</a><a href="#h2-0-90" id="h2-0-90" class="i">+      &quot;com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector&quot;,
+</a><a href="#h2-0-91" id="h2-0-91" class="i">+      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector&quot;,
+</a><a href="#h2-0-92" id="h2-0-92" class="i">+      &quot;com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector&quot;,
+</a><a href="#h2-0-93" id="h2-0-93" class="i">+      &quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&quot;
+</a>     ]
+   }
+<a href="#h2-0-96" id="h2-0-96" class="d">-}&lt;/component&gt;
+</a><a href="#h2-0-97" id="h2-0-97" class="i">+}]]&gt;&lt;/component&gt;
+</a>   &lt;component name=&quot;TerminalCommandHistoryManager&quot;&gt;
+     &lt;command-history-files&gt;
+<a href="#h2-0-100" id="h2-0-100" class="d">-      &lt;command-history-file filename=&quot;waterproof-history&quot; project-path=&quot;$USER_HOME$/src/waterproof&quot; last-access-time=&quot;1672357332543&quot; /&gt;
+</a><a href="#h2-0-101" id="h2-0-101" class="i">+      &lt;command-history-file filename=&quot;waterproof-history&quot; project-path=&quot;$USER_HOME$/src/waterproof&quot; last-access-time=&quot;1672690655011&quot; /&gt;
+</a>     &lt;/command-history-files&gt;
+   &lt;/component&gt;
+ &lt;/application&gt;
+ \ No newline at end of file
+<b>diff --git a/<a id="h3" href="../file/.config/JetBrains/WebStorm2022.3/options/recentProjects.xml.html">.config/JetBrains/WebStorm2022.3/options/recentProjects.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/recentProjects.xml.html">.config/JetBrains/WebStorm2022.3/options/recentProjects.xml</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -17,14 +17,14 @@
+</a>         &lt;/entry&gt;
+         &lt;entry key=&quot;$USER_HOME$/src/waterproof&quot;&gt;
+           &lt;value&gt;
+<a href="#h3-0-3" id="h3-0-3" class="d">-            &lt;RecentProjectMetaInfo frameTitle=&quot;waterproof – SerapiProcessor.js&quot; opened=&quot;true&quot; projectWorkspaceId=&quot;2ICB3dBe1oV5Gq3qwKSkHasmRcS&quot;&gt;
+</a><a href="#h3-0-4" id="h3-0-4" class="d">-              &lt;option name=&quot;activationTimestamp&quot; value=&quot;1672357360017&quot; /&gt;
+</a><a href="#h3-0-5" id="h3-0-5" class="i">+            &lt;RecentProjectMetaInfo frameTitle=&quot;waterproof – SerapiSearchProcessor.js&quot; opened=&quot;true&quot; projectWorkspaceId=&quot;2ICB3dBe1oV5Gq3qwKSkHasmRcS&quot;&gt;
+</a><a href="#h3-0-6" id="h3-0-6" class="i">+              &lt;option name=&quot;activationTimestamp&quot; value=&quot;1673276937077&quot; /&gt;
+</a>               &lt;option name=&quot;binFolder&quot; value=&quot;$APPLICATION_HOME_DIR$/bin&quot; /&gt;
+               &lt;option name=&quot;build&quot; value=&quot;WS-223.8214.51&quot; /&gt;
+<a href="#h3-0-9" id="h3-0-9" class="d">-              &lt;option name=&quot;buildTimestamp&quot; value=&quot;1671535268683&quot; /&gt;
+</a><a href="#h3-0-10" id="h3-0-10" class="d">-              &lt;frame x=&quot;0&quot; y=&quot;22&quot; width=&quot;1916&quot; height=&quot;1054&quot; extendedState=&quot;6&quot; /&gt;
+</a><a href="#h3-0-11" id="h3-0-11" class="i">+              &lt;option name=&quot;buildTimestamp&quot; value=&quot;1671535277199&quot; /&gt;
+</a><a href="#h3-0-12" id="h3-0-12" class="i">+              &lt;frame x=&quot;0&quot; y=&quot;27&quot; width=&quot;1916&quot; height=&quot;1049&quot; extendedState=&quot;6&quot; /&gt;
+</a>               &lt;option name=&quot;productionCode&quot; value=&quot;WS&quot; /&gt;
+<a href="#h3-0-14" id="h3-0-14" class="d">-              &lt;option name=&quot;projectOpenTimestamp&quot; value=&quot;1672357334178&quot; /&gt;
+</a><a href="#h3-0-15" id="h3-0-15" class="i">+              &lt;option name=&quot;projectOpenTimestamp&quot; value=&quot;1673276901163&quot; /&gt;
+</a>             &lt;/RecentProjectMetaInfo&gt;
+           &lt;/value&gt;
+         &lt;/entry&gt;
+<b>diff --git a/<a id="h4" href="../file/.config/JetBrains/WebStorm2022.3/options/updates.xml.html">.config/JetBrains/WebStorm2022.3/options/updates.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/updates.xml.html">.config/JetBrains/WebStorm2022.3/options/updates.xml</a></b>
+<a href="#h4-0" id="h4-0" class="h">@@ -1,7 +1,7 @@
+</a> &lt;application&gt;
+   &lt;component name=&quot;UpdatesConfigurable&quot;&gt;
+     &lt;option name=&quot;LAST_BUILD_CHECKED&quot; value=&quot;WS-223.8214.51&quot; /&gt;
+<a href="#h4-0-3" id="h4-0-3" class="d">-    &lt;option name=&quot;LAST_TIME_CHECKED&quot; value=&quot;1672357334904&quot; /&gt;
+</a><a href="#h4-0-4" id="h4-0-4" class="i">+    &lt;option name=&quot;LAST_TIME_CHECKED&quot; value=&quot;1673276901824&quot; /&gt;
+</a>     &lt;option name=&quot;THIRD_PARTY_PLUGINS_ALLOWED&quot; value=&quot;true&quot; /&gt;
+     &lt;option name=&quot;WHATS_NEW_SHOWN_FOR&quot; value=&quot;223&quot; /&gt;
+   &lt;/component&gt;
+<b>diff --git a/<a id="h5" href="../file/.config/JetBrains/WebStorm2022.3/options/usage.statistics.xml.html">.config/JetBrains/WebStorm2022.3/options/usage.statistics.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/usage.statistics.xml.html">.config/JetBrains/WebStorm2022.3/options/usage.statistics.xml</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -1,5 +1,5 @@
+</a> &lt;application&gt;
+   &lt;component name=&quot;UsagesStatistic&quot;&gt;
+<a href="#h5-0-2" id="h5-0-2" class="d">-    &lt;system-event-id recorder=&quot;FUS&quot; id=&quot;53848&quot; /&gt;
+</a><a href="#h5-0-3" id="h5-0-3" class="i">+    &lt;system-event-id recorder=&quot;FUS&quot; id=&quot;57808&quot; /&gt;
+</a>   &lt;/component&gt;
+ &lt;/application&gt;
+ \ No newline at end of file
+<b>diff --git a/<a id="h6" href="../file/.config/JetBrains/WebStorm2022.3/options/vim_settings_local.xml.html">.config/JetBrains/WebStorm2022.3/options/vim_settings_local.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/vim_settings_local.xml.html">.config/JetBrains/WebStorm2022.3/options/vim_settings_local.xml</a></b>
+<a href="#h6-0" id="h6-0" class="h">@@ -2,14 +2,6 @@
+</a>   &lt;component name=&quot;VimHistorySettings&quot;&gt;
+     &lt;history&gt;
+       &lt;history-search&gt;
+<a href="#h6-0-3" id="h6-0-3" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;aW5Gb2N1cw==&lt;/entry&gt;
+</a><a href="#h6-0-4" id="h6-0-4" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZS5sb2c=&lt;/entry&gt;
+</a><a href="#h6-0-5" id="h6-0-5" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;Y29ucw==&lt;/entry&gt;
+</a><a href="#h6-0-6" id="h6-0-6" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZS5sbw==&lt;/entry&gt;
+</a><a href="#h6-0-7" id="h6-0-7" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;dHlwZSB5b3Vy&lt;/entry&gt;
+</a><a href="#h6-0-8" id="h6-0-8" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;cXVlcnk=&lt;/entry&gt;
+</a><a href="#h6-0-9" id="h6-0-9" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;ZXJyb3JTdHJpbmc=&lt;/entry&gt;
+</a><a href="#h6-0-10" id="h6-0-10" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;aWxsZWdhbA==&lt;/entry&gt;
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;c2lkZQ==&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;UWVkLg==&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;Q2hlY2s=&lt;/entry&gt;
+<a href="#h6-1" id="h6-1" class="h">@@ -47,17 +39,24 @@
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;ZXhlY3V0ZWQ=&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;ZXhlY3V0ZWRMaW5l&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZS4=&lt;/entry&gt;
+<a href="#h6-1-3" id="h6-1-3" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZQ==&lt;/entry&gt;
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;cmV0dXJu&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;Y3JlYXRl&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;c3RhdGUuaWQ=&lt;/entry&gt;
+<a href="#h6-1-7" id="h6-1-7" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZS5sb2c=&lt;/entry&gt;
+</a><a href="#h6-1-8" id="h6-1-8" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;cmVzdWx0&lt;/entry&gt;
+</a><a href="#h6-1-9" id="h6-1-9" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;c3NpZA==&lt;/entry&gt;
+</a><a href="#h6-1-10" id="h6-1-10" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;c2lk&lt;/entry&gt;
+</a><a href="#h6-1-11" id="h6-1-11" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;Y3JlYXRlQVNU&lt;/entry&gt;
+</a><a href="#h6-1-12" id="h6-1-12" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;aWRPZlNlbg==&lt;/entry&gt;
+</a><a href="#h6-1-13" id="h6-1-13" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;bGFzdFVu&lt;/entry&gt;
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;c2VudGVuY2VJZA==&lt;/entry&gt;
+<a href="#h6-1-15" id="h6-1-15" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;Y29uc29sZQ==&lt;/entry&gt;
+</a><a href="#h6-1-16" id="h6-1-16" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;UXVlcnlWZXJuYWM=&lt;/entry&gt;
+</a>       &lt;/history-search&gt;
+       &lt;history-cmd&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;MTc1&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;MTgw&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;c2Nyb2xsSW4=&lt;/entry&gt;
+<a href="#h6-1-22" id="h6-1-22" class="d">-        &lt;entry encoding=&quot;base64&quot;&gt;d3E=&lt;/entry&gt;
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;JzwsJz53&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;MTQw&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;MjY=&lt;/entry&gt;
+<a href="#h6-2" id="h6-2" class="h">@@ -72,6 +71,8 @@
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;Vw==&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot;&gt;NA==&lt;/entry&gt;
+         &lt;entry encoding=&quot;base64&quot; /&gt;
+<a href="#h6-2-3" id="h6-2-3" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;d3E=&lt;/entry&gt;
+</a><a href="#h6-2-4" id="h6-2-4" class="i">+        &lt;entry encoding=&quot;base64&quot;&gt;MjIw&lt;/entry&gt;
+</a>         &lt;entry encoding=&quot;base64&quot;&gt;dw==&lt;/entry&gt;
+       &lt;/history-cmd&gt;
+       &lt;history-expr /&gt;
+<a href="#h6-3" id="h6-3" class="h">@@ -81,10 +82,10 @@
+</a>   &lt;component name=&quot;VimMarksSettings&quot;&gt;
+     &lt;globalmarks /&gt;
+     &lt;filemarks&gt;
+<a href="#h6-3-3" id="h6-3-3" class="d">-      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; timestamp=&quot;1671717106931&quot;&gt;
+</a><a href="#h6-3-4" id="h6-3-4" class="d">-        &lt;mark key=&quot;&#39;&quot; line=&quot;321&quot; column=&quot;11&quot; /&gt;
+</a><a href="#h6-3-5" id="h6-3-5" class="d">-        &lt;mark key=&quot;[&quot; line=&quot;343&quot; column=&quot;0&quot; /&gt;
+</a><a href="#h6-3-6" id="h6-3-6" class="d">-        &lt;mark key=&quot;]&quot; line=&quot;343&quot; column=&quot;0&quot; /&gt;
+</a><a href="#h6-3-7" id="h6-3-7" class="i">+      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; timestamp=&quot;1672691594703&quot;&gt;
+</a><a href="#h6-3-8" id="h6-3-8" class="i">+        &lt;mark key=&quot;&#39;&quot; line=&quot;141&quot; column=&quot;52&quot; /&gt;
+</a><a href="#h6-3-9" id="h6-3-9" class="i">+        &lt;mark key=&quot;[&quot; line=&quot;140&quot; column=&quot;0&quot; /&gt;
+</a><a href="#h6-3-10" id="h6-3-10" class="i">+        &lt;mark key=&quot;]&quot; line=&quot;140&quot; column=&quot;52&quot; /&gt;
+</a>         &lt;mark key=&quot;.&quot; line=&quot;343&quot; column=&quot;0&quot; /&gt;
+       &lt;/file&gt;
+       &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js&quot; timestamp=&quot;1671716450480&quot;&gt;
+<a href="#h6-4" id="h6-4" class="h">@@ -98,12 +99,11 @@
+</a>         &lt;mark key=&quot;]&quot; line=&quot;15&quot; column=&quot;0&quot; /&gt;
+         &lt;mark key=&quot;.&quot; line=&quot;15&quot; column=&quot;0&quot; /&gt;
+       &lt;/file&gt;
+<a href="#h6-4-3" id="h6-4-3" class="d">-      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; timestamp=&quot;1671717592724&quot;&gt;
+</a><a href="#h6-4-4" id="h6-4-4" class="d">-        &lt;mark key=&quot;&#39;&quot; line=&quot;23&quot; column=&quot;8&quot; /&gt;
+</a><a href="#h6-4-5" id="h6-4-5" class="d">-        &lt;mark key=&quot;[&quot; line=&quot;86&quot; column=&quot;22&quot; /&gt;
+</a><a href="#h6-4-6" id="h6-4-6" class="d">-        &lt;mark key=&quot;]&quot; line=&quot;86&quot; column=&quot;22&quot; /&gt;
+</a><a href="#h6-4-7" id="h6-4-7" class="d">-        &lt;mark key=&quot;.&quot; line=&quot;86&quot; column=&quot;23&quot; /&gt;
+</a><a href="#h6-4-8" id="h6-4-8" class="d">-        &lt;mark key=&quot;^&quot; line=&quot;86&quot; column=&quot;25&quot; /&gt;
+</a><a href="#h6-4-9" id="h6-4-9" class="i">+      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; timestamp=&quot;1672691927037&quot;&gt;
+</a><a href="#h6-4-10" id="h6-4-10" class="i">+        &lt;mark key=&quot;&#39;&quot; line=&quot;40&quot; column=&quot;6&quot; /&gt;
+</a><a href="#h6-4-11" id="h6-4-11" class="i">+        &lt;mark key=&quot;[&quot; line=&quot;86&quot; column=&quot;0&quot; /&gt;
+</a><a href="#h6-4-12" id="h6-4-12" class="i">+        &lt;mark key=&quot;]&quot; line=&quot;86&quot; column=&quot;0&quot; /&gt;
+</a><a href="#h6-4-13" id="h6-4-13" class="i">+        &lt;mark key=&quot;.&quot; line=&quot;86&quot; column=&quot;0&quot; /&gt;
+</a>       &lt;/file&gt;
+       &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiState.js&quot; timestamp=&quot;1671715785370&quot;&gt;
+         &lt;mark key=&quot;&#39;&quot; line=&quot;105&quot; column=&quot;11&quot; /&gt;
+<a href="#h6-5" id="h6-5" class="h">@@ -114,18 +114,19 @@
+</a>         &lt;mark key=&quot;]&quot; line=&quot;5&quot; column=&quot;0&quot; /&gt;
+         &lt;mark key=&quot;.&quot; line=&quot;5&quot; column=&quot;0&quot; /&gt;
+       &lt;/file&gt;
+<a href="#h6-5-3" id="h6-5-3" class="d">-      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; timestamp=&quot;1671716958833&quot;&gt;
+</a><a href="#h6-5-4" id="h6-5-4" class="d">-        &lt;mark key=&quot;[&quot; line=&quot;219&quot; column=&quot;18&quot; /&gt;
+</a><a href="#h6-5-5" id="h6-5-5" class="d">-        &lt;mark key=&quot;]&quot; line=&quot;219&quot; column=&quot;21&quot; /&gt;
+</a><a href="#h6-5-6" id="h6-5-6" class="d">-        &lt;mark key=&quot;.&quot; line=&quot;219&quot; column=&quot;20&quot; /&gt;
+</a><a href="#h6-5-7" id="h6-5-7" class="d">-        &lt;mark key=&quot;^&quot; line=&quot;219&quot; column=&quot;21&quot; /&gt;
+</a><a href="#h6-5-8" id="h6-5-8" class="i">+      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; timestamp=&quot;1673174507057&quot;&gt;
+</a><a href="#h6-5-9" id="h6-5-9" class="i">+        &lt;mark key=&quot;&#39;&quot; line=&quot;3&quot; column=&quot;22&quot; /&gt;
+</a><a href="#h6-5-10" id="h6-5-10" class="i">+        &lt;mark key=&quot;[&quot; line=&quot;222&quot; column=&quot;21&quot; /&gt;
+</a><a href="#h6-5-11" id="h6-5-11" class="i">+        &lt;mark key=&quot;]&quot; line=&quot;222&quot; column=&quot;31&quot; /&gt;
+</a><a href="#h6-5-12" id="h6-5-12" class="i">+        &lt;mark key=&quot;.&quot; line=&quot;222&quot; column=&quot;30&quot; /&gt;
+</a><a href="#h6-5-13" id="h6-5-13" class="i">+        &lt;mark key=&quot;^&quot; line=&quot;222&quot; column=&quot;31&quot; /&gt;
+</a>       &lt;/file&gt;
+<a href="#h6-5-15" id="h6-5-15" class="d">-      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; timestamp=&quot;1671715996673&quot;&gt;
+</a><a href="#h6-5-16" id="h6-5-16" class="d">-        &lt;mark key=&quot;&#39;&quot; line=&quot;76&quot; column=&quot;32&quot; /&gt;
+</a><a href="#h6-5-17" id="h6-5-17" class="d">-        &lt;mark key=&quot;[&quot; line=&quot;80&quot; column=&quot;36&quot; /&gt;
+</a><a href="#h6-5-18" id="h6-5-18" class="d">-        &lt;mark key=&quot;]&quot; line=&quot;80&quot; column=&quot;40&quot; /&gt;
+</a><a href="#h6-5-19" id="h6-5-19" class="d">-        &lt;mark key=&quot;.&quot; line=&quot;80&quot; column=&quot;39&quot; /&gt;
+</a><a href="#h6-5-20" id="h6-5-20" class="d">-        &lt;mark key=&quot;^&quot; line=&quot;80&quot; column=&quot;40&quot; /&gt;
+</a><a href="#h6-5-21" id="h6-5-21" class="i">+      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; timestamp=&quot;1672702028729&quot;&gt;
+</a><a href="#h6-5-22" id="h6-5-22" class="i">+        &lt;mark key=&quot;&#39;&quot; line=&quot;95&quot; column=&quot;15&quot; /&gt;
+</a><a href="#h6-5-23" id="h6-5-23" class="i">+        &lt;mark key=&quot;[&quot; line=&quot;74&quot; column=&quot;11&quot; /&gt;
+</a><a href="#h6-5-24" id="h6-5-24" class="i">+        &lt;mark key=&quot;]&quot; line=&quot;74&quot; column=&quot;18&quot; /&gt;
+</a><a href="#h6-5-25" id="h6-5-25" class="i">+        &lt;mark key=&quot;^&quot; line=&quot;74&quot; column=&quot;18&quot; /&gt;
+</a><a href="#h6-5-26" id="h6-5-26" class="i">+        &lt;mark key=&quot;.&quot; line=&quot;74&quot; column=&quot;17&quot; /&gt;
+</a>       &lt;/file&gt;
+       &lt;file name=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; timestamp=&quot;1671711062685&quot;&gt;
+         &lt;mark key=&quot;&#39;&quot; line=&quot;15&quot; column=&quot;6&quot; /&gt;
+<a href="#h6-6" id="h6-6" class="h">@@ -181,53 +182,11 @@
+</a>       &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/CoqSerapiProcessors.js&quot; timestamp=&quot;1671108649415&quot;&gt;
+         &lt;mark key=&quot;&#39;&quot; line=&quot;131&quot; column=&quot;17&quot; /&gt;
+       &lt;/file&gt;
+<a href="#h6-6-3" id="h6-6-3" class="d">-      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; timestamp=&quot;1671715899150&quot;&gt;
+</a><a href="#h6-6-4" id="h6-6-4" class="d">-        &lt;mark key=&quot;&#39;&quot; line=&quot;24&quot; column=&quot;35&quot; /&gt;
+</a><a href="#h6-6-5" id="h6-6-5" class="i">+      &lt;file name=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; timestamp=&quot;1672691496895&quot;&gt;
+</a><a href="#h6-6-6" id="h6-6-6" class="i">+        &lt;mark key=&quot;&#39;&quot; line=&quot;1&quot; column=&quot;8&quot; /&gt;
+</a>       &lt;/file&gt;
+     &lt;/filemarks&gt;
+     &lt;jumps&gt;
+<a href="#h6-6-10" id="h6-6-10" class="d">-      &lt;jump line=&quot;191&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-11" id="h6-6-11" class="d">-      &lt;jump line=&quot;282&quot; column=&quot;51&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-12" id="h6-6-12" class="d">-      &lt;jump line=&quot;369&quot; column=&quot;14&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-13" id="h6-6-13" class="d">-      &lt;jump line=&quot;354&quot; column=&quot;5&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-14" id="h6-6-14" class="d">-      &lt;jump line=&quot;370&quot; column=&quot;51&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-15" id="h6-6-15" class="d">-      &lt;jump line=&quot;380&quot; column=&quot;24&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-16" id="h6-6-16" class="d">-      &lt;jump line=&quot;439&quot; column=&quot;4&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-17" id="h6-6-17" class="d">-      &lt;jump line=&quot;435&quot; column=&quot;54&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-18" id="h6-6-18" class="d">-      &lt;jump line=&quot;440&quot; column=&quot;4&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-19" id="h6-6-19" class="d">-      &lt;jump line=&quot;17&quot; column=&quot;9&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue&quot; /&gt;
+</a><a href="#h6-6-20" id="h6-6-20" class="d">-      &lt;jump line=&quot;14&quot; column=&quot;21&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue&quot; /&gt;
+</a><a href="#h6-6-21" id="h6-6-21" class="d">-      &lt;jump line=&quot;368&quot; column=&quot;14&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-22" id="h6-6-22" class="d">-      &lt;jump line=&quot;362&quot; column=&quot;40&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-23" id="h6-6-23" class="d">-      &lt;jump line=&quot;5&quot; column=&quot;15&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue&quot; /&gt;
+</a><a href="#h6-6-24" id="h6-6-24" class="d">-      &lt;jump line=&quot;371&quot; column=&quot;51&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-25" id="h6-6-25" class="d">-      &lt;jump line=&quot;381&quot; column=&quot;24&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-26" id="h6-6-26" class="d">-      &lt;jump line=&quot;432&quot; column=&quot;36&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-27" id="h6-6-27" class="d">-      &lt;jump line=&quot;431&quot; column=&quot;4&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-28" id="h6-6-28" class="d">-      &lt;jump line=&quot;441&quot; column=&quot;11&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-29" id="h6-6-29" class="d">-      &lt;jump line=&quot;21&quot; column=&quot;23&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CodeExecution.vue&quot; /&gt;
+</a><a href="#h6-6-30" id="h6-6-30" class="d">-      &lt;jump line=&quot;26&quot; column=&quot;46&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/EditWindow.vue&quot; /&gt;
+</a><a href="#h6-6-31" id="h6-6-31" class="d">-      &lt;jump line=&quot;599&quot; column=&quot;38&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-32" id="h6-6-32" class="d">-      &lt;jump line=&quot;189&quot; column=&quot;10&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-33" id="h6-6-33" class="d">-      &lt;jump line=&quot;262&quot; column=&quot;12&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-34" id="h6-6-34" class="d">-      &lt;jump line=&quot;265&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-35" id="h6-6-35" class="d">-      &lt;jump line=&quot;434&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-36" id="h6-6-36" class="d">-      &lt;jump line=&quot;450&quot; column=&quot;44&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-37" id="h6-6-37" class="d">-      &lt;jump line=&quot;145&quot; column=&quot;16&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+</a><a href="#h6-6-38" id="h6-6-38" class="d">-      &lt;jump line=&quot;148&quot; column=&quot;13&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+</a><a href="#h6-6-39" id="h6-6-39" class="d">-      &lt;jump line=&quot;149&quot; column=&quot;13&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+</a><a href="#h6-6-40" id="h6-6-40" class="d">-      &lt;jump line=&quot;287&quot; column=&quot;13&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-41" id="h6-6-41" class="d">-      &lt;jump line=&quot;289&quot; column=&quot;13&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-42" id="h6-6-42" class="d">-      &lt;jump line=&quot;18&quot; column=&quot;39&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-43" id="h6-6-43" class="d">-      &lt;jump line=&quot;6&quot; column=&quot;23&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/assistance/AssistanceBar.vue&quot; /&gt;
+</a><a href="#h6-6-44" id="h6-6-44" class="d">-      &lt;jump line=&quot;107&quot; column=&quot;34&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/assistance/AssistanceBar.vue&quot; /&gt;
+</a><a href="#h6-6-45" id="h6-6-45" class="d">-      &lt;jump line=&quot;121&quot; column=&quot;18&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+</a><a href="#h6-6-46" id="h6-6-46" class="d">-      &lt;jump line=&quot;14&quot; column=&quot;29&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-47" id="h6-6-47" class="d">-      &lt;jump line=&quot;38&quot; column=&quot;37&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-48" id="h6-6-48" class="d">-      &lt;jump line=&quot;52&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-49" id="h6-6-49" class="d">-      &lt;jump line=&quot;256&quot; column=&quot;14&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+</a><a href="#h6-6-50" id="h6-6-50" class="d">-      &lt;jump line=&quot;150&quot; column=&quot;13&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+</a><a href="#h6-6-51" id="h6-6-51" class="d">-      &lt;jump line=&quot;104&quot; column=&quot;18&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+</a>       &lt;jump line=&quot;217&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+       &lt;jump line=&quot;98&quot; column=&quot;12&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+       &lt;jump line=&quot;291&quot; column=&quot;11&quot; filename=&quot;$USER_HOME$/src/waterproof/src/editpage/components/ProofWindow.vue&quot; /&gt;
+<a href="#h6-7" id="h6-7" class="h">@@ -273,64 +232,106 @@
+</a>       &lt;jump line=&quot;105&quot; column=&quot;11&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiState.js&quot; /&gt;
+       &lt;jump line=&quot;50&quot; column=&quot;43&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+       &lt;jump line=&quot;47&quot; column=&quot;17&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+<a href="#h6-7-3" id="h6-7-3" class="d">-      &lt;jump line=&quot;7&quot; column=&quot;39&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a>       &lt;jump line=&quot;36&quot; column=&quot;33&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+<a href="#h6-7-5" id="h6-7-5" class="d">-      &lt;jump line=&quot;24&quot; column=&quot;35&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a><a href="#h6-7-6" id="h6-7-6" class="d">-      &lt;jump line=&quot;76&quot; column=&quot;32&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a>       &lt;jump line=&quot;289&quot; column=&quot;17&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js&quot; /&gt;
+       &lt;jump line=&quot;295&quot; column=&quot;0&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js&quot; /&gt;
+       &lt;jump line=&quot;296&quot; column=&quot;4&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js&quot; /&gt;
+       &lt;jump line=&quot;286&quot; column=&quot;41&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/SerapiParser.js&quot; /&gt;
+       &lt;jump line=&quot;321&quot; column=&quot;11&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+<a href="#h6-7-12" id="h6-7-12" class="d">-      &lt;jump line=&quot;84&quot; column=&quot;16&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a>       &lt;jump line=&quot;97&quot; column=&quot;20&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+<a href="#h6-7-14" id="h6-7-14" class="d">-      &lt;jump line=&quot;85&quot; column=&quot;21&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-15" id="h6-7-15" class="d">-      &lt;jump line=&quot;23&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-16" id="h6-7-16" class="i">+      &lt;jump line=&quot;219&quot; column=&quot;37&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+</a><a href="#h6-7-17" id="h6-7-17" class="i">+      &lt;jump line=&quot;32&quot; column=&quot;33&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-18" id="h6-7-18" class="i">+      &lt;jump line=&quot;45&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-19" id="h6-7-19" class="i">+      &lt;jump line=&quot;67&quot; column=&quot;43&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-20" id="h6-7-20" class="i">+      &lt;jump line=&quot;70&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-21" id="h6-7-21" class="i">+      &lt;jump line=&quot;73&quot; column=&quot;14&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-22" id="h6-7-22" class="i">+      &lt;jump line=&quot;78&quot; column=&quot;17&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-23" id="h6-7-23" class="i">+      &lt;jump line=&quot;84&quot; column=&quot;25&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-24" id="h6-7-24" class="i">+      &lt;jump line=&quot;85&quot; column=&quot;43&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-25" id="h6-7-25" class="i">+      &lt;jump line=&quot;87&quot; column=&quot;40&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-26" id="h6-7-26" class="i">+      &lt;jump line=&quot;5&quot; column=&quot;44&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-27" id="h6-7-27" class="i">+      &lt;jump line=&quot;23&quot; column=&quot;6&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-28" id="h6-7-28" class="i">+      &lt;jump line=&quot;74&quot; column=&quot;1&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-29" id="h6-7-29" class="i">+      &lt;jump line=&quot;82&quot; column=&quot;19&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-30" id="h6-7-30" class="i">+      &lt;jump line=&quot;52&quot; column=&quot;31&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-31" id="h6-7-31" class="i">+      &lt;jump line=&quot;80&quot; column=&quot;27&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-32" id="h6-7-32" class="i">+      &lt;jump line=&quot;81&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-33" id="h6-7-33" class="i">+      &lt;jump line=&quot;24&quot; column=&quot;18&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a><a href="#h6-7-34" id="h6-7-34" class="i">+      &lt;jump line=&quot;7&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a><a href="#h6-7-35" id="h6-7-35" class="i">+      &lt;jump line=&quot;48&quot; column=&quot;28&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a><a href="#h6-7-36" id="h6-7-36" class="i">+      &lt;jump line=&quot;1&quot; column=&quot;8&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiASTProcessor.js&quot; /&gt;
+</a><a href="#h6-7-37" id="h6-7-37" class="i">+      &lt;jump line=&quot;21&quot; column=&quot;53&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+</a><a href="#h6-7-38" id="h6-7-38" class="i">+      &lt;jump line=&quot;77&quot; column=&quot;42&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+</a><a href="#h6-7-39" id="h6-7-39" class="i">+      &lt;jump line=&quot;125&quot; column=&quot;49&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+</a><a href="#h6-7-40" id="h6-7-40" class="i">+      &lt;jump line=&quot;140&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+</a><a href="#h6-7-41" id="h6-7-41" class="i">+      &lt;jump line=&quot;141&quot; column=&quot;52&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+</a><a href="#h6-7-42" id="h6-7-42" class="i">+      &lt;jump line=&quot;3&quot; column=&quot;22&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+</a><a href="#h6-7-43" id="h6-7-43" class="i">+      &lt;jump line=&quot;48&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-44" id="h6-7-44" class="i">+      &lt;jump line=&quot;53&quot; column=&quot;19&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-45" id="h6-7-45" class="i">+      &lt;jump line=&quot;57&quot; column=&quot;33&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-46" id="h6-7-46" class="i">+      &lt;jump line=&quot;58&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-47" id="h6-7-47" class="i">+      &lt;jump line=&quot;73&quot; column=&quot;20&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-48" id="h6-7-48" class="i">+      &lt;jump line=&quot;76&quot; column=&quot;57&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-49" id="h6-7-49" class="i">+      &lt;jump line=&quot;77&quot; column=&quot;25&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-50" id="h6-7-50" class="i">+      &lt;jump line=&quot;22&quot; column=&quot;19&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-51" id="h6-7-51" class="i">+      &lt;jump line=&quot;25&quot; column=&quot;37&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-52" id="h6-7-52" class="i">+      &lt;jump line=&quot;26&quot; column=&quot;18&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-53" id="h6-7-53" class="i">+      &lt;jump line=&quot;31&quot; column=&quot;19&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-54" id="h6-7-54" class="i">+      &lt;jump line=&quot;37&quot; column=&quot;30&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-55" id="h6-7-55" class="i">+      &lt;jump line=&quot;38&quot; column=&quot;25&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-56" id="h6-7-56" class="i">+      &lt;jump line=&quot;43&quot; column=&quot;19&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-57" id="h6-7-57" class="i">+      &lt;jump line=&quot;47&quot; column=&quot;34&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-58" id="h6-7-58" class="i">+      &lt;jump line=&quot;79&quot; column=&quot;16&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-59" id="h6-7-59" class="i">+      &lt;jump line=&quot;86&quot; column=&quot;4&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-60" id="h6-7-60" class="i">+      &lt;jump line=&quot;40&quot; column=&quot;6&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+</a><a href="#h6-7-61" id="h6-7-61" class="i">+      &lt;jump line=&quot;78&quot; column=&quot;0&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-62" id="h6-7-62" class="i">+      &lt;jump line=&quot;86&quot; column=&quot;15&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h6-7-63" id="h6-7-63" class="i">+      &lt;jump line=&quot;95&quot; column=&quot;15&quot; filename=&quot;$USER_HOME$/src/waterproof/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a>     &lt;/jumps&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;VimRegisterSettings&quot;&gt;
+     &lt;registers&gt;
+       &lt;register name=&quot;&amp;quot;&quot; type=&quot;4&quot;&gt;
+<a href="#h6-7-69" id="h6-7-69" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;dHlwZQ==&lt;/text&gt;
+</a><a href="#h6-7-70" id="h6-7-70" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQ=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;-&quot; type=&quot;4&quot;&gt;
+<a href="#h6-7-73" id="h6-7-73" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;dHlwZQ==&lt;/text&gt;
+</a><a href="#h6-7-74" id="h6-7-74" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQ=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;.&quot; type=&quot;4&quot;&gt;
+<a href="#h6-7-77" id="h6-7-77" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;dHlwZU9mKA==&lt;/text&gt;
+</a><a href="#h6-7-78" id="h6-7-78" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;c2VudGVuY2VJRA==&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;/&quot; type=&quot;4&quot;&gt;
+<a href="#h6-7-81" id="h6-7-81" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;c2VudGVuY2VJZA==&lt;/text&gt;
+</a><a href="#h6-7-82" id="h6-7-82" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;UXVlcnlWZXJuYWM=&lt;/text&gt;
+</a>       &lt;/register&gt;
+<a href="#h6-7-84" id="h6-7-84" class="d">-      &lt;register name=&quot;0&quot; type=&quot;2&quot;&gt;
+</a><a href="#h6-7-85" id="h6-7-85" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdCk7Cg==&lt;/text&gt;
+</a><a href="#h6-7-86" id="h6-7-86" class="i">+      &lt;register name=&quot;0&quot; type=&quot;4&quot;&gt;
+</a><a href="#h6-7-87" id="h6-7-87" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;dGhpcy5zdGF0ZS5pZE9mU2VudGVuY2UodGhpcy5zdGF0ZS5sYXN0RXhlY3V0ZWQp&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;1&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-90" id="h6-7-90" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdC0gMV0pOwo=&lt;/text&gt;
+</a><a href="#h6-7-91" id="h6-7-91" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdCk7CiAgICAgIC8vIGNvbnNvbGUubG9nKHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQuc2xpY2UoLTEpKTsK&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;2&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-94" id="h6-7-94" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgIH0K&lt;/text&gt;
+</a><a href="#h6-7-95" id="h6-7-95" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAvLyByZXR1cm4gYChRdWVyeSAoKSAoVmVybmFjICIke3Nhbml0aXNlKGNvbW1hbmQpfSIpKWA7Cg==&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;3&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-98" id="h6-7-98" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2codGhpcy5jb21tYW5kU3RhdHVzLnJlc3VsdFsKICAgICAgICAgIHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQubGVuZ3RoXSk7Cg==&lt;/text&gt;
+</a><a href="#h6-7-99" id="h6-7-99" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICogQHBhcmFtIHtJbnRlZ2VyfSBzZW50ZW5jZUlkIGluZGV4IHdoZXJlIHRoZSB2ZXJuYWMgY29tbWFuZCBzaG91bGQgZXhlY3V0ZQo=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;4&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-102" id="h6-7-102" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2coJ3NpZCA9ICcgKyBzZW50ZW5jZS5zZW50ZW5jZUlkKTsK&lt;/text&gt;
+</a><a href="#h6-7-103" id="h6-7-103" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICBjb25zdCBzZW50ID0gY29tbWFuZDsKICBzZW50LnJlcGxhY2UoL1xcL2csICdcXFxcJykKICAgICAgLnJlcGxhY2UoLyIvZywgJ1xcIicpOwogIGNvbnN0IHRvU2VuZCA9IAogIGNvbnNvbGUubG9nKHRvU2VuZCk7Cg==&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;5&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-106" id="h6-7-106" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2cocGFydGlhbCk7Cg==&lt;/text&gt;
+</a><a href="#h6-7-107" id="h6-7-107" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAgIGNvbnN0IHNlbnRlbmNlSWQgPSAK&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;6&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-110" id="h6-7-110" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgICAgY29uc29sZS5sb2cocGFydGlhbCk7Cg==&lt;/text&gt;
+</a><a href="#h6-7-111" id="h6-7-111" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAgIGNvbnN0IGxhc3RVbmNoYW5nZWRTZW50ZW5jZSA9IAo=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;7&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-114" id="h6-7-114" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;ICAgIGZvcihpbnQgaSA9IDApCg==&lt;/text&gt;
+</a><a href="#h6-7-115" id="h6-7-115" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAgIGNvbnNvbGUubG9nKCdzaWQgPSAnICsgc2VudGVuY2VJZCk7Cg==&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;8&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-118" id="h6-7-118" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;aW1wb3J0IFNlcmFwaUFTVFByb2Nlc3NvciBmcm9tICcuL1NlcmFwaUFTVFByb2Nlc3Nvcic7Cg==&lt;/text&gt;
+</a><a href="#h6-7-119" id="h6-7-119" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICAgIGNvbnNvbGUubG9nKCdhJyArIHRoaXMuY29tbWFuZFN0YXR1cy5yZXN1bHQpOwo=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;9&quot; type=&quot;2&quot;&gt;
+<a href="#h6-7-122" id="h6-7-122" class="d">-        &lt;text encoding=&quot;base64&quot;&gt;aW1wb3J0IHNlcmFwaUFTVFByb2Nlc3NvciBmcm9tICcuL1NlcmFwaUFTVFByb2Nlc3Nvcic7Cg==&lt;/text&gt;
+</a><a href="#h6-7-123" id="h6-7-123" class="i">+        &lt;text encoding=&quot;base64&quot;&gt;ICogQHBhcmFtIHtJbnRlZ2VyfSBzZW50ZW5jZUlkIGluZGV4IHdoZXJlIHRoZSB2ZXJuYWMgY29tbWFuZCBzaG91bGQgZXhlY3V0ZQo=&lt;/text&gt;
+</a>       &lt;/register&gt;
+       &lt;register name=&quot;:&quot; type=&quot;4&quot;&gt;
+         &lt;text encoding=&quot;base64&quot;&gt;dw==&lt;/text&gt;
+<a href="#h6-8" id="h6-8" class="h">@@ -339,8 +340,8 @@
+</a>   &lt;/component&gt;
+   &lt;component name=&quot;VimSearchSettings&quot;&gt;
+     &lt;search&gt;
+<a href="#h6-8-3" id="h6-8-3" class="d">-      &lt;last-search encoding=&quot;base64&quot;&gt;c2VudGVuY2VJZA==&lt;/last-search&gt;
+</a><a href="#h6-8-4" id="h6-8-4" class="d">-      &lt;last-pattern encoding=&quot;base64&quot;&gt;c2VudGVuY2VJZA==&lt;/last-pattern&gt;
+</a><a href="#h6-8-5" id="h6-8-5" class="i">+      &lt;last-search encoding=&quot;base64&quot;&gt;UXVlcnlWZXJuYWM=&lt;/last-search&gt;
+</a><a href="#h6-8-6" id="h6-8-6" class="i">+      &lt;last-pattern encoding=&quot;base64&quot;&gt;UXVlcnlWZXJuYWM=&lt;/last-pattern&gt;
+</a>       &lt;last-dir encoding=&quot;base64&quot;&gt;MQ==&lt;/last-dir&gt;
+       &lt;show-last encoding=&quot;base64&quot;&gt;ZmFsc2U=&lt;/show-last&gt;
+     &lt;/search&gt;
+<b>diff --git a/<a id="h7" href="../file/.config/JetBrains/WebStorm2022.3/options/window.state.xml.html">.config/JetBrains/WebStorm2022.3/options/window.state.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/options/window.state.xml.html">.config/JetBrains/WebStorm2022.3/options/window.state.xml</a></b>
+<a href="#h7-0" id="h7-0" class="h">@@ -1,6 +1,6 @@
+</a> &lt;application&gt;
+   &lt;component name=&quot;DimensionService&quot;&gt;
+<a href="#h7-0-2" id="h7-0-2" class="d">-    &lt;location key=&quot;find.popup.0.0.1920.1080&quot; x=&quot;942&quot; y=&quot;160&quot; /&gt;
+</a><a href="#h7-0-3" id="h7-0-3" class="i">+    &lt;location key=&quot;find.popup.0.0.1920.1080&quot; x=&quot;942&quot; y=&quot;164&quot; /&gt;
+</a>     &lt;location key=&quot;find.popup.0.0.2560.1440&quot; x=&quot;910&quot; y=&quot;173&quot; /&gt;
+     &lt;size key=&quot;GridCell.Tab.0.left.0.0.2560.1440&quot; width=&quot;2514&quot; height=&quot;305&quot; /&gt;
+     &lt;size key=&quot;GridCell.Tab.0.center.0.0.2560.1440&quot; width=&quot;2514&quot; height=&quot;305&quot; /&gt;
+<a href="#h7-1" id="h7-1" class="h">@@ -22,11 +22,11 @@
+</a>     &lt;size key=&quot;GridCell.Tab.3.center.0.0.1920.1080&quot; width=&quot;1874&quot; height=&quot;389&quot; /&gt;
+     &lt;size key=&quot;GridCell.Tab.3.right.0.0.1920.1080&quot; width=&quot;1874&quot; height=&quot;389&quot; /&gt;
+     &lt;size key=&quot;GridCell.Tab.3.bottom.0.0.1920.1080&quot; width=&quot;1874&quot; height=&quot;389&quot; /&gt;
+<a href="#h7-1-3" id="h7-1-3" class="d">-    &lt;size key=&quot;find.popup.0.0.1920.1080&quot; width=&quot;978&quot; height=&quot;893&quot; /&gt;
+</a><a href="#h7-1-4" id="h7-1-4" class="i">+    &lt;size key=&quot;find.popup.0.0.1920.1080&quot; width=&quot;978&quot; height=&quot;916&quot; /&gt;
+</a>     &lt;size key=&quot;find.popup.0.0.2560.1440&quot; width=&quot;646&quot; height=&quot;544&quot; /&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;WindowManager&quot;&gt;
+<a href="#h7-1-8" id="h7-1-8" class="d">-    &lt;frame x=&quot;0&quot; y=&quot;22&quot; width=&quot;1916&quot; height=&quot;1054&quot; extendedState=&quot;6&quot; /&gt;
+</a><a href="#h7-1-9" id="h7-1-9" class="i">+    &lt;frame x=&quot;0&quot; y=&quot;27&quot; width=&quot;1916&quot; height=&quot;1049&quot; extendedState=&quot;6&quot; /&gt;
+</a>   &lt;/component&gt;
+   &lt;component name=&quot;WindowStateApplicationService&quot;&gt;
+     &lt;state x=&quot;1277&quot; y=&quot;344&quot; width=&quot;478&quot; height=&quot;367&quot; key=&quot;FileChooserDialogImpl&quot; timestamp=&quot;1669074985051&quot;&gt;
+<b>diff --git a/<a id="h8" href="../file/.config/JetBrains/WebStorm2022.3/workspace/2ICB3dBe1oV5Gq3qwKSkHasmRcS.xml.html">.config/JetBrains/WebStorm2022.3/workspace/2ICB3dBe1oV5Gq3qwKSkHasmRcS.xml</a> b/<a href="../file/.config/JetBrains/WebStorm2022.3/workspace/2ICB3dBe1oV5Gq3qwKSkHasmRcS.xml.html">.config/JetBrains/WebStorm2022.3/workspace/2ICB3dBe1oV5Gq3qwKSkHasmRcS.xml</a></b>
+<a href="#h8-0" id="h8-0" class="h">@@ -8,6 +8,7 @@
+</a>               &lt;entry key=&quot;url&quot; value=&quot;file://$PROJECT_DIR$/src/editpage/components/blocks/code/CodeBlock.vue&quot; /&gt;
+               &lt;entry key=&quot;line&quot; value=&quot;32&quot; /&gt;
+             &lt;/attributes&gt;
+<a href="#h8-0-3" id="h8-0-3" class="i">+            &lt;option name=&quot;description&quot; value=&quot;export default {&quot; /&gt;
+</a>             &lt;option name=&quot;provider&quot; value=&quot;com.intellij.ide.bookmark.providers.LineBookmarkProvider&quot; /&gt;
+           &lt;/BookmarkState&gt;
+         &lt;/option&gt;
+<a href="#h8-1" id="h8-1" class="h">@@ -34,68 +35,33 @@
+</a>     &lt;select /&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;FileEditorManager&quot;&gt;
+<a href="#h8-1-3" id="h8-1-3" class="d">-    &lt;splitter split-orientation=&quot;horizontal&quot; split-proportion=&quot;0.5&quot;&gt;
+</a><a href="#h8-1-4" id="h8-1-4" class="d">-      &lt;split-first&gt;
+</a><a href="#h8-1-5" id="h8-1-5" class="d">-        &lt;leaf SIDE_TABS_SIZE_LIMIT_KEY=&quot;-1&quot;&gt;
+</a><a href="#h8-1-6" id="h8-1-6" class="d">-          &lt;file pinned=&quot;false&quot; current-in-tab=&quot;false&quot;&gt;
+</a><a href="#h8-1-7" id="h8-1-7" class="d">-            &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot;&gt;
+</a><a href="#h8-1-8" id="h8-1-8" class="d">-              &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-9" id="h8-1-9" class="d">-                &lt;state relative-caret-position=&quot;1600&quot;&gt;
+</a><a href="#h8-1-10" id="h8-1-10" class="d">-                  &lt;caret line=&quot;80&quot; column=&quot;39&quot; selection-start-line=&quot;80&quot; selection-start-column=&quot;39&quot; selection-end-line=&quot;80&quot; selection-end-column=&quot;39&quot; /&gt;
+</a><a href="#h8-1-11" id="h8-1-11" class="d">-                &lt;/state&gt;
+</a><a href="#h8-1-12" id="h8-1-12" class="d">-              &lt;/provider&gt;
+</a><a href="#h8-1-13" id="h8-1-13" class="d">-            &lt;/entry&gt;
+</a><a href="#h8-1-14" id="h8-1-14" class="d">-          &lt;/file&gt;
+</a><a href="#h8-1-15" id="h8-1-15" class="d">-          &lt;file pinned=&quot;false&quot; current-in-tab=&quot;false&quot;&gt;
+</a><a href="#h8-1-16" id="h8-1-16" class="d">-            &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/SerapiParser.js&quot;&gt;
+</a><a href="#h8-1-17" id="h8-1-17" class="d">-              &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-18" id="h8-1-18" class="d">-                &lt;state&gt;
+</a><a href="#h8-1-19" id="h8-1-19" class="d">-                  &lt;caret line=&quot;296&quot; column=&quot;4&quot; selection-start-line=&quot;296&quot; selection-start-column=&quot;4&quot; selection-end-line=&quot;296&quot; selection-end-column=&quot;4&quot; /&gt;
+</a><a href="#h8-1-20" id="h8-1-20" class="d">-                &lt;/state&gt;
+</a><a href="#h8-1-21" id="h8-1-21" class="d">-              &lt;/provider&gt;
+</a><a href="#h8-1-22" id="h8-1-22" class="d">-            &lt;/entry&gt;
+</a><a href="#h8-1-23" id="h8-1-23" class="d">-          &lt;/file&gt;
+</a><a href="#h8-1-24" id="h8-1-24" class="d">-          &lt;file pinned=&quot;false&quot; current-in-tab=&quot;true&quot;&gt;
+</a><a href="#h8-1-25" id="h8-1-25" class="d">-            &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot;&gt;
+</a><a href="#h8-1-26" id="h8-1-26" class="d">-              &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-27" id="h8-1-27" class="d">-                &lt;state relative-caret-position=&quot;272&quot;&gt;
+</a><a href="#h8-1-28" id="h8-1-28" class="d">-                  &lt;caret line=&quot;219&quot; column=&quot;41&quot; selection-start-line=&quot;219&quot; selection-start-column=&quot;41&quot; selection-end-line=&quot;219&quot; selection-end-column=&quot;41&quot; /&gt;
+</a><a href="#h8-1-29" id="h8-1-29" class="d">-                  &lt;folding&gt;
+</a><a href="#h8-1-30" id="h8-1-30" class="d">-                    &lt;element signature=&quot;e#0#54#0&quot; expanded=&quot;true&quot; /&gt;
+</a><a href="#h8-1-31" id="h8-1-31" class="d">-                  &lt;/folding&gt;
+</a><a href="#h8-1-32" id="h8-1-32" class="d">-                &lt;/state&gt;
+</a><a href="#h8-1-33" id="h8-1-33" class="d">-              &lt;/provider&gt;
+</a><a href="#h8-1-34" id="h8-1-34" class="d">-            &lt;/entry&gt;
+</a><a href="#h8-1-35" id="h8-1-35" class="d">-          &lt;/file&gt;
+</a><a href="#h8-1-36" id="h8-1-36" class="d">-          &lt;file pinned=&quot;false&quot; current-in-tab=&quot;false&quot;&gt;
+</a><a href="#h8-1-37" id="h8-1-37" class="d">-            &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js&quot;&gt;
+</a><a href="#h8-1-38" id="h8-1-38" class="d">-              &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-39" id="h8-1-39" class="d">-                &lt;state&gt;
+</a><a href="#h8-1-40" id="h8-1-40" class="d">-                  &lt;caret line=&quot;343&quot; column=&quot;6&quot; selection-start-line=&quot;343&quot; selection-start-column=&quot;6&quot; selection-end-line=&quot;343&quot; selection-end-column=&quot;6&quot; /&gt;
+</a><a href="#h8-1-41" id="h8-1-41" class="d">-                &lt;/state&gt;
+</a><a href="#h8-1-42" id="h8-1-42" class="d">-              &lt;/provider&gt;
+</a><a href="#h8-1-43" id="h8-1-43" class="d">-            &lt;/entry&gt;
+</a><a href="#h8-1-44" id="h8-1-44" class="d">-          &lt;/file&gt;
+</a><a href="#h8-1-45" id="h8-1-45" class="d">-        &lt;/leaf&gt;
+</a><a href="#h8-1-46" id="h8-1-46" class="d">-      &lt;/split-first&gt;
+</a><a href="#h8-1-47" id="h8-1-47" class="d">-      &lt;split-second&gt;
+</a><a href="#h8-1-48" id="h8-1-48" class="d">-        &lt;leaf SIDE_TABS_SIZE_LIMIT_KEY=&quot;-1&quot;&gt;
+</a><a href="#h8-1-49" id="h8-1-49" class="d">-          &lt;file pinned=&quot;false&quot; current-in-tab=&quot;true&quot;&gt;
+</a><a href="#h8-1-50" id="h8-1-50" class="d">-            &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js&quot;&gt;
+</a><a href="#h8-1-51" id="h8-1-51" class="d">-              &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-52" id="h8-1-52" class="d">-                &lt;state relative-caret-position=&quot;200&quot;&gt;
+</a><a href="#h8-1-53" id="h8-1-53" class="d">-                  &lt;caret line=&quot;86&quot; column=&quot;17&quot; selection-start-line=&quot;86&quot; selection-start-column=&quot;17&quot; selection-end-line=&quot;86&quot; selection-end-column=&quot;17&quot; /&gt;
+</a><a href="#h8-1-54" id="h8-1-54" class="d">-                &lt;/state&gt;
+</a><a href="#h8-1-55" id="h8-1-55" class="d">-              &lt;/provider&gt;
+</a><a href="#h8-1-56" id="h8-1-56" class="d">-            &lt;/entry&gt;
+</a><a href="#h8-1-57" id="h8-1-57" class="d">-          &lt;/file&gt;
+</a><a href="#h8-1-58" id="h8-1-58" class="d">-        &lt;/leaf&gt;
+</a><a href="#h8-1-59" id="h8-1-59" class="d">-      &lt;/split-second&gt;
+</a><a href="#h8-1-60" id="h8-1-60" class="d">-    &lt;/splitter&gt;
+</a><a href="#h8-1-61" id="h8-1-61" class="i">+    &lt;leaf SIDE_TABS_SIZE_LIMIT_KEY=&quot;-1&quot;&gt;
+</a><a href="#h8-1-62" id="h8-1-62" class="i">+      &lt;file pinned=&quot;false&quot; current-in-tab=&quot;false&quot;&gt;
+</a><a href="#h8-1-63" id="h8-1-63" class="i">+        &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot;&gt;
+</a><a href="#h8-1-64" id="h8-1-64" class="i">+          &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-65" id="h8-1-65" class="i">+            &lt;state&gt;
+</a><a href="#h8-1-66" id="h8-1-66" class="i">+              &lt;caret line=&quot;74&quot; column=&quot;17&quot; selection-start-line=&quot;74&quot; selection-start-column=&quot;17&quot; selection-end-line=&quot;74&quot; selection-end-column=&quot;17&quot; /&gt;
+</a><a href="#h8-1-67" id="h8-1-67" class="i">+            &lt;/state&gt;
+</a><a href="#h8-1-68" id="h8-1-68" class="i">+          &lt;/provider&gt;
+</a><a href="#h8-1-69" id="h8-1-69" class="i">+        &lt;/entry&gt;
+</a><a href="#h8-1-70" id="h8-1-70" class="i">+      &lt;/file&gt;
+</a><a href="#h8-1-71" id="h8-1-71" class="i">+      &lt;file pinned=&quot;false&quot; current-in-tab=&quot;true&quot;&gt;
+</a><a href="#h8-1-72" id="h8-1-72" class="i">+        &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot;&gt;
+</a><a href="#h8-1-73" id="h8-1-73" class="i">+          &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-1-74" id="h8-1-74" class="i">+            &lt;state relative-caret-position=&quot;570&quot;&gt;
+</a><a href="#h8-1-75" id="h8-1-75" class="i">+              &lt;caret line=&quot;218&quot; column=&quot;31&quot; selection-start-line=&quot;218&quot; selection-start-column=&quot;31&quot; selection-end-line=&quot;218&quot; selection-end-column=&quot;31&quot; /&gt;
+</a><a href="#h8-1-76" id="h8-1-76" class="i">+              &lt;folding&gt;
+</a><a href="#h8-1-77" id="h8-1-77" class="i">+                &lt;element signature=&quot;e#0#54#0&quot; expanded=&quot;true&quot; /&gt;
+</a><a href="#h8-1-78" id="h8-1-78" class="i">+              &lt;/folding&gt;
+</a><a href="#h8-1-79" id="h8-1-79" class="i">+            &lt;/state&gt;
+</a><a href="#h8-1-80" id="h8-1-80" class="i">+          &lt;/provider&gt;
+</a><a href="#h8-1-81" id="h8-1-81" class="i">+        &lt;/entry&gt;
+</a><a href="#h8-1-82" id="h8-1-82" class="i">+      &lt;/file&gt;
+</a><a href="#h8-1-83" id="h8-1-83" class="i">+    &lt;/leaf&gt;
+</a>   &lt;/component&gt;
+   &lt;component name=&quot;FileTypeUsageLocalSummary&quot;&gt;
+     &lt;fileType name=&quot;JavaScript&quot;&gt;
+<a href="#h8-1-87" id="h8-1-87" class="d">-      &lt;summary usageCount=&quot;158&quot; lastUsed=&quot;1672357333667&quot; /&gt;
+</a><a href="#h8-1-88" id="h8-1-88" class="i">+      &lt;summary usageCount=&quot;174&quot; lastUsed=&quot;1673276901045&quot; /&gt;
+</a>     &lt;/fileType&gt;
+     &lt;fileType name=&quot;Markdown&quot;&gt;
+       &lt;summary usageCount=&quot;1&quot; lastUsed=&quot;1669675491186&quot; /&gt;
+<a href="#h8-2" id="h8-2" class="h">@@ -104,7 +70,7 @@
+</a>       &lt;summary usageCount=&quot;5&quot; lastUsed=&quot;1671716791595&quot; /&gt;
+     &lt;/fileType&gt;
+     &lt;fileType name=&quot;Vue.js&quot;&gt;
+<a href="#h8-2-3" id="h8-2-3" class="d">-      &lt;summary usageCount=&quot;98&quot; lastUsed=&quot;1671715419333&quot; /&gt;
+</a><a href="#h8-2-4" id="h8-2-4" class="i">+      &lt;summary usageCount=&quot;101&quot; lastUsed=&quot;1672701989510&quot; /&gt;
+</a>     &lt;/fileType&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;FindInProjectRecents&quot;&gt;
+<a href="#h8-3" id="h8-3" class="h">@@ -139,11 +105,17 @@
+</a>       &lt;find&gt;lineindex&lt;/find&gt;
+       &lt;find&gt;this.state.&lt;/find&gt;
+       &lt;find&gt;sid&lt;/find&gt;
+<a href="#h8-3-3" id="h8-3-3" class="i">+      &lt;find&gt;createASTC&lt;/find&gt;
+</a><a href="#h8-3-4" id="h8-3-4" class="i">+      &lt;find&gt;fetchAST&lt;/find&gt;
+</a><a href="#h8-3-5" id="h8-3-5" class="i">+      &lt;find&gt;idOfSentence&lt;/find&gt;
+</a><a href="#h8-3-6" id="h8-3-6" class="i">+      &lt;find&gt;createInde&lt;/find&gt;
+</a><a href="#h8-3-7" id="h8-3-7" class="i">+      &lt;find&gt;queryCommand&lt;/find&gt;
+</a><a href="#h8-3-8" id="h8-3-8" class="i">+      &lt;find&gt;query&lt;/find&gt;
+</a><a href="#h8-3-9" id="h8-3-9" class="i">+      &lt;find&gt;Type your&lt;/find&gt;
+</a>     &lt;/findStrings&gt;
+     &lt;dirStrings&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src&lt;/dir&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components/blocks&lt;/dir&gt;
+<a href="#h8-3-14" id="h8-3-14" class="d">-      &lt;dir&gt;$PROJECT_DIR$/src/coq&lt;/dir&gt;
+</a>       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components/menubars&lt;/dir&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components/assistance&lt;/dir&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src/io&lt;/dir&gt;
+<a href="#h8-4" id="h8-4" class="h">@@ -151,10 +123,11 @@
+</a>       &lt;dir&gt;$PROJECT_DIR$/tests/unit/serapi/processors&lt;/dir&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components&lt;/dir&gt;
+       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components/blocks/code&lt;/dir&gt;
+<a href="#h8-4-3" id="h8-4-3" class="d">-      &lt;dir&gt;$PROJECT_DIR$/src/coq/serapi/util&lt;/dir&gt;
+</a>       &lt;dir&gt;$PROJECT_DIR$/src/editpage/components/mixins&lt;/dir&gt;
+<a href="#h8-4-5" id="h8-4-5" class="d">-      &lt;dir&gt;$PROJECT_DIR$/src/coq/serapi/processors&lt;/dir&gt;
+</a>       &lt;dir&gt;$PROJECT_DIR$/src/coq/serapi&lt;/dir&gt;
+<a href="#h8-4-7" id="h8-4-7" class="i">+      &lt;dir&gt;$PROJECT_DIR$/src/coq&lt;/dir&gt;
+</a><a href="#h8-4-8" id="h8-4-8" class="i">+      &lt;dir&gt;$PROJECT_DIR$/src/coq/serapi/util&lt;/dir&gt;
+</a><a href="#h8-4-9" id="h8-4-9" class="i">+      &lt;dir&gt;$PROJECT_DIR$/src/coq/serapi/processors&lt;/dir&gt;
+</a>     &lt;/dirStrings&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;GitSEFilterConfiguration&quot;&gt;{
+<a href="#h8-5" id="h8-5" class="h">@@ -176,10 +149,10 @@
+</a>       &lt;option value=&quot;$PROJECT_DIR$/src/editpage/components/mixins/CoqInteraction.vue&quot; /&gt;
+       &lt;option value=&quot;$PROJECT_DIR$/src/editpage/components/ProofWindow.vue&quot; /&gt;
+       &lt;option value=&quot;$PROJECT_DIR$/src/editpage/components/EditWindow.vue&quot; /&gt;
+<a href="#h8-5-3" id="h8-5-3" class="d">-      &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h8-5-4" id="h8-5-4" class="d">-      &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+</a>       &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js&quot; /&gt;
+       &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js&quot; /&gt;
+<a href="#h8-5-7" id="h8-5-7" class="i">+      &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot; /&gt;
+</a><a href="#h8-5-8" id="h8-5-8" class="i">+      &lt;option value=&quot;$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot; /&gt;
+</a>     &lt;/changedPaths&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;IgnoredFileRootStore&quot;&gt;
+<a href="#h8-6" id="h8-6" class="h">@@ -191,7 +164,7 @@
+</a>   &lt;/component&gt;
+   &lt;component name=&quot;LanguageUsageStatistics&quot;&gt;
+     &lt;language id=&quot;JavaScript&quot;&gt;
+<a href="#h8-6-3" id="h8-6-3" class="d">-      &lt;summary usageCount=&quot;158&quot; lastUsage=&quot;1672357333667&quot; /&gt;
+</a><a href="#h8-6-4" id="h8-6-4" class="i">+      &lt;summary usageCount=&quot;174&quot; lastUsage=&quot;1673276901045&quot; /&gt;
+</a>     &lt;/language&gt;
+     &lt;language id=&quot;Markdown&quot;&gt;
+       &lt;summary usageCount=&quot;1&quot; lastUsage=&quot;1669675491188&quot; /&gt;
+<a href="#h8-7" id="h8-7" class="h">@@ -200,7 +173,7 @@
+</a>       &lt;summary usageCount=&quot;5&quot; lastUsage=&quot;1671716791595&quot; /&gt;
+     &lt;/language&gt;
+     &lt;language id=&quot;Vue&quot;&gt;
+<a href="#h8-7-3" id="h8-7-3" class="d">-      &lt;summary usageCount=&quot;98&quot; lastUsage=&quot;1671715419333&quot; /&gt;
+</a><a href="#h8-7-4" id="h8-7-4" class="i">+      &lt;summary usageCount=&quot;101&quot; lastUsage=&quot;1672701989510&quot; /&gt;
+</a>     &lt;/language&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;ProjectView&quot;&gt;
+<a href="#h8-8" id="h8-8" class="h">@@ -297,58 +270,39 @@
+</a>     &lt;/option&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;TimeTrackingManager&quot;&gt;
+<a href="#h8-8-3" id="h8-8-3" class="d">-    &lt;option name=&quot;totallyTimeSpent&quot; value=&quot;33783000&quot; /&gt;
+</a><a href="#h8-8-4" id="h8-8-4" class="i">+    &lt;option name=&quot;totallyTimeSpent&quot; value=&quot;36395000&quot; /&gt;
+</a>   &lt;/component&gt;
+   &lt;component name=&quot;ToolWindowManager&quot;&gt;
+     &lt;layout&gt;
+       &lt;window_info id=&quot;Space Code Reviews&quot; /&gt;
+       &lt;window_info id=&quot;Pull Requests&quot; /&gt;
+       &lt;window_info id=&quot;Commit&quot; /&gt;
+<a href="#h8-8-11" id="h8-8-11" class="d">-      &lt;window_info id=&quot;Bookmarks&quot; order=&quot;0&quot; side_tool=&quot;true&quot; /&gt;
+</a><a href="#h8-8-12" id="h8-8-12" class="d">-      &lt;window_info content_ui=&quot;combo&quot; id=&quot;Project&quot; order=&quot;1&quot; weight=&quot;0.32473958&quot; /&gt;
+</a><a href="#h8-8-13" id="h8-8-13" class="d">-      &lt;window_info id=&quot;npm&quot; order=&quot;2&quot; side_tool=&quot;true&quot; /&gt;
+</a><a href="#h8-8-14" id="h8-8-14" class="d">-      &lt;window_info id=&quot;Structure&quot; order=&quot;3&quot; side_tool=&quot;true&quot; /&gt;
+</a><a href="#h8-8-15" id="h8-8-15" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Internal Method Tracing&quot; /&gt;
+</a><a href="#h8-8-16" id="h8-8-16" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;File Transfer&quot; /&gt;
+</a><a href="#h8-8-17" id="h8-8-17" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;TypeScript&quot; /&gt;
+</a><a href="#h8-8-18" id="h8-8-18" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Version Control&quot; order=&quot;0&quot; /&gt;
+</a><a href="#h8-8-19" id="h8-8-19" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Find&quot; order=&quot;1&quot; /&gt;
+</a><a href="#h8-8-20" id="h8-8-20" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Run&quot; order=&quot;2&quot; weight=&quot;0.33029723&quot; /&gt;
+</a><a href="#h8-8-21" id="h8-8-21" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Debug&quot; order=&quot;3&quot; weight=&quot;0.4&quot; /&gt;
+</a><a href="#h8-8-22" id="h8-8-22" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;TODO&quot; order=&quot;4&quot; /&gt;
+</a><a href="#h8-8-23" id="h8-8-23" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Inspection&quot; order=&quot;5&quot; weight=&quot;0.4&quot; /&gt;
+</a><a href="#h8-8-24" id="h8-8-24" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Problems View&quot; order=&quot;6&quot; /&gt;
+</a><a href="#h8-8-25" id="h8-8-25" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Terminal&quot; order=&quot;7&quot; visible=&quot;true&quot; weight=&quot;0.32210624&quot; /&gt;
+</a><a href="#h8-8-26" id="h8-8-26" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Services&quot; order=&quot;8&quot; /&gt;
+</a><a href="#h8-8-27" id="h8-8-27" class="d">-      &lt;window_info anchor=&quot;right&quot; id=&quot;documentation.v2&quot; side_tool=&quot;true&quot; /&gt;
+</a><a href="#h8-8-28" id="h8-8-28" class="d">-      &lt;window_info anchor=&quot;right&quot; id=&quot;Notifications&quot; order=&quot;0&quot; weight=&quot;0.25&quot; /&gt;
+</a><a href="#h8-8-29" id="h8-8-29" class="d">-    &lt;/layout&gt;
+</a><a href="#h8-8-30" id="h8-8-30" class="d">-    &lt;layout-to-restore&gt;
+</a><a href="#h8-8-31" id="h8-8-31" class="d">-      &lt;window_info id=&quot;Space Code Reviews&quot; /&gt;
+</a><a href="#h8-8-32" id="h8-8-32" class="d">-      &lt;window_info id=&quot;Pull Requests&quot; /&gt;
+</a><a href="#h8-8-33" id="h8-8-33" class="d">-      &lt;window_info id=&quot;Commit&quot; /&gt;
+</a><a href="#h8-8-34" id="h8-8-34" class="d">-      &lt;window_info id=&quot;Bookmarks&quot; order=&quot;0&quot; side_tool=&quot;true&quot; /&gt;
+</a><a href="#h8-8-35" id="h8-8-35" class="d">-      &lt;window_info content_ui=&quot;combo&quot; id=&quot;Project&quot; order=&quot;1&quot; visible=&quot;true&quot; weight=&quot;0.32473958&quot; /&gt;
+</a><a href="#h8-8-36" id="h8-8-36" class="i">+      &lt;window_info id=&quot;Bookmarks&quot; order=&quot;0&quot; side_tool=&quot;true&quot; weight=&quot;0.19024009&quot; /&gt;
+</a><a href="#h8-8-37" id="h8-8-37" class="i">+      &lt;window_info content_ui=&quot;combo&quot; id=&quot;Project&quot; order=&quot;1&quot; weight=&quot;0.19024009&quot; /&gt;
+</a>       &lt;window_info id=&quot;Structure&quot; order=&quot;2&quot; side_tool=&quot;true&quot; /&gt;
+<a href="#h8-8-39" id="h8-8-39" class="i">+      &lt;window_info id=&quot;npm&quot; order=&quot;3&quot; side_tool=&quot;true&quot; /&gt;
+</a>       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Internal Method Tracing&quot; /&gt;
+       &lt;window_info anchor=&quot;bottom&quot; id=&quot;File Transfer&quot; /&gt;
+       &lt;window_info anchor=&quot;bottom&quot; id=&quot;TypeScript&quot; /&gt;
+<a href="#h8-8-43" id="h8-8-43" class="i">+      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Dependency Checker&quot; /&gt;
+</a>       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Version Control&quot; order=&quot;0&quot; /&gt;
+<a href="#h8-8-45" id="h8-8-45" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Find&quot; order=&quot;1&quot; /&gt;
+</a><a href="#h8-8-46" id="h8-8-46" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Run&quot; order=&quot;2&quot; weight=&quot;0.33029723&quot; /&gt;
+</a><a href="#h8-8-47" id="h8-8-47" class="i">+      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Find&quot; order=&quot;1&quot; weight=&quot;0.32969642&quot; /&gt;
+</a><a href="#h8-8-48" id="h8-8-48" class="i">+      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Run&quot; order=&quot;2&quot; weight=&quot;0.33064514&quot; /&gt;
+</a>       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Debug&quot; order=&quot;3&quot; weight=&quot;0.4&quot; /&gt;
+       &lt;window_info anchor=&quot;bottom&quot; id=&quot;TODO&quot; order=&quot;4&quot; /&gt;
+       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Inspection&quot; order=&quot;5&quot; weight=&quot;0.4&quot; /&gt;
+       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Problems View&quot; order=&quot;6&quot; /&gt;
+<a href="#h8-8-53" id="h8-8-53" class="d">-      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Terminal&quot; order=&quot;7&quot; visible=&quot;true&quot; weight=&quot;0.32166827&quot; /&gt;
+</a><a href="#h8-8-54" id="h8-8-54" class="i">+      &lt;window_info anchor=&quot;bottom&quot; id=&quot;Terminal&quot; order=&quot;7&quot; weight=&quot;0.32166827&quot; /&gt;
+</a>       &lt;window_info anchor=&quot;bottom&quot; id=&quot;Services&quot; order=&quot;8&quot; /&gt;
+       &lt;window_info anchor=&quot;right&quot; id=&quot;documentation.v2&quot; side_tool=&quot;true&quot; /&gt;
+       &lt;window_info anchor=&quot;right&quot; id=&quot;Notifications&quot; order=&quot;0&quot; weight=&quot;0.25&quot; /&gt;
+<a href="#h8-8-58" id="h8-8-58" class="d">-    &lt;/layout-to-restore&gt;
+</a><a href="#h8-8-59" id="h8-8-59" class="i">+    &lt;/layout&gt;
+</a>     &lt;recentWindows&gt;
+<a href="#h8-8-61" id="h8-8-61" class="d">-      &lt;value&gt;Terminal&lt;/value&gt;
+</a><a href="#h8-8-62" id="h8-8-62" class="d">-      &lt;value&gt;Project&lt;/value&gt;
+</a><a href="#h8-8-63" id="h8-8-63" class="i">+      &lt;value&gt;Bookmarks&lt;/value&gt;
+</a>       &lt;value&gt;Run&lt;/value&gt;
+<a href="#h8-8-65" id="h8-8-65" class="i">+      &lt;value&gt;Project&lt;/value&gt;
+</a><a href="#h8-8-66" id="h8-8-66" class="i">+      &lt;value&gt;Find&lt;/value&gt;
+</a><a href="#h8-8-67" id="h8-8-67" class="i">+      &lt;value&gt;Terminal&lt;/value&gt;
+</a>     &lt;/recentWindows&gt;
+   &lt;/component&gt;
+   &lt;component name=&quot;WindowStateProjectService&quot;&gt;
+<a href="#h8-9" id="h8-9" class="h">@@ -368,10 +322,11 @@
+</a>       &lt;screen x=&quot;0&quot; y=&quot;0&quot; width=&quot;1920&quot; height=&quot;1053&quot; /&gt;
+     &lt;/state&gt;
+     &lt;state x=&quot;693&quot; y=&quot;239&quot; width=&quot;544&quot; height=&quot;574&quot; key=&quot;com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1053@0.0.1920.1053&quot; timestamp=&quot;1671710659715&quot; /&gt;
+<a href="#h8-9-3" id="h8-9-3" class="d">-    &lt;state x=&quot;942&quot; y=&quot;160&quot; width=&quot;978&quot; height=&quot;893&quot; key=&quot;find.popup&quot; timestamp=&quot;1671716370510&quot;&gt;
+</a><a href="#h8-9-4" id="h8-9-4" class="d">-      &lt;screen x=&quot;0&quot; y=&quot;0&quot; width=&quot;1920&quot; height=&quot;1053&quot; /&gt;
+</a><a href="#h8-9-5" id="h8-9-5" class="i">+    &lt;state x=&quot;942&quot; y=&quot;164&quot; width=&quot;978&quot; height=&quot;916&quot; key=&quot;find.popup&quot; timestamp=&quot;1672692561124&quot;&gt;
+</a><a href="#h8-9-6" id="h8-9-6" class="i">+      &lt;screen x=&quot;0&quot; y=&quot;0&quot; width=&quot;1920&quot; height=&quot;1080&quot; /&gt;
+</a>     &lt;/state&gt;
+     &lt;state x=&quot;942&quot; y=&quot;160&quot; width=&quot;978&quot; height=&quot;893&quot; key=&quot;find.popup/0.0.1920.1053@0.0.1920.1053&quot; timestamp=&quot;1671716370510&quot; /&gt;
+<a href="#h8-9-9" id="h8-9-9" class="i">+    &lt;state x=&quot;942&quot; y=&quot;164&quot; width=&quot;978&quot; height=&quot;916&quot; key=&quot;find.popup/0.0.1920.1080@0.0.1920.1080&quot; timestamp=&quot;1672692561124&quot; /&gt;
+</a>     &lt;state x=&quot;910&quot; y=&quot;173&quot; width=&quot;1304&quot; height=&quot;763&quot; key=&quot;find.popup/0.0.2560.1413/2560.360.1920.1080@0.0.2560.1413&quot; timestamp=&quot;1669819660211&quot; /&gt;
+     &lt;state x=&quot;707&quot; y=&quot;241&quot; width=&quot;770&quot; height=&quot;513&quot; key=&quot;search.everywhere.popup&quot; timestamp=&quot;1671206913598&quot;&gt;
+       &lt;screen x=&quot;0&quot; y=&quot;0&quot; width=&quot;1920&quot; height=&quot;1053&quot; /&gt;
+<a href="#h8-10" id="h8-10" class="h">@@ -531,13 +486,6 @@
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-10-3" id="h8-10-3" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/editpage/components/assistance/AssistanceBar.vue&quot;&gt;
+</a><a href="#h8-10-4" id="h8-10-4" class="d">-      &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-10-5" id="h8-10-5" class="d">-        &lt;state relative-caret-position=&quot;410&quot;&gt;
+</a><a href="#h8-10-6" id="h8-10-6" class="d">-          &lt;caret line=&quot;107&quot; column=&quot;34&quot; selection-start-line=&quot;107&quot; selection-start-column=&quot;34&quot; selection-end-line=&quot;107&quot; selection-end-column=&quot;34&quot; /&gt;
+</a><a href="#h8-10-7" id="h8-10-7" class="d">-        &lt;/state&gt;
+</a><a href="#h8-10-8" id="h8-10-8" class="d">-      &lt;/provider&gt;
+</a><a href="#h8-10-9" id="h8-10-9" class="d">-    &lt;/entry&gt;
+</a>     &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/CoqSerapiProcessors.js&quot;&gt;
+       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+         &lt;state&gt;
+<a href="#h8-11" id="h8-11" class="h">@@ -569,13 +517,6 @@
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-11-3" id="h8-11-3" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/CoqState.js&quot;&gt;
+</a><a href="#h8-11-4" id="h8-11-4" class="d">-      &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-11-5" id="h8-11-5" class="d">-        &lt;state relative-caret-position=&quot;184&quot;&gt;
+</a><a href="#h8-11-6" id="h8-11-6" class="d">-          &lt;caret line=&quot;75&quot; column=&quot;15&quot; selection-start-line=&quot;75&quot; selection-start-column=&quot;15&quot; selection-end-line=&quot;75&quot; selection-end-column=&quot;15&quot; /&gt;
+</a><a href="#h8-11-7" id="h8-11-7" class="d">-        &lt;/state&gt;
+</a><a href="#h8-11-8" id="h8-11-8" class="d">-      &lt;/provider&gt;
+</a><a href="#h8-11-9" id="h8-11-9" class="d">-    &lt;/entry&gt;
+</a>     &lt;entry file=&quot;file://$PROJECT_DIR$/src/editpage/components/blocks/code/CodeBlock.vue&quot;&gt;
+       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+         &lt;state relative-caret-position=&quot;1052&quot;&gt;
+<a href="#h8-12" id="h8-12" class="h">@@ -606,52 +547,66 @@
+</a>       &lt;/provider&gt;
+     &lt;/entry&gt;
+     &lt;entry file=&quot;file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts&quot; /&gt;
+<a href="#h8-12-3" id="h8-12-3" class="i">+    &lt;entry file=&quot;file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.core.d.ts&quot; /&gt;
+</a>     &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiASTProcessor.js&quot;&gt;
+       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+<a href="#h8-12-6" id="h8-12-6" class="d">-        &lt;state relative-caret-position=&quot;720&quot;&gt;
+</a><a href="#h8-12-7" id="h8-12-7" class="d">-          &lt;caret line=&quot;36&quot; column=&quot;21&quot; selection-start-line=&quot;36&quot; selection-start-column=&quot;21&quot; selection-end-line=&quot;36&quot; selection-end-column=&quot;21&quot; /&gt;
+</a><a href="#h8-12-8" id="h8-12-8" class="i">+        &lt;state relative-caret-position=&quot;885&quot;&gt;
+</a><a href="#h8-12-9" id="h8-12-9" class="i">+          &lt;caret line=&quot;48&quot; column=&quot;28&quot; selection-start-line=&quot;48&quot; selection-start-column=&quot;28&quot; selection-end-line=&quot;48&quot; selection-end-column=&quot;28&quot; /&gt;
+</a>           &lt;folding&gt;
+             &lt;element signature=&quot;e#0#54#0&quot; expanded=&quot;true&quot; /&gt;
+           &lt;/folding&gt;
+         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-12-16" id="h8-12-16" class="d">-    &lt;entry file=&quot;file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.core.d.ts&quot; /&gt;
+</a><a href="#h8-12-17" id="h8-12-17" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot;&gt;
+</a><a href="#h8-12-18" id="h8-12-18" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/SerapiParser.js&quot;&gt;
+</a>       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+<a href="#h8-12-20" id="h8-12-20" class="d">-        &lt;state relative-caret-position=&quot;1600&quot;&gt;
+</a><a href="#h8-12-21" id="h8-12-21" class="d">-          &lt;caret line=&quot;80&quot; column=&quot;39&quot; selection-start-line=&quot;80&quot; selection-start-column=&quot;39&quot; selection-end-line=&quot;80&quot; selection-end-column=&quot;39&quot; /&gt;
+</a><a href="#h8-12-22" id="h8-12-22" class="i">+        &lt;state relative-caret-position=&quot;20&quot;&gt;
+</a><a href="#h8-12-23" id="h8-12-23" class="i">+          &lt;caret line=&quot;296&quot; column=&quot;4&quot; selection-start-line=&quot;296&quot; selection-start-column=&quot;4&quot; selection-end-line=&quot;296&quot; selection-end-column=&quot;4&quot; /&gt;
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-12-27" id="h8-12-27" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/SerapiParser.js&quot;&gt;
+</a><a href="#h8-12-28" id="h8-12-28" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/CoqState.js&quot;&gt;
+</a>       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+<a href="#h8-12-30" id="h8-12-30" class="d">-        &lt;state&gt;
+</a><a href="#h8-12-31" id="h8-12-31" class="d">-          &lt;caret line=&quot;296&quot; column=&quot;4&quot; selection-start-line=&quot;296&quot; selection-start-column=&quot;4&quot; selection-end-line=&quot;296&quot; selection-end-column=&quot;4&quot; /&gt;
+</a><a href="#h8-12-32" id="h8-12-32" class="i">+        &lt;state relative-caret-position=&quot;301&quot;&gt;
+</a><a href="#h8-12-33" id="h8-12-33" class="i">+          &lt;caret line=&quot;56&quot; column=&quot;2&quot; selection-start-line=&quot;56&quot; selection-start-column=&quot;2&quot; selection-end-line=&quot;56&quot; selection-end-column=&quot;2&quot; /&gt;
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-12-37" id="h8-12-37" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot;&gt;
+</a><a href="#h8-12-38" id="h8-12-38" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js&quot;&gt;
+</a>       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+<a href="#h8-12-40" id="h8-12-40" class="d">-        &lt;state relative-caret-position=&quot;272&quot;&gt;
+</a><a href="#h8-12-41" id="h8-12-41" class="d">-          &lt;caret line=&quot;219&quot; column=&quot;41&quot; selection-start-line=&quot;219&quot; selection-start-column=&quot;41&quot; selection-end-line=&quot;219&quot; selection-end-column=&quot;41&quot; /&gt;
+</a><a href="#h8-12-42" id="h8-12-42" class="d">-          &lt;folding&gt;
+</a><a href="#h8-12-43" id="h8-12-43" class="d">-            &lt;element signature=&quot;e#0#54#0&quot; expanded=&quot;true&quot; /&gt;
+</a><a href="#h8-12-44" id="h8-12-44" class="d">-          &lt;/folding&gt;
+</a><a href="#h8-12-45" id="h8-12-45" class="i">+        &lt;state relative-caret-position=&quot;440&quot;&gt;
+</a><a href="#h8-12-46" id="h8-12-46" class="i">+          &lt;caret line=&quot;125&quot; column=&quot;64&quot; selection-start-line=&quot;125&quot; selection-start-column=&quot;64&quot; selection-end-line=&quot;125&quot; selection-end-column=&quot;64&quot; /&gt;
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-12-50" id="h8-12-50" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiContentProcessor.js&quot;&gt;
+</a><a href="#h8-12-51" id="h8-12-51" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js&quot;&gt;
+</a><a href="#h8-12-52" id="h8-12-52" class="i">+      &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-12-53" id="h8-12-53" class="i">+        &lt;state relative-caret-position=&quot;-635&quot;&gt;
+</a><a href="#h8-12-54" id="h8-12-54" class="i">+          &lt;caret line=&quot;40&quot; column=&quot;6&quot; selection-start-line=&quot;40&quot; selection-start-column=&quot;6&quot; selection-end-line=&quot;40&quot; selection-end-column=&quot;6&quot; /&gt;
+</a><a href="#h8-12-55" id="h8-12-55" class="i">+        &lt;/state&gt;
+</a><a href="#h8-12-56" id="h8-12-56" class="i">+      &lt;/provider&gt;
+</a><a href="#h8-12-57" id="h8-12-57" class="i">+    &lt;/entry&gt;
+</a><a href="#h8-12-58" id="h8-12-58" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/editpage/components/assistance/AssistanceBar.vue&quot;&gt;
+</a><a href="#h8-12-59" id="h8-12-59" class="i">+      &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+</a><a href="#h8-12-60" id="h8-12-60" class="i">+        &lt;state relative-caret-position=&quot;80&quot;&gt;
+</a><a href="#h8-12-61" id="h8-12-61" class="i">+          &lt;caret line=&quot;4&quot; column=&quot;21&quot; selection-start-line=&quot;4&quot; selection-start-column=&quot;21&quot; selection-end-line=&quot;4&quot; selection-end-column=&quot;21&quot; /&gt;
+</a><a href="#h8-12-62" id="h8-12-62" class="i">+        &lt;/state&gt;
+</a><a href="#h8-12-63" id="h8-12-63" class="i">+      &lt;/provider&gt;
+</a><a href="#h8-12-64" id="h8-12-64" class="i">+    &lt;/entry&gt;
+</a><a href="#h8-12-65" id="h8-12-65" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiCommandFactory.js&quot;&gt;
+</a>       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+         &lt;state&gt;
+<a href="#h8-12-68" id="h8-12-68" class="d">-          &lt;caret line=&quot;343&quot; column=&quot;6&quot; selection-start-line=&quot;343&quot; selection-start-column=&quot;6&quot; selection-end-line=&quot;343&quot; selection-end-column=&quot;6&quot; /&gt;
+</a><a href="#h8-12-69" id="h8-12-69" class="i">+          &lt;caret line=&quot;74&quot; column=&quot;17&quot; selection-start-line=&quot;74&quot; selection-start-column=&quot;17&quot; selection-end-line=&quot;74&quot; selection-end-column=&quot;17&quot; /&gt;
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<a href="#h8-12-73" id="h8-12-73" class="d">-    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/util/SerapiProcessor.js&quot;&gt;
+</a><a href="#h8-12-74" id="h8-12-74" class="i">+    &lt;entry file=&quot;file://$PROJECT_DIR$/src/coq/serapi/processors/SerapiSearchProcessor.js&quot;&gt;
+</a>       &lt;provider selected=&quot;true&quot; editor-type-id=&quot;text-editor&quot;&gt;
+<a href="#h8-12-76" id="h8-12-76" class="d">-        &lt;state relative-caret-position=&quot;200&quot;&gt;
+</a><a href="#h8-12-77" id="h8-12-77" class="d">-          &lt;caret line=&quot;86&quot; column=&quot;17&quot; selection-start-line=&quot;86&quot; selection-start-column=&quot;17&quot; selection-end-line=&quot;86&quot; selection-end-column=&quot;17&quot; /&gt;
+</a><a href="#h8-12-78" id="h8-12-78" class="i">+        &lt;state relative-caret-position=&quot;570&quot;&gt;
+</a><a href="#h8-12-79" id="h8-12-79" class="i">+          &lt;caret line=&quot;218&quot; column=&quot;31&quot; selection-start-line=&quot;218&quot; selection-start-column=&quot;31&quot; selection-end-line=&quot;218&quot; selection-end-column=&quot;31&quot; /&gt;
+</a><a href="#h8-12-80" id="h8-12-80" class="i">+          &lt;folding&gt;
+</a><a href="#h8-12-81" id="h8-12-81" class="i">+            &lt;element signature=&quot;e#0#54#0&quot; expanded=&quot;true&quot; /&gt;
+</a><a href="#h8-12-82" id="h8-12-82" class="i">+          &lt;/folding&gt;
+</a>         &lt;/state&gt;
+       &lt;/provider&gt;
+     &lt;/entry&gt;
+<b>diff --git a/<a id="h9" href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a> b/<a href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a></b>
+<a href="#h9-0" id="h9-0" class="h">@@ -1,4 +1,16 @@
+</a> #################################
+<a href="#h9-0-1" id="h9-0-1" class="i">+#          Animations           #
+</a><a href="#h9-0-2" id="h9-0-2" class="i">+#################################
+</a><a href="#h9-0-3" id="h9-0-3" class="i">+# requires https://github.com/jonaburg/picom
+</a><a href="#h9-0-4" id="h9-0-4" class="i">+# (These are also the default values)
+</a><a href="#h9-0-5" id="h9-0-5" class="i">+transition-length = 300
+</a><a href="#h9-0-6" id="h9-0-6" class="i">+transition-pow-x = 0.1
+</a><a href="#h9-0-7" id="h9-0-7" class="i">+transition-pow-y = 0.1
+</a><a href="#h9-0-8" id="h9-0-8" class="i">+transition-pow-w = 0.1
+</a><a href="#h9-0-9" id="h9-0-9" class="i">+transition-pow-h = 0.1
+</a><a href="#h9-0-10" id="h9-0-10" class="i">+size-transition = true
+</a><a href="#h9-0-11" id="h9-0-11" class="i">+
+</a><a href="#h9-0-12" id="h9-0-12" class="i">+#################################
+</a> #             Shadows           #
+ #################################
+ shadow = false
+<a href="#h9-1" id="h9-1" class="h">@@ -14,8 +26,7 @@ shadow = false
+</a> #################################
+ # Fade windows in/out when opening/closing and when opacity changes,
+ #  unless no-fading-openclose is used.
+<a href="#h9-1-3" id="h9-1-3" class="d">-# fading = false
+</a><a href="#h9-1-4" id="h9-1-4" class="d">-fading = false;
+</a><a href="#h9-1-5" id="h9-1-5" class="i">+fading = false
+</a> fade-in-step = 0.03;
+ fade-out-step = 0.03;
+ fade-delta = 6
+<a href="#h9-2" id="h9-2" class="h">@@ -32,17 +43,21 @@ opacity-rule = [
+</a> 	&quot;90:class_g = &#39;Alacritty&#39;&quot;,
+     &quot;100:class_g = &#39;discord&#39;&quot;,
+     &quot;90:class_g = &#39;spotify&#39;&quot;,
+<a href="#h9-2-3" id="h9-2-3" class="i">+    # &quot;85:class_g = &#39;dwm&#39;&quot;
+</a> ];
+ 
+ 
+ #################################
+ #           Corners             #
+ #################################
+<a href="#h9-2-10" id="h9-2-10" class="d">-corner-radius = 0
+</a><a href="#h9-2-11" id="h9-2-11" class="i">+corner-radius = 20.0
+</a><a href="#h9-2-12" id="h9-2-12" class="i">+round-borders = 1
+</a> 
+ rounded-corners-exclude = [
+<a href="#h9-2-15" id="h9-2-15" class="d">-  &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h9-2-16" id="h9-2-16" class="d">-  &quot;window_type = &#39;desktop&#39;&quot;
+</a><a href="#h9-2-17" id="h9-2-17" class="i">+  # &quot;window_type = &#39;normal&#39;&quot;,
+</a><a href="#h9-2-18" id="h9-2-18" class="i">+  # &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h9-2-19" id="h9-2-19" class="i">+  # &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h9-2-20" id="h9-2-20" class="i">+  &quot;class_g = &#39;dwm&#39;&quot;
+</a> ];
+ 
+ 
+</pre>
+</div>
+</body>
+</html>

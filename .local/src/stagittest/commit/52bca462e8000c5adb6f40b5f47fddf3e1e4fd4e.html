@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>added java to lsp - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e.html">52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e</a>
+<b>parent</b> <a href="../commit/de483c7eb370b417cf6fa42d0b266099e350bd1f.html">de483c7eb370b417cf6fa42d0b266099e350bd1f</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Mon, 16 Jan 2023 23:44:44 +0100
+
+added java to lsp
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.config/nvim/lua/lsp.lua</a></td><td> | </td><td class="num">1</td><td><span class="i">+</span><span class="d"></span></td></tr>
+</table></pre><pre>1 file changed, 1 insertion(+), 0 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/nvim/lua/lsp.lua.html">.config/nvim/lua/lsp.lua</a> b/<a href="../file/.config/nvim/lua/lsp.lua.html">.config/nvim/lua/lsp.lua</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -6,6 +6,7 @@ local on_attach = function(client, bufnr) end
+</a> require(&#39;lspconfig&#39;).clangd.setup {on_attach = on_attach}
+ require(&#39;lspconfig&#39;).sumneko_lua.setup {on_attach = on_attach}
+ require(&#39;lspconfig&#39;).pyright.setup {on_attach = on_attach}
+<a href="#h0-0-3" id="h0-0-3" class="i">+require(&#39;lspconfig&#39;).jdtls.setup {on_attach = on_attach}
+</a> 
+ 
+ local lsp_installer = require(&quot;nvim-lsp-installer&quot;)
+</pre>
+</div>
+</body>
+</html>

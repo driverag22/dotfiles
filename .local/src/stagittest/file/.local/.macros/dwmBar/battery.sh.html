@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>battery.sh - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../"><img src="../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../log.html">Log</a> | <a href="../../../../files.html">Files</a> | <a href="../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> battery.sh (2115B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> #!/bin/bash
+<a href="#l2" class="line" id="l2">      2</a> 
+<a href="#l3" class="line" id="l3">      3</a> # Prints all batteries, their percentage remaining and an emoji corresponding
+<a href="#l4" class="line" id="l4">      4</a> # to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+<a href="#l5" class="line" id="l5">      5</a> 
+<a href="#l6" class="line" id="l6">      6</a> # case $BLOCK_BUTTON in
+<a href="#l7" class="line" id="l7">      7</a> # 	3) notify-send &quot;🔋 Battery module&quot; &quot;🔋: discharging
+<a href="#l8" class="line" id="l8">      8</a> # : not charging
+<a href="#l9" class="line" id="l9">      9</a> # ♻: stagnant charge
+<a href="#l10" class="line" id="l10">     10</a> # : charging
+<a href="#l11" class="line" id="l11">     11</a> # : charged
+<a href="#l12" class="line" id="l12">     12</a> # ❗: battery very low!
+<a href="#l13" class="line" id="l13">     13</a> # - Scroll to change adjust xbacklight.&quot; ;;
+<a href="#l14" class="line" id="l14">     14</a> # 	4) xbacklight -inc 10 ;;
+<a href="#l15" class="line" id="l15">     15</a> # 	5) xbacklight -dec 10 ;;
+<a href="#l16" class="line" id="l16">     16</a> # 	6) &quot;$TERMINAL&quot; -e &quot;$EDITOR&quot; &quot;$0&quot; ;;
+<a href="#l17" class="line" id="l17">     17</a> # esac
+<a href="#l18" class="line" id="l18">     18</a> 
+<a href="#l19" class="line" id="l19">     19</a> # Loop through all attached batteries and format the info
+<a href="#l20" class="line" id="l20">     20</a> for battery in /sys/class/power_supply/BAT?*; do
+<a href="#l21" class="line" id="l21">     21</a> 	# If non-first battery, print a space separator.
+<a href="#l22" class="line" id="l22">     22</a> 	[ -n &quot;${capacity+x}&quot; ] &amp;&amp; printf &quot; &quot;
+<a href="#l23" class="line" id="l23">     23</a> 	# Sets up the status and capacity
+<a href="#l24" class="line" id="l24">     24</a> 	# case &quot;$(cat &quot;$battery/status&quot; 2&gt;&amp;1)&quot; in
+<a href="#l25" class="line" id="l25">     25</a> 	# 	&quot;Full&quot;) status=&quot;&quot; ;;
+<a href="#l26" class="line" id="l26">     26</a> 	# 	&quot;Discharging&quot;) status=&quot;&quot; ;;
+<a href="#l27" class="line" id="l27">     27</a> 	# 	&quot;Charging&quot;) status=&quot;&quot; ;;
+<a href="#l28" class="line" id="l28">     28</a> 	# 	&quot;Not charging&quot;) status=&quot;&quot; ;;
+<a href="#l29" class="line" id="l29">     29</a> 	# 	&quot;Unknown&quot;) status=&quot;♻️&quot; ;;
+<a href="#l30" class="line" id="l30">     30</a> 	# 	*) exit 1 ;;
+<a href="#l31" class="line" id="l31">     31</a> 	# esac
+<a href="#l32" class="line" id="l32">     32</a> 	capacity=&quot;$(cat &quot;$battery/capacity&quot; 2&gt;&amp;1)&quot;
+<a href="#l33" class="line" id="l33">     33</a>     if [ $capacity -eq 100 ] 
+<a href="#l34" class="line" id="l34">     34</a>     then
+<a href="#l35" class="line" id="l35">     35</a>         chargingIcon=&quot;&quot;
+<a href="#l36" class="line" id="l36">     36</a>         notChargingIcon=&quot;&quot;
+<a href="#l37" class="line" id="l37">     37</a>     elif [ $capacity -gt 80 ]
+<a href="#l38" class="line" id="l38">     38</a>     then
+<a href="#l39" class="line" id="l39">     39</a>         chargingIcon=&quot;&quot;
+<a href="#l40" class="line" id="l40">     40</a>         notChargingIcon=&quot;&quot;
+<a href="#l41" class="line" id="l41">     41</a>     elif [ $capacity -gt 60 ]
+<a href="#l42" class="line" id="l42">     42</a>     then
+<a href="#l43" class="line" id="l43">     43</a>         chargingIcon=&quot;&quot;
+<a href="#l44" class="line" id="l44">     44</a>         notChargingIcon=&quot;&quot;
+<a href="#l45" class="line" id="l45">     45</a>     elif [ $capacity -gt 40 ]
+<a href="#l46" class="line" id="l46">     46</a>     then
+<a href="#l47" class="line" id="l47">     47</a>         chargingIcon=&quot;&quot;
+<a href="#l48" class="line" id="l48">     48</a>         notChargingIcon=&quot;&quot;
+<a href="#l49" class="line" id="l49">     49</a>     elif [ $capacity -gt 20 ]
+<a href="#l50" class="line" id="l50">     50</a>     then
+<a href="#l51" class="line" id="l51">     51</a>         chargingIcon=&quot;&quot;
+<a href="#l52" class="line" id="l52">     52</a>         notChargingIcon=&quot;&quot;
+<a href="#l53" class="line" id="l53">     53</a>     else
+<a href="#l54" class="line" id="l54">     54</a>         chargingIcon=&quot;&quot;
+<a href="#l55" class="line" id="l55">     55</a>         notChargingIcon=&quot;&quot;
+<a href="#l56" class="line" id="l56">     56</a>     fi
+<a href="#l57" class="line" id="l57">     57</a> 	   
+<a href="#l58" class="line" id="l58">     58</a> 	case &quot;$(cat &quot;$battery/status&quot; 2&gt;&amp;1)&quot; in
+<a href="#l59" class="line" id="l59">     59</a> 		&quot;Discharging&quot;) status=&quot;$notChargingIcon&quot;;;
+<a href="#l60" class="line" id="l60">     60</a> 		&quot;Charging&quot;) status=&quot;$chargingIcon&quot;;;
+<a href="#l61" class="line" id="l61">     61</a> 		&quot;Not charging&quot;) status=&quot;&quot;;;
+<a href="#l62" class="line" id="l62">     62</a> 		&quot;Unknown&quot;) status=&quot;♻️ &quot;;;
+<a href="#l63" class="line" id="l63">     63</a> 		*) status=&quot;&quot; ;;
+<a href="#l64" class="line" id="l64">     64</a> 	esac
+<a href="#l65" class="line" id="l65">     65</a> 
+<a href="#l66" class="line" id="l66">     66</a>     #status=$chargingIcon
+<a href="#l67" class="line" id="l67">     67</a> 
+<a href="#l68" class="line" id="l68">     68</a> 	# Will make a warn variable if discharging and low
+<a href="#l69" class="line" id="l69">     69</a>     # [ &quot;$capacity&quot; -le 25 ] &amp;&amp; warn=&quot;❗&quot;
+<a href="#l70" class="line" id="l70">     70</a>     [ &quot;$capacity&quot; -le 10 ] &amp;&amp; warn=&quot;&quot;
+<a href="#l71" class="line" id="l71">     71</a> 	# [ &quot;$status&quot;=&quot;&quot; ] &amp;&amp; [ &quot;$capacity&quot; -le 25 ] &amp;&amp; warn=&quot;❗&quot;
+<a href="#l72" class="line" id="l72">     72</a> 	# Prints the info
+<a href="#l73" class="line" id="l73">     73</a> 	printf &quot;%s %s%d%%&quot; &quot;$warn&quot; &quot;$status &quot; &quot; $capacity&quot;; unset warn
+<a href="#l74" class="line" id="l74">     74</a> done &amp;&amp; printf &quot;\\n&quot;
+</pre>
+</div>
+</body>
+</html>

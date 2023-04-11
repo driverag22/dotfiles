@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>usageCPU.sh - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../"><img src="../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../log.html">Log</a> | <a href="../../../../files.html">Files</a> | <a href="../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> usageCPU.sh (650B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> #!/bin/bash
+<a href="#l2" class="line" id="l2">      2</a> 
+<a href="#l3" class="line" id="l3">      3</a> # Set the color codes
+<a href="#l4" class="line" id="l4">      4</a> # red=$&#39;\e[1;31m&#39;
+<a href="#l5" class="line" id="l5">      5</a> # green=$&#39;\e[1;32m&#39;
+<a href="#l6" class="line" id="l6">      6</a> # yellow=$&#39;\e[1;33m&#39;
+<a href="#l7" class="line" id="l7">      7</a> # blue=$&#39;\e[1;34m&#39;
+<a href="#l8" class="line" id="l8">      8</a> # magenta=$&#39;\e[1;35m&#39;
+<a href="#l9" class="line" id="l9">      9</a> # cyan=$&#39;\e[1;36m&#39;
+<a href="#l10" class="line" id="l10">     10</a> # reset=$&#39;\e[0m&#39;
+<a href="#l11" class="line" id="l11">     11</a> 
+<a href="#l12" class="line" id="l12">     12</a> # Set the threshold values
+<a href="#l13" class="line" id="l13">     13</a> # low_threshold=30
+<a href="#l14" class="line" id="l14">     14</a> # high_threshold=70
+<a href="#l15" class="line" id="l15">     15</a> 
+<a href="#l16" class="line" id="l16">     16</a> # Get the current CPU usage
+<a href="#l17" class="line" id="l17">     17</a> cpu_usage=$(top -b -n1 | grep &quot;Cpu(s)&quot; | awk &#39;{print $2 + $4}&#39;)
+<a href="#l18" class="line" id="l18">     18</a> 
+<a href="#l19" class="line" id="l19">     19</a> # Set the color based on the CPU usage
+<a href="#l20" class="line" id="l20">     20</a> # if (( $(echo &quot;$cpu_usage &lt; $low_threshold&quot; | bc -l) )); then
+<a href="#l21" class="line" id="l21">     21</a> #   color=$green
+<a href="#l22" class="line" id="l22">     22</a> # elif (( $(echo &quot;$cpu_usage &lt; $high_threshold&quot; | bc -l) )); then
+<a href="#l23" class="line" id="l23">     23</a> #   color=$yellow
+<a href="#l24" class="line" id="l24">     24</a> # else
+<a href="#l25" class="line" id="l25">     25</a> #   color=$red
+<a href="#l26" class="line" id="l26">     26</a> # fi
+<a href="#l27" class="line" id="l27">     27</a> 
+<a href="#l28" class="line" id="l28">     28</a> # Use printf to format the output
+<a href="#l29" class="line" id="l29">     29</a> printf &quot;%s%.2f%%%s\n&quot; &quot;$color&quot; &quot;$cpu_usage&quot; &quot;$reset&quot;
+</pre>
+</div>
+</body>
+</html>

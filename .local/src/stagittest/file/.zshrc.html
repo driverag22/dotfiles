@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>.zshrc - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> .zshrc (4435B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> # If you come from bash you might have to change your $PATH.
+<a href="#l2" class="line" id="l2">      2</a> # export PATH=$HOME/bin:/usr/local/bin:$PATH
+<a href="#l3" class="line" id="l3">      3</a> 
+<a href="#l4" class="line" id="l4">      4</a> # Path to your oh-my-zsh installation.
+<a href="#l5" class="line" id="l5">      5</a> export ZSH=&quot;$HOME/.oh-my-zsh&quot;
+<a href="#l6" class="line" id="l6">      6</a> 
+<a href="#l7" class="line" id="l7">      7</a> # Set name of the theme to load --- if set to &quot;random&quot;, it will
+<a href="#l8" class="line" id="l8">      8</a> # load a random theme each time oh-my-zsh is loaded, in which case,
+<a href="#l9" class="line" id="l9">      9</a> # to know which specific one was loaded, run: echo $RANDOM_THEME
+<a href="#l10" class="line" id="l10">     10</a> # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+<a href="#l11" class="line" id="l11">     11</a> # ZSH_THEME=&quot;sunrise&quot;
+<a href="#l12" class="line" id="l12">     12</a> ZSH_THEME=&quot;robbyrussell&quot;
+<a href="#l13" class="line" id="l13">     13</a> 
+<a href="#l14" class="line" id="l14">     14</a> # Set list of themes to pick from when loading at random
+<a href="#l15" class="line" id="l15">     15</a> # Setting this variable when ZSH_THEME=random will cause zsh to load
+<a href="#l16" class="line" id="l16">     16</a> # a theme from this variable instead of looking in $ZSH/themes/
+<a href="#l17" class="line" id="l17">     17</a> # If set to an empty array, this variable will have no effect.
+<a href="#l18" class="line" id="l18">     18</a> # ZSH_THEME_RANDOM_CANDIDATES=( &quot;robbyrussell&quot; &quot;agnoster&quot; )
+<a href="#l19" class="line" id="l19">     19</a> 
+<a href="#l20" class="line" id="l20">     20</a> # Uncomment the following line to use case-sensitive completion.
+<a href="#l21" class="line" id="l21">     21</a> CASE_SENSITIVE=&quot;false&quot;
+<a href="#l22" class="line" id="l22">     22</a> 
+<a href="#l23" class="line" id="l23">     23</a> # Uncomment the following line to use hyphen-insensitive completion.
+<a href="#l24" class="line" id="l24">     24</a> # Case-sensitive completion must be off. _ and - will be interchangeable.
+<a href="#l25" class="line" id="l25">     25</a> # HYPHEN_INSENSITIVE=&quot;true&quot;
+<a href="#l26" class="line" id="l26">     26</a> 
+<a href="#l27" class="line" id="l27">     27</a> # Uncomment one of the following lines to change the auto-update behavior
+<a href="#l28" class="line" id="l28">     28</a> # zstyle &#39;:omz:update&#39; mode disabled  # disable automatic updates
+<a href="#l29" class="line" id="l29">     29</a> # zstyle &#39;:omz:update&#39; mode auto      # update automatically without asking
+<a href="#l30" class="line" id="l30">     30</a> # zstyle &#39;:omz:update&#39; mode reminder  # just remind me to update when it&#39;s time
+<a href="#l31" class="line" id="l31">     31</a> 
+<a href="#l32" class="line" id="l32">     32</a> # Uncomment the following line to change how often to auto-update (in days).
+<a href="#l33" class="line" id="l33">     33</a> # zstyle &#39;:omz:update&#39; frequency 13
+<a href="#l34" class="line" id="l34">     34</a> 
+<a href="#l35" class="line" id="l35">     35</a> # Uncomment the following line if pasting URLs and other text is messed up.
+<a href="#l36" class="line" id="l36">     36</a> # DISABLE_MAGIC_FUNCTIONS=&quot;true&quot;
+<a href="#l37" class="line" id="l37">     37</a> 
+<a href="#l38" class="line" id="l38">     38</a> # Uncomment the following line to disable colors in ls.
+<a href="#l39" class="line" id="l39">     39</a> # DISABLE_LS_COLORS=&quot;true&quot;
+<a href="#l40" class="line" id="l40">     40</a> 
+<a href="#l41" class="line" id="l41">     41</a> # Uncomment the following line to disable auto-setting terminal title.
+<a href="#l42" class="line" id="l42">     42</a> # DISABLE_AUTO_TITLE=&quot;true&quot;
+<a href="#l43" class="line" id="l43">     43</a> 
+<a href="#l44" class="line" id="l44">     44</a> # Uncomment the following line to enable command auto-correction.
+<a href="#l45" class="line" id="l45">     45</a> # ENABLE_CORRECTION=&quot;true&quot;
+<a href="#l46" class="line" id="l46">     46</a> 
+<a href="#l47" class="line" id="l47">     47</a> # Uncomment the following line to display red dots whilst waiting for completion.
+<a href="#l48" class="line" id="l48">     48</a> # You can also set it to another string to have that shown instead of the default red dots.
+<a href="#l49" class="line" id="l49">     49</a> # e.g. COMPLETION_WAITING_DOTS=&quot;%F{yellow}waiting...%f&quot;
+<a href="#l50" class="line" id="l50">     50</a> # Caution: this setting can cause issues with multiline prompts in zsh &lt; 5.7.1 (see #5765)
+<a href="#l51" class="line" id="l51">     51</a> # COMPLETION_WAITING_DOTS=&quot;true&quot;
+<a href="#l52" class="line" id="l52">     52</a> 
+<a href="#l53" class="line" id="l53">     53</a> # Uncomment the following line if you want to disable marking untracked files
+<a href="#l54" class="line" id="l54">     54</a> # under VCS as dirty. This makes repository status check for large repositories
+<a href="#l55" class="line" id="l55">     55</a> # much, much faster.
+<a href="#l56" class="line" id="l56">     56</a> # DISABLE_UNTRACKED_FILES_DIRTY=&quot;true&quot;
+<a href="#l57" class="line" id="l57">     57</a> 
+<a href="#l58" class="line" id="l58">     58</a> # Uncomment the following line if you want to change the command execution time
+<a href="#l59" class="line" id="l59">     59</a> # stamp shown in the history command output.
+<a href="#l60" class="line" id="l60">     60</a> # You can set one of the optional three formats:
+<a href="#l61" class="line" id="l61">     61</a> # &quot;mm/dd/yyyy&quot;|&quot;dd.mm.yyyy&quot;|&quot;yyyy-mm-dd&quot;
+<a href="#l62" class="line" id="l62">     62</a> # or set a custom format using the strftime function format specifications,
+<a href="#l63" class="line" id="l63">     63</a> # see &#39;man strftime&#39; for details.
+<a href="#l64" class="line" id="l64">     64</a> HIST_STAMPS=&quot;mm/dd/yyyy&quot;
+<a href="#l65" class="line" id="l65">     65</a> 
+<a href="#l66" class="line" id="l66">     66</a> # Would you like to use another custom folder than $ZSH/custom?
+<a href="#l67" class="line" id="l67">     67</a> # ZSH_CUSTOM=/path/to/new-custom-folder
+<a href="#l68" class="line" id="l68">     68</a> 
+<a href="#l69" class="line" id="l69">     69</a> # Which plugins would you like to load?
+<a href="#l70" class="line" id="l70">     70</a> # Standard plugins can be found in $ZSH/plugins/
+<a href="#l71" class="line" id="l71">     71</a> # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+<a href="#l72" class="line" id="l72">     72</a> # Example format: plugins=(rails git textmate ruby lighthouse)
+<a href="#l73" class="line" id="l73">     73</a> # Add wisely, as too many plugins slow down shell startup.
+<a href="#l74" class="line" id="l74">     74</a> plugins=(git)
+<a href="#l75" class="line" id="l75">     75</a> 
+<a href="#l76" class="line" id="l76">     76</a> source $ZSH/oh-my-zsh.sh
+<a href="#l77" class="line" id="l77">     77</a> # source /usr/share/nvm/init-nvm.sh
+<a href="#l78" class="line" id="l78">     78</a> 
+<a href="#l79" class="line" id="l79">     79</a> # User configuration
+<a href="#l80" class="line" id="l80">     80</a> 
+<a href="#l81" class="line" id="l81">     81</a> # export MANPATH=&quot;/usr/local/man:$MANPATH&quot;
+<a href="#l82" class="line" id="l82">     82</a> 
+<a href="#l83" class="line" id="l83">     83</a> # You may need to manually set your language environment
+<a href="#l84" class="line" id="l84">     84</a> # export LANG=en_US.UTF-8
+<a href="#l85" class="line" id="l85">     85</a> 
+<a href="#l86" class="line" id="l86">     86</a> # Preferred editor for local and remote sessions
+<a href="#l87" class="line" id="l87">     87</a> # if [[ -n $SSH_CONNECTION ]]; then
+<a href="#l88" class="line" id="l88">     88</a> #   export EDITOR=&#39;vim&#39;
+<a href="#l89" class="line" id="l89">     89</a> # else
+<a href="#l90" class="line" id="l90">     90</a> #   export EDITOR=&#39;mvim&#39;
+<a href="#l91" class="line" id="l91">     91</a> # fi
+<a href="#l92" class="line" id="l92">     92</a> 
+<a href="#l93" class="line" id="l93">     93</a> # Compilation flags
+<a href="#l94" class="line" id="l94">     94</a> # export ARCHFLAGS=&quot;-arch x86_64&quot;
+<a href="#l95" class="line" id="l95">     95</a> 
+<a href="#l96" class="line" id="l96">     96</a> # Set personal aliases, overriding those provided by oh-my-zsh libs,
+<a href="#l97" class="line" id="l97">     97</a> # plugins, and themes. Aliases can be placed here, though oh-my-zsh
+<a href="#l98" class="line" id="l98">     98</a> # users are encouraged to define aliases within the ZSH_CUSTOM folder.
+<a href="#l99" class="line" id="l99">     99</a> # For a full list of active aliases, run `alias`.
+<a href="#l100" class="line" id="l100">    100</a> #
+<a href="#l101" class="line" id="l101">    101</a> # Example aliases
+<a href="#l102" class="line" id="l102">    102</a> # alias zshconfig=&quot;mate ~/.zshrc&quot;
+<a href="#l103" class="line" id="l103">    103</a> # alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;
+<a href="#l104" class="line" id="l104">    104</a> alias config=&#39;/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME&#39;
+<a href="#l105" class="line" id="l105">    105</a> alias nw=&#39;/usr/bin/nvim /home/diego/vimwiki/index.wiki&#39;
+<a href="#l106" class="line" id="l106">    106</a> pfetch
+<a href="#l107" class="line" id="l107">    107</a> 
+<a href="#l108" class="line" id="l108">    108</a> # opam configuration
+<a href="#l109" class="line" id="l109">    109</a> # [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  &gt; /dev/null 2&gt; /dev/null
+<a href="#l110" class="line" id="l110">    110</a> 
+<a href="#l111" class="line" id="l111">    111</a> # autoload -Uz compinit promptinit
+<a href="#l112" class="line" id="l112">    112</a> # compinit
+<a href="#l113" class="line" id="l113">    113</a> fancy-ctrl-z () {
+<a href="#l114" class="line" id="l114">    114</a>   if [[ $#BUFFER -eq 0 ]]; then
+<a href="#l115" class="line" id="l115">    115</a>     BUFFER=&quot;fg&quot;
+<a href="#l116" class="line" id="l116">    116</a>     zle accept-line
+<a href="#l117" class="line" id="l117">    117</a>   else
+<a href="#l118" class="line" id="l118">    118</a>     zle push-input
+<a href="#l119" class="line" id="l119">    119</a>     zle clear-screen
+<a href="#l120" class="line" id="l120">    120</a>   fi
+<a href="#l121" class="line" id="l121">    121</a> }
+<a href="#l122" class="line" id="l122">    122</a> zle -N fancy-ctrl-z
+<a href="#l123" class="line" id="l123">    123</a> bindkey &#39;^Z&#39; fancy-ctrl-z
+</pre>
+</div>
+</body>
+</html>

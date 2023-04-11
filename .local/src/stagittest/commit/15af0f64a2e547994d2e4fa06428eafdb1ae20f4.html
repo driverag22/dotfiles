@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>small changes - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/15af0f64a2e547994d2e4fa06428eafdb1ae20f4.html">15af0f64a2e547994d2e4fa06428eafdb1ae20f4</a>
+<b>parent</b> <a href="../commit/0ee127efa4a0a00f1d917ad4708f23391c264d23.html">0ee127efa4a0a00f1d917ad4708f23391c264d23</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Sat, 21 Jan 2023 10:27:31 +0100
+
+small changes
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/src/dwm/config.h</a></td><td> | </td><td class="num">3</td><td><span class="i">+</span><span class="d">--</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/src/dwm/dwm</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/src/dwm/dwm.c</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.local/src/dwm/dwm.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+</table></pre><pre>4 files changed, 2 insertions(+), 3 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a> b/<a href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -1,5 +1,4 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="d">-/* See LICENSE file for copyright and license details. */
+</a><a href="#h0-0-1" id="h0-0-1" class="d">-#include &lt;X11/XF86keysym.h&gt;
+</a><a href="#h0-0-2" id="h0-0-2" class="i">+/* See LICENSE file for copyright and license details. */ #include &lt;X11/XF86keysym.h&gt;
+</a> 
+ /* appearance */
+ static const unsigned int borderpx  = 4;        /* border pixel of windows */
+<b>diff --git a/<a id="h1" href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a> b/<a href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h2" href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a> b/<a href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -748,7 +748,7 @@ drawbar(Monitor *m)
+</a> 		if (m-&gt;sel) {
+ 			/* drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]); */
+ 			/* drw_setscheme(drw, scheme[SchemeNorm]); */
+<a href="#h2-0-3" id="h2-0-3" class="d">-			drw_setscheme(drw, scheme[SchemeSpecial]);
+</a><a href="#h2-0-4" id="h2-0-4" class="i">+			drw_setscheme(drw, scheme[m == selmon ? SchemeSpecial : SchemeNorm]);
+</a> 			drw_text(drw, x, 0, w, bh, lrpad / 2, m-&gt;sel-&gt;name, 0);
+ 			if (m-&gt;sel-&gt;isfloating)
+ 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m-&gt;sel-&gt;isfixed, 0);
+<b>diff --git a/<a id="h3" href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a> b/<a href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a></b>
+Binary files differ.
+</pre>
+</div>
+</body>
+</html>

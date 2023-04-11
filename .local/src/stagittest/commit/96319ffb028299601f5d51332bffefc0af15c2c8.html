@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nvim config - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/96319ffb028299601f5d51332bffefc0af15c2c8.html">96319ffb028299601f5d51332bffefc0af15c2c8</a>
+<b>parent</b> <a href="../commit/b5b65795f700efe313188674004e132951dc8d4b.html">b5b65795f700efe313188674004e132951dc8d4b</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Mon, 26 Dec 2022 15:47:22 +0100
+
+nvim config
+
+<b>Diffstat:</b>
+<table><tr><td class="A">A</td><td><a href="#h0">.config/nvim/init.lua</a></td><td> | </td><td class="num">7</td><td><span class="i">+++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h1">.config/nvim/lua/basic_config.lua</a></td><td> | </td><td class="num">21</td><td><span class="i">+++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h2">.config/nvim/lua/colors.lua</a></td><td> | </td><td class="num">62</td><td><span class="i">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h3">.config/nvim/lua/keybindings.lua</a></td><td> | </td><td class="num">69</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h4">.config/nvim/lua/lsp.lua</a></td><td> | </td><td class="num">113</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h5">.config/nvim/lua/plugins.lua</a></td><td> | </td><td class="num">72</td><td><span class="i">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h6">.config/nvim/lua/statusline.lua</a></td><td> | </td><td class="num">257</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h7">.config/nvim/lua/treesitter.lua</a></td><td> | </td><td class="num">19</td><td><span class="i">+++++++++++++++++++</span><span class="d"></span></td></tr>
+</table></pre><pre>8 files changed, 620 insertions(+), 0 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/nvim/init.lua.html">.config/nvim/init.lua</a> b/<a href="../file/.config/nvim/init.lua.html">.config/nvim/init.lua</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -0,0 +1,7 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="i">+require &quot;basic_config&quot;
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+require &quot;plugins&quot;
+</a><a href="#h0-0-2" id="h0-0-2" class="i">+require &quot;keybindings&quot;
+</a><a href="#h0-0-3" id="h0-0-3" class="i">+require &quot;treesitter&quot;
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+require &quot;statusline&quot;
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+require &quot;colors&quot;
+</a><a href="#h0-0-6" id="h0-0-6" class="i">+require &quot;lsp&quot;
+</a><b>diff --git a/<a id="h1" href="../file/.config/nvim/lua/basic_config.lua.html">.config/nvim/lua/basic_config.lua</a> b/<a href="../file/.config/nvim/lua/basic_config.lua.html">.config/nvim/lua/basic_config.lua</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -0,0 +1,21 @@
+</a><a href="#h1-0-0" id="h1-0-0" class="i">+vim.opt.number = true
+</a><a href="#h1-0-1" id="h1-0-1" class="i">+vim.opt.relativenumber = true
+</a><a href="#h1-0-2" id="h1-0-2" class="i">+vim.opt.autoindent = true
+</a><a href="#h1-0-3" id="h1-0-3" class="i">+vim.opt.tabstop = 4
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+vim.opt.shiftwidth = 4
+</a><a href="#h1-0-5" id="h1-0-5" class="i">+vim.opt.smarttab = true
+</a><a href="#h1-0-6" id="h1-0-6" class="i">+vim.opt.softtabstop = 4
+</a><a href="#h1-0-7" id="h1-0-7" class="i">+vim.opt.mouse = a
+</a><a href="#h1-0-8" id="h1-0-8" class="i">+vim.opt.termguicolors = true
+</a><a href="#h1-0-9" id="h1-0-9" class="i">+vim.opt.tabstop = 4	-- 4 space tab
+</a><a href="#h1-0-10" id="h1-0-10" class="i">+vim.opt.shiftwidth = 4 -- indents will have a width 4
+</a><a href="#h1-0-11" id="h1-0-11" class="i">+vim.opt.softtabstop = 4
+</a><a href="#h1-0-12" id="h1-0-12" class="i">+vim.opt.expandtab = true    
+</a><a href="#h1-0-13" id="h1-0-13" class="i">+
+</a><a href="#h1-0-14" id="h1-0-14" class="i">+vim.cmd ([[
+</a><a href="#h1-0-15" id="h1-0-15" class="i">+
+</a><a href="#h1-0-16" id="h1-0-16" class="i">+		let g:NERDTreeDirArrowExpandable=&quot;+&quot;
+</a><a href="#h1-0-17" id="h1-0-17" class="i">+		let g:NERDTreeDirArrowCollapsible=&quot;~&quot;
+</a><a href="#h1-0-18" id="h1-0-18" class="i">+
+</a><a href="#h1-0-19" id="h1-0-19" class="i">+]])
+</a><a href="#h1-0-20" id="h1-0-20" class="i">+
+</a><b>diff --git a/<a id="h2" href="../file/.config/nvim/lua/colors.lua.html">.config/nvim/lua/colors.lua</a> b/<a href="../file/.config/nvim/lua/colors.lua.html">.config/nvim/lua/colors.lua</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -0,0 +1,62 @@
+</a><a href="#h2-0-0" id="h2-0-0" class="i">+local status_ok, color_scheme = pcall(require, &#39;onedark&#39;)
+</a><a href="#h2-0-1" id="h2-0-1" class="i">+if not status_ok then
+</a><a href="#h2-0-2" id="h2-0-2" class="i">+  return
+</a><a href="#h2-0-3" id="h2-0-3" class="i">+end
+</a><a href="#h2-0-4" id="h2-0-4" class="i">+
+</a><a href="#h2-0-5" id="h2-0-5" class="i">+-- OneDark styles: dark, darker, cool, deep, warm, warmer, light
+</a><a href="#h2-0-6" id="h2-0-6" class="i">+require(&#39;onedark&#39;).setup {
+</a><a href="#h2-0-7" id="h2-0-7" class="i">+  style = &#39;darker&#39;,
+</a><a href="#h2-0-8" id="h2-0-8" class="i">+  colors = { fg = &#39;#b2bbcc&#39; }, --default: #a0a8b7
+</a><a href="#h2-0-9" id="h2-0-9" class="i">+}
+</a><a href="#h2-0-10" id="h2-0-10" class="i">+require(&#39;onedark&#39;).load()
+</a><a href="#h2-0-11" id="h2-0-11" class="i">+
+</a><a href="#h2-0-12" id="h2-0-12" class="i">+-- statusline color schemes:
+</a><a href="#h2-0-13" id="h2-0-13" class="i">+-- import with: require(&#39;colors&#39;).colorscheme_name
+</a><a href="#h2-0-14" id="h2-0-14" class="i">+local M = {}
+</a><a href="#h2-0-15" id="h2-0-15" class="i">+
+</a><a href="#h2-0-16" id="h2-0-16" class="i">+-- Theme: OneDark (dark)
+</a><a href="#h2-0-17" id="h2-0-17" class="i">+-- Colors: https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
+</a><a href="#h2-0-18" id="h2-0-18" class="i">+M.onedark_dark = {
+</a><a href="#h2-0-19" id="h2-0-19" class="i">+  bg = &#39;#282c34&#39;,
+</a><a href="#h2-0-20" id="h2-0-20" class="i">+  fg = &#39;#b2bbcc&#39;,
+</a><a href="#h2-0-21" id="h2-0-21" class="i">+  pink = &#39;#c678dd&#39;,
+</a><a href="#h2-0-22" id="h2-0-22" class="i">+  green = &#39;#98c379&#39;,
+</a><a href="#h2-0-23" id="h2-0-23" class="i">+  cyan = &#39;#56b6c2&#39;,
+</a><a href="#h2-0-24" id="h2-0-24" class="i">+  yellow = &#39;#e5c07b&#39;,
+</a><a href="#h2-0-25" id="h2-0-25" class="i">+  orange = &#39;#d19a66&#39;,
+</a><a href="#h2-0-26" id="h2-0-26" class="i">+  red = &#39;#e86671&#39;,
+</a><a href="#h2-0-27" id="h2-0-27" class="i">+}
+</a><a href="#h2-0-28" id="h2-0-28" class="i">+
+</a><a href="#h2-0-29" id="h2-0-29" class="i">+-- Theme: Monokai (classic)
+</a><a href="#h2-0-30" id="h2-0-30" class="i">+-- Colors: https://github.com/tanvirtin/monokai.nvim/blob/master/lua/monokai.lua
+</a><a href="#h2-0-31" id="h2-0-31" class="i">+M.monokai = {
+</a><a href="#h2-0-32" id="h2-0-32" class="i">+  bg = &#39;#202328&#39;, --default: #272a30
+</a><a href="#h2-0-33" id="h2-0-33" class="i">+  fg = &#39;#f8f8f0&#39;,
+</a><a href="#h2-0-34" id="h2-0-34" class="i">+  pink = &#39;#f92672&#39;,
+</a><a href="#h2-0-35" id="h2-0-35" class="i">+  green = &#39;#a6e22e&#39;,
+</a><a href="#h2-0-36" id="h2-0-36" class="i">+  cyan = &#39;#66d9ef&#39;,
+</a><a href="#h2-0-37" id="h2-0-37" class="i">+  yellow = &#39;#e6db74&#39;,
+</a><a href="#h2-0-38" id="h2-0-38" class="i">+  orange = &#39;#fd971f&#39;,
+</a><a href="#h2-0-39" id="h2-0-39" class="i">+  red = &#39;#e95678&#39;,
+</a><a href="#h2-0-40" id="h2-0-40" class="i">+}
+</a><a href="#h2-0-41" id="h2-0-41" class="i">+
+</a><a href="#h2-0-42" id="h2-0-42" class="i">+-- Theme: Rosé Pine (main)
+</a><a href="#h2-0-43" id="h2-0-43" class="i">+-- Colors: https://github.com/rose-pine/neovim/blob/main/lua/rose-pine/palette.lua
+</a><a href="#h2-0-44" id="h2-0-44" class="i">+-- color names are adapted to the formats above
+</a><a href="#h2-0-45" id="h2-0-45" class="i">+M.rose_pine = {
+</a><a href="#h2-0-46" id="h2-0-46" class="i">+  bg = &#39;#111019&#39;, --default: #191724
+</a><a href="#h2-0-47" id="h2-0-47" class="i">+  fg = &#39;#e0def4&#39;,
+</a><a href="#h2-0-48" id="h2-0-48" class="i">+  pink = &#39;#eb6f92&#39;,
+</a><a href="#h2-0-49" id="h2-0-49" class="i">+  green = &#39;#9ccfd8&#39;,
+</a><a href="#h2-0-50" id="h2-0-50" class="i">+  cyan = &#39;#31748f&#39;,
+</a><a href="#h2-0-51" id="h2-0-51" class="i">+  yellow = &#39;#f6c177&#39;,
+</a><a href="#h2-0-52" id="h2-0-52" class="i">+  orange = &#39;#2a2837&#39;,
+</a><a href="#h2-0-53" id="h2-0-53" class="i">+  red = &#39;#ebbcba&#39;,
+</a><a href="#h2-0-54" id="h2-0-54" class="i">+}
+</a><a href="#h2-0-55" id="h2-0-55" class="i">+
+</a><a href="#h2-0-56" id="h2-0-56" class="i">+
+</a><a href="#h2-0-57" id="h2-0-57" class="i">+vim.cmd ([[ :colorscheme sonokai ]])
+</a><a href="#h2-0-58" id="h2-0-58" class="i">+-- vim.cmd ([[ :colorscheme purify ]])
+</a><a href="#h2-0-59" id="h2-0-59" class="i">+-- vim.cmd ([[ :colorscheme molokai ]])
+</a><a href="#h2-0-60" id="h2-0-60" class="i">+
+</a><a href="#h2-0-61" id="h2-0-61" class="i">+return M
+</a><b>diff --git a/<a id="h3" href="../file/.config/nvim/lua/keybindings.lua.html">.config/nvim/lua/keybindings.lua</a> b/<a href="../file/.config/nvim/lua/keybindings.lua.html">.config/nvim/lua/keybindings.lua</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -0,0 +1,69 @@
+</a><a href="#h3-0-0" id="h3-0-0" class="i">+local set = vim.opt
+</a><a href="#h3-0-1" id="h3-0-1" class="i">+
+</a><a href="#h3-0-2" id="h3-0-2" class="i">+
+</a><a href="#h3-0-3" id="h3-0-3" class="i">+---- Keymaps:
+</a><a href="#h3-0-4" id="h3-0-4" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-f&gt;&#39;, &#39;:TZFocus&lt;CR&gt;&#39;, {noremap = true}) -- Focus mode
+</a><a href="#h3-0-5" id="h3-0-5" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-g&gt;&#39;, &#39;:TZAtaraxis&lt;CR&gt;&#39;, {noremap = true}) -- Centered mode
+</a><a href="#h3-0-6" id="h3-0-6" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-t&gt;&#39;, &#39;:NERDTreeToggle&lt;CR&gt;&#39;, {noremap = true}) -- Toggle file tree
+</a><a href="#h3-0-7" id="h3-0-7" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;F8&gt;&#39;, &#39;:TagbarToggle&lt;CR&gt;&#39;, {noremap = true}) -- Toggle tagbar
+</a><a href="#h3-0-8" id="h3-0-8" class="i">+
+</a><a href="#h3-0-9" id="h3-0-9" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-p&gt;&#39;, &#39;:tabnew&lt;CR&gt;&#39;, {noremap = true}) -- new tab
+</a><a href="#h3-0-10" id="h3-0-10" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-o&gt;&#39;, &#39;:tabclose&lt;CR&gt;&#39;, {noremap = true}) --close tab
+</a><a href="#h3-0-11" id="h3-0-11" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;M-f&gt;&#39;, &#39;:tabnext&lt;CR&gt;&#39;, {noremap = true}) --move to tab to the right
+</a><a href="#h3-0-12" id="h3-0-12" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;M-b&gt;&#39;, &#39;:tabprevious&lt;CR&gt;&#39;, {noremap = true}) --move to tab to the left
+</a><a href="#h3-0-13" id="h3-0-13" class="i">+
+</a><a href="#h3-0-14" id="h3-0-14" class="i">+
+</a><a href="#h3-0-15" id="h3-0-15" class="i">+--move wrapped lines like normal lines
+</a><a href="#h3-0-16" id="h3-0-16" class="i">+vim.keymap.set(&#39;n&#39;, &#39;j&#39;, &#39;gj&#39;, {noremap = true}) 
+</a><a href="#h3-0-17" id="h3-0-17" class="i">+vim.keymap.set(&#39;n&#39;, &#39;k&#39;, &#39;gk&#39;, {noremap = true}) 
+</a><a href="#h3-0-18" id="h3-0-18" class="i">+
+</a><a href="#h3-0-19" id="h3-0-19" class="i">+--terminal
+</a><a href="#h3-0-20" id="h3-0-20" class="i">+vim.keymap.set(&#39;n&#39;, &#39;&lt;C-y&gt;&#39;, &#39;:ToggleTerm&lt;CR&gt;&#39;, {noremap = true, silent = true}) -- Open terminal
+</a><a href="#h3-0-21" id="h3-0-21" class="i">+vim.keymap.set(&#39;t&#39;, &#39;&lt;C-h&gt;&#39;, [[&lt;Cmd&gt;wincmd h&lt;CR&gt;]]) -- move 
+</a><a href="#h3-0-22" id="h3-0-22" class="i">+vim.keymap.set(&#39;t&#39;, &#39;&lt;C-j&gt;&#39;, [[&lt;Cmd&gt;wincmd j&lt;CR&gt;]]) -- between
+</a><a href="#h3-0-23" id="h3-0-23" class="i">+vim.keymap.set(&#39;t&#39;, &#39;&lt;C-k&gt;&#39;, [[&lt;Cmd&gt;wincmd k&lt;CR&gt;]]) -- the 
+</a><a href="#h3-0-24" id="h3-0-24" class="i">+vim.keymap.set(&#39;t&#39;, &#39;&lt;C-l&gt;&#39;, [[&lt;Cmd&gt;wincmd l&lt;CR&gt;]]) -- terminals
+</a><a href="#h3-0-25" id="h3-0-25" class="i">+
+</a><a href="#h3-0-26" id="h3-0-26" class="i">+
+</a><a href="#h3-0-27" id="h3-0-27" class="i">+
+</a><a href="#h3-0-28" id="h3-0-28" class="i">+local function nkeymap(key, map)
+</a><a href="#h3-0-29" id="h3-0-29" class="i">+	vim.keymap.set(&#39;n&#39;, key, map, {noremap = true})
+</a><a href="#h3-0-30" id="h3-0-30" class="i">+end
+</a><a href="#h3-0-31" id="h3-0-31" class="i">+
+</a><a href="#h3-0-32" id="h3-0-32" class="i">+--Lsp
+</a><a href="#h3-0-33" id="h3-0-33" class="i">+nkeymap(&#39;gd&#39;, &#39;:lua vim.lsp.buf.definition()&lt;cr&gt;&#39;) -- go to definition
+</a><a href="#h3-0-34" id="h3-0-34" class="i">+nkeymap(&#39;gD&#39;, &#39;:lua vim.lsp.buf.declaration()&lt;cr&gt;&#39;) -- go to declaration
+</a><a href="#h3-0-35" id="h3-0-35" class="i">+nkeymap(&#39;gi&#39;, &#39;:lua vim.lsp.buf.implementation()&lt;cr&gt;&#39;) -- go to implementation
+</a><a href="#h3-0-36" id="h3-0-36" class="i">+nkeymap(&#39;gw&#39;, &#39;:lua vim.lsp.buf.document_symbol()&lt;cr&gt;&#39;) -- 
+</a><a href="#h3-0-37" id="h3-0-37" class="i">+nkeymap(&#39;gw&#39;, &#39;:lua vim.lsp.buf.workspace_symbol()&lt;cr&gt;&#39;) -- 
+</a><a href="#h3-0-38" id="h3-0-38" class="i">+nkeymap(&#39;gr&#39;, &#39;:lua vim.lsp.buf.references()&lt;cr&gt;&#39;) -- get all references 
+</a><a href="#h3-0-39" id="h3-0-39" class="i">+nkeymap(&#39;gt&#39;, &#39;:lua vim.lsp.buf.type_definition()&lt;cr&gt;&#39;) -- get type definition
+</a><a href="#h3-0-40" id="h3-0-40" class="i">+nkeymap(&#39;K&#39;, &#39;:lua vim.lsp.buf.hover()&lt;cr&gt;&#39;) -- documentation 
+</a><a href="#h3-0-41" id="h3-0-41" class="i">+nkeymap(&#39;&lt;c-k&gt;&#39;, &#39;:lua vim.lsp.buf.signature_help()&lt;cr&gt;&#39;) -- 
+</a><a href="#h3-0-42" id="h3-0-42" class="i">+nkeymap(&#39;&lt;leader&gt;af&#39;, &#39;:lua vim.lsp.buf.code_action()&lt;cr&gt;&#39;) -- 
+</a><a href="#h3-0-43" id="h3-0-43" class="i">+nkeymap(&#39;&lt;leader&gt;rn&#39;, &#39;:lua vim.lsp.buf.rename()&lt;cr&gt;&#39;) -- rename
+</a><a href="#h3-0-44" id="h3-0-44" class="i">+
+</a><a href="#h3-0-45" id="h3-0-45" class="i">+-- vim.keymap.set(&#39;n&#39;, &#39;mm&#39;, codewindow.toggle_minimap())
+</a><a href="#h3-0-46" id="h3-0-46" class="i">+
+</a><a href="#h3-0-47" id="h3-0-47" class="i">+vim.cmd ([[
+</a><a href="#h3-0-48" id="h3-0-48" class="i">+&quot;    		inoremap &lt;silent&gt;&lt;expr&gt; &lt;TAB&gt;
+</a><a href="#h3-0-49" id="h3-0-49" class="i">+&quot;		  \ coc#pum#visible() ? coc#pum#next(1) :
+</a><a href="#h3-0-50" id="h3-0-50" class="i">+&quot;		  \ CheckBackspace() ? &quot;\&lt;Tab&gt;&quot; :
+</a><a href="#h3-0-51" id="h3-0-51" class="i">+&quot;		  \ coc#refresh()
+</a><a href="#h3-0-52" id="h3-0-52" class="i">+&quot;		inoremap &lt;expr&gt;&lt;S-TAB&gt; coc#pum#visible() ? coc#pum#prev(1) : &quot;\&lt;C-h&gt;&quot;
+</a><a href="#h3-0-53" id="h3-0-53" class="i">+
+</a><a href="#h3-0-54" id="h3-0-54" class="i">+&quot; map &lt; { + Enter &gt; to automatically add second &quot;}&quot;
+</a><a href="#h3-0-55" id="h3-0-55" class="i">+inoremap {&lt;Enter&gt; {&lt;Enter&gt;}&lt;Esc&gt;O
+</a><a href="#h3-0-56" id="h3-0-56" class="i">+
+</a><a href="#h3-0-57" id="h3-0-57" class="i">+
+</a><a href="#h3-0-58" id="h3-0-58" class="i">+&quot; map tab to complete for CoC
+</a><a href="#h3-0-59" id="h3-0-59" class="i">+&quot;		function! CheckBackspace() abort
+</a><a href="#h3-0-60" id="h3-0-60" class="i">+&quot;		  let col = col(&#39;.&#39;) - 1
+</a><a href="#h3-0-61" id="h3-0-61" class="i">+&quot;		  return !col || getline(&#39;.&#39;)[col - 1]  =~# &#39;\s&#39;
+</a><a href="#h3-0-62" id="h3-0-62" class="i">+&quot;		endfunction
+</a><a href="#h3-0-63" id="h3-0-63" class="i">+		&quot; Make &lt;CR&gt; to accept selected completion item or notify coc.nvim to format
+</a><a href="#h3-0-64" id="h3-0-64" class="i">+		&quot; &lt;C-g&gt;u breaks current undo, please make your own choice.
+</a><a href="#h3-0-65" id="h3-0-65" class="i">+&quot;		inoremap &lt;silent&gt;&lt;expr&gt; &lt;CR&gt; coc#pum#visible() ? coc#pum#confirm()
+</a><a href="#h3-0-66" id="h3-0-66" class="i">+&quot;								  \: &quot;\&lt;C-g&gt;u\&lt;CR&gt;\&lt;c-r&gt;=coc#on_enter()\&lt;CR&gt;&quot;
+</a><a href="#h3-0-67" id="h3-0-67" class="i">+]])
+</a><a href="#h3-0-68" id="h3-0-68" class="i">+
+</a><b>diff --git a/<a id="h4" href="../file/.config/nvim/lua/lsp.lua.html">.config/nvim/lua/lsp.lua</a> b/<a href="../file/.config/nvim/lua/lsp.lua.html">.config/nvim/lua/lsp.lua</a></b>
+<a href="#h4-0" id="h4-0" class="h">@@ -0,0 +1,113 @@
+</a><a href="#h4-0-0" id="h4-0-0" class="i">+-- local servers = { &#39;clangd&#39;, &#39;jdtls&#39;, &#39;ltex&#39;, &#39;sumneko_lua&#39;, &#39;quick_lint_js&#39;, &#39;cssls&#39;, &#39;html&#39;, &#39;pyright&#39; }
+</a><a href="#h4-0-1" id="h4-0-1" class="i">+
+</a><a href="#h4-0-2" id="h4-0-2" class="i">+
+</a><a href="#h4-0-3" id="h4-0-3" class="i">+local on_attach = function(client, bufnr) end
+</a><a href="#h4-0-4" id="h4-0-4" class="i">+
+</a><a href="#h4-0-5" id="h4-0-5" class="i">+require(&#39;lspconfig&#39;).clangd.setup {on_attach = on_attach}
+</a><a href="#h4-0-6" id="h4-0-6" class="i">+require(&#39;lspconfig&#39;).sumneko_lua.setup {on_attach = on_attach}
+</a><a href="#h4-0-7" id="h4-0-7" class="i">+require(&#39;lspconfig&#39;).pyright.setup {on_attach = on_attach}
+</a><a href="#h4-0-8" id="h4-0-8" class="i">+
+</a><a href="#h4-0-9" id="h4-0-9" class="i">+
+</a><a href="#h4-0-10" id="h4-0-10" class="i">+local lsp_installer = require(&quot;nvim-lsp-installer&quot;)
+</a><a href="#h4-0-11" id="h4-0-11" class="i">+lsp_installer.setup {}
+</a><a href="#h4-0-12" id="h4-0-12" class="i">+
+</a><a href="#h4-0-13" id="h4-0-13" class="i">+lsp_installer.setup({
+</a><a href="#h4-0-14" id="h4-0-14" class="i">+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+</a><a href="#h4-0-15" id="h4-0-15" class="i">+    ui = {
+</a><a href="#h4-0-16" id="h4-0-16" class="i">+        icons = {
+</a><a href="#h4-0-17" id="h4-0-17" class="i">+            server_installed = &quot;✓&quot;,
+</a><a href="#h4-0-18" id="h4-0-18" class="i">+            server_pending = &quot;➜&quot;,
+</a><a href="#h4-0-19" id="h4-0-19" class="i">+            server_uninstalled = &quot;✗&quot;
+</a><a href="#h4-0-20" id="h4-0-20" class="i">+        }
+</a><a href="#h4-0-21" id="h4-0-21" class="i">+    }
+</a><a href="#h4-0-22" id="h4-0-22" class="i">+})
+</a><a href="#h4-0-23" id="h4-0-23" class="i">+
+</a><a href="#h4-0-24" id="h4-0-24" class="i">+---------------------------
+</a><a href="#h4-0-25" id="h4-0-25" class="i">+-- ==== CMP portion ==== --
+</a><a href="#h4-0-26" id="h4-0-26" class="i">+---------------------------
+</a><a href="#h4-0-27" id="h4-0-27" class="i">+
+</a><a href="#h4-0-28" id="h4-0-28" class="i">+local snip_status_ok, luasnip = pcall(require, &quot;luasnip&quot;)
+</a><a href="#h4-0-29" id="h4-0-29" class="i">+if not snip_status_ok then
+</a><a href="#h4-0-30" id="h4-0-30" class="i">+  return
+</a><a href="#h4-0-31" id="h4-0-31" class="i">+end
+</a><a href="#h4-0-32" id="h4-0-32" class="i">+
+</a><a href="#h4-0-33" id="h4-0-33" class="i">+local has_words_before = function()
+</a><a href="#h4-0-34" id="h4-0-34" class="i">+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+</a><a href="#h4-0-35" id="h4-0-35" class="i">+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match(&quot;%s&quot;) == nil
+</a><a href="#h4-0-36" id="h4-0-36" class="i">+end
+</a><a href="#h4-0-37" id="h4-0-37" class="i">+
+</a><a href="#h4-0-38" id="h4-0-38" class="i">+ local cmp = require&#39;cmp&#39;
+</a><a href="#h4-0-39" id="h4-0-39" class="i">+
+</a><a href="#h4-0-40" id="h4-0-40" class="i">+cmp.setup({
+</a><a href="#h4-0-41" id="h4-0-41" class="i">+	snippet = {
+</a><a href="#h4-0-42" id="h4-0-42" class="i">+    expand = function(args)
+</a><a href="#h4-0-43" id="h4-0-43" class="i">+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+</a><a href="#h4-0-44" id="h4-0-44" class="i">+    end,
+</a><a href="#h4-0-45" id="h4-0-45" class="i">+  },
+</a><a href="#h4-0-46" id="h4-0-46" class="i">+    mapping = cmp.mapping.preset.insert({
+</a><a href="#h4-0-47" id="h4-0-47" class="i">+      [&#39;&lt;C-f&gt;&#39;] = cmp.mapping.scroll_docs(-4),
+</a><a href="#h4-0-48" id="h4-0-48" class="i">+      [&#39;&lt;C-b&gt;&#39;] = cmp.mapping.scroll_docs(4),
+</a><a href="#h4-0-49" id="h4-0-49" class="i">+      [&#39;&lt;C-Space&gt;&#39;] = cmp.mapping.complete(),
+</a><a href="#h4-0-50" id="h4-0-50" class="i">+      [&#39;&lt;C-e&gt;&#39;] = cmp.mapping.abort(),
+</a><a href="#h4-0-51" id="h4-0-51" class="i">+      [&#39;&lt;CR&gt;&#39;] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+</a><a href="#h4-0-52" id="h4-0-52" class="i">+	  [&quot;&lt;Tab&gt;&quot;] = cmp.mapping(function(fallback)
+</a><a href="#h4-0-53" id="h4-0-53" class="i">+		 if cmp.visible() then
+</a><a href="#h4-0-54" id="h4-0-54" class="i">+			 cmp.select_next_item()
+</a><a href="#h4-0-55" id="h4-0-55" class="i">+		elseif luasnip.expand_or_jumpable() then
+</a><a href="#h4-0-56" id="h4-0-56" class="i">+			luasnip.expand_or_jump()
+</a><a href="#h4-0-57" id="h4-0-57" class="i">+		elseif has_words_before() then
+</a><a href="#h4-0-58" id="h4-0-58" class="i">+			cmp.complete()
+</a><a href="#h4-0-59" id="h4-0-59" class="i">+		else
+</a><a href="#h4-0-60" id="h4-0-60" class="i">+			fallback()
+</a><a href="#h4-0-61" id="h4-0-61" class="i">+		end
+</a><a href="#h4-0-62" id="h4-0-62" class="i">+	end, { &quot;i&quot;, &quot;s&quot; }),
+</a><a href="#h4-0-63" id="h4-0-63" class="i">+		 [&quot;&lt;S-Tab&gt;&quot;] = cmp.mapping(function(fallback)
+</a><a href="#h4-0-64" id="h4-0-64" class="i">+        if cmp.visible() then
+</a><a href="#h4-0-65" id="h4-0-65" class="i">+          cmp.select_prev_item()
+</a><a href="#h4-0-66" id="h4-0-66" class="i">+        elseif luasnip.jumpable(-1) then
+</a><a href="#h4-0-67" id="h4-0-67" class="i">+          luasnip.jump(-1)
+</a><a href="#h4-0-68" id="h4-0-68" class="i">+        else
+</a><a href="#h4-0-69" id="h4-0-69" class="i">+          fallback()
+</a><a href="#h4-0-70" id="h4-0-70" class="i">+        end
+</a><a href="#h4-0-71" id="h4-0-71" class="i">+      end, { &quot;i&quot;, &quot;s&quot; }),
+</a><a href="#h4-0-72" id="h4-0-72" class="i">+    }),
+</a><a href="#h4-0-73" id="h4-0-73" class="i">+    sources = cmp.config.sources({
+</a><a href="#h4-0-74" id="h4-0-74" class="i">+      { name = &#39;nvim_lsp&#39; },
+</a><a href="#h4-0-75" id="h4-0-75" class="i">+    }, {
+</a><a href="#h4-0-76" id="h4-0-76" class="i">+      { name = &#39;buffer&#39; },
+</a><a href="#h4-0-77" id="h4-0-77" class="i">+    })
+</a><a href="#h4-0-78" id="h4-0-78" class="i">+  })
+</a><a href="#h4-0-79" id="h4-0-79" class="i">+
+</a><a href="#h4-0-80" id="h4-0-80" class="i">+  -- Use buffer source for `/` (if you enabled `native_menu`, this won&#39;t work anymore).
+</a><a href="#h4-0-81" id="h4-0-81" class="i">+  cmp.setup.cmdline(&#39;/&#39;, {
+</a><a href="#h4-0-82" id="h4-0-82" class="i">+    sources = {
+</a><a href="#h4-0-83" id="h4-0-83" class="i">+      { name = &#39;buffer&#39; }
+</a><a href="#h4-0-84" id="h4-0-84" class="i">+    }
+</a><a href="#h4-0-85" id="h4-0-85" class="i">+  })
+</a><a href="#h4-0-86" id="h4-0-86" class="i">+
+</a><a href="#h4-0-87" id="h4-0-87" class="i">+  -- Use cmdline &amp; path source for &#39;:&#39; (if you enabled `native_menu`, this won&#39;t work anymore).
+</a><a href="#h4-0-88" id="h4-0-88" class="i">+  cmp.setup.cmdline(&#39;:&#39;, {
+</a><a href="#h4-0-89" id="h4-0-89" class="i">+    sources = cmp.config.sources({
+</a><a href="#h4-0-90" id="h4-0-90" class="i">+      { name = &#39;path&#39; }
+</a><a href="#h4-0-91" id="h4-0-91" class="i">+    }, {
+</a><a href="#h4-0-92" id="h4-0-92" class="i">+      { name = &#39;cmdline&#39; }
+</a><a href="#h4-0-93" id="h4-0-93" class="i">+    })
+</a><a href="#h4-0-94" id="h4-0-94" class="i">+  })
+</a><a href="#h4-0-95" id="h4-0-95" class="i">+
+</a><a href="#h4-0-96" id="h4-0-96" class="i">+  -- Set up lspconfig.
+</a><a href="#h4-0-97" id="h4-0-97" class="i">+local capabilities = require(&#39;cmp_nvim_lsp&#39;).update_capabilities(vim.lsp.protocol.make_client_capabilities())
+</a><a href="#h4-0-98" id="h4-0-98" class="i">+
+</a><a href="#h4-0-99" id="h4-0-99" class="i">+require(&#39;lspconfig&#39;)[&#39;clangd&#39;].setup {
+</a><a href="#h4-0-100" id="h4-0-100" class="i">+    capabilities = capabilities
+</a><a href="#h4-0-101" id="h4-0-101" class="i">+}
+</a><a href="#h4-0-102" id="h4-0-102" class="i">+
+</a><a href="#h4-0-103" id="h4-0-103" class="i">+require(&#39;lspconfig&#39;)[&#39;sumneko_lua&#39;].setup {
+</a><a href="#h4-0-104" id="h4-0-104" class="i">+    capabilities = capabilities
+</a><a href="#h4-0-105" id="h4-0-105" class="i">+}
+</a><a href="#h4-0-106" id="h4-0-106" class="i">+
+</a><a href="#h4-0-107" id="h4-0-107" class="i">+require(&#39;lspconfig&#39;)[&#39;pyright&#39;].setup {
+</a><a href="#h4-0-108" id="h4-0-108" class="i">+    capabilities = capabilities
+</a><a href="#h4-0-109" id="h4-0-109" class="i">+}
+</a><a href="#h4-0-110" id="h4-0-110" class="i">+
+</a><a href="#h4-0-111" id="h4-0-111" class="i">+
+</a><a href="#h4-0-112" id="h4-0-112" class="i">+
+</a><b>diff --git a/<a id="h5" href="../file/.config/nvim/lua/plugins.lua.html">.config/nvim/lua/plugins.lua</a> b/<a href="../file/.config/nvim/lua/plugins.lua.html">.config/nvim/lua/plugins.lua</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -0,0 +1,72 @@
+</a><a href="#h5-0-0" id="h5-0-0" class="i">+local Plug = vim.fn[&#39;plug#&#39;]
+</a><a href="#h5-0-1" id="h5-0-1" class="i">+
+</a><a href="#h5-0-2" id="h5-0-2" class="i">+---- Plugins:
+</a><a href="#h5-0-3" id="h5-0-3" class="i">+vim.call(&#39;plug#begin&#39;, &#39;~/.config/nvim/plugged&#39;)
+</a><a href="#h5-0-4" id="h5-0-4" class="i">+
+</a><a href="#h5-0-5" id="h5-0-5" class="i">+Plug &#39;http://github.com/tpope/vim-surround&#39; -- Surrounding ysw)
+</a><a href="#h5-0-6" id="h5-0-6" class="i">+Plug &#39;https://github.com/preservim/nerdtree&#39; -- NerdTree
+</a><a href="#h5-0-7" id="h5-0-7" class="i">+Plug &#39;https://github.com/tpope/vim-commentary&#39; -- For Commenting gcc 
+</a><a href="#h5-0-8" id="h5-0-8" class="i">+Plug &#39;https://github.com/rafi/awesome-vim-colorschemes&#39; -- Retro Scheme
+</a><a href="#h5-0-9" id="h5-0-9" class="i">+Plug &#39;https://github.com/ryanoasis/vim-devicons&#39; -- Developer Icons
+</a><a href="#h5-0-10" id="h5-0-10" class="i">+Plug &#39;lewis6991/gitsigns.nvim&#39; -- git integration
+</a><a href="#h5-0-11" id="h5-0-11" class="i">+-- Plug &#39;https://github.com/terryma/vim-multiple-cursors&#39; -- CTRL + N for multiple cursors
+</a><a href="#h5-0-12" id="h5-0-12" class="i">+Plug &#39;https://github.com/preservim/tagbar&#39; -- Tagbar for code navigation
+</a><a href="#h5-0-13" id="h5-0-13" class="i">+
+</a><a href="#h5-0-14" id="h5-0-14" class="i">+--================================================================
+</a><a href="#h5-0-15" id="h5-0-15" class="i">+Plug &#39;https://github.com/neovim/nvim-lspconfig&#39; -- Lsp
+</a><a href="#h5-0-16" id="h5-0-16" class="i">+Plug &#39;https://github.com/williamboman/nvim-lsp-installer&#39; -- Lsp installers
+</a><a href="#h5-0-17" id="h5-0-17" class="i">+Plug &#39;hrsh7th/nvim-cmp&#39; -- Completion
+</a><a href="#h5-0-18" id="h5-0-18" class="i">+Plug &#39;hrsh7th/cmp-nvim-lsp&#39; -- plugins
+</a><a href="#h5-0-19" id="h5-0-19" class="i">+Plug &#39;hrsh7th/cmp-buffer&#39; -- to go 
+</a><a href="#h5-0-20" id="h5-0-20" class="i">+Plug &#39;hrsh7th/cmp-path&#39; -- with
+</a><a href="#h5-0-21" id="h5-0-21" class="i">+Plug &#39;hrsh7th/cmp-cmdline&#39; -- Lsp
+</a><a href="#h5-0-22" id="h5-0-22" class="i">+
+</a><a href="#h5-0-23" id="h5-0-23" class="i">+--Snippets:
+</a><a href="#h5-0-24" id="h5-0-24" class="i">+Plug &#39;L3MON4D3/LuaSnip&#39;
+</a><a href="#h5-0-25" id="h5-0-25" class="i">+Plug &#39;saadparwaiz1/cmp_luasnip&#39;
+</a><a href="#h5-0-26" id="h5-0-26" class="i">+--=========
+</a><a href="#h5-0-27" id="h5-0-27" class="i">+
+</a><a href="#h5-0-28" id="h5-0-28" class="i">+Plug &#39;mhinz/vim-startify&#39; -- startup screen // dashboard
+</a><a href="#h5-0-29" id="h5-0-29" class="i">+
+</a><a href="#h5-0-30" id="h5-0-30" class="i">+Plug(&#39;nvim-treesitter/nvim-treesitter&#39;, {[&#39;do&#39;] = &#39;TSUpdate&#39;})
+</a><a href="#h5-0-31" id="h5-0-31" class="i">+
+</a><a href="#h5-0-32" id="h5-0-32" class="i">+Plug &quot;SmiteshP/nvim-gps&quot;
+</a><a href="#h5-0-33" id="h5-0-33" class="i">+Plug &#39;Pocco81/true-zen.nvim&#39;
+</a><a href="#h5-0-34" id="h5-0-34" class="i">+Plug &#39;https://github.com/ap/vim-css-color&#39; -- CSS Color Preview
+</a><a href="#h5-0-35" id="h5-0-35" class="i">+Plug &#39;kyazdani42/nvim-web-devicons&#39; -- More Icons
+</a><a href="#h5-0-36" id="h5-0-36" class="i">+Plug &#39;feline-nvim/feline.nvim&#39; -- bar 
+</a><a href="#h5-0-37" id="h5-0-37" class="i">+Plug &#39;https://github.com/nanozuki/tabby.nvim&#39; -- to have tabs
+</a><a href="#h5-0-38" id="h5-0-38" class="i">+Plug &#39;nvim-lua/plenary.nvim&#39;
+</a><a href="#h5-0-39" id="h5-0-39" class="i">+Plug &#39;navarasu/onedark.nvim&#39; -- colorscheme
+</a><a href="#h5-0-40" id="h5-0-40" class="i">+Plug(&#39;akinsho/toggleterm.nvim&#39;, {[&#39;tag&#39;] = &#39;*&#39;}) -- terminal
+</a><a href="#h5-0-41" id="h5-0-41" class="i">+Plug(&#39;xiyaowong/nvim-transparent&#39;) -- make background transparent
+</a><a href="#h5-0-42" id="h5-0-42" class="i">+
+</a><a href="#h5-0-43" id="h5-0-43" class="i">+Plug &#39;Mofiqul/dracula.nvim&#39; -- dracula colortheme
+</a><a href="#h5-0-44" id="h5-0-44" class="i">+-- Plug &#39;gorbit99/codewindow.nvim&#39; -- code minimap
+</a><a href="#h5-0-45" id="h5-0-45" class="i">+
+</a><a href="#h5-0-46" id="h5-0-46" class="i">+vim.call(&#39;plug#end&#39;)
+</a><a href="#h5-0-47" id="h5-0-47" class="i">+
+</a><a href="#h5-0-48" id="h5-0-48" class="i">+require(&#39;gitsigns&#39;).setup()
+</a><a href="#h5-0-49" id="h5-0-49" class="i">+require(&quot;toggleterm&quot;).setup()
+</a><a href="#h5-0-50" id="h5-0-50" class="i">+require(&quot;nvim-gps&quot;).setup()
+</a><a href="#h5-0-51" id="h5-0-51" class="i">+require(&quot;tabby&quot;).setup({
+</a><a href="#h5-0-52" id="h5-0-52" class="i">+	tabline = require(&quot;tabby.presets&quot;).tab_only
+</a><a href="#h5-0-53" id="h5-0-53" class="i">+})
+</a><a href="#h5-0-54" id="h5-0-54" class="i">+require(&#39;onedark&#39;).setup {
+</a><a href="#h5-0-55" id="h5-0-55" class="i">+    style = &#39;deep&#39;
+</a><a href="#h5-0-56" id="h5-0-56" class="i">+}
+</a><a href="#h5-0-57" id="h5-0-57" class="i">+require(&quot;transparent&quot;).setup({
+</a><a href="#h5-0-58" id="h5-0-58" class="i">+  enable = true, -- boolean: enable transparent
+</a><a href="#h5-0-59" id="h5-0-59" class="i">+  extra_groups = { -- table/string: additional groups that should be cleared
+</a><a href="#h5-0-60" id="h5-0-60" class="i">+    -- In particular, when you set it to &#39;all&#39;, that means all available groups
+</a><a href="#h5-0-61" id="h5-0-61" class="i">+
+</a><a href="#h5-0-62" id="h5-0-62" class="i">+    -- example of akinsho/nvim-bufferline.lua
+</a><a href="#h5-0-63" id="h5-0-63" class="i">+    &quot;BufferLineTabClose&quot;,
+</a><a href="#h5-0-64" id="h5-0-64" class="i">+    &quot;BufferlineBufferSelected&quot;,
+</a><a href="#h5-0-65" id="h5-0-65" class="i">+    &quot;BufferLineFill&quot;,
+</a><a href="#h5-0-66" id="h5-0-66" class="i">+    &quot;BufferLineBackground&quot;,
+</a><a href="#h5-0-67" id="h5-0-67" class="i">+    &quot;BufferLineSeparator&quot;,
+</a><a href="#h5-0-68" id="h5-0-68" class="i">+    &quot;BufferLineIndicatorSelected&quot;,
+</a><a href="#h5-0-69" id="h5-0-69" class="i">+  },
+</a><a href="#h5-0-70" id="h5-0-70" class="i">+  exclude = {}, -- table: groups you don&#39;t want to clear
+</a><a href="#h5-0-71" id="h5-0-71" class="i">+})
+</a><b>diff --git a/<a id="h6" href="../file/.config/nvim/lua/statusline.lua.html">.config/nvim/lua/statusline.lua</a> b/<a href="../file/.config/nvim/lua/statusline.lua.html">.config/nvim/lua/statusline.lua</a></b>
+<a href="#h6-0" id="h6-0" class="h">@@ -0,0 +1,257 @@
+</a><a href="#h6-0-0" id="h6-0-0" class="i">+----------------------------------------------------------
+</a><a href="#h6-0-1" id="h6-0-1" class="i">+-- Statusline configuration file
+</a><a href="#h6-0-2" id="h6-0-2" class="i">+-----------------------------------------------------------
+</a><a href="#h6-0-3" id="h6-0-3" class="i">+-- Credits: brainfuckset (https://github.com/brainfucksec/neovim-lua)
+</a><a href="#h6-0-4" id="h6-0-4" class="i">+
+</a><a href="#h6-0-5" id="h6-0-5" class="i">+local status_ok, feline = pcall(require, &#39;feline&#39;)
+</a><a href="#h6-0-6" id="h6-0-6" class="i">+if not status_ok then
+</a><a href="#h6-0-7" id="h6-0-7" class="i">+  return
+</a><a href="#h6-0-8" id="h6-0-8" class="i">+end
+</a><a href="#h6-0-9" id="h6-0-9" class="i">+
+</a><a href="#h6-0-10" id="h6-0-10" class="i">+local colors = require(&#39;colors&#39;).onedark_dark
+</a><a href="#h6-0-11" id="h6-0-11" class="i">+
+</a><a href="#h6-0-12" id="h6-0-12" class="i">+local vi_mode_colors = {
+</a><a href="#h6-0-13" id="h6-0-13" class="i">+  NORMAL = colors.cyan,
+</a><a href="#h6-0-14" id="h6-0-14" class="i">+  INSERT = colors.green,
+</a><a href="#h6-0-15" id="h6-0-15" class="i">+  VISUAL = colors.yellow,
+</a><a href="#h6-0-16" id="h6-0-16" class="i">+  OP = colors.cyan,
+</a><a href="#h6-0-17" id="h6-0-17" class="i">+  BLOCK = colors.cyan,
+</a><a href="#h6-0-18" id="h6-0-18" class="i">+  REPLACE = colors.red,
+</a><a href="#h6-0-19" id="h6-0-19" class="i">+  [&#39;V-REPLACE&#39;] = colors.red,
+</a><a href="#h6-0-20" id="h6-0-20" class="i">+  ENTER = colors.orange,
+</a><a href="#h6-0-21" id="h6-0-21" class="i">+  MORE = colors.orange,
+</a><a href="#h6-0-22" id="h6-0-22" class="i">+  SELECT = colors.yellow,
+</a><a href="#h6-0-23" id="h6-0-23" class="i">+  COMMAND = colors.pink,
+</a><a href="#h6-0-24" id="h6-0-24" class="i">+  SHELL = colors.pink,
+</a><a href="#h6-0-25" id="h6-0-25" class="i">+  TERM = colors.pink,
+</a><a href="#h6-0-26" id="h6-0-26" class="i">+  NONE = colors.yellow,
+</a><a href="#h6-0-27" id="h6-0-27" class="i">+}
+</a><a href="#h6-0-28" id="h6-0-28" class="i">+
+</a><a href="#h6-0-29" id="h6-0-29" class="i">+local vi_mode_utils = require &#39;feline.providers.vi_mode&#39;
+</a><a href="#h6-0-30" id="h6-0-30" class="i">+
+</a><a href="#h6-0-31" id="h6-0-31" class="i">+local separator = &#39;|&#39;
+</a><a href="#h6-0-32" id="h6-0-32" class="i">+
+</a><a href="#h6-0-33" id="h6-0-33" class="i">+-- My components
+</a><a href="#h6-0-34" id="h6-0-34" class="i">+local comps = {
+</a><a href="#h6-0-35" id="h6-0-35" class="i">+  -- vi_mode -&gt; NORMAL, INSERT..
+</a><a href="#h6-0-36" id="h6-0-36" class="i">+  vi_mode = {
+</a><a href="#h6-0-37" id="h6-0-37" class="i">+    left = {
+</a><a href="#h6-0-38" id="h6-0-38" class="i">+      provider = function()
+</a><a href="#h6-0-39" id="h6-0-39" class="i">+        local label = &#39; &#39;..vi_mode_utils.get_vim_mode()..&#39; &#39;
+</a><a href="#h6-0-40" id="h6-0-40" class="i">+        return label
+</a><a href="#h6-0-41" id="h6-0-41" class="i">+      end,
+</a><a href="#h6-0-42" id="h6-0-42" class="i">+      hl = function()
+</a><a href="#h6-0-43" id="h6-0-43" class="i">+        local set_color = {
+</a><a href="#h6-0-44" id="h6-0-44" class="i">+          name = vi_mode_utils.get_mode_highlight_name(),
+</a><a href="#h6-0-45" id="h6-0-45" class="i">+          fg = colors.bg,
+</a><a href="#h6-0-46" id="h6-0-46" class="i">+          bg = vi_mode_utils.get_mode_color(),
+</a><a href="#h6-0-47" id="h6-0-47" class="i">+          style = &#39;bold&#39;,
+</a><a href="#h6-0-48" id="h6-0-48" class="i">+        }
+</a><a href="#h6-0-49" id="h6-0-49" class="i">+        return set_color
+</a><a href="#h6-0-50" id="h6-0-50" class="i">+      end,
+</a><a href="#h6-0-51" id="h6-0-51" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-52" id="h6-0-52" class="i">+      right_sep = &#39; &#39;,
+</a><a href="#h6-0-53" id="h6-0-53" class="i">+    }
+</a><a href="#h6-0-54" id="h6-0-54" class="i">+  },
+</a><a href="#h6-0-55" id="h6-0-55" class="i">+  -- Parse file information:
+</a><a href="#h6-0-56" id="h6-0-56" class="i">+  file = {
+</a><a href="#h6-0-57" id="h6-0-57" class="i">+    -- File name
+</a><a href="#h6-0-58" id="h6-0-58" class="i">+    info = {
+</a><a href="#h6-0-59" id="h6-0-59" class="i">+      provider = {
+</a><a href="#h6-0-60" id="h6-0-60" class="i">+        name = &#39;file_info&#39;,
+</a><a href="#h6-0-61" id="h6-0-61" class="i">+        opts = {
+</a><a href="#h6-0-62" id="h6-0-62" class="i">+          type = &#39;relative&#39;,
+</a><a href="#h6-0-63" id="h6-0-63" class="i">+          file_modified_icon = &#39;&#39;,
+</a><a href="#h6-0-64" id="h6-0-64" class="i">+        }
+</a><a href="#h6-0-65" id="h6-0-65" class="i">+      },
+</a><a href="#h6-0-66" id="h6-0-66" class="i">+      hl = { fg = colors.cyan },
+</a><a href="#h6-0-67" id="h6-0-67" class="i">+      icon = &#39;&#39;,
+</a><a href="#h6-0-68" id="h6-0-68" class="i">+    },
+</a><a href="#h6-0-69" id="h6-0-69" class="i">+    -- File type
+</a><a href="#h6-0-70" id="h6-0-70" class="i">+    type = {
+</a><a href="#h6-0-71" id="h6-0-71" class="i">+      provider = function()
+</a><a href="#h6-0-72" id="h6-0-72" class="i">+        local type = vim.bo.filetype:lower()
+</a><a href="#h6-0-73" id="h6-0-73" class="i">+        local extension = vim.fn.expand &#39;%:e&#39;
+</a><a href="#h6-0-74" id="h6-0-74" class="i">+        local icon = require(&#39;nvim-web-devicons&#39;).get_icon(extension)
+</a><a href="#h6-0-75" id="h6-0-75" class="i">+        if icon == nil then
+</a><a href="#h6-0-76" id="h6-0-76" class="i">+          icon = &#39; &#39;
+</a><a href="#h6-0-77" id="h6-0-77" class="i">+        end
+</a><a href="#h6-0-78" id="h6-0-78" class="i">+        return &#39; &#39; .. icon .. &#39; &#39; .. type
+</a><a href="#h6-0-79" id="h6-0-79" class="i">+      end,
+</a><a href="#h6-0-80" id="h6-0-80" class="i">+      hl = { fg = colors.fg },
+</a><a href="#h6-0-81" id="h6-0-81" class="i">+      left_sep = {
+</a><a href="#h6-0-82" id="h6-0-82" class="i">+        str = &#39; &#39; .. separator,
+</a><a href="#h6-0-83" id="h6-0-83" class="i">+        hl = { fg = colors.fg },
+</a><a href="#h6-0-84" id="h6-0-84" class="i">+      },
+</a><a href="#h6-0-85" id="h6-0-85" class="i">+      righ_sep = &#39; &#39;,
+</a><a href="#h6-0-86" id="h6-0-86" class="i">+    },
+</a><a href="#h6-0-87" id="h6-0-87" class="i">+    -- Operating system
+</a><a href="#h6-0-88" id="h6-0-88" class="i">+    os = {
+</a><a href="#h6-0-89" id="h6-0-89" class="i">+      provider = function()
+</a><a href="#h6-0-90" id="h6-0-90" class="i">+        local os = vim.bo.fileformat:lower()
+</a><a href="#h6-0-91" id="h6-0-91" class="i">+        local icon
+</a><a href="#h6-0-92" id="h6-0-92" class="i">+        if os == &#39;unix&#39; then
+</a><a href="#h6-0-93" id="h6-0-93" class="i">+          icon = &#39;  &#39;
+</a><a href="#h6-0-94" id="h6-0-94" class="i">+        elseif os == &#39;mac&#39; then
+</a><a href="#h6-0-95" id="h6-0-95" class="i">+          icon = &#39;  &#39;
+</a><a href="#h6-0-96" id="h6-0-96" class="i">+        else
+</a><a href="#h6-0-97" id="h6-0-97" class="i">+          icon = &#39;  &#39;
+</a><a href="#h6-0-98" id="h6-0-98" class="i">+        end
+</a><a href="#h6-0-99" id="h6-0-99" class="i">+        return icon .. os
+</a><a href="#h6-0-100" id="h6-0-100" class="i">+      end,
+</a><a href="#h6-0-101" id="h6-0-101" class="i">+      hl = { fg = colors.fg },
+</a><a href="#h6-0-102" id="h6-0-102" class="i">+      left_sep = {
+</a><a href="#h6-0-103" id="h6-0-103" class="i">+        str = &#39; &#39; .. separator,
+</a><a href="#h6-0-104" id="h6-0-104" class="i">+        hl = { fg = colors.fg },
+</a><a href="#h6-0-105" id="h6-0-105" class="i">+      },
+</a><a href="#h6-0-106" id="h6-0-106" class="i">+      right_sep = {
+</a><a href="#h6-0-107" id="h6-0-107" class="i">+        str = &#39; &#39; .. separator,
+</a><a href="#h6-0-108" id="h6-0-108" class="i">+        hl = { fg = colors.fg },
+</a><a href="#h6-0-109" id="h6-0-109" class="i">+      },
+</a><a href="#h6-0-110" id="h6-0-110" class="i">+    },
+</a><a href="#h6-0-111" id="h6-0-111" class="i">+    -- Line-column
+</a><a href="#h6-0-112" id="h6-0-112" class="i">+    position = {
+</a><a href="#h6-0-113" id="h6-0-113" class="i">+      provider = { name = &#39;position&#39; },
+</a><a href="#h6-0-114" id="h6-0-114" class="i">+      hl = {
+</a><a href="#h6-0-115" id="h6-0-115" class="i">+        fg = colors.fg,
+</a><a href="#h6-0-116" id="h6-0-116" class="i">+        style = &#39;bold&#39;,
+</a><a href="#h6-0-117" id="h6-0-117" class="i">+      },
+</a><a href="#h6-0-118" id="h6-0-118" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-119" id="h6-0-119" class="i">+      right_sep = &#39; &#39;,
+</a><a href="#h6-0-120" id="h6-0-120" class="i">+    },
+</a><a href="#h6-0-121" id="h6-0-121" class="i">+    -- Cursor position in %
+</a><a href="#h6-0-122" id="h6-0-122" class="i">+    line_percentage = {
+</a><a href="#h6-0-123" id="h6-0-123" class="i">+      provider = { name = &#39;line_percentage&#39; },
+</a><a href="#h6-0-124" id="h6-0-124" class="i">+      hl = {
+</a><a href="#h6-0-125" id="h6-0-125" class="i">+        fg = colors.cyan,
+</a><a href="#h6-0-126" id="h6-0-126" class="i">+        style = &#39;bold&#39;,
+</a><a href="#h6-0-127" id="h6-0-127" class="i">+      },
+</a><a href="#h6-0-128" id="h6-0-128" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-129" id="h6-0-129" class="i">+      right_sep = &#39; &#39;,
+</a><a href="#h6-0-130" id="h6-0-130" class="i">+    },
+</a><a href="#h6-0-131" id="h6-0-131" class="i">+    -- Simple scrollbar
+</a><a href="#h6-0-132" id="h6-0-132" class="i">+    scroll_bar = {
+</a><a href="#h6-0-133" id="h6-0-133" class="i">+      provider = { name = &#39;scroll_bar&#39; },
+</a><a href="#h6-0-134" id="h6-0-134" class="i">+      hl = { fg = colors.fg },
+</a><a href="#h6-0-135" id="h6-0-135" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-136" id="h6-0-136" class="i">+      right_sep = &#39; &#39;,
+</a><a href="#h6-0-137" id="h6-0-137" class="i">+    },
+</a><a href="#h6-0-138" id="h6-0-138" class="i">+  },
+</a><a href="#h6-0-139" id="h6-0-139" class="i">+  -- LSP info
+</a><a href="#h6-0-140" id="h6-0-140" class="i">+  diagnos = {
+</a><a href="#h6-0-141" id="h6-0-141" class="i">+    err = {
+</a><a href="#h6-0-142" id="h6-0-142" class="i">+      provider = &#39;diagnostic_errors&#39;,
+</a><a href="#h6-0-143" id="h6-0-143" class="i">+      icon = &#39; &#39;,
+</a><a href="#h6-0-144" id="h6-0-144" class="i">+      hl = { fg = colors.red },
+</a><a href="#h6-0-145" id="h6-0-145" class="i">+      left_sep = &#39;  &#39;,
+</a><a href="#h6-0-146" id="h6-0-146" class="i">+    },
+</a><a href="#h6-0-147" id="h6-0-147" class="i">+    warn = {
+</a><a href="#h6-0-148" id="h6-0-148" class="i">+      provider = &#39;diagnostic_warnings&#39;,
+</a><a href="#h6-0-149" id="h6-0-149" class="i">+      icon = &#39; &#39; ,
+</a><a href="#h6-0-150" id="h6-0-150" class="i">+      hl = { fg = colors.yellow },
+</a><a href="#h6-0-151" id="h6-0-151" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-152" id="h6-0-152" class="i">+    },
+</a><a href="#h6-0-153" id="h6-0-153" class="i">+    info = {
+</a><a href="#h6-0-154" id="h6-0-154" class="i">+      provider = &#39;diagnostic_info&#39;,
+</a><a href="#h6-0-155" id="h6-0-155" class="i">+      icon = &#39; &#39;,
+</a><a href="#h6-0-156" id="h6-0-156" class="i">+      hl = { fg = colors.green },
+</a><a href="#h6-0-157" id="h6-0-157" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-158" id="h6-0-158" class="i">+    },
+</a><a href="#h6-0-159" id="h6-0-159" class="i">+    hint = {
+</a><a href="#h6-0-160" id="h6-0-160" class="i">+      provider = &#39;diagnostic_hints&#39;,
+</a><a href="#h6-0-161" id="h6-0-161" class="i">+      icon = &#39; &#39;,
+</a><a href="#h6-0-162" id="h6-0-162" class="i">+      hl = { fg = colors.cyan },
+</a><a href="#h6-0-163" id="h6-0-163" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-164" id="h6-0-164" class="i">+    },
+</a><a href="#h6-0-165" id="h6-0-165" class="i">+  },
+</a><a href="#h6-0-166" id="h6-0-166" class="i">+  lsp = {
+</a><a href="#h6-0-167" id="h6-0-167" class="i">+    name = {
+</a><a href="#h6-0-168" id="h6-0-168" class="i">+      provider = &#39;lsp_client_names&#39;,
+</a><a href="#h6-0-169" id="h6-0-169" class="i">+      icon = &#39;  &#39;,
+</a><a href="#h6-0-170" id="h6-0-170" class="i">+      hl = { fg = colors.pink },
+</a><a href="#h6-0-171" id="h6-0-171" class="i">+      left_sep = &#39;  &#39;,
+</a><a href="#h6-0-172" id="h6-0-172" class="i">+      right_sep = &#39; &#39;,
+</a><a href="#h6-0-173" id="h6-0-173" class="i">+    }
+</a><a href="#h6-0-174" id="h6-0-174" class="i">+  },
+</a><a href="#h6-0-175" id="h6-0-175" class="i">+  -- git info
+</a><a href="#h6-0-176" id="h6-0-176" class="i">+  git = {
+</a><a href="#h6-0-177" id="h6-0-177" class="i">+    branch = {
+</a><a href="#h6-0-178" id="h6-0-178" class="i">+      provider = &#39;git_branch&#39;,
+</a><a href="#h6-0-179" id="h6-0-179" class="i">+      icon = &#39; &#39;,
+</a><a href="#h6-0-180" id="h6-0-180" class="i">+      hl = { fg = colors.pink },
+</a><a href="#h6-0-181" id="h6-0-181" class="i">+      left_sep = &#39;  &#39;,
+</a><a href="#h6-0-182" id="h6-0-182" class="i">+    },
+</a><a href="#h6-0-183" id="h6-0-183" class="i">+    add = {
+</a><a href="#h6-0-184" id="h6-0-184" class="i">+      provider = &#39;git_diff_added&#39;,
+</a><a href="#h6-0-185" id="h6-0-185" class="i">+      icon = &#39;  &#39;,
+</a><a href="#h6-0-186" id="h6-0-186" class="i">+      hl = { fg = colors.green },
+</a><a href="#h6-0-187" id="h6-0-187" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-188" id="h6-0-188" class="i">+    },
+</a><a href="#h6-0-189" id="h6-0-189" class="i">+    change = {
+</a><a href="#h6-0-190" id="h6-0-190" class="i">+      provider = &#39;git_diff_changed&#39;,
+</a><a href="#h6-0-191" id="h6-0-191" class="i">+      icon = &#39;  &#39;,
+</a><a href="#h6-0-192" id="h6-0-192" class="i">+      hl = { fg = colors.orange },
+</a><a href="#h6-0-193" id="h6-0-193" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-194" id="h6-0-194" class="i">+    },
+</a><a href="#h6-0-195" id="h6-0-195" class="i">+    remove = {
+</a><a href="#h6-0-196" id="h6-0-196" class="i">+      provider = &#39;git_diff_removed&#39;,
+</a><a href="#h6-0-197" id="h6-0-197" class="i">+      icon = &#39;  &#39;,
+</a><a href="#h6-0-198" id="h6-0-198" class="i">+      hl = { fg = colors.red },
+</a><a href="#h6-0-199" id="h6-0-199" class="i">+      left_sep = &#39; &#39;,
+</a><a href="#h6-0-200" id="h6-0-200" class="i">+    }
+</a><a href="#h6-0-201" id="h6-0-201" class="i">+  }
+</a><a href="#h6-0-202" id="h6-0-202" class="i">+}
+</a><a href="#h6-0-203" id="h6-0-203" class="i">+
+</a><a href="#h6-0-204" id="h6-0-204" class="i">+-- Get active/inactive components
+</a><a href="#h6-0-205" id="h6-0-205" class="i">+-- See: https://github.com/feline-nvim/feline.nvim/blob/master/USAGE.md#components
+</a><a href="#h6-0-206" id="h6-0-206" class="i">+local components = {
+</a><a href="#h6-0-207" id="h6-0-207" class="i">+  active = {},
+</a><a href="#h6-0-208" id="h6-0-208" class="i">+  inactive = {},
+</a><a href="#h6-0-209" id="h6-0-209" class="i">+}
+</a><a href="#h6-0-210" id="h6-0-210" class="i">+
+</a><a href="#h6-0-211" id="h6-0-211" class="i">+table.insert(components.active, {})
+</a><a href="#h6-0-212" id="h6-0-212" class="i">+table.insert(components.active, {})
+</a><a href="#h6-0-213" id="h6-0-213" class="i">+table.insert(components.inactive, {})
+</a><a href="#h6-0-214" id="h6-0-214" class="i">+table.insert(components.inactive, {})
+</a><a href="#h6-0-215" id="h6-0-215" class="i">+
+</a><a href="#h6-0-216" id="h6-0-216" class="i">+-- Right section
+</a><a href="#h6-0-217" id="h6-0-217" class="i">+table.insert(components.active[1], comps.vi_mode.left)
+</a><a href="#h6-0-218" id="h6-0-218" class="i">+table.insert(components.active[1], comps.file.info)
+</a><a href="#h6-0-219" id="h6-0-219" class="i">+table.insert(components.active[1], comps.git.branch)
+</a><a href="#h6-0-220" id="h6-0-220" class="i">+table.insert(components.active[1], comps.git.add)
+</a><a href="#h6-0-221" id="h6-0-221" class="i">+table.insert(components.active[1], comps.git.change)
+</a><a href="#h6-0-222" id="h6-0-222" class="i">+table.insert(components.active[1], comps.git.remove)
+</a><a href="#h6-0-223" id="h6-0-223" class="i">+table.insert(components.inactive[1], comps.file.info)
+</a><a href="#h6-0-224" id="h6-0-224" class="i">+
+</a><a href="#h6-0-225" id="h6-0-225" class="i">+-- Left Section
+</a><a href="#h6-0-226" id="h6-0-226" class="i">+table.insert(components.active[2], comps.diagnos.err)
+</a><a href="#h6-0-227" id="h6-0-227" class="i">+table.insert(components.active[2], comps.diagnos.warn)
+</a><a href="#h6-0-228" id="h6-0-228" class="i">+table.insert(components.active[2], comps.diagnos.hint)
+</a><a href="#h6-0-229" id="h6-0-229" class="i">+table.insert(components.active[2], comps.diagnos.info)
+</a><a href="#h6-0-230" id="h6-0-230" class="i">+table.insert(components.active[2], comps.lsp.name)
+</a><a href="#h6-0-231" id="h6-0-231" class="i">+table.insert(components.active[2], comps.file.type)
+</a><a href="#h6-0-232" id="h6-0-232" class="i">+table.insert(components.active[2], comps.file.os)
+</a><a href="#h6-0-233" id="h6-0-233" class="i">+table.insert(components.active[2], comps.file.position)
+</a><a href="#h6-0-234" id="h6-0-234" class="i">+table.insert(components.active[2], comps.file.line_percentage)
+</a><a href="#h6-0-235" id="h6-0-235" class="i">+
+</a><a href="#h6-0-236" id="h6-0-236" class="i">+-- Call feline
+</a><a href="#h6-0-237" id="h6-0-237" class="i">+feline.setup {
+</a><a href="#h6-0-238" id="h6-0-238" class="i">+  theme = {
+</a><a href="#h6-0-239" id="h6-0-239" class="i">+    bg = colors.bg,
+</a><a href="#h6-0-240" id="h6-0-240" class="i">+    fg = colors.fg,
+</a><a href="#h6-0-241" id="h6-0-241" class="i">+  },
+</a><a href="#h6-0-242" id="h6-0-242" class="i">+  components = components,
+</a><a href="#h6-0-243" id="h6-0-243" class="i">+  vi_mode_colors = vi_mode_colors,
+</a><a href="#h6-0-244" id="h6-0-244" class="i">+  force_inactive = {
+</a><a href="#h6-0-245" id="h6-0-245" class="i">+    filetypes = {
+</a><a href="#h6-0-246" id="h6-0-246" class="i">+      &#39;^NvimTree$&#39;,
+</a><a href="#h6-0-247" id="h6-0-247" class="i">+      &#39;^packer$&#39;,
+</a><a href="#h6-0-248" id="h6-0-248" class="i">+      &#39;^vista$&#39;,
+</a><a href="#h6-0-249" id="h6-0-249" class="i">+      &#39;^help$&#39;,
+</a><a href="#h6-0-250" id="h6-0-250" class="i">+    },
+</a><a href="#h6-0-251" id="h6-0-251" class="i">+    buftypes = {
+</a><a href="#h6-0-252" id="h6-0-252" class="i">+      &#39;^terminal$&#39;
+</a><a href="#h6-0-253" id="h6-0-253" class="i">+    },
+</a><a href="#h6-0-254" id="h6-0-254" class="i">+    bufnames = {},
+</a><a href="#h6-0-255" id="h6-0-255" class="i">+  },
+</a><a href="#h6-0-256" id="h6-0-256" class="i">+}
+</a><b>diff --git a/<a id="h7" href="../file/.config/nvim/lua/treesitter.lua.html">.config/nvim/lua/treesitter.lua</a> b/<a href="../file/.config/nvim/lua/treesitter.lua.html">.config/nvim/lua/treesitter.lua</a></b>
+<a href="#h7-0" id="h7-0" class="h">@@ -0,0 +1,19 @@
+</a><a href="#h7-0-0" id="h7-0-0" class="i">+local set = vim.opt
+</a><a href="#h7-0-1" id="h7-0-1" class="i">+
+</a><a href="#h7-0-2" id="h7-0-2" class="i">+local configs = require&#39;nvim-treesitter.configs&#39;
+</a><a href="#h7-0-3" id="h7-0-3" class="i">+configs.setup {
+</a><a href="#h7-0-4" id="h7-0-4" class="i">+
+</a><a href="#h7-0-5" id="h7-0-5" class="i">+	ensure_installed = { &quot;cpp&quot;, &quot;lua&quot;, &quot;java&quot;, &quot;python&quot; },
+</a><a href="#h7-0-6" id="h7-0-6" class="i">+	auto_install = true,
+</a><a href="#h7-0-7" id="h7-0-7" class="i">+	highlight = {enable = true},
+</a><a href="#h7-0-8" id="h7-0-8" class="i">+	indent = {enable = true}
+</a><a href="#h7-0-9" id="h7-0-9" class="i">+}
+</a><a href="#h7-0-10" id="h7-0-10" class="i">+
+</a><a href="#h7-0-11" id="h7-0-11" class="i">+
+</a><a href="#h7-0-12" id="h7-0-12" class="i">+-- set.foldmethod = &quot;expr&quot;
+</a><a href="#h7-0-13" id="h7-0-13" class="i">+-- set.foldexpr = &quot;nvim_treesitter#foldexpr()&quot;
+</a><a href="#h7-0-14" id="h7-0-14" class="i">+
+</a><a href="#h7-0-15" id="h7-0-15" class="i">+
+</a><a href="#h7-0-16" id="h7-0-16" class="i">+local function blah()
+</a><a href="#h7-0-17" id="h7-0-17" class="i">+	print &quot;hello world\n&quot;
+</a><a href="#h7-0-18" id="h7-0-18" class="i">+end
+</a></pre>
+</div>
+</body>
+</html>

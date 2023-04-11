@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Merge pull request #2 from driverag22/gaps - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba.html">d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba</a>
+<b>parent</b> <a href="../commit/6cdba6b6e3322dccf401b4001ebb3c3a1b845d71.html">6cdba6b6e3322dccf401b4001ebb3c3a1b845d71</a>
+<b>Author:</b> Diego Rivera &lt;<a href="mailto:87645865+driverag22@users.noreply.github.com">87645865+driverag22@users.noreply.github.com</a>&gt;
+<b>Date:</b>   Fri, 30 Dec 2022 00:14:28 +0100
+
+Merge pull request #2 from driverag22/gaps
+
+Gaps
+<b>Diffstat:</b>
+<table><tr><td class="A">A</td><td><a href="#h0">.config/picom/picom.conf</a></td><td> | </td><td class="num">432</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/src/dwm/config.h</a></td><td> | </td><td class="num">6</td><td><span class="i">++++</span><span class="d">--</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/src/dwm/dwm</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.local/src/dwm/dwm.c</a></td><td> | </td><td class="num">21</td><td><span class="i">+++++++++++++</span><span class="d">--------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h4">.local/src/dwm/dwm.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h5">.xprofile</a></td><td> | </td><td class="num">4</td><td><span class="i">+++</span><span class="d">-</span></td></tr>
+</table></pre><pre>6 files changed, 452 insertions(+), 11 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a> b/<a href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -0,0 +1,432 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="i">+#################################
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+#             Shadows           #
+</a><a href="#h0-0-2" id="h0-0-2" class="i">+#################################
+</a><a href="#h0-0-3" id="h0-0-3" class="i">+
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+# Enabled client-side shadows on windows. Note desktop windows
+</a><a href="#h0-0-6" id="h0-0-6" class="i">+# (windows with &#39;_NET_WM_WINDOW_TYPE_DESKTOP&#39;) never get shadow,
+</a><a href="#h0-0-7" id="h0-0-7" class="i">+# unless explicitly requested using the wintypes option.
+</a><a href="#h0-0-8" id="h0-0-8" class="i">+#
+</a><a href="#h0-0-9" id="h0-0-9" class="i">+shadow = false
+</a><a href="#h0-0-10" id="h0-0-10" class="i">+# shadow = true;
+</a><a href="#h0-0-11" id="h0-0-11" class="i">+
+</a><a href="#h0-0-12" id="h0-0-12" class="i">+# The blur radius for shadows, in pixels. (defaults to 12)
+</a><a href="#h0-0-13" id="h0-0-13" class="i">+# shadow-radius = 12
+</a><a href="#h0-0-14" id="h0-0-14" class="i">+shadow-radius = 7;
+</a><a href="#h0-0-15" id="h0-0-15" class="i">+
+</a><a href="#h0-0-16" id="h0-0-16" class="i">+# The opacity of shadows. (0.0 - 1.0, defaults to 0.75)
+</a><a href="#h0-0-17" id="h0-0-17" class="i">+# shadow-opacity = .75
+</a><a href="#h0-0-18" id="h0-0-18" class="i">+
+</a><a href="#h0-0-19" id="h0-0-19" class="i">+# The left offset for shadows, in pixels. (defaults to -15)
+</a><a href="#h0-0-20" id="h0-0-20" class="i">+# shadow-offset-x = -15
+</a><a href="#h0-0-21" id="h0-0-21" class="i">+shadow-offset-x = -7;
+</a><a href="#h0-0-22" id="h0-0-22" class="i">+
+</a><a href="#h0-0-23" id="h0-0-23" class="i">+# The top offset for shadows, in pixels. (defaults to -15)
+</a><a href="#h0-0-24" id="h0-0-24" class="i">+# shadow-offset-y = -15
+</a><a href="#h0-0-25" id="h0-0-25" class="i">+shadow-offset-y = -7;
+</a><a href="#h0-0-26" id="h0-0-26" class="i">+
+</a><a href="#h0-0-27" id="h0-0-27" class="i">+# Red color value of shadow (0.0 - 1.0, defaults to 0).
+</a><a href="#h0-0-28" id="h0-0-28" class="i">+# shadow-red = 0
+</a><a href="#h0-0-29" id="h0-0-29" class="i">+
+</a><a href="#h0-0-30" id="h0-0-30" class="i">+# Green color value of shadow (0.0 - 1.0, defaults to 0).
+</a><a href="#h0-0-31" id="h0-0-31" class="i">+# shadow-green = 0
+</a><a href="#h0-0-32" id="h0-0-32" class="i">+
+</a><a href="#h0-0-33" id="h0-0-33" class="i">+# Blue color value of shadow (0.0 - 1.0, defaults to 0).
+</a><a href="#h0-0-34" id="h0-0-34" class="i">+# shadow-blue = 0
+</a><a href="#h0-0-35" id="h0-0-35" class="i">+
+</a><a href="#h0-0-36" id="h0-0-36" class="i">+# Hex string color value of shadow (#000000 - #FFFFFF, defaults to #000000). This option will override options set shadow-(red/green/blue)
+</a><a href="#h0-0-37" id="h0-0-37" class="i">+# shadow-color = &quot;#000000&quot;
+</a><a href="#h0-0-38" id="h0-0-38" class="i">+
+</a><a href="#h0-0-39" id="h0-0-39" class="i">+# Specify a list of conditions of windows that should have no shadow.
+</a><a href="#h0-0-40" id="h0-0-40" class="i">+#
+</a><a href="#h0-0-41" id="h0-0-41" class="i">+# examples:
+</a><a href="#h0-0-42" id="h0-0-42" class="i">+#   shadow-exclude = &quot;n:e:Notification&quot;;
+</a><a href="#h0-0-43" id="h0-0-43" class="i">+#
+</a><a href="#h0-0-44" id="h0-0-44" class="i">+# shadow-exclude = []
+</a><a href="#h0-0-45" id="h0-0-45" class="i">+shadow-exclude = [
+</a><a href="#h0-0-46" id="h0-0-46" class="i">+  &quot;name = &#39;Notification&#39;&quot;,
+</a><a href="#h0-0-47" id="h0-0-47" class="i">+  &quot;class_g = &#39;Conky&#39;&quot;,
+</a><a href="#h0-0-48" id="h0-0-48" class="i">+  &quot;class_g ?= &#39;Notify-osd&#39;&quot;,
+</a><a href="#h0-0-49" id="h0-0-49" class="i">+  &quot;class_g = &#39;Cairo-clock&#39;&quot;,
+</a><a href="#h0-0-50" id="h0-0-50" class="i">+  &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h0-0-51" id="h0-0-51" class="i">+];
+</a><a href="#h0-0-52" id="h0-0-52" class="i">+
+</a><a href="#h0-0-53" id="h0-0-53" class="i">+# Specify a list of conditions of windows that should have no shadow painted over, such as a dock window.
+</a><a href="#h0-0-54" id="h0-0-54" class="i">+# clip-shadow-above = []
+</a><a href="#h0-0-55" id="h0-0-55" class="i">+
+</a><a href="#h0-0-56" id="h0-0-56" class="i">+# Specify a X geometry that describes the region in which shadow should not
+</a><a href="#h0-0-57" id="h0-0-57" class="i">+# be painted in, such as a dock window region. Use
+</a><a href="#h0-0-58" id="h0-0-58" class="i">+#    shadow-exclude-reg = &quot;x10+0+0&quot;
+</a><a href="#h0-0-59" id="h0-0-59" class="i">+# for example, if the 10 pixels on the bottom of the screen should not have shadows painted on.
+</a><a href="#h0-0-60" id="h0-0-60" class="i">+#
+</a><a href="#h0-0-61" id="h0-0-61" class="i">+# shadow-exclude-reg = &quot;&quot;
+</a><a href="#h0-0-62" id="h0-0-62" class="i">+
+</a><a href="#h0-0-63" id="h0-0-63" class="i">+# Crop shadow of a window fully on a particular Xinerama screen to the screen.
+</a><a href="#h0-0-64" id="h0-0-64" class="i">+# xinerama-shadow-crop = false
+</a><a href="#h0-0-65" id="h0-0-65" class="i">+
+</a><a href="#h0-0-66" id="h0-0-66" class="i">+
+</a><a href="#h0-0-67" id="h0-0-67" class="i">+#################################
+</a><a href="#h0-0-68" id="h0-0-68" class="i">+#           Fading              #
+</a><a href="#h0-0-69" id="h0-0-69" class="i">+#################################
+</a><a href="#h0-0-70" id="h0-0-70" class="i">+
+</a><a href="#h0-0-71" id="h0-0-71" class="i">+
+</a><a href="#h0-0-72" id="h0-0-72" class="i">+# Fade windows in/out when opening/closing and when opacity changes,
+</a><a href="#h0-0-73" id="h0-0-73" class="i">+#  unless no-fading-openclose is used.
+</a><a href="#h0-0-74" id="h0-0-74" class="i">+# fading = false
+</a><a href="#h0-0-75" id="h0-0-75" class="i">+fading = true;
+</a><a href="#h0-0-76" id="h0-0-76" class="i">+
+</a><a href="#h0-0-77" id="h0-0-77" class="i">+# Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
+</a><a href="#h0-0-78" id="h0-0-78" class="i">+# fade-in-step = 0.028
+</a><a href="#h0-0-79" id="h0-0-79" class="i">+fade-in-step = 0.03;
+</a><a href="#h0-0-80" id="h0-0-80" class="i">+
+</a><a href="#h0-0-81" id="h0-0-81" class="i">+# Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)
+</a><a href="#h0-0-82" id="h0-0-82" class="i">+# fade-out-step = 0.03
+</a><a href="#h0-0-83" id="h0-0-83" class="i">+fade-out-step = 0.03;
+</a><a href="#h0-0-84" id="h0-0-84" class="i">+
+</a><a href="#h0-0-85" id="h0-0-85" class="i">+# The time between steps in fade step, in milliseconds. (&gt; 0, defaults to 10)
+</a><a href="#h0-0-86" id="h0-0-86" class="i">+fade-delta = 10
+</a><a href="#h0-0-87" id="h0-0-87" class="i">+
+</a><a href="#h0-0-88" id="h0-0-88" class="i">+# Specify a list of conditions of windows that should not be faded.
+</a><a href="#h0-0-89" id="h0-0-89" class="i">+# fade-exclude = []
+</a><a href="#h0-0-90" id="h0-0-90" class="i">+
+</a><a href="#h0-0-91" id="h0-0-91" class="i">+# Do not fade on window open/close.
+</a><a href="#h0-0-92" id="h0-0-92" class="i">+# no-fading-openclose = false
+</a><a href="#h0-0-93" id="h0-0-93" class="i">+
+</a><a href="#h0-0-94" id="h0-0-94" class="i">+# Do not fade destroyed ARGB windows with WM frame. Workaround of bugs in Openbox, Fluxbox, etc.
+</a><a href="#h0-0-95" id="h0-0-95" class="i">+# no-fading-destroyed-argb = false
+</a><a href="#h0-0-96" id="h0-0-96" class="i">+
+</a><a href="#h0-0-97" id="h0-0-97" class="i">+
+</a><a href="#h0-0-98" id="h0-0-98" class="i">+#################################
+</a><a href="#h0-0-99" id="h0-0-99" class="i">+#   Transparency / Opacity      #
+</a><a href="#h0-0-100" id="h0-0-100" class="i">+#################################
+</a><a href="#h0-0-101" id="h0-0-101" class="i">+
+</a><a href="#h0-0-102" id="h0-0-102" class="i">+
+</a><a href="#h0-0-103" id="h0-0-103" class="i">+# Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
+</a><a href="#h0-0-104" id="h0-0-104" class="i">+# inactive-opacity = 1
+</a><a href="#h0-0-105" id="h0-0-105" class="i">+inactive-opacity = 0.95;
+</a><a href="#h0-0-106" id="h0-0-106" class="i">+
+</a><a href="#h0-0-107" id="h0-0-107" class="i">+# Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
+</a><a href="#h0-0-108" id="h0-0-108" class="i">+# frame-opacity = 1.0
+</a><a href="#h0-0-109" id="h0-0-109" class="i">+# frame-opacity = 0.9;
+</a><a href="#h0-0-110" id="h0-0-110" class="i">+
+</a><a href="#h0-0-111" id="h0-0-111" class="i">+# Let inactive opacity set by -i override the &#39;_NET_WM_WINDOW_OPACITY&#39; values of windows.
+</a><a href="#h0-0-112" id="h0-0-112" class="i">+# inactive-opacity-override = true
+</a><a href="#h0-0-113" id="h0-0-113" class="i">+# inactive-opacity-override = false;
+</a><a href="#h0-0-114" id="h0-0-114" class="i">+
+</a><a href="#h0-0-115" id="h0-0-115" class="i">+# Default opacity for active windows. (0.0 - 1.0, defaults to 1.0)
+</a><a href="#h0-0-116" id="h0-0-116" class="i">+# active-opacity = 1.0
+</a><a href="#h0-0-117" id="h0-0-117" class="i">+
+</a><a href="#h0-0-118" id="h0-0-118" class="i">+# Dim inactive windows. (0.0 - 1.0, defaults to 0.0)
+</a><a href="#h0-0-119" id="h0-0-119" class="i">+# inactive-dim = 0.0
+</a><a href="#h0-0-120" id="h0-0-120" class="i">+
+</a><a href="#h0-0-121" id="h0-0-121" class="i">+# Specify a list of conditions of windows that should never be considered focused.
+</a><a href="#h0-0-122" id="h0-0-122" class="i">+# focus-exclude = []
+</a><a href="#h0-0-123" id="h0-0-123" class="i">+focus-exclude = [ &quot;class_g = &#39;Cairo-clock&#39;&quot; ];
+</a><a href="#h0-0-124" id="h0-0-124" class="i">+
+</a><a href="#h0-0-125" id="h0-0-125" class="i">+# Use fixed inactive dim value, instead of adjusting according to window opacity.
+</a><a href="#h0-0-126" id="h0-0-126" class="i">+# inactive-dim-fixed = 1.0
+</a><a href="#h0-0-127" id="h0-0-127" class="i">+
+</a><a href="#h0-0-128" id="h0-0-128" class="i">+# Specify a list of opacity rules, in the format `PERCENT:PATTERN`,
+</a><a href="#h0-0-129" id="h0-0-129" class="i">+# like `50:name *= &quot;Firefox&quot;`. picom-trans is recommended over this.
+</a><a href="#h0-0-130" id="h0-0-130" class="i">+# Note we don&#39;t make any guarantee about possible conflicts with other
+</a><a href="#h0-0-131" id="h0-0-131" class="i">+# programs that set &#39;_NET_WM_WINDOW_OPACITY&#39; on frame or client windows.
+</a><a href="#h0-0-132" id="h0-0-132" class="i">+# example:
+</a><a href="#h0-0-133" id="h0-0-133" class="i">+#    opacity-rule = [ &quot;80:class_g = &#39;URxvt&#39;&quot; ];
+</a><a href="#h0-0-134" id="h0-0-134" class="i">+#
+</a><a href="#h0-0-135" id="h0-0-135" class="i">+# opacity-rule = []
+</a><a href="#h0-0-136" id="h0-0-136" class="i">+opacity-rule = [
+</a><a href="#h0-0-137" id="h0-0-137" class="i">+  &quot;70:class_g = &#39;URxvt&#39; &amp;&amp; focused&quot;,
+</a><a href="#h0-0-138" id="h0-0-138" class="i">+  &quot;40:class_g = &#39;URxvt&#39; &amp;&amp; !focused&quot;
+</a><a href="#h0-0-139" id="h0-0-139" class="i">+];
+</a><a href="#h0-0-140" id="h0-0-140" class="i">+
+</a><a href="#h0-0-141" id="h0-0-141" class="i">+
+</a><a href="#h0-0-142" id="h0-0-142" class="i">+#################################
+</a><a href="#h0-0-143" id="h0-0-143" class="i">+#           Corners             #
+</a><a href="#h0-0-144" id="h0-0-144" class="i">+#################################
+</a><a href="#h0-0-145" id="h0-0-145" class="i">+
+</a><a href="#h0-0-146" id="h0-0-146" class="i">+# Sets the radius of rounded window corners. When &gt; 0, the compositor will
+</a><a href="#h0-0-147" id="h0-0-147" class="i">+# round the corners of windows. Does not interact well with
+</a><a href="#h0-0-148" id="h0-0-148" class="i">+# `transparent-clipping`.
+</a><a href="#h0-0-149" id="h0-0-149" class="i">+corner-radius = 14
+</a><a href="#h0-0-150" id="h0-0-150" class="i">+
+</a><a href="#h0-0-151" id="h0-0-151" class="i">+# Exclude conditions for rounded corners.
+</a><a href="#h0-0-152" id="h0-0-152" class="i">+rounded-corners-exclude = [
+</a><a href="#h0-0-153" id="h0-0-153" class="i">+  &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h0-0-154" id="h0-0-154" class="i">+  &quot;window_type = &#39;desktop&#39;&quot;
+</a><a href="#h0-0-155" id="h0-0-155" class="i">+];
+</a><a href="#h0-0-156" id="h0-0-156" class="i">+
+</a><a href="#h0-0-157" id="h0-0-157" class="i">+
+</a><a href="#h0-0-158" id="h0-0-158" class="i">+#################################
+</a><a href="#h0-0-159" id="h0-0-159" class="i">+#     Background-Blurring       #
+</a><a href="#h0-0-160" id="h0-0-160" class="i">+#################################
+</a><a href="#h0-0-161" id="h0-0-161" class="i">+
+</a><a href="#h0-0-162" id="h0-0-162" class="i">+
+</a><a href="#h0-0-163" id="h0-0-163" class="i">+# Parameters for background blurring, see the *BLUR* section for more information.
+</a><a href="#h0-0-164" id="h0-0-164" class="i">+# blur-method =
+</a><a href="#h0-0-165" id="h0-0-165" class="i">+# blur-size = 12
+</a><a href="#h0-0-166" id="h0-0-166" class="i">+#
+</a><a href="#h0-0-167" id="h0-0-167" class="i">+# blur-deviation = false
+</a><a href="#h0-0-168" id="h0-0-168" class="i">+#
+</a><a href="#h0-0-169" id="h0-0-169" class="i">+# blur-strength = 5
+</a><a href="#h0-0-170" id="h0-0-170" class="i">+
+</a><a href="#h0-0-171" id="h0-0-171" class="i">+# Blur background of semi-transparent / ARGB windows.
+</a><a href="#h0-0-172" id="h0-0-172" class="i">+# Bad in performance, with driver-dependent behavior.
+</a><a href="#h0-0-173" id="h0-0-173" class="i">+# The name of the switch may change without prior notifications.
+</a><a href="#h0-0-174" id="h0-0-174" class="i">+#
+</a><a href="#h0-0-175" id="h0-0-175" class="i">+# blur-background = true
+</a><a href="#h0-0-176" id="h0-0-176" class="i">+
+</a><a href="#h0-0-177" id="h0-0-177" class="i">+# Blur background of windows when the window frame is not opaque.
+</a><a href="#h0-0-178" id="h0-0-178" class="i">+# Implies:
+</a><a href="#h0-0-179" id="h0-0-179" class="i">+#    blur-background
+</a><a href="#h0-0-180" id="h0-0-180" class="i">+# Bad in performance, with driver-dependent behavior. The name may change.
+</a><a href="#h0-0-181" id="h0-0-181" class="i">+#
+</a><a href="#h0-0-182" id="h0-0-182" class="i">+# blur-background-frame = false
+</a><a href="#h0-0-183" id="h0-0-183" class="i">+
+</a><a href="#h0-0-184" id="h0-0-184" class="i">+
+</a><a href="#h0-0-185" id="h0-0-185" class="i">+# Use fixed blur strength rather than adjusting according to window opacity.
+</a><a href="#h0-0-186" id="h0-0-186" class="i">+# blur-background-fixed = false
+</a><a href="#h0-0-187" id="h0-0-187" class="i">+
+</a><a href="#h0-0-188" id="h0-0-188" class="i">+
+</a><a href="#h0-0-189" id="h0-0-189" class="i">+# Specify the blur convolution kernel, with the following format:
+</a><a href="#h0-0-190" id="h0-0-190" class="i">+# example:
+</a><a href="#h0-0-191" id="h0-0-191" class="i">+#   blur-kern = &quot;5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1&quot;;
+</a><a href="#h0-0-192" id="h0-0-192" class="i">+#
+</a><a href="#h0-0-193" id="h0-0-193" class="i">+# blur-kern = &quot;&quot;
+</a><a href="#h0-0-194" id="h0-0-194" class="i">+blur-kern = &quot;3x3box&quot;;
+</a><a href="#h0-0-195" id="h0-0-195" class="i">+
+</a><a href="#h0-0-196" id="h0-0-196" class="i">+
+</a><a href="#h0-0-197" id="h0-0-197" class="i">+# Exclude conditions for background blur.
+</a><a href="#h0-0-198" id="h0-0-198" class="i">+# blur-background-exclude = []
+</a><a href="#h0-0-199" id="h0-0-199" class="i">+blur-background-exclude = [
+</a><a href="#h0-0-200" id="h0-0-200" class="i">+  &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h0-0-201" id="h0-0-201" class="i">+  &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h0-0-202" id="h0-0-202" class="i">+  &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h0-0-203" id="h0-0-203" class="i">+];
+</a><a href="#h0-0-204" id="h0-0-204" class="i">+
+</a><a href="#h0-0-205" id="h0-0-205" class="i">+#################################
+</a><a href="#h0-0-206" id="h0-0-206" class="i">+#       General Settings        #
+</a><a href="#h0-0-207" id="h0-0-207" class="i">+#################################
+</a><a href="#h0-0-208" id="h0-0-208" class="i">+
+</a><a href="#h0-0-209" id="h0-0-209" class="i">+# Enable remote control via D-Bus. See the man page for more details.
+</a><a href="#h0-0-210" id="h0-0-210" class="i">+# dbus = true
+</a><a href="#h0-0-211" id="h0-0-211" class="i">+
+</a><a href="#h0-0-212" id="h0-0-212" class="i">+# Daemonize process. Fork to background after initialization. Causes issues with certain (badly-written) drivers.
+</a><a href="#h0-0-213" id="h0-0-213" class="i">+# daemon = false
+</a><a href="#h0-0-214" id="h0-0-214" class="i">+
+</a><a href="#h0-0-215" id="h0-0-215" class="i">+# Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
+</a><a href="#h0-0-216" id="h0-0-216" class="i">+# `xrender` is the default one.
+</a><a href="#h0-0-217" id="h0-0-217" class="i">+#
+</a><a href="#h0-0-218" id="h0-0-218" class="i">+# backend = &quot;glx&quot;
+</a><a href="#h0-0-219" id="h0-0-219" class="i">+backend = &quot;xrender&quot;;
+</a><a href="#h0-0-220" id="h0-0-220" class="i">+
+</a><a href="#h0-0-221" id="h0-0-221" class="i">+# Enable/disable VSync.
+</a><a href="#h0-0-222" id="h0-0-222" class="i">+vsync = false
+</a><a href="#h0-0-223" id="h0-0-223" class="i">+# vsync = true;
+</a><a href="#h0-0-224" id="h0-0-224" class="i">+
+</a><a href="#h0-0-225" id="h0-0-225" class="i">+# Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
+</a><a href="#h0-0-226" id="h0-0-226" class="i">+# dbus = false
+</a><a href="#h0-0-227" id="h0-0-227" class="i">+
+</a><a href="#h0-0-228" id="h0-0-228" class="i">+# Try to detect WM windows (a non-override-redirect window with no
+</a><a href="#h0-0-229" id="h0-0-229" class="i">+# child that has &#39;WM_STATE&#39;) and mark them as active.
+</a><a href="#h0-0-230" id="h0-0-230" class="i">+#
+</a><a href="#h0-0-231" id="h0-0-231" class="i">+# mark-wmwin-focused = false
+</a><a href="#h0-0-232" id="h0-0-232" class="i">+mark-wmwin-focused = true;
+</a><a href="#h0-0-233" id="h0-0-233" class="i">+
+</a><a href="#h0-0-234" id="h0-0-234" class="i">+# Mark override-redirect windows that doesn&#39;t have a child window with &#39;WM_STATE&#39; focused.
+</a><a href="#h0-0-235" id="h0-0-235" class="i">+# mark-ovredir-focused = false
+</a><a href="#h0-0-236" id="h0-0-236" class="i">+mark-ovredir-focused = true;
+</a><a href="#h0-0-237" id="h0-0-237" class="i">+
+</a><a href="#h0-0-238" id="h0-0-238" class="i">+# Try to detect windows with rounded corners and don&#39;t consider them
+</a><a href="#h0-0-239" id="h0-0-239" class="i">+# shaped windows. The accuracy is not very high, unfortunately.
+</a><a href="#h0-0-240" id="h0-0-240" class="i">+#
+</a><a href="#h0-0-241" id="h0-0-241" class="i">+# detect-rounded-corners = false
+</a><a href="#h0-0-242" id="h0-0-242" class="i">+detect-rounded-corners = true;
+</a><a href="#h0-0-243" id="h0-0-243" class="i">+
+</a><a href="#h0-0-244" id="h0-0-244" class="i">+# Detect &#39;_NET_WM_WINDOW_OPACITY&#39; on client windows, useful for window managers
+</a><a href="#h0-0-245" id="h0-0-245" class="i">+# not passing &#39;_NET_WM_WINDOW_OPACITY&#39; of client windows to frame windows.
+</a><a href="#h0-0-246" id="h0-0-246" class="i">+#
+</a><a href="#h0-0-247" id="h0-0-247" class="i">+# detect-client-opacity = false
+</a><a href="#h0-0-248" id="h0-0-248" class="i">+detect-client-opacity = true;
+</a><a href="#h0-0-249" id="h0-0-249" class="i">+
+</a><a href="#h0-0-250" id="h0-0-250" class="i">+# Use EWMH &#39;_NET_ACTIVE_WINDOW&#39; to determine currently focused window,
+</a><a href="#h0-0-251" id="h0-0-251" class="i">+# rather than listening to &#39;FocusIn&#39;/&#39;FocusOut&#39; event. Might have more accuracy,
+</a><a href="#h0-0-252" id="h0-0-252" class="i">+# provided that the WM supports it.
+</a><a href="#h0-0-253" id="h0-0-253" class="i">+#
+</a><a href="#h0-0-254" id="h0-0-254" class="i">+# use-ewmh-active-win = false
+</a><a href="#h0-0-255" id="h0-0-255" class="i">+
+</a><a href="#h0-0-256" id="h0-0-256" class="i">+# Unredirect all windows if a full-screen opaque window is detected,
+</a><a href="#h0-0-257" id="h0-0-257" class="i">+# to maximize performance for full-screen windows. Known to cause flickering
+</a><a href="#h0-0-258" id="h0-0-258" class="i">+# when redirecting/unredirecting windows.
+</a><a href="#h0-0-259" id="h0-0-259" class="i">+#
+</a><a href="#h0-0-260" id="h0-0-260" class="i">+# unredir-if-possible = false
+</a><a href="#h0-0-261" id="h0-0-261" class="i">+
+</a><a href="#h0-0-262" id="h0-0-262" class="i">+# Delay before unredirecting the window, in milliseconds. Defaults to 0.
+</a><a href="#h0-0-263" id="h0-0-263" class="i">+# unredir-if-possible-delay = 0
+</a><a href="#h0-0-264" id="h0-0-264" class="i">+
+</a><a href="#h0-0-265" id="h0-0-265" class="i">+# Conditions of windows that shouldn&#39;t be considered full-screen for unredirecting screen.
+</a><a href="#h0-0-266" id="h0-0-266" class="i">+# unredir-if-possible-exclude = []
+</a><a href="#h0-0-267" id="h0-0-267" class="i">+
+</a><a href="#h0-0-268" id="h0-0-268" class="i">+# Use &#39;WM_TRANSIENT_FOR&#39; to group windows, and consider windows
+</a><a href="#h0-0-269" id="h0-0-269" class="i">+# in the same group focused at the same time.
+</a><a href="#h0-0-270" id="h0-0-270" class="i">+#
+</a><a href="#h0-0-271" id="h0-0-271" class="i">+# detect-transient = false
+</a><a href="#h0-0-272" id="h0-0-272" class="i">+detect-transient = true;
+</a><a href="#h0-0-273" id="h0-0-273" class="i">+
+</a><a href="#h0-0-274" id="h0-0-274" class="i">+# Use &#39;WM_CLIENT_LEADER&#39; to group windows, and consider windows in the same
+</a><a href="#h0-0-275" id="h0-0-275" class="i">+# group focused at the same time. This usually means windows from the same application
+</a><a href="#h0-0-276" id="h0-0-276" class="i">+# will be considered focused or unfocused at the same time.
+</a><a href="#h0-0-277" id="h0-0-277" class="i">+# &#39;WM_TRANSIENT_FOR&#39; has higher priority if detect-transient is enabled, too.
+</a><a href="#h0-0-278" id="h0-0-278" class="i">+#
+</a><a href="#h0-0-279" id="h0-0-279" class="i">+# detect-client-leader = false
+</a><a href="#h0-0-280" id="h0-0-280" class="i">+
+</a><a href="#h0-0-281" id="h0-0-281" class="i">+# Resize damaged region by a specific number of pixels.
+</a><a href="#h0-0-282" id="h0-0-282" class="i">+# A positive value enlarges it while a negative one shrinks it.
+</a><a href="#h0-0-283" id="h0-0-283" class="i">+# If the value is positive, those additional pixels will not be actually painted
+</a><a href="#h0-0-284" id="h0-0-284" class="i">+# to screen, only used in blur calculation, and such. (Due to technical limitations,
+</a><a href="#h0-0-285" id="h0-0-285" class="i">+# with use-damage, those pixels will still be incorrectly painted to screen.)
+</a><a href="#h0-0-286" id="h0-0-286" class="i">+# Primarily used to fix the line corruption issues of blur,
+</a><a href="#h0-0-287" id="h0-0-287" class="i">+# in which case you should use the blur radius value here
+</a><a href="#h0-0-288" id="h0-0-288" class="i">+# (e.g. with a 3x3 kernel, you should use `--resize-damage 1`,
+</a><a href="#h0-0-289" id="h0-0-289" class="i">+# with a 5x5 one you use `--resize-damage 2`, and so on).
+</a><a href="#h0-0-290" id="h0-0-290" class="i">+# May or may not work with *--glx-no-stencil*. Shrinking doesn&#39;t function correctly.
+</a><a href="#h0-0-291" id="h0-0-291" class="i">+#
+</a><a href="#h0-0-292" id="h0-0-292" class="i">+# resize-damage = 1
+</a><a href="#h0-0-293" id="h0-0-293" class="i">+
+</a><a href="#h0-0-294" id="h0-0-294" class="i">+# Specify a list of conditions of windows that should be painted with inverted color.
+</a><a href="#h0-0-295" id="h0-0-295" class="i">+# Resource-hogging, and is not well tested.
+</a><a href="#h0-0-296" id="h0-0-296" class="i">+#
+</a><a href="#h0-0-297" id="h0-0-297" class="i">+# invert-color-include = []
+</a><a href="#h0-0-298" id="h0-0-298" class="i">+
+</a><a href="#h0-0-299" id="h0-0-299" class="i">+# GLX backend: Avoid using stencil buffer, useful if you don&#39;t have a stencil buffer.
+</a><a href="#h0-0-300" id="h0-0-300" class="i">+# Might cause incorrect opacity when rendering transparent content (but never
+</a><a href="#h0-0-301" id="h0-0-301" class="i">+# practically happened) and may not work with blur-background.
+</a><a href="#h0-0-302" id="h0-0-302" class="i">+# My tests show a 15% performance boost. Recommended.
+</a><a href="#h0-0-303" id="h0-0-303" class="i">+#
+</a><a href="#h0-0-304" id="h0-0-304" class="i">+glx-no-stencil = true;
+</a><a href="#h0-0-305" id="h0-0-305" class="i">+
+</a><a href="#h0-0-306" id="h0-0-306" class="i">+# GLX backend: Avoid rebinding pixmap on window damage.
+</a><a href="#h0-0-307" id="h0-0-307" class="i">+# Probably could improve performance on rapid window content changes,
+</a><a href="#h0-0-308" id="h0-0-308" class="i">+# but is known to break things on some drivers (LLVMpipe, xf86-video-intel, etc.).
+</a><a href="#h0-0-309" id="h0-0-309" class="i">+# Recommended if it works.
+</a><a href="#h0-0-310" id="h0-0-310" class="i">+#
+</a><a href="#h0-0-311" id="h0-0-311" class="i">+# glx-no-rebind-pixmap = false
+</a><a href="#h0-0-312" id="h0-0-312" class="i">+
+</a><a href="#h0-0-313" id="h0-0-313" class="i">+# Disable the use of damage information.
+</a><a href="#h0-0-314" id="h0-0-314" class="i">+# This cause the whole screen to be redrawn every time, instead of the part of the screen
+</a><a href="#h0-0-315" id="h0-0-315" class="i">+# has actually changed. Potentially degrades the performance, but might fix some artifacts.
+</a><a href="#h0-0-316" id="h0-0-316" class="i">+# The opposing option is use-damage
+</a><a href="#h0-0-317" id="h0-0-317" class="i">+#
+</a><a href="#h0-0-318" id="h0-0-318" class="i">+# no-use-damage = false
+</a><a href="#h0-0-319" id="h0-0-319" class="i">+use-damage = true;
+</a><a href="#h0-0-320" id="h0-0-320" class="i">+
+</a><a href="#h0-0-321" id="h0-0-321" class="i">+# Use X Sync fence to sync clients&#39; draw calls, to make sure all draw
+</a><a href="#h0-0-322" id="h0-0-322" class="i">+# calls are finished before picom starts drawing. Needed on nvidia-drivers
+</a><a href="#h0-0-323" id="h0-0-323" class="i">+# with GLX backend for some users.
+</a><a href="#h0-0-324" id="h0-0-324" class="i">+#
+</a><a href="#h0-0-325" id="h0-0-325" class="i">+# xrender-sync-fence = false
+</a><a href="#h0-0-326" id="h0-0-326" class="i">+
+</a><a href="#h0-0-327" id="h0-0-327" class="i">+# GLX backend: Use specified GLSL fragment shader for rendering window
+</a><a href="#h0-0-328" id="h0-0-328" class="i">+# contents. Read the man page for a detailed explanation of the interface.
+</a><a href="#h0-0-329" id="h0-0-329" class="i">+#
+</a><a href="#h0-0-330" id="h0-0-330" class="i">+# window-shader-fg = &quot;default&quot;
+</a><a href="#h0-0-331" id="h0-0-331" class="i">+
+</a><a href="#h0-0-332" id="h0-0-332" class="i">+# Use rules to set per-window shaders. Syntax is SHADER_PATH:PATTERN, similar
+</a><a href="#h0-0-333" id="h0-0-333" class="i">+# to opacity-rule. SHADER_PATH can be &quot;default&quot;. This overrides window-shader-fg.
+</a><a href="#h0-0-334" id="h0-0-334" class="i">+#
+</a><a href="#h0-0-335" id="h0-0-335" class="i">+# window-shader-fg-rule = [
+</a><a href="#h0-0-336" id="h0-0-336" class="i">+#   &quot;my_shader.frag:window_type != &#39;dock&#39;&quot;
+</a><a href="#h0-0-337" id="h0-0-337" class="i">+# ]
+</a><a href="#h0-0-338" id="h0-0-338" class="i">+
+</a><a href="#h0-0-339" id="h0-0-339" class="i">+# Force all windows to be painted with blending. Useful if you
+</a><a href="#h0-0-340" id="h0-0-340" class="i">+# have a glx-fshader-win that could turn opaque pixels transparent.
+</a><a href="#h0-0-341" id="h0-0-341" class="i">+#
+</a><a href="#h0-0-342" id="h0-0-342" class="i">+# force-win-blend = false
+</a><a href="#h0-0-343" id="h0-0-343" class="i">+
+</a><a href="#h0-0-344" id="h0-0-344" class="i">+# Do not use EWMH to detect fullscreen windows.
+</a><a href="#h0-0-345" id="h0-0-345" class="i">+# Reverts to checking if a window is fullscreen based only on its size and coordinates.
+</a><a href="#h0-0-346" id="h0-0-346" class="i">+#
+</a><a href="#h0-0-347" id="h0-0-347" class="i">+# no-ewmh-fullscreen = false
+</a><a href="#h0-0-348" id="h0-0-348" class="i">+
+</a><a href="#h0-0-349" id="h0-0-349" class="i">+# Dimming bright windows so their brightness doesn&#39;t exceed this set value.
+</a><a href="#h0-0-350" id="h0-0-350" class="i">+# Brightness of a window is estimated by averaging all pixels in the window,
+</a><a href="#h0-0-351" id="h0-0-351" class="i">+# so this could comes with a performance hit.
+</a><a href="#h0-0-352" id="h0-0-352" class="i">+# Setting this to 1.0 disables this behaviour. Requires --use-damage to be disabled. (default: 1.0)
+</a><a href="#h0-0-353" id="h0-0-353" class="i">+#
+</a><a href="#h0-0-354" id="h0-0-354" class="i">+# max-brightness = 1.0
+</a><a href="#h0-0-355" id="h0-0-355" class="i">+
+</a><a href="#h0-0-356" id="h0-0-356" class="i">+# Make transparent windows clip other windows like non-transparent windows do,
+</a><a href="#h0-0-357" id="h0-0-357" class="i">+# instead of blending on top of them.
+</a><a href="#h0-0-358" id="h0-0-358" class="i">+#
+</a><a href="#h0-0-359" id="h0-0-359" class="i">+# transparent-clipping = false
+</a><a href="#h0-0-360" id="h0-0-360" class="i">+
+</a><a href="#h0-0-361" id="h0-0-361" class="i">+# Specify a list of conditions of windows that should never have transparent
+</a><a href="#h0-0-362" id="h0-0-362" class="i">+# clipping applied. Useful for screenshot tools, where you need to be able to
+</a><a href="#h0-0-363" id="h0-0-363" class="i">+# see through transparent parts of the window.
+</a><a href="#h0-0-364" id="h0-0-364" class="i">+#
+</a><a href="#h0-0-365" id="h0-0-365" class="i">+# transparent-clipping-exclude = []
+</a><a href="#h0-0-366" id="h0-0-366" class="i">+
+</a><a href="#h0-0-367" id="h0-0-367" class="i">+# Set the log level. Possible values are:
+</a><a href="#h0-0-368" id="h0-0-368" class="i">+#  &quot;trace&quot;, &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;
+</a><a href="#h0-0-369" id="h0-0-369" class="i">+# in increasing level of importance. Case doesn&#39;t matter.
+</a><a href="#h0-0-370" id="h0-0-370" class="i">+# If using the &quot;TRACE&quot; log level, it&#39;s better to log into a file
+</a><a href="#h0-0-371" id="h0-0-371" class="i">+# using *--log-file*, since it can generate a huge stream of logs.
+</a><a href="#h0-0-372" id="h0-0-372" class="i">+#
+</a><a href="#h0-0-373" id="h0-0-373" class="i">+# log-level = &quot;debug&quot;
+</a><a href="#h0-0-374" id="h0-0-374" class="i">+log-level = &quot;warn&quot;;
+</a><a href="#h0-0-375" id="h0-0-375" class="i">+
+</a><a href="#h0-0-376" id="h0-0-376" class="i">+# Set the log file.
+</a><a href="#h0-0-377" id="h0-0-377" class="i">+# If *--log-file* is never specified, logs will be written to stderr.
+</a><a href="#h0-0-378" id="h0-0-378" class="i">+# Otherwise, logs will to written to the given file, though some of the early
+</a><a href="#h0-0-379" id="h0-0-379" class="i">+# logs might still be written to the stderr.
+</a><a href="#h0-0-380" id="h0-0-380" class="i">+# When setting this option from the config file, it is recommended to use an absolute path.
+</a><a href="#h0-0-381" id="h0-0-381" class="i">+#
+</a><a href="#h0-0-382" id="h0-0-382" class="i">+# log-file = &quot;/path/to/your/log/file&quot;
+</a><a href="#h0-0-383" id="h0-0-383" class="i">+
+</a><a href="#h0-0-384" id="h0-0-384" class="i">+# Show all X errors (for debugging)
+</a><a href="#h0-0-385" id="h0-0-385" class="i">+# show-all-xerrors = false
+</a><a href="#h0-0-386" id="h0-0-386" class="i">+
+</a><a href="#h0-0-387" id="h0-0-387" class="i">+# Write process ID to a file.
+</a><a href="#h0-0-388" id="h0-0-388" class="i">+# write-pid-path = &quot;/path/to/your/log/file&quot;
+</a><a href="#h0-0-389" id="h0-0-389" class="i">+
+</a><a href="#h0-0-390" id="h0-0-390" class="i">+# Window type settings
+</a><a href="#h0-0-391" id="h0-0-391" class="i">+#
+</a><a href="#h0-0-392" id="h0-0-392" class="i">+# &#39;WINDOW_TYPE&#39; is one of the 15 window types defined in EWMH standard:
+</a><a href="#h0-0-393" id="h0-0-393" class="i">+#     &quot;unknown&quot;, &quot;desktop&quot;, &quot;dock&quot;, &quot;toolbar&quot;, &quot;menu&quot;, &quot;utility&quot;,
+</a><a href="#h0-0-394" id="h0-0-394" class="i">+#     &quot;splash&quot;, &quot;dialog&quot;, &quot;normal&quot;, &quot;dropdown_menu&quot;, &quot;popup_menu&quot;,
+</a><a href="#h0-0-395" id="h0-0-395" class="i">+#     &quot;tooltip&quot;, &quot;notification&quot;, &quot;combo&quot;, and &quot;dnd&quot;.
+</a><a href="#h0-0-396" id="h0-0-396" class="i">+#
+</a><a href="#h0-0-397" id="h0-0-397" class="i">+# Following per window-type options are available: ::
+</a><a href="#h0-0-398" id="h0-0-398" class="i">+#
+</a><a href="#h0-0-399" id="h0-0-399" class="i">+#   fade, shadow:::
+</a><a href="#h0-0-400" id="h0-0-400" class="i">+#     Controls window-type-specific shadow and fade settings.
+</a><a href="#h0-0-401" id="h0-0-401" class="i">+#
+</a><a href="#h0-0-402" id="h0-0-402" class="i">+#   opacity:::
+</a><a href="#h0-0-403" id="h0-0-403" class="i">+#     Controls default opacity of the window type.
+</a><a href="#h0-0-404" id="h0-0-404" class="i">+#
+</a><a href="#h0-0-405" id="h0-0-405" class="i">+#   focus:::
+</a><a href="#h0-0-406" id="h0-0-406" class="i">+#     Controls whether the window of this type is to be always considered focused.
+</a><a href="#h0-0-407" id="h0-0-407" class="i">+#     (By default, all window types except &quot;normal&quot; and &quot;dialog&quot; has this on.)
+</a><a href="#h0-0-408" id="h0-0-408" class="i">+#
+</a><a href="#h0-0-409" id="h0-0-409" class="i">+#   full-shadow:::
+</a><a href="#h0-0-410" id="h0-0-410" class="i">+#     Controls whether shadow is drawn under the parts of the window that you
+</a><a href="#h0-0-411" id="h0-0-411" class="i">+#     normally won&#39;t be able to see. Useful when the window has parts of it
+</a><a href="#h0-0-412" id="h0-0-412" class="i">+#     transparent, and you want shadows in those areas.
+</a><a href="#h0-0-413" id="h0-0-413" class="i">+#
+</a><a href="#h0-0-414" id="h0-0-414" class="i">+#   clip-shadow-above:::
+</a><a href="#h0-0-415" id="h0-0-415" class="i">+#     Controls whether shadows that would have been drawn above the window should
+</a><a href="#h0-0-416" id="h0-0-416" class="i">+#     be clipped. Useful for dock windows that should have no shadow painted on top.
+</a><a href="#h0-0-417" id="h0-0-417" class="i">+#
+</a><a href="#h0-0-418" id="h0-0-418" class="i">+#   redir-ignore:::
+</a><a href="#h0-0-419" id="h0-0-419" class="i">+#     Controls whether this type of windows should cause screen to become
+</a><a href="#h0-0-420" id="h0-0-420" class="i">+#     redirected again after been unredirected. If you have unredir-if-possible
+</a><a href="#h0-0-421" id="h0-0-421" class="i">+#     set, and doesn&#39;t want certain window to cause unnecessary screen redirection,
+</a><a href="#h0-0-422" id="h0-0-422" class="i">+#     you can set this to `true`.
+</a><a href="#h0-0-423" id="h0-0-423" class="i">+#
+</a><a href="#h0-0-424" id="h0-0-424" class="i">+wintypes:
+</a><a href="#h0-0-425" id="h0-0-425" class="i">+{
+</a><a href="#h0-0-426" id="h0-0-426" class="i">+  tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
+</a><a href="#h0-0-427" id="h0-0-427" class="i">+  dock = { shadow = false; clip-shadow-above = true; }
+</a><a href="#h0-0-428" id="h0-0-428" class="i">+  dnd = { shadow = false; }
+</a><a href="#h0-0-429" id="h0-0-429" class="i">+  popup_menu = { opacity = 0.8; }
+</a><a href="#h0-0-430" id="h0-0-430" class="i">+  dropdown_menu = { opacity = 0.8; }
+</a><a href="#h0-0-431" id="h0-0-431" class="i">+};
+</a><b>diff --git a/<a id="h1" href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a> b/<a href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -2,7 +2,9 @@
+</a> #include &lt;X11/XF86keysym.h&gt;
+ 
+ /* appearance */
+<a href="#h1-0-3" id="h1-0-3" class="i">+static const char selbordercolor[]  = &quot;#ff69b4&quot;;
+</a> static const unsigned int borderpx  = 2;        /* border pixel of windows */
+<a href="#h1-0-5" id="h1-0-5" class="i">+static const unsigned int gappx     = 2;        /* gap pixel between windows */
+</a> static const unsigned int snap      = 32;       /* snap pixel */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+<a href="#h1-1" id="h1-1" class="h">@@ -76,8 +78,8 @@ static const char *notion[] = {&quot;/home/diego/.local/.macros/keyBindings/notion.sh
+</a> static const char *lockscreen[]  = { &quot;betterlockscreen&quot;, &quot;-l&quot; };
+ static const char *powermenu[]  = { &quot;/home/diego/.local/.macros/keyBindings/powermenu.sh&quot;, NULL };
+ 
+<a href="#h1-1-3" id="h1-1-3" class="d">-static const char *brightnessUp[] = { &quot;light&quot;, &quot;-A&quot;, &quot;10&quot;, NULL};
+</a><a href="#h1-1-4" id="h1-1-4" class="d">-static const char *brightnessDown[] = {&quot;light&quot;, &quot;-U&quot;, &quot;10&quot;, NULL};
+</a><a href="#h1-1-5" id="h1-1-5" class="i">+static const char *brightnessUp[] = { &quot;light&quot;, &quot;-A&quot;, &quot;5&quot;, NULL};
+</a><a href="#h1-1-6" id="h1-1-6" class="i">+static const char *brightnessDown[] = {&quot;light&quot;, &quot;-U&quot;, &quot;5&quot;, NULL};
+</a> /* static const char *play[] = {&quot;/home/diego/.local/.macros/keyBindings/play.sh&quot;, NULL}; */
+ /* static const char *stop[] = {&quot;/home/diego/.local/.macros/keyBindings/pause.sh&quot;, NULL}; */
+ static const char *play[] = {&quot;playerctl&quot;, &quot;play&quot;, NULL};
+<b>diff --git a/<a id="h2" href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a> b/<a href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h3" href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a> b/<a href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -1681,7 +1681,7 @@ tagmon(const Arg *arg)
+</a> void
+ tile(Monitor *m)
+ {
+<a href="#h3-0-3" id="h3-0-3" class="d">-	unsigned int i, n, h, mw, my, ty;
+</a><a href="#h3-0-4" id="h3-0-4" class="i">+	unsigned int i, n, h, r, g = 0, mw, my, ty;
+</a> 	Client *c;
+ 
+ 	for (n = 0, c = nexttiled(m-&gt;clients); c; c = nexttiled(c-&gt;next), n++);
+<a href="#h3-1" id="h3-1" class="h">@@ -1689,20 +1689,25 @@ tile(Monitor *m)
+</a> 		return;
+ 
+ 	if (n &gt; m-&gt;nmaster)
+<a href="#h3-1-3" id="h3-1-3" class="d">-		mw = m-&gt;nmaster ? m-&gt;ww * m-&gt;mfact : 0;
+</a><a href="#h3-1-4" id="h3-1-4" class="i">+		mw = m-&gt;nmaster ? (m-&gt;ww - (g = gappx)) * m-&gt;mfact : 0;
+</a> 	else
+ 		mw = m-&gt;ww;
+ 	for (i = my = ty = 0, c = nexttiled(m-&gt;clients); c; c = nexttiled(c-&gt;next), i++)
+ 		if (i &lt; m-&gt;nmaster) {
+<a href="#h3-1-9" id="h3-1-9" class="d">-			h = (m-&gt;wh - my) / (MIN(n, m-&gt;nmaster) - i);
+</a><a href="#h3-1-10" id="h3-1-10" class="i">+            r = MIN(n, m-&gt;nmaster) - i;
+</a><a href="#h3-1-11" id="h3-1-11" class="i">+			h = (m-&gt;wh - my - gappx* (r - 1)) / r;
+</a> 			resize(c, m-&gt;wx, m-&gt;wy + my, mw - (2*c-&gt;bw), h - (2*c-&gt;bw), 0);
+ 			if (my + HEIGHT(c) &lt; m-&gt;wh)
+<a href="#h3-1-14" id="h3-1-14" class="d">-				my += HEIGHT(c);
+</a><a href="#h3-1-15" id="h3-1-15" class="i">+				my += HEIGHT(c) + gappx;
+</a> 		} else {
+<a href="#h3-1-17" id="h3-1-17" class="d">-			h = (m-&gt;wh - ty) / (n - i);
+</a><a href="#h3-1-18" id="h3-1-18" class="d">-			resize(c, m-&gt;wx + mw, m-&gt;wy + ty, m-&gt;ww - mw - (2*c-&gt;bw), h - (2*c-&gt;bw), 0);
+</a><a href="#h3-1-19" id="h3-1-19" class="d">-			if (ty + HEIGHT(c) &lt; m-&gt;wh)
+</a><a href="#h3-1-20" id="h3-1-20" class="d">-				ty += HEIGHT(c);
+</a><a href="#h3-1-21" id="h3-1-21" class="i">+			/* h = (m-&gt;wh - ty) / (n - i); */
+</a><a href="#h3-1-22" id="h3-1-22" class="i">+			/* resize(c, m-&gt;wx + mw, m-&gt;wy + ty, m-&gt;ww - mw - (2*c-&gt;bw), h - (2*c-&gt;bw), 0); */
+</a><a href="#h3-1-23" id="h3-1-23" class="i">+			/* if (ty + HEIGHT(c) &lt; m-&gt;wh) */
+</a><a href="#h3-1-24" id="h3-1-24" class="i">+			/* 	ty += HEIGHT(c); */
+</a><a href="#h3-1-25" id="h3-1-25" class="i">+            r = n - i;
+</a><a href="#h3-1-26" id="h3-1-26" class="i">+            h = (m-&gt;wh - ty - gappx * (r-1)) / r;
+</a><a href="#h3-1-27" id="h3-1-27" class="i">+			resize(c, m-&gt;wx + mw + g, m-&gt;wy + ty, m-&gt;ww - mw - g - (2*c-&gt;bw), h - (2*c-&gt;bw), 0);
+</a><a href="#h3-1-28" id="h3-1-28" class="i">+            ty += HEIGHT(c) +  gappx;
+</a> 		}
+ }
+ 
+<b>diff --git a/<a id="h4" href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a> b/<a href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h5" href="../file/.xprofile.html">.xprofile</a> b/<a href="../file/.xprofile.html">.xprofile</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -5,6 +5,8 @@ setxkbmap us -variant intl
+</a> /home/diego/.local/.macros/dwmBar/dwmbar.sh
+ amixer set Master mute
+ 
+<a href="#h5-0-3" id="h5-0-3" class="d">-xcompmgr &amp;
+</a><a href="#h5-0-4" id="h5-0-4" class="i">+# xcompmgr &amp;
+</a><a href="#h5-0-5" id="h5-0-5" class="i">+picom &amp;
+</a><a href="#h5-0-6" id="h5-0-6" class="i">+
+</a> exec dwm
+ # exec startxfce4 
+</pre>
+</div>
+</body>
+</html>

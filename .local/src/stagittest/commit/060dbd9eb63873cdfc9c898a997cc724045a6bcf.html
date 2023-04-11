@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>added play and pause icons - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/060dbd9eb63873cdfc9c898a997cc724045a6bcf.html">060dbd9eb63873cdfc9c898a997cc724045a6bcf</a>
+<b>parent</b> <a href="../commit/505a3e577a4e7330cb969013262a24d14249faf7.html">505a3e577a4e7330cb969013262a24d14249faf7</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Wed, 28 Dec 2022 00:24:54 +0100
+
+added play and pause icons
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/.macros/dwmBar/spotify.sh</a></td><td> | </td><td class="num">15</td><td><span class="i">++++++++</span><span class="d">-------</span></td></tr>
+</table></pre><pre>1 file changed, 8 insertions(+), 7 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a> b/<a href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -2,6 +2,7 @@
+</a> 
+ # A dwm_bar function that shows the current artist, track, duration, and status from Spotify using playerctl
+ # Joe Standring &lt;git@joestandring.com&gt;
+<a href="#h0-0-3" id="h0-0-3" class="i">+# Edited by: Diego Rivera &lt;git@driverag22.com&gt;
+</a> # GNU GPLv3
+ 
+ # Dependencies: spotify/spotifyd, playerctl
+<a href="#h0-1" id="h0-1" class="h">@@ -27,25 +28,25 @@ if [ &quot;$PLAYER&quot; = &quot;spotify&quot; ] || [ &quot;$PLAYER&quot; = &quot;spotifyd&quot; ]; then
+</a> 
+     if [ &quot;$IDENTIFIER&quot; = &quot;unicode&quot; ]; then
+         if [ &quot;$STATUS&quot; = &quot;Playing&quot; ]; then
+<a href="#h0-1-3" id="h0-1-3" class="d">-            STATUS=&quot;▶&quot;
+</a><a href="#h0-1-4" id="h0-1-4" class="i">+            STATUS=&quot;&quot;
+</a>         else
+<a href="#h0-1-6" id="h0-1-6" class="d">-            STATUS=&quot;⏸&quot;
+</a><a href="#h0-1-7" id="h0-1-7" class="i">+            STATUS=&quot;&quot;
+</a>         fi
+         
+         if [ &quot;$SHUFFLE&quot; = &quot;On&quot; ]; then
+<a href="#h0-1-11" id="h0-1-11" class="d">-            SHUFFLE=&quot; 🔀&quot;
+</a><a href="#h0-1-12" id="h0-1-12" class="i">+            SHUFFLE=&quot; 咽&quot;
+</a>         else
+             SHUFFLE=&quot;&quot;
+         fi
+     else
+         if [ &quot;$STATUS&quot; = &quot;Playing&quot; ]; then
+<a href="#h0-1-18" id="h0-1-18" class="d">-            STATUS=&quot;▶&quot;
+</a><a href="#h0-1-19" id="h0-1-19" class="i">+            STATUS=&quot;&quot;
+</a>         else
+<a href="#h0-1-21" id="h0-1-21" class="d">-            STATUS=&quot;⏸&quot;
+</a><a href="#h0-1-22" id="h0-1-22" class="i">+            STATUS=&quot;&quot;
+</a>         fi
+         
+         if [ &quot;$SHUFFLE&quot; = &quot;On&quot; ]; then
+<a href="#h0-1-26" id="h0-1-26" class="d">-            SHUFFLE=&quot; 🔀&quot;
+</a><a href="#h0-1-27" id="h0-1-27" class="i">+            SHUFFLE=&quot; 咽&quot;
+</a>         else
+             SHUFFLE=&quot;&quot;
+         fi
+<a href="#h0-2" id="h0-2" class="h">@@ -56,7 +57,7 @@ if [ &quot;$PLAYER&quot; = &quot;spotify&quot; ] || [ &quot;$PLAYER&quot; = &quot;spotifyd&quot; ]; then
+</a>             echo &quot;bad&quot;
+         else
+             # printf &quot;%s%s %s - %s &quot; &quot;$SEP1&quot; &quot;$STATUS&quot; &quot;$ARTIST&quot; &quot;$TRACK&quot;
+<a href="#h0-2-3" id="h0-2-3" class="d">-            printf &quot;%s - %s &quot; &quot;$ARTIST&quot; &quot;$TRACK&quot;
+</a><a href="#h0-2-4" id="h0-2-4" class="i">+            printf &quot;%s%s - %s %s&quot; &quot;$STATUS&quot; &quot;$ARTIST&quot; &quot;$TRACK&quot; 
+</a>             # printf &quot;%0d:%02d&quot; $((DURATION%3600/60)) $((DURATION%60))
+             printf &quot;%s\n&quot; &quot;$SEP2&quot;
+         fi
+</pre>
+</div>
+</body>
+</html>

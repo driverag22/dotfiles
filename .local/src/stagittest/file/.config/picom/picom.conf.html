@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>picom.conf - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../"><img src="../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../log.html">Log</a> | <a href="../../../files.html">Files</a> | <a href="../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> picom.conf (10203B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> #################################
+<a href="#l2" class="line" id="l2">      2</a> #             Shadows           #
+<a href="#l3" class="line" id="l3">      3</a> #################################
+<a href="#l4" class="line" id="l4">      4</a> shadow = false
+<a href="#l5" class="line" id="l5">      5</a> # The blur radius for shadows, in pixels. (defaults to 12)
+<a href="#l6" class="line" id="l6">      6</a> # shadow-radius = 7;
+<a href="#l7" class="line" id="l7">      7</a> # shadow-opacity = .75
+<a href="#l8" class="line" id="l8">      8</a> # shadow-offset-x = -7;
+<a href="#l9" class="line" id="l9">      9</a> # shadow-offset-y = -7;
+<a href="#l10" class="line" id="l10">     10</a> 
+<a href="#l11" class="line" id="l11">     11</a> 
+<a href="#l12" class="line" id="l12">     12</a> #################################
+<a href="#l13" class="line" id="l13">     13</a> #           Fading              #
+<a href="#l14" class="line" id="l14">     14</a> #################################
+<a href="#l15" class="line" id="l15">     15</a> # Fade windows in/out when opening/closing and when opacity changes,
+<a href="#l16" class="line" id="l16">     16</a> #  unless no-fading-openclose is used.
+<a href="#l17" class="line" id="l17">     17</a> fading = false; 
+<a href="#l18" class="line" id="l18">     18</a> fade-in-step = 0.03;
+<a href="#l19" class="line" id="l19">     19</a> fade-out-step = 0.03;
+<a href="#l20" class="line" id="l20">     20</a> fade-delta = 10;
+<a href="#l21" class="line" id="l21">     21</a> 
+<a href="#l22" class="line" id="l22">     22</a> 
+<a href="#l23" class="line" id="l23">     23</a> #################################
+<a href="#l24" class="line" id="l24">     24</a> #   Transparency / Opacity      #
+<a href="#l25" class="line" id="l25">     25</a> #################################
+<a href="#l26" class="line" id="l26">     26</a> inactive-opacity = 0.95;
+<a href="#l27" class="line" id="l27">     27</a> # frame-opacity = 0.9;
+<a href="#l28" class="line" id="l28">     28</a> frame-opacity = 1;
+<a href="#l29" class="line" id="l29">     29</a> inactive-opacity-override = true;
+<a href="#l30" class="line" id="l30">     30</a> opacity-rule = [
+<a href="#l31" class="line" id="l31">     31</a> 	&quot;100:class_g = &#39;firefox&#39;&quot;,
+<a href="#l32" class="line" id="l32">     32</a> 	&quot;90:class_g = &#39;Alacritty&#39;&quot;,
+<a href="#l33" class="line" id="l33">     33</a>     &quot;100:class_g = &#39;discord&#39;&quot;,
+<a href="#l34" class="line" id="l34">     34</a>     &quot;90:class_g = &#39;spotify&#39;&quot;,
+<a href="#l35" class="line" id="l35">     35</a>     # &quot;85:class_g = &#39;dwm&#39;&quot;
+<a href="#l36" class="line" id="l36">     36</a> ];
+<a href="#l37" class="line" id="l37">     37</a> 
+<a href="#l38" class="line" id="l38">     38</a> 
+<a href="#l39" class="line" id="l39">     39</a> #################################
+<a href="#l40" class="line" id="l40">     40</a>           # Corners             #
+<a href="#l41" class="line" id="l41">     41</a> #################################
+<a href="#l42" class="line" id="l42">     42</a> corner-radius = 20.0
+<a href="#l43" class="line" id="l43">     43</a> round-borders = 1
+<a href="#l44" class="line" id="l44">     44</a> 
+<a href="#l45" class="line" id="l45">     45</a> rounded-corners-exclude = [
+<a href="#l46" class="line" id="l46">     46</a>   # &quot;window_type = &#39;normal&#39;&quot;,
+<a href="#l47" class="line" id="l47">     47</a>   # &quot;window_type = &#39;dock&#39;&quot;,
+<a href="#l48" class="line" id="l48">     48</a>   # &quot;window_type = &#39;desktop&#39;&quot;,
+<a href="#l49" class="line" id="l49">     49</a>   &quot;class_g = &#39;dwm&#39;&quot;,
+<a href="#l50" class="line" id="l50">     50</a>   &quot;class_g = &#39;dmenu&#39;&quot;,
+<a href="#l51" class="line" id="l51">     51</a>   # &quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;;
+<a href="#l52" class="line" id="l52">     52</a> ];
+<a href="#l53" class="line" id="l53">     53</a> 
+<a href="#l54" class="line" id="l54">     54</a> 
+<a href="#l55" class="line" id="l55">     55</a> #################################
+<a href="#l56" class="line" id="l56">     56</a> #     Background-Blurring       #
+<a href="#l57" class="line" id="l57">     57</a> #################################
+<a href="#l58" class="line" id="l58">     58</a> 
+<a href="#l59" class="line" id="l59">     59</a> # blur-size = 100
+<a href="#l60" class="line" id="l60">     60</a> # blur-deviation = false
+<a href="#l61" class="line" id="l61">     61</a> # blur-strength = 8000
+<a href="#l62" class="line" id="l62">     62</a> # blur-background = true
+<a href="#l63" class="line" id="l63">     63</a> # blur-background-frame = false
+<a href="#l64" class="line" id="l64">     64</a> # blur-background-fixed = false
+<a href="#l65" class="line" id="l65">     65</a> # blur-kern = &quot;3x3box&quot;;
+<a href="#l66" class="line" id="l66">     66</a> 
+<a href="#l67" class="line" id="l67">     67</a> # Exclude conditions for background blur.
+<a href="#l68" class="line" id="l68">     68</a> # blur-background-exclude = []
+<a href="#l69" class="line" id="l69">     69</a> # blur-background-exclude = [
+<a href="#l70" class="line" id="l70">     70</a> #   &quot;window_type = &#39;dock&#39;&quot;,
+<a href="#l71" class="line" id="l71">     71</a> #   &quot;window_type = &#39;desktop&#39;&quot;,
+<a href="#l72" class="line" id="l72">     72</a> #   &quot;_GTK_FRAME_EXTENTS@:c&quot;
+<a href="#l73" class="line" id="l73">     73</a> # ];
+<a href="#l74" class="line" id="l74">     74</a> 
+<a href="#l75" class="line" id="l75">     75</a> #################################
+<a href="#l76" class="line" id="l76">     76</a> #       General Settings        #
+<a href="#l77" class="line" id="l77">     77</a> #################################
+<a href="#l78" class="line" id="l78">     78</a> 
+<a href="#l79" class="line" id="l79">     79</a> # Enable remote control via D-Bus. See the man page for more details.
+<a href="#l80" class="line" id="l80">     80</a> # dbus = true
+<a href="#l81" class="line" id="l81">     81</a> 
+<a href="#l82" class="line" id="l82">     82</a> # Daemonize process. Fork to background after initialization. Causes issues with certain (badly-written) drivers.
+<a href="#l83" class="line" id="l83">     83</a> # daemon = false
+<a href="#l84" class="line" id="l84">     84</a> 
+<a href="#l85" class="line" id="l85">     85</a> # Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
+<a href="#l86" class="line" id="l86">     86</a> # `xrender` is the default one.
+<a href="#l87" class="line" id="l87">     87</a> #
+<a href="#l88" class="line" id="l88">     88</a> backend = &quot;glx&quot;
+<a href="#l89" class="line" id="l89">     89</a> # backend = &quot;xrender&quot;;
+<a href="#l90" class="line" id="l90">     90</a> 
+<a href="#l91" class="line" id="l91">     91</a> # Enable/disable VSync.
+<a href="#l92" class="line" id="l92">     92</a> # vsync = false
+<a href="#l93" class="line" id="l93">     93</a> vsync = true;
+<a href="#l94" class="line" id="l94">     94</a> 
+<a href="#l95" class="line" id="l95">     95</a> # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
+<a href="#l96" class="line" id="l96">     96</a> # dbus = false
+<a href="#l97" class="line" id="l97">     97</a> 
+<a href="#l98" class="line" id="l98">     98</a> # Try to detect WM windows (a non-override-redirect window with no
+<a href="#l99" class="line" id="l99">     99</a> # child that has &#39;WM_STATE&#39;) and mark them as active.
+<a href="#l100" class="line" id="l100">    100</a> #
+<a href="#l101" class="line" id="l101">    101</a> # mark-wmwin-focused = false
+<a href="#l102" class="line" id="l102">    102</a> mark-wmwin-focused = true;
+<a href="#l103" class="line" id="l103">    103</a> 
+<a href="#l104" class="line" id="l104">    104</a> # Mark override-redirect windows that doesn&#39;t have a child window with &#39;WM_STATE&#39; focused.
+<a href="#l105" class="line" id="l105">    105</a> # mark-ovredir-focused = false
+<a href="#l106" class="line" id="l106">    106</a> mark-ovredir-focused = true;
+<a href="#l107" class="line" id="l107">    107</a> 
+<a href="#l108" class="line" id="l108">    108</a> # Try to detect windows with rounded corners and don&#39;t consider them
+<a href="#l109" class="line" id="l109">    109</a> # shaped windows. The accuracy is not very high, unfortunately.
+<a href="#l110" class="line" id="l110">    110</a> #
+<a href="#l111" class="line" id="l111">    111</a> # detect-rounded-corners = false
+<a href="#l112" class="line" id="l112">    112</a> detect-rounded-corners = true;
+<a href="#l113" class="line" id="l113">    113</a> 
+<a href="#l114" class="line" id="l114">    114</a> # Detect &#39;_NET_WM_WINDOW_OPACITY&#39; on client windows, useful for window managers
+<a href="#l115" class="line" id="l115">    115</a> # not passing &#39;_NET_WM_WINDOW_OPACITY&#39; of client windows to frame windows.
+<a href="#l116" class="line" id="l116">    116</a> #
+<a href="#l117" class="line" id="l117">    117</a> # detect-client-opacity = false
+<a href="#l118" class="line" id="l118">    118</a> detect-client-opacity = true;
+<a href="#l119" class="line" id="l119">    119</a> 
+<a href="#l120" class="line" id="l120">    120</a> # Use EWMH &#39;_NET_ACTIVE_WINDOW&#39; to determine currently focused window,
+<a href="#l121" class="line" id="l121">    121</a> # rather than listening to &#39;FocusIn&#39;/&#39;FocusOut&#39; event. Might have more accuracy,
+<a href="#l122" class="line" id="l122">    122</a> # provided that the WM supports it.
+<a href="#l123" class="line" id="l123">    123</a> #
+<a href="#l124" class="line" id="l124">    124</a> # use-ewmh-active-win = false
+<a href="#l125" class="line" id="l125">    125</a> 
+<a href="#l126" class="line" id="l126">    126</a> # Unredirect all windows if a full-screen opaque window is detected,
+<a href="#l127" class="line" id="l127">    127</a> # to maximize performance for full-screen windows. Known to cause flickering
+<a href="#l128" class="line" id="l128">    128</a> # when redirecting/unredirecting windows.
+<a href="#l129" class="line" id="l129">    129</a> #
+<a href="#l130" class="line" id="l130">    130</a> # unredir-if-possible = false
+<a href="#l131" class="line" id="l131">    131</a> 
+<a href="#l132" class="line" id="l132">    132</a> # Delay before unredirecting the window, in milliseconds. Defaults to 0.
+<a href="#l133" class="line" id="l133">    133</a> # unredir-if-possible-delay = 0
+<a href="#l134" class="line" id="l134">    134</a> 
+<a href="#l135" class="line" id="l135">    135</a> # Conditions of windows that shouldn&#39;t be considered full-screen for unredirecting screen.
+<a href="#l136" class="line" id="l136">    136</a> # unredir-if-possible-exclude = []
+<a href="#l137" class="line" id="l137">    137</a> 
+<a href="#l138" class="line" id="l138">    138</a> # Use &#39;WM_TRANSIENT_FOR&#39; to group windows, and consider windows
+<a href="#l139" class="line" id="l139">    139</a> # in the same group focused at the same time.
+<a href="#l140" class="line" id="l140">    140</a> #
+<a href="#l141" class="line" id="l141">    141</a> # detect-transient = false
+<a href="#l142" class="line" id="l142">    142</a> detect-transient = true;
+<a href="#l143" class="line" id="l143">    143</a> 
+<a href="#l144" class="line" id="l144">    144</a> # Use &#39;WM_CLIENT_LEADER&#39; to group windows, and consider windows in the same
+<a href="#l145" class="line" id="l145">    145</a> # group focused at the same time. This usually means windows from the same application
+<a href="#l146" class="line" id="l146">    146</a> # will be considered focused or unfocused at the same time.
+<a href="#l147" class="line" id="l147">    147</a> # &#39;WM_TRANSIENT_FOR&#39; has higher priority if detect-transient is enabled, too.
+<a href="#l148" class="line" id="l148">    148</a> #
+<a href="#l149" class="line" id="l149">    149</a> # detect-client-leader = false
+<a href="#l150" class="line" id="l150">    150</a> 
+<a href="#l151" class="line" id="l151">    151</a> # Resize damaged region by a specific number of pixels.
+<a href="#l152" class="line" id="l152">    152</a> # A positive value enlarges it while a negative one shrinks it.
+<a href="#l153" class="line" id="l153">    153</a> # If the value is positive, those additional pixels will not be actually painted
+<a href="#l154" class="line" id="l154">    154</a> # to screen, only used in blur calculation, and such. (Due to technical limitations,
+<a href="#l155" class="line" id="l155">    155</a> # with use-damage, those pixels will still be incorrectly painted to screen.)
+<a href="#l156" class="line" id="l156">    156</a> # Primarily used to fix the line corruption issues of blur,
+<a href="#l157" class="line" id="l157">    157</a> # in which case you should use the blur radius value here
+<a href="#l158" class="line" id="l158">    158</a> # (e.g. with a 3x3 kernel, you should use `--resize-damage 1`,
+<a href="#l159" class="line" id="l159">    159</a> # with a 5x5 one you use `--resize-damage 2`, and so on).
+<a href="#l160" class="line" id="l160">    160</a> # May or may not work with *--glx-no-stencil*. Shrinking doesn&#39;t function correctly.
+<a href="#l161" class="line" id="l161">    161</a> #
+<a href="#l162" class="line" id="l162">    162</a> # resize-damage = 1
+<a href="#l163" class="line" id="l163">    163</a> 
+<a href="#l164" class="line" id="l164">    164</a> # Specify a list of conditions of windows that should be painted with inverted color.
+<a href="#l165" class="line" id="l165">    165</a> # Resource-hogging, and is not well tested.
+<a href="#l166" class="line" id="l166">    166</a> #
+<a href="#l167" class="line" id="l167">    167</a> # invert-color-include = []
+<a href="#l168" class="line" id="l168">    168</a> 
+<a href="#l169" class="line" id="l169">    169</a> # GLX backend: Avoid using stencil buffer, useful if you don&#39;t have a stencil buffer.
+<a href="#l170" class="line" id="l170">    170</a> # Might cause incorrect opacity when rendering transparent content (but never
+<a href="#l171" class="line" id="l171">    171</a> # practically happened) and may not work with blur-background.
+<a href="#l172" class="line" id="l172">    172</a> # My tests show a 15% performance boost. Recommended.
+<a href="#l173" class="line" id="l173">    173</a> #
+<a href="#l174" class="line" id="l174">    174</a> glx-no-stencil = true;
+<a href="#l175" class="line" id="l175">    175</a> 
+<a href="#l176" class="line" id="l176">    176</a> # GLX backend: Avoid rebinding pixmap on window damage.
+<a href="#l177" class="line" id="l177">    177</a> # Probably could improve performance on rapid window content changes,
+<a href="#l178" class="line" id="l178">    178</a> # but is known to break things on some drivers (LLVMpipe, xf86-video-intel, etc.).
+<a href="#l179" class="line" id="l179">    179</a> # Recommended if it works.
+<a href="#l180" class="line" id="l180">    180</a> #
+<a href="#l181" class="line" id="l181">    181</a> # glx-no-rebind-pixmap = false
+<a href="#l182" class="line" id="l182">    182</a> 
+<a href="#l183" class="line" id="l183">    183</a> # Disable the use of damage information.
+<a href="#l184" class="line" id="l184">    184</a> # This cause the whole screen to be redrawn every time, instead of the part of the screen
+<a href="#l185" class="line" id="l185">    185</a> # has actually changed. Potentially degrades the performance, but might fix some artifacts.
+<a href="#l186" class="line" id="l186">    186</a> # The opposing option is use-damage
+<a href="#l187" class="line" id="l187">    187</a> #
+<a href="#l188" class="line" id="l188">    188</a> # no-use-damage = false
+<a href="#l189" class="line" id="l189">    189</a> use-damage = true;
+<a href="#l190" class="line" id="l190">    190</a> 
+<a href="#l191" class="line" id="l191">    191</a> # Use X Sync fence to sync clients&#39; draw calls, to make sure all draw
+<a href="#l192" class="line" id="l192">    192</a> # calls are finished before picom starts drawing. Needed on nvidia-drivers
+<a href="#l193" class="line" id="l193">    193</a> # with GLX backend for some users.
+<a href="#l194" class="line" id="l194">    194</a> #
+<a href="#l195" class="line" id="l195">    195</a> # xrender-sync-fence = false
+<a href="#l196" class="line" id="l196">    196</a> 
+<a href="#l197" class="line" id="l197">    197</a> # GLX backend: Use specified GLSL fragment shader for rendering window
+<a href="#l198" class="line" id="l198">    198</a> # contents. Read the man page for a detailed explanation of the interface.
+<a href="#l199" class="line" id="l199">    199</a> #
+<a href="#l200" class="line" id="l200">    200</a> # window-shader-fg = &quot;default&quot;
+<a href="#l201" class="line" id="l201">    201</a> 
+<a href="#l202" class="line" id="l202">    202</a> # Use rules to set per-window shaders. Syntax is SHADER_PATH:PATTERN, similar
+<a href="#l203" class="line" id="l203">    203</a> # to opacity-rule. SHADER_PATH can be &quot;default&quot;. This overrides window-shader-fg.
+<a href="#l204" class="line" id="l204">    204</a> #
+<a href="#l205" class="line" id="l205">    205</a> # window-shader-fg-rule = [
+<a href="#l206" class="line" id="l206">    206</a> #   &quot;my_shader.frag:window_type != &#39;dock&#39;&quot;
+<a href="#l207" class="line" id="l207">    207</a> # ]
+<a href="#l208" class="line" id="l208">    208</a> 
+<a href="#l209" class="line" id="l209">    209</a> # Force all windows to be painted with blending. Useful if you
+<a href="#l210" class="line" id="l210">    210</a> # have a glx-fshader-win that could turn opaque pixels transparent.
+<a href="#l211" class="line" id="l211">    211</a> #
+<a href="#l212" class="line" id="l212">    212</a> # force-win-blend = false
+<a href="#l213" class="line" id="l213">    213</a> 
+<a href="#l214" class="line" id="l214">    214</a> # Do not use EWMH to detect fullscreen windows.
+<a href="#l215" class="line" id="l215">    215</a> # Reverts to checking if a window is fullscreen based only on its size and coordinates.
+<a href="#l216" class="line" id="l216">    216</a> #
+<a href="#l217" class="line" id="l217">    217</a> # no-ewmh-fullscreen = false
+<a href="#l218" class="line" id="l218">    218</a> 
+<a href="#l219" class="line" id="l219">    219</a> # Dimming bright windows so their brightness doesn&#39;t exceed this set value.
+<a href="#l220" class="line" id="l220">    220</a> # Brightness of a window is estimated by averaging all pixels in the window,
+<a href="#l221" class="line" id="l221">    221</a> # so this could comes with a performance hit.
+<a href="#l222" class="line" id="l222">    222</a> # Setting this to 1.0 disables this behaviour. Requires --use-damage to be disabled. (default: 1.0)
+<a href="#l223" class="line" id="l223">    223</a> #
+<a href="#l224" class="line" id="l224">    224</a> # max-brightness = 1.0
+<a href="#l225" class="line" id="l225">    225</a> 
+<a href="#l226" class="line" id="l226">    226</a> # Make transparent windows clip other windows like non-transparent windows do,
+<a href="#l227" class="line" id="l227">    227</a> # instead of blending on top of them.
+<a href="#l228" class="line" id="l228">    228</a> #
+<a href="#l229" class="line" id="l229">    229</a> # transparent-clipping = false
+<a href="#l230" class="line" id="l230">    230</a> 
+<a href="#l231" class="line" id="l231">    231</a> # Specify a list of conditions of windows that should never have transparent
+<a href="#l232" class="line" id="l232">    232</a> # clipping applied. Useful for screenshot tools, where you need to be able to
+<a href="#l233" class="line" id="l233">    233</a> # see through transparent parts of the window.
+<a href="#l234" class="line" id="l234">    234</a> #
+<a href="#l235" class="line" id="l235">    235</a> # transparent-clipping-exclude = []
+<a href="#l236" class="line" id="l236">    236</a> 
+<a href="#l237" class="line" id="l237">    237</a> # Set the log level. Possible values are:
+<a href="#l238" class="line" id="l238">    238</a> #  &quot;trace&quot;, &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;
+<a href="#l239" class="line" id="l239">    239</a> # in increasing level of importance. Case doesn&#39;t matter.
+<a href="#l240" class="line" id="l240">    240</a> # If using the &quot;TRACE&quot; log level, it&#39;s better to log into a file
+<a href="#l241" class="line" id="l241">    241</a> # using *--log-file*, since it can generate a huge stream of logs.
+<a href="#l242" class="line" id="l242">    242</a> #
+<a href="#l243" class="line" id="l243">    243</a> # log-level = &quot;debug&quot;
+<a href="#l244" class="line" id="l244">    244</a> log-level = &quot;warn&quot;;
+<a href="#l245" class="line" id="l245">    245</a> 
+<a href="#l246" class="line" id="l246">    246</a> # Set the log file.
+<a href="#l247" class="line" id="l247">    247</a> # If *--log-file* is never specified, logs will be written to stderr.
+<a href="#l248" class="line" id="l248">    248</a> # Otherwise, logs will to written to the given file, though some of the early
+<a href="#l249" class="line" id="l249">    249</a> # logs might still be written to the stderr.
+<a href="#l250" class="line" id="l250">    250</a> # When setting this option from the config file, it is recommended to use an absolute path.
+<a href="#l251" class="line" id="l251">    251</a> #
+<a href="#l252" class="line" id="l252">    252</a> # log-file = &quot;/path/to/your/log/file&quot;
+<a href="#l253" class="line" id="l253">    253</a> 
+<a href="#l254" class="line" id="l254">    254</a> # Show all X errors (for debugging)
+<a href="#l255" class="line" id="l255">    255</a> # show-all-xerrors = false
+<a href="#l256" class="line" id="l256">    256</a> 
+<a href="#l257" class="line" id="l257">    257</a> # Write process ID to a file.
+<a href="#l258" class="line" id="l258">    258</a> # write-pid-path = &quot;/path/to/your/log/file&quot;
+<a href="#l259" class="line" id="l259">    259</a> 
+<a href="#l260" class="line" id="l260">    260</a> # Window type settings
+<a href="#l261" class="line" id="l261">    261</a> #
+<a href="#l262" class="line" id="l262">    262</a> # &#39;WINDOW_TYPE&#39; is one of the 15 window types defined in EWMH standard:
+<a href="#l263" class="line" id="l263">    263</a> #     &quot;unknown&quot;, &quot;desktop&quot;, &quot;dock&quot;, &quot;toolbar&quot;, &quot;menu&quot;, &quot;utility&quot;,
+<a href="#l264" class="line" id="l264">    264</a> #     &quot;splash&quot;, &quot;dialog&quot;, &quot;normal&quot;, &quot;dropdown_menu&quot;, &quot;popup_menu&quot;,
+<a href="#l265" class="line" id="l265">    265</a> #     &quot;tooltip&quot;, &quot;notification&quot;, &quot;combo&quot;, and &quot;dnd&quot;.
+<a href="#l266" class="line" id="l266">    266</a> #
+<a href="#l267" class="line" id="l267">    267</a> # Following per window-type options are available: ::
+<a href="#l268" class="line" id="l268">    268</a> #
+<a href="#l269" class="line" id="l269">    269</a> #   fade, shadow:::
+<a href="#l270" class="line" id="l270">    270</a> #     Controls window-type-specific shadow and fade settings.
+<a href="#l271" class="line" id="l271">    271</a> #
+<a href="#l272" class="line" id="l272">    272</a> #   opacity:::
+<a href="#l273" class="line" id="l273">    273</a> #     Controls default opacity of the window type.
+<a href="#l274" class="line" id="l274">    274</a> #
+<a href="#l275" class="line" id="l275">    275</a> #   focus:::
+<a href="#l276" class="line" id="l276">    276</a> #     Controls whether the window of this type is to be always considered focused.
+<a href="#l277" class="line" id="l277">    277</a> #     (By default, all window types except &quot;normal&quot; and &quot;dialog&quot; has this on.)
+<a href="#l278" class="line" id="l278">    278</a> #
+<a href="#l279" class="line" id="l279">    279</a> #   full-shadow:::
+<a href="#l280" class="line" id="l280">    280</a> #     Controls whether shadow is drawn under the parts of the window that you
+<a href="#l281" class="line" id="l281">    281</a> #     normally won&#39;t be able to see. Useful when the window has parts of it
+<a href="#l282" class="line" id="l282">    282</a> #     transparent, and you want shadows in those areas.
+<a href="#l283" class="line" id="l283">    283</a> #
+<a href="#l284" class="line" id="l284">    284</a> #   clip-shadow-above:::
+<a href="#l285" class="line" id="l285">    285</a> #     Controls whether shadows that would have been drawn above the window should
+<a href="#l286" class="line" id="l286">    286</a> #     be clipped. Useful for dock windows that should have no shadow painted on top.
+<a href="#l287" class="line" id="l287">    287</a> #
+<a href="#l288" class="line" id="l288">    288</a> #   redir-ignore:::
+<a href="#l289" class="line" id="l289">    289</a> #     Controls whether this type of windows should cause screen to become
+<a href="#l290" class="line" id="l290">    290</a> #     redirected again after been unredirected. If you have unredir-if-possible
+<a href="#l291" class="line" id="l291">    291</a> #     set, and doesn&#39;t want certain window to cause unnecessary screen redirection,
+<a href="#l292" class="line" id="l292">    292</a> #     you can set this to `true`.
+<a href="#l293" class="line" id="l293">    293</a> #
+<a href="#l294" class="line" id="l294">    294</a> wintypes:
+<a href="#l295" class="line" id="l295">    295</a> {
+<a href="#l296" class="line" id="l296">    296</a>   tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
+<a href="#l297" class="line" id="l297">    297</a>   dock = { shadow = false; clip-shadow-above = true; }
+<a href="#l298" class="line" id="l298">    298</a>   dnd = { shadow = false; }
+<a href="#l299" class="line" id="l299">    299</a>   popup_menu = { opacity = 0.8; }
+<a href="#l300" class="line" id="l300">    300</a>   dropdown_menu = { opacity = 0.8; }
+<a href="#l301" class="line" id="l301">    301</a> };
+</pre>
+</div>
+</body>
+</html>

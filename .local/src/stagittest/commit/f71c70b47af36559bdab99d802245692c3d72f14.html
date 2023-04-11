@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>dwmbar made cleaner - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/f71c70b47af36559bdab99d802245692c3d72f14.html">f71c70b47af36559bdab99d802245692c3d72f14</a>
+<b>parent</b> <a href="../commit/786ee1929b6dc4a7f185854b5af84b27c1fc5280.html">786ee1929b6dc4a7f185854b5af84b27c1fc5280</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Tue, 10 Jan 2023 23:35:00 +0100
+
+dwmbar made cleaner
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/.macros/dwmBar/dwmbar.sh</a></td><td> | </td><td class="num">15</td><td><span class="i">++++++++++</span><span class="d">-----</span></td></tr>
+<tr><td class="D">D</td><td><a href="#h1">.local/.macros/dwmBar/simpleValues.sh</a></td><td> | </td><td class="num">26</td><td><span class="i"></span><span class="d">--------------------------</span></td></tr>
+<tr><td class="A">A</td><td><a href="#h2">.local/.macros/dwmBar/values/cleanValues.sh</a></td><td> | </td><td class="num">24</td><td><span class="i">++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h3">.local/.macros/dwmBar/values/miniValues.sh</a></td><td> | </td><td class="num">26</td><td><span class="i">++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h4">.local/.macros/dwmBar/values/minimalistValues.sh</a></td><td> | </td><td class="num">15</td><td><span class="i">+++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h5">.local/.macros/dwmBar/values/simpleValues.sh</a></td><td> | </td><td class="num">28</td><td><span class="i">++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="R">R</td><td><a href="#h6">.local/.macros/dwmBar/values.sh -&gt; .local/.macros/dwmBar/values/values.sh</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+</table></pre><pre>7 files changed, 103 insertions(+), 31 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a> b/<a href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -4,10 +4,15 @@
+</a> # remodified by driverag22
+ 
+ while true; do
+<a href="#h0-0-3" id="h0-0-3" class="d">-        # values=$(/home/diego/.local/.macros/dwmBar/values.sh)
+</a><a href="#h0-0-4" id="h0-0-4" class="d">-        # values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
+</a><a href="#h0-0-5" id="h0-0-5" class="d">-        values=$(/home/diego/.local/.macros/dwmBar/cleanValues.sh)
+</a><a href="#h0-0-6" id="h0-0-6" class="d">-        # values=$(/home/diego/.local/.macros/dwmBar/minimalistValues.sh)
+</a><a href="#h0-0-7" id="h0-0-7" class="i">+        ## Choices:
+</a><a href="#h0-0-8" id="h0-0-8" class="i">+        # values.sh -- everything
+</a><a href="#h0-0-9" id="h0-0-9" class="i">+        # simpleValues.sh 
+</a><a href="#h0-0-10" id="h0-0-10" class="i">+        # cleanValues.sh
+</a><a href="#h0-0-11" id="h0-0-11" class="i">+        # miniValues.sh
+</a><a href="#h0-0-12" id="h0-0-12" class="i">+        # minimalistValues.sh
+</a><a href="#h0-0-13" id="h0-0-13" class="i">+        
+</a><a href="#h0-0-14" id="h0-0-14" class="i">+        values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
+</a><a href="#h0-0-15" id="h0-0-15" class="i">+
+</a>         xsetroot -name &quot;$values&quot;
+<a href="#h0-0-17" id="h0-0-17" class="d">-        sleep 2s
+</a><a href="#h0-0-18" id="h0-0-18" class="i">+        sleep 1s ## refresh rate
+</a> done &amp;
+<b>diff --git a/<a id="h1" href="../file/.local/.macros/dwmBar/simpleValues.sh.html">.local/.macros/dwmBar/simpleValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/simpleValues.sh.html">.local/.macros/dwmBar/simpleValues.sh</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -1,26 +0,0 @@
+</a><a href="#h1-0-0" id="h1-0-0" class="d">-#!/usr/bin/env bash
+</a><a href="#h1-0-1" id="h1-0-1" class="d">-# original script created by clusterF
+</a><a href="#h1-0-2" id="h1-0-2" class="d">-# modified by ManyRoads
+</a><a href="#h1-0-3" id="h1-0-3" class="d">-# remodified by driverag22
+</a><a href="#h1-0-4" id="h1-0-4" class="d">-
+</a><a href="#h1-0-5" id="h1-0-5" class="d">-
+</a><a href="#h1-0-6" id="h1-0-6" class="d">-LOCALTIME=$(date &#39;+  %a. %d %b.    %R&#39;)
+</a><a href="#h1-0-7" id="h1-0-7" class="d">-DB=$(dropbox-cli status)
+</a><a href="#h1-0-8" id="h1-0-8" class="d">-VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+</a><a href="#h1-0-9" id="h1-0-9" class="d">-MEM=$(free -h --kilo | awk &#39;/^Mem:/ {print $3 &quot; / &quot; $2}&#39;)
+</a><a href="#h1-0-10" id="h1-0-10" class="d">-# CPU=$(/home/diego/.local/.macros/dwmBar/cpu.sh)
+</a><a href="#h1-0-11" id="h1-0-11" class="d">-CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
+</a><a href="#h1-0-12" id="h1-0-12" class="d">-WIFI=$(/home/diego/.local/.macros/dwmBar/wifi.sh)
+</a><a href="#h1-0-13" id="h1-0-13" class="d">-SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
+</a><a href="#h1-0-14" id="h1-0-14" class="d">-BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+</a><a href="#h1-0-15" id="h1-0-15" class="d">-
+</a><a href="#h1-0-16" id="h1-0-16" class="d">-# printf &quot;[  $DISK ]   [   $DB ]   [  $MEM ]   [   $CPU% ]   [  $TEMP ]   [ $BATTERY ]   [ $WIFI ]   [ $LOCALTIME ]&quot;
+</a><a href="#h1-0-17" id="h1-0-17" class="d">-# printf &quot;[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DISK&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$TEMP&quot; &quot;$BATTERY&quot; &quot;$WIFI&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h1-0-18" id="h1-0-18" class="d">-
+</a><a href="#h1-0-19" id="h1-0-19" class="d">-if [ -z &quot;$SPOTIFY&quot; ] 
+</a><a href="#h1-0-20" id="h1-0-20" class="d">-then
+</a><a href="#h1-0-21" id="h1-0-21" class="d">-    printf &quot;[   %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$VOL&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h1-0-22" id="h1-0-22" class="d">-    # printf &quot;[ %s ]   [   %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$VOL&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h1-0-23" id="h1-0-23" class="d">-else 
+</a><a href="#h1-0-24" id="h1-0-24" class="d">-    printf &quot;[   %s ]    [  %s    %s ]   [ %s ]   [ %s  %s ]   [ %s ]   [ %s ]&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h1-0-25" id="h1-0-25" class="d">-fi
+</a><b>diff --git a/<a id="h2" href="../file/.local/.macros/dwmBar/values/cleanValues.sh.html">.local/.macros/dwmBar/values/cleanValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/cleanValues.sh.html">.local/.macros/dwmBar/values/cleanValues.sh</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -0,0 +1,24 @@
+</a><a href="#h2-0-0" id="h2-0-0" class="i">+#!/usr/bin/env bash
+</a><a href="#h2-0-1" id="h2-0-1" class="i">+# original script created by clusterF
+</a><a href="#h2-0-2" id="h2-0-2" class="i">+# modified by ManyRoads
+</a><a href="#h2-0-3" id="h2-0-3" class="i">+# remodified by driverag22
+</a><a href="#h2-0-4" id="h2-0-4" class="i">+
+</a><a href="#h2-0-5" id="h2-0-5" class="i">+LOCALTIME=$(date &#39;+  %a. %d %b.      %R&#39;)
+</a><a href="#h2-0-6" id="h2-0-6" class="i">+VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+</a><a href="#h2-0-7" id="h2-0-7" class="i">+MEM=$(free -h --kilo | awk &#39;/^Mem:/ {print $3 &quot;/&quot; $2}&#39;)
+</a><a href="#h2-0-8" id="h2-0-8" class="i">+# CPU=$(/home/diego/.local/.macros/dwmBar/cpu.sh)
+</a><a href="#h2-0-9" id="h2-0-9" class="i">+CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
+</a><a href="#h2-0-10" id="h2-0-10" class="i">+# WIFI=$(/home/diego/.local/.macros/dwmBar/wifi.sh)
+</a><a href="#h2-0-11" id="h2-0-11" class="i">+WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
+</a><a href="#h2-0-12" id="h2-0-12" class="i">+BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+</a><a href="#h2-0-13" id="h2-0-13" class="i">+SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
+</a><a href="#h2-0-14" id="h2-0-14" class="i">+
+</a><a href="#h2-0-15" id="h2-0-15" class="i">+
+</a><a href="#h2-0-16" id="h2-0-16" class="i">+if [ -z &quot;$SPOTIFY&quot; ] 
+</a><a href="#h2-0-17" id="h2-0-17" class="i">+then
+</a><a href="#h2-0-18" id="h2-0-18" class="i">+    # printf &quot;[  %s      %s ]   [  %s    %s    %s ]   [ %s ]&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h2-0-19" id="h2-0-19" class="i">+    printf &quot; %s      %s      %s     %s     %s    %s  &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h2-0-20" id="h2-0-20" class="i">+else 
+</a><a href="#h2-0-21" id="h2-0-21" class="i">+    # printf &quot;[  %s    %s ]   [  %s  %s ]   [ %s    %s ]   [ %s ]&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h2-0-22" id="h2-0-22" class="i">+    printf &quot; %s      %s      %s   %s     %s     %s    %s  &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h2-0-23" id="h2-0-23" class="i">+fi
+</a><b>diff --git a/<a id="h3" href="../file/.local/.macros/dwmBar/values/miniValues.sh.html">.local/.macros/dwmBar/values/miniValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/miniValues.sh.html">.local/.macros/dwmBar/values/miniValues.sh</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -0,0 +1,26 @@
+</a><a href="#h3-0-0" id="h3-0-0" class="i">+#!/usr/bin/env bash
+</a><a href="#h3-0-1" id="h3-0-1" class="i">+# original script created by clusterF
+</a><a href="#h3-0-2" id="h3-0-2" class="i">+# modified by ManyRoads
+</a><a href="#h3-0-3" id="h3-0-3" class="i">+# remodified by driverag22
+</a><a href="#h3-0-4" id="h3-0-4" class="i">+
+</a><a href="#h3-0-5" id="h3-0-5" class="i">+
+</a><a href="#h3-0-6" id="h3-0-6" class="i">+LOCALTIME=$(date &#39;+  %a. %d %b.    %R&#39;)
+</a><a href="#h3-0-7" id="h3-0-7" class="i">+VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+</a><a href="#h3-0-8" id="h3-0-8" class="i">+# WIFI=$(/home/diego/.local/.macros/dwmBar/wifi.sh)
+</a><a href="#h3-0-9" id="h3-0-9" class="i">+WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
+</a><a href="#h3-0-10" id="h3-0-10" class="i">+SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
+</a><a href="#h3-0-11" id="h3-0-11" class="i">+BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+</a><a href="#h3-0-12" id="h3-0-12" class="i">+MEM=$(free -h --kilo | awk &#39;/^Mem:/ {print $3 &quot; / &quot; $2}&#39;)
+</a><a href="#h3-0-13" id="h3-0-13" class="i">+CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
+</a><a href="#h3-0-14" id="h3-0-14" class="i">+
+</a><a href="#h3-0-15" id="h3-0-15" class="i">+# printf &quot;[  $DISK ]   [   $DB ]   [  $MEM ]   [   $CPU% ]   [  $TEMP ]   [ $BATTERY ]   [ $WIFI ]   [ $LOCALTIME ]&quot;
+</a><a href="#h3-0-16" id="h3-0-16" class="i">+# printf &quot;[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DISK&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$TEMP&quot; &quot;$BATTERY&quot; &quot;$WIFI&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h3-0-17" id="h3-0-17" class="i">+
+</a><a href="#h3-0-18" id="h3-0-18" class="i">+if [ -z &quot;$SPOTIFY&quot; ] 
+</a><a href="#h3-0-19" id="h3-0-19" class="i">+then
+</a><a href="#h3-0-20" id="h3-0-20" class="i">+    # printf &quot;[ %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$VOL&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h3-0-21" id="h3-0-21" class="i">+    printf &quot;[ %s ]   [ %s ]   [ %s ]   [ %s ]&quot;  &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h3-0-22" id="h3-0-22" class="i">+else 
+</a><a href="#h3-0-23" id="h3-0-23" class="i">+    printf &quot;[ %s  %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h3-0-24" id="h3-0-24" class="i">+    # printf &quot;[ %s  %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h3-0-25" id="h3-0-25" class="i">+fi
+</a><b>diff --git a/<a id="h4" href="../file/.local/.macros/dwmBar/values/minimalistValues.sh.html">.local/.macros/dwmBar/values/minimalistValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/minimalistValues.sh.html">.local/.macros/dwmBar/values/minimalistValues.sh</a></b>
+<a href="#h4-0" id="h4-0" class="h">@@ -0,0 +1,15 @@
+</a><a href="#h4-0-0" id="h4-0-0" class="i">+#!/usr/bin/env bash
+</a><a href="#h4-0-1" id="h4-0-1" class="i">+# original script created by clusterF
+</a><a href="#h4-0-2" id="h4-0-2" class="i">+# modified by ManyRoads
+</a><a href="#h4-0-3" id="h4-0-3" class="i">+# remodified by driverag22
+</a><a href="#h4-0-4" id="h4-0-4" class="i">+
+</a><a href="#h4-0-5" id="h4-0-5" class="i">+
+</a><a href="#h4-0-6" id="h4-0-6" class="i">+LOCALTIME=$(date &#39;+  %a. %d %b.    %R&#39;)
+</a><a href="#h4-0-7" id="h4-0-7" class="i">+VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+</a><a href="#h4-0-8" id="h4-0-8" class="i">+WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
+</a><a href="#h4-0-9" id="h4-0-9" class="i">+BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+</a><a href="#h4-0-10" id="h4-0-10" class="i">+
+</a><a href="#h4-0-11" id="h4-0-11" class="i">+# printf &quot;[  $DISK ]   [   $DB ]   [  $MEM ]   [   $CPU% ]   [  $TEMP ]   [ $BATTERY ]   [ $WIFI ]   [ $LOCALTIME ]&quot;
+</a><a href="#h4-0-12" id="h4-0-12" class="i">+# printf &quot;[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DISK&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$TEMP&quot; &quot;$BATTERY&quot; &quot;$WIFI&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h4-0-13" id="h4-0-13" class="i">+
+</a><a href="#h4-0-14" id="h4-0-14" class="i">+printf &quot; %s                                                                                                                                                                           %s      %s     %s   &quot; &quot;$LOCALTIME&quot; &quot;$WIFI&quot; &quot;$VOL&quot; &quot;$BATTERY&quot;
+</a><b>diff --git a/<a id="h5" href="../file/.local/.macros/dwmBar/values/simpleValues.sh.html">.local/.macros/dwmBar/values/simpleValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/simpleValues.sh.html">.local/.macros/dwmBar/values/simpleValues.sh</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -0,0 +1,28 @@
+</a><a href="#h5-0-0" id="h5-0-0" class="i">+#!/usr/bin/env bash
+</a><a href="#h5-0-1" id="h5-0-1" class="i">+# original script created by clusterF
+</a><a href="#h5-0-2" id="h5-0-2" class="i">+# modified by ManyRoads
+</a><a href="#h5-0-3" id="h5-0-3" class="i">+# remodified by driverag22
+</a><a href="#h5-0-4" id="h5-0-4" class="i">+
+</a><a href="#h5-0-5" id="h5-0-5" class="i">+
+</a><a href="#h5-0-6" id="h5-0-6" class="i">+LOCALTIME=$(date &#39;+  %a. %d %b.    %R&#39;)
+</a><a href="#h5-0-7" id="h5-0-7" class="i">+DB=$(dropbox-cli status)
+</a><a href="#h5-0-8" id="h5-0-8" class="i">+VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+</a><a href="#h5-0-9" id="h5-0-9" class="i">+MEM=$(free -h --kilo | awk &#39;/^Mem:/ {print $3 &quot; / &quot; $2}&#39;)
+</a><a href="#h5-0-10" id="h5-0-10" class="i">+# CPU=$(/home/diego/.local/.macros/dwmBar/cpu.sh)
+</a><a href="#h5-0-11" id="h5-0-11" class="i">+CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
+</a><a href="#h5-0-12" id="h5-0-12" class="i">+WIFI=$(/home/diego/.local/.macros/dwmBar/wifi.sh)
+</a><a href="#h5-0-13" id="h5-0-13" class="i">+# WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
+</a><a href="#h5-0-14" id="h5-0-14" class="i">+SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
+</a><a href="#h5-0-15" id="h5-0-15" class="i">+BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+</a><a href="#h5-0-16" id="h5-0-16" class="i">+
+</a><a href="#h5-0-17" id="h5-0-17" class="i">+# printf &quot;[  $DISK ]   [   $DB ]   [  $MEM ]   [   $CPU% ]   [  $TEMP ]   [ $BATTERY ]   [ $WIFI ]   [ $LOCALTIME ]&quot;
+</a><a href="#h5-0-18" id="h5-0-18" class="i">+# printf &quot;[  %s ]   [   %s ]   [  %s ]   [   %s ]   [  %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DISK&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$TEMP&quot; &quot;$BATTERY&quot; &quot;$WIFI&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h5-0-19" id="h5-0-19" class="i">+
+</a><a href="#h5-0-20" id="h5-0-20" class="i">+if [ -z &quot;$SPOTIFY&quot; ] 
+</a><a href="#h5-0-21" id="h5-0-21" class="i">+then
+</a><a href="#h5-0-22" id="h5-0-22" class="i">+    printf &quot;[  %s    %s ]   [ %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$VOL&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h5-0-23" id="h5-0-23" class="i">+    # printf &quot;[   %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$VOL&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h5-0-24" id="h5-0-24" class="i">+    # printf &quot;[ %s ]   [   %s ]   [  %s    %s ]   [ %s ]   [ %s ]   [ %s ]&quot; &quot;$VOL&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot;
+</a><a href="#h5-0-25" id="h5-0-25" class="i">+else 
+</a><a href="#h5-0-26" id="h5-0-26" class="i">+    printf &quot;[   %s ]    [  %s    %s ]   [ %s ]   [ %s  %s ]   [ %s ]   [ %s ]&quot; &quot;$DB&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$WIFI&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h5-0-27" id="h5-0-27" class="i">+fi
+</a><b>diff --git a/<a id="h6" href="../file/.local/.macros/dwmBar/values.sh.html">.local/.macros/dwmBar/values.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/values.sh.html">.local/.macros/dwmBar/values/values.sh</a></b>
+</pre>
+</div>
+</body>
+</html>

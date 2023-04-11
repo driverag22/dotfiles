@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COLS.groovy - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../../../../../"><img src="../../../../../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../../../../../log.html">Log</a> | <a href="../../../../../../../../files.html">Files</a> | <a href="../../../../../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> COLS.groovy (509B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> /*
+<a href="#l2" class="line" id="l2">      2</a>  * Available context bindings:
+<a href="#l3" class="line" id="l3">      3</a>  *   COLUMNS     List&lt;DataColumn&gt;
+<a href="#l4" class="line" id="l4">      4</a>  *   ROWS        Iterable&lt;DataRow&gt;
+<a href="#l5" class="line" id="l5">      5</a>  *   OUT         { append() }
+<a href="#l6" class="line" id="l6">      6</a>  *   FORMATTER   { format(row, col); formatValue(Object, col); getTypeName(Object, col); isStringLiteral(Object, col); }
+<a href="#l7" class="line" id="l7">      7</a>  *   TRANSPOSED  Boolean
+<a href="#l8" class="line" id="l8">      8</a>  * plus ALL_COLUMNS, TABLE, DIALECT
+<a href="#l9" class="line" id="l9">      9</a>  *
+<a href="#l10" class="line" id="l10">     10</a>  * where:
+<a href="#l11" class="line" id="l11">     11</a>  *   DataRow     { rowNumber(); first(); last(); data(): List&lt;Object&gt;; value(column): Object }
+<a href="#l12" class="line" id="l12">     12</a>  *   DataColumn  { columnNumber(), name() }
+<a href="#l13" class="line" id="l13">     13</a>  */
+<a href="#l14" class="line" id="l14">     14</a> 
+<a href="#l15" class="line" id="l15">     15</a> OUT.append(COLUMNS.size().toString())</pre>
+</div>
+</body>
+</html>

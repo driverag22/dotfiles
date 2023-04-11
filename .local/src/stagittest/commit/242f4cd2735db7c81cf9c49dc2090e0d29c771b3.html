@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Merge pull request #4 from driverag22/restart - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/242f4cd2735db7c81cf9c49dc2090e0d29c771b3.html">242f4cd2735db7c81cf9c49dc2090e0d29c771b3</a>
+<b>parent</b> <a href="../commit/cedce6494e71488b7e3ec3fed70776a95b1818d0.html">cedce6494e71488b7e3ec3fed70776a95b1818d0</a>
+<b>Author:</b> Diego Rivera &lt;<a href="mailto:87645865+driverag22@users.noreply.github.com">87645865+driverag22@users.noreply.github.com</a>&gt;
+<b>Date:</b>   Wed, 11 Jan 2023 23:50:52 +0100
+
+Merge pull request #4 from driverag22/restart
+
+Restart patch for dwm
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.config/alacritty/alacritty.yml</a></td><td> | </td><td class="num">22</td><td><span class="i">++++++++++++++</span><span class="d">--------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.config/picom/picom.conf</a></td><td> | </td><td class="num">25</td><td><span class="i">++++++++++++++</span><span class="d">-----------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/.macros/automatic/fehbg.sh</a></td><td> | </td><td class="num">1</td><td><span class="i">+</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h3">.local/.macros/dwmBar/battery.sh</a></td><td> | </td><td class="num">12</td><td><span class="i">+++++++</span><span class="d">-----</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h4">.local/.macros/dwmBar/spotify.sh</a></td><td> | </td><td class="num">16</td><td><span class="i">+++++++++</span><span class="d">-------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h5">.local/src/dwm/config.h</a></td><td> | </td><td class="num">15</td><td><span class="i">++++++++++</span><span class="d">-----</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h6">.local/src/dwm/drw.c</a></td><td> | </td><td class="num">2</td><td><span class="i">++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h7">.local/src/dwm/drw.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h8">.local/src/dwm/dwm</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h9">.local/src/dwm/dwm.c</a></td><td> | </td><td class="num">7</td><td><span class="i">+++++++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h10">.local/src/dwm/dwm.o</a></td><td> | </td><td class="num">0</td><td><span class="i"></span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h11">.xprofile</a></td><td> | </td><td class="num">3</td><td><span class="i">++</span><span class="d">-</span></td></tr>
+</table></pre><pre>12 files changed, 66 insertions(+), 37 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a> b/<a href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -44,7 +44,7 @@ window:
+</a>   #
+   # Window opacity as a floating point number from `0.0` to `1.0`.
+   # The value `0.0` is completely transparent and `1.0` is opaque.
+<a href="#h0-0-3" id="h0-0-3" class="d">-  opacity: 0.85
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+  opacity: 1
+</a> 
+   # Window decorations
+   #
+<a href="#h0-1" id="h0-1" class="h">@@ -284,23 +284,29 @@ schemes:
+</a>     normal:
+       black:   &#39;#000000&#39;
+       red:     &#39;#ff5555&#39;
+<a href="#h0-1-3" id="h0-1-3" class="d">-      # green:    &#39;#caa9fa&#39;
+</a>       green:   &#39;#50fa7b&#39;
+<a href="#h0-1-5" id="h0-1-5" class="d">-      # yellow:  &#39;#f1fa8c&#39;
+</a><a href="#h0-1-6" id="h0-1-6" class="d">-      yellow:    &#39;#bd93f9&#39;
+</a><a href="#h0-1-7" id="h0-1-7" class="i">+      yellow:  &#39;#bd93f9&#39;
+</a>       blue:    &#39;#bd93f9&#39;
+       magenta: &#39;#ff79c6&#39;
+       cyan:    &#39;#8be9fd&#39;
+       white:   &#39;#eeeeee&#39;
+<a href="#h0-1-12" id="h0-1-12" class="i">+      # white:   &#39;#f6e1dc&#39;
+</a>     bright:
+       black:   &#39;#eeeeee&#39; #changed to white
+       # black:   &#39;#4d4d4d&#39;
+       red:     &#39;#ff6e67&#39;
+<a href="#h0-1-17" id="h0-1-17" class="i">+      # red:     &#39;#F78DB5&#39;
+</a>       green:   &#39;#5af78e&#39;
+<a href="#h0-1-19" id="h0-1-19" class="d">-      yellow:  &#39;#f4f99d&#39;
+</a><a href="#h0-1-20" id="h0-1-20" class="d">-      blue:    &#39;#caa9fa&#39;
+</a><a href="#h0-1-21" id="h0-1-21" class="d">-      magenta: &#39;#ff92d0&#39;
+</a><a href="#h0-1-22" id="h0-1-22" class="d">-      cyan:    &#39;#9aedfe&#39;
+</a><a href="#h0-1-23" id="h0-1-23" class="i">+      # yellow:  &#39;#f4f99d&#39;
+</a><a href="#h0-1-24" id="h0-1-24" class="i">+      yellow:  &#39;#ebf85b&#39;
+</a><a href="#h0-1-25" id="h0-1-25" class="i">+      # blue:    &#39;#f6e1dc&#39; # AAA
+</a><a href="#h0-1-26" id="h0-1-26" class="i">+      blue:    &#39;#F78DB5&#39; # AAA
+</a><a href="#h0-1-27" id="h0-1-27" class="i">+      # blue:    &#39;#bd93f9&#39; # AAA
+</a><a href="#h0-1-28" id="h0-1-28" class="i">+      # magenta: &#39;#F78DB5&#39;
+</a><a href="#h0-1-29" id="h0-1-29" class="i">+      # cyan:    &#39;#9aedfe&#39;
+</a><a href="#h0-1-30" id="h0-1-30" class="i">+      # cyan:    &#39;#f6e1dc&#39;
+</a><a href="#h0-1-31" id="h0-1-31" class="i">+      # cyan:    &#39;#F78DB5&#39;
+</a><a href="#h0-1-32" id="h0-1-32" class="i">+      cyan: &#39;#bd93f9&#39;
+</a>       white:   &#39;#e6e6e6&#39;
+     dim:
+       black:   &#39;#14151b&#39;
+<b>diff --git a/<a id="h1" href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a> b/<a href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -8,7 +8,7 @@ transition-pow-x = 0.1
+</a> transition-pow-y = 0.1
+ transition-pow-w = 0.1
+ transition-pow-h = 0.1
+<a href="#h1-0-3" id="h1-0-3" class="d">-size-transition = false 
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+size-transition = true
+</a> 
+ #################################
+ #             Shadows           #
+<a href="#h1-1" id="h1-1" class="h">@@ -26,17 +26,18 @@ shadow = false
+</a> #################################
+ # Fade windows in/out when opening/closing and when opacity changes,
+ #  unless no-fading-openclose is used.
+<a href="#h1-1-3" id="h1-1-3" class="d">-fading = false
+</a><a href="#h1-1-4" id="h1-1-4" class="i">+fading = false; 
+</a> fade-in-step = 0.03;
+ fade-out-step = 0.03;
+<a href="#h1-1-7" id="h1-1-7" class="d">-fade-delta = 6
+</a><a href="#h1-1-8" id="h1-1-8" class="i">+fade-delta = 10;
+</a> 
+ 
+ #################################
+ #   Transparency / Opacity      #
+ #################################
+ inactive-opacity = 0.95;
+<a href="#h1-1-15" id="h1-1-15" class="d">-frame-opacity = 0.9;
+</a><a href="#h1-1-16" id="h1-1-16" class="i">+# frame-opacity = 0.9;
+</a><a href="#h1-1-17" id="h1-1-17" class="i">+frame-opacity = 1;
+</a> inactive-opacity-override = true;
+ opacity-rule = [
+ 	&quot;100:class_g = &#39;firefox&#39;&quot;,
+<a href="#h1-2" id="h1-2" class="h">@@ -48,7 +49,7 @@ opacity-rule = [
+</a> 
+ 
+ #################################
+<a href="#h1-2-3" id="h1-2-3" class="d">-#           Corners             #
+</a><a href="#h1-2-4" id="h1-2-4" class="i">+          # Corners             #
+</a> #################################
+ corner-radius = 20.0
+ round-borders = 1
+<a href="#h1-3" id="h1-3" class="h">@@ -57,7 +58,9 @@ rounded-corners-exclude = [
+</a>   # &quot;window_type = &#39;normal&#39;&quot;,
+   # &quot;window_type = &#39;dock&#39;&quot;,
+   # &quot;window_type = &#39;desktop&#39;&quot;,
+<a href="#h1-3-3" id="h1-3-3" class="d">-  &quot;class_g = &#39;dwm&#39;&quot;
+</a><a href="#h1-3-4" id="h1-3-4" class="i">+  &quot;class_g = &#39;dwm&#39;&quot;,
+</a><a href="#h1-3-5" id="h1-3-5" class="i">+  &quot;class_g = &#39;dmenu&#39;&quot;,
+</a><a href="#h1-3-6" id="h1-3-6" class="i">+  # &quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;;
+</a> ];
+ 
+ 
+<a href="#h1-4" id="h1-4" class="h">@@ -75,11 +78,11 @@ rounded-corners-exclude = [
+</a> 
+ # Exclude conditions for background blur.
+ # blur-background-exclude = []
+<a href="#h1-4-3" id="h1-4-3" class="d">-blur-background-exclude = [
+</a><a href="#h1-4-4" id="h1-4-4" class="d">-  &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h1-4-5" id="h1-4-5" class="d">-  &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h1-4-6" id="h1-4-6" class="d">-  &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h1-4-7" id="h1-4-7" class="d">-];
+</a><a href="#h1-4-8" id="h1-4-8" class="i">+# blur-background-exclude = [
+</a><a href="#h1-4-9" id="h1-4-9" class="i">+#   &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h1-4-10" id="h1-4-10" class="i">+#   &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h1-4-11" id="h1-4-11" class="i">+#   &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h1-4-12" id="h1-4-12" class="i">+# ];
+</a> 
+ #################################
+ #       General Settings        #
+<b>diff --git a/<a id="h2" href="../file/.local/.macros/automatic/fehbg.sh.html">.local/.macros/automatic/fehbg.sh</a> b/<a href="../file/.local/.macros/automatic/fehbg.sh.html">.local/.macros/automatic/fehbg.sh</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -7,6 +7,7 @@ num_screens=$(xrandr | grep -o -c &#39; connected&#39;) #count num. of connected screens
+</a> if [ $num_screens -eq 1 ]
+ then
+     feh --no-fehbg --bg-fill &#39;/home/diego/Pictures/wallpaper-master/neon.jpg&#39;
+<a href="#h2-0-3" id="h2-0-3" class="i">+    # feh --no-fehbg --bg-fill &#39;/home/diego/Pictures/wallpaper-master/evaCatpuchin.png&#39;
+</a> else
+     /home/diego/.local/.macros/automatic/screensNetherlands.sh
+     # feh --no-fehbg --bg-fill &#39;/home/diego/Pictures/wallpaper-master/undefined - Imgur(1).jpg&#39; --bg-fill &#39;/home/diego/Pictures/wallpaper-master/neon.jpg&#39;
+<b>diff --git a/<a id="h3" href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a> b/<a href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -56,13 +56,15 @@ for battery in /sys/class/power_supply/BAT?*; do
+</a>     fi
+ 	   
+ 	case &quot;$(cat &quot;$battery/status&quot; 2&gt;&amp;1)&quot; in
+<a href="#h3-0-3" id="h3-0-3" class="d">-		&quot;Discharging&quot;) status=$notChargingIcon ;;
+</a><a href="#h3-0-4" id="h3-0-4" class="d">-		&quot;Charging&quot;) status=$chargingIcon ;;
+</a><a href="#h3-0-5" id="h3-0-5" class="d">-		&quot;Not charging&quot;) status= &quot;&quot; ;;
+</a><a href="#h3-0-6" id="h3-0-6" class="d">-		&quot;Unknown&quot;) status=&quot;♻️&quot; ;;
+</a><a href="#h3-0-7" id="h3-0-7" class="d">-		*) exit 1 ;;
+</a><a href="#h3-0-8" id="h3-0-8" class="i">+		&quot;Discharging&quot;) status=&quot;$notChargingIcon&quot;;;
+</a><a href="#h3-0-9" id="h3-0-9" class="i">+		&quot;Charging&quot;) status=&quot;$chargingIcon&quot;;;
+</a><a href="#h3-0-10" id="h3-0-10" class="i">+		&quot;Not charging&quot;) status=&quot;&quot;;;
+</a><a href="#h3-0-11" id="h3-0-11" class="i">+		&quot;Unknown&quot;) status=&quot;♻️ &quot;;;
+</a><a href="#h3-0-12" id="h3-0-12" class="i">+		*) status=&quot;&quot; ;;
+</a> 	esac
+ 
+<a href="#h3-0-15" id="h3-0-15" class="i">+    #status=$chargingIcon
+</a><a href="#h3-0-16" id="h3-0-16" class="i">+
+</a> 	# Will make a warn variable if discharging and low
+     # [ &quot;$capacity&quot; -le 25 ] &amp;&amp; warn=&quot;❗&quot;
+     [ &quot;$capacity&quot; -le 10 ] &amp;&amp; warn=&quot;&quot;
+<b>diff --git a/<a id="h4" href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a> b/<a href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a></b>
+<a href="#h4-0" id="h4-0" class="h">@@ -10,14 +10,16 @@
+</a> # NOTE: The official spotify client does not provide the track position or shuffle status through playerctl. This does work through spotifyd however.
+ 
+ 
+<a href="#h4-0-3" id="h4-0-3" class="d">-if ps -C spotify &gt; /dev/null; then
+</a><a href="#h4-0-4" id="h4-0-4" class="d">-    PLAYER=&quot;spotify&quot;
+</a><a href="#h4-0-5" id="h4-0-5" class="d">-elif ps -C spotifyd &gt; /dev/null; then
+</a><a href="#h4-0-6" id="h4-0-6" class="d">-    PLAYER=&quot;spotifyd&quot;
+</a><a href="#h4-0-7" id="h4-0-7" class="d">-fi
+</a><a href="#h4-0-8" id="h4-0-8" class="i">+# if ps -C spotify &gt; /dev/null; then
+</a><a href="#h4-0-9" id="h4-0-9" class="i">+#     PLAYER=&quot;spotify&quot;
+</a><a href="#h4-0-10" id="h4-0-10" class="i">+# elif ps -C spotifyd &gt; /dev/null; then
+</a><a href="#h4-0-11" id="h4-0-11" class="i">+#     PLAYER=&quot;spotifyd&quot;
+</a><a href="#h4-0-12" id="h4-0-12" class="i">+# fi
+</a> 
+<a href="#h4-0-14" id="h4-0-14" class="i">+TRACK=$(playerctl metadata title)
+</a> 
+<a href="#h4-0-16" id="h4-0-16" class="d">-if [ &quot;$PLAYER&quot; = &quot;spotify&quot; ] || [ &quot;$PLAYER&quot; = &quot;spotifyd&quot; ]; then
+</a><a href="#h4-0-17" id="h4-0-17" class="i">+# if [ &quot;$PLAYER&quot; = &quot;spotify&quot; ] || [ &quot;$PLAYER&quot; = &quot;spotifyd&quot; ]; then
+</a><a href="#h4-0-18" id="h4-0-18" class="i">+if [ ! -z &quot;$TRACK&quot; ]; then
+</a>     ARTIST=$(playerctl metadata artist)
+     TRACK=$(playerctl metadata title)
+     POSITION=$(playerctl position | sed &#39;s/..\{6\}$//&#39;)
+<a href="#h4-1" id="h4-1" class="h">@@ -42,7 +44,7 @@ if [ &quot;$PLAYER&quot; = &quot;spotify&quot; ] || [ &quot;$PLAYER&quot; = &quot;spotifyd&quot; ]; then
+</a>         echo &quot;bad&quot;
+     else
+         # printf &quot;%s%s %s - %s &quot; &quot;$SEP1&quot; &quot;$STATUS&quot; &quot;$ARTIST&quot; &quot;$TRACK&quot;
+<a href="#h4-1-3" id="h4-1-3" class="d">-        printf &quot;%s%s - %s &quot; &quot;$STATUS &quot; &quot;$ARTIST&quot; &quot;$TRACK&quot; 
+</a><a href="#h4-1-4" id="h4-1-4" class="i">+        printf &quot;%s%s - %s &quot; &quot;$STATUS &quot; &quot;$TRACK&quot; &quot;$ARTIST&quot; 
+</a>         # printf &quot;%0d:%02d&quot; $((DURATION%3600/60)) $((DURATION%60))
+         printf &quot;%s\n&quot; &quot;$SEP2&quot;
+     fi
+<b>diff --git a/<a id="h5" href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a> b/<a href="../file/.local/src/dwm/config.h.html">.local/src/dwm/config.h</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -2,25 +2,29 @@
+</a> #include &lt;X11/XF86keysym.h&gt;
+ 
+ /* appearance */
+<a href="#h5-0-3" id="h5-0-3" class="d">-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+</a><a href="#h5-0-4" id="h5-0-4" class="i">+static const unsigned int borderpx  = 4;        /* border pixel of windows */
+</a> static const unsigned int snap      = 32;       /* snap pixel */
+<a href="#h5-0-6" id="h5-0-6" class="d">-static const unsigned int gappx     = 5;        /* gaps between windows */
+</a><a href="#h5-0-7" id="h5-0-7" class="i">+static const unsigned int gappx     = 6;        /* gaps between windows */
+</a> static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+ static const char *fonts[]          = { &quot;JetBrains Mono:size=13&quot;, &quot;JoyPixels:pixelsize=13:antialias=true:autohint=true&quot;};
+ static const char dmenufont[]       = &quot;JetBrains Mono:size=13&quot;;
+ static const char col_gray2[]       = &quot;#444444&quot;;
+ static const char col_gray3[]       = &quot;#262626&quot;;
+<a href="#h5-0-14" id="h5-0-14" class="i">+static const char col_gray4[]       = &quot;#282a36&quot;;
+</a> static const char col_black[]       = &quot;#000000&quot;;
+ static const char col_white[]       = &quot;#eeeeee&quot;;
+ /* static const char col_whitegray[]   = &quot;#68686d&quot;; */
+ static const char col_pink[]        = &quot;#ff69b4&quot;;
+ static const char col_darkBlue[]    = &quot;#003049&quot;;
+ static const char col_teal[]        = &quot;#169378&quot;;
+<a href="#h5-0-21" id="h5-0-21" class="i">+static const char col_purple[]      = &quot;#bd93f9&quot;;
+</a><a href="#h5-0-22" id="h5-0-22" class="i">+static const char col_border[]      = &quot;#f6e1dc&quot;;
+</a><a href="#h5-0-23" id="h5-0-23" class="i">+
+</a> static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+<a href="#h5-0-26" id="h5-0-26" class="d">-	[SchemeNorm] = { col_white, col_gray3,  col_black},
+</a><a href="#h5-0-27" id="h5-0-27" class="d">-	[SchemeSel]  = { col_pink, col_gray3,  col_white},
+</a><a href="#h5-0-28" id="h5-0-28" class="i">+	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
+</a><a href="#h5-0-29" id="h5-0-29" class="i">+	[SchemeSel]  = { col_pink, col_gray4,  col_pink},
+</a> 	/* [SchemeNorm] = { col_white, col_gray3,  col_black }, */
+ 	/* [SchemeSel]  = { col_white, col_pink,  col_pink}, */
+ 	/* [SchemeNorm] = { col_white, col_gray2,  col_gray2 }, */
+<a href="#h5-1" id="h5-1" class="h">@@ -68,7 +72,7 @@ static const Layout layouts[] = {
+</a> 
+ /* commands */
+ static char dmenumon[2] = &quot;0&quot;; /* component of dmenucmd, manipulated in spawn() */
+<a href="#h5-1-3" id="h5-1-3" class="d">-static const char *dmenucmd[] = { &quot;dmenu_run&quot;, &quot;-m&quot;, dmenumon, &quot;-fn&quot;, dmenufont, &quot;-nb&quot;, col_gray3, &quot;-nf&quot;, col_white, &quot;-sb&quot;, col_pink, &quot;-sf&quot;, col_white, NULL };
+</a><a href="#h5-1-4" id="h5-1-4" class="i">+static const char *dmenucmd[] = { &quot;dmenu_run&quot;, &quot;-m&quot;, dmenumon, &quot;-fn&quot;, dmenufont, &quot;-nb&quot;, col_gray4, &quot;-nf&quot;, col_white, &quot;-sb&quot;, col_pink, &quot;-sf&quot;, col_white, NULL };
+</a> static const char *termcmd[]  = { &quot;alacritty&quot;, NULL };
+ 
+ static const char *browser[]  = { &quot;firefox&quot;, NULL };
+<a href="#h5-2" id="h5-2" class="h">@@ -152,6 +156,7 @@ static const Key keys[] = {
+</a> 	TAGKEYS(                        XK_8,                      5)
+ 	TAGKEYS(                        XK_9,                      6)
+ 	TAGKEYS(                        XK_0,                      7)
+<a href="#h5-2-3" id="h5-2-3" class="i">+    { MODKEY|ShiftMask,             XK_r,      quit,           {1} },
+</a> 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+ };
+ 
+<b>diff --git a/<a id="h6" href="../file/.local/src/dwm/drw.c.html">.local/src/dwm/drw.c</a> b/<a href="../file/.local/src/dwm/drw.c.html">.local/src/dwm/drw.c</a></b>
+<a href="#h6-0" id="h6-0" class="h">@@ -190,6 +190,8 @@ drw_clr_create(Drw *drw, Clr *dest, const char *clrname)
+</a> 	                       DefaultColormap(drw-&gt;dpy, drw-&gt;screen),
+ 	                       clrname, dest))
+ 		die(&quot;error, cannot allocate color &#39;%s&#39;&quot;, clrname);
+<a href="#h6-0-3" id="h6-0-3" class="i">+
+</a><a href="#h6-0-4" id="h6-0-4" class="i">+        dest-&gt;pixel |= 0xff &lt;&lt; 24;
+</a> }
+ 
+ /* Wrapper to create color schemes. The caller has to call free(3) on the
+<b>diff --git a/<a id="h7" href="../file/.local/src/dwm/drw.o.html">.local/src/dwm/drw.o</a> b/<a href="../file/.local/src/dwm/drw.o.html">.local/src/dwm/drw.o</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h8" href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a> b/<a href="../file/.local/src/dwm/dwm.html">.local/src/dwm/dwm</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h9" href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a> b/<a href="../file/.local/src/dwm/dwm.c.html">.local/src/dwm/dwm.c</a></b>
+<a href="#h9-0" id="h9-0" class="h">@@ -267,6 +267,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
+</a> };
+ static Atom wmatom[WMLast], netatom[NetLast];
+ static int running = 1;
+<a href="#h9-0-3" id="h9-0-3" class="i">+static Bool restart = False;
+</a> static Cur *cursor[CurLast];
+ static Clr **scheme;
+ static Display *dpy;
+<a href="#h9-1" id="h9-1" class="h">@@ -1294,6 +1295,9 @@ viewprevtag(const Arg *arg) {
+</a> void
+ quit(const Arg *arg)
+ {
+<a href="#h9-1-3" id="h9-1-3" class="i">+    if(arg-&gt;i) {
+</a><a href="#h9-1-4" id="h9-1-4" class="i">+        restart = True;
+</a><a href="#h9-1-5" id="h9-1-5" class="i">+    }
+</a> 	running = 0;
+ }
+ 
+<a href="#h9-2" id="h9-2" class="h">@@ -2221,6 +2225,9 @@ main(int argc, char *argv[])
+</a> #endif /* __OpenBSD__ */
+ 	scan();
+ 	run();
+<a href="#h9-2-3" id="h9-2-3" class="i">+    if (restart) {
+</a><a href="#h9-2-4" id="h9-2-4" class="i">+        execvp(argv[0], argv);
+</a><a href="#h9-2-5" id="h9-2-5" class="i">+    }
+</a> 	cleanup();
+ 	XCloseDisplay(dpy);
+ 	return EXIT_SUCCESS;
+<b>diff --git a/<a id="h10" href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a> b/<a href="../file/.local/src/dwm/dwm.o.html">.local/src/dwm/dwm.o</a></b>
+Binary files differ.
+<b>diff --git a/<a id="h11" href="../file/.xprofile.html">.xprofile</a> b/<a href="../file/.xprofile.html">.xprofile</a></b>
+<a href="#h11-0" id="h11-0" class="h">@@ -8,9 +8,10 @@ amixer set Master mute
+</a> # export _JAVA_AWT_WM_NONREPARENTING=1
+ wmname &quot;LG3D&quot;
+ 
+<a href="#h11-0-3" id="h11-0-3" class="d">-
+</a> # xcompmgr &amp;
+ picom --experimental-backends &amp;
+<a href="#h11-0-6" id="h11-0-6" class="i">+# picom &amp;
+</a><a href="#h11-0-7" id="h11-0-7" class="i">+# picom -b 
+</a> 
+ exec dwm
+ # exec startxfce4 
+</pre>
+</div>
+</body>
+</html>

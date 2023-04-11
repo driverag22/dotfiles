@@ -9,8 +9,9 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 7;       /* horizontal padding of bar */
-static const int user_bh            = 27;
+static const int user_bh            = 26;
 static const char *fonts[]          = { "JetBrains Mono:size=13"};
+/* static const char *fonts[]          = { "Comic mono:size=13"}; */
 static const char col_gray4[]       = "#31333f";
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>appasroot.sh - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../../"><img src="../../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../../log.html">Log</a> | <a href="../../../../../files.html">Files</a> | <a href="../../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> appasroot.sh (2091B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> #!/usr/bin/env bash
+<a href="#l2" class="line" id="l2">      2</a> 
+<a href="#l3" class="line" id="l3">      3</a> ## Author  : Aditya Shakya (adi1090x)
+<a href="#l4" class="line" id="l4">      4</a> ## Github  : @adi1090x
+<a href="#l5" class="line" id="l5">      5</a> #
+<a href="#l6" class="line" id="l6">      6</a> ## Applets : Run Applications as Root
+<a href="#l7" class="line" id="l7">      7</a> 
+<a href="#l8" class="line" id="l8">      8</a> # Import Current Theme
+<a href="#l9" class="line" id="l9">      9</a> source &quot;$HOME&quot;/.config/rofi/applets/shared/theme.bash
+<a href="#l10" class="line" id="l10">     10</a> theme=&quot;$type/$style&quot;
+<a href="#l11" class="line" id="l11">     11</a> 
+<a href="#l12" class="line" id="l12">     12</a> # Theme Elements
+<a href="#l13" class="line" id="l13">     13</a> prompt=&#39;Applications&#39;
+<a href="#l14" class="line" id="l14">     14</a> mesg=&#39;Run Applications as Root&#39;
+<a href="#l15" class="line" id="l15">     15</a> 
+<a href="#l16" class="line" id="l16">     16</a> if [[ &quot;$theme&quot; == *&#39;type-1&#39;* ]]; then
+<a href="#l17" class="line" id="l17">     17</a> 	list_col=&#39;1&#39;
+<a href="#l18" class="line" id="l18">     18</a> 	list_row=&#39;5&#39;
+<a href="#l19" class="line" id="l19">     19</a> 	win_width=&#39;400px&#39;
+<a href="#l20" class="line" id="l20">     20</a> elif [[ &quot;$theme&quot; == *&#39;type-3&#39;* ]]; then
+<a href="#l21" class="line" id="l21">     21</a> 	list_col=&#39;1&#39;
+<a href="#l22" class="line" id="l22">     22</a> 	list_row=&#39;5&#39;
+<a href="#l23" class="line" id="l23">     23</a> 	win_width=&#39;120px&#39;
+<a href="#l24" class="line" id="l24">     24</a> elif [[ &quot;$theme&quot; == *&#39;type-5&#39;* ]]; then
+<a href="#l25" class="line" id="l25">     25</a> 	list_col=&#39;1&#39;
+<a href="#l26" class="line" id="l26">     26</a> 	list_row=&#39;5&#39;
+<a href="#l27" class="line" id="l27">     27</a> 	win_width=&#39;520px&#39;
+<a href="#l28" class="line" id="l28">     28</a> elif [[ ( &quot;$theme&quot; == *&#39;type-2&#39;* ) || ( &quot;$theme&quot; == *&#39;type-4&#39;* ) ]]; then
+<a href="#l29" class="line" id="l29">     29</a> 	list_col=&#39;5&#39;
+<a href="#l30" class="line" id="l30">     30</a> 	list_row=&#39;1&#39;
+<a href="#l31" class="line" id="l31">     31</a> 	win_width=&#39;670px&#39;
+<a href="#l32" class="line" id="l32">     32</a> fi
+<a href="#l33" class="line" id="l33">     33</a> 
+<a href="#l34" class="line" id="l34">     34</a> # Options
+<a href="#l35" class="line" id="l35">     35</a> layout=`cat ${theme} | grep &#39;USE_ICON&#39; | cut -d&#39;=&#39; -f2`
+<a href="#l36" class="line" id="l36">     36</a> if [[ &quot;$layout&quot; == &#39;NO&#39; ]]; then
+<a href="#l37" class="line" id="l37">     37</a> 	option_1=&quot; Alacritty&quot;
+<a href="#l38" class="line" id="l38">     38</a> 	option_2=&quot; Thunar&quot;
+<a href="#l39" class="line" id="l39">     39</a> 	option_3=&quot; Geany&quot;
+<a href="#l40" class="line" id="l40">     40</a> 	option_4=&quot; Ranger&quot;
+<a href="#l41" class="line" id="l41">     41</a> 	option_5=&quot; Vim&quot;
+<a href="#l42" class="line" id="l42">     42</a> else
+<a href="#l43" class="line" id="l43">     43</a> 	option_1=&quot;&quot;
+<a href="#l44" class="line" id="l44">     44</a> 	option_2=&quot;&quot;
+<a href="#l45" class="line" id="l45">     45</a> 	option_3=&quot;&quot;
+<a href="#l46" class="line" id="l46">     46</a> 	option_4=&quot;&quot;
+<a href="#l47" class="line" id="l47">     47</a> 	option_5=&quot;&quot;
+<a href="#l48" class="line" id="l48">     48</a> fi
+<a href="#l49" class="line" id="l49">     49</a> 
+<a href="#l50" class="line" id="l50">     50</a> # Rofi CMD
+<a href="#l51" class="line" id="l51">     51</a> rofi_cmd() {
+<a href="#l52" class="line" id="l52">     52</a> 	rofi -theme-str &quot;window {width: $win_width;}&quot; \
+<a href="#l53" class="line" id="l53">     53</a> 		-theme-str &quot;listview {columns: $list_col; lines: $list_row;}&quot; \
+<a href="#l54" class="line" id="l54">     54</a> 		-theme-str &#39;textbox-prompt-colon {str: &quot;&quot;;}&#39; \
+<a href="#l55" class="line" id="l55">     55</a> 		-dmenu \
+<a href="#l56" class="line" id="l56">     56</a> 		-p &quot;$prompt&quot; \
+<a href="#l57" class="line" id="l57">     57</a> 		-mesg &quot;$mesg&quot; \
+<a href="#l58" class="line" id="l58">     58</a> 		-markup-rows \
+<a href="#l59" class="line" id="l59">     59</a> 		-theme ${theme}
+<a href="#l60" class="line" id="l60">     60</a> }
+<a href="#l61" class="line" id="l61">     61</a> 
+<a href="#l62" class="line" id="l62">     62</a> # Pass variables to rofi dmenu
+<a href="#l63" class="line" id="l63">     63</a> run_rofi() {
+<a href="#l64" class="line" id="l64">     64</a> 	echo -e &quot;$option_1\n$option_2\n$option_3\n$option_4\n$option_5&quot; | rofi_cmd
+<a href="#l65" class="line" id="l65">     65</a> }
+<a href="#l66" class="line" id="l66">     66</a> 
+<a href="#l67" class="line" id="l67">     67</a> # Execute Command
+<a href="#l68" class="line" id="l68">     68</a> run_cmd() {
+<a href="#l69" class="line" id="l69">     69</a> 	polkit_cmd=&quot;pkexec env PATH=$PATH DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY&quot;
+<a href="#l70" class="line" id="l70">     70</a> 	if [[ &quot;$1&quot; == &#39;--opt1&#39; ]]; then
+<a href="#l71" class="line" id="l71">     71</a> 		${polkit_cmd} alacritty
+<a href="#l72" class="line" id="l72">     72</a> 	elif [[ &quot;$1&quot; == &#39;--opt2&#39; ]]; then
+<a href="#l73" class="line" id="l73">     73</a> 		${polkit_cmd} dbus-run-session thunar
+<a href="#l74" class="line" id="l74">     74</a> 	elif [[ &quot;$1&quot; == &#39;--opt3&#39; ]]; then
+<a href="#l75" class="line" id="l75">     75</a> 		${polkit_cmd} geany
+<a href="#l76" class="line" id="l76">     76</a> 	elif [[ &quot;$1&quot; == &#39;--opt4&#39; ]]; then
+<a href="#l77" class="line" id="l77">     77</a> 		${polkit_cmd} alacritty -e ranger
+<a href="#l78" class="line" id="l78">     78</a> 	elif [[ &quot;$1&quot; == &#39;--opt5&#39; ]]; then
+<a href="#l79" class="line" id="l79">     79</a> 		${polkit_cmd} alacritty -e vim
+<a href="#l80" class="line" id="l80">     80</a> 	fi
+<a href="#l81" class="line" id="l81">     81</a> }
+<a href="#l82" class="line" id="l82">     82</a> 
+<a href="#l83" class="line" id="l83">     83</a> # Actions
+<a href="#l84" class="line" id="l84">     84</a> chosen=&quot;$(run_rofi)&quot;
+<a href="#l85" class="line" id="l85">     85</a> case ${chosen} in
+<a href="#l86" class="line" id="l86">     86</a>     $option_1)
+<a href="#l87" class="line" id="l87">     87</a> 		run_cmd --opt1
+<a href="#l88" class="line" id="l88">     88</a>         ;;
+<a href="#l89" class="line" id="l89">     89</a>     $option_2)
+<a href="#l90" class="line" id="l90">     90</a> 		run_cmd --opt2
+<a href="#l91" class="line" id="l91">     91</a>         ;;
+<a href="#l92" class="line" id="l92">     92</a>     $option_3)
+<a href="#l93" class="line" id="l93">     93</a> 		run_cmd --opt3
+<a href="#l94" class="line" id="l94">     94</a>         ;;
+<a href="#l95" class="line" id="l95">     95</a>     $option_4)
+<a href="#l96" class="line" id="l96">     96</a> 		run_cmd --opt4
+<a href="#l97" class="line" id="l97">     97</a>         ;;
+<a href="#l98" class="line" id="l98">     98</a>     $option_5)
+<a href="#l99" class="line" id="l99">     99</a> 		run_cmd --opt5
+<a href="#l100" class="line" id="l100">    100</a>         ;;
+<a href="#l101" class="line" id="l101">    101</a> esac
+<a href="#l102" class="line" id="l102">    102</a> 
+</pre>
+</div>
+</body>
+</html>

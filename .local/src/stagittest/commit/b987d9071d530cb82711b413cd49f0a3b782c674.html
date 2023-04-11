@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>changed zsh and alacritty themes - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/b987d9071d530cb82711b413cd49f0a3b782c674.html">b987d9071d530cb82711b413cd49f0a3b782c674</a>
+<b>parent</b> <a href="../commit/390690b726f47b48d631b2c7c46984d9b969ae5b.html">390690b726f47b48d631b2c7c46984d9b969ae5b</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Tue, 27 Dec 2022 19:51:33 +0100
+
+changed zsh and alacritty themes
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.config/alacritty/alacritty.yml</a></td><td> | </td><td class="num">10</td><td><span class="i">+++++++</span><span class="d">---</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.zshrc</a></td><td> | </td><td class="num">7</td><td><span class="i">++++++</span><span class="d">-</span></td></tr>
+</table></pre><pre>2 files changed, 13 insertions(+), 4 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a> b/<a href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -1,3 +1,5 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="i">+import:
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+  - ~/.alacritty-colorscheme/themes/{scheme_name}.yaml
+</a> # Configuration for Alacritty, the GPU enhanced terminal emulator.
+ 
+ # Any items in the `env` entry below will be added as
+<a href="#h0-1" id="h0-1" class="h">@@ -272,7 +274,7 @@ schemes:
+</a>       focused_match:
+         foreground: &#39;#44475a&#39;
+         background: &#39;#ffb86c&#39;
+<a href="#h0-1-3" id="h0-1-3" class="d">-      bar:
+</a><a href="#h0-1-4" id="h0-1-4" class="i">+      footer_bar:
+</a>         background: &#39;#282a36&#39;
+         foreground: &#39;#f8f8f2&#39;
+     line_indicator:
+<a href="#h0-2" id="h0-2" class="h">@@ -285,7 +287,8 @@ schemes:
+</a>       black:   &#39;#000000&#39;
+       red:     &#39;#ff5555&#39;
+       green:   &#39;#50fa7b&#39;
+<a href="#h0-2-3" id="h0-2-3" class="d">-      yellow:  &#39;#f1fa8c&#39;
+</a><a href="#h0-2-4" id="h0-2-4" class="i">+      # yellow:  &#39;#f1fa8c&#39;
+</a><a href="#h0-2-5" id="h0-2-5" class="i">+      yellow:    &#39;#bd93f9&#39;
+</a>       blue:    &#39;#bd93f9&#39;
+       magenta: &#39;#ff79c6&#39;
+       cyan:    &#39;#8be9fd&#39;
+<a href="#h0-3" id="h0-3" class="h">@@ -578,7 +581,8 @@ schemes:
+</a> # *SolarizedDark
+ # *TomorrowNight
+ 
+<a href="#h0-3-3" id="h0-3-3" class="d">-colors: *MonokaiPro
+</a><a href="#h0-3-4" id="h0-3-4" class="i">+colors: *Dracula
+</a><a href="#h0-3-5" id="h0-3-5" class="i">+# colors: *Palenight
+</a> 
+ #######################################
+ ##       END OF COLOR SCHEMES        ##
+<b>diff --git a/<a id="h1" href="../file/.zshrc.html">.zshrc</a> b/<a href="../file/.zshrc.html">.zshrc</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -8,6 +8,7 @@ export ZSH=&quot;$HOME/.oh-my-zsh&quot;
+</a> # load a random theme each time oh-my-zsh is loaded, in which case,
+ # to know which specific one was loaded, run: echo $RANDOM_THEME
+ # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+<a href="#h1-0-3" id="h1-0-3" class="i">+# ZSH_THEME=&quot;sunrise&quot;
+</a> ZSH_THEME=&quot;robbyrussell&quot;
+ 
+ # Set list of themes to pick from when loading at random
+<a href="#h1-1" id="h1-1" class="h">@@ -17,7 +18,7 @@ ZSH_THEME=&quot;robbyrussell&quot;
+</a> # ZSH_THEME_RANDOM_CANDIDATES=( &quot;robbyrussell&quot; &quot;agnoster&quot; )
+ 
+ # Uncomment the following line to use case-sensitive completion.
+<a href="#h1-1-3" id="h1-1-3" class="d">-# CASE_SENSITIVE=&quot;true&quot;
+</a><a href="#h1-1-4" id="h1-1-4" class="i">+CASE_SENSITIVE=&quot;false&quot;
+</a> 
+ # Uncomment the following line to use hyphen-insensitive completion.
+ # Case-sensitive completion must be off. _ and - will be interchangeable.
+<a href="#h1-2" id="h1-2" class="h">@@ -101,10 +102,14 @@ source /usr/share/nvm/init-nvm.sh
+</a> # alias zshconfig=&quot;mate ~/.zshrc&quot;
+ # alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;
+ #
+<a href="#h1-2-3" id="h1-2-3" class="i">+
+</a> pfetch
+ 
+ # opam configuration
+ [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  &gt; /dev/null 2&gt; /dev/null
+ 
+<a href="#h1-2-9" id="h1-2-9" class="i">+autoload -Uz compinit promptinit
+</a><a href="#h1-2-10" id="h1-2-10" class="i">+compinit
+</a><a href="#h1-2-11" id="h1-2-11" class="i">+
+</a> alias config=&#39;/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME&#39;
+ wmname &quot;LG3D&quot;
+</pre>
+</div>
+</body>
+</html>

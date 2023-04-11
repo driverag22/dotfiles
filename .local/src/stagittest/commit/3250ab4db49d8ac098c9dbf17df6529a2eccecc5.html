@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>changed dwm bar slightly - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/3250ab4db49d8ac098c9dbf17df6529a2eccecc5.html">3250ab4db49d8ac098c9dbf17df6529a2eccecc5</a>
+<b>parent</b> <a href="../commit/e3883be21d8c043824e13078c087bd3ec4476bd9.html">e3883be21d8c043824e13078c087bd3ec4476bd9</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Tue, 27 Dec 2022 19:53:01 +0100
+
+changed dwm bar slightly
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/.macros/dwmBar/battery.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/.macros/dwmBar/dwmbar.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+</table></pre><pre>2 files changed, 2 insertions(+), 2 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a> b/<a href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -1,4 +1,4 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="d">-#!/bin/sh
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+#!/bin/bash
+</a> 
+ # Prints all batteries, their percentage remaining and an emoji corresponding
+ # to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+<b>diff --git a/<a id="h1" href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a> b/<a href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -8,7 +8,7 @@ while true; do
+</a> 
+         date &#39;+  %a. %d %b. ]   [   %R&#39; &gt; /tmp/CurTime.tmp
+ 
+<a href="#h1-0-3" id="h1-0-3" class="d">-        sleep 60s
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+        sleep 30s
+</a> done &amp;
+ 
+ while true; do
+</pre>
+</div>
+</body>
+</html>

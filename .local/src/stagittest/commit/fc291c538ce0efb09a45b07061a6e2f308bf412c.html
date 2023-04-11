@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>added more looks to dwmbar - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/fc291c538ce0efb09a45b07061a6e2f308bf412c.html">fc291c538ce0efb09a45b07061a6e2f308bf412c</a>
+<b>parent</b> <a href="../commit/d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba.html">d0fdb275afdbbc3c9cc2491a6fb4fb6cad702aba</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Fri, 30 Dec 2022 08:07:32 +0100
+
+added more looks to dwmbar
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/.macros/dwmBar/dwmbar.sh</a></td><td> | </td><td class="num">5</td><td><span class="i">+++</span><span class="d">--</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.local/.macros/dwmBar/wifi.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+</table></pre><pre>2 files changed, 4 insertions(+), 3 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a> b/<a href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -5,8 +5,9 @@
+</a> 
+ while true; do
+         # values=$(/home/diego/.local/.macros/dwmBar/values.sh)
+<a href="#h0-0-3" id="h0-0-3" class="d">-        values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+        # values=$(/home/diego/.local/.macros/dwmBar/simpleValues.sh)
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+        values=$(/home/diego/.local/.macros/dwmBar/cleanValues.sh)
+</a>         # values=$(/home/diego/.local/.macros/dwmBar/minimalistValues.sh)
+         xsetroot -name &quot;$values&quot;
+<a href="#h0-0-8" id="h0-0-8" class="d">-        sleep 0.5s
+</a><a href="#h0-0-9" id="h0-0-9" class="i">+        sleep 2s
+</a> done &amp;
+<b>diff --git a/<a id="h1" href="../file/.local/.macros/dwmBar/wifi.sh.html">.local/.macros/dwmBar/wifi.sh</a> b/<a href="../file/.local/.macros/dwmBar/wifi.sh.html">.local/.macros/dwmBar/wifi.sh</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -19,7 +19,7 @@ else
+</a>     icon=&quot; &quot;
+     # printf &quot;%s%s%s&quot; &quot;$icon&quot; &quot; $wifiBars&quot; &quot; $wifiRate&quot;;
+     # printf &quot;%s%s&quot; &quot; $wifiBars&quot; &quot; $wifiSignal&quot;;
+<a href="#h1-0-3" id="h1-0-3" class="d">-    printf &quot; %sMB  %sMB  %s%s&quot; &quot; $upStream&quot; &quot;$downStream&quot; &quot;$icon&quot; &quot; $wifiSignal&quot;;
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+    printf &quot; %sMB  %sMB  %s%s&quot; &quot; $upStream&quot; &quot;$downStream&quot; &quot;$icon &quot; &quot; $wifiSignal&quot;;
+</a>     # printf &quot;%s%s%s&quot; &quot;$icon&quot; &quot; $wifiSignal&quot;;
+ fi
+ 
+</pre>
+</div>
+</body>
+</html>

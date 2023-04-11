@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>alacritty config file - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/2974df679c201b587c92d37edb7fb8601fc1617f.html">2974df679c201b587c92d37edb7fb8601fc1617f</a>
+<b>parent</b> <a href="../commit/3b4c178d186b63009b4f336b71b26297e29a7c38.html">3b4c178d186b63009b4f336b71b26297e29a7c38</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Tue, 27 Dec 2022 17:11:19 +0100
+
+alacritty config file
+
+<b>Diffstat:</b>
+<table><tr><td class="A">A</td><td><a href="#h0">.config/alacritty/alacritty.yml</a></td><td> | </td><td class="num">877</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+</table></pre><pre>1 file changed, 877 insertions(+), 0 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a> b/<a href="../file/.config/alacritty/alacritty.yml.html">.config/alacritty/alacritty.yml</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -0,0 +1,877 @@
+</a><a href="#h0-0-0" id="h0-0-0" class="i">+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+</a><a href="#h0-0-1" id="h0-0-1" class="i">+
+</a><a href="#h0-0-2" id="h0-0-2" class="i">+# Any items in the `env` entry below will be added as
+</a><a href="#h0-0-3" id="h0-0-3" class="i">+# environment variables. Some entries may override variables
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+# set by alacritty itself.
+</a><a href="#h0-0-5" id="h0-0-5" class="i">+env:
+</a><a href="#h0-0-6" id="h0-0-6" class="i">+  # TERM variable
+</a><a href="#h0-0-7" id="h0-0-7" class="i">+  #
+</a><a href="#h0-0-8" id="h0-0-8" class="i">+  # This value is used to set the `$TERM` environment variable for
+</a><a href="#h0-0-9" id="h0-0-9" class="i">+  # each instance of Alacritty. If it is not present, alacritty will
+</a><a href="#h0-0-10" id="h0-0-10" class="i">+  # check the local terminfo database and use `alacritty` if it is
+</a><a href="#h0-0-11" id="h0-0-11" class="i">+  # available, otherwise `xterm-256color` is used.
+</a><a href="#h0-0-12" id="h0-0-12" class="i">+  TERM: xterm-256color
+</a><a href="#h0-0-13" id="h0-0-13" class="i">+
+</a><a href="#h0-0-14" id="h0-0-14" class="i">+window:
+</a><a href="#h0-0-15" id="h0-0-15" class="i">+  # Window dimensions (changes require restart)
+</a><a href="#h0-0-16" id="h0-0-16" class="i">+  #
+</a><a href="#h0-0-17" id="h0-0-17" class="i">+  # Specified in number of columns/lines, not pixels.
+</a><a href="#h0-0-18" id="h0-0-18" class="i">+  # If both are `0`, this setting is ignored.
+</a><a href="#h0-0-19" id="h0-0-19" class="i">+  #dimensions:
+</a><a href="#h0-0-20" id="h0-0-20" class="i">+  #  columns: 0
+</a><a href="#h0-0-21" id="h0-0-21" class="i">+  #  lines: 0
+</a><a href="#h0-0-22" id="h0-0-22" class="i">+
+</a><a href="#h0-0-23" id="h0-0-23" class="i">+  # Window position (changes require restart)
+</a><a href="#h0-0-24" id="h0-0-24" class="i">+  #
+</a><a href="#h0-0-25" id="h0-0-25" class="i">+  # Specified in number of pixels.
+</a><a href="#h0-0-26" id="h0-0-26" class="i">+  # If the position is not set, the window manager will handle the placement.
+</a><a href="#h0-0-27" id="h0-0-27" class="i">+  #position:
+</a><a href="#h0-0-28" id="h0-0-28" class="i">+  #  x: 0
+</a><a href="#h0-0-29" id="h0-0-29" class="i">+  #  y: 0
+</a><a href="#h0-0-30" id="h0-0-30" class="i">+
+</a><a href="#h0-0-31" id="h0-0-31" class="i">+  # Window padding (changes require restart)
+</a><a href="#h0-0-32" id="h0-0-32" class="i">+  #
+</a><a href="#h0-0-33" id="h0-0-33" class="i">+  # Blank space added around the window in pixels. This padding is scaled
+</a><a href="#h0-0-34" id="h0-0-34" class="i">+  # by DPI and the specified value is always added at both opposing sides.
+</a><a href="#h0-0-35" id="h0-0-35" class="i">+  padding:
+</a><a href="#h0-0-36" id="h0-0-36" class="i">+    x: 6
+</a><a href="#h0-0-37" id="h0-0-37" class="i">+    y: 6
+</a><a href="#h0-0-38" id="h0-0-38" class="i">+
+</a><a href="#h0-0-39" id="h0-0-39" class="i">+  # Spread additional padding evenly around the terminal content.
+</a><a href="#h0-0-40" id="h0-0-40" class="i">+  dynamic_padding: false
+</a><a href="#h0-0-41" id="h0-0-41" class="i">+
+</a><a href="#h0-0-42" id="h0-0-42" class="i">+  # Background opacity
+</a><a href="#h0-0-43" id="h0-0-43" class="i">+  #
+</a><a href="#h0-0-44" id="h0-0-44" class="i">+  # Window opacity as a floating point number from `0.0` to `1.0`.
+</a><a href="#h0-0-45" id="h0-0-45" class="i">+  # The value `0.0` is completely transparent and `1.0` is opaque.
+</a><a href="#h0-0-46" id="h0-0-46" class="i">+  opacity: 0.85
+</a><a href="#h0-0-47" id="h0-0-47" class="i">+
+</a><a href="#h0-0-48" id="h0-0-48" class="i">+  # Window decorations
+</a><a href="#h0-0-49" id="h0-0-49" class="i">+  #
+</a><a href="#h0-0-50" id="h0-0-50" class="i">+  # Values for `decorations`:
+</a><a href="#h0-0-51" id="h0-0-51" class="i">+  #     - full: Borders and title bar
+</a><a href="#h0-0-52" id="h0-0-52" class="i">+  #     - none: Neither borders nor title bar
+</a><a href="#h0-0-53" id="h0-0-53" class="i">+  #
+</a><a href="#h0-0-54" id="h0-0-54" class="i">+  # Values for `decorations` (macOS only):
+</a><a href="#h0-0-55" id="h0-0-55" class="i">+  #     - transparent: Title bar, transparent background and title bar buttons
+</a><a href="#h0-0-56" id="h0-0-56" class="i">+  #     - buttonless: Title bar, transparent background, but no title bar buttons
+</a><a href="#h0-0-57" id="h0-0-57" class="i">+  decorations: full
+</a><a href="#h0-0-58" id="h0-0-58" class="i">+
+</a><a href="#h0-0-59" id="h0-0-59" class="i">+  # Startup Mode (changes require restart)
+</a><a href="#h0-0-60" id="h0-0-60" class="i">+  #
+</a><a href="#h0-0-61" id="h0-0-61" class="i">+  # Values for `startup_mode`:
+</a><a href="#h0-0-62" id="h0-0-62" class="i">+  #   - Windowed
+</a><a href="#h0-0-63" id="h0-0-63" class="i">+  #   - Maximized
+</a><a href="#h0-0-64" id="h0-0-64" class="i">+  #   - Fullscreen
+</a><a href="#h0-0-65" id="h0-0-65" class="i">+  #
+</a><a href="#h0-0-66" id="h0-0-66" class="i">+  # Values for `startup_mode` (macOS only):
+</a><a href="#h0-0-67" id="h0-0-67" class="i">+  #   - SimpleFullscreen
+</a><a href="#h0-0-68" id="h0-0-68" class="i">+  #startup_mode: Windowed
+</a><a href="#h0-0-69" id="h0-0-69" class="i">+
+</a><a href="#h0-0-70" id="h0-0-70" class="i">+  # Window title
+</a><a href="#h0-0-71" id="h0-0-71" class="i">+  title: Alacritty
+</a><a href="#h0-0-72" id="h0-0-72" class="i">+
+</a><a href="#h0-0-73" id="h0-0-73" class="i">+  # Window class (Linux/BSD only):
+</a><a href="#h0-0-74" id="h0-0-74" class="i">+  class:
+</a><a href="#h0-0-75" id="h0-0-75" class="i">+    # Application instance name
+</a><a href="#h0-0-76" id="h0-0-76" class="i">+    instance: Alacritty
+</a><a href="#h0-0-77" id="h0-0-77" class="i">+    # General application class
+</a><a href="#h0-0-78" id="h0-0-78" class="i">+    general: Alacritty
+</a><a href="#h0-0-79" id="h0-0-79" class="i">+
+</a><a href="#h0-0-80" id="h0-0-80" class="i">+  # GTK theme variant (Linux/BSD only)
+</a><a href="#h0-0-81" id="h0-0-81" class="i">+  #
+</a><a href="#h0-0-82" id="h0-0-82" class="i">+  # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
+</a><a href="#h0-0-83" id="h0-0-83" class="i">+  # Set this to `None` to use the default theme variant.
+</a><a href="#h0-0-84" id="h0-0-84" class="i">+  #gtk_theme_variant: None
+</a><a href="#h0-0-85" id="h0-0-85" class="i">+
+</a><a href="#h0-0-86" id="h0-0-86" class="i">+scrolling:
+</a><a href="#h0-0-87" id="h0-0-87" class="i">+  # Maximum number of lines in the scrollback buffer.
+</a><a href="#h0-0-88" id="h0-0-88" class="i">+  # Specifying &#39;0&#39; will disable scrolling.
+</a><a href="#h0-0-89" id="h0-0-89" class="i">+  history: 5000
+</a><a href="#h0-0-90" id="h0-0-90" class="i">+
+</a><a href="#h0-0-91" id="h0-0-91" class="i">+  # Number of lines the viewport will move for every line scrolled when
+</a><a href="#h0-0-92" id="h0-0-92" class="i">+  # scrollback is enabled (history &gt; 0).
+</a><a href="#h0-0-93" id="h0-0-93" class="i">+  #multiplier: 3
+</a><a href="#h0-0-94" id="h0-0-94" class="i">+
+</a><a href="#h0-0-95" id="h0-0-95" class="i">+  # Scroll to the bottom when new text is written to the terminal.
+</a><a href="#h0-0-96" id="h0-0-96" class="i">+  #auto_scroll: false
+</a><a href="#h0-0-97" id="h0-0-97" class="i">+
+</a><a href="#h0-0-98" id="h0-0-98" class="i">+# Spaces per Tab (changes require restart)
+</a><a href="#h0-0-99" id="h0-0-99" class="i">+#
+</a><a href="#h0-0-100" id="h0-0-100" class="i">+# This setting defines the width of a tab in cells.
+</a><a href="#h0-0-101" id="h0-0-101" class="i">+#
+</a><a href="#h0-0-102" id="h0-0-102" class="i">+# Some applications, like Emacs, rely on knowing about the width of a tab.
+</a><a href="#h0-0-103" id="h0-0-103" class="i">+# To prevent unexpected behavior in these applications, it&#39;s also required to
+</a><a href="#h0-0-104" id="h0-0-104" class="i">+# change the `it` value in terminfo when altering this setting.
+</a><a href="#h0-0-105" id="h0-0-105" class="i">+#tabspaces: 8
+</a><a href="#h0-0-106" id="h0-0-106" class="i">+
+</a><a href="#h0-0-107" id="h0-0-107" class="i">+# Font configuration
+</a><a href="#h0-0-108" id="h0-0-108" class="i">+font:
+</a><a href="#h0-0-109" id="h0-0-109" class="i">+  # Normal (roman) font face
+</a><a href="#h0-0-110" id="h0-0-110" class="i">+  normal:
+</a><a href="#h0-0-111" id="h0-0-111" class="i">+    # Font family
+</a><a href="#h0-0-112" id="h0-0-112" class="i">+    #
+</a><a href="#h0-0-113" id="h0-0-113" class="i">+    # Default:
+</a><a href="#h0-0-114" id="h0-0-114" class="i">+    #   - (macOS) Menlo
+</a><a href="#h0-0-115" id="h0-0-115" class="i">+    #   - (Linux/BSD) monospace
+</a><a href="#h0-0-116" id="h0-0-116" class="i">+    #   - (Windows) Consolas
+</a><a href="#h0-0-117" id="h0-0-117" class="i">+    # family: FiraCode Nerd Font 
+</a><a href="#h0-0-118" id="h0-0-118" class="i">+    # family: CodeNewRoman Nerd Font
+</a><a href="#h0-0-119" id="h0-0-119" class="i">+    # family: RobotoMono Nerd Font
+</a><a href="#h0-0-120" id="h0-0-120" class="i">+    # family: Hack
+</a><a href="#h0-0-121" id="h0-0-121" class="i">+    # family: JetBrains Mono
+</a><a href="#h0-0-122" id="h0-0-122" class="i">+    # family: UbuntuMono Nerd Font
+</a><a href="#h0-0-123" id="h0-0-123" class="i">+    # family: Monofur Nerd Font
+</a><a href="#h0-0-124" id="h0-0-124" class="i">+    # family: TerminessTTF Nerd Font
+</a><a href="#h0-0-125" id="h0-0-125" class="i">+    family: Mononoki Nerd Font
+</a><a href="#h0-0-126" id="h0-0-126" class="i">+
+</a><a href="#h0-0-127" id="h0-0-127" class="i">+    # The `style` can be specified to pick a specific face.
+</a><a href="#h0-0-128" id="h0-0-128" class="i">+    style: Regular
+</a><a href="#h0-0-129" id="h0-0-129" class="i">+
+</a><a href="#h0-0-130" id="h0-0-130" class="i">+  # Bold font face
+</a><a href="#h0-0-131" id="h0-0-131" class="i">+  bold:
+</a><a href="#h0-0-132" id="h0-0-132" class="i">+    # Font family
+</a><a href="#h0-0-133" id="h0-0-133" class="i">+    #
+</a><a href="#h0-0-134" id="h0-0-134" class="i">+    # If the bold family is not specified, it will fall back to the
+</a><a href="#h0-0-135" id="h0-0-135" class="i">+    # value specified for the normal font.
+</a><a href="#h0-0-136" id="h0-0-136" class="i">+    # family: FiraCode Nerd Font 
+</a><a href="#h0-0-137" id="h0-0-137" class="i">+    # family: CodeNewRoman Nerd Font
+</a><a href="#h0-0-138" id="h0-0-138" class="i">+    # family: RobotoMono Nerd Font
+</a><a href="#h0-0-139" id="h0-0-139" class="i">+    # family: Hack
+</a><a href="#h0-0-140" id="h0-0-140" class="i">+    # family: JetBrains Mono
+</a><a href="#h0-0-141" id="h0-0-141" class="i">+    # family: UbuntuMono Nerd Font
+</a><a href="#h0-0-142" id="h0-0-142" class="i">+    # family: Monofur Nerd Font
+</a><a href="#h0-0-143" id="h0-0-143" class="i">+    # family: TerminessTTF Nerd Font
+</a><a href="#h0-0-144" id="h0-0-144" class="i">+    family: Mononoki Nerd Font
+</a><a href="#h0-0-145" id="h0-0-145" class="i">+
+</a><a href="#h0-0-146" id="h0-0-146" class="i">+    # The `style` can be specified to pick a specific face.
+</a><a href="#h0-0-147" id="h0-0-147" class="i">+    style: Bold
+</a><a href="#h0-0-148" id="h0-0-148" class="i">+
+</a><a href="#h0-0-149" id="h0-0-149" class="i">+  # Italic font face
+</a><a href="#h0-0-150" id="h0-0-150" class="i">+  italic:
+</a><a href="#h0-0-151" id="h0-0-151" class="i">+    # Font family
+</a><a href="#h0-0-152" id="h0-0-152" class="i">+    #
+</a><a href="#h0-0-153" id="h0-0-153" class="i">+    # If the italic family is not specified, it will fall back to the
+</a><a href="#h0-0-154" id="h0-0-154" class="i">+    # value specified for the normal font.
+</a><a href="#h0-0-155" id="h0-0-155" class="i">+    # family: FiraCode Nerd Font 
+</a><a href="#h0-0-156" id="h0-0-156" class="i">+    # family: CodeNewRoman Nerd Font
+</a><a href="#h0-0-157" id="h0-0-157" class="i">+    # family: RobotoMono Nerd Font
+</a><a href="#h0-0-158" id="h0-0-158" class="i">+    # family: Hack
+</a><a href="#h0-0-159" id="h0-0-159" class="i">+    # family: JetBrains Mono
+</a><a href="#h0-0-160" id="h0-0-160" class="i">+    # family: UbuntuMono Nerd Font
+</a><a href="#h0-0-161" id="h0-0-161" class="i">+    # family: Monofuritalic Nerd Font Mono
+</a><a href="#h0-0-162" id="h0-0-162" class="i">+    # family: TerminessTTF Nerd Font
+</a><a href="#h0-0-163" id="h0-0-163" class="i">+    family: Mononoki Nerd Font
+</a><a href="#h0-0-164" id="h0-0-164" class="i">+
+</a><a href="#h0-0-165" id="h0-0-165" class="i">+    # The `style` can be specified to pick a specific face.
+</a><a href="#h0-0-166" id="h0-0-166" class="i">+    style: Italic
+</a><a href="#h0-0-167" id="h0-0-167" class="i">+
+</a><a href="#h0-0-168" id="h0-0-168" class="i">+  # Bold italic font face
+</a><a href="#h0-0-169" id="h0-0-169" class="i">+  bold_italic:
+</a><a href="#h0-0-170" id="h0-0-170" class="i">+    # Font family
+</a><a href="#h0-0-171" id="h0-0-171" class="i">+    #
+</a><a href="#h0-0-172" id="h0-0-172" class="i">+    # If the bold italic family is not specified, it will fall back to the
+</a><a href="#h0-0-173" id="h0-0-173" class="i">+    # value specified for the normal font.
+</a><a href="#h0-0-174" id="h0-0-174" class="i">+    # family: FiraCode Nerd Font 
+</a><a href="#h0-0-175" id="h0-0-175" class="i">+    # family: CodeNewRoman Nerd Font
+</a><a href="#h0-0-176" id="h0-0-176" class="i">+    # family: RobotoMono Nerd Font
+</a><a href="#h0-0-177" id="h0-0-177" class="i">+    # family: Hack
+</a><a href="#h0-0-178" id="h0-0-178" class="i">+    # family: JetBrains Mono
+</a><a href="#h0-0-179" id="h0-0-179" class="i">+    # family: UbuntuMono Nerd Font
+</a><a href="#h0-0-180" id="h0-0-180" class="i">+    # family: Monofuritalic Nerd Font Mono
+</a><a href="#h0-0-181" id="h0-0-181" class="i">+    # family: TerminessTTF Nerd Font
+</a><a href="#h0-0-182" id="h0-0-182" class="i">+    family: Mononoki Nerd Font
+</a><a href="#h0-0-183" id="h0-0-183" class="i">+
+</a><a href="#h0-0-184" id="h0-0-184" class="i">+    # The `style` can be specified to pick a specific face.
+</a><a href="#h0-0-185" id="h0-0-185" class="i">+    style: Bold Italic
+</a><a href="#h0-0-186" id="h0-0-186" class="i">+
+</a><a href="#h0-0-187" id="h0-0-187" class="i">+  # Point size
+</a><a href="#h0-0-188" id="h0-0-188" class="i">+  size: 10.0
+</a><a href="#h0-0-189" id="h0-0-189" class="i">+
+</a><a href="#h0-0-190" id="h0-0-190" class="i">+  # Offset is the extra space around each character. `offset.y` can be thought of
+</a><a href="#h0-0-191" id="h0-0-191" class="i">+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+</a><a href="#h0-0-192" id="h0-0-192" class="i">+  offset:
+</a><a href="#h0-0-193" id="h0-0-193" class="i">+    x: 0
+</a><a href="#h0-0-194" id="h0-0-194" class="i">+    y: 1
+</a><a href="#h0-0-195" id="h0-0-195" class="i">+
+</a><a href="#h0-0-196" id="h0-0-196" class="i">+  # Glyph offset determines the locations of the glyphs within their cells with
+</a><a href="#h0-0-197" id="h0-0-197" class="i">+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+</a><a href="#h0-0-198" id="h0-0-198" class="i">+  # increasing `y` moves the glyph upwards.
+</a><a href="#h0-0-199" id="h0-0-199" class="i">+  #glyph_offset:
+</a><a href="#h0-0-200" id="h0-0-200" class="i">+  #  x: 0
+</a><a href="#h0-0-201" id="h0-0-201" class="i">+  #  y: 0
+</a><a href="#h0-0-202" id="h0-0-202" class="i">+
+</a><a href="#h0-0-203" id="h0-0-203" class="i">+  # Thin stroke font rendering (macOS only)
+</a><a href="#h0-0-204" id="h0-0-204" class="i">+  #
+</a><a href="#h0-0-205" id="h0-0-205" class="i">+  # Thin strokes are suitable for retina displays, but for non-retina screens
+</a><a href="#h0-0-206" id="h0-0-206" class="i">+  # it is recommended to set `use_thin_strokes` to `false`
+</a><a href="#h0-0-207" id="h0-0-207" class="i">+  #
+</a><a href="#h0-0-208" id="h0-0-208" class="i">+  # macOS &gt;= 10.14.x:
+</a><a href="#h0-0-209" id="h0-0-209" class="i">+  #
+</a><a href="#h0-0-210" id="h0-0-210" class="i">+  # If the font quality on non-retina display looks bad then set
+</a><a href="#h0-0-211" id="h0-0-211" class="i">+  # `use_thin_strokes` to `true` and enable font smoothing by running the
+</a><a href="#h0-0-212" id="h0-0-212" class="i">+  # following command:
+</a><a href="#h0-0-213" id="h0-0-213" class="i">+  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+</a><a href="#h0-0-214" id="h0-0-214" class="i">+  #
+</a><a href="#h0-0-215" id="h0-0-215" class="i">+  # This is a global setting and will require a log out or restart to take
+</a><a href="#h0-0-216" id="h0-0-216" class="i">+  # effect.
+</a><a href="#h0-0-217" id="h0-0-217" class="i">+  #use_thin_strokes: true
+</a><a href="#h0-0-218" id="h0-0-218" class="i">+
+</a><a href="#h0-0-219" id="h0-0-219" class="i">+# If `true`, bold text is drawn using the bright color variants.
+</a><a href="#h0-0-220" id="h0-0-220" class="i">+draw_bold_text_with_bright_colors: true
+</a><a href="#h0-0-221" id="h0-0-221" class="i">+
+</a><a href="#h0-0-222" id="h0-0-222" class="i">+#######################################
+</a><a href="#h0-0-223" id="h0-0-223" class="i">+##      START OF COLOR SCHEMES       ##
+</a><a href="#h0-0-224" id="h0-0-224" class="i">+#######################################
+</a><a href="#h0-0-225" id="h0-0-225" class="i">+schemes:
+</a><a href="#h0-0-226" id="h0-0-226" class="i">+  ### Doom One ###
+</a><a href="#h0-0-227" id="h0-0-227" class="i">+  DoomOne: &amp;DoomOne
+</a><a href="#h0-0-228" id="h0-0-228" class="i">+    primary:
+</a><a href="#h0-0-229" id="h0-0-229" class="i">+      background: &#39;#282c34&#39;
+</a><a href="#h0-0-230" id="h0-0-230" class="i">+      foreground: &#39;#bbc2cf&#39;
+</a><a href="#h0-0-231" id="h0-0-231" class="i">+    cursor:
+</a><a href="#h0-0-232" id="h0-0-232" class="i">+      text: CellBackground
+</a><a href="#h0-0-233" id="h0-0-233" class="i">+      cursor: &#39;#528bff&#39;
+</a><a href="#h0-0-234" id="h0-0-234" class="i">+    selection:
+</a><a href="#h0-0-235" id="h0-0-235" class="i">+      text: CellForeground
+</a><a href="#h0-0-236" id="h0-0-236" class="i">+      background: &#39;#3e4451&#39;
+</a><a href="#h0-0-237" id="h0-0-237" class="i">+    normal:
+</a><a href="#h0-0-238" id="h0-0-238" class="i">+      black:   &#39;#1c1f24&#39;
+</a><a href="#h0-0-239" id="h0-0-239" class="i">+      red:     &#39;#ff6c6b&#39;
+</a><a href="#h0-0-240" id="h0-0-240" class="i">+      green:   &#39;#98be65&#39;
+</a><a href="#h0-0-241" id="h0-0-241" class="i">+      yellow:  &#39;#da8548&#39;
+</a><a href="#h0-0-242" id="h0-0-242" class="i">+      blue:    &#39;#51afef&#39;
+</a><a href="#h0-0-243" id="h0-0-243" class="i">+      magenta: &#39;#c678dd&#39;
+</a><a href="#h0-0-244" id="h0-0-244" class="i">+      cyan:    &#39;#5699af&#39;
+</a><a href="#h0-0-245" id="h0-0-245" class="i">+      white:   &#39;#202328&#39;
+</a><a href="#h0-0-246" id="h0-0-246" class="i">+    bright:
+</a><a href="#h0-0-247" id="h0-0-247" class="i">+      black:   &#39;#5b6268&#39;
+</a><a href="#h0-0-248" id="h0-0-248" class="i">+      red:     &#39;#da8548&#39;
+</a><a href="#h0-0-249" id="h0-0-249" class="i">+      green:   &#39;#4db5bd&#39;
+</a><a href="#h0-0-250" id="h0-0-250" class="i">+      yellow:  &#39;#ecbe7b&#39;
+</a><a href="#h0-0-251" id="h0-0-251" class="i">+      blue:    &#39;#3071db&#39;   # This is 2257a0 in Doom Emacs but I lightened it.
+</a><a href="#h0-0-252" id="h0-0-252" class="i">+      magenta: &#39;#a9a1e1&#39;
+</a><a href="#h0-0-253" id="h0-0-253" class="i">+      cyan:    &#39;#46d9ff&#39;
+</a><a href="#h0-0-254" id="h0-0-254" class="i">+      white:   &#39;#dfdfdf&#39;
+</a><a href="#h0-0-255" id="h0-0-255" class="i">+
+</a><a href="#h0-0-256" id="h0-0-256" class="i">+  ### Dracula ###
+</a><a href="#h0-0-257" id="h0-0-257" class="i">+  Dracula: &amp;Dracula
+</a><a href="#h0-0-258" id="h0-0-258" class="i">+    primary:
+</a><a href="#h0-0-259" id="h0-0-259" class="i">+      background: &#39;#282a36&#39;
+</a><a href="#h0-0-260" id="h0-0-260" class="i">+      foreground: &#39;#f8f8f2&#39;
+</a><a href="#h0-0-261" id="h0-0-261" class="i">+    cursor:
+</a><a href="#h0-0-262" id="h0-0-262" class="i">+      text: CellBackground
+</a><a href="#h0-0-263" id="h0-0-263" class="i">+      cursor: CellForeground
+</a><a href="#h0-0-264" id="h0-0-264" class="i">+    vi_mode_cursor:
+</a><a href="#h0-0-265" id="h0-0-265" class="i">+      text: CellBackground
+</a><a href="#h0-0-266" id="h0-0-266" class="i">+      cursor: CellForeground
+</a><a href="#h0-0-267" id="h0-0-267" class="i">+    search:
+</a><a href="#h0-0-268" id="h0-0-268" class="i">+      matches:
+</a><a href="#h0-0-269" id="h0-0-269" class="i">+        foreground: &#39;#44475a&#39;
+</a><a href="#h0-0-270" id="h0-0-270" class="i">+        background: &#39;#50fa7b&#39;
+</a><a href="#h0-0-271" id="h0-0-271" class="i">+      focused_match:
+</a><a href="#h0-0-272" id="h0-0-272" class="i">+        foreground: &#39;#44475a&#39;
+</a><a href="#h0-0-273" id="h0-0-273" class="i">+        background: &#39;#ffb86c&#39;
+</a><a href="#h0-0-274" id="h0-0-274" class="i">+      bar:
+</a><a href="#h0-0-275" id="h0-0-275" class="i">+        background: &#39;#282a36&#39;
+</a><a href="#h0-0-276" id="h0-0-276" class="i">+        foreground: &#39;#f8f8f2&#39;
+</a><a href="#h0-0-277" id="h0-0-277" class="i">+    line_indicator:
+</a><a href="#h0-0-278" id="h0-0-278" class="i">+      foreground: None
+</a><a href="#h0-0-279" id="h0-0-279" class="i">+      background: None
+</a><a href="#h0-0-280" id="h0-0-280" class="i">+    selection:
+</a><a href="#h0-0-281" id="h0-0-281" class="i">+      text: CellForeground
+</a><a href="#h0-0-282" id="h0-0-282" class="i">+      background: &#39;#44475a&#39;
+</a><a href="#h0-0-283" id="h0-0-283" class="i">+    normal:
+</a><a href="#h0-0-284" id="h0-0-284" class="i">+      black:   &#39;#000000&#39;
+</a><a href="#h0-0-285" id="h0-0-285" class="i">+      red:     &#39;#ff5555&#39;
+</a><a href="#h0-0-286" id="h0-0-286" class="i">+      green:   &#39;#50fa7b&#39;
+</a><a href="#h0-0-287" id="h0-0-287" class="i">+      yellow:  &#39;#f1fa8c&#39;
+</a><a href="#h0-0-288" id="h0-0-288" class="i">+      blue:    &#39;#bd93f9&#39;
+</a><a href="#h0-0-289" id="h0-0-289" class="i">+      magenta: &#39;#ff79c6&#39;
+</a><a href="#h0-0-290" id="h0-0-290" class="i">+      cyan:    &#39;#8be9fd&#39;
+</a><a href="#h0-0-291" id="h0-0-291" class="i">+      white:   &#39;#bfbfbf&#39;
+</a><a href="#h0-0-292" id="h0-0-292" class="i">+    bright:
+</a><a href="#h0-0-293" id="h0-0-293" class="i">+      black:   &#39;#4d4d4d&#39;
+</a><a href="#h0-0-294" id="h0-0-294" class="i">+      red:     &#39;#ff6e67&#39;
+</a><a href="#h0-0-295" id="h0-0-295" class="i">+      green:   &#39;#5af78e&#39;
+</a><a href="#h0-0-296" id="h0-0-296" class="i">+      yellow:  &#39;#f4f99d&#39;
+</a><a href="#h0-0-297" id="h0-0-297" class="i">+      blue:    &#39;#caa9fa&#39;
+</a><a href="#h0-0-298" id="h0-0-298" class="i">+      magenta: &#39;#ff92d0&#39;
+</a><a href="#h0-0-299" id="h0-0-299" class="i">+      cyan:    &#39;#9aedfe&#39;
+</a><a href="#h0-0-300" id="h0-0-300" class="i">+      white:   &#39;#e6e6e6&#39;
+</a><a href="#h0-0-301" id="h0-0-301" class="i">+    dim:
+</a><a href="#h0-0-302" id="h0-0-302" class="i">+      black:   &#39;#14151b&#39;
+</a><a href="#h0-0-303" id="h0-0-303" class="i">+      red:     &#39;#ff2222&#39;
+</a><a href="#h0-0-304" id="h0-0-304" class="i">+      green:   &#39;#1ef956&#39;
+</a><a href="#h0-0-305" id="h0-0-305" class="i">+      yellow:  &#39;#ebf85b&#39;
+</a><a href="#h0-0-306" id="h0-0-306" class="i">+      blue:    &#39;#4d5b86&#39;
+</a><a href="#h0-0-307" id="h0-0-307" class="i">+      magenta: &#39;#ff46b0&#39;
+</a><a href="#h0-0-308" id="h0-0-308" class="i">+      cyan:    &#39;#59dffc&#39;
+</a><a href="#h0-0-309" id="h0-0-309" class="i">+      white:   &#39;#e6e6d1&#39;
+</a><a href="#h0-0-310" id="h0-0-310" class="i">+
+</a><a href="#h0-0-311" id="h0-0-311" class="i">+  ### Gruvbox dark ###
+</a><a href="#h0-0-312" id="h0-0-312" class="i">+  GruvboxDark: &amp;GruvboxDark
+</a><a href="#h0-0-313" id="h0-0-313" class="i">+    # Default colors
+</a><a href="#h0-0-314" id="h0-0-314" class="i">+    primary:
+</a><a href="#h0-0-315" id="h0-0-315" class="i">+      # hard contrast: background = &#39;0x1d2021&#39;
+</a><a href="#h0-0-316" id="h0-0-316" class="i">+      background: &#39;#282828&#39;
+</a><a href="#h0-0-317" id="h0-0-317" class="i">+      # soft contrast: background = &#39;0x32302f&#39;
+</a><a href="#h0-0-318" id="h0-0-318" class="i">+      foreground: &#39;#ebdbb2&#39;
+</a><a href="#h0-0-319" id="h0-0-319" class="i">+
+</a><a href="#h0-0-320" id="h0-0-320" class="i">+    # Normal colors
+</a><a href="#h0-0-321" id="h0-0-321" class="i">+    normal:
+</a><a href="#h0-0-322" id="h0-0-322" class="i">+      black:   &#39;#282828&#39;
+</a><a href="#h0-0-323" id="h0-0-323" class="i">+      red:     &#39;#cc241d&#39;
+</a><a href="#h0-0-324" id="h0-0-324" class="i">+      green:   &#39;#98971a&#39;
+</a><a href="#h0-0-325" id="h0-0-325" class="i">+      yellow:  &#39;#d79921&#39;
+</a><a href="#h0-0-326" id="h0-0-326" class="i">+      blue:    &#39;#458588&#39;
+</a><a href="#h0-0-327" id="h0-0-327" class="i">+      magenta: &#39;#b16286&#39;
+</a><a href="#h0-0-328" id="h0-0-328" class="i">+      cyan:    &#39;#689d6a&#39;
+</a><a href="#h0-0-329" id="h0-0-329" class="i">+      white:   &#39;#a89984&#39;
+</a><a href="#h0-0-330" id="h0-0-330" class="i">+
+</a><a href="#h0-0-331" id="h0-0-331" class="i">+    # Bright colors
+</a><a href="#h0-0-332" id="h0-0-332" class="i">+    bright:
+</a><a href="#h0-0-333" id="h0-0-333" class="i">+      black:   &#39;#928374&#39;
+</a><a href="#h0-0-334" id="h0-0-334" class="i">+      red:     &#39;#fb4934&#39;
+</a><a href="#h0-0-335" id="h0-0-335" class="i">+      green:   &#39;#b8bb26&#39;
+</a><a href="#h0-0-336" id="h0-0-336" class="i">+      yellow:  &#39;#fabd2f&#39;
+</a><a href="#h0-0-337" id="h0-0-337" class="i">+      blue:    &#39;#83a598&#39;
+</a><a href="#h0-0-338" id="h0-0-338" class="i">+      magenta: &#39;#d3869b&#39;
+</a><a href="#h0-0-339" id="h0-0-339" class="i">+      cyan:    &#39;#8ec07c&#39;
+</a><a href="#h0-0-340" id="h0-0-340" class="i">+      white:   &#39;#ebdbb2&#39;
+</a><a href="#h0-0-341" id="h0-0-341" class="i">+
+</a><a href="#h0-0-342" id="h0-0-342" class="i">+### Monokai ###
+</a><a href="#h0-0-343" id="h0-0-343" class="i">+  MonokaiPro: &amp;MonokaiPro
+</a><a href="#h0-0-344" id="h0-0-344" class="i">+    # Default colors
+</a><a href="#h0-0-345" id="h0-0-345" class="i">+    primary:
+</a><a href="#h0-0-346" id="h0-0-346" class="i">+      background: &#39;#2D2A2E&#39;
+</a><a href="#h0-0-347" id="h0-0-347" class="i">+      foreground: &#39;#FCFCFA&#39;
+</a><a href="#h0-0-348" id="h0-0-348" class="i">+
+</a><a href="#h0-0-349" id="h0-0-349" class="i">+    # Normal colors
+</a><a href="#h0-0-350" id="h0-0-350" class="i">+    normal:
+</a><a href="#h0-0-351" id="h0-0-351" class="i">+      black:   &#39;#403E41&#39;
+</a><a href="#h0-0-352" id="h0-0-352" class="i">+      red:     &#39;#FF6188&#39;
+</a><a href="#h0-0-353" id="h0-0-353" class="i">+      green:   &#39;#A9DC76&#39;
+</a><a href="#h0-0-354" id="h0-0-354" class="i">+      yellow:  &#39;#FFD866&#39;
+</a><a href="#h0-0-355" id="h0-0-355" class="i">+      blue:    &#39;#FC9867&#39;
+</a><a href="#h0-0-356" id="h0-0-356" class="i">+      magenta: &#39;#AB9DF2&#39;
+</a><a href="#h0-0-357" id="h0-0-357" class="i">+      cyan:    &#39;#78DCE8&#39;
+</a><a href="#h0-0-358" id="h0-0-358" class="i">+      white:   &#39;#FCFCFA&#39;
+</a><a href="#h0-0-359" id="h0-0-359" class="i">+
+</a><a href="#h0-0-360" id="h0-0-360" class="i">+    # Bright colors
+</a><a href="#h0-0-361" id="h0-0-361" class="i">+    bright:
+</a><a href="#h0-0-362" id="h0-0-362" class="i">+      black:   &#39;#727072&#39;
+</a><a href="#h0-0-363" id="h0-0-363" class="i">+      red:     &#39;#FF6188&#39;
+</a><a href="#h0-0-364" id="h0-0-364" class="i">+      green:   &#39;#A9DC76&#39;
+</a><a href="#h0-0-365" id="h0-0-365" class="i">+      yellow:  &#39;#FFD866&#39;
+</a><a href="#h0-0-366" id="h0-0-366" class="i">+      blue:    &#39;#FC9867&#39;
+</a><a href="#h0-0-367" id="h0-0-367" class="i">+      magenta: &#39;#AB9DF2&#39;
+</a><a href="#h0-0-368" id="h0-0-368" class="i">+      cyan:    &#39;#78DCE8&#39;
+</a><a href="#h0-0-369" id="h0-0-369" class="i">+      white:   &#39;#FCFCFA&#39;
+</a><a href="#h0-0-370" id="h0-0-370" class="i">+
+</a><a href="#h0-0-371" id="h0-0-371" class="i">+  ### Nord ###
+</a><a href="#h0-0-372" id="h0-0-372" class="i">+  Nord: &amp;Nord
+</a><a href="#h0-0-373" id="h0-0-373" class="i">+    # Default colors
+</a><a href="#h0-0-374" id="h0-0-374" class="i">+    primary:
+</a><a href="#h0-0-375" id="h0-0-375" class="i">+      background: &#39;#2E3440&#39;
+</a><a href="#h0-0-376" id="h0-0-376" class="i">+      foreground: &#39;#D8DEE9&#39;
+</a><a href="#h0-0-377" id="h0-0-377" class="i">+
+</a><a href="#h0-0-378" id="h0-0-378" class="i">+    # Normal colors
+</a><a href="#h0-0-379" id="h0-0-379" class="i">+    normal:
+</a><a href="#h0-0-380" id="h0-0-380" class="i">+      black:   &#39;#3B4252&#39;
+</a><a href="#h0-0-381" id="h0-0-381" class="i">+      red:     &#39;#BF616A&#39;
+</a><a href="#h0-0-382" id="h0-0-382" class="i">+      green:   &#39;#A3BE8C&#39;
+</a><a href="#h0-0-383" id="h0-0-383" class="i">+      yellow:  &#39;#EBCB8B&#39;
+</a><a href="#h0-0-384" id="h0-0-384" class="i">+      blue:    &#39;#81A1C1&#39;
+</a><a href="#h0-0-385" id="h0-0-385" class="i">+      magenta: &#39;#B48EAD&#39;
+</a><a href="#h0-0-386" id="h0-0-386" class="i">+      cyan:    &#39;#88C0D0&#39;
+</a><a href="#h0-0-387" id="h0-0-387" class="i">+      white:   &#39;#E5E9F0&#39;
+</a><a href="#h0-0-388" id="h0-0-388" class="i">+
+</a><a href="#h0-0-389" id="h0-0-389" class="i">+    # Bright colors
+</a><a href="#h0-0-390" id="h0-0-390" class="i">+    bright:
+</a><a href="#h0-0-391" id="h0-0-391" class="i">+      black:   &#39;#4C566A&#39;
+</a><a href="#h0-0-392" id="h0-0-392" class="i">+      red:     &#39;#BF616A&#39;
+</a><a href="#h0-0-393" id="h0-0-393" class="i">+      green:   &#39;#A3BE8C&#39;
+</a><a href="#h0-0-394" id="h0-0-394" class="i">+      yellow:  &#39;#EBCB8B&#39;
+</a><a href="#h0-0-395" id="h0-0-395" class="i">+      blue:    &#39;#81A1C1&#39;
+</a><a href="#h0-0-396" id="h0-0-396" class="i">+      magenta: &#39;#B48EAD&#39;
+</a><a href="#h0-0-397" id="h0-0-397" class="i">+      cyan:    &#39;#8FBCBB&#39;
+</a><a href="#h0-0-398" id="h0-0-398" class="i">+      white:   &#39;#ECEFF4&#39;
+</a><a href="#h0-0-399" id="h0-0-399" class="i">+
+</a><a href="#h0-0-400" id="h0-0-400" class="i">+  ### Oceanic Next ###
+</a><a href="#h0-0-401" id="h0-0-401" class="i">+  OceanicNext: &amp;OceanicNext
+</a><a href="#h0-0-402" id="h0-0-402" class="i">+    # Default colors
+</a><a href="#h0-0-403" id="h0-0-403" class="i">+    primary:
+</a><a href="#h0-0-404" id="h0-0-404" class="i">+      background: &#39;#1b2b34&#39;
+</a><a href="#h0-0-405" id="h0-0-405" class="i">+      foreground: &#39;#d8dee9&#39;
+</a><a href="#h0-0-406" id="h0-0-406" class="i">+
+</a><a href="#h0-0-407" id="h0-0-407" class="i">+    # Colors the cursor will use if `custom_cursor_colors` is true
+</a><a href="#h0-0-408" id="h0-0-408" class="i">+    cursor:
+</a><a href="#h0-0-409" id="h0-0-409" class="i">+      text: &#39;#1b2b34&#39;
+</a><a href="#h0-0-410" id="h0-0-410" class="i">+      cursor: &#39;#ffffff&#39;
+</a><a href="#h0-0-411" id="h0-0-411" class="i">+
+</a><a href="#h0-0-412" id="h0-0-412" class="i">+    # Normal colors
+</a><a href="#h0-0-413" id="h0-0-413" class="i">+    normal:
+</a><a href="#h0-0-414" id="h0-0-414" class="i">+      black:   &#39;#343d46&#39;
+</a><a href="#h0-0-415" id="h0-0-415" class="i">+      red:     &#39;#EC5f67&#39;
+</a><a href="#h0-0-416" id="h0-0-416" class="i">+      green:   &#39;#99C794&#39;
+</a><a href="#h0-0-417" id="h0-0-417" class="i">+      yellow:  &#39;#FAC863&#39;
+</a><a href="#h0-0-418" id="h0-0-418" class="i">+      blue:    &#39;#6699cc&#39;
+</a><a href="#h0-0-419" id="h0-0-419" class="i">+      magenta: &#39;#c594c5&#39;
+</a><a href="#h0-0-420" id="h0-0-420" class="i">+      cyan:    &#39;#5fb3b3&#39;
+</a><a href="#h0-0-421" id="h0-0-421" class="i">+      white:   &#39;#d8dee9&#39;
+</a><a href="#h0-0-422" id="h0-0-422" class="i">+
+</a><a href="#h0-0-423" id="h0-0-423" class="i">+    # Bright colors
+</a><a href="#h0-0-424" id="h0-0-424" class="i">+    bright:
+</a><a href="#h0-0-425" id="h0-0-425" class="i">+      black:   &#39;#343d46&#39;
+</a><a href="#h0-0-426" id="h0-0-426" class="i">+      red:     &#39;#EC5f67&#39;
+</a><a href="#h0-0-427" id="h0-0-427" class="i">+      green:   &#39;#99C794&#39;
+</a><a href="#h0-0-428" id="h0-0-428" class="i">+      yellow:  &#39;#FAC863&#39;
+</a><a href="#h0-0-429" id="h0-0-429" class="i">+      blue:    &#39;#6699cc&#39;
+</a><a href="#h0-0-430" id="h0-0-430" class="i">+      magenta: &#39;#c594c5&#39;
+</a><a href="#h0-0-431" id="h0-0-431" class="i">+      cyan:    &#39;#5fb3b3&#39;
+</a><a href="#h0-0-432" id="h0-0-432" class="i">+      white:   &#39;#d8dee9&#39;
+</a><a href="#h0-0-433" id="h0-0-433" class="i">+
+</a><a href="#h0-0-434" id="h0-0-434" class="i">+  ### Palenight ###
+</a><a href="#h0-0-435" id="h0-0-435" class="i">+  Palenight: &amp;Palenight
+</a><a href="#h0-0-436" id="h0-0-436" class="i">+    # Default colors
+</a><a href="#h0-0-437" id="h0-0-437" class="i">+    primary:
+</a><a href="#h0-0-438" id="h0-0-438" class="i">+      background: &#39;#292d3e&#39;
+</a><a href="#h0-0-439" id="h0-0-439" class="i">+      foreground: &#39;#d0d0d0&#39;
+</a><a href="#h0-0-440" id="h0-0-440" class="i">+
+</a><a href="#h0-0-441" id="h0-0-441" class="i">+    # Normal colors
+</a><a href="#h0-0-442" id="h0-0-442" class="i">+    normal:
+</a><a href="#h0-0-443" id="h0-0-443" class="i">+      black:   &#39;#292d3e&#39;
+</a><a href="#h0-0-444" id="h0-0-444" class="i">+      red:     &#39;#f07178&#39;
+</a><a href="#h0-0-445" id="h0-0-445" class="i">+      green:   &#39;#c3e88d&#39;
+</a><a href="#h0-0-446" id="h0-0-446" class="i">+      yellow:  &#39;#ffcb6b&#39;
+</a><a href="#h0-0-447" id="h0-0-447" class="i">+      blue:    &#39;#82aaff&#39;
+</a><a href="#h0-0-448" id="h0-0-448" class="i">+      magenta: &#39;#c792ea&#39;
+</a><a href="#h0-0-449" id="h0-0-449" class="i">+      cyan:    &#39;#89ddff&#39;
+</a><a href="#h0-0-450" id="h0-0-450" class="i">+      white:   &#39;#d0d0d0&#39;
+</a><a href="#h0-0-451" id="h0-0-451" class="i">+
+</a><a href="#h0-0-452" id="h0-0-452" class="i">+    # Bright colors
+</a><a href="#h0-0-453" id="h0-0-453" class="i">+    bright:
+</a><a href="#h0-0-454" id="h0-0-454" class="i">+      black:   &#39;#434758&#39;
+</a><a href="#h0-0-455" id="h0-0-455" class="i">+      red:     &#39;#ff8b92&#39;
+</a><a href="#h0-0-456" id="h0-0-456" class="i">+      green:   &#39;#ddffa7&#39;
+</a><a href="#h0-0-457" id="h0-0-457" class="i">+      yellow:  &#39;#ffe585&#39;
+</a><a href="#h0-0-458" id="h0-0-458" class="i">+      blue:    &#39;#9cc4ff&#39;
+</a><a href="#h0-0-459" id="h0-0-459" class="i">+      magenta: &#39;#e1acff&#39;
+</a><a href="#h0-0-460" id="h0-0-460" class="i">+      cyan:    &#39;#a3f7ff&#39;
+</a><a href="#h0-0-461" id="h0-0-461" class="i">+      white:   &#39;#ffffff&#39;
+</a><a href="#h0-0-462" id="h0-0-462" class="i">+
+</a><a href="#h0-0-463" id="h0-0-463" class="i">+  ### Solarized Dark ###
+</a><a href="#h0-0-464" id="h0-0-464" class="i">+  SolarizedDark: &amp;SolarizedDark
+</a><a href="#h0-0-465" id="h0-0-465" class="i">+    # Default colors
+</a><a href="#h0-0-466" id="h0-0-466" class="i">+    primary:
+</a><a href="#h0-0-467" id="h0-0-467" class="i">+      background: &#39;#002b36&#39; # base03
+</a><a href="#h0-0-468" id="h0-0-468" class="i">+      foreground: &#39;#839496&#39; # base0
+</a><a href="#h0-0-469" id="h0-0-469" class="i">+
+</a><a href="#h0-0-470" id="h0-0-470" class="i">+    # Cursor colors
+</a><a href="#h0-0-471" id="h0-0-471" class="i">+    cursor:
+</a><a href="#h0-0-472" id="h0-0-472" class="i">+      text:   &#39;#002b36&#39; # base03
+</a><a href="#h0-0-473" id="h0-0-473" class="i">+      cursor: &#39;#839496&#39; # base0
+</a><a href="#h0-0-474" id="h0-0-474" class="i">+
+</a><a href="#h0-0-475" id="h0-0-475" class="i">+    # Normal colors
+</a><a href="#h0-0-476" id="h0-0-476" class="i">+    normal:
+</a><a href="#h0-0-477" id="h0-0-477" class="i">+      black:   &#39;#073642&#39; # base02
+</a><a href="#h0-0-478" id="h0-0-478" class="i">+      red:     &#39;#dc322f&#39; # red
+</a><a href="#h0-0-479" id="h0-0-479" class="i">+      green:   &#39;#859900&#39; # green
+</a><a href="#h0-0-480" id="h0-0-480" class="i">+      yellow:  &#39;#b58900&#39; # yellow
+</a><a href="#h0-0-481" id="h0-0-481" class="i">+      blue:    &#39;#268bd2&#39; # blue
+</a><a href="#h0-0-482" id="h0-0-482" class="i">+      magenta: &#39;#d33682&#39; # magenta
+</a><a href="#h0-0-483" id="h0-0-483" class="i">+      cyan:    &#39;#2aa198&#39; # cyan
+</a><a href="#h0-0-484" id="h0-0-484" class="i">+      white:   &#39;#eee8d5&#39; # base2
+</a><a href="#h0-0-485" id="h0-0-485" class="i">+
+</a><a href="#h0-0-486" id="h0-0-486" class="i">+    # Bright colors
+</a><a href="#h0-0-487" id="h0-0-487" class="i">+    bright:
+</a><a href="#h0-0-488" id="h0-0-488" class="i">+      black:   &#39;#002b36&#39; # base03
+</a><a href="#h0-0-489" id="h0-0-489" class="i">+      red:     &#39;#cb4b16&#39; # orange
+</a><a href="#h0-0-490" id="h0-0-490" class="i">+      green:   &#39;#586e75&#39; # base01
+</a><a href="#h0-0-491" id="h0-0-491" class="i">+      yellow:  &#39;#657b83&#39; # base00
+</a><a href="#h0-0-492" id="h0-0-492" class="i">+      blue:    &#39;#839496&#39; # base0
+</a><a href="#h0-0-493" id="h0-0-493" class="i">+      magenta: &#39;#6c71c4&#39; # violet
+</a><a href="#h0-0-494" id="h0-0-494" class="i">+      cyan:    &#39;#93a1a1&#39; # base1
+</a><a href="#h0-0-495" id="h0-0-495" class="i">+      white:   &#39;#fdf6e3&#39; # base3
+</a><a href="#h0-0-496" id="h0-0-496" class="i">+
+</a><a href="#h0-0-497" id="h0-0-497" class="i">+  ### Solarized Light ###
+</a><a href="#h0-0-498" id="h0-0-498" class="i">+  SolarizedLight: &amp;SolarizedLight
+</a><a href="#h0-0-499" id="h0-0-499" class="i">+    # Default colors
+</a><a href="#h0-0-500" id="h0-0-500" class="i">+    primary:
+</a><a href="#h0-0-501" id="h0-0-501" class="i">+      background: &#39;#fdf6e3&#39; # base3
+</a><a href="#h0-0-502" id="h0-0-502" class="i">+      foreground: &#39;#657b83&#39; # base00
+</a><a href="#h0-0-503" id="h0-0-503" class="i">+
+</a><a href="#h0-0-504" id="h0-0-504" class="i">+    # Cursor colors
+</a><a href="#h0-0-505" id="h0-0-505" class="i">+    cursor:
+</a><a href="#h0-0-506" id="h0-0-506" class="i">+      text:   &#39;#fdf6e3&#39; # base3
+</a><a href="#h0-0-507" id="h0-0-507" class="i">+      cursor: &#39;#657b83&#39; # base00
+</a><a href="#h0-0-508" id="h0-0-508" class="i">+
+</a><a href="#h0-0-509" id="h0-0-509" class="i">+    # Normal colors
+</a><a href="#h0-0-510" id="h0-0-510" class="i">+    normal:
+</a><a href="#h0-0-511" id="h0-0-511" class="i">+      black:   &#39;#073642&#39; # base02
+</a><a href="#h0-0-512" id="h0-0-512" class="i">+      red:     &#39;#dc322f&#39; # red
+</a><a href="#h0-0-513" id="h0-0-513" class="i">+      green:   &#39;#859900&#39; # green
+</a><a href="#h0-0-514" id="h0-0-514" class="i">+      yellow:  &#39;#b58900&#39; # yellow
+</a><a href="#h0-0-515" id="h0-0-515" class="i">+      blue:    &#39;#268bd2&#39; # blue
+</a><a href="#h0-0-516" id="h0-0-516" class="i">+      magenta: &#39;#d33682&#39; # magenta
+</a><a href="#h0-0-517" id="h0-0-517" class="i">+      cyan:    &#39;#2aa198&#39; # cyan
+</a><a href="#h0-0-518" id="h0-0-518" class="i">+      white:   &#39;#eee8d5&#39; # base2
+</a><a href="#h0-0-519" id="h0-0-519" class="i">+
+</a><a href="#h0-0-520" id="h0-0-520" class="i">+    # Bright colors
+</a><a href="#h0-0-521" id="h0-0-521" class="i">+    bright:
+</a><a href="#h0-0-522" id="h0-0-522" class="i">+      black:   &#39;#002b36&#39; # base03
+</a><a href="#h0-0-523" id="h0-0-523" class="i">+      red:     &#39;#cb4b16&#39; # orange
+</a><a href="#h0-0-524" id="h0-0-524" class="i">+      green:   &#39;#586e75&#39; # base01
+</a><a href="#h0-0-525" id="h0-0-525" class="i">+      yellow:  &#39;#657b83&#39; # base00
+</a><a href="#h0-0-526" id="h0-0-526" class="i">+      blue:    &#39;#839496&#39; # base0
+</a><a href="#h0-0-527" id="h0-0-527" class="i">+      magenta: &#39;#6c71c4&#39; # violet
+</a><a href="#h0-0-528" id="h0-0-528" class="i">+      cyan:    &#39;#93a1a1&#39; # base1
+</a><a href="#h0-0-529" id="h0-0-529" class="i">+      white:   &#39;#fdf6e3&#39; # base3
+</a><a href="#h0-0-530" id="h0-0-530" class="i">+
+</a><a href="#h0-0-531" id="h0-0-531" class="i">+  ### Tomorrow Night ###
+</a><a href="#h0-0-532" id="h0-0-532" class="i">+  TomorrowNight: &amp;TomorrowNight
+</a><a href="#h0-0-533" id="h0-0-533" class="i">+     # Default colors
+</a><a href="#h0-0-534" id="h0-0-534" class="i">+    primary:
+</a><a href="#h0-0-535" id="h0-0-535" class="i">+      background: &#39;#1d1f21&#39;
+</a><a href="#h0-0-536" id="h0-0-536" class="i">+      foreground: &#39;#c5c8c6&#39;
+</a><a href="#h0-0-537" id="h0-0-537" class="i">+
+</a><a href="#h0-0-538" id="h0-0-538" class="i">+    # Colors the cursor will use if `custom_cursor_colors` is true
+</a><a href="#h0-0-539" id="h0-0-539" class="i">+    cursor:
+</a><a href="#h0-0-540" id="h0-0-540" class="i">+      text: &#39;#1d1f21&#39;
+</a><a href="#h0-0-541" id="h0-0-541" class="i">+      cursor: &#39;#ffffff&#39;
+</a><a href="#h0-0-542" id="h0-0-542" class="i">+
+</a><a href="#h0-0-543" id="h0-0-543" class="i">+    # Normal colors
+</a><a href="#h0-0-544" id="h0-0-544" class="i">+    normal:
+</a><a href="#h0-0-545" id="h0-0-545" class="i">+      black:   &#39;#1d1f21&#39;
+</a><a href="#h0-0-546" id="h0-0-546" class="i">+      red:     &#39;#cc6666&#39;
+</a><a href="#h0-0-547" id="h0-0-547" class="i">+      green:   &#39;#b5bd68&#39;
+</a><a href="#h0-0-548" id="h0-0-548" class="i">+      yellow:  &#39;#e6c547&#39;
+</a><a href="#h0-0-549" id="h0-0-549" class="i">+      blue:    &#39;#81a2be&#39;
+</a><a href="#h0-0-550" id="h0-0-550" class="i">+      magenta: &#39;#b294bb&#39;
+</a><a href="#h0-0-551" id="h0-0-551" class="i">+      cyan:    &#39;#70c0ba&#39;
+</a><a href="#h0-0-552" id="h0-0-552" class="i">+      white:   &#39;#373b41&#39;
+</a><a href="#h0-0-553" id="h0-0-553" class="i">+
+</a><a href="#h0-0-554" id="h0-0-554" class="i">+    # Bright colors
+</a><a href="#h0-0-555" id="h0-0-555" class="i">+    bright:
+</a><a href="#h0-0-556" id="h0-0-556" class="i">+      black:   &#39;#666666&#39;
+</a><a href="#h0-0-557" id="h0-0-557" class="i">+      red:     &#39;#ff3334&#39;
+</a><a href="#h0-0-558" id="h0-0-558" class="i">+      green:   &#39;#9ec400&#39;
+</a><a href="#h0-0-559" id="h0-0-559" class="i">+      yellow:  &#39;#f0c674&#39;
+</a><a href="#h0-0-560" id="h0-0-560" class="i">+      blue:    &#39;#81a2be&#39;
+</a><a href="#h0-0-561" id="h0-0-561" class="i">+      magenta: &#39;#b77ee0&#39;
+</a><a href="#h0-0-562" id="h0-0-562" class="i">+      cyan:    &#39;#54ced6&#39;
+</a><a href="#h0-0-563" id="h0-0-563" class="i">+      white:   &#39;#282a2e&#39;
+</a><a href="#h0-0-564" id="h0-0-564" class="i">+
+</a><a href="#h0-0-565" id="h0-0-565" class="i">+######################################################################
+</a><a href="#h0-0-566" id="h0-0-566" class="i">+## SET THEME: Choose ONE color scheme from those in the above list. ##
+</a><a href="#h0-0-567" id="h0-0-567" class="i">+## ###################################################################
+</a><a href="#h0-0-568" id="h0-0-568" class="i">+# Available themes are:
+</a><a href="#h0-0-569" id="h0-0-569" class="i">+# *DoomOne
+</a><a href="#h0-0-570" id="h0-0-570" class="i">+# *Dracula
+</a><a href="#h0-0-571" id="h0-0-571" class="i">+# *GruvboxDark
+</a><a href="#h0-0-572" id="h0-0-572" class="i">+# *MonokaiPro
+</a><a href="#h0-0-573" id="h0-0-573" class="i">+# *Nord
+</a><a href="#h0-0-574" id="h0-0-574" class="i">+# *OceanicNext
+</a><a href="#h0-0-575" id="h0-0-575" class="i">+# *Palenight
+</a><a href="#h0-0-576" id="h0-0-576" class="i">+# *SolarizedLight
+</a><a href="#h0-0-577" id="h0-0-577" class="i">+# *SolarizedDark
+</a><a href="#h0-0-578" id="h0-0-578" class="i">+# *TomorrowNight
+</a><a href="#h0-0-579" id="h0-0-579" class="i">+
+</a><a href="#h0-0-580" id="h0-0-580" class="i">+colors: *MonokaiPro
+</a><a href="#h0-0-581" id="h0-0-581" class="i">+
+</a><a href="#h0-0-582" id="h0-0-582" class="i">+#######################################
+</a><a href="#h0-0-583" id="h0-0-583" class="i">+##       END OF COLOR SCHEMES        ##
+</a><a href="#h0-0-584" id="h0-0-584" class="i">+#######################################
+</a><a href="#h0-0-585" id="h0-0-585" class="i">+
+</a><a href="#h0-0-586" id="h0-0-586" class="i">+# Visual Bell
+</a><a href="#h0-0-587" id="h0-0-587" class="i">+#
+</a><a href="#h0-0-588" id="h0-0-588" class="i">+# Any time the BEL code is received, Alacritty &quot;rings&quot; the visual bell. Once
+</a><a href="#h0-0-589" id="h0-0-589" class="i">+# rung, the terminal background will be set to white and transition back to the
+</a><a href="#h0-0-590" id="h0-0-590" class="i">+# default background color. You can control the rate of this transition by
+</a><a href="#h0-0-591" id="h0-0-591" class="i">+# setting the `duration` property (represented in milliseconds). You can also
+</a><a href="#h0-0-592" id="h0-0-592" class="i">+# configure the transition function by setting the `animation` property.
+</a><a href="#h0-0-593" id="h0-0-593" class="i">+#
+</a><a href="#h0-0-594" id="h0-0-594" class="i">+# Values for `animation`:
+</a><a href="#h0-0-595" id="h0-0-595" class="i">+#   - Ease
+</a><a href="#h0-0-596" id="h0-0-596" class="i">+#   - EaseOut
+</a><a href="#h0-0-597" id="h0-0-597" class="i">+#   - EaseOutSine
+</a><a href="#h0-0-598" id="h0-0-598" class="i">+#   - EaseOutQuad
+</a><a href="#h0-0-599" id="h0-0-599" class="i">+#   - EaseOutCubic
+</a><a href="#h0-0-600" id="h0-0-600" class="i">+#   - EaseOutQuart
+</a><a href="#h0-0-601" id="h0-0-601" class="i">+#   - EaseOutQuint
+</a><a href="#h0-0-602" id="h0-0-602" class="i">+#   - EaseOutExpo
+</a><a href="#h0-0-603" id="h0-0-603" class="i">+#   - EaseOutCirc
+</a><a href="#h0-0-604" id="h0-0-604" class="i">+#   - Linear
+</a><a href="#h0-0-605" id="h0-0-605" class="i">+#
+</a><a href="#h0-0-606" id="h0-0-606" class="i">+# Specifying a `duration` of `0` will disable the visual bell.
+</a><a href="#h0-0-607" id="h0-0-607" class="i">+#visual_bell:
+</a><a href="#h0-0-608" id="h0-0-608" class="i">+#  animation: EaseOutExpo
+</a><a href="#h0-0-609" id="h0-0-609" class="i">+#  duration: 0
+</a><a href="#h0-0-610" id="h0-0-610" class="i">+#  color: &#39;#ffffff&#39;
+</a><a href="#h0-0-611" id="h0-0-611" class="i">+
+</a><a href="#h0-0-612" id="h0-0-612" class="i">+#selection:
+</a><a href="#h0-0-613" id="h0-0-613" class="i">+  #semantic_escape_chars: &quot;,│`|:\&quot;&#39; ()[]{}&lt;&gt;\t&quot;
+</a><a href="#h0-0-614" id="h0-0-614" class="i">+
+</a><a href="#h0-0-615" id="h0-0-615" class="i">+  # When set to `true`, selected text will be copied to the primary clipboard.
+</a><a href="#h0-0-616" id="h0-0-616" class="i">+  #save_to_clipboard: false
+</a><a href="#h0-0-617" id="h0-0-617" class="i">+
+</a><a href="#h0-0-618" id="h0-0-618" class="i">+# Allow terminal applications to change Alacritty&#39;s window title.
+</a><a href="#h0-0-619" id="h0-0-619" class="i">+#dynamic_title: true
+</a><a href="#h0-0-620" id="h0-0-620" class="i">+
+</a><a href="#h0-0-621" id="h0-0-621" class="i">+#cursor:
+</a><a href="#h0-0-622" id="h0-0-622" class="i">+  # Cursor style
+</a><a href="#h0-0-623" id="h0-0-623" class="i">+  #
+</a><a href="#h0-0-624" id="h0-0-624" class="i">+  # Values for `style`:
+</a><a href="#h0-0-625" id="h0-0-625" class="i">+  #   - ▇ Block
+</a><a href="#h0-0-626" id="h0-0-626" class="i">+  #   - _ Underline
+</a><a href="#h0-0-627" id="h0-0-627" class="i">+  #   - | Beam
+</a><a href="#h0-0-628" id="h0-0-628" class="i">+  #style: Block
+</a><a href="#h0-0-629" id="h0-0-629" class="i">+
+</a><a href="#h0-0-630" id="h0-0-630" class="i">+  # If this is `true`, the cursor will be rendered as a hollow box when the
+</a><a href="#h0-0-631" id="h0-0-631" class="i">+  # window is not focused.
+</a><a href="#h0-0-632" id="h0-0-632" class="i">+  #unfocused_hollow: true
+</a><a href="#h0-0-633" id="h0-0-633" class="i">+
+</a><a href="#h0-0-634" id="h0-0-634" class="i">+# Live config reload (changes require restart)
+</a><a href="#h0-0-635" id="h0-0-635" class="i">+#live_config_reload: true
+</a><a href="#h0-0-636" id="h0-0-636" class="i">+
+</a><a href="#h0-0-637" id="h0-0-637" class="i">+# Shell
+</a><a href="#h0-0-638" id="h0-0-638" class="i">+#
+</a><a href="#h0-0-639" id="h0-0-639" class="i">+# You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
+</a><a href="#h0-0-640" id="h0-0-640" class="i">+# Entries in `shell.args` are passed unmodified as arguments to the shell.
+</a><a href="#h0-0-641" id="h0-0-641" class="i">+#
+</a><a href="#h0-0-642" id="h0-0-642" class="i">+# Default:
+</a><a href="#h0-0-643" id="h0-0-643" class="i">+#   - (macOS) /bin/bash --login
+</a><a href="#h0-0-644" id="h0-0-644" class="i">+#   - (Linux/BSD) user login shell
+</a><a href="#h0-0-645" id="h0-0-645" class="i">+#   - (Windows) powershell
+</a><a href="#h0-0-646" id="h0-0-646" class="i">+#shell:
+</a><a href="#h0-0-647" id="h0-0-647" class="i">+#  program: /bin/bash
+</a><a href="#h0-0-648" id="h0-0-648" class="i">+#  args:
+</a><a href="#h0-0-649" id="h0-0-649" class="i">+#    - --login
+</a><a href="#h0-0-650" id="h0-0-650" class="i">+
+</a><a href="#h0-0-651" id="h0-0-651" class="i">+# Startup directory
+</a><a href="#h0-0-652" id="h0-0-652" class="i">+#
+</a><a href="#h0-0-653" id="h0-0-653" class="i">+# Directory the shell is started in. If this is unset, or `None`, the working
+</a><a href="#h0-0-654" id="h0-0-654" class="i">+# directory of the parent process will be used.
+</a><a href="#h0-0-655" id="h0-0-655" class="i">+#working_directory: None
+</a><a href="#h0-0-656" id="h0-0-656" class="i">+
+</a><a href="#h0-0-657" id="h0-0-657" class="i">+# WinPTY backend (Windows only)
+</a><a href="#h0-0-658" id="h0-0-658" class="i">+#
+</a><a href="#h0-0-659" id="h0-0-659" class="i">+# Alacritty defaults to using the newer ConPTY backend if it is available,
+</a><a href="#h0-0-660" id="h0-0-660" class="i">+# since it resolves a lot of bugs and is quite a bit faster. If it is not
+</a><a href="#h0-0-661" id="h0-0-661" class="i">+# available, the the WinPTY backend will be used instead.
+</a><a href="#h0-0-662" id="h0-0-662" class="i">+#
+</a><a href="#h0-0-663" id="h0-0-663" class="i">+# Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
+</a><a href="#h0-0-664" id="h0-0-664" class="i">+# even if the ConPTY backend is available.
+</a><a href="#h0-0-665" id="h0-0-665" class="i">+#winpty_backend: false
+</a><a href="#h0-0-666" id="h0-0-666" class="i">+
+</a><a href="#h0-0-667" id="h0-0-667" class="i">+# Send ESC (\x1b) before characters when alt is pressed.
+</a><a href="#h0-0-668" id="h0-0-668" class="i">+#alt_send_esc: true
+</a><a href="#h0-0-669" id="h0-0-669" class="i">+
+</a><a href="#h0-0-670" id="h0-0-670" class="i">+#debug:
+</a><a href="#h0-0-671" id="h0-0-671" class="i">+  # Display the time it takes to redraw each frame.
+</a><a href="#h0-0-672" id="h0-0-672" class="i">+  #render_timer: false
+</a><a href="#h0-0-673" id="h0-0-673" class="i">+
+</a><a href="#h0-0-674" id="h0-0-674" class="i">+  # Keep the log file after quitting Alacritty.
+</a><a href="#h0-0-675" id="h0-0-675" class="i">+  #persistent_logging: false
+</a><a href="#h0-0-676" id="h0-0-676" class="i">+
+</a><a href="#h0-0-677" id="h0-0-677" class="i">+  # Log level
+</a><a href="#h0-0-678" id="h0-0-678" class="i">+  #
+</a><a href="#h0-0-679" id="h0-0-679" class="i">+  # Values for `log_level`:
+</a><a href="#h0-0-680" id="h0-0-680" class="i">+  #   - None
+</a><a href="#h0-0-681" id="h0-0-681" class="i">+  #   - Error
+</a><a href="#h0-0-682" id="h0-0-682" class="i">+  #   - Warn
+</a><a href="#h0-0-683" id="h0-0-683" class="i">+  #   - Info
+</a><a href="#h0-0-684" id="h0-0-684" class="i">+  #   - Debug
+</a><a href="#h0-0-685" id="h0-0-685" class="i">+  #   - Trace
+</a><a href="#h0-0-686" id="h0-0-686" class="i">+  #log_level: Warn
+</a><a href="#h0-0-687" id="h0-0-687" class="i">+
+</a><a href="#h0-0-688" id="h0-0-688" class="i">+  # Print all received window events.
+</a><a href="#h0-0-689" id="h0-0-689" class="i">+  #print_events: false
+</a><a href="#h0-0-690" id="h0-0-690" class="i">+
+</a><a href="#h0-0-691" id="h0-0-691" class="i">+  # Record all characters and escape sequences as test data.
+</a><a href="#h0-0-692" id="h0-0-692" class="i">+  #ref_test: false
+</a><a href="#h0-0-693" id="h0-0-693" class="i">+
+</a><a href="#h0-0-694" id="h0-0-694" class="i">+#mouse:
+</a><a href="#h0-0-695" id="h0-0-695" class="i">+  # Click settings
+</a><a href="#h0-0-696" id="h0-0-696" class="i">+  #
+</a><a href="#h0-0-697" id="h0-0-697" class="i">+  # The `double_click` and `triple_click` settings control the time
+</a><a href="#h0-0-698" id="h0-0-698" class="i">+  # alacritty should wait for accepting multiple clicks as one double
+</a><a href="#h0-0-699" id="h0-0-699" class="i">+  # or triple click.
+</a><a href="#h0-0-700" id="h0-0-700" class="i">+  #double_click: { threshold: 300 }
+</a><a href="#h0-0-701" id="h0-0-701" class="i">+  #triple_click: { threshold: 300 }
+</a><a href="#h0-0-702" id="h0-0-702" class="i">+
+</a><a href="#h0-0-703" id="h0-0-703" class="i">+  # If this is `true`, the cursor is temporarily hidden when typing.
+</a><a href="#h0-0-704" id="h0-0-704" class="i">+  #hide_when_typing: false
+</a><a href="#h0-0-705" id="h0-0-705" class="i">+
+</a><a href="#h0-0-706" id="h0-0-706" class="i">+  #url:
+</a><a href="#h0-0-707" id="h0-0-707" class="i">+    # URL launcher
+</a><a href="#h0-0-708" id="h0-0-708" class="i">+    #
+</a><a href="#h0-0-709" id="h0-0-709" class="i">+    # This program is executed when clicking on a text which is recognized as a URL.
+</a><a href="#h0-0-710" id="h0-0-710" class="i">+    # The URL is always added to the command as the last parameter.
+</a><a href="#h0-0-711" id="h0-0-711" class="i">+    #
+</a><a href="#h0-0-712" id="h0-0-712" class="i">+    # When set to `None`, URL launching will be disabled completely.
+</a><a href="#h0-0-713" id="h0-0-713" class="i">+    #
+</a><a href="#h0-0-714" id="h0-0-714" class="i">+    # Default:
+</a><a href="#h0-0-715" id="h0-0-715" class="i">+    #   - (macOS) open
+</a><a href="#h0-0-716" id="h0-0-716" class="i">+    #   - (Linux/BSD) xdg-open
+</a><a href="#h0-0-717" id="h0-0-717" class="i">+    #   - (Windows) explorer
+</a><a href="#h0-0-718" id="h0-0-718" class="i">+    #launcher:
+</a><a href="#h0-0-719" id="h0-0-719" class="i">+    #  program: xdg-open
+</a><a href="#h0-0-720" id="h0-0-720" class="i">+    #  args: []
+</a><a href="#h0-0-721" id="h0-0-721" class="i">+
+</a><a href="#h0-0-722" id="h0-0-722" class="i">+    # URL modifiers
+</a><a href="#h0-0-723" id="h0-0-723" class="i">+    #
+</a><a href="#h0-0-724" id="h0-0-724" class="i">+    # These are the modifiers that need to be held down for opening URLs when clicking
+</a><a href="#h0-0-725" id="h0-0-725" class="i">+    # on them. The available modifiers are documented in the key binding section.
+</a><a href="#h0-0-726" id="h0-0-726" class="i">+    #modifiers: None
+</a><a href="#h0-0-727" id="h0-0-727" class="i">+
+</a><a href="#h0-0-728" id="h0-0-728" class="i">+# Mouse bindings
+</a><a href="#h0-0-729" id="h0-0-729" class="i">+#
+</a><a href="#h0-0-730" id="h0-0-730" class="i">+# Mouse bindings are specified as a list of objects, much like the key
+</a><a href="#h0-0-731" id="h0-0-731" class="i">+# bindings further below.
+</a><a href="#h0-0-732" id="h0-0-732" class="i">+#
+</a><a href="#h0-0-733" id="h0-0-733" class="i">+# Each mouse binding will specify a:
+</a><a href="#h0-0-734" id="h0-0-734" class="i">+#
+</a><a href="#h0-0-735" id="h0-0-735" class="i">+# - `mouse`:
+</a><a href="#h0-0-736" id="h0-0-736" class="i">+#
+</a><a href="#h0-0-737" id="h0-0-737" class="i">+#   - Middle
+</a><a href="#h0-0-738" id="h0-0-738" class="i">+#   - Left
+</a><a href="#h0-0-739" id="h0-0-739" class="i">+#   - Right
+</a><a href="#h0-0-740" id="h0-0-740" class="i">+#   - Numeric identifier such as `5`
+</a><a href="#h0-0-741" id="h0-0-741" class="i">+#
+</a><a href="#h0-0-742" id="h0-0-742" class="i">+# - `action` (see key bindings)
+</a><a href="#h0-0-743" id="h0-0-743" class="i">+#
+</a><a href="#h0-0-744" id="h0-0-744" class="i">+# And optionally:
+</a><a href="#h0-0-745" id="h0-0-745" class="i">+#
+</a><a href="#h0-0-746" id="h0-0-746" class="i">+# - `mods` (see key bindings)
+</a><a href="#h0-0-747" id="h0-0-747" class="i">+#mouse_bindings:
+</a><a href="#h0-0-748" id="h0-0-748" class="i">+#  - { mouse: Middle, action: PasteSelection }
+</a><a href="#h0-0-749" id="h0-0-749" class="i">+
+</a><a href="#h0-0-750" id="h0-0-750" class="i">+# Key bindings
+</a><a href="#h0-0-751" id="h0-0-751" class="i">+#
+</a><a href="#h0-0-752" id="h0-0-752" class="i">+# Key bindings are specified as a list of objects. For example, this is the
+</a><a href="#h0-0-753" id="h0-0-753" class="i">+# default paste binding:
+</a><a href="#h0-0-754" id="h0-0-754" class="i">+#
+</a><a href="#h0-0-755" id="h0-0-755" class="i">+# `- { key: V, mods: Control|Shift, action: Paste }`
+</a><a href="#h0-0-756" id="h0-0-756" class="i">+#
+</a><a href="#h0-0-757" id="h0-0-757" class="i">+# Each key binding will specify a:
+</a><a href="#h0-0-758" id="h0-0-758" class="i">+#
+</a><a href="#h0-0-759" id="h0-0-759" class="i">+# - `key`: Identifier of the key pressed
+</a><a href="#h0-0-760" id="h0-0-760" class="i">+#
+</a><a href="#h0-0-761" id="h0-0-761" class="i">+#    - A-Z
+</a><a href="#h0-0-762" id="h0-0-762" class="i">+#    - F1-F24
+</a><a href="#h0-0-763" id="h0-0-763" class="i">+#    - Key0-Key9
+</a><a href="#h0-0-764" id="h0-0-764" class="i">+#
+</a><a href="#h0-0-765" id="h0-0-765" class="i">+#    A full list with available key codes can be found here:
+</a><a href="#h0-0-766" id="h0-0-766" class="i">+#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+</a><a href="#h0-0-767" id="h0-0-767" class="i">+#
+</a><a href="#h0-0-768" id="h0-0-768" class="i">+#    Instead of using the name of the keys, the `key` field also supports using
+</a><a href="#h0-0-769" id="h0-0-769" class="i">+#    the scancode of the desired key. Scancodes have to be specified as a
+</a><a href="#h0-0-770" id="h0-0-770" class="i">+#    decimal number. This command will allow you to display the hex scancodes
+</a><a href="#h0-0-771" id="h0-0-771" class="i">+#    for certain keys:
+</a><a href="#h0-0-772" id="h0-0-772" class="i">+#
+</a><a href="#h0-0-773" id="h0-0-773" class="i">+#       `showkey --scancodes`.
+</a><a href="#h0-0-774" id="h0-0-774" class="i">+#
+</a><a href="#h0-0-775" id="h0-0-775" class="i">+# Then exactly one of:
+</a><a href="#h0-0-776" id="h0-0-776" class="i">+#
+</a><a href="#h0-0-777" id="h0-0-777" class="i">+# - `chars`: Send a byte sequence to the running application
+</a><a href="#h0-0-778" id="h0-0-778" class="i">+#
+</a><a href="#h0-0-779" id="h0-0-779" class="i">+#    The `chars` field writes the specified string to the terminal. This makes
+</a><a href="#h0-0-780" id="h0-0-780" class="i">+#    it possible to pass escape sequences. To find escape codes for bindings
+</a><a href="#h0-0-781" id="h0-0-781" class="i">+#    like `PageUp` (`&quot;\x1b[5~&quot;`), you can run the command `showkey -a` outside
+</a><a href="#h0-0-782" id="h0-0-782" class="i">+#    of tmux. Note that applications use terminfo to map escape sequences back
+</a><a href="#h0-0-783" id="h0-0-783" class="i">+#    to keys. It is therefore required to update the terminfo when changing an
+</a><a href="#h0-0-784" id="h0-0-784" class="i">+#    escape sequence.
+</a><a href="#h0-0-785" id="h0-0-785" class="i">+#
+</a><a href="#h0-0-786" id="h0-0-786" class="i">+# - `action`: Execute a predefined action
+</a><a href="#h0-0-787" id="h0-0-787" class="i">+#
+</a><a href="#h0-0-788" id="h0-0-788" class="i">+#   - Copy
+</a><a href="#h0-0-789" id="h0-0-789" class="i">+#   - Paste
+</a><a href="#h0-0-790" id="h0-0-790" class="i">+#   - PasteSelection
+</a><a href="#h0-0-791" id="h0-0-791" class="i">+#   - IncreaseFontSize
+</a><a href="#h0-0-792" id="h0-0-792" class="i">+#   - DecreaseFontSize
+</a><a href="#h0-0-793" id="h0-0-793" class="i">+#   - ResetFontSize
+</a><a href="#h0-0-794" id="h0-0-794" class="i">+#   - ScrollPageUp
+</a><a href="#h0-0-795" id="h0-0-795" class="i">+#   - ScrollPageDown
+</a><a href="#h0-0-796" id="h0-0-796" class="i">+#   - ScrollLineUp
+</a><a href="#h0-0-797" id="h0-0-797" class="i">+#   - ScrollLineDown
+</a><a href="#h0-0-798" id="h0-0-798" class="i">+#   - ScrollToTop
+</a><a href="#h0-0-799" id="h0-0-799" class="i">+#   - ScrollToBottom
+</a><a href="#h0-0-800" id="h0-0-800" class="i">+#   - ClearHistory
+</a><a href="#h0-0-801" id="h0-0-801" class="i">+#   - Hide
+</a><a href="#h0-0-802" id="h0-0-802" class="i">+#   - Minimize
+</a><a href="#h0-0-803" id="h0-0-803" class="i">+#   - Quit
+</a><a href="#h0-0-804" id="h0-0-804" class="i">+#   - ToggleFullscreen
+</a><a href="#h0-0-805" id="h0-0-805" class="i">+#   - SpawnNewInstance
+</a><a href="#h0-0-806" id="h0-0-806" class="i">+#   - ClearLogNotice
+</a><a href="#h0-0-807" id="h0-0-807" class="i">+#   - ReceiveChar
+</a><a href="#h0-0-808" id="h0-0-808" class="i">+#   - None
+</a><a href="#h0-0-809" id="h0-0-809" class="i">+#
+</a><a href="#h0-0-810" id="h0-0-810" class="i">+#   (macOS only):
+</a><a href="#h0-0-811" id="h0-0-811" class="i">+#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+</a><a href="#h0-0-812" id="h0-0-812" class="i">+#
+</a><a href="#h0-0-813" id="h0-0-813" class="i">+# - `command`: Fork and execute a specified command plus arguments
+</a><a href="#h0-0-814" id="h0-0-814" class="i">+#
+</a><a href="#h0-0-815" id="h0-0-815" class="i">+#    The `command` field must be a map containing a `program` string and an
+</a><a href="#h0-0-816" id="h0-0-816" class="i">+#    `args` array of command line parameter strings. For example:
+</a><a href="#h0-0-817" id="h0-0-817" class="i">+#       `{ program: &quot;alacritty&quot;, args: [&quot;-e&quot;, &quot;vttest&quot;] }`
+</a><a href="#h0-0-818" id="h0-0-818" class="i">+#
+</a><a href="#h0-0-819" id="h0-0-819" class="i">+# And optionally:
+</a><a href="#h0-0-820" id="h0-0-820" class="i">+#
+</a><a href="#h0-0-821" id="h0-0-821" class="i">+# - `mods`: Key modifiers to filter binding actions
+</a><a href="#h0-0-822" id="h0-0-822" class="i">+#
+</a><a href="#h0-0-823" id="h0-0-823" class="i">+#    - Command
+</a><a href="#h0-0-824" id="h0-0-824" class="i">+#    - Control
+</a><a href="#h0-0-825" id="h0-0-825" class="i">+#    - Option
+</a><a href="#h0-0-826" id="h0-0-826" class="i">+#    - Super
+</a><a href="#h0-0-827" id="h0-0-827" class="i">+#    - Shift
+</a><a href="#h0-0-828" id="h0-0-828" class="i">+#    - Alt
+</a><a href="#h0-0-829" id="h0-0-829" class="i">+#
+</a><a href="#h0-0-830" id="h0-0-830" class="i">+#    Multiple `mods` can be combined using `|` like this:
+</a><a href="#h0-0-831" id="h0-0-831" class="i">+#       `mods: Control|Shift`.
+</a><a href="#h0-0-832" id="h0-0-832" class="i">+#    Whitespace and capitalization are relevant and must match the example.
+</a><a href="#h0-0-833" id="h0-0-833" class="i">+#
+</a><a href="#h0-0-834" id="h0-0-834" class="i">+# - `mode`: Indicate a binding for only specific terminal reported modes
+</a><a href="#h0-0-835" id="h0-0-835" class="i">+#
+</a><a href="#h0-0-836" id="h0-0-836" class="i">+#    This is mainly used to send applications the correct escape sequences
+</a><a href="#h0-0-837" id="h0-0-837" class="i">+#    when in different modes.
+</a><a href="#h0-0-838" id="h0-0-838" class="i">+#
+</a><a href="#h0-0-839" id="h0-0-839" class="i">+#    - AppCursor
+</a><a href="#h0-0-840" id="h0-0-840" class="i">+#    - AppKeypad
+</a><a href="#h0-0-841" id="h0-0-841" class="i">+#    - Alt
+</a><a href="#h0-0-842" id="h0-0-842" class="i">+#
+</a><a href="#h0-0-843" id="h0-0-843" class="i">+#    A `~` operator can be used before a mode to apply the binding whenever
+</a><a href="#h0-0-844" id="h0-0-844" class="i">+#    the mode is *not* active, e.g. `~Alt`.
+</a><a href="#h0-0-845" id="h0-0-845" class="i">+#
+</a><a href="#h0-0-846" id="h0-0-846" class="i">+# Bindings are always filled by default, but will be replaced when a new
+</a><a href="#h0-0-847" id="h0-0-847" class="i">+# binding with the same triggers is defined. To unset a default binding, it can
+</a><a href="#h0-0-848" id="h0-0-848" class="i">+# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+</a><a href="#h0-0-849" id="h0-0-849" class="i">+# a no-op if you do not wish to receive input characters for that binding.
+</a><a href="#h0-0-850" id="h0-0-850" class="i">+key_bindings:
+</a><a href="#h0-0-851" id="h0-0-851" class="i">+    # (Windows, Linux, and BSD only)
+</a><a href="#h0-0-852" id="h0-0-852" class="i">+  - { key: V,         mods: Control|Shift, action: Paste                       }
+</a><a href="#h0-0-853" id="h0-0-853" class="i">+  - { key: C,         mods: Control|Shift, action: Copy                        }
+</a><a href="#h0-0-854" id="h0-0-854" class="i">+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+</a><a href="#h0-0-855" id="h0-0-855" class="i">+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+</a><a href="#h0-0-856" id="h0-0-856" class="i">+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+</a><a href="#h0-0-857" id="h0-0-857" class="i">+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+</a><a href="#h0-0-858" id="h0-0-858" class="i">+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+</a><a href="#h0-0-859" id="h0-0-859" class="i">+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+</a><a href="#h0-0-860" id="h0-0-860" class="i">+  - { key: Paste,     mods: None,          action: Paste                       }
+</a><a href="#h0-0-861" id="h0-0-861" class="i">+  - { key: Copy,      mods: None,          action: Copy                        }
+</a><a href="#h0-0-862" id="h0-0-862" class="i">+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+</a><a href="#h0-0-863" id="h0-0-863" class="i">+  - { key: L,         mods: Control,       chars: &quot;\x0c&quot;                       }
+</a><a href="#h0-0-864" id="h0-0-864" class="i">+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+</a><a href="#h0-0-865" id="h0-0-865" class="i">+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+</a><a href="#h0-0-866" id="h0-0-866" class="i">+  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
+</a><a href="#h0-0-867" id="h0-0-867" class="i">+  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+</a><a href="#h0-0-868" id="h0-0-868" class="i">+  # my 
+</a><a href="#h0-0-869" id="h0-0-869" class="i">+  # - { key: N, mods: Control, action: SpawnNewInstance }
+</a><a href="#h0-0-870" id="h0-0-870" class="i">+  - { key: Space, mods: Alt, chars: &quot; &quot; }
+</a><a href="#h0-0-871" id="h0-0-871" class="i">+  - { key: Back, mods: Super, chars: &quot;\x15&quot; } # delete word/line
+</a><a href="#h0-0-872" id="h0-0-872" class="i">+  - { key: Left, mods: Alt, chars: &quot;\x1bb&quot; } # one word left
+</a><a href="#h0-0-873" id="h0-0-873" class="i">+  - { key: Right, mods: Alt, chars: &quot;\x1bf&quot; } # one word right
+</a><a href="#h0-0-874" id="h0-0-874" class="i">+  - { key: Left, mods: Control, chars: &quot;\x1bOH&quot;, mode: AppCursor } # Home
+</a><a href="#h0-0-875" id="h0-0-875" class="i">+  - { key: Right, mods: Control, chars: &quot;\x1bOF&quot;, mode: AppCursor } # End
+</a><a href="#h0-0-876" id="h0-0-876" class="i">+  - { key: R, mods: Control, chars: &quot;\x1bR&quot; }
+</a></pre>
+</div>
+</body>
+</html>

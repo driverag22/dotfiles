@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>changed bar spacing - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/311cdd887e803db20d8a22393aeee4941fe13d01.html">311cdd887e803db20d8a22393aeee4941fe13d01</a>
+<b>parent</b> <a href="../commit/52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e.html">52bca462e8000c5adb6f40b5f47fddf3e1e4fd4e</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Wed, 18 Jan 2023 20:04:57 +0100
+
+changed bar spacing
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.local/.macros/dwmBar/battery.sh</a></td><td> | </td><td class="num">1</td><td><span class="i">+</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h1">.local/.macros/dwmBar/cpu.sh</a></td><td> | </td><td class="num">43</td><td><span class="i">+++++++++++++++++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h2">.local/.macros/dwmBar/dwmbar.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="A">A</td><td><a href="#h3">.local/.macros/dwmBar/simpleWifi.sh</a></td><td> | </td><td class="num">18</td><td><span class="i">++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="A">A</td><td><a href="#h4">.local/.macros/dwmBar/sleeper.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h5">.local/.macros/dwmBar/spotify.sh</a></td><td> | </td><td class="num">2</td><td><span class="i">+</span><span class="d">-</span></td></tr>
+<tr><td class="A">A</td><td><a href="#h6">.local/.macros/dwmBar/usageCPU.sh</a></td><td> | </td><td class="num">29</td><td><span class="i">+++++++++++++++++++++++++++++</span><span class="d"></span></td></tr>
+<tr><td class="M">M</td><td><a href="#h7">.local/.macros/dwmBar/values/cleanValues.sh</a></td><td> | </td><td class="num">7</td><td><span class="i">++++</span><span class="d">---</span></td></tr>
+<tr><td class="A">A</td><td><a href="#h8">.local/.macros/dwmBar/vol.sh</a></td><td> | </td><td class="num">14</td><td><span class="i">++++++++++++++</span><span class="d"></span></td></tr>
+</table></pre><pre>9 files changed, 113 insertions(+), 5 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a> b/<a href="../file/.local/.macros/dwmBar/battery.sh.html">.local/.macros/dwmBar/battery.sh</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -71,4 +71,5 @@ for battery in /sys/class/power_supply/BAT?*; do
+</a> 	# [ &quot;$status&quot;=&quot;&quot; ] &amp;&amp; [ &quot;$capacity&quot; -le 25 ] &amp;&amp; warn=&quot;❗&quot;
+ 	# Prints the info
+ 	printf &quot;%s %s%d%%&quot; &quot;$warn&quot; &quot;$status &quot; &quot; $capacity&quot;; unset warn
+<a href="#h0-0-3" id="h0-0-3" class="i">+	# printf &quot;%s%d%%&quot; &quot;$status &quot; &quot; $capacity&quot;
+</a> done &amp;&amp; printf &quot;\\n&quot;
+<b>diff --git a/<a id="h1" href="../file/.local/.macros/dwmBar/cpu.sh.html">.local/.macros/dwmBar/cpu.sh</a> b/<a href="../file/.local/.macros/dwmBar/cpu.sh.html">.local/.macros/dwmBar/cpu.sh</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -0,0 +1,43 @@
+</a><a href="#h1-0-0" id="h1-0-0" class="i">+#!/bin/sh
+</a><a href="#h1-0-1" id="h1-0-1" class="i">+
+</a><a href="#h1-0-2" id="h1-0-2" class="i">+# Module showing CPU load as a changing bars.
+</a><a href="#h1-0-3" id="h1-0-3" class="i">+# Just like in polybar.
+</a><a href="#h1-0-4" id="h1-0-4" class="i">+# Each bar represents amount of load on one core since
+</a><a href="#h1-0-5" id="h1-0-5" class="i">+# last run.
+</a><a href="#h1-0-6" id="h1-0-6" class="i">+
+</a><a href="#h1-0-7" id="h1-0-7" class="i">+# Cache in tmpfs to improve speed and reduce SSD load
+</a><a href="#h1-0-8" id="h1-0-8" class="i">+cache=/tmp/cpubarscache
+</a><a href="#h1-0-9" id="h1-0-9" class="i">+
+</a><a href="#h1-0-10" id="h1-0-10" class="i">+case $BLOCK_BUTTON in
+</a><a href="#h1-0-11" id="h1-0-11" class="i">+	2) setsid -f &quot;$TERMINAL&quot; -e htop ;;
+</a><a href="#h1-0-12" id="h1-0-12" class="i">+	3) notify-send &quot;🪨 CPU load module&quot; &quot;Each bar represents
+</a><a href="#h1-0-13" id="h1-0-13" class="i">+one CPU core&quot;;;
+</a><a href="#h1-0-14" id="h1-0-14" class="i">+	6) &quot;$TERMINAL&quot; -e &quot;$EDITOR&quot; &quot;$0&quot; ;;
+</a><a href="#h1-0-15" id="h1-0-15" class="i">+esac
+</a><a href="#h1-0-16" id="h1-0-16" class="i">+
+</a><a href="#h1-0-17" id="h1-0-17" class="i">+# id total idle
+</a><a href="#h1-0-18" id="h1-0-18" class="i">+stats=$(awk &#39;/cpu[0-9]+/ {printf &quot;%d %d %d\n&quot;, substr($1,4), ($2 + $3 + $4 + $5), $5 }&#39; /proc/stat)
+</a><a href="#h1-0-19" id="h1-0-19" class="i">+[ ! -f $cache ] &amp;&amp; echo &quot;$stats&quot; &gt; &quot;$cache&quot;
+</a><a href="#h1-0-20" id="h1-0-20" class="i">+old=$(cat &quot;$cache&quot;)
+</a><a href="#h1-0-21" id="h1-0-21" class="i">+echo &quot;$stats&quot; | while read -r row; do
+</a><a href="#h1-0-22" id="h1-0-22" class="i">+	id=${row%% *}
+</a><a href="#h1-0-23" id="h1-0-23" class="i">+	rest=${row#* }
+</a><a href="#h1-0-24" id="h1-0-24" class="i">+	total=${rest%% *}
+</a><a href="#h1-0-25" id="h1-0-25" class="i">+	idle=${rest##* }
+</a><a href="#h1-0-26" id="h1-0-26" class="i">+
+</a><a href="#h1-0-27" id="h1-0-27" class="i">+	case &quot;$(echo &quot;$old&quot; | awk &#39;{if ($1 == id)
+</a><a href="#h1-0-28" id="h1-0-28" class="i">+		printf &quot;%d\n&quot;, (1 - (idle - $3)  / (total - $2))*100 /12.5}&#39; \
+</a><a href="#h1-0-29" id="h1-0-29" class="i">+		id=&quot;$id&quot; total=&quot;$total&quot; idle=&quot;$idle&quot;)&quot; in
+</a><a href="#h1-0-30" id="h1-0-30" class="i">+
+</a><a href="#h1-0-31" id="h1-0-31" class="i">+		&quot;0&quot;) printf &quot;▁&quot;;;
+</a><a href="#h1-0-32" id="h1-0-32" class="i">+		&quot;1&quot;) printf &quot;▂&quot;;;
+</a><a href="#h1-0-33" id="h1-0-33" class="i">+		&quot;2&quot;) printf &quot;▃&quot;;;
+</a><a href="#h1-0-34" id="h1-0-34" class="i">+		&quot;3&quot;) printf &quot;▄&quot;;;
+</a><a href="#h1-0-35" id="h1-0-35" class="i">+		&quot;4&quot;) printf &quot;▅&quot;;;
+</a><a href="#h1-0-36" id="h1-0-36" class="i">+		&quot;5&quot;) printf &quot;▆&quot;;;
+</a><a href="#h1-0-37" id="h1-0-37" class="i">+		&quot;6&quot;) printf &quot;▇&quot;;;
+</a><a href="#h1-0-38" id="h1-0-38" class="i">+		&quot;7&quot;) printf &quot;█&quot;;;
+</a><a href="#h1-0-39" id="h1-0-39" class="i">+		&quot;8&quot;) printf &quot;█&quot;;;
+</a><a href="#h1-0-40" id="h1-0-40" class="i">+	esac
+</a><a href="#h1-0-41" id="h1-0-41" class="i">+done; printf &quot;\\n&quot;
+</a><a href="#h1-0-42" id="h1-0-42" class="i">+echo &quot;$stats&quot; &gt; &quot;$cache&quot;
+</a><b>diff --git a/<a id="h2" href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a> b/<a href="../file/.local/.macros/dwmBar/dwmbar.sh.html">.local/.macros/dwmBar/dwmbar.sh</a></b>
+<a href="#h2-0" id="h2-0" class="h">@@ -14,5 +14,5 @@ while true; do
+</a>         values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
+ 
+         xsetroot -name &quot;$values&quot;
+<a href="#h2-0-3" id="h2-0-3" class="d">-        sleep 1s ## refresh rate
+</a><a href="#h2-0-4" id="h2-0-4" class="i">+        sleep 3s ## refresh rate
+</a> done &amp;
+<b>diff --git a/<a id="h3" href="../file/.local/.macros/dwmBar/simpleWifi.sh.html">.local/.macros/dwmBar/simpleWifi.sh</a> b/<a href="../file/.local/.macros/dwmBar/simpleWifi.sh.html">.local/.macros/dwmBar/simpleWifi.sh</a></b>
+<a href="#h3-0" id="h3-0" class="h">@@ -0,0 +1,18 @@
+</a><a href="#h3-0-0" id="h3-0-0" class="i">+#!/bin/sh
+</a><a href="#h3-0-1" id="h3-0-1" class="i">+
+</a><a href="#h3-0-2" id="h3-0-2" class="i">+interface=$(ip link | grep -o &#39;wl[^:]*&#39;)
+</a><a href="#h3-0-3" id="h3-0-3" class="i">+
+</a><a href="#h3-0-4" id="h3-0-4" class="i">+# wifiRate=$(nmcli -f ACTIVE,RATE dev wifi list | awk &#39;$1==&quot;yes&quot; {print $2 &quot;Mbit/s&quot;}&#39;)
+</a><a href="#h3-0-5" id="h3-0-5" class="i">+wifiSignal=$(nmcli -f ACTIVE,SIGNAL dev wifi list | awk &#39;$1==&quot;yes&quot; {print $2 &quot;%&quot;}&#39;)
+</a><a href="#h3-0-6" id="h3-0-6" class="i">+wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk &#39;$1==&quot;yes&quot; {print $2}&#39;)
+</a><a href="#h3-0-7" id="h3-0-7" class="i">+
+</a><a href="#h3-0-8" id="h3-0-8" class="i">+
+</a><a href="#h3-0-9" id="h3-0-9" class="i">+if [ -z $wifiSignal ] 
+</a><a href="#h3-0-10" id="h3-0-10" class="i">+then
+</a><a href="#h3-0-11" id="h3-0-11" class="i">+    icon=&quot;睊 &quot;
+</a><a href="#h3-0-12" id="h3-0-12" class="i">+    printf &quot;$icon&quot;;
+</a><a href="#h3-0-13" id="h3-0-13" class="i">+else
+</a><a href="#h3-0-14" id="h3-0-14" class="i">+    icon=&quot; &quot;
+</a><a href="#h3-0-15" id="h3-0-15" class="i">+    printf &quot;%s%s&quot; &quot;$icon&quot; &quot;$wifiSignal&quot;;
+</a><a href="#h3-0-16" id="h3-0-16" class="i">+    # printf &quot;%s&quot; &quot; $wifiBars&quot;;
+</a><a href="#h3-0-17" id="h3-0-17" class="i">+fi
+</a><b>diff --git a/<a id="h4" href="../file/.local/.macros/dwmBar/sleeper.sh.html">.local/.macros/dwmBar/sleeper.sh</a> b/<a href="../file/.local/.macros/dwmBar/sleeper.sh.html">.local/.macros/dwmBar/sleeper.sh</a></b>
+<a href="#h4-0" id="h4-0" class="h">@@ -0,0 +1,2 @@
+</a><a href="#h4-0-0" id="h4-0-0" class="i">+#!/usr/bin/env bash
+</a><a href="#h4-0-1" id="h4-0-1" class="i">+sudo echo 4999 &gt; /proc/sys/kernel/ns_last_pid; sleep 10
+</a><b>diff --git a/<a id="h5" href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a> b/<a href="../file/.local/.macros/dwmBar/spotify.sh.html">.local/.macros/dwmBar/spotify.sh</a></b>
+<a href="#h5-0" id="h5-0" class="h">@@ -44,7 +44,7 @@ if [ ! -z &quot;$TRACK&quot; ]; then
+</a>         echo &quot;bad&quot;
+     else
+         # printf &quot;%s%s %s - %s &quot; &quot;$SEP1&quot; &quot;$STATUS&quot; &quot;$ARTIST&quot; &quot;$TRACK&quot;
+<a href="#h5-0-3" id="h5-0-3" class="d">-        printf &quot;%s%s - %s &quot; &quot;$STATUS &quot; &quot;$TRACK&quot; &quot;$ARTIST&quot; 
+</a><a href="#h5-0-4" id="h5-0-4" class="i">+        printf &quot;%s%s - %s&quot; &quot;$STATUS &quot; &quot;$TRACK&quot; &quot;$ARTIST&quot; 
+</a>         # printf &quot;%0d:%02d&quot; $((DURATION%3600/60)) $((DURATION%60))
+         printf &quot;%s\n&quot; &quot;$SEP2&quot;
+     fi
+<b>diff --git a/<a id="h6" href="../file/.local/.macros/dwmBar/usageCPU.sh.html">.local/.macros/dwmBar/usageCPU.sh</a> b/<a href="../file/.local/.macros/dwmBar/usageCPU.sh.html">.local/.macros/dwmBar/usageCPU.sh</a></b>
+<a href="#h6-0" id="h6-0" class="h">@@ -0,0 +1,29 @@
+</a><a href="#h6-0-0" id="h6-0-0" class="i">+#!/bin/bash
+</a><a href="#h6-0-1" id="h6-0-1" class="i">+
+</a><a href="#h6-0-2" id="h6-0-2" class="i">+# Set the color codes
+</a><a href="#h6-0-3" id="h6-0-3" class="i">+# red=$&#39;\e[1;31m&#39;
+</a><a href="#h6-0-4" id="h6-0-4" class="i">+# green=$&#39;\e[1;32m&#39;
+</a><a href="#h6-0-5" id="h6-0-5" class="i">+# yellow=$&#39;\e[1;33m&#39;
+</a><a href="#h6-0-6" id="h6-0-6" class="i">+# blue=$&#39;\e[1;34m&#39;
+</a><a href="#h6-0-7" id="h6-0-7" class="i">+# magenta=$&#39;\e[1;35m&#39;
+</a><a href="#h6-0-8" id="h6-0-8" class="i">+# cyan=$&#39;\e[1;36m&#39;
+</a><a href="#h6-0-9" id="h6-0-9" class="i">+# reset=$&#39;\e[0m&#39;
+</a><a href="#h6-0-10" id="h6-0-10" class="i">+
+</a><a href="#h6-0-11" id="h6-0-11" class="i">+# Set the threshold values
+</a><a href="#h6-0-12" id="h6-0-12" class="i">+# low_threshold=30
+</a><a href="#h6-0-13" id="h6-0-13" class="i">+# high_threshold=70
+</a><a href="#h6-0-14" id="h6-0-14" class="i">+
+</a><a href="#h6-0-15" id="h6-0-15" class="i">+# Get the current CPU usage
+</a><a href="#h6-0-16" id="h6-0-16" class="i">+cpu_usage=$(top -b -n1 | grep &quot;Cpu(s)&quot; | awk &#39;{print $2 + $4}&#39;)
+</a><a href="#h6-0-17" id="h6-0-17" class="i">+
+</a><a href="#h6-0-18" id="h6-0-18" class="i">+# Set the color based on the CPU usage
+</a><a href="#h6-0-19" id="h6-0-19" class="i">+# if (( $(echo &quot;$cpu_usage &lt; $low_threshold&quot; | bc -l) )); then
+</a><a href="#h6-0-20" id="h6-0-20" class="i">+#   color=$green
+</a><a href="#h6-0-21" id="h6-0-21" class="i">+# elif (( $(echo &quot;$cpu_usage &lt; $high_threshold&quot; | bc -l) )); then
+</a><a href="#h6-0-22" id="h6-0-22" class="i">+#   color=$yellow
+</a><a href="#h6-0-23" id="h6-0-23" class="i">+# else
+</a><a href="#h6-0-24" id="h6-0-24" class="i">+#   color=$red
+</a><a href="#h6-0-25" id="h6-0-25" class="i">+# fi
+</a><a href="#h6-0-26" id="h6-0-26" class="i">+
+</a><a href="#h6-0-27" id="h6-0-27" class="i">+# Use printf to format the output
+</a><a href="#h6-0-28" id="h6-0-28" class="i">+printf &quot;%s%.2f%%%s\n&quot; &quot;$color&quot; &quot;$cpu_usage&quot; &quot;$reset&quot;
+</a><b>diff --git a/<a id="h7" href="../file/.local/.macros/dwmBar/values/cleanValues.sh.html">.local/.macros/dwmBar/values/cleanValues.sh</a> b/<a href="../file/.local/.macros/dwmBar/values/cleanValues.sh.html">.local/.macros/dwmBar/values/cleanValues.sh</a></b>
+<a href="#h7-0" id="h7-0" class="h">@@ -3,7 +3,7 @@
+</a> # modified by ManyRoads
+ # remodified by driverag22
+ 
+<a href="#h7-0-3" id="h7-0-3" class="d">-LOCALTIME=$(date &#39;+  %a. %d %b.      %R&#39;)
+</a><a href="#h7-0-4" id="h7-0-4" class="i">+LOCALTIME=$(date &#39;+ %a. %d %b.   %R&#39;)
+</a> VOL=$(/home/diego/.local/.macros/dwmBar/vol.sh)
+ MEM=$(free -h --kilo | awk &#39;/^Mem:/ {print $3 &quot;/&quot; $2}&#39;)
+ # CPU=$(/home/diego/.local/.macros/dwmBar/cpu.sh)
+<a href="#h7-1" id="h7-1" class="h">@@ -12,13 +12,14 @@ CPU=$(/home/diego/.local/.macros/dwmBar/usageCPU.sh)
+</a> WIFI=$(/home/diego/.local/.macros/dwmBar/simpleWifi.sh)
+ BATTERY=$(/home/diego/.local/.macros/dwmBar/battery.sh)
+ SPOTIFY=$(/home/diego/.local/.macros/dwmBar/spotify.sh)
+<a href="#h7-1-3" id="h7-1-3" class="i">+# PACK=$(pacman -Q --upgrades | wc -l)
+</a> 
+ 
+ if [ -z &quot;$SPOTIFY&quot; ] 
+ then
+     # printf &quot;[  %s      %s ]   [  %s    %s    %s ]   [ %s ]&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+<a href="#h7-1-9" id="h7-1-9" class="d">-    printf &quot; %s      %s      %s     %s     %s    %s  &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h7-1-10" id="h7-1-10" class="i">+    printf &quot;  %s   %s  %s  %s %s  %s &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME &quot; 
+</a> else 
+     # printf &quot;[  %s    %s ]   [  %s  %s ]   [ %s    %s ]   [ %s ]&quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+<a href="#h7-1-13" id="h7-1-13" class="d">-    printf &quot; %s      %s      %s   %s     %s     %s    %s  &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME&quot; 
+</a><a href="#h7-1-14" id="h7-1-14" class="i">+    printf &quot;  %s    %s  %s %s  %s  %s  %s &quot; &quot;$MEM&quot; &quot;$CPU&quot; &quot;$SPOTIFY&quot; &quot;$VOL&quot; &quot;$WIFI&quot; &quot;$BATTERY&quot; &quot;$LOCALTIME &quot; 
+</a> fi
+<b>diff --git a/<a id="h8" href="../file/.local/.macros/dwmBar/vol.sh.html">.local/.macros/dwmBar/vol.sh</a> b/<a href="../file/.local/.macros/dwmBar/vol.sh.html">.local/.macros/dwmBar/vol.sh</a></b>
+<a href="#h8-0" id="h8-0" class="h">@@ -0,0 +1,14 @@
+</a><a href="#h8-0-0" id="h8-0-0" class="i">+#!/bin/sh
+</a><a href="#h8-0-1" id="h8-0-1" class="i">+VOL=$(awk -F&quot;[][]&quot; &#39;/Left:/ { print $2 }&#39; &lt;(amixer sget Master))
+</a><a href="#h8-0-2" id="h8-0-2" class="i">+STATE=$(awk -F&quot;[][]&quot; &#39;/Left:/ { print $4 }&#39; &lt;(amixer sget Master))
+</a><a href="#h8-0-3" id="h8-0-3" class="i">+
+</a><a href="#h8-0-4" id="h8-0-4" class="i">+if [ &quot;$STATE&quot; = &quot;off&quot; ] 
+</a><a href="#h8-0-5" id="h8-0-5" class="i">+then
+</a><a href="#h8-0-6" id="h8-0-6" class="i">+    icon=&quot; &quot;
+</a><a href="#h8-0-7" id="h8-0-7" class="i">+    printf &quot;$icon&quot;;
+</a><a href="#h8-0-8" id="h8-0-8" class="i">+else
+</a><a href="#h8-0-9" id="h8-0-9" class="i">+    icon=&quot;&quot;
+</a><a href="#h8-0-10" id="h8-0-10" class="i">+    printf &quot;%s%s&quot; &quot;$icon &quot; &quot;$VOL&quot;;
+</a><a href="#h8-0-11" id="h8-0-11" class="i">+fi
+</a><a href="#h8-0-12" id="h8-0-12" class="i">+# printf &quot;%s%s&quot; &quot;$icon&quot; &quot; $VOL&quot;;
+</a><a href="#h8-0-13" id="h8-0-13" class="i">+
+</a></pre>
+</div>
+</body>
+</html>

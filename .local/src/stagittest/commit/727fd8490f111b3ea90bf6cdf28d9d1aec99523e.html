@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>picom refactor - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../"><img src="../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../log.html">Log</a> | <a href="../files.html">Files</a> | <a href="../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<pre><b>commit</b> <a href="../commit/727fd8490f111b3ea90bf6cdf28d9d1aec99523e.html">727fd8490f111b3ea90bf6cdf28d9d1aec99523e</a>
+<b>parent</b> <a href="../commit/400c07e38423c74f8fd55775b1c8c62640eaf1d3.html">400c07e38423c74f8fd55775b1c8c62640eaf1d3</a>
+<b>Author:</b> diego &lt;<a href="mailto:driverag22@gmail.com">driverag22@gmail.com</a>&gt;
+<b>Date:</b>   Wed, 11 Jan 2023 23:48:50 +0100
+
+picom refactor
+
+<b>Diffstat:</b>
+<table><tr><td class="M">M</td><td><a href="#h0">.config/picom/picom.conf</a></td><td> | </td><td class="num">25</td><td><span class="i">++++++++++++++</span><span class="d">-----------</span></td></tr>
+<tr><td class="M">M</td><td><a href="#h1">.xprofile</a></td><td> | </td><td class="num">3</td><td><span class="i">++</span><span class="d">-</span></td></tr>
+</table></pre><pre>2 files changed, 16 insertions(+), 12 deletions(-)
+<hr/><b>diff --git a/<a id="h0" href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a> b/<a href="../file/.config/picom/picom.conf.html">.config/picom/picom.conf</a></b>
+<a href="#h0-0" id="h0-0" class="h">@@ -8,7 +8,7 @@ transition-pow-x = 0.1
+</a> transition-pow-y = 0.1
+ transition-pow-w = 0.1
+ transition-pow-h = 0.1
+<a href="#h0-0-3" id="h0-0-3" class="d">-size-transition = false 
+</a><a href="#h0-0-4" id="h0-0-4" class="i">+size-transition = true
+</a> 
+ #################################
+ #             Shadows           #
+<a href="#h0-1" id="h0-1" class="h">@@ -26,17 +26,18 @@ shadow = false
+</a> #################################
+ # Fade windows in/out when opening/closing and when opacity changes,
+ #  unless no-fading-openclose is used.
+<a href="#h0-1-3" id="h0-1-3" class="d">-fading = false
+</a><a href="#h0-1-4" id="h0-1-4" class="i">+fading = false; 
+</a> fade-in-step = 0.03;
+ fade-out-step = 0.03;
+<a href="#h0-1-7" id="h0-1-7" class="d">-fade-delta = 6
+</a><a href="#h0-1-8" id="h0-1-8" class="i">+fade-delta = 10;
+</a> 
+ 
+ #################################
+ #   Transparency / Opacity      #
+ #################################
+ inactive-opacity = 0.95;
+<a href="#h0-1-15" id="h0-1-15" class="d">-frame-opacity = 0.9;
+</a><a href="#h0-1-16" id="h0-1-16" class="i">+# frame-opacity = 0.9;
+</a><a href="#h0-1-17" id="h0-1-17" class="i">+frame-opacity = 1;
+</a> inactive-opacity-override = true;
+ opacity-rule = [
+ 	&quot;100:class_g = &#39;firefox&#39;&quot;,
+<a href="#h0-2" id="h0-2" class="h">@@ -48,7 +49,7 @@ opacity-rule = [
+</a> 
+ 
+ #################################
+<a href="#h0-2-3" id="h0-2-3" class="d">-#           Corners             #
+</a><a href="#h0-2-4" id="h0-2-4" class="i">+          # Corners             #
+</a> #################################
+ corner-radius = 20.0
+ round-borders = 1
+<a href="#h0-3" id="h0-3" class="h">@@ -57,7 +58,9 @@ rounded-corners-exclude = [
+</a>   # &quot;window_type = &#39;normal&#39;&quot;,
+   # &quot;window_type = &#39;dock&#39;&quot;,
+   # &quot;window_type = &#39;desktop&#39;&quot;,
+<a href="#h0-3-3" id="h0-3-3" class="d">-  &quot;class_g = &#39;dwm&#39;&quot;
+</a><a href="#h0-3-4" id="h0-3-4" class="i">+  &quot;class_g = &#39;dwm&#39;&quot;,
+</a><a href="#h0-3-5" id="h0-3-5" class="i">+  &quot;class_g = &#39;dmenu&#39;&quot;,
+</a><a href="#h0-3-6" id="h0-3-6" class="i">+  # &quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;;
+</a> ];
+ 
+ 
+<a href="#h0-4" id="h0-4" class="h">@@ -75,11 +78,11 @@ rounded-corners-exclude = [
+</a> 
+ # Exclude conditions for background blur.
+ # blur-background-exclude = []
+<a href="#h0-4-3" id="h0-4-3" class="d">-blur-background-exclude = [
+</a><a href="#h0-4-4" id="h0-4-4" class="d">-  &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h0-4-5" id="h0-4-5" class="d">-  &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h0-4-6" id="h0-4-6" class="d">-  &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h0-4-7" id="h0-4-7" class="d">-];
+</a><a href="#h0-4-8" id="h0-4-8" class="i">+# blur-background-exclude = [
+</a><a href="#h0-4-9" id="h0-4-9" class="i">+#   &quot;window_type = &#39;dock&#39;&quot;,
+</a><a href="#h0-4-10" id="h0-4-10" class="i">+#   &quot;window_type = &#39;desktop&#39;&quot;,
+</a><a href="#h0-4-11" id="h0-4-11" class="i">+#   &quot;_GTK_FRAME_EXTENTS@:c&quot;
+</a><a href="#h0-4-12" id="h0-4-12" class="i">+# ];
+</a> 
+ #################################
+ #       General Settings        #
+<b>diff --git a/<a id="h1" href="../file/.xprofile.html">.xprofile</a> b/<a href="../file/.xprofile.html">.xprofile</a></b>
+<a href="#h1-0" id="h1-0" class="h">@@ -8,9 +8,10 @@ amixer set Master mute
+</a> # export _JAVA_AWT_WM_NONREPARENTING=1
+ wmname &quot;LG3D&quot;
+ 
+<a href="#h1-0-3" id="h1-0-3" class="d">-
+</a> # xcompmgr &amp;
+ picom --experimental-backends &amp;
+<a href="#h1-0-6" id="h1-0-6" class="i">+# picom &amp;
+</a><a href="#h1-0-7" id="h1-0-7" class="i">+# picom -b 
+</a> 
+ exec dwm
+ # exec startxfce4 
+</pre>
+</div>
+</body>
+</html>

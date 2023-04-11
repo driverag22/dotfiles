@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>style-1.rasi - .dotfiles - Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</title>
+<link rel="icon" type="image/png" href="../../../../../favicon.png" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed" href="../../../../../atom.xml" />
+<link rel="alternate" type="application/atom+xml" title=".dotfiles Atom Feed (tags)" href="../../../../../tags.xml" />
+<link rel="stylesheet" type="text/css" href="../../../../../style.css" />
+</head>
+<body>
+<table><tr><td><a href="../../../../../../"><img src="../../../../../logo.png" alt="" width="32" height="32" /></a></td><td><h1>.dotfiles</h1><span class="desc">Unnamed repository; edit this file &#39;description&#39; to name the repository.
+</span></td></tr><tr><td></td><td>
+<a href="../../../../../log.html">Log</a> | <a href="../../../../../files.html">Files</a> | <a href="../../../../../refs.html">Refs</a></td></tr></table>
+<hr/>
+<div id="content">
+<p> style-1.rasi (6329B)</p><hr/><pre id="blob">
+<a href="#l1" class="line" id="l1">      1</a> /**
+<a href="#l2" class="line" id="l2">      2</a>  *
+<a href="#l3" class="line" id="l3">      3</a>  * Author : Aditya Shakya (adi1090x)
+<a href="#l4" class="line" id="l4">      4</a>  * Github : @adi1090x
+<a href="#l5" class="line" id="l5">      5</a>  * 
+<a href="#l6" class="line" id="l6">      6</a>  * Rofi Theme File
+<a href="#l7" class="line" id="l7">      7</a>  * Rofi Version: 1.7.3
+<a href="#l8" class="line" id="l8">      8</a>  **/
+<a href="#l9" class="line" id="l9">      9</a> 
+<a href="#l10" class="line" id="l10">     10</a> /*****----- Configuration -----*****/
+<a href="#l11" class="line" id="l11">     11</a> configuration {
+<a href="#l12" class="line" id="l12">     12</a> 	modi:                       &quot;drun,run,filebrowser,window&quot;;
+<a href="#l13" class="line" id="l13">     13</a>     show-icons:                 true;
+<a href="#l14" class="line" id="l14">     14</a>     display-drun:               &quot;APPS&quot;;
+<a href="#l15" class="line" id="l15">     15</a>     display-run:                &quot;RUN&quot;;
+<a href="#l16" class="line" id="l16">     16</a>     display-filebrowser:        &quot;FILES&quot;;
+<a href="#l17" class="line" id="l17">     17</a>     display-window:             &quot;WINDOW&quot;;
+<a href="#l18" class="line" id="l18">     18</a> 	drun-display-format:        &quot;{name}&quot;;
+<a href="#l19" class="line" id="l19">     19</a> 	window-format:              &quot;{w} · {c} · {t}&quot;;
+<a href="#l20" class="line" id="l20">     20</a> }
+<a href="#l21" class="line" id="l21">     21</a> 
+<a href="#l22" class="line" id="l22">     22</a> /*****----- Global Properties -----*****/
+<a href="#l23" class="line" id="l23">     23</a> * {
+<a href="#l24" class="line" id="l24">     24</a>     font:                        &quot;JetBrains Mono Nerd Font 10&quot;;
+<a href="#l25" class="line" id="l25">     25</a>     background:                  #201A41;
+<a href="#l26" class="line" id="l26">     26</a>     background-alt:              #392684;
+<a href="#l27" class="line" id="l27">     27</a>     foreground:                  #FFFFFF;
+<a href="#l28" class="line" id="l28">     28</a>     selected:                    #F801E8;
+<a href="#l29" class="line" id="l29">     29</a>     active:                      #00CCF5;
+<a href="#l30" class="line" id="l30">     30</a>     urgent:                      #8D0083;
+<a href="#l31" class="line" id="l31">     31</a> }
+<a href="#l32" class="line" id="l32">     32</a> 
+<a href="#l33" class="line" id="l33">     33</a> /*****----- Main Window -----*****/
+<a href="#l34" class="line" id="l34">     34</a> window {
+<a href="#l35" class="line" id="l35">     35</a>     /* properties for window widget */
+<a href="#l36" class="line" id="l36">     36</a>     transparency:                &quot;real&quot;;
+<a href="#l37" class="line" id="l37">     37</a>     location:                    center;
+<a href="#l38" class="line" id="l38">     38</a>     anchor:                      center;
+<a href="#l39" class="line" id="l39">     39</a>     fullscreen:                  false;
+<a href="#l40" class="line" id="l40">     40</a>     width:                       1000px;
+<a href="#l41" class="line" id="l41">     41</a>     x-offset:                    0px;
+<a href="#l42" class="line" id="l42">     42</a>     y-offset:                    0px;
+<a href="#l43" class="line" id="l43">     43</a> 
+<a href="#l44" class="line" id="l44">     44</a>     /* properties for all widgets */
+<a href="#l45" class="line" id="l45">     45</a>     enabled:                     true;
+<a href="#l46" class="line" id="l46">     46</a>     border-radius:               15px;
+<a href="#l47" class="line" id="l47">     47</a>     cursor:                      &quot;default&quot;;
+<a href="#l48" class="line" id="l48">     48</a>     background-color:            @background;
+<a href="#l49" class="line" id="l49">     49</a> }
+<a href="#l50" class="line" id="l50">     50</a> 
+<a href="#l51" class="line" id="l51">     51</a> /*****----- Main Box -----*****/
+<a href="#l52" class="line" id="l52">     52</a> mainbox {
+<a href="#l53" class="line" id="l53">     53</a>     enabled:                     true;
+<a href="#l54" class="line" id="l54">     54</a>     spacing:                     0px;
+<a href="#l55" class="line" id="l55">     55</a>     background-color:            transparent;
+<a href="#l56" class="line" id="l56">     56</a>     orientation:                 horizontal;
+<a href="#l57" class="line" id="l57">     57</a>     children:                    [ &quot;imagebox&quot;, &quot;listbox&quot; ];
+<a href="#l58" class="line" id="l58">     58</a> }
+<a href="#l59" class="line" id="l59">     59</a> 
+<a href="#l60" class="line" id="l60">     60</a> imagebox {
+<a href="#l61" class="line" id="l61">     61</a>     padding:                     20px;
+<a href="#l62" class="line" id="l62">     62</a>     background-color:            transparent;
+<a href="#l63" class="line" id="l63">     63</a>     background-image:            url(&quot;~/.config/rofi/images/a.png&quot;, height);
+<a href="#l64" class="line" id="l64">     64</a>     orientation:                 vertical;
+<a href="#l65" class="line" id="l65">     65</a>     children:                    [ &quot;inputbar&quot;, &quot;dummy&quot;, &quot;mode-switcher&quot; ];
+<a href="#l66" class="line" id="l66">     66</a> }
+<a href="#l67" class="line" id="l67">     67</a> 
+<a href="#l68" class="line" id="l68">     68</a> listbox {
+<a href="#l69" class="line" id="l69">     69</a>     spacing:                     20px;
+<a href="#l70" class="line" id="l70">     70</a>     padding:                     20px;
+<a href="#l71" class="line" id="l71">     71</a>     background-color:            transparent;
+<a href="#l72" class="line" id="l72">     72</a>     orientation:                 vertical;
+<a href="#l73" class="line" id="l73">     73</a>     children:                    [ &quot;message&quot;, &quot;listview&quot; ];
+<a href="#l74" class="line" id="l74">     74</a> }
+<a href="#l75" class="line" id="l75">     75</a> 
+<a href="#l76" class="line" id="l76">     76</a> dummy {
+<a href="#l77" class="line" id="l77">     77</a>     background-color:            transparent;
+<a href="#l78" class="line" id="l78">     78</a> }
+<a href="#l79" class="line" id="l79">     79</a> 
+<a href="#l80" class="line" id="l80">     80</a> /*****----- Inputbar -----*****/
+<a href="#l81" class="line" id="l81">     81</a> inputbar {
+<a href="#l82" class="line" id="l82">     82</a>     enabled:                     true;
+<a href="#l83" class="line" id="l83">     83</a>     spacing:                     10px;
+<a href="#l84" class="line" id="l84">     84</a>     padding:                     15px;
+<a href="#l85" class="line" id="l85">     85</a>     border-radius:               10px;
+<a href="#l86" class="line" id="l86">     86</a>     background-color:            @background-alt;
+<a href="#l87" class="line" id="l87">     87</a>     text-color:                  @foreground;
+<a href="#l88" class="line" id="l88">     88</a>     children:                    [ &quot;textbox-prompt-colon&quot;, &quot;entry&quot; ];
+<a href="#l89" class="line" id="l89">     89</a> }
+<a href="#l90" class="line" id="l90">     90</a> textbox-prompt-colon {
+<a href="#l91" class="line" id="l91">     91</a>     enabled:                     true;
+<a href="#l92" class="line" id="l92">     92</a>     expand:                      false;
+<a href="#l93" class="line" id="l93">     93</a>     str:                         &quot;&quot;;
+<a href="#l94" class="line" id="l94">     94</a>     background-color:            inherit;
+<a href="#l95" class="line" id="l95">     95</a>     text-color:                  inherit;
+<a href="#l96" class="line" id="l96">     96</a> }
+<a href="#l97" class="line" id="l97">     97</a> entry {
+<a href="#l98" class="line" id="l98">     98</a>     enabled:                     true;
+<a href="#l99" class="line" id="l99">     99</a>     background-color:            inherit;
+<a href="#l100" class="line" id="l100">    100</a>     text-color:                  inherit;
+<a href="#l101" class="line" id="l101">    101</a>     cursor:                      text;
+<a href="#l102" class="line" id="l102">    102</a>     placeholder:                 &quot;Search&quot;;
+<a href="#l103" class="line" id="l103">    103</a>     placeholder-color:           inherit;
+<a href="#l104" class="line" id="l104">    104</a> }
+<a href="#l105" class="line" id="l105">    105</a> 
+<a href="#l106" class="line" id="l106">    106</a> /*****----- Mode Switcher -----*****/
+<a href="#l107" class="line" id="l107">    107</a> mode-switcher{
+<a href="#l108" class="line" id="l108">    108</a>     enabled:                     true;
+<a href="#l109" class="line" id="l109">    109</a>     spacing:                     20px;
+<a href="#l110" class="line" id="l110">    110</a>     background-color:            transparent;
+<a href="#l111" class="line" id="l111">    111</a>     text-color:                  @foreground;
+<a href="#l112" class="line" id="l112">    112</a> }
+<a href="#l113" class="line" id="l113">    113</a> button {
+<a href="#l114" class="line" id="l114">    114</a>     padding:                     15px;
+<a href="#l115" class="line" id="l115">    115</a>     border-radius:               10px;
+<a href="#l116" class="line" id="l116">    116</a>     background-color:            @background-alt;
+<a href="#l117" class="line" id="l117">    117</a>     text-color:                  inherit;
+<a href="#l118" class="line" id="l118">    118</a>     cursor:                      pointer;
+<a href="#l119" class="line" id="l119">    119</a> }
+<a href="#l120" class="line" id="l120">    120</a> button selected {
+<a href="#l121" class="line" id="l121">    121</a>     background-color:            @selected;
+<a href="#l122" class="line" id="l122">    122</a>     text-color:                  @foreground;
+<a href="#l123" class="line" id="l123">    123</a> }
+<a href="#l124" class="line" id="l124">    124</a> 
+<a href="#l125" class="line" id="l125">    125</a> /*****----- Listview -----*****/
+<a href="#l126" class="line" id="l126">    126</a> listview {
+<a href="#l127" class="line" id="l127">    127</a>     enabled:                     true;
+<a href="#l128" class="line" id="l128">    128</a>     columns:                     1;
+<a href="#l129" class="line" id="l129">    129</a>     lines:                       8;
+<a href="#l130" class="line" id="l130">    130</a>     cycle:                       true;
+<a href="#l131" class="line" id="l131">    131</a>     dynamic:                     true;
+<a href="#l132" class="line" id="l132">    132</a>     scrollbar:                   false;
+<a href="#l133" class="line" id="l133">    133</a>     layout:                      vertical;
+<a href="#l134" class="line" id="l134">    134</a>     reverse:                     false;
+<a href="#l135" class="line" id="l135">    135</a>     fixed-height:                true;
+<a href="#l136" class="line" id="l136">    136</a>     fixed-columns:               true;
+<a href="#l137" class="line" id="l137">    137</a>     
+<a href="#l138" class="line" id="l138">    138</a>     spacing:                     10px;
+<a href="#l139" class="line" id="l139">    139</a>     background-color:            transparent;
+<a href="#l140" class="line" id="l140">    140</a>     text-color:                  @foreground;
+<a href="#l141" class="line" id="l141">    141</a>     cursor:                      &quot;default&quot;;
+<a href="#l142" class="line" id="l142">    142</a> }
+<a href="#l143" class="line" id="l143">    143</a> 
+<a href="#l144" class="line" id="l144">    144</a> /*****----- Elements -----*****/
+<a href="#l145" class="line" id="l145">    145</a> element {
+<a href="#l146" class="line" id="l146">    146</a>     enabled:                     true;
+<a href="#l147" class="line" id="l147">    147</a>     spacing:                     15px;
+<a href="#l148" class="line" id="l148">    148</a>     padding:                     8px;
+<a href="#l149" class="line" id="l149">    149</a>     border-radius:               10px;
+<a href="#l150" class="line" id="l150">    150</a>     background-color:            transparent;
+<a href="#l151" class="line" id="l151">    151</a>     text-color:                  @foreground;
+<a href="#l152" class="line" id="l152">    152</a>     cursor:                      pointer;
+<a href="#l153" class="line" id="l153">    153</a> }
+<a href="#l154" class="line" id="l154">    154</a> element normal.normal {
+<a href="#l155" class="line" id="l155">    155</a>     background-color:            inherit;
+<a href="#l156" class="line" id="l156">    156</a>     text-color:                  inherit;
+<a href="#l157" class="line" id="l157">    157</a> }
+<a href="#l158" class="line" id="l158">    158</a> element normal.urgent {
+<a href="#l159" class="line" id="l159">    159</a>     background-color:            @urgent;
+<a href="#l160" class="line" id="l160">    160</a>     text-color:                  @foreground;
+<a href="#l161" class="line" id="l161">    161</a> }
+<a href="#l162" class="line" id="l162">    162</a> element normal.active {
+<a href="#l163" class="line" id="l163">    163</a>     background-color:            @active;
+<a href="#l164" class="line" id="l164">    164</a>     text-color:                  @foreground;
+<a href="#l165" class="line" id="l165">    165</a> }
+<a href="#l166" class="line" id="l166">    166</a> element selected.normal {
+<a href="#l167" class="line" id="l167">    167</a>     background-color:            @selected;
+<a href="#l168" class="line" id="l168">    168</a>     text-color:                  @foreground;
+<a href="#l169" class="line" id="l169">    169</a> }
+<a href="#l170" class="line" id="l170">    170</a> element selected.urgent {
+<a href="#l171" class="line" id="l171">    171</a>     background-color:            @urgent;
+<a href="#l172" class="line" id="l172">    172</a>     text-color:                  @foreground;
+<a href="#l173" class="line" id="l173">    173</a> }
+<a href="#l174" class="line" id="l174">    174</a> element selected.active {
+<a href="#l175" class="line" id="l175">    175</a>     background-color:            @urgent;
+<a href="#l176" class="line" id="l176">    176</a>     text-color:                  @foreground;
+<a href="#l177" class="line" id="l177">    177</a> }
+<a href="#l178" class="line" id="l178">    178</a> element-icon {
+<a href="#l179" class="line" id="l179">    179</a>     background-color:            transparent;
+<a href="#l180" class="line" id="l180">    180</a>     text-color:                  inherit;
+<a href="#l181" class="line" id="l181">    181</a>     size:                        32px;
+<a href="#l182" class="line" id="l182">    182</a>     cursor:                      inherit;
+<a href="#l183" class="line" id="l183">    183</a> }
+<a href="#l184" class="line" id="l184">    184</a> element-text {
+<a href="#l185" class="line" id="l185">    185</a>     background-color:            transparent;
+<a href="#l186" class="line" id="l186">    186</a>     text-color:                  inherit;
+<a href="#l187" class="line" id="l187">    187</a>     cursor:                      inherit;
+<a href="#l188" class="line" id="l188">    188</a>     vertical-align:              0.5;
+<a href="#l189" class="line" id="l189">    189</a>     horizontal-align:            0.0;
+<a href="#l190" class="line" id="l190">    190</a> }
+<a href="#l191" class="line" id="l191">    191</a> 
+<a href="#l192" class="line" id="l192">    192</a> /*****----- Message -----*****/
+<a href="#l193" class="line" id="l193">    193</a> message {
+<a href="#l194" class="line" id="l194">    194</a>     background-color:            transparent;
+<a href="#l195" class="line" id="l195">    195</a> }
+<a href="#l196" class="line" id="l196">    196</a> textbox {
+<a href="#l197" class="line" id="l197">    197</a>     padding:                     15px;
+<a href="#l198" class="line" id="l198">    198</a>     border-radius:               10px;
+<a href="#l199" class="line" id="l199">    199</a>     background-color:            @background-alt;
+<a href="#l200" class="line" id="l200">    200</a>     text-color:                  @foreground;
+<a href="#l201" class="line" id="l201">    201</a>     vertical-align:              0.5;
+<a href="#l202" class="line" id="l202">    202</a>     horizontal-align:            0.0;
+<a href="#l203" class="line" id="l203">    203</a> }
+<a href="#l204" class="line" id="l204">    204</a> error-message {
+<a href="#l205" class="line" id="l205">    205</a>     padding:                     15px;
+<a href="#l206" class="line" id="l206">    206</a>     border-radius:               20px;
+<a href="#l207" class="line" id="l207">    207</a>     background-color:            @background;
+<a href="#l208" class="line" id="l208">    208</a>     text-color:                  @foreground;
+<a href="#l209" class="line" id="l209">    209</a> }
+</pre>
+</div>
+</body>
+</html>
