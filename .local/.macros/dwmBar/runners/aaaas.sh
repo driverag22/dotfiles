@@ -4,7 +4,6 @@
 # Edited by: Diego Rivera <git@driverag22.com>
 # GNU GPLv3
 # Dependencies: spotify/spotifyd, playerctl
-while true; do
     TRACK=$(playerctl metadata title)
     if [ ! -z "$TRACK" ]; then
         ARTIST=$(playerctl metadata artist)
@@ -22,12 +21,15 @@ while true; do
         fi
 
         if [ "$PLAYER" == "spotify" ]; then 
-            printf "%s%s - %s" "$STATUS" "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
-        else 
-            echo "" > '/tmp/spotify.txt'
+            printf "%s%s - %s" "$STATUS " "$TRACK" "$ARTIST"
         fi
-    else 
-        echo "" > '/tmp/spotify.txt'
+    
+        # if [ "$STATUS"  "No players found " ]; then
+        #     echo "bad" > '/tmp/spotify.txt'
+        # else if [ "$PLAYER" == "spotify" ]; then
+        #     echo "bad" > '/tmp/spotify.txt'
+        # else 
+        #     printf "%s%s - %s" "$STATUS " "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
+        # fi
     fi
     sleep 7s
-done &

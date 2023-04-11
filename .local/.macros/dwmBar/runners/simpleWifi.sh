@@ -4,13 +4,14 @@
 # wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk '$1=="yes" {print $2}')
 while true; do
     wifiSignal=$(nmcli -f ACTIVE,SIGNAL dev wifi list | awk '$1=="yes" {print $2 "%"}')
+    wifiSSID=$(nmcli -f ACTIVE,SSID dev wifi list | awk '$1=="yes" {print $2}')
     if [ -z $wifiSignal ] 
     then
         icon="睊"
         printf "$icon" > '/tmp/wifi.txt';
     else
         icon=" "
-        printf "%s%s" "$icon" "$wifiSignal" > '/tmp/wifi.txt';
+        printf "%s%s %s" "$icon" "$wifiSSID" "$wifiSignal" > '/tmp/wifi.txt';
     fi
     sleep 10s
 done &
