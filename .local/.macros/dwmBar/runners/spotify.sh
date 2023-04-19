@@ -16,9 +16,9 @@ while true; do
         # SHUFFLE=$(playerctl shuffle)
     
         if [ "$STATUS" = "Playing" ]; then
-            STATUS=" "
+            STATUS=" "
         else
-            STATUS="契"
+            STATUS=" "
         fi
 
         if [ "$PLAYER" == "spotify" ]; then 
