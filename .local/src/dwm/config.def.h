@@ -75,11 +75,13 @@ static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 /* static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL}; */
-static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOs.wiki", NULL};
+static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOY2Q3.wiki", NULL};
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
 static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
+static const char *mediamenu[]  = { "/home/diego/.local/.macros/keyBindings/mediamenu.sh", NULL };
+static const char *volmenu[]  = { "/home/diego/.local/.macros/keyBindings/volmenu.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
@@ -90,6 +92,7 @@ static const char *play[] = {"playerctl", "play-pause", NULL};
 static const char *soundUp[] = {"amixer", "set", "Master",  "2%+", NULL};
 static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
 static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
+static const char *micToggle[] = {"amixer", "set", "Capture", "toggle", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,7 +108,9 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } }, //powermenu
-	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //powermenu
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = mediamenu } }, //mediamenu
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //batterymenu
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volmenu } }, //volmenu
 
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
@@ -115,6 +120,7 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up/down/mute
     { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
     { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
+    { 0,                            XF86XK_AudioMicMute,       spawn, {.v = micToggle}},
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
