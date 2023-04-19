@@ -7,7 +7,7 @@
 
 # Import Current Theme
 source "$HOME"/.config/rofi/applets/shared/theme.bash
-theme="$type/$style"
+theme="$HOME/.config/rofi/applets/type-1/style-vol.rasi"
 
 # Volume Info
 mixer="`amixer info Master | grep 'Mixer name' | cut -d':' -f2 | tr -d \',' '`"
@@ -20,30 +20,30 @@ urgent=""
 # Speaker Info
 amixer get Master | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
-	active="-a 1"
-	stext='Unmute'
-	sicon=''
-else
 	urgent="-u 1"
 	stext='Mute'
 	sicon=''
+else
+	active="-a 1"
+	stext='Unmute'
+	sicon=''
 fi
 
 # Microphone Info
 amixer get Capture | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
-    [ -n "$active" ] && active+=",3" || active="-a 3"
-	mtext='Unmute'
-	micon=''
-else
     [ -n "$urgent" ] && urgent+=",3" || urgent="-u 3"
 	mtext='Mute'
 	micon=''
+else
+    [ -n "$active" ] && active+=",3" || active="-a 3"
+	mtext='Unmute'
+	micon=''
 fi
 
 # Theme Elements
 prompt="S:$stext, M:$mtext"
-mesg="$mixer - Speaker: $speaker, Mic: $mic"
+mesg="Speaker: $speaker, Mic: $mic"
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
@@ -68,7 +68,7 @@ layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
 	option_1=" Increase"
 	option_2="$sicon $stext"
-	option_3=" Decrese"
+	option_3=" Decrease"
 	option_4="$micon $mtext"
 	option_5=" Settings"
 else
