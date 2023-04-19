@@ -22,7 +22,8 @@ while true; do
         fi
 
         if [ "$PLAYER" == "spotify" ]; then 
-            printf "%s%s - %s" "$STATUS" "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
+            # printf "%s%s - %s" "$STATUS" "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
+            printf "%s%s" "$STATUS" "$TRACK" > '/tmp/spotify.txt'
         else 
             echo "" > '/tmp/spotify.txt'
         fi

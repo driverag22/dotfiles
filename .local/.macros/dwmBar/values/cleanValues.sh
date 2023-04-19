@@ -16,5 +16,6 @@ then
     # printf "  %s   %s    %s  %s %s    %s " "$MEM" "$CPU" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
     printf "  %s   %s    %s    %s  %s    %s " "$MEM" "$CPU" "$WIFI" "$VOL" "$BATTERY" "$LOCALTIME" 
 else  
-    printf "  %s   %s  %s %s  %s %s  %s " "$MEM" "$CPU" "$SPOTIFY" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
+    # printf "  %s   %s  %s %s  %s %s  %s " "$MEM" "$CPU" "$SPOTIFY" "$VOL" "$WIFI" "$BATTERY" "$LOCALTIME" 
+    printf "  %s   %s    %s    %s  %s  %s    %s " "$MEM" "$CPU" "$WIFI" "$SPOTIFY" "$VOL" "$BATTERY" "$LOCALTIME" 
 fi
