@@ -4,7 +4,7 @@
 # wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk '$1=="yes" {print $2}')
 while true; do
     wifiSignal=$(nmcli -f ACTIVE,SIGNAL dev wifi list | awk '$1=="yes" {print $2 "%"}')
-    wifiSSID=$(nmcli -f ACTIVE,SSID dev wifi list | awk '$1=="yes" {print $2}')
+    wifiSSID=$(nmcli -f ACTIVE,SSID dev wifi list | awk '$1=="yes" {print $2 " " $3}')
     if [ -z $wifiSignal ] 
     then
         icon="睊"
