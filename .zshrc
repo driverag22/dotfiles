@@ -110,18 +110,18 @@ pfetch
 # opam configuration
 # [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# autoload -Uz compinit promptinit
-# compinit
-# fancy-ctrl-z () {
-#   if [[ $#BUFFER -eq 0 ]]; then
-#     BUFFER="fg"
-#     zle accept-line
-#   else
-#     zle push-input
-#     zle clear-screen
-#   fi
-# }
-# zle -N fancy-ctrl-z
-# bindkey '^Z' fancy-ctrl-z
+autoload -Uz compinit promptinit
+compinit
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
