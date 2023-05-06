@@ -1,37 +1,24 @@
 local set = vim.opt
 
-
 ---- Keymaps:
 
--- fzy search
-vim.keymap.set('n', '<C-s>', ':NV<CR>', {noremap = true}) -- Centered mode
+vim.keymap.set('n', '<C-s>', ':NV<CR>', {noremap = true}) -- fzy search
 
--- vim.keymap.set('n', '<C-f>', ':TZFocus<CR>', {noremap = true}) -- Focus mode
-vim.keymap.set('n', '<C-g>', ':TZAtaraxis<CR>', {noremap = true}) -- Centered mode
 vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true}) -- Toggle file tree
-vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>', {noremap = true}) -- Toggle tagbar
 
--- vim.keymap.set('n', '<C-p>', ':tabnew<CR>', {noremap = true}) -- new tab
--- vim.keymap.set('n', '<C-o>', ':tabclose<CR>', {noremap = true}) --close tab
+vim.keymap.set('n', '<leader>ot', ':tabnew<CR>', {noremap = true}) -- new tab
+vim.keymap.set('n', '<leader>ct', ':tabclose<CR>', {noremap = true}) --close tab
 vim.keymap.set('n', '<M-m>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
 vim.keymap.set('n', '<M-n>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
-
 
 --move wrapped lines like normal lines
 vim.keymap.set('n', 'j', 'gj', {noremap = true}) 
 vim.keymap.set('n', 'k', 'gk', {noremap = true}) 
 
---terminal
-vim.keymap.set('n', '<C-y>', ':ToggleTerm<CR>', {noremap = true, silent = true}) -- Open terminal
-vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]]) -- move 
-vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]]) -- between
-vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]]) -- the 
-vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]]) -- terminals
-
 
 --tasks
-vim.keymap.set('n', 'td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
-vim.keymap.set('n', 'tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- open taskwiki calendar
+vim.keymap.set('n', '<leader>td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
+vim.keymap.set('n', '<leader>tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- open taskwiki calendar
 vim.keymap.set('n', 'tto', ':TaskWikiToggle<CR>', {noremap = true}) -- open taskwiki calendar
 
 --tex

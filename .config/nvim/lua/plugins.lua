@@ -36,10 +36,9 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
 Plug 'feline-nvim/feline.nvim' -- bar 
--- Plug 'https://github.com/nanozuki/tabby.nvim' -- to have tabs
 -- Plug 'nvim-lua/plenary.nvim'
 Plug 'navarasu/onedark.nvim' -- colorscheme
--- Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
+Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
 Plug('xiyaowong/nvim-transparent') -- make background transparent
 
 --- Search for files:
@@ -95,8 +94,5 @@ vim.cmd ([[
     let g:nv_search_paths = ['~/src', '~/vimwiki']
 ]])
 
--- require("toggleterm").setup()
+require("toggleterm").setup()
 -- require("nvim-gps").setup()
--- require("tabby").setup({
--- 	tabline = require("tabby.presets").tab_only
--- })
