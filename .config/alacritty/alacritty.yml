@@ -588,7 +588,6 @@ schemes:
 # *TomorrowNight
 
 colors: *Dracula
-# colors: *Palenight
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
