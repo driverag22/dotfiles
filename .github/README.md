@@ -12,6 +12,8 @@ Adaptable to different themes.
 
 <img src="./pinkNeonTheme.png" >
 
+## Some dependencies
+
 The dotfiles include, but are not limited to
 - Neovim - version 0.8.3
 - dwm - version 6.4
