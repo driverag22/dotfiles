@@ -92,6 +92,8 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 --fzy finder 
 vim.cmd ([[ 
     let g:nv_search_paths = ['~/src', '~/vimwiki']
+    let g:vimtex_view_method = 'zathura'
+    let g:vimtex_view_forward_search_on_start = 0
 ]])
 
 require("toggleterm").setup()

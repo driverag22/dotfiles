@@ -5,5 +5,4 @@ set selection-clipboard selection
 set recolor   
 set recolor-lightcolor \#31333f
 set recolor-keephue
-set default-bg \#31333f
-
+set default-bg \#242424
