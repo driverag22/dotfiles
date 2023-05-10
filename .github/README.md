@@ -2,7 +2,15 @@
 
 Just my ***extremely*** simple dotfiles/setup.
 
-<img src="./screenshot.png" >
+Adaptable to different themes.
+
+## Nord theme:
+
+<img src="./nordTheme.png" >
+
+## Pink theme:
+
+<img src="./pinkNeonTheme.png" >
 
 The dotfiles include, but are not limited to
 - Neovim - version 0.8.3
