@@ -1,3 +1,0 @@
-== TODO (s)==
-- [ ] Update values independently following 'personalized' timers
-- [ ] 
