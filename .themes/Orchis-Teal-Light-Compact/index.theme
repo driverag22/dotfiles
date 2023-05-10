@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Orchis-Teal-Light-Compact
+Comment=An Materia Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Orchis-Teal-Light-Compact
+MetacityTheme=Orchis-Teal-Light-Compact
+IconTheme=Tela-circle
+CursorTheme=Vimix
+ButtonLayout=close,minimize,maximize:menu
