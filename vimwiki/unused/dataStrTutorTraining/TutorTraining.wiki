@@ -1,7 +1,0 @@
-= Tutor training =
-- [X] [[intro|Introduction to this course]]
-- [X] [[motStud|Motivating students]]
-- [X] [[CoachForLearning|Coaching for learning]]
-- [X] [[EffecFeedback|Giving effective feedback]]
-
-{{file:10keysfeedback.png}}

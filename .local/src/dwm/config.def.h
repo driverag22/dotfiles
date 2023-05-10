@@ -13,16 +13,18 @@ static const int user_bh            = 26;
 static const char *fonts[]          = { "JetBrains Mono:size=13"};
 /* static const char *fonts[]          = { "Comic mono:size=13"}; */
 static const char col_gray4[]       = "#31333f";
+/* static const char col_gray4[]       = "#6f7581"; */
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
+static const char col_blue[]        = "#81A1C1";
 static const char col_viogray[]     = "#9f92a7";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
-	[SchemeSel]  = { col_white, col_pink,  col_pink},
-	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
-	[SchemeSpecial2]  = { col_pink, col_gray4,  col_pink},
+	[SchemeSel]  = { col_white, col_blue,  col_blue},
+	[SchemeSpecial]  = { col_blue, col_gray4,  col_blue},
+	[SchemeSpecial2]  = { col_blue, col_gray4,  col_blue},
 };
 
 /* tagging */
@@ -37,6 +39,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -82,6 +85,7 @@ static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powe
 static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
 static const char *mediamenu[]  = { "/home/diego/.local/.macros/keyBindings/mediamenu.sh", NULL };
 static const char *volmenu[]  = { "/home/diego/.local/.macros/keyBindings/volmenu.sh", NULL };
+static const char *wallpaper[]  = { "/home/diego/.local/.macros/keyBindings/sxiv.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
@@ -111,7 +115,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = mediamenu } }, //mediamenu
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //batterymenu
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volmenu } }, //volmenu
-
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallpaper } }, //wallpaper
 
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},

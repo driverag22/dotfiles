@@ -388,11 +388,13 @@ schemes:
     # Normal colors
     normal:
       black:   '#3B4252'
-      red:     '#BF616A'
+      # red:     '#BF616A'
+      red:     '#ff5555'
       green:   '#A3BE8C'
       yellow:  '#EBCB8B'
       blue:    '#81A1C1'
-      magenta: '#B48EAD'
+      # magenta: '#B48EAD'
+      # magenta: '#ff79c6'
       cyan:    '#88C0D0'
       white:   '#E5E9F0'
 
@@ -403,7 +405,9 @@ schemes:
       green:   '#A3BE8C'
       yellow:  '#EBCB8B'
       blue:    '#81A1C1'
-      magenta: '#B48EAD'
+      # magenta: '#B48EAD'
+      # magenta: '#ff79c6'
+      magenta:    '#81A1C1'
       cyan:    '#8FBCBB'
       white:   '#ECEFF4'
 
@@ -587,7 +591,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *Dracula
+colors: *Nord
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

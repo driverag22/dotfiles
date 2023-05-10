@@ -1,8 +1,0 @@
-Geometric duality can be used to design new algorithms for solving problems in competitive programming. For example, the simplex algorithm for linear programming is
-based on the duality between linear programs and their dual programs.
-
-By understanding the duality between different types of geometric objects, we can design new algorithms for solving problems in competitive programming. 
- 
-For example, the visibility graph of a set of obstacles in the plane is a graph whose vertices correspond to the obstacles and whose edges correspond to pairs of 
-obstacles that can see each other. The problem of computing visibility graphs can be solved using the duality between points and lines in projective geometry. 
-By designing an algorithm that takes advantage of this duality, we can find an efficient solution to the problem.

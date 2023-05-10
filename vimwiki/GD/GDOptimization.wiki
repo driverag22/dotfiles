@@ -1,5 +1,0 @@
-Geometric duality can be used to reformulate an optimization problem in such a way that it becomes easier to solve. For example, linear programming problems can be 
-transformed into geometric problems and solved using techniques from projective geometry.
-
-The simplex algorithm for linear programming, which is a widely used method for solving linear programming problems, is based on the duality between linear programs 
-and their dual programs. By reformulating the problem in its dual form, we can find an efficient solution to the problem.

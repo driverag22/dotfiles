@@ -1,6 +1,0 @@
-== TODO s==
-
-- [ ] Vimtex install
-    * https://github.com/lervag/vimtex
-    * https://www.tug.org/texlive/quickinstall.html
-- [ ] Clean unnecessary plugins
