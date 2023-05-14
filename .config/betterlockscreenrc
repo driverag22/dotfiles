@@ -9,7 +9,8 @@ dim_level=40
 blur_level=1
 pixel_scale=10,1000
 # solid_color=333333
-solid_color=ff69b4
+# solid_color=ff69b4
+solid_color=81a1c1
 wallpaper_cmd="feh --bg-fill"
 quiet=false
 # i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
@@ -25,12 +26,14 @@ separatorcolor=00000000
 ringvercolor=ffffffff
 
 # insidevercolor=00000000
-insidevercolor=ff69b4
+# insidevercolor=ff69b4
+insidevercolor=81a1c1
 
 ringwrongcolor=ffffffff
 
 # insidewrongcolor=d23c3dff
-insidewrongcolor=ff69b4
+# insidewrongcolor=ff69b4
+insidewrongcolor=81a1c1
 
 timecolor=ffffffff
 time_format="%H:%M:%S"
@@ -38,11 +41,13 @@ greetercolor=ffffffff
 layoutcolor=ffffffff
 
 # keyhlcolor=d23c3dff
-keyhlcolor=ff69b4
+# keyhlcolor=ff69b4
+keyhlcolor=81a1c1
 
 bshlcolor=d23c3dff
 verifcolor=ffffffff
 # wrongcolor=d23c3dff
-wrongcolor=ff69b4
+# wrongcolor=ff69b4
+wrongcolor=81a1c1
 modifcolor=d23c3dff
 bgcolor=000000ff
