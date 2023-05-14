@@ -98,6 +98,9 @@ static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
 static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
 static const char *micToggle[] = {"amixer", "set", "Capture", "toggle", NULL};
 
+static const char *warpdNorm[] = {"warpd", "--normal", NULL};
+static const char *warpdGrid[] = {"warpd", "--grid", NULL};
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
@@ -117,6 +120,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volmenu } }, //volmenu
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallpaper } }, //wallpaper
 
+	{ MODKEY|Mod1Mask,               XK_n,      spawn,          {.v = warpdNorm } }, 
+	{ MODKEY|Mod1Mask,               XK_g,      spawn,          {.v = warpdGrid } },
+    
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
 	{ 0,                            XK_Print,      spawn,          {.v = screenshot} }, //screenshotter
