@@ -1,9 +1,6 @@
 #!/bin/sh
 source /usr/share/nvm/init-nvm.sh
 
-#set keyboard so spanish letters (ñ,á,...) can be used
-setxkbmap us -variant intl
-
 #sets dwmBar running to display values
 /home/diego/.local/.macros/dwmBar/dwmbar.sh
 
@@ -25,6 +22,10 @@ amixer set Master mute
 xinput set-prop "Synaptics TM3625-010" "libinput Tapping Enabled" 1
 xinput set-prop "Synaptics TM3625-010" "libinput Natural Scrolling Enabled" 1
 
-#start wm and compositor
+#set keyboard so spanish letters (ñ,á,...) can be used
+setxkbmap us -variant intl
+
+#start compositor, warpd (keyboard-controller mouse) and wm
 picom &
+warpd &
 exec dwm
