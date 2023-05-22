@@ -22,7 +22,7 @@ vim.keymap.set('n', '<leader>tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- 
 vim.keymap.set('n', 'tto', ':TaskWikiToggle<CR>', {noremap = true}) -- open taskwiki calendar
 
 --tex
-vim.keymap.set('n', 'ctx', ':VimtexCompile<CR>', {noremap = true}) -- Toggle tagbar
+vim.keymap.set('n', 'ctx', ':VimtexCompile<CR>', {noremap = true}) -- Toggle tex compile
 
 local function nkeymap(key, map)
 	vim.keymap.set('n', key, map, {noremap = true})

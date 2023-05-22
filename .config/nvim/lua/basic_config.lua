@@ -18,10 +18,21 @@ vim.cmd ([[
 		let g:NERDTreeDirArrowExpandable="+"
 	 	let g:NERDTreeDirArrowCollapsible="~"
         let g:taskwiki_dont_fold="yes"
+        let g:vimtex_compiler_latexmk = {
+        \ 'options' : [
+        \   '-pdf',
+        \   '-shell-escape',
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
         autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=manual foldlevelstart=99
 
 ]])
 
+        -- let g:taskwiki_source_tw_colors="yes"
         -- let wiki = {}
         -- let wiki.path = "~/vimwiki/' 
         -- let wiki.nested_syntaxes = {'python':'python', 'java':'java', 'c++':'cpp'}
