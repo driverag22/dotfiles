@@ -37,9 +37,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
+	{ "stalonetray", "stalonetray",    "stalonetray",       1 << 7,       0,           -1 },
 };
 
 /* layout(s) */
@@ -86,6 +85,7 @@ static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/ba
 static const char *mediamenu[]  = { "/home/diego/.local/.macros/keyBindings/mediamenu.sh", NULL };
 static const char *volmenu[]  = { "/home/diego/.local/.macros/keyBindings/volmenu.sh", NULL };
 static const char *wallpaper[]  = { "/home/diego/.local/.macros/keyBindings/sxiv.sh", NULL };
+static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systray.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
@@ -119,6 +119,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //batterymenu
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volmenu } }, //volmenu
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallpaper } }, //wallpaper
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = systray } }, //systray
 
 	{ MODKEY|Mod1Mask,               XK_n,      spawn,          {.v = warpdNorm } }, 
 	{ MODKEY|Mod1Mask,               XK_g,      spawn,          {.v = warpdGrid } },
