@@ -25,7 +25,9 @@ xinput set-prop "Synaptics TM3625-010" "libinput Natural Scrolling Enabled" 1
 #set keyboard so spanish letters (ñ,á,...) can be used
 setxkbmap us -variant intl
 
-#start compositor, warpd (keyboard-controller mouse) and wm
+#start compositor, warpd (keyboard-controller mouse), systray and wm
 picom &
 warpd &
+stalonetray &
+nm-applet &
 exec dwm
