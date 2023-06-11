@@ -4,6 +4,10 @@ Just my ***extremely*** simple dotfiles/setup.
 
 Adaptable to different themes.
 
+## Blue theme:
+
+<img src="./blueTheme.png" >
+
 ## Nord theme:
 
 <img src="./nordTheme.png" >
