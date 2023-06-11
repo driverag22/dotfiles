@@ -4,16 +4,21 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 7;        /* gaps between windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 5;       /* vertical padding of bar */
-static const int sidepad            = 7;       /* horizontal padding of bar */
+/* static const int vertpad            = 5;       /1* vertical padding of bar *1/ */
+/* static const int sidepad            = 7;       /1* horizontal padding of bar *1/ */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 26;
 static const char *fonts[]          = { "JetBrains Mono:size=13"};
 /* static const char *fonts[]          = { "Comic mono:size=13"}; */
 static const char col_gray4[]       = "#31333f";
-/* static const char col_gray4[]       = "#6f7581"; */
+/* static const char col_grayblue[]       = "#303642"; */
+static const char col_grayblue[]       = "#303642";
+/* static const char col_difBlue[]       = "#8CB3BB"; */
+static const char col_difBlue[]       = "#5E81AB";
 static const char col_white[]       = "#eeeeee";
 static const char col_pink[]        = "#ff69b4";
 static const char col_blue[]        = "#81A1C1";
@@ -21,10 +26,13 @@ static const char col_viogray[]     = "#9f92a7";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
-	[SchemeSel]  = { col_white, col_blue,  col_blue},
-	[SchemeSpecial]  = { col_blue, col_gray4,  col_blue},
-	[SchemeSpecial2]  = { col_blue, col_gray4,  col_blue},
+	[SchemeNorm] = { col_white, col_grayblue,  col_grayblue},
+	[SchemeSel]  = { col_white, col_difBlue,  col_difBlue},
+	[SchemeSpecial]  = { col_difBlue, col_grayblue,  col_difBlue},
+	[SchemeSpecial2]  = { col_difBlue, col_grayblue,  col_difBlue},
+	/* [SchemeSel]  = { col_white, col_blue,  col_blue}, */
+	/* [SchemeSpecial]  = { col_blue, col_gray4,  col_blue}, */
+	/* [SchemeSpecial2]  = { col_blue, col_gray4,  col_blue}, */
 };
 
 /* tagging */
@@ -38,7 +46,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
-	{ "stalonetray", "stalonetray",    "stalonetray",       1 << 7,       0,           -1 },
+	{ "stalonetray", "stalonetray",    "stalonetray",       1 << 7,       0,           1 },
 };
 
 /* layout(s) */
