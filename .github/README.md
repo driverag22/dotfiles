@@ -4,7 +4,7 @@ Just my ***extremely*** simple dotfiles/setup.
 
 Adaptable to different themes.
 
-## Blue theme:
+## Blue-orange theme:
 
 <img src="./blueTheme.png" >
 
