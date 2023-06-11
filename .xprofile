@@ -10,9 +10,9 @@ source /usr/share/nvm/init-nvm.sh
 #make wireless mouse work correctly
 /home/diego/.local/.macros/automatic/mouse.sh 
 
-#fix broken java displays on dwm
-export _JAVA_AWT_WM_NONREPARENTING=1
-wmname "LG3D"
+#fix broken java displays on dwm (for netbeans)
+# export _JAVA_AWT_WM_NONREPARENTING=1
+# wmname "LG3D"
 
 #turn off bluetooth and mute speakers
 bluetoothctl power off
@@ -21,6 +21,12 @@ amixer set Master mute
 # trackpad fixes
 xinput set-prop "Synaptics TM3625-010" "libinput Tapping Enabled" 1
 xinput set-prop "Synaptics TM3625-010" "libinput Natural Scrolling Enabled" 1
+
+# gurobi software environmet variables
+export GUROBI_HOME="/home/diego/gurobi950/linux64"
+export GRB_LICENSE_FILE="/home/diego/gurobi.lic"
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
 #set keyboard so spanish letters (ñ,á,...) can be used
 setxkbmap us -variant intl
