@@ -39,7 +39,7 @@ Plug 'feline-nvim/feline.nvim' -- bar
 -- Plug 'nvim-lua/plenary.nvim'
 Plug 'navarasu/onedark.nvim' -- colorscheme
 Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
--- Plug('xiyaowong/nvim-transparent') -- make background transparent
+Plug('xiyaowong/nvim-transparent') -- make background transparent
 
 --- Search for files:
 vim.cmd ([[ 
@@ -62,21 +62,21 @@ require('gitsigns').setup()
 require('onedark').setup {
     style = 'deep'
 }
--- require("transparent").setup({
---   enable = true, -- boolean: enable transparent
---   extra_groups = { -- table/string: additional groups that should be cleared
---     -- In particular, when you set it to 'all', that means all available groups
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
 
---     -- example of akinsho/nvim-bufferline.lua
---     "BufferLineTabClose",
---     "BufferlineBufferSelected",
---     "BufferLineFill",
---     "BufferLineBackground",
---     "BufferLineSeparator",
---     "BufferLineIndicatorSelected",
---   },
---   exclude = {}, -- table: groups you don't want to clear
--- })
+    -- example of akinsho/nvim-bufferline.lua
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
 require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
 -- require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
