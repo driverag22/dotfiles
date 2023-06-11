@@ -395,7 +395,8 @@ schemes:
       blue:    '#81A1C1'
       # magenta: '#B48EAD'
       # magenta: '#ff79c6'
-      cyan:    '#88C0D0'
+      # cyan:    '#88C0D0'
+      cyan:    '#8cb3bb'
       white:   '#E5E9F0'
 
     # Bright colors
@@ -404,7 +405,8 @@ schemes:
       red:     '#BF616A'
       green:   '#A3BE8C'
       yellow:  '#EBCB8B'
-      blue:    '#81A1C1'
+      # blue:    '#81A1C1'
+      blue:    '#C97F71'
       # magenta: '#B48EAD'
       # magenta: '#ff79c6'
       magenta:    '#81A1C1'

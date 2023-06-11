@@ -12,8 +12,8 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/launchers/type-2"
-theme='style-1'
-# theme='style-14'
+# theme='style-1'
+theme='style-14'
 
 ## Run
 rofi \
