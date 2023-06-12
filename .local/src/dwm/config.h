@@ -14,15 +14,15 @@ static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 26;
 static const char *fonts[]          = { "JetBrains Mono:size=13"};
 /* static const char *fonts[]          = { "Comic mono:size=13"}; */
-static const char col_gray4[]       = "#31333f";
-/* static const char col_grayblue[]       = "#303642"; */
+/* static const char col_gray4[]       = "#31333f"; */
 static const char col_grayblue[]       = "#303642";
+/* static const char col_orange[]      = "#C97F71"; */
 /* static const char col_difBlue[]       = "#8CB3BB"; */
-static const char col_difBlue[]       = "#5E81AB";
+static const char col_difBlue[]     = "#5E81AB";
 static const char col_white[]       = "#eeeeee";
-static const char col_pink[]        = "#ff69b4";
-static const char col_blue[]        = "#81A1C1";
-static const char col_viogray[]     = "#9f92a7";
+/* static const char col_pink[]        = "#ff69b4"; */
+/* static const char col_blue[]        = "#81A1C1"; */
+/* static const char col_viogray[]     = "#9f92a7"; */
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
