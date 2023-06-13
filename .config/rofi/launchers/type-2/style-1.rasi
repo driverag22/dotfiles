@@ -135,7 +135,8 @@ element normal.normal {
     text-color:                  @white;
 }
 element selected.normal {
-    background-color:            @background-alt;
+    border-color:                @blue;
+    background-color:            @background;
     text-color:                  @white;
 }
 element-icon {

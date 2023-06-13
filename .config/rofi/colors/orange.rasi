@@ -9,10 +9,10 @@
 * {
     background: #303642;
     background-alt: #303642;
-    /* foreground:     #eeeeee; */
     white :         #eeeeee;
     foreground:     #C97F71;
     selected:       #C97F71;
     active:         #C97F71;
     urgent:         #C97F71;
+    blue:           #5E81AB;
 }
