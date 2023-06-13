@@ -16,7 +16,7 @@ static const char *fonts[]          = { "JetBrains Mono:size=13"};
 /* static const char *fonts[]          = { "Comic mono:size=13"}; */
 /* static const char col_gray4[]       = "#31333f"; */
 static const char col_grayblue[]       = "#303642";
-/* static const char col_orange[]      = "#C97F71"; */
+static const char col_orange[]      = "#C97F71";
 /* static const char col_difBlue[]       = "#8CB3BB"; */
 static const char col_difBlue[]     = "#5E81AB";
 static const char col_white[]       = "#eeeeee";
@@ -27,12 +27,10 @@ static const char col_white[]       = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_grayblue,  col_grayblue},
-	[SchemeSel]  = { col_white, col_difBlue,  col_difBlue},
+	[SchemeSel]  = { col_white, col_orange, col_difBlue},
 	[SchemeSpecial]  = { col_difBlue, col_grayblue,  col_difBlue},
-	[SchemeSpecial2]  = { col_difBlue, col_grayblue,  col_difBlue},
 	/* [SchemeSel]  = { col_white, col_blue,  col_blue}, */
 	/* [SchemeSpecial]  = { col_blue, col_gray4,  col_blue}, */
-	/* [SchemeSpecial2]  = { col_blue, col_gray4,  col_blue}, */
 };
 
 /* tagging */
@@ -78,6 +76,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history"};
+static const char *dmenuSearch[] = { "/home/diego/.local/.macros/keyBindings/dmenuGoogleSearch.sh", NULL };
 /* static const char *rofi[] = { "/home/diego/.config/rofi/launchers/type-2/launcher.sh"}; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
@@ -112,13 +111,12 @@ static const char *warpdGrid[] = {"warpd", "--grid", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // dmenu
-	/* { MODKEY,                       XK_space,  spawn,          {.v = rofi} }, // dmenu */
+	{ ALTKEY,                       XK_space,  spawn,          {.v = dmenuSearch } }, // dmenu
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
-	/* { CTRLKEY,                      XK_u,      spawn,          {.v = notion} }, //notion */
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
 
-	{ ALTKEY,                      XK_h,      spawn,          {.v = filebrowser } }, //home
+	{ ALTKEY,                       XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
