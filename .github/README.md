@@ -19,10 +19,10 @@ Adaptable to different themes.
 ## Some dependencies
 
 The dotfiles include, but are not limited to
-- Neovim - version 0.8.3
+- Neovim - version 0.9.1
 - dwm - version 6.4
 - dmenu - version 5.2
-- alacritty - version 0.11.0
+- alacritty - version 0.12.1
 - zsh - version 5.9
 - picom - version vgit-b700a
 - rofi - version 1.7.5
