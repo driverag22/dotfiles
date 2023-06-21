@@ -30,5 +30,5 @@ while true; do
     else 
         echo "" > '/tmp/spotify.txt'
     fi
-    sleep 7s
+    sleep 2s
 done &

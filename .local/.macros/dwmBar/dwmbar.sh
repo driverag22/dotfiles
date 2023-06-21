@@ -4,7 +4,8 @@
 # remodified by driverag22
 
 # Here we initialize the runners for the cleanValues
-/home/diego/.local/.macros/dwmBar/runClean.sh
+# /home/diego/.local/.macros/dwmBar/runClean.sh
+/home/diego/.local/.macros/dwmBar/runNew.sh
 
 while true; do
         ## Choices:
@@ -13,6 +14,7 @@ while true; do
         # cleanValues.sh
         # miniValues.sh
         # minimalistValues.sh
+        # newValues.sh
         
         # Note that, depending on the choice made above, you 
         # need to initialize the actual runners. 
@@ -21,7 +23,8 @@ while true; do
         # You can add the path to the initializer in your .xinit or .xprofile
         # to make it work.
 
-        values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
+        # values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
+        values=$(/home/diego/.local/.macros/dwmBar/values/newValues.sh)
 
         xsetroot -name "$values"
         sleep 0.5s ## refresh rate for general bar
