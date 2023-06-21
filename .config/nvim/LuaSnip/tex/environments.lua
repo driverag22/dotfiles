@@ -51,4 +51,17 @@ s({trig = "ff", snippetType="autosnippet", regTrig = false, wordTrig = true},
     )
 ),
 
+s({trig = 'bit', snippetType="autosnippet", regTrig = false, wordTrig = true},
+    fmta(
+        [[
+            \begin{itemize}[label={-}]
+                \item <>
+            \end{itemize}
+        ]],
+        {
+            i(1),
+        }
+    )
+),
+
 }
