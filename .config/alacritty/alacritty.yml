@@ -393,7 +393,9 @@ schemes:
       green:   '#A3BE8C'
       yellow:  '#EBCB8B'
       blue:    '#81A1C1'
-      cyan:    '#88C0D0'
+      # cyan:    '#88C0D0'
+      magenta: '#C97F71'
+      cyan:    '#9C8CAC'
       white:   '#E5E9F0'
 
     # Bright colors
@@ -403,8 +405,8 @@ schemes:
       green:   '#A3BE8C'
       yellow:  '#EBCB8B'
       blue:    '#81A1C1'
-      magenta:    '#C97F71'
-      cyan:    '#C97F71'
+      magenta: '#C97F71'
+      cyan:    '#9C8CAC'
       white:   '#ECEFF4'
 
   ### Oceanic Next ###
