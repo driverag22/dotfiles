@@ -12,7 +12,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 26;
-static const char *fonts[]          = { "JetBrains Mono:size=13"};
+static const char *fonts[]          = { "JetBrains Mono:size=13", "DejaVu Sans Mono wifi ramp:size=13"};
 /* static const char *fonts[]          = { "Comic mono:size=13"}; */
 /* static const char col_gray4[]       = "#31333f"; */
 static const char col_grayblue[]       = "#303642";
