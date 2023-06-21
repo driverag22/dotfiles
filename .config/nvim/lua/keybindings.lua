@@ -3,6 +3,7 @@ local set = vim.opt
 ---- Keymaps:
 
 vim.keymap.set('n', '<C-s>', ':NV<CR>', {noremap = true}) -- fzy search
+vim.keymap.set('n', '<C-b>', ':redo<CR>', {noremap = true}) -- redo
 
 vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true}) -- Toggle file tree
 
@@ -56,3 +57,4 @@ vim.cmd ([[
     smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 ]])
 
+vim.keymap.set('n', '<C-r>', ':redo<CR>', {noremap = true}) -- redo
