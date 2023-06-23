@@ -1,30 +1,26 @@
 
 local on_attach = function(client, bufnr) end
 
-require('lspconfig').cssls.setup {on_attach = on_attach}
+-- require('lspconfig').cssls.setup {on_attach = on_attach}
+-- require('lspconfig').grammarly.setup {on_attach = on_attach}
+-- require('lspconfig').html.setup {on_attach = on_attach}
+-- require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
+require('lspconfig').ltex.setup {on_attach = on_attach}
 require('lspconfig').texlab.setup {on_attach = on_attach}
-require('lspconfig').sumneko_lua.setup {on_attach = on_attach}
+require('lspconfig').luau_lsp.setup {on_attach = on_attach}
 require('lspconfig').clangd.setup {on_attach = on_attach}
-require('lspconfig').html.setup {on_attach = on_attach}
 require('lspconfig').jdtls.setup {on_attach = on_attach}
 require('lspconfig').pyright.setup {on_attach = on_attach}
-require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
 
-
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.setup {}
-
-lsp_installer.setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+require("mason").setup {
     ui = {
         icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
+            package_installed = "✓"
         }
     }
-})
+}
+require("mason-lspconfig").setup {}
 
 ---------------------------
 -- ==== CMP portion ==== --
@@ -100,24 +96,60 @@ cmp.setup({
 
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
-require('lspconfig')['sumneko_lua'].setup {
-    capabilities = capabilities
+require('lspconfig')['luau_lsp'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require('lspconfig')['texlab'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
-require('lspconfig')['quick_lint_js'].setup {
-    capabilities = capabilities
+require('lspconfig')['jdtls'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
+
+require'lspconfig'.ltex.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        ltex = {
+            disabledRules = { ['en-US'] = { 'PROFANITY' } },
+            dictionary = {
+                ['en-US'] = {'Diego', 'Rivera', 'Garrido'},
+            },
+        },
+    },
+}
+
+
+-- require('lspconfig')['quick_lint_js'].setup {
+--     capabilities = capabilities
+-- }
+
+-- require('lspconfig')['html'].setup {
+--     capabilities = capabilities
+-- }
+
+-- require('lspconfig')['cssls'].setup {
+--     capabilities = capabilities
+-- }
+
+-- require('lspconfig')['grammarly'].setup {
+--     capabilities = capabilities
+-- }

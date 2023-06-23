@@ -15,13 +15,14 @@ Plug 'lewis6991/gitsigns.nvim' -- git integration
 
 --================================================================
 Plug 'https://github.com/neovim/nvim-lspconfig' -- Lsp
-Plug 'https://github.com/williamboman/nvim-lsp-installer' -- Lsp installers
 Plug 'hrsh7th/nvim-cmp' -- Completion
 Plug 'hrsh7th/cmp-nvim-lsp' -- plugins
 Plug 'hrsh7th/cmp-buffer' -- to go 
 Plug 'hrsh7th/cmp-path' -- with
 Plug 'hrsh7th/cmp-cmdline' -- Lsp
 
+Plug "williamboman/mason.nvim" -- lsp installer
+Plug "williamboman/mason-lspconfig.nvim"
 --Snippets:
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
