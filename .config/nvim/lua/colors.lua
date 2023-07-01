@@ -56,8 +56,8 @@ M.rose_pine = {
 
 
 vim.cmd ([[ :colorscheme sonokai ]])
--- vim.cmd ([[ :colorscheme onedark ]])
 -- vim.cmd ([[ :colorscheme purify ]])
 -- vim.cmd ([[ :colorscheme molokai ]])
 
 return M
+
