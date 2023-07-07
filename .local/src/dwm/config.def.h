@@ -11,11 +11,16 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 /* static const int sidepad            = 7;       /1* horizontal padding of bar *1/ */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
-static const int user_bh            = 26;
-static const char *fonts[]          = { "JetBrains Mono:size=13", "DejaVu Sans Mono wifi ramp:size=13"};
-/* static const char *fonts[]          = { "Comic mono:size=13"}; */
+static const int user_bh            = 22;
+/* static const int user_bh            = 26; */
+/* static const char *fonts[]          = { "JetBrains Mono:size=13", "DejaVu Sans Mono wifi ramp:size=13"}; */
+static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
+/* static const char *fonts[]          = { "mononoki:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
+/* static const char *fonts[]          = { "SourceCodePro:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
+/* static const char *fonts[]          = { "Comic mono:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
 /* static const char col_gray4[]       = "#31333f"; */
 static const char col_grayblue[]       = "#303642";
+/* static const char col_grayblue[]       = "#31333f"; */
 static const char col_orange[]      = "#C97F71";
 /* static const char col_difBlue[]       = "#8CB3BB"; */
 static const char col_difBlue[]     = "#5E81AB";

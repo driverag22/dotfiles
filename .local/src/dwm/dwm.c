@@ -743,7 +743,7 @@ drawbar(Monitor *m)
 			/* drw_rect(drw, x + boxw, -1, w - 2 * boxw, boxw - 1, */
 			/* 	m == selmon && selmon->sel && selmon->sel->tags & 1 << i, */
 			/* 	urg & 1 << i); */
-			drw_rect(drw, x + boxw, 22, w - 2 * boxw, boxw,
+			drw_rect(drw, x + boxw, 19, w - 2 * boxw - 1, boxw - 1,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
 				urg & 1 << i);
         }
