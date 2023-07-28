@@ -29,6 +29,7 @@ vim.cmd ([[
         \ ],
         \}
         autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=manual foldlevelstart=99
+        let g:vimtex_view_method = 'zathura'
 
 ]])
 

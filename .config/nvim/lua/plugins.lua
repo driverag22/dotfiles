@@ -3,14 +3,20 @@ local Plug = vim.fn['plug#']
 ---- Plugins:
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+------------ For telescope
+Plug 'http://github.com/nvim-lua/plenary.nvim' -- 
+Plug 'http://github.com/BurntSushi/ripgrep' --  grep
+Plug 'https://github.com/sharkdp/fd'  --- finder
+vim.cmd ([[
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+]])
+--------------------------------------------------------
+
 Plug 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' -- NerdTree
 Plug 'https://github.com/tpope/vim-commentary' -- For Commenting gcc 
 Plug 'https://github.com/ryanoasis/vim-devicons' -- Developer Icons
 Plug 'lewis6991/gitsigns.nvim' -- git integration
--- Plug 'https://github.com/terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
--- Plug 'https://github.com/preservim/tagbar' -- Tagbar for code navigation
-
 
 --================================================================
 Plug 'https://github.com/neovim/nvim-lspconfig' -- Lsp
@@ -27,16 +33,14 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 --=========
 
--- Plug 'mhinz/vim-startify' -- startup screen // dashboard
-
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 
--- Plug "SmiteshP/nvim-gps"
--- Plug 'Pocco81/true-zen.nvim'
 Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
-Plug 'feline-nvim/feline.nvim' -- bar 
--- Plug 'nvim-lua/plenary.nvim'
+-- Plug 'feline-nvim/feline.nvim' -- bar 
+Plug 'nvim-lualine/lualine.nvim'
+
+Plug 'https://github.com/romgrk/barbar.nvim' -- better tabline
 
 -- Plug 'EdenEast/nightfox.nvim' 
 Plug 'navarasu/onedark.nvim' -- colorscheme for bottom bar
@@ -44,15 +48,6 @@ Plug 'navarasu/onedark.nvim' -- colorscheme for bottom bar
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' -- Retro Schemes
 
 Plug('akinsho/toggleterm.nvim', {['tag'] = '*'}) -- terminal
--- Plug('xiyaowong/nvim-transparent') -- make background transparent
-
---- Search for files:
-vim.cmd ([[ 
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-]])
-Plug 'https://github.com/alok/notational-fzf-vim' 
-
--- Plug 'gorbit99/codewindow.nvim' -- code minimap
 
 Plug 'vimwiki/vimwiki' -- vim wiki
 Plug 'tools-life/taskwiki' -- task-wiki
@@ -67,23 +62,8 @@ require('gitsigns').setup()
 require('onedark').setup {
     style = 'deep'
 }
--- require("transparent").setup({
---   extra_groups = { -- table/string: additional groups that should be cleared
---     -- In particular, when you set it to 'all', that means all available groups
-
---     -- example of akinsho/nvim-bufferline.lua
---     "BufferLineTabClose",
---     "BufferlineBufferSelected",
---     "BufferLineFill",
---     "BufferLineBackground",
---     "BufferLineSeparator",
---     "BufferLineIndicatorSelected",
---   },
---   exclude_groups = {}, -- table: groups you don't want to clear
--- })
 
 require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
--- require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
@@ -92,14 +72,11 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Use Tab (or some other key if you prefer) to trigger visual selection
   store_selection_keys = "<Tab>",
+
+  -- region_check_events = 'InsertEnter',
+  -- delete_check_events = 'InsertLeave'
 })
 
---fzy finder 
-vim.cmd ([[ 
-    let g:nv_search_paths = ['~/src', '~/vimwiki']
-    let g:vimtex_view_method = 'zathura'
-    let g:vimtex_view_forward_search_on_start = 0
-]])
-
 require("toggleterm").setup()
--- require("nvim-gps").setup()
+
+require('lualine').setup()
