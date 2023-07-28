@@ -73,10 +73,6 @@ static const Layout layouts[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -89,7 +85,7 @@ static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 /* static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL}; */
-static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODOY2Q4.wiki", NULL};
+static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODO.wiki", NULL};
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
