@@ -1,257 +1,273 @@
-----------------------------------------------------------
--- Statusline configuration file
------------------------------------------------------------
--- Credits: brainfuckset (https://github.com/brainfucksec/neovim-lua)
+-- Eviline config for lualine
+-- Author: shadmansaleh
+-- Credit: glepnir
+-- Editted by: driverag22
+local lualine = require('lualine')
 
-local status_ok, feline = pcall(require, 'feline')
-if not status_ok then
-  return
+-- Color table for highlights
+-- stylua: ignore
+local colors = {
+  bg       = '#202328',
+  fg       = '#eeeeee',
+  white    = '#eeeeee',
+  black    = '#000000',
+  yellow   = '#ECBE7B',
+  cyan     = '#008080',
+  darkblue = '#081633',
+  betterblue = '#5E81AB',
+  green    = '#98be65',
+  orange   = '#FF8800',
+  orange2  = '#C97F71',
+  violet   = '#a9a1e1',
+  magenta  = '#c678dd',
+  blue     = '#51afef',
+  red      = '#ec5f67',
+}
+
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand('%:p:h')
+    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end,
+}
+
+-- Colors for different modes
+local mode_color = {
+  n = colors.betterblue,
+  i = colors.green,
+  v = colors.orange2,
+  [''] = colors.blue,
+  V = colors.orange2,
+  c = colors.magenta,
+  no = colors.red,
+  s = colors.orange,
+  S = colors.orange,
+  [''] = colors.orange,
+  ic = colors.yellow,
+  R = colors.violet,
+  Rv = colors.violet,
+  cv = colors.red,
+  ce = colors.red,
+  r = colors.cyan,
+  rm = colors.cyan,
+  ['r?'] = colors.cyan,
+  ['!'] = colors.red,
+  t = colors.red,
+}
+
+-- Config
+local config = {
+  options = {
+    -- Disable sections and component separators
+    component_separators = '',
+    section_separators = '',
+    theme = {
+      -- We are going to use lualine_c an lualine_x as left and
+      -- right section. Both are highlighted by c theme .  So we
+      -- are just setting default looks o statusline
+      normal = { 
+                a = { fg = colors.black, bg = colors.betterblue},
+                c = { fg = colors.fg, bg = colors.bg} },
+      inactive = { c = { fg = colors.fg, bg = colors.bg } },
+      insert = { a = { fg = colors.black, bg = colors.green } },
+      visual = { a = { fg = colors.black, bg = colors.orange2 } },
+      replace = { a = { fg = colors.black, bg = colors.violet } },
+      command = { a = { fg = colors.black, bg = colors.magenta} },
+    },
+  },
+
+  sections = {
+    lualine_a = { 'mode' },
+    -- these are to remove the defaults
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    -- These will be filled later
+    lualine_c = {},
+    lualine_x = {},
+  },
+  inactive_sections = {
+    -- these are to remove the defaults
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
+    lualine_x = {},
+  },
+}
+
+-- Inserts a component in lualine_c at left section
+local function ins_left(component)
+  table.insert(config.sections.lualine_c, component)
 end
 
-local colors = require('colors').onedark_dark
+-- Inserts a component in lualine_x at right section
+local function ins_right(component)
+  table.insert(config.sections.lualine_x, component)
+end
 
-local vi_mode_colors = {
-  NORMAL = colors.cyan,
-  INSERT = colors.green,
-  VISUAL = colors.yellow,
-  OP = colors.cyan,
-  BLOCK = colors.cyan,
-  REPLACE = colors.red,
-  ['V-REPLACE'] = colors.red,
-  ENTER = colors.orange,
-  MORE = colors.orange,
-  SELECT = colors.yellow,
-  COMMAND = colors.pink,
-  SHELL = colors.pink,
-  TERM = colors.pink,
-  NONE = colors.yellow,
+-- ins_left {
+--   function()
+--     return '▊'
+--   end,
+--   color = { fg = colors.blue }, -- Sets highlighting of component
+--   padding = { left = 1, right = 1 }, -- We don't need space before this
+-- }
+
+ins_left {
+  -- mode component
+  function()
+    -- return ''
+    return ''
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { left = 1, right = 1 },
 }
 
-local vi_mode_utils = require 'feline.providers.vi_mode'
-
-local separator = '|'
-
--- My components
-local comps = {
-  -- vi_mode -> NORMAL, INSERT..
-  vi_mode = {
-    left = {
-      provider = function()
-        local label = ' '..vi_mode_utils.get_vim_mode()..' '
-        return label
-      end,
-      hl = function()
-        local set_color = {
-          name = vi_mode_utils.get_mode_highlight_name(),
-          fg = colors.bg,
-          bg = vi_mode_utils.get_mode_color(),
-          style = 'bold',
-        }
-        return set_color
-      end,
-      left_sep = ' ',
-      right_sep = ' ',
-    }
-  },
-  -- Parse file information:
-  file = {
-    -- File name
-    info = {
-      provider = {
-        name = 'file_info',
-        opts = {
-          type = 'relative',
-          file_modified_icon = '',
-        }
-      },
-      hl = { fg = colors.cyan },
-      icon = '',
-    },
-    -- File type
-    type = {
-      provider = function()
-        local type = vim.bo.filetype:lower()
-        local extension = vim.fn.expand '%:e'
-        local icon = require('nvim-web-devicons').get_icon(extension)
-        if icon == nil then
-          icon = ' '
-        end
-        return ' ' .. icon .. ' ' .. type
-      end,
-      hl = { fg = colors.fg },
-      left_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-      righ_sep = ' ',
-    },
-    -- Operating system
-    os = {
-      provider = function()
-        local os = vim.bo.fileformat:lower()
-        local icon
-        if os == 'unix' then
-          icon = '  '
-        elseif os == 'mac' then
-          icon = '  '
-        else
-          icon = '  '
-        end
-        return icon .. os
-      end,
-      hl = { fg = colors.fg },
-      left_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-      right_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-    },
-    -- Line-column
-    position = {
-      provider = { name = 'position' },
-      hl = {
-        fg = colors.fg,
-        style = 'bold',
-      },
-      left_sep = ' ',
-      right_sep = ' ',
-    },
-    -- Cursor position in %
-    line_percentage = {
-      provider = { name = 'line_percentage' },
-      hl = {
-        fg = colors.cyan,
-        style = 'bold',
-      },
-      left_sep = ' ',
-      right_sep = ' ',
-    },
-    -- Simple scrollbar
-    scroll_bar = {
-      provider = { name = 'scroll_bar' },
-      hl = { fg = colors.fg },
-      left_sep = ' ',
-      right_sep = ' ',
-    },
-  },
-  -- LSP info
-  diagnos = {
-    err = {
-      provider = 'diagnostic_errors',
-      icon = ' ',
-      hl = { fg = colors.red },
-      left_sep = '  ',
-    },
-    warn = {
-      provider = 'diagnostic_warnings',
-      icon = ' ' ,
-      hl = { fg = colors.yellow },
-      left_sep = ' ',
-    },
-    info = {
-      provider = 'diagnostic_info',
-      icon = ' ',
-      hl = { fg = colors.green },
-      left_sep = ' ',
-    },
-    hint = {
-      provider = 'diagnostic_hints',
-      icon = ' ',
-      hl = { fg = colors.cyan },
-      left_sep = ' ',
-    },
-  },
-  lsp = {
-    name = {
-      provider = 'lsp_client_names',
-      icon = '  ',
-      hl = { fg = colors.pink },
-      left_sep = '  ',
-      right_sep = ' ',
-    }
-  },
-  -- git info
-  git = {
-    branch = {
-      provider = 'git_branch',
-      icon = ' ',
-      hl = { fg = colors.pink },
-      left_sep = '  ',
-    },
-    add = {
-      provider = 'git_diff_added',
-      icon = '  ',
-      hl = { fg = colors.green },
-      left_sep = ' ',
-    },
-    change = {
-      provider = 'git_diff_changed',
-      icon = '  ',
-      hl = { fg = colors.orange },
-      left_sep = ' ',
-    },
-    remove = {
-      provider = 'git_diff_removed',
-      icon = '  ',
-      hl = { fg = colors.red },
-      left_sep = ' ',
-    }
-  }
+ins_left {
+  -- filesize component
+  'filesize',
+  cond = conditions.buffer_not_empty,
 }
 
--- Get active/inactive components
--- See: https://github.com/feline-nvim/feline.nvim/blob/master/USAGE.md#components
-local components = {
-  active = {},
-  inactive = {},
+ins_left {
+  'filename',
+  cond = conditions.buffer_not_empty,
+  -- color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.white, gui = 'bold' },
 }
 
-table.insert(components.active, {})
-table.insert(components.active, {})
-table.insert(components.inactive, {})
-table.insert(components.inactive, {})
+ins_left {
+  function()
+    return '▊'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
 
--- Right section
-table.insert(components.active[1], comps.vi_mode.left)
-table.insert(components.active[1], comps.file.info)
-table.insert(components.active[1], comps.git.branch)
-table.insert(components.active[1], comps.git.add)
-table.insert(components.active[1], comps.git.change)
-table.insert(components.active[1], comps.git.remove)
-table.insert(components.inactive[1], comps.file.info)
+ins_left { 'location' }
 
--- Left Section
-table.insert(components.active[2], comps.diagnos.err)
-table.insert(components.active[2], comps.diagnos.warn)
-table.insert(components.active[2], comps.diagnos.hint)
-table.insert(components.active[2], comps.diagnos.info)
-table.insert(components.active[2], comps.lsp.name)
-table.insert(components.active[2], comps.file.type)
-table.insert(components.active[2], comps.file.os)
-table.insert(components.active[2], comps.file.position)
-table.insert(components.active[2], comps.file.line_percentage)
+ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
--- Call feline
-feline.setup {
-  theme = {
-    bg = colors.bg,
-    fg = colors.fg,
-  },
-  components = components,
-  vi_mode_colors = vi_mode_colors,
-  force_inactive = {
-    filetypes = {
-      '^NvimTree$',
-      '^packer$',
-      '^vista$',
-      '^help$',
-    },
-    buftypes = {
-      '^terminal$'
-    },
-    bufnames = {},
+ins_left {
+  function()
+    return '▊'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+ins_left {
+  'diagnostics',
+  sources = { 'nvim_diagnostic' },
+  symbols = { error = ' ', warn = ' ', info = ' ' },
+  diagnostics_color = {
+    color_error = { fg = colors.red },
+    color_warn = { fg = colors.yellow },
+    color_info = { fg = colors.cyan },
   },
 }
+
+ins_right {
+  -- Lsp server name .
+  function()
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
+      return msg
+    end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end,
+  icon = ' LSP:',
+  -- color = { fg = colors.betterblue, gui = 'bold' },
+  color = { fg = colors.white},
+  -- color = function()
+  --   return { fg = mode_color[vim.fn.mode()], gui = 'bold' }
+  -- end,
+  padding = { right = 1 },
+}
+
+-- ins_right {
+--   function()
+--     return '▊'
+--   end,
+--   color = function()
+--     return { fg = mode_color[vim.fn.mode()] }
+--   end,
+-- }
+-- Add components to right sections
+-- ins_right {
+--   'o:encoding', -- option component same as &encoding in viml
+--   fmt = string.upper, -- I'm not sure why it's upper case either ;)
+--   cond = conditions.hide_in_width,
+--   color = { fg = colors.green, gui = 'bold' },
+-- }
+
+ins_right {
+  'filetype',
+  color = { gui = 'bold' },
+}
+
+-- ins_right {
+--   'fileformat',
+--   color = { gui = 'bold' },
+-- }
+
+ins_right {
+  function()
+    return '▊'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+ins_right {
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
+}
+
+ins_right {
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
+}
+
+ins_right {
+  function()
+    return '▊'
+  end,
+  padding = { left = 1 }, -- We don't need space before this
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+-- Now don't forget to initialize lualine
+lualine.setup(config)
