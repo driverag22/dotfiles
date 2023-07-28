@@ -17,5 +17,5 @@ if [ -z "$SPOTIFY" ]
 then
     printf " %s   %s   %s    %s   %s %s    %s " "$MEM" "$CPU" "$TEMP" "$WIFI" "$VOL" "$BATTERY" "$LOCALTIME"
 else 
-    printf " %s   %s   %s    %s   %s  %s  %s    %s " "$MEM" "$CPU" "$TEMP" "$WIFI" "$SPOTIFY" "$VOL" "$BATTERY" "$LOCALTIME"
+    printf " %s   %s   %s    %s    %s %s  %s    %s " "$MEM" "$CPU" "$TEMP" "$WIFI" "$SPOTIFY" "$VOL" "$BATTERY" "$LOCALTIME"
 fi

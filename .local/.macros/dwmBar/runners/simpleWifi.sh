@@ -25,7 +25,7 @@ while true; do
         else 
             icon=" "
         fi
-        printf "%s%s%s" "$icon" "$wifiSSID" "$wifiSignal%" > '/tmp/wifi.txt';
+        printf "%s%s %s" "$icon" "$wifiSSID" "$wifiSignal% " > '/tmp/wifi.txt';
     fi
     sleep 10s
 done &
