@@ -22,6 +22,10 @@ local colors = {
   magenta  = '#c678dd',
   blue     = '#51afef',
   red      = '#ec5f67',
+  normal   = '#5E81AB',
+  insert   = '#98be65',
+  visual   = '#C97F71',
+  command  = '#c678dd',
 }
 
 local conditions = {
@@ -40,12 +44,12 @@ local conditions = {
 
 -- Colors for different modes
 local mode_color = {
-  n = colors.betterblue,
-  i = colors.green,
-  v = colors.orange2,
+  n = colors.normal,
+  i = colors.insert,
+  v = colors.visual,
   [''] = colors.blue,
-  V = colors.orange2,
-  c = colors.magenta,
+  V = colors.visual,
+  c = colors.command,
   no = colors.red,
   s = colors.orange,
   S = colors.orange,
@@ -73,13 +77,13 @@ local config = {
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
       normal = { 
-                a = { fg = colors.black, bg = colors.betterblue},
+                a = { fg = colors.black, bg = colors.normal},
                 c = { fg = colors.fg, bg = colors.bg} },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
-      insert = { a = { fg = colors.black, bg = colors.green } },
-      visual = { a = { fg = colors.black, bg = colors.orange2 } },
+      insert = { a = { fg = colors.black, bg = colors.insert } },
+      visual = { a = { fg = colors.black, bg = colors.visual } },
       replace = { a = { fg = colors.black, bg = colors.violet } },
-      command = { a = { fg = colors.black, bg = colors.magenta} },
+      command = { a = { fg = colors.black, bg = colors.command} },
     },
   },
 

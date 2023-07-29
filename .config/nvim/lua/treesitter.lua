@@ -13,7 +13,3 @@ configs.setup {
 -- set.foldmethod = "expr"
 -- set.foldexpr = "nvim_treesitter#foldexpr()"
 
-
-local function blah()
-	print "hello world\n"
-end
