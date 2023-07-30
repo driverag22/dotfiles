@@ -1,25 +1,30 @@
 local set = vim.opt
+local function nkeymap(key, map)
+	vim.keymap.set('n', key, map, {noremap = true})
+end
 -- vim.g.mapleader = " "
 
 -----------------------------------------
 ---- Telescope:
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+nkeymap('<leader>ff', builtin.find_files)
+nkeymap('<leader>fg', builtin.live_grep)
+nkeymap('<leader>fb', builtin.buffers)
+nkeymap('<leader>fh', builtin.help_tags)
 
 -----------------------------------------
 -----------------------------------------
 
 -----------------------------------------
 -- Misc:
-vim.keymap.set('n', '<C-b>', ':redo<CR>', {noremap = true}) -- redo
+nkeymap('<C-b>', ':redo<CR>') -- redo
+
+nkeymap('<leader>gg', ':LazyGit<CR>') -- LazyGit
 
 --move wrapped lines like normal lines
-vim.keymap.set('n', 'j', 'gj', {noremap = true}) 
-vim.keymap.set('n', 'k', 'gk', {noremap = true}) 
+nkeymap('j', 'gj') -- LazyGit
+nkeymap('k', 'gk') -- LazyGit
 
 -----------------------------------------
 -----------------------------------------
@@ -27,26 +32,26 @@ vim.keymap.set('n', 'k', 'gk', {noremap = true})
 -----------------------------------------
 -- Tabs: 
 
-vim.keymap.set('n', '<leader>ot', ':tabnew<CR>', {noremap = true}) -- new tab
-vim.keymap.set('n', '<leader>ct', ':tabclose<CR>', {noremap = true}) --close tab
-vim.keymap.set('n', '<M-m>', ':tabnext<CR>', {noremap = true}) --move to tab to the right
-vim.keymap.set('n', '<M-n>', ':tabprevious<CR>', {noremap = true}) --move to tab to the left
+nkeymap('<leader>ot', ':tabnew<CR>') -- open new tab
+nkeymap('<leader>ct', ':tabclose<CR>') -- close tab 
+nkeymap('<M-m>', ':tabnext<CR>') -- move to tab to the right
+nkeymap('<M-n>', ':tabprevious<CR>') -- move to tab to the left
 
 -----------------------------------------
 -----------------------------------------
 
 -----------------------------------------
 --tasks
-vim.keymap.set('n', '<leader>td', ':TaskWikiDelete<CR>', {noremap = true}) -- delete task
-vim.keymap.set('n', '<leader>tc', ':TaskWikiCalendar<CR>', {noremap = true}) -- open taskwiki calendar
-vim.keymap.set('n', 'tto', ':TaskWikiToggle<CR>', {noremap = true}) -- open taskwiki calendar
+nkeymap('<leader>td', ':TaskWikiDelete<CR>') -- delete task
+nkeymap('<leader>tc', ':TaskWikiCalendar<CR>') -- open taskwiki calendar
+nkeymap('tto', ':TaskWikiToggle<CR>') -- toggle task (start / stop)
 
 -----------------------------------------
 -----------------------------------------
 
 -----------------------------------------
 --tex
-vim.keymap.set('n', 'ctx', ':VimtexCompile<CR>', {noremap = true}) -- Toggle tex compile
+nkeymap('ctx', ':VimtexCompile<CR>') -- Toggle tex compile
 -----------------------------------------
 -----------------------------------------
 
@@ -54,9 +59,6 @@ vim.keymap.set('n', 'ctx', ':VimtexCompile<CR>', {noremap = true}) -- Toggle tex
 -----------------------------------------
 --Lsp
 
-local function nkeymap(key, map)
-	vim.keymap.set('n', key, map, {noremap = true})
-end
 nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>') -- go to definition
 nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>') -- go to declaration
 nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>') -- go to implementation
@@ -71,11 +73,11 @@ nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>') -- rename
 
 -- vim.keymap.set('n', 'mm', codewindow.toggle_minimap())
 
+nkeymap('<leader>dw', ":lua require('diaglist').open_all_diagnostics()<cr>") -- Open buffer with LSP diagnostics
+
 -----------------------------------------
 -----------------------------------------
 
 
-vim.cmd ([[
-    " map < { + Enter > to automatically add second "}"
-    inoremap {<Enter> {<Enter>}<Esc>O
-]])
+-- '{ + <Enter>' mapped to add second '}' below and start line in between '{' and '}'
+vim.keymap.set('i', '{<Enter>', '{<Enter>}<Esc>O', {noremap = true})
