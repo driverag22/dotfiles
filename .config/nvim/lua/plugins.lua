@@ -20,7 +20,7 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 Plug 'https://github.com/tpope/vim-commentary' -- For Commenting gcc 
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
--- Plug 'https://github.com/preservim/nerdtree' -- NerdTree
+Plug 'https://github.com/preservim/nerdtree' -- NerdTree
 -----------------------------------------------------
 --===================================================
 

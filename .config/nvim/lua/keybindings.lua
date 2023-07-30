@@ -22,6 +22,8 @@ nkeymap('<C-b>', ':redo<CR>') -- redo
 
 nkeymap('<leader>gg', ':LazyGit<CR>') -- LazyGit
 
+nkeymap('<C-t>', ':NERDTreeToggle<CR>') -- LazyGit
+
 --move wrapped lines like normal lines
 nkeymap('j', 'gj') -- LazyGit
 nkeymap('k', 'gk') -- LazyGit

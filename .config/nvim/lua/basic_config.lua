@@ -34,6 +34,7 @@ vim.cmd ([[
 
 ]])
 
+        --- let g:loaded_node_provider = 0
         -- let g:taskwiki_source_tw_colors="yes"
         -- let wiki = {}
         -- let wiki.path = "~/vimwiki/' 
