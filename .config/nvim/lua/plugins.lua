@@ -2,30 +2,25 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
-
 --===================================================
 --- Telescope
-Plug 'http://github.com/nvim-lua/plenary.nvim' -- 
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.2'})
+Plug 'http://github.com/nvim-lua/plenary.nvim' -- dependency
 Plug 'http://github.com/BurntSushi/ripgrep' --  grep
 Plug 'https://github.com/sharkdp/fd'  --- finder
-vim.cmd ([[
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
-]])
 --------------------------------------------------------
 --===================================================
 
 
 --===================================================
 ---- Misc
-
 Plug 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
--- Plug 'https://github.com/preservim/nerdtree' -- NerdTree
 Plug 'lervag/vimtex' -- vimtex
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 Plug 'https://github.com/tpope/vim-commentary' -- For Commenting gcc 
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
-
+-- Plug 'https://github.com/preservim/nerdtree' -- NerdTree
 -----------------------------------------------------
 --===================================================
 
@@ -38,6 +33,9 @@ Plug 'hrsh7th/cmp-nvim-lsp' -- plugins
 Plug 'hrsh7th/cmp-buffer' -- to go 
 Plug 'hrsh7th/cmp-path' -- with
 Plug 'hrsh7th/cmp-cmdline' -- Lsp
+
+Plug 'https://github.com/onsails/lspkind.nvim' -- Add pictograms to lsp
+Plug 'https://github.com/onsails/diaglist.nvim' -- Live lsp diagnostics in quickfix & loclist
 
 ---- LSP Installer
 Plug "williamboman/mason.nvim" -- lsp installer
@@ -74,7 +72,6 @@ Plug 'farseer90718/vim-taskwarrior'  --grid view
 --===================================================
 
 vim.call('plug#end')
-
 
 require('gitsigns').setup()
 require('lualine').setup()
