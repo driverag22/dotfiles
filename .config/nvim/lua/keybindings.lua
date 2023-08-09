@@ -44,8 +44,6 @@ nkeymap('<M-n>', ':tabprevious<CR>') -- move to tab to the left
 
 -----------------------------------------
 --tasks
-nkeymap('<leader>td', ':TaskWikiDelete<CR>') -- delete task
-nkeymap('<leader>tc', ':TaskWikiCalendar<CR>') -- open taskwiki calendar
 nkeymap('tto', ':TaskWikiToggle<CR>') -- toggle task (start / stop)
 
 -----------------------------------------
