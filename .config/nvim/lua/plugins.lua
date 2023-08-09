@@ -21,6 +21,7 @@ Plug 'https://github.com/tpope/vim-commentary' -- For Commenting gcc
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
 Plug 'https://github.com/preservim/nerdtree' -- NerdTree
+Plug 'https://github.com/folke/which-key.nvim' -- which-key, help with mappings
 -----------------------------------------------------
 --===================================================
 
@@ -85,4 +86,4 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   -- Use Tab (or some other key if you prefer) to trigger visual selection
   store_selection_keys = "<Tab>",
 })
-
+require('which-key').register()
