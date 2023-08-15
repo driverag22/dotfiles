@@ -40,3 +40,18 @@ vim.cmd ([[
         -- let wiki.path = "~/vimwiki/' 
         -- let wiki.nested_syntaxes = {'python':'python', 'java':'java', 'c++':'cpp'}
         -- let g:vimwiki_list = [wiki]
+
+function ClearReg()
+  print('Clearing registers')
+  vim.cmd [[
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+    for r in regs
+    call setreg(r, [])
+    endfor
+]]
+end
+
+--Make it so i can call ClearReg as a command
+vim.api.nvim_create_user_command('ClearReg', function()
+  ClearReg()
+end, {})
