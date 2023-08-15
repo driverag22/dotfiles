@@ -1,0 +1,268 @@
+#+title: Emacs Configuration
+
+*Emacs Config*
+
+* Package system setup
+#+BEGIN_SRC emacs-lisp
+;; Initialize package sources
+(require 'package)
+
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+  ;; Initialize use-package on non-Linux platforms
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+#+END_SRC
+* Clean up emacs and basics:
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+
+  (scroll-bar-mode -1)  ; Disable visible scrollbar
+  (tool-bar-mode -1)    ; Disable the toolbar
+  (tooltip-mode -1)     ; Disable tooltips
+  (set-fringe-mode 10)  ; Give some breathing room
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+  (menu-bar-mode -1)
+  (setq visible-bell t)
+
+  ;; Line numbers
+  (global-display-line-numbers-mode 1)
+  ;; Relative line numbers
+  (setq display-line-numbers-type 'relative)
+  (setq-default tab-width 4)
+#+END_SRC
+
+* Theming
+#+BEGIN_SRC emacs-lisp
+(use-package doom-themes
+  :init (load-theme 'doom-tokyo-night t))
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 130)
+#+END_SRC
+
+* Packages
+** which-key
+#+BEGIN_SRC emacs-lisp
+  (use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 1)
+  )
+#+END_SRC
+
+** Evil
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+  ;; Use visual line motions even outside of visual-line-mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal))
+  (define-key evil-insert-state-map (kbd "C-v") 'clipboard-yank)
+  (setq evil-want-C-u-scroll t)
+#+END_SRC
+
+** Org mode
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(setq org-agenda-files (list "~/org/others.org"
+			 "~/org/honors.org" 
+			 "~/org/emacssetup.org"
+			 "~/org/universities.org" ))
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/org"))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+     ("C-c n f" . org-roam-node-find)
+     ("C-c n g" . org-roam-graph)
+     ("C-c n i" . org-roam-node-insert)
+     ("C-c n c" . org-roam-capture)
+     ;; Dailies
+     ("C-c n j" . org-roam-dailies-capture-today))
+  :config)
+;; If you're using a vertical completion framework, you might want a more informative completion interface
+;;  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+;;  (org-roam-db-autosync-mode)
+#+END_SRC
+*** Beautify org mode
+#+BEGIN_SRC emacs-lisp
+  (setq org-hide-emphasis-markers t)
+
+    (font-lock-add-keywords 'org-mode
+	'(("^ *\\([-]\\) "
+	   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+  (use-package org-bullets
+   :config
+   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+  ;; Change date format
+  (setq-default org-display-custom-times t)
+  (setq org-time-stamp-custom-formats '("<%d-%m-%Y %a>" . "<%d-%m-%Y %a %H:%M>"))
+
+  ;; Improve org mode looks
+  (setq org-startup-indented t
+	  org-pretty-entities t
+	  org-hide-emphasis-markers t
+	  org-startup-with-inline-images t
+	  org-image-actual-width '(300))
+
+(defun efs/org-mode-visual-fill ()
+  (setq visual-fill-column-width 120
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :hook (org-mode . efs/org-mode-visual-fill))
+#+END_SRC
+
+** lsp-mode
+#+BEGIN_SRC emacs-lisp
+(defun efs/lsp-mode-setup ()
+(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+(lsp-headerline-breadcrumb-mode))
+
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook (lsp-mode . efs/lsp-mode-setup)
+  :init
+  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+  :config
+  (lsp-enable-which-key-integration t))
+#+END_SRC
+
+*** lsp-ui
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-doc-position 'bottom))
+#+END_SRC
+
+*** lsp-treemacs
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-treemacs
+  :after lsp)
+#+END_SRC
+
+*** lsp-ivy
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-ivy)
+#+END_SRC
+
+** ivy
+#+BEGIN_SRC emacs-lisp
+  (use-package ivy
+    :diminish
+    :bind (("C-s" . swiper)
+           :map ivy-minibuffer-map
+           ("RET" . ivy-alt-done)
+           ("TAB" . ivy-next-line)
+           ("<backtab>" . ivy-previous-line)
+           :map ivy-switch-buffer-map
+           ("RET" . ivy-done)
+           ("TAB" . ivy-next-line)
+           ("<backtab>" . ivy-previous-line)
+           :map ivy-reverse-i-search-map
+           ("RET" . ivy-done)
+           ("TAB" . ivy-next-line)
+           ("<backtab>" . ivy-previous-line))
+    :config
+    (ivy-mode 1))
+  (with-eval-after-load 'ivy
+    (define-key ivy-mode-map (kbd "S-<tab>") 'ivy-previous-line))
+
+
+
+  (use-package ivy-rich
+    :init
+    (ivy-rich-mode 1))
+#+END_SRC
+** Company mode 
+#+BEGIN_SRC emacs-lisp
+  (defun my-company-space-and-complete ()
+    "Select the current company candidate and insert a space."
+    (interactive)
+    (company-complete-selection)
+    (insert " "))
+
+  (use-package company
+    :after lsp-mode
+    :hook (lsp-mode . company-mode)
+    :bind (:map company-active-map
+          ("<backtab>" . company-select-previous-or-abort)
+          ("<tab>" . company-select-next-or-abort)
+          ("RET" . my-company-space-and-complete))
+    :custom
+    (company-minimum-prefix-length 1)
+    (company-idle-delay 0.0))
+  (add-hook 'after-init-hook 'global-company-mode)
+
+  (use-package company-box
+    :hook (company-mode . company-box-mode))
+#+END_SRC
+** Magit 
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+;; NOTE: Make sure to configure a GitHub token before using this package!
+;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+;; (use-package forge)
+#+END_SRC
+** counsel
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+  :bind (("C-M-j" . 'counsel-switch-buffer)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history))
+  :config
+  (counsel-mode 1))
+#+END_SRC
+** doom-modeline
+#+BEGIN_SRC emacs-lisp
+(use-package all-the-icons)
+
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+#+END_SRC
+** evil-nerd-commenter
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-nerd-commenter
+    :bind ("C-/" . evilnc-comment-or-uncomment-lines))
+#+END_SRC
