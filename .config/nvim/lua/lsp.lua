@@ -1,16 +1,17 @@
 local on_attach = function(client, bufnr) end
 
--- require('lspconfig').cssls.setup {on_attach = on_attach}
 -- require('lspconfig').grammarly.setup {on_attach = on_attach}
--- require('lspconfig').html.setup {on_attach = on_attach}
--- require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
+require('lspconfig').cssls.setup {on_attach = on_attach}
+require('lspconfig').html.setup {on_attach = on_attach}
+require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
 require('lspconfig').ltex.setup {on_attach = on_attach}
 require('lspconfig').texlab.setup {on_attach = on_attach}
-require('lspconfig').luau_lsp.setup {on_attach = on_attach}
+require('lspconfig').lua_ls.setup {on_attach = on_attach}
 require('lspconfig').clangd.setup {on_attach = on_attach}
 require('lspconfig').jdtls.setup {on_attach = on_attach}
 require('lspconfig').pyright.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
+require('lspconfig').volar.setup {on_attach = on_attach}
 
 require("mason").setup {
     ui = {
@@ -123,7 +124,7 @@ require('lspconfig')['clangd'].setup {
     on_attach = on_attach,
 }
 
-require('lspconfig')['luau_lsp'].setup {
+require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
@@ -156,18 +157,23 @@ require'lspconfig'.ltex.setup{
     },
 }
 
+require('lspconfig')['volar'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
--- require('lspconfig')['quick_lint_js'].setup {
---     capabilities = capabilities
--- }
 
--- require('lspconfig')['html'].setup {
---     capabilities = capabilities
--- }
+require('lspconfig')['quick_lint_js'].setup {
+    capabilities = capabilities
+}
 
--- require('lspconfig')['cssls'].setup {
---     capabilities = capabilities
--- }
+require('lspconfig')['html'].setup {
+    capabilities = capabilities
+}
+
+require('lspconfig')['cssls'].setup {
+    capabilities = capabilities
+}
 
 -- require('lspconfig')['grammarly'].setup {
 --     capabilities = capabilities

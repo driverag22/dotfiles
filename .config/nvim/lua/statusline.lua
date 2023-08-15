@@ -145,7 +145,9 @@ ins_left {
 }
 
 ins_left {
-  'filename',
+ 'filename',
+  path = 4,
+  file_status = true,
   cond = conditions.buffer_not_empty,
   -- color = { fg = colors.magenta, gui = 'bold' },
   color = { fg = colors.white, gui = 'bold' },
@@ -164,16 +166,7 @@ ins_left { 'location' }
 
 ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-}
-
-ins_left {
+ins_right {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -182,6 +175,15 @@ ins_left {
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
   },
+}
+
+ins_right {
+  function()
+    return '▊'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
 }
 
 ins_right {
