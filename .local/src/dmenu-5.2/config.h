@@ -2,9 +2,9 @@
 /* Default settings; can be overriden by command line. */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
 static int user_bh = 26;
-/* static int dmx = 7, dmy = 4; /1* put dmenu at this x, y offset *1/ */
-static int dmx = 0, dmy = 0; /* put dmenu at this x, y offset */
-/* static unsigned int dmw = 1903; /1* make dmenu this wide *1/ */
+static int dmx = 7, dmy = 4; /* put dmenu at this x, y offset */
+/* static int dmx = 0, dmy = 0; /1* put dmenu at this x, y offset *1/ */
+static unsigned int dmw = 1903; /* make dmenu this wide */
 /* static unsigned int border_width = 2; /1* Size of the window border *1/ */
 static unsigned int border_width = 0; /* Size of the window border */
 
