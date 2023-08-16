@@ -14,6 +14,8 @@ Plug 'https://github.com/sharkdp/fd'  --- finder
 
 --===================================================
 ---- Misc
+Plug 'https://github.com/takac/vim-hardtime'  --- hardtime
+
 Plug 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
 Plug 'lervag/vimtex' -- vimtex
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
