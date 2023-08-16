@@ -12,7 +12,11 @@ Adaptable to different themes.
 
 ## Blue-orange theme:
 
+Without gaps:
 <img src="./blueTheme.png" >
+
+With gaps:
+<img src="./blueThemeGaps.png" >
 
 ## Nord theme:
 
