@@ -2,6 +2,12 @@
 
 Just my ***extremely*** simple dotfiles/setup.
 
+Simply a bare-repo. Some of the configs:
+ - nvim : ~/.config/nvim
+ - emacs : ~/.config/emacs
+ - dwm : ~/.local/src/dwm
+ - picom : ~/.config/picom
+
 Adaptable to different themes.
 
 ## Blue-orange theme:
