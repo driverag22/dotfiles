@@ -95,7 +95,7 @@ static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systra
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
-static const char *screenshot[] = {"gscreenshot", "-s", "-c", "-o", NULL};
+static const char *screenshot[] = {"deepin-screenshot", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play-pause", NULL};
