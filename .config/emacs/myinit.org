@@ -99,22 +99,24 @@
 			 "~/org/honors.org" 
 			 "~/org/emacssetup.org"
 			 "~/org/universities.org" ))
-
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory (file-truename "~/org"))
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-     ("C-c n f" . org-roam-node-find)
-     ("C-c n g" . org-roam-graph)
-     ("C-c n i" . org-roam-node-insert)
-     ("C-c n c" . org-roam-capture)
-     ;; Dailies
-     ("C-c n j" . org-roam-dailies-capture-today))
-  :config)
-;; If you're using a vertical completion framework, you might want a more informative completion interface
-;;  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-;;  (org-roam-db-autosync-mode)
+#+END_SRC
+*** org-roam
+#+BEGIN_SRC emacs-lisp
+  (use-package org-roam
+    :ensure t
+    :init
+       (setq org-roam-v2-ack t)
+    :custom
+    (org-roam-directory (file-truename "~/orgRoam"))
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+       ("C-c n f" . org-roam-node-find)
+       ("C-c n g" . org-roam-graph)
+       ("C-c n i" . org-roam-node-insert)
+       ("C-c n c" . org-roam-capture)
+       ;; Dailies
+       ("C-c n j" . org-roam-dailies-capture-today))
+    :config
+    (org-roam-setup))
 #+END_SRC
 *** Beautify org mode
 #+BEGIN_SRC emacs-lisp
@@ -148,40 +150,24 @@
   :hook (org-mode . efs/org-mode-visual-fill))
 #+END_SRC
 
-** lsp-mode
+** doom-modeline
 #+BEGIN_SRC emacs-lisp
-(defun efs/lsp-mode-setup ()
-(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-(lsp-headerline-breadcrumb-mode))
+(use-package all-the-icons)
 
-(use-package lsp-mode
-  :commands (lsp lsp-deferred)
-  :hook (lsp-mode . efs/lsp-mode-setup)
-  :init
-  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
-  :config
-  (lsp-enable-which-key-integration t))
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
 #+END_SRC
-
-*** lsp-ui
+** evil-nerd-commenter
 #+BEGIN_SRC emacs-lisp
-(use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom
-  (lsp-ui-doc-position 'bottom))
+  (use-package evil-nerd-commenter
+    :bind ("C-/" . evilnc-comment-or-uncomment-lines))
 #+END_SRC
-
-*** lsp-treemacs
+** golden-ratio
 #+BEGIN_SRC emacs-lisp
-(use-package lsp-treemacs
-  :after lsp)
+  (use-package golden-ratio)
+  (golden-ratio-mode 1)
 #+END_SRC
-
-*** lsp-ivy
-#+BEGIN_SRC emacs-lisp
-(use-package lsp-ivy)
-#+END_SRC
-
 ** ivy
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
@@ -253,16 +239,37 @@
   :config
   (counsel-mode 1))
 #+END_SRC
-** doom-modeline
+** lsp-mode
 #+BEGIN_SRC emacs-lisp
-(use-package all-the-icons)
+(defun efs/lsp-mode-setup ()
+(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+(lsp-headerline-breadcrumb-mode))
 
-(use-package doom-modeline
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook (lsp-mode . efs/lsp-mode-setup)
+  :init
+  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+  :config
+  (lsp-enable-which-key-integration t))
 #+END_SRC
-** evil-nerd-commenter
+
+*** lsp-ui
 #+BEGIN_SRC emacs-lisp
-  (use-package evil-nerd-commenter
-    :bind ("C-/" . evilnc-comment-or-uncomment-lines))
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-doc-position 'bottom))
 #+END_SRC
+
+*** lsp-treemacs
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-treemacs
+  :after lsp)
+#+END_SRC
+
+*** lsp-ivy
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-ivy)
+#+END_SRC
+
