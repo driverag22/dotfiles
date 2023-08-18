@@ -12,6 +12,7 @@ require('lspconfig').jdtls.setup {on_attach = on_attach}
 require('lspconfig').pyright.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
 require('lspconfig').volar.setup {on_attach = on_attach}
+require('lspconfig').tsserver.setup {on_attach = on_attach}
 
 require("mason").setup {
     ui = {
@@ -56,7 +57,6 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     -- ['<C-Space>'] = cmp.mapping.complete(),
     -- ['<C-e>'] = cmp.mapping.abort(),
-        
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -175,9 +175,9 @@ require('lspconfig')['cssls'].setup {
     capabilities = capabilities
 }
 
--- require('lspconfig')['grammarly'].setup {
---     capabilities = capabilities
--- }
+require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities
+}
 
 local lspkind = require('lspkind')
 cmp.setup {

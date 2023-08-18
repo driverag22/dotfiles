@@ -1,8 +1,6 @@
-local set = vim.opt
 local function nkeymap(key, map, descr)
 	vim.keymap.set('n', key, map, {noremap = true, desc = descr})
 end
--- vim.g.mapleader = " "
 
 -----------------------------------------
 ---- Telescope:
@@ -22,7 +20,7 @@ nkeymap('<C-b>', ':redo<CR>') -- redo
 
 nkeymap('<leader>gg', ':LazyGit<CR>') -- LazyGit
 
-nkeymap('<C-t>', ':NERDTreeToggle<CR>') -- Open/close nerd tree
+nkeymap('<C-t>', ':NvimTreeToggle<CR>') -- Open/close nerd tree
 
 --move wrapped lines like normal lines
 nkeymap('j', 'gj')
@@ -34,10 +32,9 @@ nkeymap('k', 'gk')
 -----------------------------------------
 -- Tabs: 
 
-nkeymap('<leader>tn', ':tabnew<CR>') -- open new tab
-nkeymap('<leader>tc', ':tabclose<CR>') -- close tab 
-nkeymap('<M-m>', ':tabnext<CR>') -- move to tab to the right
-nkeymap('<M-n>', ':tabprevious<CR>') -- move to tab to the left
+nkeymap('<leader>bd', ':bdelete<CR>') -- close buffer
+nkeymap('<M-m>', ':bnext<CR>') -- move to previus buffer
+nkeymap('<M-n>', ':bprev<CR>') -- move to next buffer
 
 -----------------------------------------
 -----------------------------------------
