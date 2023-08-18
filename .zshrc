@@ -110,9 +110,6 @@ alias nw='/usr/bin/nvim /home/diego/vimwiki/index.wiki'
 alias cburnd='/usr/bin/task tags=use or tags=dbl or tags=disc or tags=ode burndown.daily'
 pfetch
 
-# opam configuration
-# [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
 autoload -Uz compinit promptinit
 compinit
 fancy-ctrl-z () {
@@ -128,3 +125,6 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# opam configuration
+[[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
