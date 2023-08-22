@@ -28,7 +28,8 @@ Plug 'https://github.com/sharkdp/fd'  --- finder
 
 --===================================================
 ---- Misc
--- Plug 'https://github.com/takac/vim-hardtime'  --- hardtime
+Plug 'https://github.com/m4xshen/hardtime.nvim'  --- hardtime
+Plug 'MunifTanjim/nui.nvim' --- hardtime dependency
 
 Plug 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
 Plug 'lervag/vimtex' -- vimtex
@@ -92,3 +93,4 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 require("which-key").register()
+require("hardtime").setup()

@@ -32,7 +32,7 @@ nkeymap('k', 'gk')
 -----------------------------------------
 -- Tabs: 
 
-nkeymap('<leader>bd', ':bdelete<CR>') -- close buffer
+nkeymap('<leader>bc', ':bdelete!<CR>') -- close buffer
 nkeymap('<M-m>', ':bnext<CR>') -- move to previus buffer
 nkeymap('<M-n>', ':bprev<CR>') -- move to next buffer
 

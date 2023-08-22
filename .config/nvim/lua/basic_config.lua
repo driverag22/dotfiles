@@ -5,7 +5,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.softtabstop = 4
-vim.opt.mouse = a
 vim.opt.termguicolors = true
 vim.opt.tabstop = 4	-- 4 space tab
 vim.opt.shiftwidth = 4 -- indents will have a width 4
@@ -31,6 +30,7 @@ vim.cmd ([[
         \}
         autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=manual foldlevelstart=99
         let g:vimtex_view_method = 'zathura'
+        :set mouse=a
 
 ]])
 

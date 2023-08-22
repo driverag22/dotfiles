@@ -6,6 +6,9 @@ bufferline.setup{
         themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
         -- numbers = "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         numbers = "none",
+        close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
+        right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
+        left_mouse_command = "buffer %d",    -- can be a string | function, | false see "Mouse actions"
         indicator = {
             -- style = 'underline',
             icon = '▎', -- this should be omitted if indicator style is not 'icon'
@@ -43,7 +46,7 @@ bufferline.setup{
         -- separator_style = "slant",
         separator_style = "thin",
         enforce_regular_tabs = true,
-        always_show_bufferline = true,
+        always_show_bufferline = false,
     },
     highlights = {
         buffer_selected = {
