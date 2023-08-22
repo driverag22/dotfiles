@@ -59,7 +59,6 @@
   (setq which-key-idle-delay 1)
   )
 #+END_SRC
-
 ** Evil
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -95,28 +94,257 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-(setq org-agenda-files (list "~/org/others.org"
-			 "~/org/honors.org" 
-			 "~/org/emacssetup.org"
-			 "~/org/universities.org" ))
+#+END_SRC
+*** Setting up capture
+#+BEGIN_SRC emacs-lisp
+  (setq org-capture-templates
+      '(
+        ("a" "algorithms" plain (file "algorithms.org")
+         "* TODO %? %(org-set-tags \"algorithms\")")
+
+        ("l" "linear optimization" plain (file "linOptimization.org")
+         "* TODO %? %(org-set-tags \"linOpt\")")
+
+        ("s" "mathematical statistics" plain (file "mathStats.org")
+         "* TODO %? %(org-set-tags \"mathStats\")")
+
+        ("h" "honors" plain (file "honors.org")
+         "* TODO %? %(org-set-tags \"honors\")")
+
+        ("a" "automata" plain (file "automata.org")
+         "* TODO %? %(org-set-tags \"automata\")")
+
+        ("m" "masters" plain (file "masters.org")
+         "* TODO %? %(org-set-tags \"masters\")")
+
+        ("r" "resProj" plain (file "researchProject.org")
+         "* TODO %? %(org-set-tags \"researchProject\")")
+
+        ("w" "waterproof" plain (file "waterproof.org")
+         "* TODO %? %(org-set-tags \"waterproof\")")
+
+        ("o" "others" plain (file "others.org")
+         "* TODO %? %(org-set-tags \"others\")")
+        ))
+  (setq capture-files '("masters.org" "others.org" "honors.org"
+                        "automata.org" "researchProject.org"
+                        "algorithms.org" "linOptimization.org" "mathStats.org"
+                        ))
+
+  (defun vulpea-capture-task ()
+    "Capture a task."
+    (interactive)
+    (org-capture nil "t"))
+
+  (setq org-agenda-window-setup 'only-window)
+  (setq org-agenda-custom-commands
+      '((" " "Agenda"
+         (
+          (tags "algorithms|linOpt|mathStats"
+           ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats.")
+            (org-tags-match-list-sublevels nil))
+           )
+          (tags "honors|researchProject"
+           ((org-agenda-overriding-header "Honors || Research Project")
+            (org-tags-match-list-sublevels nil))
+           )
+          (tags "automata|waterproof"
+           ((org-agenda-overriding-header "Automata || Waterproof")
+            (org-tags-match-list-sublevels nil))
+           )
+          (tags "masters"
+           ((org-agenda-overriding-header "Masters")
+            (org-tags-match-list-sublevels nil))
+           )
+          (tags "others"
+           ((org-agenda-overriding-header "Others")
+            (org-tags-match-list-sublevels nil))
+           )
+          )
+         )))
 #+END_SRC
 *** org-roam
 #+BEGIN_SRC emacs-lisp
-  (use-package org-roam
-    :ensure t
-    :init
-       (setq org-roam-v2-ack t)
-    :custom
-    (org-roam-directory (file-truename "~/orgRoam"))
-    :bind (("C-c n l" . org-roam-buffer-toggle)
-       ("C-c n f" . org-roam-node-find)
-       ("C-c n g" . org-roam-graph)
-       ("C-c n i" . org-roam-node-insert)
-       ("C-c n c" . org-roam-capture)
-       ;; Dailies
-       ("C-c n j" . org-roam-dailies-capture-today))
-    :config
-    (org-roam-setup))
+	  (use-package org-roam
+		:ensure t
+		:init
+		   (setq org-roam-v2-ack t)
+		:custom
+		(org-roam-directory (file-truename "~/org/orgRoam"))
+		:bind (("C-c n l" . org-roam-buffer-toggle)
+		   ("C-c n f" . org-roam-node-find)
+		   ("C-c n g" . org-roam-graph)
+		   ("C-c n i" . org-roam-node-insert)
+		   ("C-c n c" . org-roam-capture)
+		   ;; Dailies
+		   ("C-c n j" . org-roam-dailies-capture-today))
+		:config
+		(org-roam-setup))
+
+	(defun vulpea-buffer-prop-get (name)
+	"Get a buffer property called NAME as a string."
+	(org-with-point-at 1
+	  (when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
+							   (point-max) t)
+		(buffer-substring-no-properties
+		 (match-beginning 1)
+		 (match-end 1)))))
+
+	(defun vulpea-agenda-category ()
+	  (let* ((file-name (when buffer-file-name
+						  (file-name-sans-extension
+						   (file-name-nondirectory buffer-file-name))))
+			 (title (vulpea-buffer-prop-get "title"))
+			 (category (org-get-category)))
+		(or (if (and
+				 title
+				 (string-equal category file-name))
+				title
+			  category)
+			"")))
+
+	(setq org-agenda-prefix-format
+		  '((agenda . " %i %-12(vulpea-agenda-category)%?-12t% s")
+			(todo . " %i %-12(vulpea-agenda-category) ")
+			(tags . " %i %-12(vulpea-agenda-category) ")
+			(search . " %i %-12(vulpea-agenda-category) ")))
+#+END_SRC
+** Setting up "smart" org-agenda
+#+BEGIN_SRC emacs-lisp
+  ;; Remove automatic project inheritance
+  (add-to-list 'org-tags-exclude-from-inheritance "project")
+#+END_SRC
+We want to mark as "project" only the org-roam files containing TODO items to increase the speed of
+org agenda.
+Explanation:
+   1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org
+   buffer. We only care about headings, hence the " 'headings ".
+   2. We extract info. about TODO keywords from /headline/ AST, which contains a property we are interested
+   in, -:todo-type., which returns the type of TODO: /'done/, /'todo/ or /nil/.
+   3. Now we just check that there is at least one TODO match.
+#+BEGIN_SRC emacs-lisp
+  (defun vulpea-project-p ()
+    "Return non-nil if current buffer has any todo entry.
+
+  TODO entries marked as done are ignored, meaning the this
+  function returns nil if current buffer contains only completed
+  tasks."
+    (org-element-map                          ; (2)
+         (org-element-parse-buffer 'headline) ; (1)
+         'headline
+       (lambda (h)
+         (eq (org-element-property :todo-type h)
+             'todo))
+       nil 'first-match))                     ; (3)
+#+END_SRC
+Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node,
+and in /before-safe-hook/.
+#+BEGIN_SRC emacs-lisp
+	(defun vulpea-buffer-prop-get-list (name &optional separators)
+	  "Get a buffer property NAME as a list using SEPARATORS.
+	If SEPARATORS is non-nil, it should be a regular expression
+	matching text that separates, but is not part of, the substrings.
+	If nil it defaults to `split-string-default-separators', normally
+	\"[ \f\t\n\r\v]+\", and OMIT-NULLS is forced to t."
+	  (let ((value (vulpea-buffer-prop-get name)))
+		(when (and value (not (string-empty-p value)))
+		  (split-string-and-unquote value separators))))
+	(defun vulpea-buffer-prop-set (name value)
+	"Set a file property called NAME to VALUE in buffer file.
+  If the property is already set, replace its value."
+	(setq name (downcase name))
+	(org-with-point-at 1
+	  (let ((case-fold-search t))
+		(if (re-search-forward (concat "^#\\+" name ":\\(.*\\)")
+							   (point-max) t)
+			(replace-match (concat "#+" name ": " value) 'fixedcase)
+		  (while (and (not (eobp))
+					  (looking-at "^[#:]"))
+			(if (save-excursion (end-of-line) (eobp))
+				(progn
+				  (end-of-line)
+				  (insert "\n"))
+			  (forward-line)
+			  (beginning-of-line)))
+		  (insert "#+" name ": " value "\n")))))
+
+	  (defun vulpea-buffer-tags-get ()
+		"Return filetags value in current buffer."
+		(vulpea-buffer-prop-get-list "filetags" "[ :]"))
+	  (defun vulpea-buffer-prop-remove (name)
+		"Remove a buffer property called NAME."
+		(org-with-point-at 1
+				(when (re-search-forward (concat "\\(^#\\+" name ":.*\n?\\)")
+									        (point-max) t)
+	     (replace-match ""))))
+
+	  (defun vulpea-buffer-tags-set (&rest tags)
+		"Set TAGS in current buffer.
+	  If filetags value is already set, replace it."
+		(if tags
+			(vulpea-buffer-prop-set
+			 "filetags" (concat ":" (string-join tags ":") ":"))
+		  (vulpea-buffer-prop-remove "filetags")))
+
+		(defun vulpea-project-update-tag ()
+			  "Update PROJECT tag in the current buffer."
+			  (when (and (not (active-minibuffer-window))
+						 (vulpea-buffer-p))
+				(save-excursion
+				  (goto-char (point-min))
+				  (let* ((tags (vulpea-buffer-tags-get))
+						 (original-tags tags))
+					(if (vulpea-project-p)
+						(setq tags (cons "project" tags))
+					  (setq tags (remove "project" tags)))
+
+					;; cleanup duplicates
+					(setq tags (seq-uniq tags))
+
+					;; update tags if changed
+					(when (or (seq-difference tags original-tags)
+							  (seq-difference original-tags tags))
+					  (apply #'vulpea-buffer-tags-set tags))))))
+
+		(defun vulpea-buffer-p ()
+		  "Return non-nil if the currently visited buffer is a note."
+		  (and buffer-file-name
+			   (string-prefix-p
+				(expand-file-name (file-name-as-directory org-roam-directory))
+				(file-name-directory buffer-file-name))))
+
+		(add-hook 'find-file-hook #'vulpea-project-update-tag)
+		(add-hook 'before-save-hook #'vulpea-project-update-tag)
+#+END_SRC
+Lastly, to dynamically build /org-agenda-files/, we query all files containing the /project/ tag.
+#+BEGIN_SRC emacs-lisp
+  (defun vulpea-project-files ()
+  "Return a list of note files containing 'project' tag." ;
+  (seq-uniq
+   (seq-map
+    #'car
+    (org-roam-db-query
+     [:select [nodes:file]
+      :from tags
+      :left-join nodes
+      :on (= tags:node-id nodes:id)
+      :where (like tag (quote "%\"project\"%"))]))))
+
+  (defun vulpea-agenda-files-update (&rest _)
+  "Update the value of `org-agenda-files'."
+  (setq org-agenda-files (vulpea-project-files))
+  (setq org-agenda-files (append org-agenda-files capture-files))
+  )
+
+  (advice-add 'org-agenda :before #'vulpea-agenda-files-update)
+  (advice-add 'org-todo-list :before #'vulpea-agenda-files-update)
+
+  (dolist (file (org-roam-list-files))
+  (message "processing %s" file)
+  (with-current-buffer (or (find-buffer-visiting file)
+                           (find-file-noselect file))
+    (vulpea-project-update-tag)
+    (save-buffer)))
 #+END_SRC
 *** Beautify org mode
 #+BEGIN_SRC emacs-lisp
@@ -149,15 +377,23 @@
 (use-package visual-fill-column
   :hook (org-mode . efs/org-mode-visual-fill))
 #+END_SRC
-
-** doom-modeline
+*** vulpea
 #+BEGIN_SRC emacs-lisp
-(use-package all-the-icons)
-
-(use-package doom-modeline
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+(use-package vulpea
+  :ensure t
+  ;; hook into org-roam-db-autosync-mode you wish to enable
+  ;; persistence of meta values (see respective section in README to
+  ;; find out what meta means)
+  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable)))
 #+END_SRC
+#** doom-modeline
+##+BEGIN_SRC emacs-lisp
+#(use-package all-the-icons)
+#
+#(use-package doom-modeline
+#  :init (doom-modeline-mode 1)
+#  :custom ((doom-modeline-height 15)))
+##+END_SRC
 ** evil-nerd-commenter
 #+BEGIN_SRC emacs-lisp
   (use-package evil-nerd-commenter
@@ -168,108 +404,108 @@
   (use-package golden-ratio)
   (golden-ratio-mode 1)
 #+END_SRC
-** ivy
-#+BEGIN_SRC emacs-lisp
-  (use-package ivy
-    :diminish
-    :bind (("C-s" . swiper)
-           :map ivy-minibuffer-map
-           ("RET" . ivy-alt-done)
-           ("TAB" . ivy-next-line)
-           ("<backtab>" . ivy-previous-line)
-           :map ivy-switch-buffer-map
-           ("RET" . ivy-done)
-           ("TAB" . ivy-next-line)
-           ("<backtab>" . ivy-previous-line)
-           :map ivy-reverse-i-search-map
-           ("RET" . ivy-done)
-           ("TAB" . ivy-next-line)
-           ("<backtab>" . ivy-previous-line))
-    :config
-    (ivy-mode 1))
-  (with-eval-after-load 'ivy
-    (define-key ivy-mode-map (kbd "S-<tab>") 'ivy-previous-line))
-
-
-
-  (use-package ivy-rich
-    :init
-    (ivy-rich-mode 1))
-#+END_SRC
-** Company mode 
-#+BEGIN_SRC emacs-lisp
-  (defun my-company-space-and-complete ()
-    "Select the current company candidate and insert a space."
-    (interactive)
-    (company-complete-selection)
-    (insert " "))
-
-  (use-package company
-    :after lsp-mode
-    :hook (lsp-mode . company-mode)
-    :bind (:map company-active-map
-          ("<backtab>" . company-select-previous-or-abort)
-          ("<tab>" . company-select-next-or-abort)
-          ("RET" . my-company-space-and-complete))
-    :custom
-    (company-minimum-prefix-length 1)
-    (company-idle-delay 0.0))
-  (add-hook 'after-init-hook 'global-company-mode)
-
-  (use-package company-box
-    :hook (company-mode . company-box-mode))
-#+END_SRC
-** Magit 
-#+BEGIN_SRC emacs-lisp
-  (use-package magit
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-;; NOTE: Make sure to configure a GitHub token before using this package!
-;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-;; (use-package forge)
-#+END_SRC
-** counsel
-#+BEGIN_SRC emacs-lisp
-(use-package counsel
-  :bind (("C-M-j" . 'counsel-switch-buffer)
-         :map minibuffer-local-map
-         ("C-r" . 'counsel-minibuffer-history))
-  :config
-  (counsel-mode 1))
-#+END_SRC
-** lsp-mode
-#+BEGIN_SRC emacs-lisp
-(defun efs/lsp-mode-setup ()
-(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-(lsp-headerline-breadcrumb-mode))
-
-(use-package lsp-mode
-  :commands (lsp lsp-deferred)
-  :hook (lsp-mode . efs/lsp-mode-setup)
-  :init
-  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
-  :config
-  (lsp-enable-which-key-integration t))
-#+END_SRC
-
-*** lsp-ui
-#+BEGIN_SRC emacs-lisp
-(use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom
-  (lsp-ui-doc-position 'bottom))
-#+END_SRC
-
-*** lsp-treemacs
-#+BEGIN_SRC emacs-lisp
-(use-package lsp-treemacs
-  :after lsp)
-#+END_SRC
-
-*** lsp-ivy
-#+BEGIN_SRC emacs-lisp
-(use-package lsp-ivy)
-#+END_SRC
+#** ivy
+##+BEGIN_SRC emacs-lisp
+#  (use-package ivy
+#    :diminish
+#    :bind (("C-s" . swiper)
+#           :map ivy-minibuffer-map
+#           ("RET" . ivy-alt-done)
+#           ("TAB" . ivy-next-line)
+#           ("<backtab>" . ivy-previous-line)
+#           :map ivy-switch-buffer-map
+#           ("RET" . ivy-done)
+#           ("TAB" . ivy-next-line)
+#           ("<backtab>" . ivy-previous-line)
+#           :map ivy-reverse-i-search-map
+#           ("RET" . ivy-done)
+#           ("TAB" . ivy-next-line)
+#           ("<backtab>" . ivy-previous-line))
+#    :config
+#    (ivy-mode 1))
+#  (with-eval-after-load 'ivy
+#    (define-key ivy-mode-map (kbd "S-<tab>") 'ivy-previous-line))
+#
+#
+#
+#  (use-package ivy-rich
+#    :init
+#    (ivy-rich-mode 1))
+##+END_SRC
+#** Company mode 
+##+BEGIN_SRC emacs-lisp
+#  (defun my-company-space-and-complete ()
+#    "Select the current company candidate and insert a space."
+#    (interactive)
+#    (company-complete-selection)
+#    (insert " "))
+#
+#  (use-package company
+#    :after lsp-mode
+#    :hook (lsp-mode . company-mode)
+#    :bind (:map company-active-map
+#          ("<backtab>" . company-select-previous-or-abort)
+#          ("<tab>" . company-select-next-or-abort)
+#          ("RET" . my-company-space-and-complete))
+#    :custom
+#    (company-minimum-prefix-length 1)
+#    (company-idle-delay 0.0))
+#  (add-hook 'after-init-hook 'global-company-mode)
+#
+#  (use-package company-box
+#    :hook (company-mode . company-box-mode))
+##+END_SRC
+#** Magit 
+##+BEGIN_SRC emacs-lisp
+#  (use-package magit
+#  :custom
+#  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+#
+#;; NOTE: Make sure to configure a GitHub token before using this package!
+#;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+#;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+#;; (use-package forge)
+##+END_SRC
+#** counsel
+##+BEGIN_SRC emacs-lisp
+#(use-package counsel
+#  :bind (("C-M-j" . 'counsel-switch-buffer)
+#         :map minibuffer-local-map
+#         ("C-r" . 'counsel-minibuffer-history))
+#  :config
+#  (counsel-mode 1))
+##+END_SRC
+#** lsp-mode
+##+BEGIN_SRC emacs-lisp
+#(defun efs/lsp-mode-setup ()
+#(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+#(lsp-headerline-breadcrumb-mode))
+#
+#(use-package lsp-mode
+#  :commands (lsp lsp-deferred)
+#  :hook (lsp-mode . efs/lsp-mode-setup)
+#  :init
+#  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+#  :config
+#  (lsp-enable-which-key-integration t))
+##+END_SRC
+#
+#*** lsp-ui
+##+BEGIN_SRC emacs-lisp
+#(use-package lsp-ui
+#  :hook (lsp-mode . lsp-ui-mode)
+#  :custom
+#  (lsp-ui-doc-position 'bottom))
+##+END_SRC
+#
+#*** lsp-treemacs
+##+BEGIN_SRC emacs-lisp
+#(use-package lsp-treemacs
+#  :after lsp)
+##+END_SRC
+#
+#*** lsp-ivy
+##+BEGIN_SRC emacs-lisp
+#(use-package lsp-ivy)
+##+END_SRC
 
