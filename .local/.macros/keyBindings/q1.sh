@@ -1,2 +1,2 @@
 #!/bin/bash
-thunar ~/Dropbox/tuE/YEAR_2/Q4
+thunar ~/Dropbox/tuE/YEAR_3/Q1
