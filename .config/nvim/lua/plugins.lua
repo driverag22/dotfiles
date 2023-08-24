@@ -22,6 +22,7 @@ Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.2'})
 Plug 'http://github.com/nvim-lua/plenary.nvim' -- dependency
 Plug 'http://github.com/BurntSushi/ripgrep' --  grep
 Plug 'https://github.com/sharkdp/fd'  --- finder
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' }) -- finder
 --------------------------------------------------------
 --===================================================
 
@@ -94,3 +95,5 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 })
 require("which-key").register()
 require("hardtime").setup()
+
+require('telescope').load_extension('fzf')
