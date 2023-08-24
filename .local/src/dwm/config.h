@@ -37,7 +37,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "" };
+/* static const char *tags[] = { "", "", "", "", "", "", "", "" }; */
+static const char *tags[] = { "", "", "", "", "", "", "", "" };
 /* static const char *tags[] = { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " }; */
 
 static const Rule rules[] = {
@@ -83,7 +84,7 @@ static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 /* static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL}; */
-static const char *todos[] = {"alacritty", "-e", "/usr/bin/nvim", "/home/diego/vimwiki/TODO.wiki", NULL};
+static const char *emacs[] = {"emacs", NULL};
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
 static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
@@ -113,7 +114,7 @@ static const Key keys[] = {
 	{ ALTKEY,                       XK_space,  spawn,          {.v = dmenuSearch } }, // dmenu
 	{ CTRLKEY,                      XK_j,      spawn,          {.v = termcmd } }, //alacritty
 	{ CTRLKEY,                      XK_n,      spawn,          {.v = browser } }, //firefox
-	{ CTRLKEY,                      XK_g,      spawn,          {.v = todos} }, //notion
+	{ CTRLKEY,                      XK_g,      spawn,          {.v = emacs } }, //emacs
 
 	{ ALTKEY,                       XK_h,      spawn,          {.v = filebrowser } }, //home
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
