@@ -10,6 +10,7 @@ nkeymap('<leader>ff', builtin.find_files, 'Telescope find file')
 nkeymap('<leader>fg', builtin.live_grep, 'Telescope grep')
 nkeymap('<leader>fb', builtin.buffers, 'Telescope buffers')
 nkeymap('<leader>fh', builtin.help_tags, 'Telescope help')
+nkeymap('<leader>fb', ':Telescope file_browser<CR>', 'Telescope file browser')
 
 -----------------------------------------
 -----------------------------------------
@@ -17,6 +18,8 @@ nkeymap('<leader>fh', builtin.help_tags, 'Telescope help')
 -----------------------------------------
 -- Misc:
 nkeymap('<C-b>', ':redo<CR>') -- redo
+
+nkeymap('<Esc>', ':nohl<CR>') -- remove highlights
 
 nkeymap('<leader>gg', ':LazyGit<CR>') -- LazyGit
 
@@ -30,8 +33,7 @@ nkeymap('k', 'gk')
 -----------------------------------------
 
 -----------------------------------------
--- Tabs: 
-
+-- Buffers: 
 nkeymap('<leader>bc', ':bdelete!<CR>') -- close buffer
 nkeymap('<M-m>', ':bnext<CR>') -- move to previus buffer
 nkeymap('<M-n>', ':bprev<CR>') -- move to next buffer
@@ -78,3 +80,5 @@ nkeymap('<leader>dw', ":lua require('diaglist').open_all_diagnostics()<cr>", 'Op
 
 -- '{ + <Enter>' mapped to add second '}' below and start line in between '{' and '}'
 vim.keymap.set('i', '{<Enter>', '{<Enter>}<Esc>O', {noremap = true})
+
+

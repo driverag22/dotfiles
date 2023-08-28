@@ -5,57 +5,66 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 --===================================================
 -- Colors, status line, tab line, icons
-Plug 'https://github.com/folke/tokyonight.nvim'
+Plug 'folke/tokyonight.nvim'
 Plug('akinsho/bufferline.nvim', { ['tag'] = '*'}) -- bufferline
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
-Plug 'https://github.com/ryanoasis/vim-devicons' -- Developer Icons
--- Plug 'https://github.com/rafi/awesome-vim-colorschemes' -- Retro Schemes
--- Plug 'https://github.com/nanozuki/tabby.nvim' -- better tabline
+Plug 'ryanoasis/vim-devicons' -- Developer Icons
+-- Plug 'rafi/awesome-vim-colorschemes' -- Retro Schemes
+-- Plug 'nanozuki/tabby.nvim' -- better tabline
 ------------------------------------------------------
 --===================================================
 
 --===================================================
 --- Telescope
 Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.2'})
-Plug 'http://github.com/nvim-lua/plenary.nvim' -- dependency
-Plug 'http://github.com/BurntSushi/ripgrep' --  grep
-Plug 'https://github.com/sharkdp/fd'  --- finder
+Plug 'nvim-lua/plenary.nvim' -- dependency
+Plug 'BurntSushi/ripgrep' --  grep
+Plug 'sharkdp/fd'  --- finder
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' }) -- finder
+Plug "nvim-telescope/telescope-file-browser.nvim" -- fileBrowser
 --------------------------------------------------------
 --===================================================
 
 
 --===================================================
 ---- Misc
-Plug 'https://github.com/m4xshen/hardtime.nvim'  --- hardtime
+Plug 'm4xshen/hardtime.nvim'  --- hardtime
 Plug 'MunifTanjim/nui.nvim' --- hardtime dependency
 
-Plug 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
+-- Plug 'folke/flash.nvim' -- jump around
+Plug 'ggandor/lightspeed.nvim' -- jump around
+
 Plug 'lervag/vimtex' -- vimtex
+
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
-Plug 'https://github.com/tpope/vim-commentary' -- For Commenting gcc 
+
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
-Plug 'https://github.com/folke/which-key.nvim' -- which-key, help with mappings
-Plug 'nvim-tree/nvim-tree.lua' -- nvim-tree 
--- Plug 'https://github.com/preservim/nerdtree' -- NerdTree
+
+Plug 'folke/which-key.nvim' -- which-key, help with mappings
+
+Plug 'tpope/vim-commentary' -- For Commenting gcc 
+Plug 'utilyre/sentiment.nvim' -- match parenthesis, etc...
+
+-- Plug 'nvim-tree/nvim-tree.lua' -- nvim-tree 
+-- Plug 'preservim/nerdtree' -- NerdTree
 -----------------------------------------------------
 --===================================================
 
 
 --===================================================
 ---- LSP
-Plug 'https://github.com/neovim/nvim-lspconfig' -- Lsp
+Plug 'neovim/nvim-lspconfig' -- Lsp
 Plug 'hrsh7th/nvim-cmp' -- Completion
 Plug 'hrsh7th/cmp-nvim-lsp' -- plugins
 Plug 'hrsh7th/cmp-buffer' -- to go 
 Plug 'hrsh7th/cmp-path' -- with
 Plug 'hrsh7th/cmp-cmdline' -- Lsp
 
-Plug 'https://github.com/onsails/lspkind.nvim' -- Add pictograms to lsp
-Plug 'https://github.com/onsails/diaglist.nvim' -- Live lsp diagnostics in quickfix & loclist
+Plug 'onsails/lspkind.nvim' -- Add pictograms to lsp
+Plug 'onsails/diaglist.nvim' -- Live lsp diagnostics in quickfix & loclist
 
 ---- LSP Installer
 Plug "williamboman/mason.nvim" -- lsp installer
@@ -78,7 +87,6 @@ Plug 'farseer90718/vim-taskwarrior'  --grid view
 ------------------------------------------------------
 --===================================================
 
-
 vim.call('plug#end')
 
 require('gitsigns').setup()
@@ -97,3 +105,5 @@ require("which-key").register()
 require("hardtime").setup()
 
 require('telescope').load_extension('fzf')
+require("telescope").load_extension "file_browser"
+require("sentiment").setup()

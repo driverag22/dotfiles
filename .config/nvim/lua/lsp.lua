@@ -4,14 +4,14 @@ local on_attach = function(client, bufnr) end
 require('lspconfig').cssls.setup {on_attach = on_attach}
 require('lspconfig').html.setup {on_attach = on_attach}
 require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
+-- require('lspconfig').texlab.setup {on_attach = on_attach}
 require('lspconfig').ltex.setup {on_attach = on_attach}
-require('lspconfig').texlab.setup {on_attach = on_attach}
 require('lspconfig').lua_ls.setup {on_attach = on_attach}
 require('lspconfig').clangd.setup {on_attach = on_attach}
 require('lspconfig').jdtls.setup {on_attach = on_attach}
 require('lspconfig').pyright.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
-require('lspconfig').volar.setup {on_attach = on_attach}
+-- require('lspconfig').volar.setup {on_attach = on_attach}
 require('lspconfig').tsserver.setup {on_attach = on_attach}
 
 require("mason").setup {
@@ -129,17 +129,17 @@ require('lspconfig')['lua_ls'].setup {
     on_attach = on_attach,
 }
 
-require('lspconfig')['texlab'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
 require('lspconfig')['pyright'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
 require('lspconfig')['jdtls'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+require'lspconfig'.texlab.setup{
     capabilities = capabilities,
     on_attach = on_attach,
 }
@@ -157,10 +157,10 @@ require'lspconfig'.ltex.setup{
     },
 }
 
-require('lspconfig')['volar'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
+-- require('lspconfig')['volar'].setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- }
 
 
 require('lspconfig')['quick_lint_js'].setup {
