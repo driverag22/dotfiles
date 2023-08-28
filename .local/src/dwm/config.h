@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 5;       /* vertical padding of bar */
-static const int sidepad            = 7;       /* horizontal padding of bar */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 22;
 /* static const int user_bh            = 26; */
 /* static const char *fonts[]          = { "JetBrains Mono:size=13", "DejaVu Sans Mono wifi ramp:size=13"}; */
