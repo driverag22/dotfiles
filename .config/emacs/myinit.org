@@ -95,73 +95,134 @@
 (setq org-log-done t)
 
 #+END_SRC
-*** Setting up capture
+*** Setting up capture templates
+         # :PROPERTIES:\n:CREATED: %U :PRIORITY: %^{Priority}\n:END:")
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("a" "algorithms" plain (file "algorithms.org")
-         "* TODO %? %(org-set-tags \"algorithms\")")
+        ("A" "algorithms" plain (file+headline "algorithms.org" "Algorithms")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"algorithms\")")
 
-        ("l" "linear optimization" plain (file "linOptimization.org")
-         "* TODO %? %(org-set-tags \"linOpt\")")
+        ("l" "linear optimization" plain (file+headline "linOptimization.org" "Linear Optimization")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"linOpt\")")
 
-        ("s" "mathematical statistics" plain (file "mathStats.org")
-         "* TODO %? %(org-set-tags \"mathStats\")")
+        ("s" "mathematical statistics" plain (file+headline "mathStats.org" "Mathematical Statistics")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"mathStats\")")
 
-        ("h" "honors" plain (file "honors.org")
-         "* TODO %? %(org-set-tags \"honors\")")
+        ("h" "honors" plain (file+headline "honors.org" "CCPS Honors")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"honors\")")
 
-        ("a" "automata" plain (file "automata.org")
-         "* TODO %? %(org-set-tags \"automata\")")
+        ("a" "automata" plain (file+headline "automata.org" "Automata")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"automata\")")
 
-        ("m" "masters" plain (file "masters.org")
-         "* TODO %? %(org-set-tags \"masters\")")
+        ("m" "masters" plain (file+headline "masters.org" "Master's applications")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"masters\")")
 
-        ("r" "resProj" plain (file "researchProject.org")
-         "* TODO %? %(org-set-tags \"researchProject\")")
+        ("r" "resProj" plain (file+headline "researchProject.org" "Research Projects")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"researchProject\")")
 
-        ("w" "waterproof" plain (file "waterproof.org")
-         "* TODO %? %(org-set-tags \"waterproof\")")
+        ("w" "waterproof" plain (file+headline "waterproof.org" "Waterproof")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"waterproof\")")
 
-        ("o" "others" plain (file "others.org")
-         "* TODO %? %(org-set-tags \"others\")")
+        ("o" "others" plain (file+headline "others.org" "Others")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"others\")")
+
+        ("p" "problems" plain (file+headline "problems.org" "Programming problems")
+         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"problems\")")
         ))
-  (setq capture-files '("masters.org" "others.org" "honors.org"
-                        "automata.org" "researchProject.org"
+
+  (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
+                        "automata.org" "researchProject.org" "waterproof.org"
                         "algorithms.org" "linOptimization.org" "mathStats.org"
                         ))
+
 
   (defun vulpea-capture-task ()
     "Capture a task."
     (interactive)
     (org-capture nil "t"))
+#+END_SRC
+*** Setting up org-agenda custom commands
+#+BEGIN_SRC emacs-lisp
+    (setq org-agenda-window-setup 'only-window)
+    (setq org-tags-match-list-sublevels 'indented)
+    (setq org-agenda-custom-commands
+        '((" " "Agenda"
+           (
+            (tags "algorithms/TODO|linOpt/TODO|mathStats/TODO"
+             ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
+            )
+            (tags "honors/TODO|researchProject/TODO"
+             ((org-agenda-overriding-header "Honors || Research Project"))
+             )
+            (tags "automata/TODO|waterproof/TODO"
+             ((org-agenda-overriding-header "Automata || Waterproof"))
+             )
+            (tags "masters/TODO"
+             ((org-agenda-overriding-header "Masters"))
+             )
+            (tags "others/TODO"
+             ((org-agenda-overriding-header "Others"))
+             )
+            )
+           )))
 
-  (setq org-agenda-window-setup 'only-window)
-  (setq org-agenda-custom-commands
-      '((" " "Agenda"
-         (
-          (tags "algorithms|linOpt|mathStats"
-           ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats.")
-            (org-tags-match-list-sublevels nil))
-           )
-          (tags "honors|researchProject"
-           ((org-agenda-overriding-header "Honors || Research Project")
-            (org-tags-match-list-sublevels nil))
-           )
-          (tags "automata|waterproof"
-           ((org-agenda-overriding-header "Automata || Waterproof")
-            (org-tags-match-list-sublevels nil))
-           )
-          (tags "masters"
-           ((org-agenda-overriding-header "Masters")
-            (org-tags-match-list-sublevels nil))
-           )
-          (tags "others"
-           ((org-agenda-overriding-header "Others")
-            (org-tags-match-list-sublevels nil))
-           )
-          )
-         )))
+    (defun my-org-agenda-custom-keys ()
+    (local-set-key (kbd "j") 'org-agenda-next-line)
+    (local-set-key (kbd "k") 'org-agenda-previous-line)
+    (local-set-key (kbd "h") 'backward-char)
+    (local-set-key (kbd "l") 'forward-char)
+    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
+    (local-set-key (kbd "C-c C-o") 'cfw:open-org-calendar)
+    )
+
+  (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
+#+END_SRC
+*** calfw (calendar)
+#+BEGIN_SRC emacs-lisp
+  (require 'calfw)
+  (require 'calfw-org)
+  (global-set-key (kbd "C-c C-o") 'cfw:open-org-calendar)
+  (setq calendar-week-start-day 1)
+  (setq calendar-holidays
+     '(
+      ;; State holidays
+      (holiday-fixed 1 1 "Fiesta Nacional: New Year")
+      (holiday-fixed 1 6 "Fiesta Nacional: Dia de Reyes/Epifania")
+      (holiday-fixed 5 1 "Fiesta Nacional: International Labor Day")
+      (holiday-fixed 5 24 "Fiesta Nacional: Segunda Pascua")
+      (holiday-fixed 6 24 "Fiesta Nacional: San Juan")
+      (holiday-fixed 8 15 "Fiesta Nacional: Asuncion de la Virgen")
+      (holiday-fixed 10 12 "Fiesta Nacional: Dia de la Hispanidad")
+      (holiday-fixed 11 1 "Fiesta Nacional: Todos los Santos")
+      (holiday-fixed 12 6 "Fiesta Nacional: Dia de la Constitucion")
+      (holiday-fixed 12 8 "Fiesta Nacional: Inmaculada Concepcion")
+      (holiday-fixed 12 25 "Fiesta Nacional: Catholic Christmas")
+      ;; floated holidays       
+      (holiday-easter-etc  -2 "Fiesta Nacional: Viernes Santo")
+      (holiday-easter-etc  0 "Domingo de Ramos")
+      (holiday-easter-etc  1 "Fiesta Local: Lunes de Pascua Florida")
+      (holiday-easter-etc 50 "Fiesta Local: Lunes de Pascua granada:Lunes de pentecostes")
+      ;; uni
+      (holiday-fixed 9 29 "No teaching")
+      (holiday-fixed 12 22 "No teaching")
+      (holiday-fixed 1 2 "No teaching")
+      (holiday-fixed 1 3 "No teaching")
+      (holiday-fixed 1 4 "No teaching")
+      (holiday-fixed 1 5 "No teaching")
+      (holiday-fixed 2 12 "No teaching")
+      (holiday-fixed 2 13 "No teaching")
+      (holiday-fixed 2 14 "No teaching")
+      (holiday-fixed 2 15 "No teaching")
+      (holiday-fixed 2 16 "No teaching")
+      (holiday-fixed 1 1 "TU/e Closed")
+      (holiday-fixed 4 27 "TU/e Closed")
+      (holiday-fixed 5 5 "TU/e Closed")
+      (holiday-fixed 5 9 "TU/e Closed")
+      (holiday-fixed 5 10 "TU/e Closed")
+      (holiday-fixed 5 19 "TU/e Closed")
+      (holiday-fixed 5 20 "TU/e Closed")
+      ))
 #+END_SRC
 *** org-roam
 #+BEGIN_SRC emacs-lisp

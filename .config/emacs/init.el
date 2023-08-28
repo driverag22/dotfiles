@@ -11,7 +11,7 @@
    '("/home/diego/org/orgRoam/20230816125732-masters.org" "/home/diego/org/orgRoam/20230821153251-emacssetupp.org" "/home/diego/org/others.org" "/home/diego/org/honors.org" "/home/diego/org/automata.org" "/home/diego/org/researchProject.org" "/home/diego/org/algorithms.org"))
  '(org-directory "~/org")
  '(package-selected-packages
-   '(vulpea golden-ratio magit evil-nerd-commenter counsel-projectile company-box projectile company general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
+   '(calfw-org calfw vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
