@@ -52,14 +52,14 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.67; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-    { "  ",      tile },
+  { "  ",      tile },
 	{ "  ",      NULL },    /* no layout function means floating behavior */
 	{ " [M]",      monocle },
 };
@@ -96,7 +96,7 @@ static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systra
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
-static const char *screenshot[] = {"deepin-screenshot", NULL};
+static const char *screenshot[] = {"deepin-screenshot", "-s", "/home/diego", NULL};
 /* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
 /* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play-pause", NULL};
