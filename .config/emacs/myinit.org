@@ -85,57 +85,62 @@
 
 ** Org mode
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
+  (global-set-key (kbd "C-c l") #'org-store-link)
+  (global-set-key (kbd "C-c a") #'org-agenda)
+  (global-set-key (kbd "C-c c") #'org-capture)
 
-(require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
+  (require 'org)
+  (define-key global-map "\C-cl" 'org-store-link)
+  (define-key global-map "\C-ca" 'org-agenda)
+  (setq org-log-done t)
 
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "PROG(p)" "DONE(d)")))
 #+END_SRC
 *** Setting up capture templates
          # :PROPERTIES:\n:CREATED: %U :PRIORITY: %^{Priority}\n:END:")
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("A" "algorithms" plain (file+headline "algorithms.org" "Algorithms")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"algorithms\")")
+        ("A" "algorithms" plain (file+headline "tasks.org" "Algorithms")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"algo\")")
 
-        ("l" "linear optimization" plain (file+headline "linOptimization.org" "Linear Optimization")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"linOpt\")")
+        ("l" "linear optimization" plain (file+headline "tasks.org" "Linear Optimization")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"linOpt\")")
 
-        ("s" "mathematical statistics" plain (file+headline "mathStats.org" "Mathematical Statistics")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"mathStats\")")
+        ("s" "mathematical statistics" plain (file+headline "tasks.org" "Mathematical Statistics")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"mathStats\")")
 
-        ("h" "honors" plain (file+headline "honors.org" "CCPS Honors")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"honors\")")
+        ("h" "honors" plain (file+headline "tasks.org" "CCPS Honors")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"honors\")")
 
-        ("a" "automata" plain (file+headline "automata.org" "Automata")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"automata\")")
+        ("a" "automata" plain (file+headline "tasks.org" "Automata")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"automata\")")
 
-        ("m" "masters" plain (file+headline "masters.org" "Master's applications")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"masters\")")
+        ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
 
-        ("r" "resProj" plain (file+headline "researchProject.org" "Research Projects")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"researchProject\")")
+        ("r" "resProj" plain (file+headline "tasks.org" "Research Projects")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"resProj\")")
 
-        ("w" "waterproof" plain (file+headline "waterproof.org" "Waterproof")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"waterproof\")")
+        ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"waterproof\")")
 
-        ("o" "others" plain (file+headline "others.org" "Others")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"others\")")
+        ("o" "others" plain (file+headline "tasks.org" "Others")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
 
-        ("p" "problems" plain (file+headline "problems.org" "Programming problems")
-         "** TODO [#%^{Priority}]%?  (%U) %(org-set-tags \"problems\")")
+        ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
+
+        ("d" "diary" plain (file+datetree "diary.org")
+         "****%?  %<%H:%M>")
         ))
 
-  (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
-                        "automata.org" "researchProject.org" "waterproof.org"
-                        "algorithms.org" "linOptimization.org" "mathStats.org"
-                        ))
-
+  (setq capture-files '("tasks.org"))
+  ;; (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
+  ;;                       "automata.org" "researchProject.org" "waterproof.org"
+  ;;                       "algorithms.org" "linOptimization.org" "mathStats.org"
+  ;;                       ))
 
   (defun vulpea-capture-task ()
     "Capture a task."
@@ -149,19 +154,19 @@
     (setq org-agenda-custom-commands
         '((" " "Agenda"
            (
-            (tags "algorithms/TODO|linOpt/TODO|mathStats/TODO"
+            (tags-todo "algorithms|linOpt|mathStats"
              ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
             )
-            (tags "honors/TODO|researchProject/TODO"
+            (tags-todo "honors|researchProject"
              ((org-agenda-overriding-header "Honors || Research Project"))
              )
-            (tags "automata/TODO|waterproof/TODO"
+            (tags-todo "automata|waterproof"
              ((org-agenda-overriding-header "Automata || Waterproof"))
              )
-            (tags "masters/TODO"
+            (tags-todo "+masters"
              ((org-agenda-overriding-header "Masters"))
              )
-            (tags "others/TODO"
+            (tags-todo "+others"
              ((org-agenda-overriding-header "Others"))
              )
             )
@@ -222,54 +227,66 @@
       (holiday-fixed 5 10 "TU/e Closed")
       (holiday-fixed 5 19 "TU/e Closed")
       (holiday-fixed 5 20 "TU/e Closed")
+      ;; flights
+      (holiday-fixed 12 21 "FLIGHT (Ams -> Mad) 19:00-21:40")
+      (holiday-fixed 1 7 "FLIGHT (Mad -> Ein) 16:50-19:25")
       ))
 #+END_SRC
 *** org-roam
 #+BEGIN_SRC emacs-lisp
-	  (use-package org-roam
-		:ensure t
-		:init
-		   (setq org-roam-v2-ack t)
-		:custom
-		(org-roam-directory (file-truename "~/org/orgRoam"))
-		:bind (("C-c n l" . org-roam-buffer-toggle)
-		   ("C-c n f" . org-roam-node-find)
-		   ("C-c n g" . org-roam-graph)
-		   ("C-c n i" . org-roam-node-insert)
-		   ("C-c n c" . org-roam-capture)
-		   ;; Dailies
-		   ("C-c n j" . org-roam-dailies-capture-today))
-		:config
-		(org-roam-setup))
+      (use-package org-roam
+        :ensure t
+        :init
+           (setq org-roam-v2-ack t)
+        :custom
+        (org-roam-directory (file-truename "~/org/orgRoam"))
+        :bind (("C-c n l" . org-roam-buffer-toggle)
+           ("C-c n f" . org-roam-node-find)
+           ("C-c n g" . org-roam-graph)
+           ("C-c n i" . org-roam-node-insert)
+           ("C-c n c" . org-roam-capture)
+           ;; Dailies
+           ("C-c n j" . org-roam-dailies-capture-today))
+        :config
+        (org-roam-setup))
 
-	(defun vulpea-buffer-prop-get (name)
-	"Get a buffer property called NAME as a string."
-	(org-with-point-at 1
-	  (when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
-							   (point-max) t)
-		(buffer-substring-no-properties
-		 (match-beginning 1)
-		 (match-end 1)))))
+    (defun vulpea-buffer-prop-get (name)
+    "Get a buffer property called NAME as a string."
+    (org-with-point-at 1
+      (when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
+                               (point-max) t)
+        (buffer-substring-no-properties
+         (match-beginning 1)
+         (match-end 1)))))
 
-	(defun vulpea-agenda-category ()
-	  (let* ((file-name (when buffer-file-name
-						  (file-name-sans-extension
-						   (file-name-nondirectory buffer-file-name))))
-			 (title (vulpea-buffer-prop-get "title"))
-			 (category (org-get-category)))
-		(or (if (and
-				 title
-				 (string-equal category file-name))
-				title
-			  category)
-			"")))
+    (defun vulpea-agenda-category ()
+      (let* ((file-name (when buffer-file-name
+                          (file-name-sans-extension
+                           (file-name-nondirectory buffer-file-name))))
+             (title (vulpea-buffer-prop-get "title"))
+             (category (org-get-category)))
+        (or (if (and
+                 title
+                 (string-equal category file-name))
+                title
+              category)
+            "")))
 
-	(setq org-agenda-prefix-format
-		  '((agenda . " %i %-12(vulpea-agenda-category)%?-12t% s")
-			(todo . " %i %-12(vulpea-agenda-category) ")
-			(tags . " %i %-12(vulpea-agenda-category) ")
-			(search . " %i %-12(vulpea-agenda-category) ")))
+
+  (setq org-agenda-prefix-format '(
+       (agenda . "%-27b %-10T ")
+       (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       ))
 #+END_SRC
+#     ;; (setq org-agenda-prefix-format
+#     ;;       '(
+#     ;;         (agenda . " %i %-12(vulpea-agenda-category)%?-12t% s")
+#     ;;         (todo . " %i %-12(vulpea-agenda-category) ")
+#     ;;         (tags . " %i %-12(vulpea-agenda-category) ")
+#     ;;         (search . " %i %-12(vulpea-agenda-category) ")))
+# #+END_SRC
 ** Setting up "smart" org-agenda
 #+BEGIN_SRC emacs-lisp
   ;; Remove automatic project inheritance
@@ -429,14 +446,6 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
 	  org-hide-emphasis-markers t
 	  org-startup-with-inline-images t
 	  org-image-actual-width '(300))
-
-(defun efs/org-mode-visual-fill ()
-  (setq visual-fill-column-width 120
-        visual-fill-column-center-text t)
-  (visual-fill-column-mode 1))
-
-(use-package visual-fill-column
-  :hook (org-mode . efs/org-mode-visual-fill))
 #+END_SRC
 *** vulpea
 #+BEGIN_SRC emacs-lisp
