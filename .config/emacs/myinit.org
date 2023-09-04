@@ -25,6 +25,7 @@
 * Clean up emacs and basics:
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message t)
+  (electric-indent-mode 0)
 
   (scroll-bar-mode -1)  ; Disable visible scrollbar
   (tool-bar-mode -1)    ; Disable the toolbar
@@ -136,7 +137,7 @@
          "****%?  %<%H:%M>")
         ))
 
-  (setq capture-files '("tasks.org"))
+  (setq capture-files '("tasks.org" "schedule.org"))
   ;; (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
   ;;                       "automata.org" "researchProject.org" "waterproof.org"
   ;;                       "algorithms.org" "linOptimization.org" "mathStats.org"
@@ -178,59 +179,100 @@
     (local-set-key (kbd "h") 'backward-char)
     (local-set-key (kbd "l") 'forward-char)
     (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-    (local-set-key (kbd "C-c C-o") 'cfw:open-org-calendar)
+    (local-set-key (kbd "C-c o") 'cfw:open-org-calendar)
     )
 
   (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
-  (require 'calfw)
-  (require 'calfw-org)
-  (global-set-key (kbd "C-c C-o") 'cfw:open-org-calendar)
-  (setq calendar-week-start-day 1)
-  (setq calendar-holidays
-     '(
-      ;; State holidays
-      (holiday-fixed 1 1 "Fiesta Nacional: New Year")
-      (holiday-fixed 1 6 "Fiesta Nacional: Dia de Reyes/Epifania")
-      (holiday-fixed 5 1 "Fiesta Nacional: International Labor Day")
-      (holiday-fixed 5 24 "Fiesta Nacional: Segunda Pascua")
-      (holiday-fixed 6 24 "Fiesta Nacional: San Juan")
-      (holiday-fixed 8 15 "Fiesta Nacional: Asuncion de la Virgen")
-      (holiday-fixed 10 12 "Fiesta Nacional: Dia de la Hispanidad")
-      (holiday-fixed 11 1 "Fiesta Nacional: Todos los Santos")
-      (holiday-fixed 12 6 "Fiesta Nacional: Dia de la Constitucion")
-      (holiday-fixed 12 8 "Fiesta Nacional: Inmaculada Concepcion")
-      (holiday-fixed 12 25 "Fiesta Nacional: Catholic Christmas")
-      ;; floated holidays       
-      (holiday-easter-etc  -2 "Fiesta Nacional: Viernes Santo")
-      (holiday-easter-etc  0 "Domingo de Ramos")
-      (holiday-easter-etc  1 "Fiesta Local: Lunes de Pascua Florida")
-      (holiday-easter-etc 50 "Fiesta Local: Lunes de Pascua granada:Lunes de pentecostes")
-      ;; uni
-      (holiday-fixed 9 29 "No teaching")
-      (holiday-fixed 12 22 "No teaching")
-      (holiday-fixed 1 2 "No teaching")
-      (holiday-fixed 1 3 "No teaching")
-      (holiday-fixed 1 4 "No teaching")
-      (holiday-fixed 1 5 "No teaching")
-      (holiday-fixed 2 12 "No teaching")
-      (holiday-fixed 2 13 "No teaching")
-      (holiday-fixed 2 14 "No teaching")
-      (holiday-fixed 2 15 "No teaching")
-      (holiday-fixed 2 16 "No teaching")
-      (holiday-fixed 1 1 "TU/e Closed")
-      (holiday-fixed 4 27 "TU/e Closed")
-      (holiday-fixed 5 5 "TU/e Closed")
-      (holiday-fixed 5 9 "TU/e Closed")
-      (holiday-fixed 5 10 "TU/e Closed")
-      (holiday-fixed 5 19 "TU/e Closed")
-      (holiday-fixed 5 20 "TU/e Closed")
-      ;; flights
-      (holiday-fixed 12 21 "FLIGHT (Ams -> Mad) 19:00-21:40")
-      (holiday-fixed 1 7 "FLIGHT (Mad -> Ein) 16:50-19:25")
-      ))
+(defun my-calendar-entry-comparator (entry1 entry2)
+  "Compare two calendar entries by due date and time."
+  (let ((due-date1 (calendar-extract-entries entry1 '(:year :month :day :hour :minute)))
+        (due-date2 (calendar-extract-entries entry2 '(:year :month :day :hour :minute))))
+    (calendar-date-compare due-date1 due-date2)))
+   
+(use-package calfw
+   :defer t
+   :bind ("C-c o" . my-calendar)
+   :commands cfw:open-calendar-buffer
+   :functions (cfw:open-calendar-buffer
+               cfw:refresh-calendar-buffer
+               cfw:org-create-source
+               cfw:cal-create-source)
+   :config
+   (defun my-calendar ()
+     (interactive)
+     (cfw:open-calendar-buffer
+      :contents-sources
+      (list
+       (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
+       (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
+       )
+      ;; :sorter 'my-calendar-entry-comparator
+     ))
+   )
+  (custom-set-faces
+   '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 2.0 :inherit variable-pitch))))
+   '(cfw:face-header ((t (:foreground "#ffffff" :weight bold))))
+   '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold)))
+   '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold)))
+   '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
+   '(cfw:face-day-title ((t :background "#grey10" )))
+   '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
+   '(cfw:face-today-title ((t :foreground "#ff001e" :background "#grey10" :weight bold)))
+   '(cfw:face-today ((t :background: "grey10" :weight bold)))
+   '(cfw:face-select ((t :background "#5E81AB")))
+   '(cfw:face-toolbar ((t :background "#grey10")))
+   ;; '(cfw:face-toolbar ((t :background "#5E81AB")))
+   '(cfw:face-grid ((t :foreground "#5E81AB")))
+   )
+   (use-package calfw-org
+     :after calfw)
+   ;; (global-set-key (kbd "C-c o") 'cfw:open-org-calendar)
+   (setq calendar-week-start-day 1)
+   (setq calendar-holidays
+      '(
+       ;; State holidays
+       (holiday-fixed 1 1 "Fiesta Nacional: New Year")
+       (holiday-fixed 1 6 "Fiesta Nacional: Dia de Reyes/Epifania")
+       (holiday-fixed 5 1 "Fiesta Nacional: International Labor Day")
+       (holiday-fixed 5 24 "Fiesta Nacional: Segunda Pascua")
+       (holiday-fixed 6 24 "Fiesta Nacional: San Juan")
+       (holiday-fixed 8 15 "Fiesta Nacional: Asuncion de la Virgen")
+       (holiday-fixed 10 12 "Fiesta Nacional: Dia de la Hispanidad")
+       (holiday-fixed 11 1 "Fiesta Nacional: Todos los Santos")
+       (holiday-fixed 12 6 "Fiesta Nacional: Dia de la Constitucion")
+       (holiday-fixed 12 8 "Fiesta Nacional: Inmaculada Concepcion")
+       (holiday-fixed 12 25 "Fiesta Nacional: Catholic Christmas")
+       ;; floated holidays       
+       (holiday-easter-etc  -2 "Fiesta Nacional: Viernes Santo")
+       (holiday-easter-etc  0 "Domingo de Ramos")
+       (holiday-easter-etc  1 "Fiesta Local: Lunes de Pascua Florida")
+       (holiday-easter-etc 50 "Fiesta Local: Lunes de Pascua granada:Lunes de pentecostes")
+       ;; uni
+       (holiday-fixed 9 29 "No teaching")
+       (holiday-fixed 12 22 "No teaching")
+       (holiday-fixed 1 2 "No teaching")
+       (holiday-fixed 1 3 "No teaching")
+       (holiday-fixed 1 4 "No teaching")
+       (holiday-fixed 1 5 "No teaching")
+       (holiday-fixed 2 12 "No teaching")
+       (holiday-fixed 2 13 "No teaching")
+       (holiday-fixed 2 14 "No teaching")
+       (holiday-fixed 2 15 "No teaching")
+       (holiday-fixed 2 16 "No teaching")
+       (holiday-fixed 1 1 "TU/e Closed")
+       (holiday-fixed 4 27 "TU/e Closed")
+       (holiday-fixed 5 5 "TU/e Closed")
+       (holiday-fixed 5 9 "TU/e Closed")
+       (holiday-fixed 5 10 "TU/e Closed")
+       (holiday-fixed 5 19 "TU/e Closed")
+       (holiday-fixed 5 20 "TU/e Closed")
+       ;; flights
+       (holiday-fixed 12 21 "FLIGHT (Ams -> Mad) 19:00-21:40")
+       (holiday-fixed 1 7 "FLIGHT (Mad -> Ein) 16:50-19:25")
+       ))
 #+END_SRC
 *** org-roam
 #+BEGIN_SRC emacs-lisp
