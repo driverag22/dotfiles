@@ -265,15 +265,15 @@ ins_right {
   cond = conditions.hide_in_width,
 }
 
-ins_right {
-  function()
-    return '▊'
-  end,
-  padding = { left = 1 }, -- We don't need space before this
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-}
+-- ins_right {
+--   function()
+--     return '▊'
+--   end,
+--   padding = { left = 1 }, -- We don't need space before this
+--   color = function()
+--     return { fg = mode_color[vim.fn.mode()] }
+--   end,
+-- }
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
