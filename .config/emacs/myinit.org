@@ -25,7 +25,7 @@
 * Clean up emacs and basics:
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message t)
-  (electric-indent-mode 0)
+  (electric-indent-mode -1)
 
   (scroll-bar-mode -1)  ; Disable visible scrollbar
   (tool-bar-mode -1)    ; Disable the toolbar
@@ -47,7 +47,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package doom-themes
   :init (load-theme 'doom-tokyo-night t))
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 130)
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 160)
 #+END_SRC
 
 * Packages
@@ -86,17 +86,21 @@
 
 ** Org mode
 #+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "C-c l") #'org-store-link)
-  (global-set-key (kbd "C-c a") #'org-agenda)
-  (global-set-key (kbd "C-c c") #'org-capture)
-
   (require 'org)
-  (define-key global-map "\C-cl" 'org-store-link)
-  (define-key global-map "\C-ca" 'org-agenda)
-  (setq org-log-done t)
-
   (setq org-todo-keywords
         '((sequence "TODO(t)" "PROG(p)" "DONE(d)")))
+
+  (global-set-key (kbd "C-c l") 'org-store-link)
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c c") 'org-capture)
+  (global-set-key (kbd "C-SPC") 'org-todo)
+  (global-set-key (kbd "C-x C-t") 'org-latex-preview)
+
+  ;; (define-key global-map "\C-cl" 'org-store-link)
+  ;; (define-key global-map "\C-ca" 'org-agenda)
+  (setq org-log-done t)
+
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 #+END_SRC
 *** Setting up capture templates
          # :PROPERTIES:\n:CREATED: %U :PRIORITY: %^{Priority}\n:END:")
@@ -150,39 +154,39 @@
 #+END_SRC
 *** Setting up org-agenda custom commands
 #+BEGIN_SRC emacs-lisp
-    (setq org-agenda-window-setup 'only-window)
-    (setq org-tags-match-list-sublevels 'indented)
-    (setq org-agenda-custom-commands
-        '((" " "Agenda"
-           (
-            (tags-todo "algorithms|linOpt|mathStats"
-             ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
-            )
-            (tags-todo "honors|researchProject"
-             ((org-agenda-overriding-header "Honors || Research Project"))
-             )
-            (tags-todo "automata|waterproof"
-             ((org-agenda-overriding-header "Automata || Waterproof"))
-             )
-            (tags-todo "+masters"
-             ((org-agenda-overriding-header "Masters"))
-             )
-            (tags-todo "+others"
-             ((org-agenda-overriding-header "Others"))
-             )
-            )
-           )))
+      (setq org-agenda-window-setup 'only-window)
+      (setq org-tags-match-list-sublevels 'indented)
+      (setq org-agenda-custom-commands
+          '((" " "Agenda"
+             (
+              (tags-todo "algo|linOpt|mathStats"
+               ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
+              )
+              (tags-todo "honors|resProj"
+               ((org-agenda-overriding-header "Honors || Research Project"))
+               )
+              (tags-todo "automata|waterproof"
+               ((org-agenda-overriding-header "Automata || Waterproof"))
+               )
+              (tags-todo "+masters"
+               ((org-agenda-overriding-header "Masters"))
+               )
+              (tags-todo "+others"
+               ((org-agenda-overriding-header "Others"))
+               )
+              )
+             )))
 
-    (defun my-org-agenda-custom-keys ()
-    (local-set-key (kbd "j") 'org-agenda-next-line)
-    (local-set-key (kbd "k") 'org-agenda-previous-line)
-    (local-set-key (kbd "h") 'backward-char)
-    (local-set-key (kbd "l") 'forward-char)
-    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-    (local-set-key (kbd "C-c o") 'cfw:open-org-calendar)
-    )
+      (defun my-org-agenda-custom-keys ()
+      (local-set-key (kbd "j") 'org-agenda-next-line)
+      (local-set-key (kbd "k") 'org-agenda-previous-line)
+      (local-set-key (kbd "h") 'backward-char)
+      (local-set-key (kbd "l") 'forward-char)
+      (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
+      (local-set-key (kbd "C-c o") 'my-calendar)
+      )
 
-  (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
+    (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
@@ -229,7 +233,6 @@
    )
    (use-package calfw-org
      :after calfw)
-   ;; (global-set-key (kbd "C-c o") 'cfw:open-org-calendar)
    (setq calendar-week-start-day 1)
    (setq calendar-holidays
       '(
@@ -471,23 +474,30 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
   (setq org-hide-emphasis-markers t)
 
     (font-lock-add-keywords 'org-mode
-	'(("^ *\\([-]\\) "
-	   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  '(("^ *\\([-]\\) "
+     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
   (use-package org-bullets
    :config
    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
   ;; Change date format
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("<%d-%m-%Y %a>" . "<%d-%m-%Y %a %H:%M>"))
 
   ;; Improve org mode looks
   (setq org-startup-indented t
-	  org-pretty-entities t
-	  org-hide-emphasis-markers t
-	  org-startup-with-inline-images t
-	  org-image-actual-width '(300))
+    org-pretty-entities t
+    org-hide-emphasis-markers t
+    org-startup-with-inline-images t
+    org-image-actual-width '(300))
+
+  (defun efs/org-mode-visual-fill ()
+    (setq visual-fill-column-width 100
+          visual-fill-column-center-text t)
+    (visual-fill-column-mode 1))
+
+  (use-package visual-fill-column
+    :hook (org-mode . efs/org-mode-visual-fill))
 #+END_SRC
 *** vulpea
 #+BEGIN_SRC emacs-lisp

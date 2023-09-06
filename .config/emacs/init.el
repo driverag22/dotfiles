@@ -11,12 +11,23 @@
    '("/home/diego/org/orgRoam/20230816125732-masters.org" "/home/diego/org/orgRoam/20230821153251-emacssetupp.org"))
  '(org-directory "~/org")
  '(package-selected-packages
-   '(calfw-org calfw vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
+   '(visual-fill calfw-org calfw vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(cfw:face-day-title ((t :background "#grey10")))
+ '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10")))
+ '(cfw:face-grid ((t :foreground "#5E81AB")))
+ '(cfw:face-header ((t (:foreground "#ffffff" :weight bold))))
+ '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
+ '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold)))
+ '(cfw:face-select ((t :background "#5E81AB")))
+ '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold)))
+ '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 2.0 :inherit variable-pitch))))
+ '(cfw:face-today ((t :background: "grey10" :weight bold)))
+ '(cfw:face-today-title ((t :foreground "#ff001e" :background "#grey10" :weight bold)))
+ '(cfw:face-toolbar ((t :background "#grey10"))))
 
 (org-babel-load-file (expand-file-name "~/.config/emacs/myinit.org"))
