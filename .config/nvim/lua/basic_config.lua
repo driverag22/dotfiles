@@ -12,7 +12,7 @@ vim.opt.foldlevelstart = 1
 
 vim.cmd ([[
 
-        :colorscheme tokyonight-moon
+        :colorscheme tokyonight-night
 		let g:NERDTreeDirArrowExpandable="+"
 	 	let g:NERDTreeDirArrowCollapsible="~"
         let g:taskwiki_dont_fold="yes"
