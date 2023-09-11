@@ -34,7 +34,7 @@ nkeymap('k', 'gk')
 
 -----------------------------------------
 -- Buffers: 
-nkeymap('<leader>x', ':bdelete<CR>') -- close buffer
+nkeymap('<leader>x', ':bdelete!<CR>') -- close buffer
 nkeymap('<M-m>', ':bnext<CR>') -- move to previus buffer
 nkeymap('<M-n>', ':bprev<CR>') -- move to next buffer
 

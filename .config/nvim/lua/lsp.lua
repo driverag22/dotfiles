@@ -13,6 +13,7 @@ require('lspconfig').jedi_language_server.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
 -- require('lspconfig').volar.setup {on_attach = on_attach}
 require('lspconfig').tsserver.setup {on_attach = on_attach}
+require('lspconfig').jsonls.setup {on_attach = on_attach}
 
 require("mason").setup {
     ui = {
@@ -172,11 +173,18 @@ require('lspconfig')['html'].setup {
 }
 
 require('lspconfig')['cssls'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+require('lspconfig')['jsonls'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 local lspkind = require('lspkind')

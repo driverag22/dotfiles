@@ -8,7 +8,7 @@ Simply a bare-repo. Some of the configs:
  - dwm : ~/.local/src/dwm
  - picom : ~/.config/picom
 
-Adaptable to different themes.
+Some of the themes I have used over time, in order from most recent (current theme), to oldest.
 
 ## Blue-orange theme:
 
