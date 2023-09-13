@@ -58,17 +58,18 @@ nkeymap('ctx', ':VimtexCompile<CR>') -- Toggle tex compile
 -----------------------------------------
 --Lsp
 
-nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>', 'Go to definition') -- go to definition
-nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>', 'Go to declaration') -- go to declaration
-nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>', 'Go to implementation') -- go to implementation
-nkeymap('gs', ':lua vim.lsp.buf.workspace_symbol()<cr>', 'Document/find query') -- 
-nkeymap('gr', ':lua vim.lsp.buf.references()<cr>', 'Get all references to object') -- get all references 
-nkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>', 'Jump to type definition') -- get type definition
-nkeymap('gC', ':lua vim.lsp.buf.hover()<cr>', 'Open documentation') -- documentation 
-nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>', 'Rename all instances of') -- rename
--- nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>', 'Document/find query') -- 
--- nkeymap('<C-k>', ':lua vim.lsp.buf.signature_help()<cr>') -- 
--- nkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>') -- 
+nkeymap('gd', vim.lsp.buf.definition, 'Go to definition') -- go to definition
+nkeymap('gD', vim.lsp.buf.declaration, 'Go to declaration') -- go to declaration
+nkeymap('gi', vim.lsp.buf.implementation, 'Go to implementation') -- go to implementation
+nkeymap('gs', vim.lsp.buf.workspace_symbol, 'Document/find query') -- 
+nkeymap('gr', vim.lsp.buf.references, 'Get all references to object') -- get all references 
+nkeymap('gt', vim.lsp.buf.type_definition, 'Jump to type definition') -- get type definition
+nkeymap('gC', vim.lsp.buf.hover, 'Open documentation') -- documentation 
+nkeymap('<leader>rn', vim.lsp.buf.rename, 'Rename all instances of') -- rename
+nkeymap('<leader>e', vim.diagnostic.open_float, 'Rename all instances of') -- rename
+-- nkeymap('gw', vim.lsp.buf.document_symbol()<cr>', 'Document/find query') -- 
+-- nkeymap('<C-k>', vim.lsp.buf.signature_help()<cr>') -- 
+-- nkeymap('<leader>af', vim.lsp.buf.code_action()<cr>') -- 
 
 -- vim.keymap.set('n', 'mm', codewindow.toggle_minimap())
 
