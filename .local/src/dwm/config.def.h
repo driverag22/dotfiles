@@ -10,36 +10,21 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 22;
-/* static const int user_bh            = 26; */
-/* static const char *fonts[]          = { "JetBrains Mono:size=13", "DejaVu Sans Mono wifi ramp:size=13"}; */
 static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
-/* static const char *fonts[]          = { "mononoki:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
-/* static const char *fonts[]          = { "SourceCodePro:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
-/* static const char *fonts[]          = { "Comic mono:size=12","JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"}; */
-/* static const char col_gray4[]       = "#31333f"; */
 static const char col_grayblue[]       = "#303642";
-/* static const char col_grayblue[]       = "#31333f"; */
 static const char col_orange[]      = "#C97F71";
-/* static const char col_difBlue[]       = "#8CB3BB"; */
 static const char col_difBlue[]     = "#5E81AB";
 static const char col_white[]       = "#eeeeee";
-/* static const char col_pink[]        = "#ff69b4"; */
-/* static const char col_blue[]        = "#81A1C1"; */
-/* static const char col_viogray[]     = "#9f92a7"; */
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_grayblue,  col_grayblue},
 	[SchemeSel]  = { col_white, col_orange, col_difBlue},
 	[SchemeSpecial]  = { col_difBlue, col_grayblue,  col_difBlue},
-	/* [SchemeSel]  = { col_white, col_blue,  col_blue}, */
-	/* [SchemeSpecial]  = { col_blue, col_gray4,  col_blue}, */
 };
 
 /* tagging */
-/* static const char *tags[] = { "", "", "", "", "", "", "", "" }; */
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
-/* static const char *tags[] = { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -77,13 +62,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history"};
 static const char *dmenuSearch[] = { "/home/diego/.local/.macros/keyBindings/dmenuGoogleSearch.sh", NULL };
-/* static const char *rofi[] = { "/home/diego/.config/rofi/launchers/type-2/launcher.sh"}; */
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
-/* static const char *notion[] = {"/home/diego/.local/.macros/keyBindings/notion.sh", NULL}; */
 static const char *emacs[] = {"emacs", NULL};
 
 static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
@@ -97,8 +80,6 @@ static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systra
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
 static const char *screenshot[] = {"deepin-screenshot", "-s", "/home/diego", NULL};
-/* static const char *play[] = {"/home/diego/.local/.macros/keyBindings/play.sh", NULL}; */
-/* static const char *stop[] = {"/home/diego/.local/.macros/keyBindings/pause.sh", NULL}; */
 static const char *play[] = {"playerctl", "play-pause", NULL};
 static const char *soundUp[] = {"amixer", "set", "Master",  "2%+", NULL};
 static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
