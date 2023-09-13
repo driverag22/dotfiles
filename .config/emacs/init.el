@@ -9,6 +9,11 @@
    '("b6269b0356ed8d9ed55b0dcea10b4e13227b89fd2af4452eee19ac88297b0f99" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" "462418b9b55cb41d878f2f30b6f533a56f644bc5576072a134db6ab2a5dc2545" "60ada0ff6b91687f1a04cc17ad04119e59a7542644c7c59fc135909499400ab8" "24168c7e083ca0bbc87c68d3139ef39f072488703dcdd82343b8cab71c0f62a7" "4dcf06273c9f5f0e01cea95e5f71c3b6ee506f192d75ffda639d737964e2e14e" default))
  '(org-agenda-files
    '("/home/diego/org/orgRoam/20230816125732-masters.org" "/home/diego/org/orgRoam/20230821153251-emacssetupp.org"))
+ '(org-agenda-sorting-strategy
+   '((agenda habit-down time-up priority-down category-keep)
+	 (todo timestamp-up priority-down category-keep)
+	 (tags timestamp-up priority-down category-keep)
+	 (search category-keep)))
  '(org-directory "~/org")
  '(package-selected-packages
    '(affe calfw-org calfw org-roam-ui visual-fill vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))

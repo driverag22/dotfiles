@@ -130,7 +130,7 @@ Moreover, the setup for latex:
         ("s" "mathematical statistics" plain (file+headline "tasks.org" "Mathematical Statistics")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"mathStats\")")
 
-        ("h" "honors" plain (file+headline "tasks.org" "CCPS Honors")
+        ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"honors\")")
 
         ("a" "automata" plain (file+headline "tasks.org" "Automata")
@@ -164,7 +164,7 @@ Moreover, the setup for latex:
          "****%?  %<%H:%M>")
         ))
 
-  (setq capture-files '("tasks.org" "schedule.org"))
+  (setq capture-files '("tasks.org"))
   ;; (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
   ;;                       "automata.org" "researchProject.org" "waterproof.org"
   ;;                       "algorithms.org" "linOptimization.org" "mathStats.org"
@@ -177,42 +177,42 @@ Moreover, the setup for latex:
 #+END_SRC
 *** Setting up org-agenda custom commands
 #+BEGIN_SRC emacs-lisp
-      (setq org-agenda-window-setup 'only-window)
-      (setq org-tags-match-list-sublevels 'indented)
-      (setq org-agenda-custom-commands
-          '((" " "Agenda"
-             (
-              (tags-todo "algo|linOpt|mathStats"
-               ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
-              )
-              (tags-todo "honors|resProj"
-               ((org-agenda-overriding-header "Honors || Research Project"))
-               )
-              (tags-todo "automata|waterproof"
-               ((org-agenda-overriding-header "Automata || Waterproof"))
-               )
-              (tags-todo "others"
-               ((org-agenda-overriding-header "Others"))
-               )
-              (tags-todo "masters"
-               ((org-agenda-overriding-header "Masters"))
-               )
-              (tags-todo "bep|grad"
-               ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
-               )
-              )
-             )))
+    (setq org-agenda-window-setup 'only-window)
+    (setq org-tags-match-list-sublevels 'indented)
+    (setq org-agenda-custom-commands
+        '((" " "Agenda"
+           (
+            (tags-todo "algo|linOpt|mathStats"
+             ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
+            )
+            (tags-todo "honors|resProj"
+             ((org-agenda-overriding-header "Honors || Research Project"))
+             )
+            (tags-todo "automata|waterproof"
+             ((org-agenda-overriding-header "Automata || Waterproof"))
+             )
+            (tags-todo "others"
+             ((org-agenda-overriding-header "Others"))
+             )
+            (tags-todo "masters"
+             ((org-agenda-overriding-header "Masters"))
+             )
+            (tags-todo "bep|grad"
+             ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
+             )
+            )
+           )))
 
-      (defun my-org-agenda-custom-keys ()
-      (local-set-key (kbd "j") 'org-agenda-next-line)
-      (local-set-key (kbd "k") 'org-agenda-previous-line)
-      (local-set-key (kbd "h") 'backward-char)
-      (local-set-key (kbd "l") 'forward-char)
-      (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-      (local-set-key (kbd "C-c o") 'full-calendar)
-      )
+    (defun my-org-agenda-custom-keys ()
+    (local-set-key (kbd "j") 'org-agenda-next-line)
+    (local-set-key (kbd "k") 'org-agenda-previous-line)
+    (local-set-key (kbd "h") 'backward-char)
+    (local-set-key (kbd "l") 'forward-char)
+    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
+    (local-set-key (kbd "C-c o") 'full-calendar)
+    )
 
-    (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
+  (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
@@ -237,7 +237,6 @@ Moreover, the setup for latex:
        (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
        (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
        )
-      :sorter #'string-lessp
      ))
    (defun task-calendar ()
      (interactive)
@@ -250,10 +249,10 @@ Moreover, the setup for latex:
      ))
    )
   (custom-set-faces
-   '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 2.0 :inherit variable-pitch))))
-   '(cfw:face-header ((t (:foreground "#ffffff" :weight bold))))
-   '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold)))
-   '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold)))
+   '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 1.0 :inherit variable-pitch))))
+   '(cfw:face-header ((t (:foreground "#ffffff" :weight bold ))))
+   '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold )))
+   '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold )))
    '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
    '(cfw:face-day-title ((t :background "#grey10" )))
    '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
@@ -399,7 +398,7 @@ Moreover, the setup for latex:
   ;;; set gb back to normal for memory reasons
   (setq gc-cons-threshold (* 50 1024 1024))
 #+END_SRC
-** Setting up "smart" org-agenda
+*** Setting up "smart" org-agenda
 #+BEGIN_SRC emacs-lisp
   ;; Remove automatic project inheritance
   (add-to-list 'org-tags-exclude-from-inheritance "project")
