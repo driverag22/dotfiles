@@ -2,20 +2,16 @@
 /* Default settings; can be overriden by command line. */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
 static int user_bh = 22;
-static int dmx = 0, dmy = 0; /* put dmenu at this x, y offset */
-/* static int dmx = 0, dmy = 0; /1* put dmenu at this x, y offset *1/ */
-/* static unsigned int dmw = 1903; /1* make dmenu this wide *1/ */
+static int dmx = 5, dmy = 3; /* put dmenu at this x, y offset */
+static unsigned int dmw = 1903; /* make dmenu this wide */
 /* static unsigned int border_width = 2; /1* Size of the window border *1/ */
 static unsigned int border_width = 0; /* Size of the window border */
 
-/* static const char col_gray4[] = "#31333f"; */
-static const char col_gray4[] = "#303642";
-static const char col_white[] = "#eeeeee";
-static const char col_orange[] = "#c97f71";
-/* static const char col_pink[] = "#ff69b4"; */
-static const char col_blue[] = "#81A1C1";
+static const char col_gray4[] = "#222436";
+static const char col_white[] = "#b1bedb";
+static const char col_orange[] = "#6d86b8";
+static const char col_blue[] = "#3961a8";
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
-/* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 	"JetBrains Mono:size=13"
 };
