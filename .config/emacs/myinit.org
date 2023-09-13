@@ -50,7 +50,7 @@
 * Theming
 #+BEGIN_SRC emacs-lisp
 (use-package doom-themes
-  :init (load-theme 'monokai-pro t))
+  :init (load-theme 'doom-tokyo-night t))
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 160)
 #+END_SRC
 
