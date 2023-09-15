@@ -17,7 +17,7 @@ nkeymap('<leader>fb', ':Telescope file_browser<CR>', 'Telescope file browser')
 
 -----------------------------------------
 -- Misc:
-nkeymap('<C-b>', ':redo<CR>') -- redo
+nkeymap('U', '<cmd>redo<CR>') -- redo
 
 nkeymap('<Esc>', ':nohl<CR>') -- remove highlights
 
