@@ -27,14 +27,14 @@ ringvercolor=ffffffff
 
 # insidevercolor=00000000
 # insidevercolor=ff69b4
-# insidevercolor=C97F71
-insidevercolor=C97F71
+# insidevercolor=606DAA
+insidevercolor=606DAA
 
 ringwrongcolor=ffffffff
 
 # insidewrongcolor=d23c3dff
 # insidewrongcolor=ff69b4
-insidewrongcolor=C97F71
+insidewrongcolor=606DAA
 
 timecolor=ffffffff
 time_format="%H:%M:%S"
@@ -43,12 +43,12 @@ layoutcolor=ffffffff
 
 # keyhlcolor=d23c3dff
 # keyhlcolor=ff69b4
-keyhlcolor=C97F71
+keyhlcolor=606DAA
 
 bshlcolor=d23c3dff
 verifcolor=ffffffff
 # wrongcolor=d23c3dff
 # wrongcolor=ff69b4
-wrongcolor=C97F71
+wrongcolor=606DAA
 modifcolor=d23c3dff
 bgcolor=000000ff
