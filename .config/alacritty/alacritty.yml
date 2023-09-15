@@ -175,7 +175,8 @@ schemes:
       foreground: '#b1bedb'
     normal:
       black:   '#15080c'
-      red:     '#911c29'
+      # red:     '#911c29'
+      red:     '#ff5555'
       green:   '#bb4449'
       yellow:  '#3961a8'
       blue:    '#81A1C1'
