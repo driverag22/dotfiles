@@ -4,7 +4,7 @@ dockapp_mode none
 geometry 10x1-10-1018
 # max_geometry 10x5-130-130
 kludges force_icons_size
-background "#31333f"
+background "#222436"
 grow_gravity NE
 icon_gravity NE
 icon_size 25
