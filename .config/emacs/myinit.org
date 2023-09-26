@@ -37,6 +37,8 @@
   (setq scroll-conservatively 10000)
   ;; (setq scroll-margn 2)
 
+  (setq frame-resize-pixelwise t) ;; Remove empty bar under emacs window
+
   (menu-bar-mode -1)
   (setq visible-bell t)
 
@@ -50,7 +52,8 @@
 * Theming
 #+BEGIN_SRC emacs-lisp
 (use-package doom-themes
-  :init (load-theme 'doom-tokyo-night t))
+  ;; :init (load-theme 'doom-tokyo-night t))
+  :init (load-theme 'tron-legacy t))
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 160)
 #+END_SRC
 
@@ -103,11 +106,19 @@
   ;; (define-key global-map "\C-cl" 'org-store-link)
   ;; (define-key global-map "\C-ca" 'org-agenda)
   (setq org-log-done t)
-  (setq org-highest-priority ?A)  ; Define the highest priority (10)
-  (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
-  (setq org-default-priority ?B)  ; Define the default priority (5)
+  ;; (setq org-highest-priority ?A)  ; Define the highest priority (10)
+  ;; (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
+  ;; (setq org-default-priority ?B)  ; Define the default priority (5)
 
-
+ (setq org-cycle-level-faces
+      '((1 . org-level-1)
+        (2 . org-level-2)
+        (3 . org-level-3)
+        (4 . org-level-4)
+        (5 . org-level-5)
+        (6 . org-level-6)
+        (7 . org-level-7)
+        (8 . org-level-8)))
 #+END_SRC
 Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
@@ -116,6 +127,76 @@ Moreover, the setup for latex:
     :hook (org-mode . org-fragtog-mode))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
   (setq-default line-spacing 6)
+#+END_SRC
+*** Beautify org mode
+#+BEGIN_SRC emacs-lisp
+   (setq org-hide-emphasis-markers t)
+
+     (font-lock-add-keywords 'org-mode
+   '(("^ *\\([-]\\) "
+      (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+   ;; Change date format
+   (setq-default org-display-custom-times t)
+   (setq org-time-stamp-custom-formats '("<%d-%m-%Y %a>" . "<%d-%m-%Y %a %H:%M>"))
+
+   ;; Improve org mode looks
+   (setq org-startup-indented t
+     org-pretty-entities t
+     org-hide-emphasis-markers t
+     org-startup-with-inline-images t
+     org-image-actual-width '(300))
+   (defun bb/org-mode-setup ()
+     (org-indent-mode)
+     ;;(org-startup-folded t)
+     (variable-pitch-mode 1)
+     (visual-line-mode 1)
+     (setq evil-auto-indent nil))
+
+   ;; Set faces for heading levels
+   (dolist (face '((org-level-1 . 1.2)
+                   (org-level-2 . 1.1)
+                   (org-level-3 . 1.05)
+                   (org-level-4 . 1.0)
+                   (org-level-5 . 1.1)
+                   (org-level-6 . 1.1)
+                   (org-level-7 . 1.1)
+                   (org-level-8 . 1.1)))
+     (set-face-attribute (car face) nil :font "JetBrains Mono" :height (cdr face)))
+
+   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
+   (set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
+   (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+   (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+
+   (defun bb/setup-buffer-face ()
+     (setq buffer-face-mode-face '(:family "JetBrains Mono 16"))
+     (buffer-face-mode)
+     )
+   (add-hook 'org-agenda-mode-hook 'bb/setup-buffer-face)
+
+
+  (defun bb/after-org-mode-load ()
+    (visual-line-mode)
+    (vi-tilde-fringe-mode -1)
+
+    (require 'org-indent)
+    (org-indent-mode)
+    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
+
+    (variable-pitch-mode 1)
+   )
+#+END_SRC
+**** org-superstar
+#+BEGIN_SRC emacs-lisp
+  (use-package org-superstar
+    :after org)
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  ;; (add-hook 'org-roam-autosync-mode (lambda () (org-superstart-mode 1)))
 #+END_SRC
 *** Setting up capture templates
 #+BEGIN_SRC emacs-lisp
@@ -177,42 +258,49 @@ Moreover, the setup for latex:
 #+END_SRC
 *** Setting up org-agenda custom commands
 #+BEGIN_SRC emacs-lisp
-    (setq org-agenda-window-setup 'only-window)
-    (setq org-tags-match-list-sublevels 'indented)
-    (setq org-agenda-custom-commands
-        '((" " "Agenda"
-           (
-            (tags-todo "algo|linOpt|mathStats"
-             ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
-            )
-            (tags-todo "honors|resProj"
-             ((org-agenda-overriding-header "Honors || Research Project"))
-             )
-            (tags-todo "automata|waterproof"
-             ((org-agenda-overriding-header "Automata || Waterproof"))
-             )
-            (tags-todo "others"
-             ((org-agenda-overriding-header "Others"))
-             )
-            (tags-todo "masters"
-             ((org-agenda-overriding-header "Masters"))
-             )
-            (tags-todo "bep|grad"
-             ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
-             )
-            )
-           )))
+	(setq org-agenda-window-setup 'only-window)
+	(setq org-tags-match-list-sublevels 'indented)
+	(setq org-agenda-custom-commands
+		'((" " "Agenda"
+		   (
+			(tags-todo "algo|linOpt|mathStats"
+			 ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
+			)
+			(tags-todo "honors|resProj"
+			 ((org-agenda-overriding-header "Honors || Research Project"))
+			 )
+			(tags-todo "automata|waterproof"
+			 ((org-agenda-overriding-header "Automata || Waterproof"))
+			 )
+			(tags-todo "others"
+			 ((org-agenda-overriding-header "Others"))
+			 )
+			(tags-todo "masters"
+			 ((org-agenda-overriding-header "Masters"))
+			 )
+			(tags-todo "bep|grad"
+			 ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
+			 )
+			)
+		   )))
 
-    (defun my-org-agenda-custom-keys ()
-    (local-set-key (kbd "j") 'org-agenda-next-line)
-    (local-set-key (kbd "k") 'org-agenda-previous-line)
-    (local-set-key (kbd "h") 'backward-char)
-    (local-set-key (kbd "l") 'forward-char)
-    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-    (local-set-key (kbd "C-c o") 'full-calendar)
-    )
+	(defun my-org-agenda-custom-keys ()
+	(local-set-key (kbd "j") 'org-agenda-next-line)
+	(local-set-key (kbd "k") 'org-agenda-previous-line)
+	(local-set-key (kbd "h") 'backward-char)
+	(local-set-key (kbd "l") 'forward-char)
+	(local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
+	(local-set-key (kbd "C-c o") 'full-calendar)
+	)
 
   (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
+
+  (setq org-agenda-prefix-format '(
+       (agenda . "%-27b %-10T ")
+       (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       ))
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
@@ -311,72 +399,77 @@ Moreover, the setup for latex:
 #+END_SRC
 *** olivetti mode
 #+BEGIN_SRC emacs-lisp
-;Olivetti config
-(use-package olivetti
-  :defer t
-  :init  (setq olivetti-body-width .70))
+  ;Olivetti config
+  (use-package olivetti)
 
-(add-hook 'org-mode-hook 'olivetti-mode)
+  (defun oliv-org-mode ()
+    (olivetti-mode)
+    (olivetti-set-width 98)
+    )
+
+  (add-hook 'org-mode-hook 'oliv-org-mode)
 #+END_SRC
 *** org-roam
 #+BEGIN_SRC emacs-lisp
   (use-package org-roam
-	:after org
-	:ensure t
-	:init
+    :after org
+    :ensure t
+    :init
        (setq org-roam-v2-ack t)
-	:custom
-	(org-roam-directory (file-truename "~/org/orgRoam"))
-	(org-roam-capture-templates
-	 '(("d" "default" plain
-		"\n%?"
-		:if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n #+date: %U\n #+title:${title}\n backlink:\n tags:\n* ${title}\n")
-		:unnarrowed t)))
-	:bind (("C-c n l" . org-roam-buffer-toggle)
-	   ("C-c n f" . org-roam-node-find)
-	   ("C-c n i" . org-roam-node-insert)
-	   ("C-c n c" . org-roam-capture)
-	   ;; Dailies
-	   ("C-c n j" . org-roam-dailies-capture-today))
-	:config (org-roam-setup))
+    :custom
+    (org-roam-directory (file-truename "~/org/orgRoam"))
+    (org-roam-capture-templates
+     '(("d" "default" plain
+        "\n%?"
+        :if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n #+date: %U\n #+title:${title}\n backlink:\n tags:\n* ${title}\n")
+        :unnarrowed t)))
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+       ("C-c n f" . org-roam-node-find)
+       ("C-c n i" . org-roam-node-insert)
+       ("C-c n c" . org-roam-capture)
+       ;; Dailies
+       ("C-c n j" . org-roam-dailies-capture-today))
+    :config (org-roam-setup))
 
   (use-package org-roam-ui
-	:after org-roam 
-	:bind ("C-c n g" . org-roam-ui-open)
-	:config
-	(setq org-roam-ui-sync-theme t
-		  org-roam-ui-follow t
-		  org-roam-ui-update-on-save t
-		  org-roam-ui-open-on-start t))
-	(defun vulpea-buffer-prop-get (name)
-	"Get a buffer property called NAME as a string."
-	(org-with-point-at 1
-	  (when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
-							   (point-max) t)
-		(buffer-substring-no-properties
-		 (match-beginning 1)
-		 (match-end 1)))))
+    :after org-roam 
+    :bind ("C-c n g" . org-roam-ui-open)
+    :config
+    (org-roam-db-autosync-enable)
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+   (defun vulpea-buffer-prop-get (name)
+   "Get a buffer property called NAME as a string."
+   (org-with-point-at 1
+     (when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
+                              (point-max) t)
+       (buffer-substring-no-properties
+        (match-beginning 1)
+        (match-end 1)))))
 
-	(defun vulpea-agenda-category ()
-	  (let* ((file-name (when buffer-file-name
-						  (file-name-sans-extension
-						   (file-name-nondirectory buffer-file-name))))
-			 (title (vulpea-buffer-prop-get "title"))
-			 (category (org-get-category)))
-		(or (if (and
-				 title
-				 (string-equal category file-name))
-				title
-			  category)
-			"")))
-
-
-  (setq org-agenda-prefix-format '(
-	   (agenda . "%-27b %-10T ")
-	   (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-	   (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-	   (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-	   ))
+   (defun vulpea-agenda-category ()
+     (let* ((file-name (when buffer-file-name
+                         (file-name-sans-extension
+                          (file-name-nondirectory buffer-file-name))))
+            (title (vulpea-buffer-prop-get "title"))
+            (category (org-get-category)))
+       (or (if (and
+                title
+                (string-equal category file-name))
+               title
+             category)
+           "")))
+#+END_SRC
+*** vulpea
+#+BEGIN_SRC emacs-lisp
+(use-package vulpea
+  :ensure t
+  ;; hook into org-roam-db-autosync-mode you wish to enable
+  ;; persistence of meta values (see respective section in README to
+  ;; find out what meta means)
+  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable)))
 #+END_SRC
 *** org-babel
 #+BEGIN_SRC emacs-lisp
@@ -534,90 +627,6 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
                            (find-file-noselect file))
     (vulpea-project-update-tag)
     (save-buffer)))
-#+END_SRC
-*** Beautify org mode
-#+BEGIN_SRC emacs-lisp
-   (setq org-hide-emphasis-markers t)
-
-     (font-lock-add-keywords 'org-mode
-   '(("^ *\\([-]\\) "
-      (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-   ;; Change date format
-   (setq-default org-display-custom-times t)
-   (setq org-time-stamp-custom-formats '("<%d-%m-%Y %a>" . "<%d-%m-%Y %a %H:%M>"))
-
-   ;; Improve org mode looks
-   (setq org-startup-indented t
-     org-pretty-entities t
-     org-hide-emphasis-markers t
-     org-startup-with-inline-images t
-     org-image-actual-width '(300))
-   (defun bb/org-mode-setup ()
-     (org-indent-mode)
-     ;;(org-startup-folded t)
-     (variable-pitch-mode 1)
-     (visual-line-mode 1)
-     (setq evil-auto-indent nil))
-
-   ;; Set faces for heading levels
-   (dolist (face '((org-level-1 . 1.2)
-                   (org-level-2 . 1.1)
-                   (org-level-3 . 1.05)
-                   (org-level-4 . 1.0)
-                   (org-level-5 . 1.1)
-                   (org-level-6 . 1.1)
-                   (org-level-7 . 1.1)
-                   (org-level-8 . 1.1)))
-     (set-face-attribute (car face) nil :font "JetBrains Mono" :height (cdr face)))
-
-   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
-   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
-   (set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
-   (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-   (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
-
-   (defun bb/setup-buffer-face ()
-     (setq buffer-face-mode-face '(:family "JetBrains Mono 16"))
-     (buffer-face-mode)
-     )
-   (add-hook 'org-agenda-mode-hook 'bb/setup-buffer-face)
-
-
-  (defun bb/after-org-mode-load ()
-    (visual-line-mode)
-    (vi-tilde-fringe-mode -1)
-
-    (require 'org-indent)
-    (org-indent-mode)
-    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
-
-    (variable-pitch-mode 1)
-   )
-#+END_SRC
-**** org-bullets
-#+BEGIN_SRC emacs-lisp
-  ;;; Org bullets
-  (use-package org-bullets
-    :after org
-    :hook ((org-mode . org-bullets-mode))
-    :custom (org-bullets-bullet-list '("◉" "○" "●" "○○" "●●" "○○○" "●●●")))
-
-  ;;; autolist
-  ;; (use-package org-autolist)
-  ;; (add-hook 'org-mode-hook (lambda () (org-autolist-mode)))
-#+END_SRC
-*** vulpea
-#+BEGIN_SRC emacs-lisp
-(use-package vulpea
-  :ensure t
-  ;; hook into org-roam-db-autosync-mode you wish to enable
-  ;; persistence of meta values (see respective section in README to
-  ;; find out what meta means)
-  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable)))
 #+END_SRC
 ** evil-nerd-commenter
 #+BEGIN_SRC emacs-lisp
