@@ -210,3 +210,9 @@ require("diaglist").init({
     -- increase for noisy servers
     debounce_ms = 150,
 })
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●', -- Could be '●', '▎', 'x'
+  }
+})
