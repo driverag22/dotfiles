@@ -67,7 +67,7 @@ nkeymap('gs', vim.lsp.buf.workspace_symbol, 'Document/find query') --
 nkeymap('gr', vim.lsp.buf.references, 'Get all references to object') -- get all references 
 nkeymap('gt', vim.lsp.buf.type_definition, 'Jump to type definition') -- get type definition
 nkeymap('gC', vim.lsp.buf.hover, 'Open documentation') -- documentation 
-nkeymap('<Leader>e', vim.diagnostic.open_float, 'Rename all instances of') -- rename
+nkeymap('<Leader>e', vim.diagnostic.open_float, 'Open vim diagnostic in floating window') -- 
 nkeymap('<leader>rn', vim.lsp.buf.rename, 'Rename all instances of') -- rename
 -- nkeymap('gw', vim.lsp.buf.document_symbol()<cr>', 'Document/find query') -- 
 -- nkeymap('<C-k>', vim.lsp.buf.signature_help()<cr>') -- 
