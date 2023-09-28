@@ -7,9 +7,11 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 7;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 3;       /* vertical padding of bar */
-static const int sidepad            = 7;       /* horizontal padding of bar */
-static const int user_bh            = 22;
+/* static const int vertpad            = 3;       /1* vertical padding of bar *1/ */
+/* static const int sidepad            = 7;       /1* horizontal padding of bar *1/ */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 0;       /* horizontal padding of bar */
+static const int user_bh            = 21;
 static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
 static const char col_bg[]          = "#222436";
 static const char col_bluer[]       = "#6d86b8";
@@ -160,7 +162,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      5)
 	TAGKEYS(                        XK_9,                      6)
 	TAGKEYS(                        XK_0,                      7)
-    { MODKEY|ShiftMask,             XK_r,      quit,           {1} },
+  { MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
