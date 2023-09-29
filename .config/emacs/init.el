@@ -15,6 +15,7 @@
 	 (tags timestamp-up priority-down category-keep)
 	 (search category-keep)))
  '(org-directory "~/org")
+ '(org-image-actual-width 700)
  '(package-selected-packages
    '(org-superstar tron-legacy-theme affe calfw-org calfw org-roam-ui visual-fill vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
 (custom-set-faces

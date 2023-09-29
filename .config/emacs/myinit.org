@@ -131,6 +131,7 @@ Moreover, the setup for latex:
 *** Beautify org mode
 #+BEGIN_SRC emacs-lisp
    (setq org-hide-emphasis-markers t)
+  (setq org-image-actual-width nil)
 
      (font-lock-add-keywords 'org-mode
    '(("^ *\\([-]\\) "
