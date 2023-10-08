@@ -31,9 +31,10 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 #set keyboard so spanish letters (ñ,á,...) can be used
 setxkbmap us -variant intl
 
-#start compositor, warpd (keyboard-controller mouse), systray and wm
+#start compositor, warpd (keyboard-controller mouse), systray, screenshot tool and wm
 picom &
 warpd &
 stalonetray &
 nm-applet &
+flameshot &
 exec dwm

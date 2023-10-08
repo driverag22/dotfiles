@@ -80,7 +80,7 @@ static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systra
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
-static const char *screenshot[] = {"deepin-screenshot", "-s", "/home/diego", NULL};
+static const char *screenshot[] = {"flameshot", "gui", NULL};
 static const char *play[] = {"playerctl", "play-pause", NULL};
 static const char *soundUp[] = {"amixer", "set", "Master",  "2%+", NULL};
 static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
