@@ -10,7 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="tuxpunk"
 # ZSH_THEME="robbyrussel"
-ZSH_THEME="dobbyrussel"
+# ZSH_THEME="dobbyrussel"
+ZSH_THEME="cleanrussel"
 # ZSH_THEME="crunch"
 # ZSH_THEME="agnoster"
 
