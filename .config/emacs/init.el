@@ -16,8 +16,14 @@
 	 (search category-keep)))
  '(org-directory "~/org")
  '(org-image-actual-width 700)
+ '(org-link-frame-setup
+   '((vm . vm-visit-folder-other-frame)
+	 (vm-imap . vm-visit-imap-folder-other-frame)
+	 (gnus . org-gnus-no-new-news)
+	 (file . find-file)
+	 (wl . wl-other-frame)))
  '(package-selected-packages
-   '(org-superstar tron-legacy-theme affe calfw-org calfw org-roam-ui visual-fill vulpea golden-ratio evil-nerd-commenter projectile general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
+   '(helm org-superstar tron-legacy-theme calfw-org calfw org-roam-ui visual-fill vulpea golden-ratio evil-nerd-commenter general which-key org-roam monokai-pro-theme evil use-package haki-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

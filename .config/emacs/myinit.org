@@ -92,33 +92,33 @@
 
 ** Org mode
 #+BEGIN_SRC emacs-lisp
-  (require 'org)
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "PROG(p)" "DONE(d)")))
+   (require 'org)
+   (setq org-todo-keywords
+         '((sequence "TODO(t)" "PROG(p)" "|" "DONE(d)" "PAUS(s)")))
 
-  (global-set-key (kbd "C-c l") 'org-store-link)
-  (global-set-key (kbd "C-c a") 'org-agenda)
-  (global-set-key (kbd "C-c c") 'org-capture)
-  (global-set-key (kbd "C-SPC") 'org-todo)
-  ;; (global-set-key (kbd "C-x C-t") 'org-latex-preview)
-  (define-key global-map [(shift backspace)] 'org-mark-ring-goto)
+   (global-set-key (kbd "C-c l") 'org-store-link)
+   (global-set-key (kbd "C-c a") 'org-agenda)
+   (global-set-key (kbd "C-c c") 'org-capture)
+   (global-set-key (kbd "C-SPC") 'org-todo)
+   (global-set-key (kbd "C-<backspace>") 'org-mark-ring-goto)
+   ;; (global-set-key (kbd "C-x C-t") 'org-latex-preview)
 
-  ;; (define-key global-map "\C-cl" 'org-store-link)
-  ;; (define-key global-map "\C-ca" 'org-agenda)
-  (setq org-log-done t)
-  ;; (setq org-highest-priority ?A)  ; Define the highest priority (10)
-  ;; (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
-  ;; (setq org-default-priority ?B)  ; Define the default priority (5)
+   ;; (define-key global-map "\C-cl" 'org-store-link)
+   ;; (define-key global-map "\C-ca" 'org-agenda)
+   (setq org-log-done t)
+   ;; (setq org-highest-priority ?A)  ; Define the highest priority (10)
+   ;; (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
+   ;; (setq org-default-priority ?B)  ; Define the default priority (5)
 
- (setq org-cycle-level-faces
-      '((1 . org-level-1)
-        (2 . org-level-2)
-        (3 . org-level-3)
-        (4 . org-level-4)
-        (5 . org-level-5)
-        (6 . org-level-6)
-        (7 . org-level-7)
-        (8 . org-level-8)))
+  (setq org-cycle-level-faces
+       '((1 . org-level-1)
+         (2 . org-level-2)
+         (3 . org-level-3)
+         (4 . org-level-4)
+         (5 . org-level-5)
+         (6 . org-level-6)
+         (7 . org-level-7)
+         (8 . org-level-8)))
 #+END_SRC
 Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
@@ -134,7 +134,7 @@ Moreover, the setup for latex:
   (setq org-image-actual-width nil)
 
      (font-lock-add-keywords 'org-mode
-   '(("^ *\\([-]\\) "
+   '(("^ -\\([-]\\) "
       (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
    ;; Change date format
@@ -333,6 +333,7 @@ Moreover, the setup for latex:
       :contents-sources
       (list
        (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
+       (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
        )
       ;; :sorter 'my-calendar-entry-comparator
      ))
@@ -639,6 +640,13 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
   (use-package golden-ratio)
   (golden-ratio-mode 1)
 #+END_SRC
+** Helm
+#+BEGIN_SRC emacs-lisp
+    (use-package helm
+      :config
+      (helm-mode 1)
+    )
+#+END_SRC
 #** ivy
 ##+BEGIN_SRC emacs-lisp
 #  (use-package ivy
@@ -743,4 +751,3 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
 ##+BEGIN_SRC emacs-lisp
 #(use-package lsp-ivy)
 ##+END_SRC
-
