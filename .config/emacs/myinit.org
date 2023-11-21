@@ -88,6 +88,7 @@
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
   (define-key evil-insert-state-map (kbd "C-v") 'clipboard-yank)
+  (evil-set-undo-system 'undo-redo)
 #+END_SRC
 
 ** Org mode
@@ -110,6 +111,11 @@
    ;; (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
    ;; (setq org-default-priority ?B)  ; Define the default priority (5)
 
+  (defun open-tasks-file ()
+    (interactive)
+    (find-file "~/org/tasks.org"))
+
+  (global-set-key (kbd "C-c b") 'open-tasks-file)
   (setq org-cycle-level-faces
        '((1 . org-level-1)
          (2 . org-level-2)
@@ -203,29 +209,29 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("A" "algorithms" plain (file+headline "tasks.org" "Algorithms")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"algo\")")
+        ("D" "data mining & machine learning" plain (file+headline "tasks.org" "Data Mining & Machine Learning")
+         "** TODO [#%^{Priority}] [DM]%? %(org-set-tags \"dataMining\")")
 
-        ("l" "linear optimization" plain (file+headline "tasks.org" "Linear Optimization")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"linOpt\")")
+        ("O" "operating systems" plain (file+headline "tasks.org" "Operating Systems")
+         "** TODO [#%^{Priority}] [OS]%? %(org-set-tags \"opSyst\")")
 
-        ("s" "mathematical statistics" plain (file+headline "tasks.org" "Mathematical Statistics")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"mathStats\")")
+        ("C" "complex analysis" plain (file+headline "tasks.org" "Complex Analysis")
+         "** TODO [#%^{Priority}] [CA]%? %(org-set-tags \"compAnal\")")
+
+        ("M" "mathematical modelling" plain (file+headline "tasks.org" "Mathematical Modelling")
+         "** TODO [#%^{Priority}] [MM]%? %(org-set-tags \"mathModelling\")")
 
         ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"honors\")")
+         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"honors\")")
 
-        ("a" "automata" plain (file+headline "tasks.org" "Automata")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"automata\")")
+        ("r" "resProj" plain (file+headline "tasks.org" "Research Projects")
+         "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProj\")")
+
+        ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
+         "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
 
         ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
-
-        ("r" "resProj" plain (file+headline "tasks.org" "Research Projects")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"resProj\")")
-
-        ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"waterproof\")")
 
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
@@ -264,14 +270,14 @@ Moreover, the setup for latex:
 	(setq org-agenda-custom-commands
 		'((" " "Agenda"
 		   (
-			(tags-todo "algo|linOpt|mathStats"
-			 ((org-agenda-overriding-header "Algo. || Lin. Opt. || Math. Stats."))
+			(tags-todo "mathModelling|dataMining|opSyst|compAnal"
+			 ((org-agenda-overriding-header "Modelling || OS || Complex || Data mining"))
 			)
 			(tags-todo "honors|resProj"
 			 ((org-agenda-overriding-header "Honors || Research Project"))
 			 )
-			(tags-todo "automata|waterproof"
-			 ((org-agenda-overriding-header "Automata || Waterproof"))
+			(tags-todo "waterproof"
+			 ((org-agenda-overriding-header "Waterproof"))
 			 )
 			(tags-todo "others"
 			 ((org-agenda-overriding-header "Others"))
@@ -423,7 +429,7 @@ Moreover, the setup for latex:
     (org-roam-capture-templates
      '(("d" "default" plain
         "\n%?"
-        :if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n #+date: %U\n #+title:${title}\n backlink:\n tags:\n* ${title}\n")
+        :if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n#+filetags:\n#+date: %U\n#+title:${title}\n ")
         :unnarrowed t)))
     :bind (("C-c n l" . org-roam-buffer-toggle)
        ("C-c n f" . org-roam-node-find)
