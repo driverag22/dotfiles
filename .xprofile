@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-## #!/bin/sh
+#!/bin/sh
 source /usr/share/nvm/init-nvm.sh
 
 #sets dwmBar running to display values
