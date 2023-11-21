@@ -19,7 +19,8 @@ Plug 'ryanoasis/vim-devicons' -- Developer Icons
 
 --===================================================
 --- Telescope
-Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.2'})
+-- Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.2'})
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim' -- dependency
 Plug 'BurntSushi/ripgrep' --  grep
 Plug 'sharkdp/fd'  --- finder
@@ -31,8 +32,8 @@ Plug "nvim-telescope/telescope-file-browser.nvim" -- fileBrowser
 
 --===================================================
 ---- Misc
-Plug 'm4xshen/hardtime.nvim'  --- hardtime
-Plug 'MunifTanjim/nui.nvim' --- hardtime dependency
+-- Plug 'm4xshen/hardtime.nvim'  --- hardtime
+-- Plug 'MunifTanjim/nui.nvim' --- hardtime dependency
 
 -- Plug 'folke/flash.nvim' -- jump around
 Plug 'ggandor/lightspeed.nvim' -- jump around
@@ -103,7 +104,7 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 require("which-key").register()
-require("hardtime").setup()
+-- require("hardtime").setup()
 
 require('telescope').load_extension('fzf')
 require("telescope").load_extension "file_browser"
