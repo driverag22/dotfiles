@@ -15,7 +15,7 @@ source /usr/share/nvm/init-nvm.sh
 # wmname "LG3D"
 
 #turn off bluetooth and mute speakers
-bluetoothctl power off
+# bluetoothctl power off
 amixer set Master mute
 
 # trackpad fixes
