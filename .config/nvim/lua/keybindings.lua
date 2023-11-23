@@ -35,8 +35,8 @@ nkeymap('k', 'gk')
 -----------------------------------------
 -- Buffers<Cmd> 
 nkeymap('<Leader>x', '<Cmd>bdelete!<CR>') -- close buffer
-nkeymap('<M-m>', '<Cmd>bnext<CR>') -- move to previus buffer
-nkeymap('<M-n>', '<Cmd>bprev<CR>') -- move to next buffer
+nkeymap('<M-.>', '<Cmd>bnext<CR>') -- move to previus buffer
+nkeymap('<M-,>', '<Cmd>bprev<CR>') -- move to next buffer
 -- nkeymap('<Leader>bj', '<Cmd>bnext<CR><Cmd>call feedkeys('<Leader>b')<CR>') buffer mode
 -- nkeymap('<Leader>bk', '<Cmd>bprex<CR><Cmd>call feedkeys('<Leader>k')<CR>')
 
