@@ -177,7 +177,8 @@ schemes:
       black:   '#15080c'
       # red:     '#911c29'
       red:     '#ff5555'
-      green:   '#bb4449'
+      # green:   '#bb4449'
+      green:   '#A3BE8C'
       yellow:  '#3961a8'
       blue:    '#81A1C1'
       magenta: '#bb4449'
@@ -187,7 +188,8 @@ schemes:
     bright:
       black:   '#7b8599'
       red:     '#bb4449'
-      green:   '#bb4449'
+      green:   '#A3BE8C'
+      # green:   '#bb4449'
       yellow:  '#3961a8'
       blue:    '#606daa'
       magenta: '#bb4449'
@@ -247,12 +249,51 @@ schemes:
       - { index: 16, color: '0xff966c' }
       - { index: 17, color: '0xc53b53' }
 
+# modus-vivendi (Dark theme)
+  modus-vivendi: &modus-vivendi
+    primary:
+      background: "#000000"
+      foreground: "#ffffff"
+    # Bright and dim foreground colors
+      # dim_foreground: "#1e1e1e"
+      # bright_foreground: "#ffffff"
+    # Normal colors
+    normal:
+      black:   "#000000"
+      red:     "#ff5f59"
+      green:   "#44bc44"
+      yellow:  "#d0bc00"
+      blue:    "#2fafff"
+      magenta: "#feacd0"
+      cyan:    "#00d3d0"
+      white:   "#ffffff"
+    # Bright colors
+    bright:
+      black:   "#000000"
+      red:     "#ff5f5f"
+      green:   "#44df44"
+      yellow:  "#efef00"
+      blue:    "#338fff"
+      magenta: "#ff66ff"
+      cyan:    "#9ac8e0"
+      white:   "#ffffff"
+    # Dim colors
+    dim:
+      black:   "#000000"
+      red:     "#ff9580"
+      green:   "#88ca9f"
+      yellow:  "#d2b580"
+      blue:    "#82b0ec"
+      magenta: "#caa6df"
+      cyan:    "#9ac8e0"
+      white:   "#989898"
   
     
 ## set colortheme:
 # colors: *BlueOrange
 # colors: *TokyoNight
-colors: *Bladerunner
+# colors: *Bladerunner
+colors: *modus-vivendi
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

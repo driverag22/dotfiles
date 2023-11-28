@@ -5,6 +5,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 --===================================================
 -- Colors, status line, tab line, icons
+Plug 'ishan9299/modus-theme-vim'  -- if using nightly neovim
 Plug 'folke/tokyonight.nvim'
 Plug 'nyoom-engineering/oxocarbon.nvim'
 Plug('akinsho/bufferline.nvim', { ['tag'] = '*'}) -- bufferline

@@ -2,6 +2,8 @@ local function nkeymap(key, map, descr)
 	vim.keymap.set('n', key, map, {noremap = true, desc = descr})
 end
 
+vim.g.mapleader = " "
+
 -----------------------------------------
 ---- Telescope<Cmd>
 

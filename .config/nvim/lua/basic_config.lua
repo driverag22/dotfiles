@@ -11,9 +11,10 @@ vim.opt.expandtab = true
 vim.opt.foldlevelstart = 1
 
         -- :colorscheme oxocarbon
+    -- :colorscheme tokyonight-night
 vim.cmd ([[
 
-    :colorscheme tokyonight-night
+    :colorscheme modus-vivendi
 		let g:NERDTreeDirArrowExpandable="+"
 	 	let g:NERDTreeDirArrowCollapsible="~"
     let g:taskwiki_dont_fold="yes"
