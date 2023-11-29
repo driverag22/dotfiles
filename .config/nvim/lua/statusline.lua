@@ -8,25 +8,21 @@ local lualine = require('lualine')
 -- stylua: ignore
 local colors = {
   bg       = '#100f10',
-  -- bg       = '#000000',
   fg       = '#eeeeee',
   white    = '#eeeeee',
   black    = '#000000',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  betterblue = '#5E81AB',
-  green    = '#98be65',
+  yellow   = '#eecc00',
+  cyan     = '#00d3d0',
+  green    = '#00cd68',
   orange   = '#FF8800',
-  orange2  = '#C97F71',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
+  violet   = '#b6a0ff',
+  magenta  = '#f78fe7',
+  blue     = '#2fafff',
   red      = '#ec5f67',
-  normal   = '#5E81AB',
-  insert   = '#98be65',
-  visual   = '#C97F71',
-  command  = '#c678dd',
+  normal   = '#2fafff',
+  insert   = '#6ae4b9',
+  visual   = '#b6a0ff',
+  command  = '#ff8059',
 }
 
 local conditions = {
@@ -205,7 +201,6 @@ ins_right {
     return msg
   end,
   icon = ' LSP:',
-  -- color = { fg = colors.betterblue, gui = 'bold' },
   color = { fg = colors.white},
   -- color = function()
   --   return { fg = mode_color[vim.fn.mode()], gui = 'bold' }
