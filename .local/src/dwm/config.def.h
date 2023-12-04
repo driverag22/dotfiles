@@ -13,16 +13,18 @@ static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 21;
 static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
-static const char col_bg[]          = "#222436";
-static const char col_bluer[]       = "#6d86b8";
-static const char col_lblue[]       = "#b1bedb";
+/* static const char *fonts[]          = { "Comic mono:size=13"}; */
+static const char col_gray4[]       = "#100f10";
+static const char col_white[]       = "#eeeeee";
+static const char col_pink[]        = "#ff69b4";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_lblue, col_bg,  col_bg},
-	[SchemeSel]  = { col_lblue, col_bluer, col_lblue},
-	[SchemeSpecial]  = { col_lblue, col_bg,  col_lblue},
+	[SchemeNorm] = { col_white, col_gray4,  col_gray4},
+	[SchemeSel]  = { col_white, col_pink,  col_pink},
+	[SchemeSpecial]  = { col_pink, col_gray4,  col_pink},
 };
+
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
