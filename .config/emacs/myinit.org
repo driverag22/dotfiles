@@ -1,6 +1,4 @@
-#+title: Emacs Configuration
-
-*Emacs Config*
+#+TITLE: Emacs Configuration
 
 * Package system setup
 #+BEGIN_SRC emacs-lisp
@@ -51,10 +49,21 @@
 
 * Theming
 #+BEGIN_SRC emacs-lisp
-(use-package doom-themes
-  ;; :init (load-theme 'doom-tokyo-night t))
-  :init (load-theme 'tron-legacy t))
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 160)
+  (set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
+
+  ;; Only for the built-in themes on Emacs 28+
+  (use-package emacs
+  :ensure
+  :init
+  ;; Add all your customizations prior to loading the themes
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-region '(bg-only no-extend))
+  :config
+  ;; Load the theme of your choice:
+  (load-theme 'modus-vivendi) ; OR (load-theme 'modus-vivendi)
+  )
+
 #+END_SRC
 
 * Packages
@@ -126,9 +135,12 @@
          (7 . org-level-7)
          (8 . org-level-8)))
 #+END_SRC
+*** org-fragtog (latex)
 Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   ;; latex
+  (setq org-latex-preview-ltxpng nil)
+  (setq font-latex-fontify-script nil)
   (use-package org-fragtog
     :hook (org-mode . org-fragtog-mode))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
@@ -303,11 +315,17 @@ Moreover, the setup for latex:
   (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 
   (setq org-agenda-prefix-format '(
-       (agenda . "%-27b %-10T ")
-       (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-       (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-       (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (agenda . "%-35b %-10T ")
+       (todo . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (tags . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+       (search. "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
        ))
+  ;; (setq org-agenda-prefix-format '(
+  ;;      (agenda . "%-27b %-10T ")
+  ;;      (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+  ;;      (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+  ;;      (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
+  ;;      ))
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
@@ -412,7 +430,7 @@ Moreover, the setup for latex:
 
   (defun oliv-org-mode ()
     (olivetti-mode)
-    (olivetti-set-width 98)
+    (olivetti-set-width 120)
     )
 
   (add-hook 'org-mode-hook 'oliv-org-mode)
