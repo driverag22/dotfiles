@@ -50,8 +50,7 @@ bufferline.setup{
     },
     highlights = {
         buffer_selected = {
-            -- fg = '#5E81AB',
-            fg = '#C97F71',
+            fg = '#eeeeee',
             bold = true,
             italic = false,
         },
