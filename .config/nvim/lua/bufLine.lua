@@ -11,9 +11,8 @@ bufferline.setup{
         left_mouse_command = "buffer %d",    -- can be a string | function, | false see "Mouse actions"
         indicator = {
             -- style = 'underline',
-            icon = '▎', -- this should be omitted if indicator style is not 'icon'
-            -- icon = '', -- this should be omitted if indicator style is not 'icon'
-            style = 'icon',
+            style = 'none',
+            -- icon = '▎▎', -- this should be omitted if indicator style is not 'icon'
         },
         buffer_close_icon = '󰅖',
         modified_icon = '●',
@@ -29,7 +28,7 @@ bufferline.setup{
         diagnostics = "none",
         diagnostics_update_in_insert = false,
 
-        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+        -- offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
         color_icons = true, -- whether or not to add the filetype icon highlights
         get_element_icon = function(element)
           local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype, { default = false })
@@ -50,7 +49,7 @@ bufferline.setup{
     },
     highlights = {
         buffer_selected = {
-            fg = '#eeeeee',
+            fg = '#ff8059',
             bold = true,
             italic = false,
         },
