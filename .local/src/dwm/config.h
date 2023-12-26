@@ -75,6 +75,7 @@ static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powe
 static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
 static const char *mediamenu[]  = { "/home/diego/.local/.macros/keyBindings/mediamenu.sh", NULL };
 static const char *volmenu[]  = { "/home/diego/.local/.macros/keyBindings/volmenu.sh", NULL };
+static const char *datemenu[]  = { "/home/diego/.local/.macros/keyBindings/dateTime.sh", NULL };
 static const char *wallpaper[]  = { "/home/diego/.local/.macros/keyBindings/sxiv.sh", NULL };
 static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systray.sh", NULL };
 
@@ -106,6 +107,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = mediamenu } }, //mediamenu
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = batterymenu } }, //batterymenu
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volmenu } }, //volmenu
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = datemenu} }, //datemenu
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallpaper } }, //wallpaper
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = systray } }, //systray
 

@@ -101,6 +101,7 @@
 #+END_SRC
 
 ** Org mode
+*** General
 #+BEGIN_SRC emacs-lisp
    (require 'org)
    (setq org-todo-keywords
@@ -370,7 +371,7 @@ Moreover, the setup for latex:
    '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
    '(cfw:face-day-title ((t :background "#grey10" )))
    '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
-   '(cfw:face-today-title ((t :foreground "#ff001e" :background "#grey10" :weight bold)))
+   '(cfw:face-today-title ((t :foreground "#fc03ad" :background "#grey10" :weight bold)))
    '(cfw:face-today ((t :background: "grey10" :weight bold)))
    '(cfw:face-select ((t :background "#5E81AB")))
    '(cfw:face-toolbar ((t :background "#grey10")))
