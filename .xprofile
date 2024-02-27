@@ -28,7 +28,7 @@ export GRB_LICENSE_FILE="/home/diego/gurobi.lic"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
-#set keyboard so spanish letters (ñ,á,...) can be used
+#set keyboard so specific letters (ñ,á,...) needed for spanish can be used
 setxkbmap us -variant intl
 
 #start compositor, warpd (keyboard-controller mouse), systray, screenshot tool and wm
@@ -37,4 +37,5 @@ warpd &
 stalonetray &
 nm-applet &
 flameshot &
+dunst &
 exec dwm
