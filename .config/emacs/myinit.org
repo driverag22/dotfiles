@@ -222,26 +222,20 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("D" "data mining & machine learning" plain (file+headline "tasks.org" "Data Mining & Machine Learning")
-         "** TODO [#%^{Priority}] [DM]%? %(org-set-tags \"dataMining\")")
+        ("S" "SoftSpec" plain (file+headline "tasks.org" "[2IX20] Software specifications")
+         "** TODO [#%^{Priority}] [S]%? %(org-set-tags \"softSpecs\")")
 
-        ("O" "operating systems" plain (file+headline "tasks.org" "Operating Systems")
-         "** TODO [#%^{Priority}] [OS]%? %(org-set-tags \"opSyst\")")
-
-        ("C" "complex analysis" plain (file+headline "tasks.org" "Complex Analysis")
-         "** TODO [#%^{Priority}] [CA]%? %(org-set-tags \"compAnal\")")
-
-        ("M" "mathematical modelling" plain (file+headline "tasks.org" "Mathematical Modelling")
-         "** TODO [#%^{Priority}] [MM]%? %(org-set-tags \"mathModelling\")")
+        ("B" "BEP" plain (file+headline "tasks.org" "BEP")
+         "** TODO [#%^{Priority}] [B]%? %(org-set-tags \"bep\")")
 
         ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
          "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"honors\")")
 
-        ("r" "resProj" plain (file+headline "tasks.org" "Research Projects")
-         "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProj\")")
-
         ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
          "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
+
+        ("P" "probAndStats" plain (file+headline "tasks.org" "[2DRR10] Probability and Statistics TA")
+         "** TODO [#%^{Priority}] [P]%? %(org-set-tags \"TAprobStats\")")
 
         ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
@@ -252,13 +246,10 @@ Moreover, the setup for latex:
         ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
 
-        ("B" "BEP" plain (file+headline "tasks.org" "BEP/SEP/Finishing bachelor")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"bep\")")
-
-        ("G" "Graduation" plain (file+headline "tasks.org" "BEP/SEP/Finishing bachelor")
+        ("G" "Graduation" plain (file+headline "tasks.org" "SEP/Finishing bachelor")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"grad\")")
 
-        ("S" "SEP" plain (file+headline "tasks.org" "BEP/SEP/Finishing bachelor")
+        ("S" "SEP" plain (file+headline "tasks.org" "SEP/Finishing bachelor")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"sep\")")
 
         ("d" "diary" plain (file+datetree "diary.org")
@@ -278,40 +269,40 @@ Moreover, the setup for latex:
 #+END_SRC
 *** Setting up org-agenda custom commands
 #+BEGIN_SRC emacs-lisp
-	(setq org-agenda-window-setup 'only-window)
-	(setq org-tags-match-list-sublevels 'indented)
-	(setq org-agenda-custom-commands
-		'((" " "Agenda"
-		   (
-			(tags-todo "mathModelling|dataMining|opSyst|compAnal"
-			 ((org-agenda-overriding-header "Modelling || OS || Complex || Data mining"))
-			)
-			(tags-todo "honors|resProj"
-			 ((org-agenda-overriding-header "Honors || Research Project"))
-			 )
-			(tags-todo "waterproof"
-			 ((org-agenda-overriding-header "Waterproof"))
-			 )
-			(tags-todo "others"
-			 ((org-agenda-overriding-header "Others"))
-			 )
-			(tags-todo "masters"
-			 ((org-agenda-overriding-header "Masters"))
-			 )
-			(tags-todo "bep|grad"
-			 ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
-			 )
-			)
-		   )))
+    (setq org-agenda-window-setup 'only-window)
+    (setq org-tags-match-list-sublevels 'indented)
+    (setq org-agenda-custom-commands
+        '((" " "Agenda"
+           (
+            (tags-todo "softSpecs"
+             ((org-agenda-overriding-header "Software Specs"))
+            )
+            (tags-todo "honors|bep"
+             ((org-agenda-overriding-header "Honors || BEP"))
+             )
+            (tags-todo "waterproof|TAprobStats"
+             ((org-agenda-overriding-header "Waterproof || Prob. and stats TA"))
+             )
+            (tags-todo "others"
+             ((org-agenda-overriding-header "Others"))
+             )
+            (tags-todo "masters"
+             ((org-agenda-overriding-header "Masters"))
+             )
+            (tags-todo "sep|bep|grad"
+             ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
+             )
+            )
+           )))
 
-	(defun my-org-agenda-custom-keys ()
-	(local-set-key (kbd "j") 'org-agenda-next-line)
-	(local-set-key (kbd "k") 'org-agenda-previous-line)
-	(local-set-key (kbd "h") 'backward-char)
-	(local-set-key (kbd "l") 'forward-char)
-	(local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-	(local-set-key (kbd "C-c o") 'full-calendar)
-	)
+    (defun my-org-agenda-custom-keys ()
+    (local-set-key (kbd "j") 'org-agenda-next-line)
+    (local-set-key (kbd "k") 'org-agenda-previous-line)
+    (local-set-key (kbd "h") 'backward-char)
+    (local-set-key (kbd "l") 'forward-char)
+    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
+    (local-set-key (kbd "C-c o") 'full-calendar)
+    )
 
   (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 
@@ -448,7 +439,7 @@ Moreover, the setup for latex:
     (org-roam-capture-templates
      '(("d" "default" plain
         "\n%?"
-        :if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n#+filetags:\n#+date: %U\n#+title:${title}\n ")
+        :if-new (file+head "${slug}-%<%Y%m%d%H%H%S>.org" "#+STARTUP:latexpreview\n#+STARTUP:inlineimages\n#+OPTIONS: ^:{}\n#+filetags:\n#+date: %U\n#+title:${title}\n ")
         :unnarrowed t)))
     :bind (("C-c n l" . org-roam-buffer-toggle)
        ("C-c n f" . org-roam-node-find)
