@@ -23,10 +23,10 @@ xinput set-prop "Synaptics TM3625-010" "libinput Tapping Enabled" 1
 xinput set-prop "Synaptics TM3625-010" "libinput Natural Scrolling Enabled" 1
 
 # gurobi software environmet variables
-export GUROBI_HOME="/home/diego/gurobi950/linux64"
-export GRB_LICENSE_FILE="/home/diego/gurobi.lic"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+# export GUROBI_HOME="/home/diego/gurobi950/linux64"
+# export GRB_LICENSE_FILE="/home/diego/gurobi.lic"
+# export PATH="${PATH}:${GUROBI_HOME}/bin"
+# export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
 #set keyboard so specific letters (ñ,á,...) needed for spanish can be used
 setxkbmap us -variant intl
