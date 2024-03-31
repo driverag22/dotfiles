@@ -1,4 +1,5 @@
 #!/bin/sh
+TMP="$HOME/.local/.macros/dwmBar/tmp"
 # A dwm_bar function that shows the current artist, track, duration, and status from Spotify using playerctl
 # Joe Standring <git@joestandring.com>
 # Edited by: Diego Rivera <git@driverag22.com>
@@ -23,12 +24,12 @@ while true; do
 
         if [ "$PLAYER" == "spotify" ]; then 
             # printf "%s%s - %s" "$STATUS" "$TRACK" "$ARTIST" > '/tmp/spotify.txt'
-            printf "%s%s" "$STATUS" "$TRACK" > '/tmp/spotify.txt'
+            printf "%s%s" "$STATUS" "$TRACK" > "$TMP/spotify.txt"
         else 
-            echo "" > '/tmp/spotify.txt'
+            echo "" > "$TMP/spotify.txt"
         fi
     else 
-        echo "" > '/tmp/spotify.txt'
+        echo "" > "$TMP/spotify.txt"
     fi
     sleep 2s
 done &

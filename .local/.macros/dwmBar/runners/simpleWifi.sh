@@ -1,4 +1,5 @@
 #!/bin/sh
+TMP="$HOME/.local/.macros/dwmBar/tmp"
 # interface=$(ip link | grep -o 'wl[^:]*')
 # wifiRate=$(nmcli -f ACTIVE,RATE dev wifi list | awk '$1=="yes" {print $2 "Mbit/s"}')
 # wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk '$1=="yes" {print $2}')
@@ -25,7 +26,7 @@ while true; do
         else 
             icon=" "
         fi
-        printf "%s%s %s" "$icon" "$wifiSSID" "$wifiSignal% " > '/tmp/wifi.txt';
+        printf "%s%s %s" "$icon" "$wifiSSID" "$wifiSignal% " > "$TMP/wifi.txt";
     fi
     sleep 10s
 done &
