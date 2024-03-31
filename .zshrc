@@ -1,8 +1,10 @@
-# If you come from bash you might have to change your $PATH.
+# if you come from bash you might have to change your $path.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+export LD_LIBRRARY_PATH=$LD_LIBRRARY_PATH:/usr/local/lib:/usr/lib
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -144,3 +146,4 @@ bindkey '^Z' fancy-ctrl-z
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
+
