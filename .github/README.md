@@ -7,13 +7,18 @@ Simply a bare-repo. Some of the configs:
  - [emacs](/.config/emacs) : ~/.config/emacs
  - [dwm](/.local/src/dwm) : ~/.local/src/dwm
  - [alacritty](/.config/alacritty) : ~/.config/alacritty
+ - [zathura](/.config/zathura) : ~/.config/zathura
  - [picom](/.config/picom) : ~/.config/picom
 
 The themes I have used over time, in order from most recent (current theme), to oldest.
 It is possible to go back to the old themes by going back through the commit list, but it might 
 be hard.
-At the very least, going through past commits you should be able to find the colorscheme.
+At the very least, going through past commits you should be able to find the color scheme.
 Moreover, all the wallpapers can be found at the very messy directory [Pictures/wallpaper-master](/Pictures/wallpaper-master).
+
+## Modus vivendi inspired theme:
+
+<img src="./modusVivendiTheme.png" >
 
 ## Bladerunner theme:
 
