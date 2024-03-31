@@ -2,15 +2,16 @@
 # original script created by clusterF
 # modified by ManyRoads
 # remodified by driverag22
+TMP=($HOME/.local/.macros/dwmBar/tmp)
 
-LOCALTIME=$(cat /tmp/time.txt)
-VOL=$(cat /tmp/vol.txt)
-MEM=$(cat /tmp/mem.txt)
-CPU=$(cat /tmp/usageCPU.txt)
-WIFI=$(cat /tmp/wifi.txt)
-BATTERY=$(cat /tmp/battery.txt)
-SPOTIFY=$(cat /tmp/spotify.txt)
-TEMP=$(cat /tmp/temp.txt)
+LOCALTIME=$(cat $TMP/time.txt)
+VOL=$(cat $TMP/vol.txt)
+MEM=$(cat $TMP/mem.txt)
+CPU=$(cat $TMP/usageCPU.txt)
+WIFI=$(cat $TMP/wifi.txt)
+BATTERY=$(cat $TMP/battery.txt)
+SPOTIFY=$(cat $TMP/spotify.txt)
+TEMP=$(cat $TMP/temp.txt)
 
 
 if [ -z "$SPOTIFY" ] 
