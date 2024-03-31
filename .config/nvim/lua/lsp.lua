@@ -9,7 +9,8 @@ require('lspconfig').ltex.setup {on_attach = on_attach}
 require('lspconfig').lua_ls.setup {on_attach = on_attach}
 require('lspconfig').clangd.setup {on_attach = on_attach}
 require('lspconfig').jdtls.setup {on_attach = on_attach}
-require('lspconfig').jedi_language_server.setup {on_attach = on_attach}
+-- require('lspconfig').jedi_language_server.setup {on_attach = on_attach}
+require('lspconfig').pylsp.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
 -- require('lspconfig').volar.setup {on_attach = on_attach}
 require('lspconfig').tsserver.setup {on_attach = on_attach}
@@ -130,7 +131,12 @@ require('lspconfig')['lua_ls'].setup {
     on_attach = on_attach,
 }
 
-require('lspconfig')['jedi_language_server'].setup {
+-- require('lspconfig')['jedi_language_server'].setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- }
+
+require('lspconfig')['pylsp'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }

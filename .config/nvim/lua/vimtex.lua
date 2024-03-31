@@ -1,0 +1,13 @@
+-- vim.cmd ([[
+--     let g:Tex_IgnoredWarnings = 
+--         \'Underfull'."\n".
+--         \'Overfull'."\n".
+--         \'specifier changed to'."\n".
+--         \'You have requested'."\n".
+--         \'Missing number, treated as zero.'."\n".
+--         \'There were undefined references'."\n".
+--         \'Citation %.%# undefined'."\n".
+--         \'Double space found.'."\n"
+--     let g:Tex_IgnoreLevel = 8
+-- ]])
+vim.g.vimtex_quickfix_open_on_warning = 0
