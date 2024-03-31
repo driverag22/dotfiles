@@ -35,6 +35,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
 	{ "stalonetray", "stalonetray",    "stalonetray",       1 << 7,       0,           1 },
+	{ "stalonetray", "keepassxc",    "KeePassXC",       1 << 7,       0,           1 },
 };
 
 /* layout(s) */
@@ -83,6 +84,8 @@ static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};
 static const char *screenshot[] = {"flameshot", "gui", NULL};
 static const char *play[] = {"playerctl", "play-pause", NULL};
+static const char *next[] = {"playerctl", "next", NULL};
+static const char *prev[] = {"playerctl", "previous", NULL};
 static const char *soundUp[] = {"amixer", "set", "Master",  "2%+", NULL};
 static const char *soundDown[] = {"amixer", "set", "Master", "2%-", NULL};
 static const char *soundToggle[] = {"amixer", "set", "Master", "toggle", NULL};
@@ -116,8 +119,11 @@ static const Key keys[] = {
     
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
-	{ 0,                            XK_Print,      spawn,          {.v = screenshot} }, //screenshotter
-	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
+	{ 0,                            XK_Print,                  spawn, {.v = screenshot} }, //screenshotter
+    
+	{ 0,                            XF86XK_AudioPlay,          spawn, {.v = play } }, //play/pause
+	{ 0,                            XF86XK_AudioPrev,          spawn, {.v = prev } }, //play/pause
+	{ 0,                            XF86XK_AudioNext,          spawn, {.v = next } }, //play/pause
     { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up/down/mute
     { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
     { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
