@@ -32,10 +32,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
-	{ "stalonetray", "stalonetray",    "stalonetray",       1 << 7,       0,           1 },
-	{ "stalonetray", "keepassxc",    "KeePassXC",       1 << 7,       0,           1 },
+	/* class          instance       title           tags     isfloating  monitor */
+	{ "stalonetray", "stalonetray",  "stalonetray",  1 << 7,  1,          1},
+	{ "KeePassXC",   "keepassxc",    "KeePassXC",    1 << 7,  0,          1},
+	{ "Emacs",       "emacs",        "Emacs",        1 << 5,  0,          1},
 };
 
 /* layout(s) */
@@ -68,6 +68,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
+static const char *rangerHome[]  = { "/home/diego/.local/.macros/keyBindings/rangerHome.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
 static const char *emacs[] = {"emacs", "/home/diego/org/tasks.org", NULL};
 
@@ -103,6 +104,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = emacs } }, //emacs
 
 	{ ALTKEY,                       XK_h,      spawn,          {.v = filebrowser } }, //home
+	{ CTRLKEY,                      XK_h,      spawn,          {.v = rangerHome } }, //home w/ranger
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen
@@ -114,20 +116,21 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallpaper } }, //wallpaper
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = systray } }, //systray
 
-	{ MODKEY|Mod1Mask,               XK_n,      spawn,          {.v = warpdNorm } }, 
-	{ MODKEY|Mod1Mask,               XK_g,      spawn,          {.v = warpdGrid } },
+	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = warpdNorm } }, 
+	{ MODKEY|Mod1Mask,              XK_g,      spawn,          {.v = warpdGrid } },
     
     { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
     { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
 	{ 0,                            XK_Print,                  spawn, {.v = screenshot} }, //screenshotter
     
 	{ 0,                            XF86XK_AudioPlay,          spawn, {.v = play } }, //play/pause
-	{ 0,                            XF86XK_AudioPrev,          spawn, {.v = prev } }, //play/pause
-	{ 0,                            XF86XK_AudioNext,          spawn, {.v = next } }, //play/pause
-    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up/down/mute
-    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}},
-    { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}},
-    { 0,                            XF86XK_AudioMicMute,       spawn, {.v = micToggle}},
+	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
+	{ 0,                            XF86XK_AudioPrev,          spawn, {.v = prev } }, //previous
+	{ 0,                            XF86XK_AudioNext,          spawn, {.v = next } }, //next
+    { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = soundUp}}, //sound up
+    { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = soundDown}}, //sound down
+    { 0,                            XF86XK_AudioMute,          spawn, {.v = soundToggle}}, //sound mute toggle
+    { 0,                            XF86XK_AudioMicMute,       spawn, {.v = micToggle}}, //mic mute toggle
 
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
