@@ -35,7 +35,7 @@ setxkbmap us -variant intl
 picom &
 warpd &
 stalonetray &
-kepassxc &
+keepassxc &
 nm-applet &
 flameshot &
 dunst &
