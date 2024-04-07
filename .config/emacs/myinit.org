@@ -222,7 +222,7 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("S" "SoftSpec" plain (file+headline "tasks.org" "[2IX20] Software specifications")
+        ("s" "SoftSpec" plain (file+headline "tasks.org" "[2IX20] Software specifications")
          "** TODO [#%^{Priority}] [S]%? %(org-set-tags \"softSpecs\")")
 
         ("B" "BEP" plain (file+headline "tasks.org" "BEP")
@@ -234,9 +234,6 @@ Moreover, the setup for latex:
         ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
          "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
 
-        ("P" "probAndStats" plain (file+headline "tasks.org" "[2DRR10] Probability and Statistics TA")
-         "** TODO [#%^{Priority}] [P]%? %(org-set-tags \"TAprobStats\")")
-
         ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
 
@@ -246,10 +243,10 @@ Moreover, the setup for latex:
         ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
 
-        ("G" "Graduation" plain (file+headline "tasks.org" "SEP/Finishing bachelor")
+        ("G" "Graduation" plain (file+headline "tasks.org" "Finishing bachelor")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"grad\")")
 
-        ("S" "SEP" plain (file+headline "tasks.org" "SEP/Finishing bachelor")
+        ("S" "SEP" plain (file+headline "tasks.org" "SEP")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"sep\")")
 
         ("d" "diary" plain (file+datetree "diary.org")
