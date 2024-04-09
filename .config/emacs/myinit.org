@@ -222,9 +222,6 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("s" "SoftSpec" plain (file+headline "tasks.org" "[2IX20] Software specifications")
-         "** TODO [#%^{Priority}] [S]%? %(org-set-tags \"softSpecs\")")
-
         ("B" "BEP" plain (file+headline "tasks.org" "BEP")
          "** TODO [#%^{Priority}] [B]%? %(org-set-tags \"bep\")")
 
