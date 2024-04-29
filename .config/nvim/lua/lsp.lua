@@ -151,18 +151,18 @@ require'lspconfig'.texlab.setup{
     on_attach = on_attach,
 }
 
-require'lspconfig'.ltex.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        ltex = {
-            disabledRules = { ['en-US'] = { 'PROFANITY' } },
-            dictionary = {
-                ['en-US'] = {'Diego', 'Rivera', 'Garrido'},
-            },
-        },
-    },
-}
+-- require'lspconfig'.ltex.setup{
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     settings = {
+--         ltex = {
+--             disabledRules = { ['en-US'] = { 'PROFANITY' } },
+--             dictionary = {
+--                 ['en-US'] = {'Diego', 'Rivera', 'Garrido'},
+--             },
+--         },
+--     },
+-- }
 
 -- require('lspconfig')['volar'].setup {
 --     capabilities = capabilities,

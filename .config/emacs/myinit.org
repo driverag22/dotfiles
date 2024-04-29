@@ -335,6 +335,7 @@ Moreover, the setup for latex:
        (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
        (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
        (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
+       (cfw:org-create-file-source "sepSchedule" "~/org/SEPschedule.org" "#0aaaaa")
        )
      ))
    (defun task-calendar ()
