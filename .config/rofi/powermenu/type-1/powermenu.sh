@@ -14,9 +14,10 @@ dir="$HOME/.config/rofi/powermenu/type-1"
 theme='style-5'
 
 # CMDs
-uptime=" `uptime -p | sed -e 's/up //g'`"
+
+uptime="  `uptime -p | sed -e 's/up //g'`"
 # host='dwm'
-host=" `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3" / "$2'}`"
+host="  `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3" / "$2'}`"
 
 # Options
 shutdown=' Shutdown'
