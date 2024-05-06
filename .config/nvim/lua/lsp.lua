@@ -12,7 +12,7 @@ require('lspconfig').jdtls.setup {on_attach = on_attach}
 -- require('lspconfig').jedi_language_server.setup {on_attach = on_attach}
 require('lspconfig').pylsp.setup {on_attach = on_attach}
 require('lspconfig').zk.setup {on_attach = on_attach}
--- require('lspconfig').volar.setup {on_attach = on_attach}
+require('lspconfig').volar.setup {on_attach = on_attach}
 require('lspconfig').tsserver.setup {on_attach = on_attach}
 require('lspconfig').jsonls.setup {on_attach = on_attach}
 
@@ -164,10 +164,10 @@ require'lspconfig'.texlab.setup{
 --     },
 -- }
 
--- require('lspconfig')['volar'].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
+require('lspconfig')['volar'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
 
 require('lspconfig')['quick_lint_js'].setup {
