@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	/* class          instance       title           tags     isfloating  monitor */
 	{ "stalonetray", "stalonetray",  "stalonetray",  1 << 7,  1,          1},
 	{ "KeePassXC",   "keepassxc",    "KeePassXC",    1 << 7,  0,          1},
-	{ "Emacs",       "emacs",        "Emacs",        1 << 6,  0,          1},
+	{ "Emacs",       "emacs",        "Emacs",        1 << 5,  0,          1},
 };
 
 /* layout(s) */
