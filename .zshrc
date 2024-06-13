@@ -111,8 +111,11 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias wiki='/usr/bin/git --git-dir=$HOME/.vimwiki/ --work-tree=$HOME/vimwiki'
 alias nw='/usr/bin/nvim /home/diego/vimwiki/index.wiki'
 alias cburnd='/usr/bin/task tags=use or tags=dbl or tags=disc or tags=ode burndown.daily'
+#### temporary python venv
 alias spython='/home/diego/src/temp/pythonEnv/bin/python'
 alias spip='/home/diego/src/temp/pythonEnv/bin/pip'
+alias spytest='/home/diego/src/temp/pythonEnv/bin/pytest'
+
 fastfetch
 
 autoload -Uz compinit promptinit
