@@ -1,0 +1,314 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black =   "#000000"
+blue =    "#338fff"
+cyan =    "#9ac8e0"
+green =   "#44df44"
+magenta = "#ff66ff"
+red =     "#ff5f5f"
+white =   "#ffffff"
+yellow =  "#efef00"
+
+[colors.dim]
+black =   "#000000"
+blue =    "#82b0ec"
+cyan =    "#9ac8e0"
+green =   "#88ca9f"
+magenta = "#caa6df"
+red =     "#ff9580"
+white =   "#989898"
+yellow =  "#d2b580"
+
+[colors.normal]
+black =   "#000000"
+blue =    "#2fafff"
+cyan =    "#00d3d0"
+green =   "#44bc44"
+magenta = "#feacd0"
+red =     "#ff5f59"
+white =   "#ffffff"
+yellow =  "#d0bc00"
+
+[colors.primary]
+background = "#0E0A09"
+foreground = "#FFFFFF"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001BR"
+key = "R"
+mods = "Control"
+
+# [schemes.Bladerunner.bright]
+# black = "#7b8599"
+# blue = "#606daa"
+# cyan = "#6d86b8"
+# green = "#A3BE8C"
+# magenta = "#bb4449"
+# red = "#bb4449"
+# white = "#b1bedb"
+# yellow = "#3961a8"
+
+# [schemes.Bladerunner.normal]
+# black = "#15080c"
+# blue = "#81A1C1"
+# cyan = "#6d86b8"
+# green = "#A3BE8C"
+# magenta = "#bb4449"
+# red = "#ff5555"
+# white = "#b1bedb"
+# yellow = "#3961a8"
+
+# [schemes.Bladerunner.primary]
+# background = "#222436"
+# foreground = "#b1bedb"
+
+# [schemes.BlueOrange.bright]
+# black = "#4C566A"
+# blue = "#81A1C1"
+# cyan = "#9C8CAC"
+# green = "#A3BE8C"
+# magenta = "#C97F71"
+# red = "#BF616A"
+# white = "#ECEFF4"
+# yellow = "#EBCB8B"
+
+# [schemes.BlueOrange.normal]
+# black = "#3B4252"
+# blue = "#81A1C1"
+# cyan = "#9C8CAC"
+# green = "#A3BE8C"
+# magenta = "#C97F71"
+# red = "#ff5555"
+# white = "#E5E9F0"
+# yellow = "#EBCB8B"
+
+# [schemes.BlueOrange.primary]
+# background = "#2E3440"
+# foreground = "#D8DEE9"
+
+# [[schemes.TokyoNight.indexed_colors]]
+# color = "0xff966c"
+# index = 16
+
+# [[schemes.TokyoNight.indexed_colors]]
+# color = "0xc53b53"
+# index = 17
+
+# [schemes.TokyoNight.bright]
+# black = "0x444a73"
+# blue = "0x82aaff"
+# cyan = "0x86e1fc"
+# green = "0xc3e88d"
+# magenta = "0xc099ff"
+# red = "0xff757f"
+# white = "0xc8d3f5"
+# yellow = "0xffc777"
+
+# [schemes.TokyoNight.normal]
+# black = "0x1b1d2b"
+# blue = "0x82aaff"
+# cyan = "0x86e1fc"
+# green = "0xc3e88d"
+# magenta = "0xc099ff"
+# red = "0xff757f"
+# white = "0x828bb8"
+# yellow = "0xffc777"
+
+# [schemes.TokyoNight.primary]
+# background = "0x222436"
+# foreground = "0xc8d3f5"
+
+# [schemes.modus-vivendi.bright]
+# black = "#000000"
+# blue = "#338fff"
+# cyan = "#9ac8e0"
+# green = "#44df44"
+# magenta = "#ff66ff"
+# red = "#ff5f5f"
+# white = "#ffffff"
+# yellow = "#efef00"
+
+# [schemes.modus-vivendi.dim]
+# black = "#000000"
+# blue = "#82b0ec"
+# cyan = "#9ac8e0"
+# green = "#88ca9f"
+# magenta = "#caa6df"
+# red = "#ff9580"
+# white = "#989898"
+# yellow = "#d2b580"
+
+# [schemes.modus-vivendi.normal]
+# black = "#000000"
+# blue = "#2fafff"
+# cyan = "#00d3d0"
+# green = "#44bc44"
+# magenta = "#feacd0"
+# red = "#ff5f59"
+# white = "#ffffff"
+# yellow = "#d0bc00"
+
+# [schemes.modus-vivendi.primary]
+# background = "#000000"
+# foreground = "#ffffff"
+
+[scrolling]
+history = 5000
+
+[window]
+decorations = "full"
+dynamic_padding = false
+opacity = 1
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 4
+y = 4
