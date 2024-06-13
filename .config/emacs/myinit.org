@@ -225,11 +225,14 @@ Moreover, the setup for latex:
         ("B" "BEP" plain (file+headline "tasks.org" "BEP")
          "** TODO [#%^{Priority}] [B]%? %(org-set-tags \"bep\")")
 
-        ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
-         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"honors\")")
+        ("S" "SEP" plain (file+headline "tasks.org" "SEP")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"sep\")")
 
         ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
          "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
+
+        ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
+         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"honors\")")
 
         ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
@@ -237,14 +240,14 @@ Moreover, the setup for latex:
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
 
-        ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
-
         ("G" "Graduation" plain (file+headline "tasks.org" "Finishing bachelor")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"grad\")")
 
-        ("S" "SEP" plain (file+headline "tasks.org" "SEP")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"sep\")")
+        ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
+
+        ("H" "housing" plain (file+headline "tasks.org" "Housing")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"housing\")")
 
         ("d" "diary" plain (file+datetree "diary.org")
          "****%?  %<%H:%M>")
