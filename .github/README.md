@@ -10,11 +10,14 @@ Simply a bare-repo. Some of the configs:
  - [zathura](/.config/zathura) : ~/.config/zathura
  - [picom](/.config/picom) : ~/.config/picom
 
-The themes I have used over time, in order from most recent (current theme), to oldest.
+The themes I have used over time can be seen below, in order from most recent (current theme), to oldest.
 It is possible to go back to the old themes by going back through the commit list, but it might 
 be hard.
-At the very least, going through past commits you should be able to find the color scheme.
-Moreover, all the wallpapers can be found at the very messy directory [Pictures/wallpaper-master](/Pictures/wallpaper-master).
+
+At the very least, going through past commits you should be able to find the different color schemes.
+
+Moreover, all the wallpapers (the ones used in the past, and the ones that may be used in the future)
+can be found at the very messy directory [Pictures/wallpaper-master](/Pictures/wallpaper-master).
 
 ## Modus vivendi inspired theme:
 
@@ -36,7 +39,7 @@ With gaps:
 
 <img src="./nordTheme.png" >
 
-## Pink theme:
+## Pink neon-genesis theme:
 
 <img src="./pinkNeonTheme.png" >
 
@@ -50,3 +53,5 @@ The dotfiles include, but are not limited to
 - zsh - version 5.9
 - picom - version vgit-b700a
 - rofi - version 1.7.5
+
+(*Note: information may be out of date*)
