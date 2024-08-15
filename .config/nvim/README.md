@@ -8,15 +8,13 @@ Pretty simple/straightforward dotfiles.
 Some of the included plugins:
  - Telescope (+ dependencies)
  - Treesitter
- - nvim-cmp  
+ - nvim-cmp
  - nvim-lspconfig
  - mason
  - gitsigns and lazygit
- - nerdtree
  - Vimtex
  - lualine (lualine config at lua/statusline.lua)
- - tabby (tabby config at lua/tabby.lua)
- - vimwiki + taskwiki
  - whichkey
  - others...
 
+ Note: the README might be out of date

@@ -1,10 +1,10 @@
 local bufferline = require("bufferline")
+
 bufferline.setup{
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead
         style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
         themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
-        -- numbers = "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         numbers = "none",
         close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
@@ -12,7 +12,6 @@ bufferline.setup{
         indicator = {
             -- style = 'underline',
             style = 'none',
-            -- icon = '▎▎', -- this should be omitted if indicator style is not 'icon'
         },
         buffer_close_icon = '󰅖',
         modified_icon = '●',
@@ -24,12 +23,10 @@ bufferline.setup{
         max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
         truncate_names = true, -- whether or not tab names should be truncated
         tab_size = 18,
-        -- diagnostics = "nvim_lsp",
         diagnostics = "none",
         diagnostics_update_in_insert = false,
-
-        -- offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
         color_icons = true, -- whether or not to add the filetype icon highlights
+
         get_element_icon = function(element)
           local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype, { default = false })
           return icon, hl
@@ -42,7 +39,6 @@ bufferline.setup{
         show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
         move_wraps_at_ends = false, -- whether or not the move command "wraps" at the first or last position
-        -- separator_style = "slant",
         separator_style = "thin",
         enforce_regular_tabs = true,
         always_show_bufferline = false,

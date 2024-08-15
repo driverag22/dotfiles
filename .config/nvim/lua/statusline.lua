@@ -115,18 +115,9 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   function()
---     return '▊'
---   end,
---   color = { fg = colors.blue }, -- Sets highlighting of component
---   padding = { left = 1, right = 1 }, -- We don't need space before this
--- }
-
 ins_left {
   -- mode component
   function()
-    -- return ''
     return ''
   end,
   color = function()
@@ -200,39 +191,15 @@ ins_right {
     end
     return msg
   end,
-  icon = ' LSP:',
+  icon = 'LSP:',
   color = { fg = colors.white},
-  -- color = function()
-  --   return { fg = mode_color[vim.fn.mode()], gui = 'bold' }
-  -- end,
   padding = { right = 1 },
 }
-
--- ins_right {
---   function()
---     return '▊'
---   end,
---   color = function()
---     return { fg = mode_color[vim.fn.mode()] }
---   end,
--- }
--- Add components to right sections
--- ins_right {
---   'o:encoding', -- option component same as &encoding in viml
---   fmt = string.upper, -- I'm not sure why it's upper case either ;)
---   cond = conditions.hide_in_width,
---   color = { fg = colors.green, gui = 'bold' },
--- }
 
 ins_right {
   'filetype',
   color = { gui = 'bold' },
 }
-
--- ins_right {
---   'fileformat',
---   color = { gui = 'bold' },
--- }
 
 ins_right {
   function()
@@ -261,15 +228,4 @@ ins_right {
   cond = conditions.hide_in_width,
 }
 
--- ins_right {
---   function()
---     return '▊'
---   end,
---   padding = { left = 1 }, -- We don't need space before this
---   color = function()
---     return { fg = mode_color[vim.fn.mode()] }
---   end,
--- }
-
--- Now don't forget to initialize lualine
 lualine.setup(config)
