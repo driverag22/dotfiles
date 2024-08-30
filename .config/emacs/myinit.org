@@ -222,42 +222,19 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("B" "BEP" plain (file+headline "tasks.org" "BEP")
-         "** TODO [#%^{Priority}] [B]%? %(org-set-tags \"bep\")")
-
-        ("S" "SEP" plain (file+headline "tasks.org" "SEP")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"sep\")")
-
         ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
          "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
-
-        ("h" "honors" plain (file+headline "tasks.org" "CPPS Honors")
-         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"honors\")")
-
         ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
-
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
-
-        ("G" "Graduation" plain (file+headline "tasks.org" "Finishing bachelor")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"grad\")")
-
-        ("p" "problems" plain (file+headline "tasks.org" "Programming problems")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"problems\")")
-
         ("H" "housing" plain (file+headline "tasks.org" "Housing")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"housing\")")
-
         ("d" "diary" plain (file+datetree "diary.org")
          "****%?  %<%H:%M>")
         ))
 
   (setq capture-files '("tasks.org"))
-  ;; (setq capture-files '("masters.org" "others.org" "honors.org" "problems.org"
-  ;;                       "automata.org" "researchProject.org" "waterproof.org"
-  ;;                       "algorithms.org" "linOptimization.org" "mathStats.org"
-  ;;                       ))
 
   (defun vulpea-capture-task ()
     "Capture a task."
@@ -271,23 +248,14 @@ Moreover, the setup for latex:
     (setq org-agenda-custom-commands
         '((" " "Agenda"
            (
-            (tags-todo "softSpecs"
-             ((org-agenda-overriding-header "Software Specs"))
-            )
-            (tags-todo "honors|bep"
-             ((org-agenda-overriding-header "Honors || BEP"))
-             )
-            (tags-todo "waterproof|TAprobStats"
-             ((org-agenda-overriding-header "Waterproof || Prob. and stats TA"))
+            (tags-todo "waterproof"
+             ((org-agenda-overriding-header "Waterproof"))
              )
             (tags-todo "others"
              ((org-agenda-overriding-header "Others"))
              )
             (tags-todo "masters"
              ((org-agenda-overriding-header "Masters"))
-             )
-            (tags-todo "sep|bep|grad"
-             ((org-agenda-overriding-header "BEP / SEP / Finishing bachelor"))
              )
             )
            )))
