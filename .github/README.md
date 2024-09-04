@@ -19,6 +19,9 @@ At the very least, going through past commits you should be able to find the dif
 Moreover, all the wallpapers (the ones used in the past, and the ones that may be used in the future)
 can be found at the very messy directory [Pictures/wallpaper-master](/Pictures/wallpaper-master).
 
+## Blue-orange theme v2:
+<img src="./blueTheme2.png" >
+
 ## Modus vivendi inspired theme:
 
 <img src="./modusVivendiTheme.png" >
