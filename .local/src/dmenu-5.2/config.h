@@ -7,10 +7,10 @@ static int user_bh = 21;
 /* static unsigned int border_width = 2; /1* Size of the window border *1/ */
 static unsigned int border_width = 0; /* Size of the window border */
 
-static const char col_black[] = "#000000";
+static const char col_bg[]    = "#1A1E25";
 static const char col_white[] = "#eeeeee";
-static const char col_lBlue[] = "#2d67ad";
 static const char col_bBlue[] = "#338fff";
+static const char col_orange[]      = "#C97F71";
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 static const char *fonts[] = {
 	"JetBrains Mono:size=13"
@@ -18,11 +18,11 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { col_white, col_black},
-	[SchemeSel] = { col_black, col_lBlue},
-	[SchemeSelHighlight] = { col_white, col_lBlue},
-	[SchemeNormHighlight] = { col_bBlue, col_black },
-	[SchemeOut] = { "#000000", "#00ffff" },
+	[SchemeNorm] = { col_white, col_bg},
+	[SchemeSel] = { col_bg, col_orange},
+	[SchemeSelHighlight] = { col_white, col_orange},
+	[SchemeNormHighlight] = { col_bBlue, col_bg },
+	[SchemeOut] = { col_bg, "#00ffff" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;

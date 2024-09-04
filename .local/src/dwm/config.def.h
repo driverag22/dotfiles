@@ -14,7 +14,6 @@ static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans M
 static const char col_bg[]          = "#1A1E25";
 static const char col_gray[]        = "#484848";
 static const char col_white[]       = "#eeeeee";
-static const char col_lBlue[]       = "#2d67ad";
 static const char col_bBlue[]       = "#338fff";
 static const char col_orange[]      = "#C97F71";
 
