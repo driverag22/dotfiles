@@ -7,7 +7,7 @@ blue = "#338fff"
 cyan = "#5E81AC"
 green = "#A3BE8C"
 magenta = "#C97F71"
-red = "#BF616A"
+red = "#ff5555"
 white = "#ECEFF4"
 yellow = "#EBCB8B"
 
@@ -22,7 +22,7 @@ white = "#E5E9F0"
 yellow = "#EBCB8B"
 
 [colors.primary]
-background = "#0E0A09"
+background = "#000000"
 foreground = "#FFFFFF"
 
 [env]
