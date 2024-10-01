@@ -63,7 +63,6 @@
   ;; Load the theme of your choice:
   (load-theme 'modus-vivendi) ; OR (load-theme 'modus-vivendi)
   )
-
 #+END_SRC
 
 * Packages
@@ -112,10 +111,6 @@
    (global-set-key (kbd "C-c c") 'org-capture)
    (global-set-key (kbd "C-SPC") 'org-todo)
    (global-set-key (kbd "C-<backspace>") 'org-mark-ring-goto)
-   ;; (global-set-key (kbd "C-x C-t") 'org-latex-preview)
-
-   ;; (define-key global-map "\C-cl" 'org-store-link)
-   ;; (define-key global-map "\C-ca" 'org-agenda)
    (setq org-log-done t)
    ;; (setq org-highest-priority ?A)  ; Define the highest priority (10)
    ;; (setq org-lowest-priority ?C)   ; Define the lowest priority (1)
@@ -126,6 +121,7 @@
     (find-file "~/org/tasks.org"))
 
   (global-set-key (kbd "C-c b") 'open-tasks-file)
+  ;;(global-set-key (kbd "C-c o") 'org-hyperscheduler-open)
   (setq org-cycle-level-faces
        '((1 . org-level-1)
          (2 . org-level-2)
@@ -222,10 +218,19 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
+        ("g" "geometry" plain (file+headline "tasks.org" "Geometry: Combinatorics and Algorithms")
+         "** TODO [#%^{Priority}] [G]%? %(org-set-tags \"geomCombAlg\")")
+        ("a" "advancedMachLearning" plain (file+headline "tasks.org" "Advanced Machine Learning")
+         "** TODO [#%^{Priority}] [ML]%? %(org-set-tags \"advMachLearn\")")
+        ("s" "strGraph" plain (file+headline "tasks.org" "Structural Graph Theory")
+         "** TODO [#%^{Priority}] [G]%? %(org-set-tags \"strGraph\")")
+        ("p" "probMeth" plain (file+headline "tasks.org" "Probabilistic Methods in Combinatorics")
+         "** TODO [#%^{Priority}] [P]%? %(org-set-tags \"probMeth\")")
+        ("h" "histMath" plain (file+headline "tasks.org" "A Sampler of Histories and Philosophies of Mathematics")
+         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"histMath\")")
+
         ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
          "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
-        ("m" "masters" plain (file+headline "tasks.org" "Master's applications")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"masters\")")
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
         ("H" "housing" plain (file+headline "tasks.org" "Housing")
@@ -234,7 +239,8 @@ Moreover, the setup for latex:
          "****%?  %<%H:%M>")
         ))
 
-  (setq capture-files '("tasks.org"))
+  ;(setq capture-files '("tasks.org"))
+  (setq capture-files '("tasks.org" "schedule.org"))
 
   (defun vulpea-capture-task ()
     "Capture a task."
@@ -266,78 +272,74 @@ Moreover, the setup for latex:
     (local-set-key (kbd "h") 'backward-char)
     (local-set-key (kbd "l") 'forward-char)
     (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-    (local-set-key (kbd "C-c o") 'full-calendar)
+    ;;(local-set-key (kbd "C-c o") 'full-calendar)
     )
 
   (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
 
   (setq org-agenda-prefix-format '(
-       (agenda . "%-35b %-10T ")
+       (agenda . "%?-12t")
+       ;(agenda . "%-10b %-10T ")
        (todo . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
        (tags . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
        (search. "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
        ))
-  ;; (setq org-agenda-prefix-format '(
-  ;;      (agenda . "%-27b %-10T ")
-  ;;      (todo . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-  ;;      (tags . "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-  ;;      (search. "%-27b %-10T %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-  ;;      ))
 #+END_SRC
 *** calfw (calendar)
 #+BEGIN_SRC emacs-lisp
-  (defun date-earlier-p (date1 date2)`
-    (time-less-p (date-to-time date1) (date-to-time date2)))
-  (use-package calfw
-   :defer t
-   :bind (("C-c o" . full-calendar) 
-          ("C-c t" . task-calendar))
-   :commands cfw:open-calendar-buffer
-   :functions (cfw:open-calendar-buffer
-               cfw:refresh-calendar-buffer
-               cfw:org-create-source
-               cfw:cal-create-source)
-   :config
-   (defun full-calendar ()
-     (interactive)
-     (cfw:open-calendar-buffer
-      :contents-sources
-      (list
-       (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
-       (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
-       (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
-       (cfw:org-create-file-source "sepSchedule" "~/org/SEPschedule.org" "#0aaaaa")
-       )
-     ))
-   (defun task-calendar ()
-     (interactive)
-     (cfw:open-calendar-buffer
-      :contents-sources
-      (list
-       (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
-       (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
-       )
-      ;; :sorter 'my-calendar-entry-comparator
-     ))
-   )
-  (custom-set-faces
-   '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 1.0 :inherit variable-pitch))))
-   '(cfw:face-header ((t (:foreground "#ffffff" :weight bold ))))
-   '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold )))
-   '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold )))
-   '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
-   '(cfw:face-day-title ((t :background "#grey10" )))
-   '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
-   '(cfw:face-today-title ((t :foreground "#fc03ad" :background "#grey10" :weight bold)))
-   '(cfw:face-today ((t :background: "grey10" :weight bold)))
-   '(cfw:face-select ((t :background "#5E81AB")))
-   '(cfw:face-toolbar ((t :background "#grey10")))
-   ;; '(cfw:face-toolbar ((t :background "#5E81AB")))
-   '(cfw:face-grid ((t :foreground "#5E81AB")))
-   )
-   (use-package calfw-org
-     :after calfw)
-   (setq calendar-week-start-day 1)
+    (defun date-earlier-p (date1 date2)`
+      (time-less-p (date-to-time date1) (date-to-time date2)))
+    (use-package calfw
+     :defer t
+     :bind (
+            ("C-c o" . full-calendar) 
+            ("C-c t" . task-calendar))
+     :commands cfw:open-calendar-buffer
+     :functions (cfw:open-calendar-buffer
+                 cfw:refresh-calendar-buffer
+                 cfw:org-create-source
+                 cfw:cal-create-source)
+     :config
+     (defun full-calendar ()
+       (interactive)
+       (cfw:open-calendar-buffer
+        :contents-sources
+        (list
+         (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#ed3a2d")
+         (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
+         (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#34ed5c")
+         (cfw:org-create-file-source "tasks" "~/org/orgRoam/courses_eth-20240830131321.org" "#ed3a2d")
+         )
+       ))
+     (defun task-calendar ()
+       (interactive)
+       (cfw:open-calendar-buffer
+        :contents-sources
+        (list
+         (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
+         (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
+         )
+        ;; :sorter 'my-calendar-entry-comparator
+       ))
+     )
+    (custom-set-faces
+     '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 1.0 :inherit variable-pitch))))
+     '(cfw:face-header ((t (:foreground "#ffffff" :weight bold ))))
+     '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold )))
+     '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold )))
+     '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
+     '(cfw:face-day-title ((t :background "#grey10" )))
+     '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
+     '(cfw:face-today-title ((t :foreground "#fc03ad" :background "#grey10" :weight bold)))
+     '(cfw:face-today ((t :background: "grey10" :weight bold)))
+     '(cfw:face-select ((t :background "#5E81AB")))
+     '(cfw:face-toolbar ((t :background "#grey10")))
+     ;; '(cfw:face-toolbar ((t :background "#5E81AB")))
+     '(cfw:face-grid ((t :foreground "#5E81AB")))
+     )
+     (use-package calfw-org
+       :after calfw)
+     (setq calendar-week-start-day 1)
 #+END_SRC
 *** olivetti mode
 #+BEGIN_SRC emacs-lisp
@@ -441,8 +443,7 @@ Moreover, the setup for latex:
 We want to mark as "project" only the org-roam files containing TODO items to increase the speed of
 org agenda.
 Explanation:
-   1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org
-   buffer. We only care about headings, hence the " 'headings ".
+   1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org buffer. We only care about headings, hence the " 'headings ".
    2. We extract info. about TODO keywords from /headline/ AST, which contains a property we are interested
    in, -:todo-type., which returns the type of TODO: /'done/, /'todo/ or /nil/.
    3. Now we just check that there is at least one TODO match.
@@ -461,8 +462,7 @@ Explanation:
              'todo))
        nil 'first-match))                     ; (3)
 #+END_SRC
-Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node,
-and in /before-safe-hook/.
+Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node, and in /before-safe-hook/.
 #+BEGIN_SRC emacs-lisp
 	(defun vulpea-buffer-prop-get-list (name &optional separators)
 	  "Get a buffer property NAME as a list using SEPARATORS.
@@ -570,124 +570,7 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
     (vulpea-project-update-tag)
     (save-buffer)))
 #+END_SRC
-** evil-nerd-commenter
+** Hyperscheduler
 #+BEGIN_SRC emacs-lisp
-  (use-package evil-nerd-commenter
-    :bind ("C-/" . evilnc-comment-or-uncomment-lines))
+  (use-package org-hyperscheduler)
 #+END_SRC
-** golden-ratio
-#+BEGIN_SRC emacs-lisp
-  (use-package golden-ratio)
-  (golden-ratio-mode 1)
-#+END_SRC
-** Helm
-#+BEGIN_SRC emacs-lisp
-    (use-package helm
-      :config
-      (helm-mode 1)
-    )
-#+END_SRC
-#** ivy
-##+BEGIN_SRC emacs-lisp
-#  (use-package ivy
-#    :diminish
-#    :bind (("C-s" . swiper)
-#           :map ivy-minibuffer-map
-#           ("RET" . ivy-alt-done)
-#           ("TAB" . ivy-next-line)
-#           ("<backtab>" . ivy-previous-line)
-#           :map ivy-switch-buffer-map
-#           ("RET" . ivy-done)
-#           ("TAB" . ivy-next-line)
-#           ("<backtab>" . ivy-previous-line)
-#           :map ivy-reverse-i-search-map
-#           ("RET" . ivy-done)
-#           ("TAB" . ivy-next-line)
-#           ("<backtab>" . ivy-previous-line))
-#    :config
-#    (ivy-mode 1))
-#  (with-eval-after-load 'ivy
-#    (define-key ivy-mode-map (kbd "S-<tab>") 'ivy-previous-line))
-#
-#
-#
-#  (use-package ivy-rich
-#    :init
-#    (ivy-rich-mode 1))
-##+END_SRC
-#** Company mode 
-##+BEGIN_SRC emacs-lisp
-#  (defun my-company-space-and-complete ()
-#    "Select the current company candidate and insert a space."
-#    (interactive)
-#    (company-complete-selection)
-#    (insert " "))
-#
-#  (use-package company
-#    :after lsp-mode
-#    :hook (lsp-mode . company-mode)
-#    :bind (:map company-active-map
-#          ("<backtab>" . company-select-previous-or-abort)
-#          ("<tab>" . company-select-next-or-abort)
-#          ("RET" . my-company-space-and-complete))
-#    :custom
-#    (company-minimum-prefix-length 1)
-#    (company-idle-delay 0.0))
-#  (add-hook 'after-init-hook 'global-company-mode)
-#
-#  (use-package company-box
-#    :hook (company-mode . company-box-mode))
-##+END_SRC
-#** Magit 
-##+BEGIN_SRC emacs-lisp
-#  (use-package magit
-#  :custom
-#  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-#
-#;; NOTE: Make sure to configure a GitHub token before using this package!
-#;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-#;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-#;; (use-package forge)
-##+END_SRC
-#** counsel
-##+BEGIN_SRC emacs-lisp
-#(use-package counsel
-#  :bind (("C-M-j" . 'counsel-switch-buffer)
-#         :map minibuffer-local-map
-#         ("C-r" . 'counsel-minibuffer-history))
-#  :config
-#  (counsel-mode 1))
-##+END_SRC
-#** lsp-mode
-##+BEGIN_SRC emacs-lisp
-#(defun efs/lsp-mode-setup ()
-#(setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-#(lsp-headerline-breadcrumb-mode))
-#
-#(use-package lsp-mode
-#  :commands (lsp lsp-deferred)
-#  :hook (lsp-mode . efs/lsp-mode-setup)
-#  :init
-#  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
-#  :config
-#  (lsp-enable-which-key-integration t))
-##+END_SRC
-#
-#*** lsp-ui
-##+BEGIN_SRC emacs-lisp
-#(use-package lsp-ui
-#  :hook (lsp-mode . lsp-ui-mode)
-#  :custom
-#  (lsp-ui-doc-position 'bottom))
-##+END_SRC
-#
-#*** lsp-treemacs
-##+BEGIN_SRC emacs-lisp
-#(use-package lsp-treemacs
-#  :after lsp)
-##+END_SRC
-#
-#*** lsp-ivy
-##+BEGIN_SRC emacs-lisp
-#(use-package lsp-ivy)
-##+END_SRC

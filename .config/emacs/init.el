@@ -8,7 +8,7 @@
  '(custom-safe-themes
    '("b40f11c174e7e475508f1e2c1cfca354d37212494c143a494f27239c7d71a294" "18631300c9090ac9f588b07d0ef4b1d093143a31e8c8c29e9fc2a57db1cdf502" "2cc1b50120c0d608cc5064eb187bcc22c50390eb091fddfa920bf2639112adb6" "fc608d4c9f476ad1da7f07f7d19cc392ec0fb61f77f7236f2b6b42ae95801a62" default))
  '(org-agenda-files
-   '("/home/diego/org/orgRoam/20230816125732-masters.org" "/home/diego/org/orgRoam/20230821153251-emacssetupp.org"))
+   '("/home/diego/org/orgRoam/opsystexamprep-20240113171733.org" "/home/diego/org/orgRoam/examprepmathstats-20231029202039.org" "/home/diego/org/orgRoam/ethhousing-20240313161623.org" "tasks.org" "schedule.org"))
  '(org-agenda-sorting-strategy
    '((agenda habit-down time-up priority-down category-keep)
 	 (todo timestamp-up priority-down category-keep)
@@ -22,8 +22,9 @@
 	 (gnus . org-gnus-no-new-news)
 	 (file . find-file)
 	 (wl . wl-other-frame)))
+ '(org-scheduled-past-days 0)
  '(package-selected-packages
-   '(modus-themes helm org-superstar calfw-org calfw org-roam-ui visual-fill vulpea golden-ratio evil-nerd-commenter general which-key org-roam evil use-package)))
+   '(org-hyperscheduler modus-themes org-superstar calfw-org calfw org-roam-ui visual-fill vulpea general which-key org-roam evil use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,6 +41,7 @@
  '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 2.0 :inherit variable-pitch))))
  '(cfw:face-today ((t :background: "grey10" :weight bold)))
  '(cfw:face-today-title ((t :foreground "#ff001e" :background "#grey10" :weight bold)))
- '(cfw:face-toolbar ((t :background "#grey10"))))
+ '(cfw:face-toolbar ((t :background "#grey10")))
+ '(org-agenda-time-grid ((t (:foreground "white")))))
 
 (org-babel-load-file (expand-file-name "~/.config/emacs/myinit.org"))
