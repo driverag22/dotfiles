@@ -77,7 +77,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git poetry)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 # source /usr/share/nvm/init-nvm.sh
@@ -108,13 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias wiki='/usr/bin/git --git-dir=$HOME/.vimwiki/ --work-tree=$HOME/vimwiki'
-alias nw='/usr/bin/nvim /home/diego/vimwiki/index.wiki'
-alias cburnd='/usr/bin/task tags=use or tags=dbl or tags=disc or tags=ode burndown.daily'
-#### temporary python venv
-alias spython='/home/diego/src/temp/pythonEnv/bin/python'
-alias spip='/home/diego/src/temp/pythonEnv/bin/pip'
-alias spytest='/home/diego/src/temp/pythonEnv/bin/pytest'
 
 fastfetch
 
