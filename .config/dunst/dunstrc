@@ -12,7 +12,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 30x50
 
     scale = 0
     notification_limit = 20
