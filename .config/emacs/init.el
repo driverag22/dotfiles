@@ -24,7 +24,7 @@
 	 (wl . wl-other-frame)))
  '(org-scheduled-past-days 0)
  '(package-selected-packages
-   '(org-hyperscheduler modus-themes org-superstar calfw-org calfw org-roam-ui visual-fill vulpea general which-key org-roam evil use-package)))
+   '(olivetti modus-themes org-superstar calfw-org calfw org-roam-ui visual-fill vulpea general which-key org-roam evil use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

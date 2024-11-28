@@ -121,7 +121,6 @@
     (find-file "~/org/tasks.org"))
 
   (global-set-key (kbd "C-c b") 'open-tasks-file)
-  ;;(global-set-key (kbd "C-c o") 'org-hyperscheduler-open)
   (setq org-cycle-level-faces
        '((1 . org-level-1)
          (2 . org-level-2)
@@ -229,8 +228,6 @@ Moreover, the setup for latex:
         ("h" "histMath" plain (file+headline "tasks.org" "A Sampler of Histories and Philosophies of Mathematics")
          "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"histMath\")")
 
-        ("w" "waterproof" plain (file+headline "tasks.org" "Waterproof")
-         "** TODO [#%^{Priority}] [W]%? %(org-set-tags \"waterproof\")")
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
         ("H" "housing" plain (file+headline "tasks.org" "Housing")
@@ -254,17 +251,30 @@ Moreover, the setup for latex:
     (setq org-agenda-custom-commands
         '((" " "Agenda"
            (
-            (tags-todo "waterproof"
-             ((org-agenda-overriding-header "Waterproof"))
+            (tags-todo "geomCombAlg"
+             ((org-agenda-overriding-header "Geometry: Combinatorics and Algorithms"))
+             )
+            (tags-todo "advMachLearn"
+             ((org-agenda-overriding-header "Advanced Machine Learning"))
+             )
+            (tags-todo "probMeth"
+             ((org-agenda-overriding-header "Probabilistic Methods in Combinatorics"))
+             )
+            (tags-todo "strGraph"
+             ((org-agenda-overriding-header "Structural Graph Theory"))
+             )
+            (tags-todo "histMath"
+             ((org-agenda-overriding-header "A Sampler of Histories and Philosophies of Mathematics"))
+             )
+            (tags-todo "housing"
+             ((org-agenda-overriding-header "Housing"))
              )
             (tags-todo "others"
              ((org-agenda-overriding-header "Others"))
              )
-            (tags-todo "masters"
-             ((org-agenda-overriding-header "Masters"))
-             )
             )
-           )))
+           ))
+    )
 
     (defun my-org-agenda-custom-keys ()
     (local-set-key (kbd "j") 'org-agenda-next-line)
@@ -327,7 +337,7 @@ Moreover, the setup for latex:
      '(cfw:face-header ((t (:foreground "#ffffff" :weight bold ))))
      '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold )))
      '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold )))
-     '(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
+     ;;'(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
      '(cfw:face-day-title ((t :background "#grey10" )))
      '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
      '(cfw:face-today-title ((t :foreground "#fc03ad" :background "#grey10" :weight bold)))
@@ -569,8 +579,4 @@ Lastly, to dynamically build /org-agenda-files/, we query all files containing t
                            (find-file-noselect file))
     (vulpea-project-update-tag)
     (save-buffer)))
-#+END_SRC
-** Hyperscheduler
-#+BEGIN_SRC emacs-lisp
-  (use-package org-hyperscheduler)
 #+END_SRC
