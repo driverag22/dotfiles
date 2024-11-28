@@ -32,10 +32,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class          instance       title           tags     isfloating  monitor */
-	{ "stalonetray", "stalonetray",  "stalonetray",  1 << 7,  1,          1},
-	{ "KeePassXC",   "keepassxc",    "KeePassXC",    1 << 7,  0,          1},
-	{ "Emacs",       "emacs",        "Emacs",        1 << 5,  0,          1},
+	/* class          instance       title              tags     isfloating  monitor */
+	{ "stalonetray", "stalonetray",  "stalonetray",     1 << 7,  1,          1},
+	{ "KeePassXC",   "keepassxc",    "KeePassXC",       1 << 7,  0,          1},
+	{ "Emacs",       "emacs",        "Emacs",           1 << 5,  0,          0},
 };
 
 /* layout(s) */
