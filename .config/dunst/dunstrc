@@ -1,0 +1,100 @@
+# See dunst(5) for all configuration options
+[global]
+    ### Display ###
+    monitor = 0
+    follow = keyboard
+
+    ### Geometry ###
+    width = 300
+    height = 300
+
+    # Position the notification in the top right corner
+    origin = top-right
+
+    # Offset from the origin
+    offset = 10x50
+
+    scale = 0
+    notification_limit = 20
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 2
+    icon_corner_radius = 0
+
+    # Show how many messages are currently hidden (because of
+    # notification_limit).
+    indicate_hidden = yes
+    transparency = 20
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 0
+    frame_width = 3
+    frame_color = "#338fff"
+    gap_size = 0
+    separator_color = frame
+    sort = yes
+
+    # Don't remove messages, if the user is idle (no mouse or keyboard input)
+    # for longer than idle_threshold seconds.
+    # Set to 0 to disable.
+    # A client can set the 'transient' hint to bypass this. See the rules
+    # section for how to disable this if necessary
+    # idle_threshold = 120
+
+    ### Text ###
+    font = JetBrains Mono 12
+
+    line_height = 0
+
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ### Misc/Advanced ###
+    dmenu = /usr/local/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    # Define the title/class of the windows spawned by dunst
+    title = Dunst
+    class = Dunst
+    corner_radius = 2
+    ignore_dbusclose = false
+
+    ### mouse
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+
+[urgency_low]
+    background  = "#1A1E25"
+    foreground  = "#D8D8D8"
+    frame_color = "#484848"
+    timeout = 4
+
+[urgency_normal]
+    background  = "#1A1E25"
+    foreground  = "#D8D8D8"
+    frame_color = "#338FFF"
+    timeout = 4
+
+[urgency_critical]
+    background  = "#1A1E25"
+    foreground  = "#D8D8D8"
+    frame_color = "#AB4642"
+    timeout = 10
