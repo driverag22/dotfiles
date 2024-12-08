@@ -46,3 +46,14 @@ nkeymap('<leader>rn', vim.lsp.buf.rename, 'Rename all instances of') -- rename
 
 --- '{ + <Enter>' mapped to add second '}' below and start line in between '{' and '}'
 vim.keymap.set('i', '{<Enter>', '{<Enter>}<Esc>O', {noremap = true})
+
+--- Allow use Alt+Tab to jump positions in snippets,
+--- for when completions are shown (in which case Tab just 
+--- jumps through the completions :/)
+vim.keymap.set({ "i", "s" }, "<A-Tab>", function()
+  if require('luasnip').jumpable(1) then
+    return "<Plug>luasnip-jump-next"
+  end
+  return "<A-Tab>"
+end, { expr = true, noremap = true, silent = true })
+
