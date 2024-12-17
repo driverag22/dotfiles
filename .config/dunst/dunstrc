@@ -6,7 +6,7 @@
 
     ### Geometry ###
     width = 300
-    height = 300
+    height = 100
 
     # Position the notification in the top right corner
     origin = top-right
