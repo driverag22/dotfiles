@@ -177,7 +177,11 @@ Moreover, the setup for latex:
                    (org-level-6 . 1.1)
                    (org-level-7 . 1.1)
                    (org-level-8 . 1.1)))
-     (set-face-attribute (car face) nil :font "JetBrains Mono" :height (cdr face)))
+      (set-face-attribute (car face) nil 
+                      :font "JetBrains Mono" 
+                      :height (cdr face)
+                      ;; Add color for specific levels
+                      :foreground (if (eq (car face) 'org-level-1) "#6899C1" nil)))
 
    ;; Ensure that anything that should be fixed-pitch in Org files appears that way
    (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
@@ -217,21 +221,21 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("g" "geometry" plain (file+headline "tasks.org" "Geometry: Combinatorics and Algorithms")
-         "** TODO [#%^{Priority}] [G]%? %(org-set-tags \"geomCombAlg\")")
-        ("a" "advancedMachLearning" plain (file+headline "tasks.org" "Advanced Machine Learning")
-         "** TODO [#%^{Priority}] [ML]%? %(org-set-tags \"advMachLearn\")")
-        ("s" "strGraph" plain (file+headline "tasks.org" "Structural Graph Theory")
-         "** TODO [#%^{Priority}] [G]%? %(org-set-tags \"strGraph\")")
-        ("p" "probMeth" plain (file+headline "tasks.org" "Probabilistic Methods in Combinatorics")
-         "** TODO [#%^{Priority}] [P]%? %(org-set-tags \"probMeth\")")
-        ("h" "histMath" plain (file+headline "tasks.org" "A Sampler of Histories and Philosophies of Mathematics")
-         "** TODO [#%^{Priority}] [H]%? %(org-set-tags \"histMath\")")
+        ("g" "graphTheory" plain (file+headline "tasks.org" "Graph Theory")
+         "** TODO [#%^{Priority}] [GT]%? %(org-set-tags \"GT\")")
+        ("f" "advFormalLangTheory" plain (file+headline "tasks.org" "Advanced Formal Language Theory")
+         "** TODO [#%^{Priority}] [FLT]%? %(org-set-tags \"FLT\")")
+        ("c" "compIntLab" plain (file+headline "tasks.org" "Computational Intelligence Lab")
+         "** TODO [#%^{Priority}] [CIL]%? %(org-set-tags \"CIL\")")
+        ("s" "SeminarGCA" plain (file+headline "tasks.org" "Geometry: Combinatorics and Algorithms Seminar")
+         "** TODO [#%^{Priority}] [GCAS]%? %(org-set-tags \"GCAS\")")
+        ("t" "introTopDataAnal" plain (file+headline "tasks.org" "Introduction to Topological Data Analysis")
+         "** TODO [#%^{Priority}] [TDA]%? %(org-set-tags \"TDA\")")
+        ("r" "resProj" plain (file+headline "tasks.org" "Research Project - graph theory spring")
+         "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProjSpring\")")
 
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
-        ("H" "housing" plain (file+headline "tasks.org" "Housing")
-         "** TODO [#%^{Priority}]%? %(org-set-tags \"housing\")")
         ("d" "diary" plain (file+datetree "diary.org")
          "****%?  %<%H:%M>")
         ))
