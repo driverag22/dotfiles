@@ -11,21 +11,33 @@ static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 21;
 static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
-static const char col_bg[]          = "#1A1E25";
-static const char col_gray[]        = "#484848";
+static const char col_bg[]          = "#020202";
 static const char col_white[]       = "#eeeeee";
-static const char col_bBlue[]       = "#338fff";
-static const char col_orange[]      = "#C97F71";
+static const char col_purple[]      = "#4F31AA";
+static const char col_purple_l[]    = "#5F4FB7";
+static const char col_pink[]        = "#CA509C";
+static const char col_cyan[]        = "#32A9A6";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_bg,  col_bg},
-	[SchemeSel]  = { col_white, col_orange, col_white},
-	[SchemeSpecial]  = { col_bBlue, col_bg,  col_white},
+	[SchemeSel]  = { col_white, col_purple, col_pink},
+	[SchemeSpecial]  = { col_pink, col_bg,  col_white},
 };
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
+
+static const char *tagsel[][2] = {
+	{ col_white,  col_cyan},
+	{ col_white,  col_pink},
+	{ col_white,  col_purple},
+	{ col_white,  col_cyan},
+	{ col_white,  col_pink},
+	{ col_white,  col_purple},
+	{ col_white,  col_cyan},
+	{ col_white,  col_purple_l},
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
