@@ -3,26 +3,28 @@ draw_bold_text_with_bright_colors = true
 
 [colors.bright]
 black = "#4C566A"
-blue = "#338fff"
-cyan = "#5E81AC"
+# blue = "#90DADA"
+# cyan = "#32A9A6"
+blue = "#32A9A6"
+cyan = "#90DADA"
 green = "#A3BE8C"
-magenta = "#C97F71"
+magenta = "#CA509C"
 red = "#ff5555"
 white = "#ECEFF4"
 yellow = "#EBCB8B"
 
 [colors.normal]
 black = "#3B4252"
-blue = "#81A1C1"
-cyan = "#9C8CAC"
+blue = "#32A9A6"
+cyan = "#90DADA"
 green = "#A3BE8C"
-magenta = "#C97F71"
+magenta = "#CA509C"
 red = "#ff5555"
 white = "#E5E9F0"
 yellow = "#EBCB8B"
 
 [colors.primary]
-background = "#000000"
+background = "#020202"
 foreground = "#FFFFFF"
 
 [env]
