@@ -1,2 +1,2 @@
 #!/bin/bash
-alacritty -e ranger ~/Dropbox/ETH/Y1/S1
+alacritty -e ranger ~/Dropbox/ETH/Y1/S2
