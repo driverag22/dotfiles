@@ -57,7 +57,9 @@ The dotfiles include, but are not limited to
 - dmenu - version 5.2
 - alacritty - version 0.12.2
 - zsh - version 5.9
-- picom - version vgit-b700a
+- picom - version picom-simpleanims-git 1854__2023.04.13-1 (from aur)
 - rofi - version 1.7.5
+
+(*Note: normal picom can be used for more stability, but e.g. animations won't be supported*)
 
 (*Note: information may be out of date*)
