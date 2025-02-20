@@ -29,14 +29,14 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
 
 static const char *tagsel[][2] = {
-	{ col_white,  col_cyan},
 	{ col_white,  col_pink},
-	{ col_white,  col_purple},
 	{ col_white,  col_cyan},
+	{ col_white,  col_purple},
 	{ col_white,  col_pink},
-	{ col_white,  col_purple},
 	{ col_white,  col_cyan},
-	{ col_white,  col_purple_l},
+	{ col_white,  col_purple},
+	{ col_white,  col_pink},
+	{ col_white,  col_cyan},
 };
 
 static const Rule rules[] = {
