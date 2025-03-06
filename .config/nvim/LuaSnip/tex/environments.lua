@@ -19,7 +19,13 @@ end
 return {
 s({trig = "mm", snippetType="autosnippet", regTrig = false, wordTrig = true},
     fmta(
-        "$<>$",
+        [[
+            \begin{equation*}
+            \begin{gathered}
+                <>
+            \end{gathered}
+            \end{equation*}
+        ]],
         {
             d(1, get_visual),
         }
@@ -54,9 +60,24 @@ s({trig = "ff", snippetType="autosnippet", regTrig = false, wordTrig = true},
 s({trig = 'bit', snippetType="autosnippet", regTrig = false, wordTrig = true},
     fmta(
         [[
-            \begin{itemize}[label={-}]
+            \begin{enumerate}[-]
+                \itemsep1em
                 \item <>
-            \end{itemize}
+            \end{enumerate}
+        ]],
+        {
+            i(1),
+        }
+    )
+),
+
+s({trig = 'ble', snippetType="autosnippet", regTrig = false, wordTrig = true},
+    fmta(
+        [[
+            \begin{enumerate}[(a)]
+                \itemsep1em
+                \item <>
+            \end{enumerate}
         ]],
         {
             i(1),
