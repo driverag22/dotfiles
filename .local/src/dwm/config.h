@@ -75,23 +75,23 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history"};
-static const char *dmenuSearch[] = { "/home/diego/.local/.macros/keyBindings/dmenuGoogleSearch.sh", NULL };
+static const char *dmenuSearch[] = { "/home/diego/.local/.scripts/keyBindings/dmenuGoogleSearch.sh", NULL };
 static const char *termcmd[]  = { "alacritty" };
 
 static const char *browser[]  = { "firefox", NULL };
-static const char *filebrowser[]  = { "/home/diego/.local/.macros/keyBindings/home.sh", NULL };
-static const char *rangerHome[]  = { "/home/diego/.local/.macros/keyBindings/rangerHome.sh", NULL };
-static const char *schoolDropbox[] = {"/home/diego/.local/.macros/keyBindings/q1.sh", NULL};
+static const char *filebrowser[]  = { "/home/diego/.local/.scripts/keyBindings/home.sh", NULL };
+static const char *rangerHome[]  = { "/home/diego/.local/.scripts/keyBindings/rangerHome.sh", NULL };
+static const char *schoolDropbox[] = {"/home/diego/.local/.scripts/keyBindings/q1.sh", NULL};
 static const char *emacs[] = {"emacs", "/home/diego/org/tasks.org", NULL};
 
-static const char *lockscreen[]  = { "/home/diego/.local/.macros/keyBindings/lock.sh", NULL };
-static const char *powermenu[]  = { "/home/diego/.local/.macros/keyBindings/powermenu.sh", NULL };
-static const char *batterymenu[]  = { "/home/diego/.local/.macros/keyBindings/batterymenu.sh", NULL };
-static const char *mediamenu[]  = { "/home/diego/.local/.macros/keyBindings/mediamenu.sh", NULL };
-static const char *volmenu[]  = { "/home/diego/.local/.macros/keyBindings/volmenu.sh", NULL };
-static const char *datemenu[]  = { "/home/diego/.local/.macros/keyBindings/dateTime.sh", NULL };
-static const char *wallpaper[]  = { "/home/diego/.local/.macros/keyBindings/sxiv.sh", NULL };
-static const char *systray[]  = { "/home/diego/.local/.macros/keyBindings/systray.sh", NULL };
+static const char *lockscreen[]  = { "/home/diego/.local/.scripts/keyBindings/lock.sh", NULL };
+static const char *powermenu[]  = { "/home/diego/.local/.scripts/keyBindings/powermenu.sh", NULL };
+static const char *batterymenu[]  = { "/home/diego/.local/.scripts/keyBindings/batterymenu.sh", NULL };
+static const char *mediamenu[]  = { "/home/diego/.local/.scripts/keyBindings/mediamenu.sh", NULL };
+static const char *volmenu[]  = { "/home/diego/.local/.scripts/keyBindings/volmenu.sh", NULL };
+static const char *datemenu[]  = { "/home/diego/.local/.scripts/keyBindings/dateTime.sh", NULL };
+static const char *wallpaper[]  = { "/home/diego/.local/.scripts/keyBindings/sxiv.sh", NULL };
+static const char *systray[]  = { "/home/diego/.local/.scripts/keyBindings/systray.sh", NULL };
 
 static const char *brightnessUp[] = { "light", "-A", "3", NULL};
 static const char *brightnessDown[] = {"light", "-U", "3", NULL};

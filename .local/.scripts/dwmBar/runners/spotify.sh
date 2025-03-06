@@ -1,5 +1,5 @@
 #!/bin/sh
-TMP="$HOME/.local/.macros/dwmBar/tmp"
+TMP="$HOME/.local/.scripts/dwmBar/tmp"
 # A dwm_bar function that shows the current artist, track, duration, and status from Spotify using playerctl
 # Joe Standring <git@joestandring.com>
 # Edited by: Diego Rivera <git@driverag22.com>

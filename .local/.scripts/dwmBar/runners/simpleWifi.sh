@@ -1,5 +1,5 @@
 #!/bin/sh
-TMP="$HOME/.local/.macros/dwmBar/tmp"
+TMP="$HOME/.local/.scripts/dwmBar/tmp"
 # interface=$(ip link | grep -o 'wl[^:]*')
 # wifiRate=$(nmcli -f ACTIVE,RATE dev wifi list | awk '$1=="yes" {print $2 "Mbit/s"}')
 # wifiBars=$(nmcli -f ACTIVE,BARS dev wifi list | awk '$1=="yes" {print $2}')

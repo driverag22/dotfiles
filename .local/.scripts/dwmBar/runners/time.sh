@@ -1,5 +1,5 @@
 #!/bin/sh
-TMP="$HOME/.local/.macros/dwmBar/tmp"
+TMP="$HOME/.local/.scripts/dwmBar/tmp"
 while true; do
     LOCALTIME=$(date '+ %a. %d %b.   %R')
     echo "$LOCALTIME" > "$TMP/time.txt"

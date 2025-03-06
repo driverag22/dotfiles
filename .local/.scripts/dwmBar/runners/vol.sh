@@ -1,5 +1,5 @@
 #!/bin/sh
-TMP="$HOME/.local/.macros/dwmBar/tmp"
+TMP="$HOME/.scripts/.scripts/dwmBar/tmp"
 while true; do
     VOL=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
     STATE=$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Master))

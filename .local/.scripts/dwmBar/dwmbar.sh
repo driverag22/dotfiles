@@ -4,8 +4,8 @@
 # remodified by driverag22
 
 # Here we initialize the runners for the cleanValues
-# /home/diego/.local/.macros/dwmBar/runClean.sh
-/home/diego/.local/.macros/dwmBar/runNew.sh
+# /home/diego/.local/.scripts/dwmBar/runClean.sh
+/home/diego/.local/.scripts/dwmBar/runNew.sh
 
 while true; do
         ## Choices:
@@ -23,8 +23,8 @@ while true; do
         # You can add the path to the initializer in your .xinit or .xprofile
         # to make it work.
 
-        # values=$(/home/diego/.local/.macros/dwmBar/values/cleanValues.sh)
-        values=$(/home/diego/.local/.macros/dwmBar/values/newValues.sh)
+        # values=$(/home/diego/.local/.scripts/dwmBar/values/cleanValues.sh)
+        values=$(/home/diego/.local/.scripts/dwmBar/values/newValues.sh)
 
         xsetroot -name "$values"
         sleep 0.5s ## refresh rate for general bar

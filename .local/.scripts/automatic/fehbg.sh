@@ -6,6 +6,6 @@ if [ $num_screens -eq 1 ]
 then
     feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/quasimoto.jpg'
 else
-    /home/diego/.local/.macros/automatic/screensNetherlands.sh
+    /home/diego/.local/.scripts/automatic/screensNetherlands.sh
     feh --no-fehbg --bg-fill '/home/diego/Pictures/wallpaper-master/quasimoto.jpg' --bg-fill '/home/diego/Pictures/wallpaper-master/quasimoto.jpg'
 fi

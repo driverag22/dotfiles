@@ -1,14 +1,13 @@
 #!/bin/sh
 source /usr/share/nvm/init-nvm.sh
 
+export MESA_LOADER_DRIVER_OVERRIDE=iris
+
 #sets dwmBar running to display values
-/home/diego/.local/.macros/dwmBar/dwmbar.sh
+/home/diego/.scripts/.macros/dwmBar/dwmbar.sh
 
 #sets screens and background
-/home/diego/.local/.macros/automatic/fehbg.sh 
-
-#make wireless mouse work correctly
-/home/diego/.local/.macros/automatic/mouse.sh 
+/home/diego/.scripts/.macros/automatic/fehbg.sh 
 
 #fix broken java displays on dwm (for netbeans)
 # export _JAVA_AWT_WM_NONREPARENTING=1

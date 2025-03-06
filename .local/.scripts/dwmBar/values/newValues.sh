@@ -2,7 +2,7 @@
 # original script created by clusterF
 # modified by ManyRoads
 # remodified by driverag22
-TMP=($HOME/.local/.macros/dwmBar/tmp)
+TMP=($HOME/.local/.scripts/dwmBar/tmp)
 
 LOCALTIME=$(cat $TMP/time.txt)
 VOL=$(cat $TMP/vol.txt)

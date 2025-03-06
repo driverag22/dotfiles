@@ -1,7 +1,5 @@
 #!/bin/bash
-TMP="$HOME/.local/.macros/dwmBar/tmp"
 
-while true; do
     # Loop through all attached batteries and format the info
     for battery in /sys/class/power_supply/BAT?*; do
     	# If non-first battery, print a space separator.
@@ -42,8 +40,6 @@ while true; do
     	esac
     
         [ "$capacity" -le 10 ] && warn=""
-    	printf "%s %s%d%%" "$warn" "$status " " $capacity" > "$TMP/battery.txt"
+    	printf "%s %s%d%%" "$warn" "$status " " $capacity" > '/home/diego/.local/.scripts/dwmBar/tmp/battery.txt'
         unset warn
     done &
-    sleep 45s 
-done &
