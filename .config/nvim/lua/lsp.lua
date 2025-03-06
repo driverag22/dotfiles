@@ -1,45 +1,20 @@
 local on_attach = function(client, bufnr) end
 
--- require('lspconfig').grammarly.setup {on_attach = on_attach}
-
-------------------------
---- css/html
-require('lspconfig').cssls.setup {on_attach = on_attach}
-require('lspconfig').html.setup {on_attach = on_attach}
-
-------------------------
---- latex
--- require('lspconfig').texlab.setup {on_attach = on_attach}
-require('lspconfig').ltex.setup {on_attach = on_attach}
-
-------------------------
---- lua
--- require('lspconfig').lua_ls.setup {on_attach = on_attach}
-
 ------------------------
 --- cpp / c
 require('lspconfig').clangd.setup {on_attach = on_attach}
 
 ------------------------
+--- lua
+require('lspconfig').lua_ls.setup {on_attach = on_attach}
+
+------------------------
+--- latex
+require('lspconfig').ltex.setup {on_attach = on_attach}
+
+------------------------
 --- python
--- require('lspconfig').jedi_language_server.setup {on_attach = on_attach}
 require('lspconfig').pylsp.setup {on_attach = on_attach}
-
-------------------------
---- markdown
--- require('lspconfig').zk.setup {on_attach = on_attach}
-
-------------------------
---- vue
-require('lspconfig').volar.setup {on_attach = on_attach}
-
-------------------------
---- type/javascript
-require('lspconfig').quick_lint_js.setup {on_attach = on_attach}
--- require('lspconfig').tsserver.setup {on_attach = on_attach}
--- require('lspconfig').jdtls.setup {on_attach = on_attach}
-
-require('lspconfig').jsonls.setup {on_attach = on_attach}
 
 require("mason").setup {
     ui = {
@@ -65,7 +40,7 @@ local has_words_before = function()
 end
 
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
 
 cmp.setup({
   snippet = {
@@ -151,68 +126,28 @@ require('lspconfig')['clangd'].setup {
     on_attach = on_attach,
 }
 
--- require('lspconfig')['lua_ls'].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
-
--- require('lspconfig')['jedi_language_server'].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
-
-require('lspconfig')['jdtls'].setup {
+require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
-require'lspconfig'.texlab.setup{
+require'lspconfig'.ltex.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        ltex = {
+            disabledRules = { ['en-US'] = { 'PROFANITY' } },
+            dictionary = {
+                ['en-US'] = {'Diego', 'Rivera', 'Garrido'},Diego
+            },
+        },
+    },
+}
+
+require('lspconfig')['pylsp'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
-
--- require'lspconfig'.ltex.setup{
---     capabilities = capabilities,
---     on_attach = on_attach,
---     settings = {
---         ltex = {
---             disabledRules = { ['en-US'] = { 'PROFANITY' } },
---             dictionary = {
---                 ['en-US'] = {'Diego', 'Rivera', 'Garrido'},
---             },
---         },
---     },
--- }
-
-require('lspconfig')['volar'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
-require('lspconfig')['quick_lint_js'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
-require('lspconfig')['html'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
-require('lspconfig')['cssls'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
--- require('lspconfig')['tsserver'].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
-
--- require('lspconfig')['jsonls'].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
 
 local lspkind = require('lspkind')
 cmp.setup {

@@ -3,7 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 --- Color theme, icons
-Plug 'ishan9299/modus-theme-vim'
+Plug 'miikanissi/modus-themes.nvim'
 Plug 'NvChad/nvim-colorizer.lua' -- color preview
 Plug 'kyazdani42/nvim-web-devicons' -- More Icons
 Plug 'ryanoasis/vim-devicons' -- Developer Icons
@@ -62,6 +62,10 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   -- Use Tab (or some other key if you prefer) to trigger visual selection
   store_selection_keys = "<S-Tab>",
 })
-require("which-key").register()
+
+require("which-key").add({
+    { "<leader>f", group = "file" },
+    mode = { "n", "v" }, -- NORMAL and VISUAL mode
+})
 
 require('telescope').load_extension('fzf')
