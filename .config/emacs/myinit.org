@@ -221,8 +221,6 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("g" "graphTheory" plain (file+headline "tasks.org" "Graph Theory")
-         "** TODO [#%^{Priority}] [GT]%? %(org-set-tags \"GT\")")
         ("f" "advFormalLangTheory" plain (file+headline "tasks.org" "Advanced Formal Language Theory")
          "** TODO [#%^{Priority}] [FLT]%? %(org-set-tags \"FLT\")")
         ("c" "compIntLab" plain (file+headline "tasks.org" "Computational Intelligence Lab")
@@ -231,7 +229,7 @@ Moreover, the setup for latex:
          "** TODO [#%^{Priority}] [GCAS]%? %(org-set-tags \"GCAS\")")
         ("t" "introTopDataAnal" plain (file+headline "tasks.org" "Introduction to Topological Data Analysis")
          "** TODO [#%^{Priority}] [TDA]%? %(org-set-tags \"TDA\")")
-        ("r" "resProj" plain (file+headline "tasks.org" "Research Project - graph theory spring")
+        ("r" "resProj" plain (file+headline "tasks.org" "Research Project: Earth-Moon Problem")
          "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProjSpring\")")
 
         ("o" "others" plain (file+headline "tasks.org" "Others")
@@ -253,32 +251,30 @@ Moreover, the setup for latex:
     (setq org-agenda-window-setup 'only-window)
     (setq org-tags-match-list-sublevels 'indented)
     (setq org-agenda-custom-commands
-        '((" " "Agenda"
-           (
-            (tags-todo "geomCombAlg"
-             ((org-agenda-overriding-header "Geometry: Combinatorics and Algorithms"))
-             )
-            (tags-todo "advMachLearn"
-             ((org-agenda-overriding-header "Advanced Machine Learning"))
-             )
-            (tags-todo "probMeth"
-             ((org-agenda-overriding-header "Probabilistic Methods in Combinatorics"))
-             )
-            (tags-todo "strGraph"
-             ((org-agenda-overriding-header "Structural Graph Theory"))
-             )
-            (tags-todo "histMath"
-             ((org-agenda-overriding-header "A Sampler of Histories and Philosophies of Mathematics"))
-             )
-            (tags-todo "housing"
-             ((org-agenda-overriding-header "Housing"))
-             )
-            (tags-todo "others"
-             ((org-agenda-overriding-header "Others"))
-             )
-            )
-           ))
-    )
+      '((" " "Agenda"
+         (
+          (tags-todo "TDA"
+           ((org-agenda-overriding-header "Introduction to Topological Data Analysis")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          (tags-todo "CIL"
+           ((org-agenda-overriding-header "Computational Intelligence Lab")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          (tags-todo "FLT"
+           ((org-agenda-overriding-header "Advanced Formal Language Theory")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          (tags-todo "resProjSpring"
+           ((org-agenda-overriding-header "Research Project: Earth-Moon Problem")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          (tags-todo "GCAS"
+           ((org-agenda-overriding-header "Geometry: Combinatorics and Algorithms Seminar")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          (tags-todo "others"
+           ((org-agenda-overriding-header "Others")
+            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
+          )
+         ))
+      )
+
 
     (defun my-org-agenda-custom-keys ()
     (local-set-key (kbd "j") 'org-agenda-next-line)
@@ -450,137 +446,137 @@ Moreover, the setup for latex:
   (setq gc-cons-threshold (* 50 1024 1024))
 #+END_SRC
 *** Setting up "smart" org-agenda
-#+BEGIN_SRC emacs-lisp
-  ;; Remove automatic project inheritance
-  (add-to-list 'org-tags-exclude-from-inheritance "project")
-#+END_SRC
-We want to mark as "project" only the org-roam files containing TODO items to increase the speed of
-org agenda.
-Explanation:
-   1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org buffer. We only care about headings, hence the " 'headings ".
-   2. We extract info. about TODO keywords from /headline/ AST, which contains a property we are interested
-   in, -:todo-type., which returns the type of TODO: /'done/, /'todo/ or /nil/.
-   3. Now we just check that there is at least one TODO match.
-#+BEGIN_SRC emacs-lisp
-  (defun vulpea-project-p ()
-    "Return non-nil if current buffer has any todo entry.
-
-  TODO entries marked as done are ignored, meaning the this
-  function returns nil if current buffer contains only completed
-  tasks."
-    (org-element-map                          ; (2)
-         (org-element-parse-buffer 'headline) ; (1)
-         'headline
-       (lambda (h)
-         (eq (org-element-property :todo-type h)
-             'todo))
-       nil 'first-match))                     ; (3)
-#+END_SRC
-Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node, and in /before-safe-hook/.
-#+BEGIN_SRC emacs-lisp
-	(defun vulpea-buffer-prop-get-list (name &optional separators)
-	  "Get a buffer property NAME as a list using SEPARATORS.
-	If SEPARATORS is non-nil, it should be a regular expression
-	matching text that separates, but is not part of, the substrings.
-	If nil it defaults to `split-string-default-separators', normally
-	\"[ \f\t\n\r\v]+\", and OMIT-NULLS is forced to t."
-	  (let ((value (vulpea-buffer-prop-get name)))
-		(when (and value (not (string-empty-p value)))
-		  (split-string-and-unquote value separators))))
-	(defun vulpea-buffer-prop-set (name value)
-	"Set a file property called NAME to VALUE in buffer file.
-  If the property is already set, replace its value."
-	(setq name (downcase name))
-	(org-with-point-at 1
-	  (let ((case-fold-search t))
-		(if (re-search-forward (concat "^#\\+" name ":\\(.*\\)")
-							   (point-max) t)
-			(replace-match (concat "#+" name ": " value) 'fixedcase)
-		  (while (and (not (eobp))
-					  (looking-at "^[#:]"))
-			(if (save-excursion (end-of-line) (eobp))
-				(progn
-				  (end-of-line)
-				  (insert "\n"))
-			  (forward-line)
-			  (beginning-of-line)))
-		  (insert "#+" name ": " value "\n")))))
-
-	  (defun vulpea-buffer-tags-get ()
-		"Return filetags value in current buffer."
-		(vulpea-buffer-prop-get-list "filetags" "[ :]"))
-	  (defun vulpea-buffer-prop-remove (name)
-		"Remove a buffer property called NAME."
-		(org-with-point-at 1
-				(when (re-search-forward (concat "\\(^#\\+" name ":.*\n?\\)")
-									        (point-max) t)
-	     (replace-match ""))))
-
-	  (defun vulpea-buffer-tags-set (&rest tags)
-		"Set TAGS in current buffer.
-	  If filetags value is already set, replace it."
-		(if tags
-			(vulpea-buffer-prop-set
-			 "filetags" (concat ":" (string-join tags ":") ":"))
-		  (vulpea-buffer-prop-remove "filetags")))
-
-		(defun vulpea-project-update-tag ()
-			  "Update PROJECT tag in the current buffer."
-			  (when (and (not (active-minibuffer-window))
-						 (vulpea-buffer-p))
-				(save-excursion
-				  (goto-char (point-min))
-				  (let* ((tags (vulpea-buffer-tags-get))
-						 (original-tags tags))
-					(if (vulpea-project-p)
-						(setq tags (cons "project" tags))
-					  (setq tags (remove "project" tags)))
-
-					;; cleanup duplicates
-					(setq tags (seq-uniq tags))
-
-					;; update tags if changed
-					(when (or (seq-difference tags original-tags)
-							  (seq-difference original-tags tags))
-					  (apply #'vulpea-buffer-tags-set tags))))))
-
-		(defun vulpea-buffer-p ()
-		  "Return non-nil if the currently visited buffer is a note."
-		  (and buffer-file-name
-			   (string-prefix-p
-				(expand-file-name (file-name-as-directory org-roam-directory))
-				(file-name-directory buffer-file-name))))
-
-		(add-hook 'find-file-hook #'vulpea-project-update-tag)
-		(add-hook 'before-save-hook #'vulpea-project-update-tag)
-#+END_SRC
-Lastly, to dynamically build /org-agenda-files/, we query all files containing the /project/ tag.
-#+BEGIN_SRC emacs-lisp
-  (defun vulpea-project-files ()
-  "Return a list of note files containing 'project' tag." ;
-  (seq-uniq
-   (seq-map
-    #'car
-    (org-roam-db-query
-     [:select [nodes:file]
-      :from tags
-      :left-join nodes
-      :on (= tags:node-id nodes:id)
-      :where (like tag (quote "%\"project\"%"))]))))
-
-  (defun vulpea-agenda-files-update (&rest _)
-  "Update the value of `org-agenda-files'."
-  (setq org-agenda-files (vulpea-project-files))
-  (setq org-agenda-files (append org-agenda-files capture-files))
-  )
-
-  (advice-add 'org-agenda :before #'vulpea-agenda-files-update)
-  (advice-add 'org-todo-list :before #'vulpea-agenda-files-update)
-
-  (dolist (file (org-roam-list-files))
-  (message "processing %s" file)
-  (with-current-buffer (or (find-buffer-visiting file)
-                           (find-file-noselect file))
-    (vulpea-project-update-tag)
-    (save-buffer)))
-#+END_SRC
+;; #+BEGIN_SRC emacs-lisp
+;;   ;; Remove automatic project inheritance
+;;   (add-to-list 'org-tags-exclude-from-inheritance "project")
+;; #+END_SRC
+;; We want to mark as "project" only the org-roam files containing TODO items to increase the speed of
+;; org agenda.
+;; Explanation:
+;;    1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org buffer. We only care about headings, hence the " 'headings ".
+;;    2. We extract info. about TODO keywords from /headline/ AST, which contains a property we are interested
+;;    in, -:todo-type., which returns the type of TODO: /'done/, /'todo/ or /nil/.
+;;    3. Now we just check that there is at least one TODO match.
+;; #+BEGIN_SRC emacs-lisp
+;;   (defun vulpea-project-p ()
+;;     "Return non-nil if current buffer has any todo entry.
+;; 
+;;   TODO entries marked as done are ignored, meaning the this
+;;   function returns nil if current buffer contains only completed
+;;   tasks."
+;;     (org-element-map                          ; (2)
+;;          (org-element-parse-buffer 'headline) ; (1)
+;;          'headline
+;;        (lambda (h)
+;;          (eq (org-element-property :todo-type h)
+;;              'todo))
+;;        nil 'first-match))                     ; (3)
+;; #+END_SRC
+;; Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node, and in /before-safe-hook/.
+;; #+BEGIN_SRC emacs-lisp
+;; 	(defun vulpea-buffer-prop-get-list (name &optional separators)
+;; 	  "Get a buffer property NAME as a list using SEPARATORS.
+;; 	If SEPARATORS is non-nil, it should be a regular expression
+;; 	matching text that separates, but is not part of, the substrings.
+;; 	If nil it defaults to `split-string-default-separators', normally
+;; 	\"[ \f\t\n\r\v]+\", and OMIT-NULLS is forced to t."
+;; 	  (let ((value (vulpea-buffer-prop-get name)))
+;; 		(when (and value (not (string-empty-p value)))
+;; 		  (split-string-and-unquote value separators))))
+;; 	(defun vulpea-buffer-prop-set (name value)
+;; 	"Set a file property called NAME to VALUE in buffer file.
+;;   If the property is already set, replace its value."
+;; 	(setq name (downcase name))
+;; 	(org-with-point-at 1
+;; 	  (let ((case-fold-search t))
+;; 		(if (re-search-forward (concat "^#\\+" name ":\\(.*\\)")
+;; 							   (point-max) t)
+;; 			(replace-match (concat "#+" name ": " value) 'fixedcase)
+;; 		  (while (and (not (eobp))
+;; 					  (looking-at "^[#:]"))
+;; 			(if (save-excursion (end-of-line) (eobp))
+;; 				(progn
+;; 				  (end-of-line)
+;; 				  (insert "\n"))
+;; 			  (forward-line)
+;; 			  (beginning-of-line)))
+;; 		  (insert "#+" name ": " value "\n")))))
+;; 
+;; 	  (defun vulpea-buffer-tags-get ()
+;; 		"Return filetags value in current buffer."
+;; 		(vulpea-buffer-prop-get-list "filetags" "[ :]"))
+;; 	  (defun vulpea-buffer-prop-remove (name)
+;; 		"Remove a buffer property called NAME."
+;; 		(org-with-point-at 1
+;; 				(when (re-search-forward (concat "\\(^#\\+" name ":.*\n?\\)")
+;; 									        (point-max) t)
+;; 	     (replace-match ""))))
+;; 
+;; 	  (defun vulpea-buffer-tags-set (&rest tags)
+;; 		"Set TAGS in current buffer.
+;; 	  If filetags value is already set, replace it."
+;; 		(if tags
+;; 			(vulpea-buffer-prop-set
+;; 			 "filetags" (concat ":" (string-join tags ":") ":"))
+;; 		  (vulpea-buffer-prop-remove "filetags")))
+;; 
+;; 		(defun vulpea-project-update-tag ()
+;; 			  "Update PROJECT tag in the current buffer."
+;; 			  (when (and (not (active-minibuffer-window))
+;; 						 (vulpea-buffer-p))
+;; 				(save-excursion
+;; 				  (goto-char (point-min))
+;; 				  (let* ((tags (vulpea-buffer-tags-get))
+;; 						 (original-tags tags))
+;; 					(if (vulpea-project-p)
+;; 						(setq tags (cons "project" tags))
+;; 					  (setq tags (remove "project" tags)))
+;; 
+;; 					;; cleanup duplicates
+;; 					(setq tags (seq-uniq tags))
+;; 
+;; 					;; update tags if changed
+;; 					(when (or (seq-difference tags original-tags)
+;; 							  (seq-difference original-tags tags))
+;; 					  (apply #'vulpea-buffer-tags-set tags))))))
+;; 
+;; 		(defun vulpea-buffer-p ()
+;; 		  "Return non-nil if the currently visited buffer is a note."
+;; 		  (and buffer-file-name
+;; 			   (string-prefix-p
+;; 				(expand-file-name (file-name-as-directory org-roam-directory))
+;; 				(file-name-directory buffer-file-name))))
+;; 
+;; 		(add-hook 'find-file-hook #'vulpea-project-update-tag)
+;; 		(add-hook 'before-save-hook #'vulpea-project-update-tag)
+;; #+END_SRC
+;; Lastly, to dynamically build /org-agenda-files/, we query all files containing the /project/ tag.
+;; #+BEGIN_SRC emacs-lisp
+;;   (defun vulpea-project-files ()
+;;   "Return a list of note files containing 'project' tag." ;
+;;   (seq-uniq
+;;    (seq-map
+;;     #'car
+;;     (org-roam-db-query
+;;      [:select [nodes:file]
+;;       :from tags
+;;       :left-join nodes
+;;       :on (= tags:node-id nodes:id)
+;;       :where (like tag (quote "%\"project\"%"))]))))
+;; 
+;;   (defun vulpea-agenda-files-update (&rest _)
+;;   "Update the value of `org-agenda-files'."
+;;   (setq org-agenda-files (vulpea-project-files))
+;;   (setq org-agenda-files (append org-agenda-files capture-files))
+;;   )
+;; 
+;;   (advice-add 'org-agenda :before #'vulpea-agenda-files-update)
+;;   (advice-add 'org-todo-list :before #'vulpea-agenda-files-update)
+;; 
+;;   (dolist (file (org-roam-list-files))
+;;   (message "processing %s" file)
+;;   (with-current-buffer (or (find-buffer-visiting file)
+;;                            (find-file-noselect file))
+;;     (vulpea-project-update-tag)
+;;     (save-buffer)))
+;; #+END_SRC
