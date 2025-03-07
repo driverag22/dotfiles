@@ -22,7 +22,6 @@ Plug "nvim-telescope/telescope-file-browser.nvim" -- fileBrowser
 
 
 --- Misc
-Plug 'lervag/vimtex' -- vimtex
 Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
 Plug 'folke/which-key.nvim' -- which-key, help with mappings

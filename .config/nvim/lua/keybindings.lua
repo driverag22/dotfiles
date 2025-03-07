@@ -27,9 +27,6 @@ nkeymap('<Leader>x', '<Cmd>bdelete!<CR>') -- close buffer
 nkeymap('<M-.>', '<Cmd>bnext<CR>') -- move to previus buffer
 nkeymap('<M-,>', '<Cmd>bprev<CR>') -- move to next buffer
 
---- tex
-nkeymap('ctx', '<Cmd>VimtexCompile<CR>') -- Toggle tex compile
-
 ---Lsp
 nkeymap('gd', vim.lsp.buf.definition, 'Go to definition') -- go to definition
 nkeymap('gD', vim.lsp.buf.declaration, 'Go to declaration') -- go to declaration
