@@ -20,10 +20,11 @@ uptime="  `uptime -p | sed -e 's/up //g'`"
 host="  `df -Ph | grep "/dev/mapper/cryptroot" | awk {'print $3" / "$2'}`"
 
 # Options
+suspend=' Suspend'
 shutdown=' Shutdown'
 reboot=' Reboot'
+term=' Term'
 lock=' Lock'
-suspend=' Suspend'
 logout=' Logout'
 yes=' Yes'
 no=' No'
@@ -56,7 +57,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$suspend\n$shutdown\n$reboot" | rofi_cmd
+	echo -e "$suspend\n$shutdown\n$reboot\n$term" | rofi_cmd
 }
 
 # Execute Command
@@ -72,15 +73,7 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
-				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			fi
+            killall dwm
 		fi
 	else
 		exit 0
@@ -90,11 +83,17 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
+    $suspend)
+		run_cmd --suspend
+        ;;
     $shutdown)
 		run_cmd --shutdown
         ;;
     $reboot)
 		run_cmd --reboot
+        ;;
+    $term)
+		run_cmd --logout
         ;;
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
@@ -102,9 +101,6 @@ case ${chosen} in
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi
-        ;;
-    $suspend)
-		run_cmd --suspend
         ;;
     $logout)
 		run_cmd --logout

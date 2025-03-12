@@ -24,7 +24,7 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     /* width:                       605px; */
-    width:                       400px;
+    width:                       420px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -86,8 +86,8 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
-    lines:                       1;
+    columns:                     2;
+    lines:                       2;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -115,8 +115,8 @@ element {
     padding:                     10px;
     border:                      1px solid;
     border-radius:               10px;
-    border-color:                @background;
-    /* border-color:                @selected; */
+    /* border-color:                @background; */
+    border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
     text-color:                  @white;
