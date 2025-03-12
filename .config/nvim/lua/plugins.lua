@@ -26,6 +26,7 @@ Plug 'lewis6991/gitsigns.nvim' -- git integration
 Plug 'kdheepak/lazygit.nvim' --- lazygit integration
 Plug 'folke/which-key.nvim' -- which-key, help with mappings
 Plug 'tpope/vim-commentary' -- For Commenting gcc 
+Plug 'sphamba/smear-cursor.nvim' -- smear on cursor
 
 --- Treesitter
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
@@ -68,3 +69,4 @@ require("which-key").add({
 })
 
 require('telescope').load_extension('fzf')
+require('smear_cursor').setup()
