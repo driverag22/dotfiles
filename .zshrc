@@ -3,8 +3,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 export LD_LIBRRARY_PATH=$LD_LIBRRARY_PATH:/usr/local/lib:/usr/lib
+
+# gurobi software environmet variables
+export GUROBI_HOME="/opt/gurobi1201/linux64"
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+export GRB_LICENSE_FILE="/home/diego/gurobi.lic"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
