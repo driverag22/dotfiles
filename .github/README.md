@@ -52,14 +52,12 @@ With gaps:
 ## Some dependencies
 
 The dotfiles include, but are not limited to
-- Neovim - version 0.10.0
+- Neovim - version 0.10.4
 - dwm - version 6.4
 - dmenu - version 5.2
-- alacritty - version 0.12.2
+- alacritty - version 0.15.1
 - zsh - version 5.9
-- picom - version picom-simpleanims-git 1854__2023.04.13-1 (from aur)
-- rofi - version 1.7.5
-
-(*Note: normal picom can be used for more stability, but e.g. animations won't be supported*)
+- picom - version 12.5
+- rofi - version 1.7.8
 
 (*Note: information may be out of date*)
