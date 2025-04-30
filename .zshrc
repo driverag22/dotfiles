@@ -111,6 +111,7 @@ export VISUAL="/usr/bin/nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias condainit='source /home/diego/anaconda3/etc/profile.d/conda.sh'
 
 fastfetch
 
@@ -133,18 +134,18 @@ bindkey '^Z' fancy-ctrl-z
 # # opam configuration
 # [[ ! -r /home/diego/.opam/opam-init/init.zsh ]] || source /home/diego/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# __conda_setup="$('/home/diego/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-#         . "/usr/etc/profile.d/conda.sh"
+#     if [ -f "/home/diego/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/diego/anaconda3/etc/profile.d/conda.sh"
 #     else
-#         export PATH="/usr/bin:$PATH"
+#         export PATH="/home/diego/anaconda3/bin:$PATH"
 #     fi
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
-

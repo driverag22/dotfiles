@@ -232,6 +232,8 @@ Moreover, the setup for latex:
         ("r" "resProj" plain (file+headline "tasks.org" "Research Project: Earth-Moon Problem")
          "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProjSpring\")")
 
+        ("k" "ocurrencias" plain (file+headline "tasks.org" "Ocurrencias")
+         "** TODO [#%^{Priority}]%? %(org-set-tags \"ocurrencias\")")
         ("o" "others" plain (file+headline "tasks.org" "Others")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"others\")")
         ("d" "diary" plain (file+datetree "diary.org")
