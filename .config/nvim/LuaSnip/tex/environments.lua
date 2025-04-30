@@ -85,4 +85,18 @@ s({trig = 'ble', snippetType="autosnippet", regTrig = false, wordTrig = true},
     )
 ),
 
+s({trig = 'bfig', snippetType="autosnippet", regTrig = false, wordTrig = true},
+    fmta(
+        [[
+            \begin{figure}[H]
+                \centering
+                \includegraphics{<>}
+            \end{figure}
+        ]],
+        {
+            i(1),
+        }
+    )
+),
+
 }

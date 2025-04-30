@@ -134,12 +134,33 @@ require('lspconfig')['lua_ls'].setup {
 require'lspconfig'.ltex.setup{
     capabilities = capabilities,
     on_attach = on_attach,
+    filetypes = { "tex", "bib", "markdown", "plaintex" },
     settings = {
         ltex = {
-            disabledRules = { ['en-US'] = { 'PROFANITY' } },
+            language = "en-US",
             dictionary = {
-                ['en-US'] = {'Diego', 'Rivera', 'Garrido'},Diego
-            },
+                ["en-US"] = {
+                    "Diego",
+                    "Rivera",
+                    "Garrido",
+                    "simplicial",
+                    "simplices",
+                    "isomorphism",
+                    "homomorphism",
+                    "homomorphisms",
+                    "homotopic",
+                    "Kruskal",
+                    "surjective",
+                    "injective",
+                    "bijective",
+                    "homomorphism",
+                    "homotopy",
+                    "triangulable",
+                    "triangulations",
+                    "Triangulations",
+                    "TODO",
+                }
+            }
         },
     },
 }
@@ -167,7 +188,7 @@ cmp.setup {
 require("diaglist").init({
     -- optional settings
     -- below are defaults
-    debug = false, 
+    debug = false,
 
     -- increase for noisy servers
     debounce_ms = 150,
