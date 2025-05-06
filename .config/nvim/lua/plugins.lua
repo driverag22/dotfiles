@@ -73,4 +73,4 @@ require("which-key").add({
 
 require('telescope').load_extension('fzf')
 require('smear_cursor').setup()
-require("hardtime").setup()
+require("hardtime").setup({disable_mouse = false})
