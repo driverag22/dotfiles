@@ -159,6 +159,12 @@ require'lspconfig'.ltex.setup{
                     "triangulations",
                     "Triangulations",
                     "TODO",
+                    "monoid",
+                    "submonoid",
+                    "monoids",
+                    "submonoids",
+                    "surjectivity",
+                    "injectivity",
                 }
             }
         },
