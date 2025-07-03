@@ -160,11 +160,16 @@ require'lspconfig'.ltex.setup{
                     "Triangulations",
                     "TODO",
                     "monoid",
+                    "Monoid",
                     "submonoid",
                     "monoids",
                     "submonoids",
                     "surjectivity",
                     "injectivity",
+                    "subsemigroup",
+                    "coset",
+                    "idempotent",
+                    "idempotents",
                 }
             }
         },
