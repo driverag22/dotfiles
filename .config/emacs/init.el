@@ -6,9 +6,17 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes nil)
  '(custom-safe-themes
-   '("b40f11c174e7e475508f1e2c1cfca354d37212494c143a494f27239c7d71a294" "18631300c9090ac9f588b07d0ef4b1d093143a31e8c8c29e9fc2a57db1cdf502" "2cc1b50120c0d608cc5064eb187bcc22c50390eb091fddfa920bf2639112adb6" "fc608d4c9f476ad1da7f07f7d19cc392ec0fb61f77f7236f2b6b42ae95801a62" default))
+   '("77f281064ea1c8b14938866e21c4e51e4168e05db98863bd7430f1352cab294a"
+	 "b40f11c174e7e475508f1e2c1cfca354d37212494c143a494f27239c7d71a294"
+	 "18631300c9090ac9f588b07d0ef4b1d093143a31e8c8c29e9fc2a57db1cdf502"
+	 "2cc1b50120c0d608cc5064eb187bcc22c50390eb091fddfa920bf2639112adb6"
+	 "fc608d4c9f476ad1da7f07f7d19cc392ec0fb61f77f7236f2b6b42ae95801a62"
+	 default))
  '(org-agenda-files
-   '("/home/diego/org/orgRoam/opsystexamprep-20240113171733.org" "/home/diego/org/orgRoam/examprepmathstats-20231029202039.org" "/home/diego/org/orgRoam/ethhousing-20240313161623.org" "tasks.org" "schedule.org"))
+   '("/home/diego/org/orgRoam/opsystexamprep-20240113171733.org"
+	 "/home/diego/org/orgRoam/examprepmathstats-20231029202039.org"
+	 "/home/diego/org/orgRoam/ethhousing-20240313161623.org"
+	 "tasks.org" "schedule.org"))
  '(org-agenda-sorting-strategy
    '((agenda habit-down time-up priority-down category-keep)
 	 (todo timestamp-up priority-down category-keep)
@@ -19,12 +27,10 @@
  '(org-link-frame-setup
    '((vm . vm-visit-folder-other-frame)
 	 (vm-imap . vm-visit-imap-folder-other-frame)
-	 (gnus . org-gnus-no-new-news)
-	 (file . find-file)
+	 (gnus . org-gnus-no-new-news) (file . find-file)
 	 (wl . wl-other-frame)))
  '(org-scheduled-past-days 0)
- '(package-selected-packages
-   '(olivetti modus-themes org-superstar calfw-org calfw org-roam-ui visual-fill vulpea general which-key org-roam evil use-package)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
