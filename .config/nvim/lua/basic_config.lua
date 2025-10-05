@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.foldlevelstart = 1
+vim.opt.smartcase = true
 
 vim.cmd ([[
     :colorscheme modus_vivendi
