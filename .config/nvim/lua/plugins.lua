@@ -53,8 +53,6 @@ Plug "williamboman/mason-lspconfig.nvim"
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
-Plug 'lervag/vimtex'
-
 vim.call('plug#end')
 
 require('gitsigns').setup()
