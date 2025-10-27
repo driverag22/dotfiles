@@ -14,7 +14,7 @@ nkeymap('<leader>fh', builtin.help_tags, 'Telescope help')
 nkeymap('<leader>fb', '<Cmd>Telescope file_browser<CR>', 'Telescope file browser')
 
 --- Misc<Cmd>
-nkeymap('U', '<cmd>redo<CR>') -- redo
+nkeymap('U', '<Cmd>redo<CR>') -- redo
 nkeymap('<Esc>', '<Cmd>nohl<CR>') -- remove highlights
 nkeymap('<leader>gg', '<Cmd>LazyGit<CR>') -- LazyGit
 
@@ -26,6 +26,7 @@ nkeymap('k', 'gk')
 nkeymap('<Leader>x', '<Cmd>bdelete!<CR>') -- close buffer
 nkeymap('<M-.>', '<Cmd>bnext<CR>') -- move to previus buffer
 nkeymap('<M-,>', '<Cmd>bprev<CR>') -- move to next buffer
+nkeymap('<M-r>', '<Cmd>terminal ./compile.sh<CR>') -- move to next buffer
 
 ---Lsp
 nkeymap('gd', vim.lsp.buf.definition, 'Go to definition') -- go to definition
@@ -43,14 +44,3 @@ nkeymap('<leader>rn', vim.lsp.buf.rename, 'Rename all instances of') -- rename
 
 --- '{ + <Enter>' mapped to add second '}' below and start line in between '{' and '}'
 vim.keymap.set('i', '{<Enter>', '{<Enter>}<Esc>O', {noremap = true})
-
---- Allow use Alt+Tab to jump positions in snippets,
---- for when completions are shown (in which case Tab just 
---- jumps through the completions :/)
-vim.keymap.set({ "i", "s" }, "<A-Tab>", function()
-  if require('luasnip').jumpable(1) then
-    return "<Plug>luasnip-jump-next"
-  end
-  return "<A-Tab>"
-end, { expr = true, noremap = true, silent = true })
-
