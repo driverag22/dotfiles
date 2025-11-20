@@ -131,9 +131,10 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = warpdNorm } }, 
 	{ MODKEY|Mod1Mask,              XK_g,      spawn,          {.v = warpdGrid } },
     
-    { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
-    { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
+  { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v=brightnessUp }}, //brightness up/down
+  { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v=brightnessDown }},
 	{ 0,                            XK_Print,                  spawn, {.v = screenshot} }, //screenshotter
+	{ MODKEY|ShiftMask,             XK_s,                      spawn, {.v = screenshot} },
     
 	{ 0,                            XF86XK_AudioPlay,          spawn, {.v = play } }, //play/pause
 	{ CTRLKEY,                      XK_p,                      spawn, {.v = play } }, //play/pause
