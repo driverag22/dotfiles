@@ -1,0 +1,6 @@
+[Unit]
+Description=Auto Git Commit and Push for ~/org
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/.scripts/automatic/orgBackup.sh

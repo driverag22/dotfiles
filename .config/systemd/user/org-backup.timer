@@ -1,0 +1,10 @@
+[Unit]
+Description=Run orgBackup.sh every 12 hours
+
+[Timer]
+OnCalendar=*-*-* 00,12:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
