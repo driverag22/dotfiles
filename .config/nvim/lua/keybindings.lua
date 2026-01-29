@@ -2,9 +2,6 @@ local function nkeymap(key, map, descr)
 	vim.keymap.set('n', key, map, {noremap = true, desc = descr})
 end
 
--- Set space to be leader
-vim.g.mapleader = " "
-
 --- Telescope<Cmd>
 local builtin = require('telescope.builtin')
 nkeymap('<leader>ff', builtin.find_files, 'Telescope find file')

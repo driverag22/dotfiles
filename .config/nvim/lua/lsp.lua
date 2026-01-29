@@ -1,52 +1,41 @@
-local on_attach = function(client, bufnr) end
+local on_attach = function(client, _)
+  -- if client.name == "clangd" then
+  --   client.server_capabilities.semanticTokensProvider = nil
+  -- end
+end
 
-------------------------
---- cpp / c
-require('lspconfig').clangd.setup {on_attach = on_attach}
 
-------------------------
---- lua
-require('lspconfig').lua_ls.setup {on_attach = on_attach}
+-- ===== Mason =====
+require("mason").setup({
+  ui = {
+    icons = { package_installed = "✓" },
+  },
+})
 
-------------------------
---- latex
-require('lspconfig').ltex.setup {on_attach = on_attach}
+require("mason-lspconfig").setup({
+  ensure_installed = { "clangd", "lua_ls", "ltex", "pylsp" },
+})
 
-------------------------
---- python
-require('lspconfig').pylsp.setup {on_attach = on_attach}
+-- ===== nvim-cmp =====
+local cmp = require("cmp")
 
-require("mason").setup {
-    ui = {
-        icons = {
-            package_installed = "✓"
-        }
-    }
-}
-require("mason-lspconfig").setup {}
-
----------------------------
--- ==== CMP portion ==== --
----------------------------
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
+local snip_ok, luasnip = pcall(require, "luasnip")
+if not snip_ok then
   return
 end
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0
+    and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]
+      :sub(col, col)
+      :match("%s") == nil
 end
-
--- Set up nvim-cmp.
-local cmp = require('cmp')
 
 cmp.setup({
   snippet = {
-    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body)
     end,
   },
   window = {
@@ -54,16 +43,13 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    -- ['<C-Space>'] = cmp.mapping.complete(),
-    -- ['<C-e>'] = cmp.mapping.abort(),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<CR>"]  = cmp.mapping.confirm({ select = true }),
+
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
-      -- they way you will only jump inside the snippet region
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       elseif has_words_before() then
@@ -84,129 +70,103 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
   }, {
-    { name = 'buffer' },
-  })
+    { name = "buffer" },
+  }),
 })
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
+  sources = { { name = "buffer" } },
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
+  sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 })
 
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require('lspconfig')['clangd'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
-require('lspconfig')['lua_ls'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
-require'lspconfig'.ltex.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = { "tex", "bib", "markdown", "plaintex" },
-    settings = {
-        ltex = {
-            language = "en-US",
-            dictionary = {
-                ["en-US"] = {
-                    "Diego",
-                    "Rivera",
-                    "Garrido",
-                    "simplicial",
-                    "simplices",
-                    "isomorphism",
-                    "homomorphism",
-                    "homomorphisms",
-                    "homotopic",
-                    "Kruskal",
-                    "surjective",
-                    "injective",
-                    "bijective",
-                    "homomorphism",
-                    "homotopy",
-                    "triangulable",
-                    "triangulations",
-                    "Triangulations",
-                    "TODO",
-                    "monoid",
-                    "Monoid",
-                    "submonoid",
-                    "monoids",
-                    "submonoids",
-                    "surjectivity",
-                    "injectivity",
-                    "subsemigroup",
-                    "coset",
-                    "idempotent",
-                    "idempotents",
-                }
-            }
-        },
+-- Optional formatting with lspkind
+local ok_lspkind, lspkind = pcall(require, "lspkind")
+if ok_lspkind then
+  cmp.setup({
+    formatting = {
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "...",
+      }),
     },
-}
+  })
+end
 
-require('lspconfig')['pylsp'].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
+-- Capabilities (after cmp is set up)
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lspkind = require('lspkind')
-cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show symbol and text
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+-- ===== LSP servers =====
 
-      before = function (entry, vim_item)
-        return vim_item
-      end
-    })
-  }
-}
-
-require("diaglist").init({
-    -- optional settings
-    -- below are defaults
-    debug = false,
-
-    -- increase for noisy servers
-    debounce_ms = 150,
+vim.lsp.config("clangd", {
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
+
+vim.lsp.config("lua_ls", {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } },
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+})
+
+vim.lsp.config("ltex", {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "tex", "bib", "markdown", "plaintex" },
+  settings = {
+    ltex = {
+      language = "en-US",
+      dictionary = {
+        ["en-US"] = {
+          "Diego", "Rivera", "Garrido",
+          "simplicial", "simplices",
+          "isomorphism", "homomorphism", "homomorphisms",
+          "homotopic", "homotopy",
+          "Kruskal",
+          "surjective", "injective", "bijective",
+          "triangulable", "triangulations", "Triangulations",
+          "TODO",
+          "monoid", "Monoid", "submonoid", "monoids", "submonoids",
+          "surjectivity", "injectivity",
+          "subsemigroup", "coset",
+          "idempotent", "idempotents",
+        },
+      },
+    },
+  },
+})
+
+vim.lsp.config("pylsp", {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+vim.lsp.enable({ "clangd", "lua_ls", "ltex", "pylsp" })
+
+-- ===== Diagnostics =====
+local ok_diaglist, diaglist = pcall(require, "diaglist")
+if ok_diaglist then
+  diaglist.init({
+    debug = false,
+    debounce_ms = 150,
+  })
+end
 
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●', -- Could be '●', '▎', 'x'
-  }
+  virtual_text = { prefix = "●" },
 })
+
