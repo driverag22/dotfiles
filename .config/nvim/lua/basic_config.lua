@@ -1,17 +1,19 @@
-vim.opt.mouse="a"
+vim.o.mouse="a"
+vim.g.have_nerd_font = true
+vim.o.cursorline = true
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.autoindent = true
-vim.opt.termguicolors = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.autoindent = true
+vim.o.termguicolors = true
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.smarttab = true
-vim.opt.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.smarttab = true
+vim.o.expandtab = true
 
-vim.opt.foldlevelstart = 1
-vim.opt.smartcase = true
+vim.o.foldlevelstart = 1
+vim.o.smartcase = true
 
 vim.g.mapleader = " "
 
