@@ -6,6 +6,6 @@ vim.api.nvim_create_autocmd("FileType", {
     if vim.treesitter.highlighter.active[buf] then
       return
     end
-    vim.treesitter.start(buf)
+    pcall(vim.treesitter.start, buf)
   end,
 })

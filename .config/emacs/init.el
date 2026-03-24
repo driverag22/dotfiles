@@ -30,7 +30,34 @@
 	 (gnus . org-gnus-no-new-news) (file . find-file)
 	 (wl . wl-other-frame)))
  '(org-scheduled-past-days 0)
- '(package-selected-packages nil))
+ '(package-selected-packages nil)
+ '(safe-local-variable-values
+   '((eval font-lock-flush)
+	 (eval setq-local org-emphasis-alist
+		   (cl-remove-if
+			(lambda (x) (member (car x) '("*" "+" "=" "~")))
+			org-emphasis-alist))
+	 (eval setq-local org-emphasis-alist
+		   (assoc-delete-all "*"
+							 (assoc-delete-all "+"
+											   (assoc-delete-all "="
+																 (assoc-delete-all
+																  "~"
+																  org-emphasis-alist)))))
+	 (eval setq-local org-emphasis-alist
+		   (remove '("*" bold)
+				   (remove '("+" strike-through)
+						   (remove '("=" verbatim)
+								   (remove '("~" code)
+										   org-emphasis-alist)))))
+	 (eval progn (setq org-hide-emphasis-markers nil)
+		   (font-lock-add-keywords nil
+								   '(("\\(\\s-\\|^\\)\\(\\(\\*\\)[^*]+\\(\\*\\)\\)\\(\\s-\\|$\\)"
+									  (3 'org-hide t) (4 'org-hide t))
+									 ("\\(\\s-\\|^\\)\\(\\(\\+\\)[^+]+\\(\\+\\)\\)\\(\\s-\\|$\\)"
+									  (3 'org-hide t) (4 'org-hide t))
+									 ("\\(\\s-\\|^\\)\\(\\([~=]\\)[^~=]+\\([~=]\\)\\)\\(\\s-\\|$\\)"
+									  (3 'org-hide t) (4 'org-hide t))))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

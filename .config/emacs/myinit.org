@@ -232,17 +232,13 @@ Moreover, the setup for latex:
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates
       '(
-        ("a" "advAlg" plain (file+headline "tasks.org" "Advanced Algorithms")
-         "** TODO [#%^{Priority}] [AA]%? %(org-set-tags \"advAlg\")")
-        ("l" "algoLab" plain (file+headline "tasks.org" "Algo. Lab")
-         "** TODO [#%^{Priority}] [AL]%? %(org-set-tags \"algoLab\")")
-        ("g" "MLGenom" plain (file+headline "tasks.org" "Machine Learning for Genomics")
-         "** TODO [#%^{Priority}] [MLG]%? %(org-set-tags \"MLGenom\")")
-        ("f" "formAnal" plain (file+headline "tasks.org" "Formalizing Analysis of Algorithms")
-         "** TODO [#%^{Priority}] [FA]%? %(org-set-tags \"formAnal\")")
-        ("t" "ML TA" plain (file+headline "tasks.org" "AINIT & AML TA")
+        ("t" "Thesis" plain (file+headline "tasks.org" "Master thesis")
+         "** TODO [#%^{Priority}] [T]%? %(org-set-tags \"mThesis\")")
+        ("T" "ML TA" plain (file+headline "tasks.org" "AINIT & AML TA")
          "** TODO [#%^{Priority}] [TA]%? %(org-set-tags \"ML_TA\")")
-        ("G" "german" plain (file+headline "tasks.org" "German Course 1786")
+        ("c" "CIL TA" plain (file+headline "tasks.org" "CIL TA")
+         "** TODO [#%^{Priority}] [TA]%? %(org-set-tags \"CIL_TA\")")
+        ("g" "german" plain (file+headline "tasks.org" "German Course")
          "** TODO [#%^{Priority}] [GC]%? %(org-set-tags \"german\")")
         ("r" "resProj" plain (file+headline "tasks.org" "Research Project")
          "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProjAut\")")
