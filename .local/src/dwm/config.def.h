@@ -2,9 +2,9 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 0;        /* gaps between windows */
+static const unsigned int gappx     = 4;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
@@ -13,30 +13,31 @@ static const int user_bh            = 21;
 static const char *fonts[]          = { "JetBrains Mono:size=12", "DejaVu Sans Mono wifi ramp:size=11"};
 static const char col_bg[]          = "#020202";
 static const char col_white[]       = "#eeeeee";
-static const char col_purple[]      = "#4F31AA";
-static const char col_purple_l[]    = "#5F4FB7";
-static const char col_pink[]        = "#CA509C";
-static const char col_cyan[]        = "#32A9A6";
+static const char col_grayLight[]   = "#c9ced0";
+static const char col_blue[]        = "#3961A8";
+static const char col_lightBlue[]   = "#b1bedb";
+static const char col_grayBlue[]    = "#7591A0";
+static const char col_red[]         = "#BB4449";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_bg,  col_bg},
-	[SchemeSel]  = { col_white, col_purple, col_pink},
-	[SchemeSpecial]  = { col_pink, col_bg,  col_white},
+	[SchemeSel]  = { col_white, col_grayBlue, col_grayLight},
+	[SchemeSpecial]  = { col_lightBlue, col_bg,  col_white},
 };
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "" };
 
 static const char *tagsel[][2] = {
-	{ col_white,  col_pink},
-	{ col_white,  col_cyan},
-	{ col_white,  col_purple},
-	{ col_white,  col_pink},
-	{ col_white,  col_cyan},
-	{ col_white,  col_purple},
-	{ col_white,  col_pink},
-	{ col_white,  col_cyan},
+	{ col_white, col_blue },
+	{ col_white, col_red },
+	{ col_white, col_blue },
+	{ col_white, col_red },
+	{ col_white, col_blue },
+	{ col_white, col_red },
+	{ col_white, col_blue },
+	{ col_white, col_red },
 };
 
 static const Rule rules[] = {

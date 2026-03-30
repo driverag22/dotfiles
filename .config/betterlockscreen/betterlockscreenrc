@@ -25,23 +25,21 @@ insidecolor=00000000
 separatorcolor=00000000
 ringvercolor=ffffffff
 
-insidevercolor=45B7B7
+insidevercolor=3961A8
 
 ringwrongcolor=ffffffff
 
-insidewrongcolor=CA509C
+insidewrongcolor=BB4449
 
 timecolor=ffffffff
 time_format="%H:%M:%S"
 greetercolor=ffffffff
 layoutcolor=ffffffff
 
-# keyhlcolor=d23c3dff
-# keyhlcolor=ff69b4
-keyhlcolor=45B7B7
+keyhlcolor=3961A8
 
 bshlcolor=d23c3dff
 verifcolor=ffffffff
-wrongcolor=CA509C
+wrongcolor=BB4449
 modifcolor=d23c3dff
 bgcolor=000000ff
