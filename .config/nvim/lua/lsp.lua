@@ -143,7 +143,7 @@ vim.lsp.config("ltex", {
           "monoid", "Monoid", "submonoid", "monoids", "submonoids",
           "surjectivity", "injectivity",
           "subsemigroup", "coset",
-          "idempotent", "idempotents",
+          "idempotent", "idempotents", "quasiplanar", "quasiplanars",
         },
       },
     },

@@ -26,7 +26,7 @@ background = "#020202"
 foreground = "#FFFFFF"
 
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
 
 [font]
 size = 8

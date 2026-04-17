@@ -102,5 +102,10 @@ return {
     end
   },
   { "saadparwaiz1/cmp_luasnip" },
+  { "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end
+  },
 }
 

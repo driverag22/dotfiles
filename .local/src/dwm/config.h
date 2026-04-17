@@ -23,7 +23,7 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_bg,  col_bg},
 	[SchemeSel]  = { col_white, col_grayBlue, col_grayLight},
-	[SchemeSpecial]  = { col_lightBlue, col_bg,  col_white},
+	[SchemeSpecial]  = { col_blue, col_bg,  col_white},
 };
 
 /* tagging */
@@ -81,7 +81,7 @@ static const char *termcmd[]  = { "alacritty" };
 
 static const char *browser[]  = { "firefox", NULL };
 static const char *filebrowser[]  = { "/home/diego/.local/.scripts/keyBindings/home.sh", NULL };
-static const char *rangerHome[]  = { "/home/diego/.local/.scripts/keyBindings/rangerHome.sh", NULL };
+static const char *yaziHome[]  = { "/home/diego/.local/.scripts/keyBindings/yaziHome.sh", NULL };
 static const char *schoolDropbox[] = {"/home/diego/.local/.scripts/keyBindings/q1.sh", NULL};
 static const char *emacs[] = {"emacs", "/home/diego/org/tasks.org", NULL};
 
@@ -117,7 +117,7 @@ static const Key keys[] = {
 	{ CTRLKEY,                      XK_g,      spawn,          {.v = emacs } }, //emacs
 
 	{ ALTKEY,                       XK_h,      spawn,          {.v = filebrowser } }, //home
-	{ CTRLKEY,                      XK_h,      spawn,          {.v = rangerHome } }, //home w/ranger
+	{ CTRLKEY,                      XK_h,      spawn,          {.v = yaziHome } }, //home w/yazi
 	{ CTRLKEY,                      XK_i,      spawn,          {.v = schoolDropbox } }, //tue dropbox
 
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreen } }, //lockscreen

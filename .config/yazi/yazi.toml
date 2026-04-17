@@ -1,0 +1,15 @@
+[opener]
+edit = [
+	{ run = '${EDITOR:-nvim} "$@"', block = true, desc = "Edit" },
+]
+
+[preview]
+# This forces Yazi to use ueberzugpp for images
+image_filter = "lanczos3"
+image_quality = 75
+max_width = 1500
+max_height = 1500
+
+[plugin]
+# This ensures it uses the right adapter for Alacritty
+# If detection fails, you can force it here
