@@ -10,8 +10,8 @@ edit = [
   { run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true },
 ]
 pdff = [
-	{ run = 'zathura "$@"', desc = "Zathura", block = false },
-	{ run = 'sioyek "$@"', desc = "Sioyek", block = false },
+	{ run = 'zathura "$@"', orphan = true, desc = "Zathura", block = false },
+	{ run = 'sioyek "$@"', orphan = true, desc = "Sioyek", block = false },
 ]
 
 [open]

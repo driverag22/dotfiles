@@ -31,21 +31,21 @@ TERM = "alacritty"
 [font]
 size = 8
 
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
 [font.bold]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
-
-[font.normal]
-family = "JetBrains Mono"
-style = "Regular"
 
 [font.offset]
 x = 0
