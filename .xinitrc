@@ -4,6 +4,15 @@
 export MESA_LOADER_DRIVER_OVERRIDE=iris
 export XCURSOR_SIZE=24
 
+# export DISPLAY=:0
+# export XAUTHORITY=$HOME/.Xauthority
+# export GTK_USE_PORTAL=1
+export XDG_CURRENT_DESKTOP=GTK
+
+# VERY IMPORTANT:
+# systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP
+
 #sets dwmBar running to display values
 /home/diego/.local/.scripts/dwmBar/dwmbar.sh
 
@@ -42,4 +51,5 @@ keepassxc &
 nm-applet &
 flameshot &
 dunst &
+
 exec dwm
