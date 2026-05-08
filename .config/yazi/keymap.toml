@@ -1,5 +1,5 @@
 [[mgr.prepend_keymap]]
-on   = [ "C" ]
+on   = "C"
 run  = 'shell "$SHELL" --block --confirm'
 desc = "Drop into shell"
 
@@ -12,3 +12,13 @@ desc = "Enter directory or open file"
 on = "o"
 run = "open --interactive"
 desc = "Open selected files interactively"
+
+[[mgr.prepend_keymap]]
+on = "J"
+run = "arrow bot"
+desc = "Go to bottom"
+
+[[mgr.prepend_keymap]]
+on = "K"
+run = "arrow top"
+desc = "Go to top"

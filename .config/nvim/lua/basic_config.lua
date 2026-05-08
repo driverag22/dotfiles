@@ -7,8 +7,8 @@ vim.o.relativenumber = true
 vim.o.autoindent = true
 vim.o.termguicolors = true
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 vim.o.smarttab = true
 vim.o.expandtab = true
 

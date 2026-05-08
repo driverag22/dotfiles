@@ -9,6 +9,9 @@ max_height = 1500
 edit = [
   { run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true },
 ]
+ipe = [
+  { run = "ipe %s", orphan = true, desc = "Ipe", block = false },
+]
 pdff = [
 	{ run = 'zathura "$@"', orphan = true, desc = "Zathura", block = false },
 	{ run = 'sioyek "$@"', orphan = true, desc = "Sioyek", block = false },
@@ -16,7 +19,10 @@ pdff = [
 
 [open]
 rules = [
+	# pdf
   { mime = "application/pdf", use = [ "pdff" ] },
+	# ipe
+	{ url = "*.ipe", use = [ "ipe" ]},
 	# Folder
 	{ url = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
