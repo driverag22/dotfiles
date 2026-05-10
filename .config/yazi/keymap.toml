@@ -22,3 +22,13 @@ desc = "Go to bottom"
 on = "K"
 run = "arrow top"
 desc = "Go to top"
+
+[[mgr.prepend_keymap]]
+on = "t"
+run = "tab_create --current"
+desc = "Create a new tab in CWD"
+
+[[mgr.prepend_keymap]]
+on = "nrt" 
+run = "tab_rename --interactive"
+desc = "Rename current tab"

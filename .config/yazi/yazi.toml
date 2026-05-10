@@ -16,6 +16,12 @@ pdff = [
 	{ run = 'zathura "$@"', orphan = true, desc = "Zathura", block = false },
 	{ run = 'sioyek "$@"', orphan = true, desc = "Sioyek", block = false },
 ]
+image = [
+  { run = 'ristretto "$@"', orphan = true, desc = "Ristretto", block = false },
+   { run = 'feh "$@"', orphan = true, desc = "feh" },
+  { run = 'sxiv "$@"', orphan = true, desc = "sxiv" },
+  { run = 'qiv "$@"', orphan = true, desc = "qiv" },
+]
 
 [open]
 rules = [
@@ -28,7 +34,7 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "image/*", use = [ "image", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
