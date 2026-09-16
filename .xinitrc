@@ -7,10 +7,7 @@ export XCURSOR_SIZE=24
 # export DISPLAY=:0
 # export XAUTHORITY=$HOME/.Xauthority
 # export GTK_USE_PORTAL=1
-export XDG_CURRENT_DESKTOP=GTK
-
-# VERY IMPORTANT:
-# systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL
+#export XDG_CURRENT_DESKTOP=GTK
 dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP
 
 #sets dwmBar running to display values
@@ -20,7 +17,7 @@ dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESK
 /home/diego/.local/.scripts/automatic/fehbg.sh 
 
 #make wireless mouse work correctly
-/home/diego/.local/.scripts/automatic/mouse.sh 
+# /home/diego/.local/.scripts/automatic/mouse.sh 
 
 #fix broken java displays on dwm (for netbeans)
 # export _JAVA_AWT_WM_NONREPARENTING=1

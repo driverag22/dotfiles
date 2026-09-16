@@ -1,4 +1,4 @@
-;;Initialize package sources
+;;Initialize package sources  -*- lexical-binding: t; -*-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -6,7 +6,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes nil)
  '(custom-safe-themes
-   '("77f281064ea1c8b14938866e21c4e51e4168e05db98863bd7430f1352cab294a"
+   '("967c23e9ba179b80560774419f081df22e7674aac23c5c550b817e4a1ce7d058"
+	 "77f281064ea1c8b14938866e21c4e51e4168e05db98863bd7430f1352cab294a"
 	 "b40f11c174e7e475508f1e2c1cfca354d37212494c143a494f27239c7d71a294"
 	 "18631300c9090ac9f588b07d0ef4b1d093143a31e8c8c29e9fc2a57db1cdf502"
 	 "2cc1b50120c0d608cc5064eb187bcc22c50390eb091fddfa920bf2639112adb6"
@@ -30,7 +31,17 @@
 	 (gnus . org-gnus-no-new-news) (file . find-file)
 	 (wl . wl-other-frame)))
  '(org-scheduled-past-days 0)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(ace-window all-the-icons async bui calfw calfw-org cfrs evil
+				flycheck frame-local general git-commit ht hydra log4e
+				markdown-mode modus-themes nerd-icons olivetti
+				org-fragtog org-hyperscheduler org-roam-ui
+				org-superstar org-timegrid pdf-tools pfuture pkg-info
+				popup shrink-path spinner ts use-package
+				visual-fill-column vulpea wfnames yaml))
+ '(package-vc-selected-packages
+   '((org-timegrid :vc-backend Git :url
+				   "https://github.com/Gleek/org-timegrid.git")))
  '(safe-local-variable-values
    '((eval font-lock-flush)
 	 (eval setq-local org-emphasis-alist

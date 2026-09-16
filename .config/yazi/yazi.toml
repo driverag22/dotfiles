@@ -7,20 +7,21 @@ max_height = 1500
 
 [opener]
 edit = [
-  { run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true },
+  { run = 'nvim "%s"', desc = "Neovim", block = true },
 ]
 ipe = [
   { run = "ipe %s", orphan = true, desc = "Ipe", block = false },
 ]
 pdff = [
-	{ run = 'zathura "$@"', orphan = true, desc = "Zathura", block = false },
-	{ run = 'sioyek "$@"', orphan = true, desc = "Sioyek", block = false },
+	{ run = 'zathura "%s"', orphan = true, desc = "Zathura", block = false },
+	{ run = 'sioyek "%s"', orphan = true, desc = "Sioyek", block = false },
 ]
 image = [
-  { run = 'ristretto "$@"', orphan = true, desc = "Ristretto", block = false },
-   { run = 'feh "$@"', orphan = true, desc = "feh" },
-  { run = 'sxiv "$@"', orphan = true, desc = "sxiv" },
-  { run = 'qiv "$@"', orphan = true, desc = "qiv" },
+  { run = 'ristretto "%s"', orphan = true, desc = "Ristretto", block = false },
+   { run = 'feh "%s"', orphan = true, desc = "feh" },
+  { run = 'sxiv "%s"', orphan = true, desc = "sxiv" },
+  { run = 'qiv "%s"', orphan = true, desc = "qiv" },
+  { run = 'gimp "%s"', orphan = true, desc = "gimp" },
 ]
 
 [open]
