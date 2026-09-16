@@ -1,4 +1,8 @@
 #+TITLE: Emacs Configuration
+#+property: header-args:elisp :tangle ~/.config/emacs/myinit.el
+#+begin_src elisp
+;; -*- lexical-binding: t; -*-
+#+end_src
 
 * Package system setup
 #+BEGIN_SRC emacs-lisp
@@ -46,7 +50,6 @@
   (setq display-line-numbers-type 'relative)
   (setq-default tab-width 4)
 #+END_SRC
-
 * Theming
 #+BEGIN_SRC emacs-lisp
   (set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
@@ -107,7 +110,6 @@
          '((sequence "TODO(t)" "PROG(p)" "|" "DONE(d)" "PAUS(s)")))
 
    (global-set-key (kbd "C-c l") 'org-store-link)
-   (global-set-key (kbd "C-c a") 'org-agenda)
    (global-set-key (kbd "C-c c") 'org-capture)
    (global-set-key (kbd "C-SPC") 'org-todo)
    (global-set-key (kbd "C-<backspace>") 'org-mark-ring-goto)
@@ -211,15 +213,6 @@ Moreover, the setup for latex:
     (variable-pitch-mode 1)
    )
 #+END_SRC
-**** org-hyperscheduler
-#+BEGIN_SRC emacs-lisp
-    (use-package org-hyperscheduler
-    :ensure nil                       ;; don’t fetch from ELPA
-    :load-path "~/.config/emacs/site-lisp/org-hyperscheduler"
-    )
-#+END_SRC
-
-#+RESULTS:
 
 **** org-superstar
 #+BEGIN_SRC emacs-lisp
@@ -234,14 +227,8 @@ Moreover, the setup for latex:
       '(
         ("t" "Thesis" plain (file+headline "tasks.org" "Master thesis")
          "** TODO [#%^{Priority}] [T]%? %(org-set-tags \"mThesis\")")
-        ("T" "ML TA" plain (file+headline "tasks.org" "AINIT & AML TA")
-         "** TODO [#%^{Priority}] [TA]%? %(org-set-tags \"ML_TA\")")
-        ("c" "CIL TA" plain (file+headline "tasks.org" "CIL TA")
-         "** TODO [#%^{Priority}] [TA]%? %(org-set-tags \"CIL_TA\")")
         ("g" "german" plain (file+headline "tasks.org" "German Course")
          "** TODO [#%^{Priority}] [GC]%? %(org-set-tags \"german\")")
-        ("r" "resProj" plain (file+headline "tasks.org" "Research Project")
-         "** TODO [#%^{Priority}] [RP]%? %(org-set-tags \"resProjAut\")")
 
         ("k" "ocurrencias" plain (file+headline "tasks.org" "Ocurrencias")
          "** TODO [#%^{Priority}]%? %(org-set-tags \"ocurrencias\")")
@@ -251,129 +238,7 @@ Moreover, the setup for latex:
          "****%?  %<%H:%M>")
         ))
 
-  ;(setq capture-files '("tasks.org"))
-  (setq capture-files '("tasks.org" "schedule.org"))
-
-  (defun vulpea-capture-task ()
-    "Capture a task."
-    (interactive)
-    (org-capture nil "t"))
-#+END_SRC
-*** Setting up org-agenda custom commands
-#+BEGIN_SRC emacs-lisp
-    (setq org-agenda-window-setup 'only-window)
-    (setq org-tags-match-list-sublevels 'indented)
-    (setq org-agenda-custom-commands
-      '((" " "Agenda"
-         (
-          (tags-todo "TDA"
-           ((org-agenda-overriding-header "Introduction to Topological Data Analysis")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          (tags-todo "CIL"
-           ((org-agenda-overriding-header "Computational Intelligence Lab")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          (tags-todo "FLT"
-           ((org-agenda-overriding-header "Advanced Formal Language Theory")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          (tags-todo "resProjSpring"
-           ((org-agenda-overriding-header "Research Project: Earth-Moon Problem")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          (tags-todo "GCAS"
-           ((org-agenda-overriding-header "Geometry: Combinatorics and Algorithms Seminar")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          (tags-todo "others"
-           ((org-agenda-overriding-header "Others")
-            (org-agenda-prefix-format "%-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")))
-          )
-         ))
-      )
-
-
-    (defun my-org-agenda-custom-keys ()
-    (local-set-key (kbd "j") 'org-agenda-next-line)
-    (local-set-key (kbd "k") 'org-agenda-previous-line)
-    (local-set-key (kbd "h") 'backward-char)
-    (local-set-key (kbd "l") 'forward-char)
-    (local-set-key (kbd "TAB") 'org-agenda-follow-mode-toggle)
-    )
-
-  (add-hook 'org-agenda-mode-hook 'my-org-agenda-custom-keys)
-
-  (setq org-agenda-prefix-format '(
-       (agenda . "%?-12t")
-       ;(agenda . "%-10b %-10T ")
-       (todo . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-       (tags . "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-       (search. "%-35b %-15(let ((scheduled (org-get-scheduled-time (point)))) (if scheduled (format-time-string \"%a %d-%m %H:%M\" scheduled) \"\")) ")
-       ))
-#+END_SRC
-*** calfw (calendar)
-# #+BEGIN_SRC emacs-lisp
-#     (defun date-earlier-p (date1 date2)`
-#       (time-less-p (date-to-time date1) (date-to-time date2)))
-#     (use-package calfw
-#      :defer t
-#      :bind (
-#             ("C-c o" . full-calendar) 
-#             ("C-c t" . task-calendar))
-#      :commands cfw:open-calendar-buffer
-#      :functions (cfw:open-calendar-buffer
-#                  cfw:refresh-calendar-buffer
-#                  cfw:org-create-source
-#                  cfw:cal-create-source)
-#      :config
-#      (defun full-calendar ()
-#        (interactive)
-#        (cfw:open-calendar-buffer
-#         :contents-sources
-#         (list
-#          (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#ed3a2d")
-#          (cfw:org-create-file-source "Schedule" "~/org/schedule.org" "#2377fc")
-#          (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#34ed5c")
-#          (cfw:org-create-file-source "tasks" "~/org/orgRoam/courses_eth-20240830131321.org" "#ed3a2d")
-#          )
-#        ))
-#      (defun task-calendar ()
-#        (interactive)
-#        (cfw:open-calendar-buffer
-#         :contents-sources
-#         (list
-#          (cfw:org-create-file-source "tasks" "~/org/tasks.org" "#34ed5c")
-#          (cfw:org-create-file-source "meetings" "~/org/meetings.org" "#ed3a2d")
-#          )
-#         ;; :sorter 'my-calendar-entry-comparator
-#        ))
-#      )
-#     (custom-set-faces
-#      '(cfw:face-title ((t (:foreground "#5E81AB" :weight bold :height 1.0 :inherit variable-pitch))))
-#      '(cfw:face-header ((t (:foreground "#ffffff" :weight bold ))))
-#      '(cfw:face-sunday ((t :foreground "#5E81AB" :weight bold )))
-#      '(cfw:face-saturday ((t :foreground "#5E81AB" :weight bold )))
-#      ;;'(cfw:face-holiday ((t :foreground "#ba3c53" :background "grey10" :weight bold)))
-#      '(cfw:face-day-title ((t :background "#grey10" )))
-#      '(cfw:face-default-day ((t :foreground "#ffffff" :background "#grey10" )))
-#      '(cfw:face-today-title ((t :foreground "#fc03ad" :background "#grey10" :weight bold)))
-#      '(cfw:face-today ((t :background: "grey10" :weight bold)))
-#      '(cfw:face-select ((t :background "#5E81AB")))
-#      '(cfw:face-toolbar ((t :background "#grey10")))
-#      ;; '(cfw:face-toolbar ((t :background "#5E81AB")))
-#      '(cfw:face-grid ((t :foreground "#5E81AB")))
-#      )
-#      (use-package calfw-org
-#        :after calfw)
-#      (setq calendar-week-start-day 1)
-# #+END_SRC
-*** olivetti mode
-#+BEGIN_SRC emacs-lisp
-  ;Olivetti config
-  (use-package olivetti)
-
-  (defun oliv-org-mode ()
-    (olivetti-mode)
-    (olivetti-set-width 120)
-    )
-
-  (add-hook 'org-mode-hook 'oliv-org-mode)
+  (setq capture-files '("tasks.org" "schedule.org" "calendar.org"))
 #+END_SRC
 *** org-roam + org-id
 #+BEGIN_SRC emacs-lisp
@@ -411,36 +276,60 @@ Moreover, the setup for latex:
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
-  (defun vulpea-buffer-prop-get (name)
-    "Get a buffer property called NAME as a string."
-    (org-with-point-at 1
-    	(when (re-search-forward (concat "^#\\+" name ": \\(.*\\)")
-                               (point-max) t)
-        (buffer-substring-no-properties
-         (match-beginning 1)
-         (match-end 1)))))
-
-  (defun vulpea-agenda-category ()
-    (let* ((file-name (when buffer-file-name
-                        (file-name-sans-extension
-                         (file-name-nondirectory buffer-file-name))))
-           (title (vulpea-buffer-prop-get "title"))
-           (category (org-get-category)))
-      (or (if (and
-               title
-               (string-equal category file-name))
-              title
-            category)
-          "")))
 #+END_SRC
-*** vulpea
+*** org-hyperscheduler
 #+BEGIN_SRC emacs-lisp
-(use-package vulpea
-  :ensure t
-  ;; hook into org-roam-db-autosync-mode you wish to enable
-  ;; persistence of meta values (see respective section in README to
-  ;; find out what meta means)
-  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable)))
+  (use-package org-hyperscheduler
+    :ensure nil                       ;; don’t fetch from ELPA
+    :load-path "~/.config/emacs/site-lisp/org-hyperscheduler"
+    )
+#+END_SRC
+*** org-timegrid (agenda calendar)
+#+BEGIN_SRC emacs-lisp
+    (setq calendar-week-start-day 1)
+    (setq org-agenda-start-on-weekday 1)
+
+    (unless (package-installed-p 'org-timegrid)
+      (package-vc-install "https://github.com/Gleek/org-timegrid.git"))
+
+    (use-package org-timegrid
+      :commands (org-timegrid-week)
+      :demand t
+      :bind ("C-c a" . org-timegrid-week)
+      :init
+      ;; The symbol `agenda' means: read events from `org-agenda-files'.
+      (setq org-timegrid-org-files 'agenda
+            org-timegrid-default-zoom 0.7
+  		  org-timegrid-org-capture-file (expand-file-name "calendar.org" "~/org/")
+            org-timegrid-org-capture-template '(:target file :template "* %{title}\n%{time-range}\n%?")
+            ;; Save Org buffers immediately after edits made in the calendar.
+            org-timegrid-org-auto-save t
+            ;; Set this to nil if repeating entries should be hidden.
+            org-timegrid-org-show-repeaters t
+        	)
+      :config
+      (require 'org-timegrid-org)
+      
+      ;; --- EVIL KEYBINDINGS ---
+      (with-eval-after-load 'evil
+        (evil-set-initial-state 'org-timegrid-mode 'normal)
+        (evil-define-key 'normal org-timegrid-mode-map
+          "l" 'org-timegrid-cursor-forward-day
+          "h" 'org-timegrid-cursor-backward-day
+      ))
+  )
+#+END_SRC
+*** olivetti mode
+#+BEGIN_SRC emacs-lisp
+  ;Olivetti config
+  (use-package olivetti)
+
+  (defun oliv-org-mode ()
+    (olivetti-mode)
+    (olivetti-set-width 120)
+    )
+
+  (add-hook 'org-mode-hook 'oliv-org-mode)
 #+END_SRC
 *** org-babel
 #+BEGIN_SRC emacs-lisp
@@ -462,140 +351,3 @@ Moreover, the setup for latex:
   ;;; set gb back to normal for memory reasons
   (setq gc-cons-threshold (* 50 1024 1024))
 #+END_SRC
-*** Setting up "smart" org-agenda
-#+BEGIN_COMMENT
-#+BEGIN_SRC emacs-lisp
-  ;; Remove automatic project inheritance
-  (add-to-list 'org-tags-exclude-from-inheritance "project")
-#+END_SRC
-We want to mark as "project" only the org-roam files containing TODO items to increase the speed of
-org agenda.
-Explanation:
-   1. We parse the buffer. org-element-parse-buffer returns an abstract syntax tree of the current Org buffer. We only care about headings, hence the " 'headings ".
-   2. We extract info. about TODO keywords from /headline/ AST, which contains a property we are interested
-   in, -:todo-type., which returns the type of TODO: /'done/, /'todo/ or /nil/.
-   3. Now we just check that there is at least one TODO match.
-#+BEGIN_SRC emacs-lisp
-  (defun vulpea-project-p ()
-    "Return non-nil if current buffer has any todo entry.
-
-  TODO entries marked as done are ignored, meaning the this
-  function returns nil if current buffer contains only completed
-  tasks."
-    (org-element-map                          ; (2)
-         (org-element-parse-buffer 'headline) ; (1)
-         'headline
-       (lambda (h)
-         (eq (org-element-property :todo-type h)
-             'todo))
-       nil 'first-match))                     ; (3)
-#+END_SRC
-Now we use this function to add or remove the /project/ tag from nodes. We do this twice: when visiting a node, and in /before-safe-hook/.
-#+BEGIN_SRC emacs-lisp
-	(defun vulpea-buffer-prop-get-list (name &optional separators)
-	  "Get a buffer property NAME as a list using SEPARATORS.
-	If SEPARATORS is non-nil, it should be a regular expression
-	matching text that separates, but is not part of, the substrings.
-	If nil it defaults to `split-string-default-separators', normally
-	\"[ \f\t\n\r\v]+\", and OMIT-NULLS is forced to t."
-	  (let ((value (vulpea-buffer-prop-get name)))
-		(when (and value (not (string-empty-p value)))
-		  (split-string-and-unquote value separators))))
-	(defun vulpea-buffer-prop-set (name value)
-	"Set a file property called NAME to VALUE in buffer file.
-  If the property is already set, replace its value."
-	(setq name (downcase name))
-	(org-with-point-at 1
-	  (let ((case-fold-search t))
-		(if (re-search-forward (concat "^#\\+" name ":\\(.*\\)")
-							   (point-max) t)
-			(replace-match (concat "#+" name ": " value) 'fixedcase)
-		  (while (and (not (eobp))
-					  (looking-at "^[#:]"))
-			(if (save-excursion (end-of-line) (eobp))
-				(progn
-				  (end-of-line)
-				  (insert "\n"))
-			  (forward-line)
-			  (beginning-of-line)))
-		  (insert "#+" name ": " value "\n")))))
-
-	  (defun vulpea-buffer-tags-get ()
-		"Return filetags value in current buffer."
-		(vulpea-buffer-prop-get-list "filetags" "[ :]"))
-	  (defun vulpea-buffer-prop-remove (name)
-		"Remove a buffer property called NAME."
-		(org-with-point-at 1
-				(when (re-search-forward (concat "\\(^#\\+" name ":.*\n?\\)")
-									        (point-max) t)
-	     (replace-match ""))))
-
-	  (defun vulpea-buffer-tags-set (&rest tags)
-		"Set TAGS in current buffer.
-	  If filetags value is already set, replace it."
-		(if tags
-			(vulpea-buffer-prop-set
-			 "filetags" (concat ":" (string-join tags ":") ":"))
-		  (vulpea-buffer-prop-remove "filetags")))
-
-		(defun vulpea-project-update-tag ()
-			  "Update PROJECT tag in the current buffer."
-			  (when (and (not (active-minibuffer-window))
-						 (vulpea-buffer-p))
-				(save-excursion
-				  (goto-char (point-min))
-				  (let* ((tags (vulpea-buffer-tags-get))
-						 (original-tags tags))
-					(if (vulpea-project-p)
-						(setq tags (cons "project" tags))
-					  (setq tags (remove "project" tags)))
-
-					;; cleanup duplicates
-					(setq tags (seq-uniq tags))
-
-					;; update tags if changed
-					(when (or (seq-difference tags original-tags)
-							  (seq-difference original-tags tags))
-					  (apply #'vulpea-buffer-tags-set tags))))))
-
-		(defun vulpea-buffer-p ()
-		  "Return non-nil if the currently visited buffer is a note."
-		  (and buffer-file-name
-			   (string-prefix-p
-				(expand-file-name (file-name-as-directory org-roam-directory))
-				(file-name-directory buffer-file-name))))
-
-		(add-hook 'find-file-hook #'vulpea-project-update-tag)
-		(add-hook 'before-save-hook #'vulpea-project-update-tag)
-#+END_SRC
-Lastly, to dynamically build /org-agenda-files/, we query all files containing the /project/ tag.
-#+BEGIN_SRC emacs-lisp
-  (defun vulpea-project-files ()
-  "Return a list of note files containing 'project' tag." ;
-  (seq-uniq
-   (seq-map
-    #'car
-    (org-roam-db-query
-     [:select [nodes:file]
-      :from tags
-      :left-join nodes
-      :on (= tags:node-id nodes:id)
-      :where (like tag (quote "%\"project\"%"))]))))
-
-  (defun vulpea-agenda-files-update (&rest _)
-  "Update the value of `org-agenda-files'."
-  (setq org-agenda-files (vulpea-project-files))
-  (setq org-agenda-files (append org-agenda-files capture-files))
-  )
-
-  (advice-add 'org-agenda :before #'vulpea-agenda-files-update)
-  (advice-add 'org-todo-list :before #'vulpea-agenda-files-update)
-
-  (dolist (file (org-roam-list-files))
-  (message "processing %s" file)
-  (with-current-buffer (or (find-buffer-visiting file)
-                           (find-file-noselect file))
-    (vulpea-project-update-tag)
-    (save-buffer)))
-#+END_SRC
-#+END_COMMENT
