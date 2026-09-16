@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	{ "stalonetray", "stalonetray",  "stalonetray",     1 << 7,  1,          1},
 	{ "KeePassXC",   "keepassxc",    "KeePassXC",       1 << 7,  0,          1},
 	{ "Emacs",       "emacs",        "Emacs",           1 << 5,  0,          0},
+	{ "flameshot",    NULL,           NULL,                  0,  1,         -1},
 };
 
 /* layout(s) */
